@@ -132,6 +132,7 @@ export default function UpgradePage() {
   const handleActivateVIP = () => {
     if (typeof window !== "undefined") {
       localStorage.setItem("gsa-user-tier", "pro");
+      localStorage.setItem("gsa-purchased-pro", "true");
       setIsPro(true);
       window.dispatchEvent(new Event("tier-updated"));
     }

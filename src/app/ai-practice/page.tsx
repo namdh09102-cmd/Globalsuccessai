@@ -98,7 +98,9 @@ export default function AIPracticePage() {
         const reader = new FileReader();
         reader.readAsDataURL(audioBlob);
         reader.onloadend = () => {
-          setAudioBase64(reader.result as string);
+          const base64Str = reader.result as string;
+          setAudioBase64(base64Str);
+          handleEvaluation(base64Str);
         };
 
         stream.getTracks().forEach((track) => track.stop());
@@ -120,8 +122,9 @@ export default function AIPracticePage() {
   };
 
   // Gửi chấm điểm AI
-  const handleEvaluation = async () => {
-    if (!audioBase64 || !textInput.trim()) return;
+  const handleEvaluation = async (customBase64?: string) => {
+    const targetBase64 = customBase64 || audioBase64;
+    if (!targetBase64 || !textInput.trim()) return;
     setIsEvaluating(true);
     try {
       // Đọc custom API Key từ localStorage do Admin cấu hình
@@ -134,7 +137,7 @@ export default function AIPracticePage() {
         } catch (e) {}
       }
 
-      const res = await evaluateSpeaking(audioBase64, textInput, customKey);
+      const res = await evaluateSpeaking(targetBase64, textInput, customKey);
       setEvaluationResult(res);
 
       // Thưởng điểm offline nếu điểm cao (>=75)
@@ -350,7 +353,7 @@ export default function AIPracticePage() {
               </button>
 
               <button
-                onClick={handleEvaluation}
+                onClick={() => handleEvaluation()}
                 disabled={isEvaluating}
                 className="flex-2 py-3 px-6 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/20 disabled:opacity-50"
               >

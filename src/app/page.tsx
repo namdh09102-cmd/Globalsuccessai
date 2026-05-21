@@ -466,8 +466,13 @@ export default function Dashboard() {
     };
   }, [isRecording]);
 
-  // Thu âm Speaking
   const startRecording = async () => {
+    const user = localStorage.getItem("gsa-current-user");
+    if (!user) {
+      alert("Bạn cần đăng nhập để sử dụng tính năng Ghi âm AI!");
+      window.location.href = "/auth";
+      return;
+    }
     try {
       setEvaluationResult(null);
       setAudioUrl(null);
@@ -491,7 +496,11 @@ export default function Dashboard() {
         const reader = new FileReader();
         reader.readAsDataURL(audioBlob);
         reader.onloadend = () => {
-          setAudioBase64(reader.result as string);
+          const base64Str = reader.result as string;
+          setAudioBase64(base64Str);
+          if (activeLesson && activeLesson.type === "speaking") {
+            handleEvaluateSpeaking(activeLesson.expectedText || "", activeLesson.id, base64Str);
+          }
         };
 
         stream.getTracks().forEach((track) => track.stop());
@@ -511,8 +520,9 @@ export default function Dashboard() {
     }
   };
 
-  const handleEvaluateSpeaking = async (expected: string, lessonId: string) => {
-    if (!audioBase64) return;
+  const handleEvaluateSpeaking = async (expected: string, lessonId: string, customBase64?: string) => {
+    const targetBase64 = customBase64 || audioBase64;
+    if (!targetBase64) return;
     setIsEvaluating(true);
     try {
       // Đọc custom API Key từ localStorage do Admin cấu hình
@@ -525,7 +535,7 @@ export default function Dashboard() {
         } catch (e) {}
       }
 
-      const res = await evaluateSpeaking(audioBase64, expected, customKey);
+      const res = await evaluateSpeaking(targetBase64, expected, customKey);
       setEvaluationResult(res);
 
       if (res.success) {
@@ -692,6 +702,13 @@ export default function Dashboard() {
 
   // Khởi động một phòng học cụ thể
   const handleStartLesson = (lesson: Lesson) => {
+    const user = localStorage.getItem("gsa-current-user");
+    if (!user) {
+      alert("Bạn cần đăng nhập để học và lưu kết quả!");
+      window.location.href = "/auth";
+      return;
+    }
+
     // Kiểm tra Paywall Gate
     if (isLessonLocked(lesson)) {
       setPaywallOpen(true);

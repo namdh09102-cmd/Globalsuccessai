@@ -146,12 +146,13 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
   const handleActivateVIP = () => {
     if (typeof window !== "undefined") {
       localStorage.setItem("gsa-user-tier", "pro");
+      localStorage.setItem("gsa-purchased-pro", "true");
       setIsPro(true);
+      window.dispatchEvent(new Event("tier-updated"));
     }
     fireToast(
       "🎉 Đã nâng cấp PRO thành công! Toàn bộ giáo trình Lớp 1 – 12 đã được mở khóa."
     );
-    window.dispatchEvent(new Event("tier-updated"));
     if (onActivatePro) onActivatePro();
     setTimeout(() => onClose(), 2000);
   };

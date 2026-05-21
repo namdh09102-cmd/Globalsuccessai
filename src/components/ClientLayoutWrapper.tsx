@@ -56,11 +56,51 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
       }
       setCurrentUser(user);
 
+      // 3. Khởi tạo Trial 3 ngày nếu chưa có
+      let trialStart = localStorage.getItem("gsa-trial-start");
+      if (!trialStart) {
+        trialStart = Date.now().toString();
+        localStorage.setItem("gsa-trial-start", trialStart);
+      }
+      
+      const isTrialActive = Date.now() - parseInt(trialStart) < 3 * 24 * 60 * 60 * 1000;
+      if (isTrialActive) {
+        localStorage.setItem("gsa-user-tier", "pro");
+      } else {
+        if (localStorage.getItem("gsa-purchased-pro") !== "true") {
+           localStorage.setItem("gsa-user-tier", "free");
+        }
+      }
+
       // ROUTE GUARD LOGIC
       if (!user) {
-        // Chưa đăng nhập mà không ở trang Auth -> Đá về Auth
+        // Khách (Chưa đăng nhập) -> Không đá về Auth ngay, cho dùng thử 5 phút
         if (!isAuthRoute) {
-          router.push("/auth");
+          const guestStartTime = localStorage.getItem("gsa-guest-start");
+          if (!guestStartTime) {
+            localStorage.setItem("gsa-guest-start", Date.now().toString());
+            // Đặt timer 5 phút (300,000 ms)
+            setTimeout(() => {
+              const u = localStorage.getItem("gsa-current-user");
+              if (!u) {
+                alert("Hết thời gian trải nghiệm. Vui lòng đăng nhập để tiếp tục học!");
+                window.location.href = "/auth";
+              }
+            }, 300000);
+          } else {
+            const elapsed = Date.now() - parseInt(guestStartTime);
+            if (elapsed >= 300000) {
+              router.push("/auth");
+            } else {
+              setTimeout(() => {
+                const u = localStorage.getItem("gsa-current-user");
+                if (!u) {
+                  alert("Hết thời gian trải nghiệm. Vui lòng đăng nhập để tiếp tục học!");
+                  window.location.href = "/auth";
+                }
+              }, 300000 - elapsed);
+            }
+          }
         }
       } else {
         // Đã đăng nhập
