@@ -41,8 +41,8 @@ body {
    LIGHT MODE CSS OVERRIDES (Global Toggle)
    ======================================================== */
 .light-mode body {
-  background-color: #F1F5F9 !important; /* slate-100 */
-  color: #0f172a !important;
+  background-color: #F8FAFC !important;
+  color: #1E293B !important;
 }
 
 .light-mode [class*="bg-[#0B0F19]"], 
@@ -51,7 +51,7 @@ body {
 .light-mode [class*="from-[#111625]"],
 .light-mode [class*="from-[#0A0D18]"],
 .light-mode [class*="from-[#161032]"] {
-  background-color: #F1F5F9 !important;
+  background-color: #F8FAFC !important;
   background-image: none !important;
 }
 
@@ -61,19 +61,19 @@ body {
 .light-mode [class*="to-[#0A0D18]"] {
   background-color: #FFFFFF !important;
   background-image: none !important;
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
 }
 
 .light-mode [class*="border-slate-8"],
 .light-mode [class*="border-slate-7"],
 .light-mode [class*="border-slate-9"] {
-  border-color: #cbd5e1 !important; /* slate-300 */
+  border-color: #DDE6ED !important;
 }
 
 .light-mode [class*="text-slate-1"], 
 .light-mode [class*="text-slate-2"], 
 .light-mode [class*="text-slate-3"] {
-  color: #0f172a !important;
+  color: #1E293B !important;
 }
 
 .light-mode [class*="text-slate-4"], 
@@ -84,5 +84,17 @@ body {
 .light-mode [class*="placeholder-slate-500"]::placeholder,
 .light-mode [class*="placeholder-slate-400"]::placeholder {
   color: #94a3b8 !important;
+}
+
+/* Bottom Nav Override */
+.light-mode [class*="bg-[#111827]"] {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: #DDE6ED !important;
+}
+
+/* Neon Violet Accent for Light Mode */
+.light-mode [class*="text-violet-400"],
+.light-mode [class*="text-indigo-400"] {
+  color: #7c3aed !important; /* text-violet-600 */
 }
 
