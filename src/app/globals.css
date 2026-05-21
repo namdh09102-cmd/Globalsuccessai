@@ -41,8 +41,8 @@ body {
    LIGHT MODE CSS OVERRIDES (Global Toggle)
    ======================================================== */
 .light-mode body {
-  background-color: #F8FAFC !important;
-  color: #1e293b !important;
+  background-color: #F1F5F9 !important; /* slate-100 */
+  color: #0f172a !important;
 }
 
 .light-mode [class*="bg-[#0B0F19]"], 
@@ -51,7 +51,7 @@ body {
 .light-mode [class*="from-[#111625]"],
 .light-mode [class*="from-[#0A0D18]"],
 .light-mode [class*="from-[#161032]"] {
-  background-color: #F8FAFC !important;
+  background-color: #F1F5F9 !important;
   background-image: none !important;
 }
 
@@ -61,12 +61,13 @@ body {
 .light-mode [class*="to-[#0A0D18]"] {
   background-color: #FFFFFF !important;
   background-image: none !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
 }
 
 .light-mode [class*="border-slate-8"],
 .light-mode [class*="border-slate-7"],
 .light-mode [class*="border-slate-9"] {
-  border-color: #e2e8f0 !important;
+  border-color: #cbd5e1 !important; /* slate-300 */
 }
 
 .light-mode [class*="text-slate-1"], 
