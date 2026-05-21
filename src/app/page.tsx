@@ -379,7 +379,19 @@ export default function Dashboard() {
           parsed = defaultUnits;
           localStorage.setItem("gsa-curriculum", JSON.stringify(defaultUnits));
         }
-        
+        // Khóa tất cả các bài trừ Lớp 11 Unit 2
+        parsed = parsed.map((u: any) => {
+          if (u.id !== "unit-11-2") {
+            return {
+              ...u,
+              status: "locked",
+              progress: 0,
+              lessons: u.lessons.map((l: any) => ({ ...l, completed: false }))
+            };
+          }
+          return u;
+        });
+
         setUnits(parsed);
         // Chọn Unit 2 của Lớp 11 làm mặc định hiển thị ban đầu
         const u2 = parsed.find((u: any) => u.grade === "Lớp 11" && u.number === 2) 
@@ -392,10 +404,21 @@ export default function Dashboard() {
         setSelectedUnit(u2);
       }
     } else {
-      setUnits(defaultUnits);
-      const u2 = defaultUnits.find(u => u.grade === "Lớp 11" && u.number === 2) || defaultUnits[0];
+      let defaultMapped = defaultUnits.map((u: any) => {
+        if (u.id !== "unit-11-2") {
+          return {
+            ...u,
+            status: "locked",
+            progress: 0,
+            lessons: u.lessons.map((l: any) => ({ ...l, completed: false }))
+          };
+        }
+        return u;
+      });
+      setUnits(defaultMapped);
+      const u2 = defaultMapped.find(u => u.grade === "Lớp 11" && u.number === 2) || defaultMapped[0];
       setSelectedUnit(u2);
-      localStorage.setItem("gsa-curriculum", JSON.stringify(defaultUnits));
+      localStorage.setItem("gsa-curriculum", JSON.stringify(defaultMapped));
     }
   };
 
@@ -1161,6 +1184,15 @@ export default function Dashboard() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#151B2B] via-[#151B2B]/20 to-transparent" />
                       
+                      {unit.status === "locked" && (
+                        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] flex items-center justify-center z-20">
+                          <div className="flex flex-col items-center">
+                            <Lock className="w-8 h-8 text-slate-400 mb-1 opacity-80" />
+                            <span className="text-[9px] font-black text-slate-300 uppercase tracking-widest bg-black/40 px-2 py-0.5 rounded border border-slate-700/50">Sắp ra mắt</span>
+                          </div>
+                        </div>
+                      )}
+                      
                       {/* UNIT tag & Difficulty tag */}
                       <div className="absolute top-3 inset-x-3 flex items-center justify-between z-10">
                         <span className="px-2 py-0.5 rounded text-[8px] font-black bg-black/60 text-slate-200 border border-slate-700/50 uppercase tracking-widest font-mono">
@@ -1214,7 +1246,7 @@ export default function Dashboard() {
                                   document.getElementById("curriculum-section")?.scrollIntoView({ behavior: "smooth" });
                                 }, 100);
                               } else {
-                                alert("Unit này hiện tại đang khóa. Hãy hoàn thành các Unit trước nhé!");
+                                alert("Nội dung đang được ban sư phạm biên soạn. Vui lòng quay lại sau!");
                               }
                             }}
                             className={`px-3 py-1.5 rounded-xl text-[9px] font-bold transition-all ${
@@ -1223,7 +1255,9 @@ export default function Dashboard() {
                                 : "bg-[#111625] text-slate-400 hover:text-slate-200 border border-slate-800/80"
                             }`}
                           >
-                            {isSelected ? "Đang học" : "Học tiếp"}
+                            {unit.status === "locked" ? (
+                              <div className="flex items-center gap-1"><Lock className="w-3 h-3"/> Khóa</div>
+                            ) : isSelected ? "Đang học" : "Học tiếp"}
                           </button>
                         </div>
                       </div>

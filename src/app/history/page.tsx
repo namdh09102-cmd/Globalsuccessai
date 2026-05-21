@@ -129,17 +129,7 @@ export default function HistoryPage() {
       }
 
       // 2. Dựng bảng xếp hạng động
-      const otherStudents: LeaderboardUser[] = [
-        { name: "Nguyễn Mạnh Hùng", class: "11A1", xp: 2850, streak: 25, badgesCount: 8 },
-        { name: "Trần Minh Ánh", class: "11A3", xp: 2450, streak: 18, badgesCount: 6 },
-        { name: "Lê Hoàng Nam", class: "11A1", xp: 2100, streak: 14, badgesCount: 5 },
-        { name: "Phạm Thùy Chi", class: "11A2", xp: 1350, streak: 8, badgesCount: 4 },
-        { name: "Hoàng Đức Hải", class: "11A1", xp: 1080, streak: 3, badgesCount: 3 },
-        { name: "Đỗ Phương Thảo", class: "11A4", xp: 950, streak: 6, badgesCount: 3 },
-        { name: "Vũ Quốc Việt", class: "11A2", xp: 820, streak: 4, badgesCount: 2 },
-        { name: "Ngô Minh Thư", class: "11A3", xp: 750, streak: 2, badgesCount: 2 },
-        { name: "Phan Anh Tuấn", class: "11A1", xp: 480, streak: 1, badgesCount: 1 }
-      ];
+      const otherStudents: LeaderboardUser[] = [];
 
       const currentUser: LeaderboardUser = {
         name: "Khánh Tân",
@@ -159,48 +149,7 @@ export default function HistoryPage() {
     window.addEventListener("stats-updated", loadStats);
 
     // 3. Dựng Nhật ký luyện tập chuyên sâu giả lập
-    const defaultLogs: LearningLogItem[] = [
-      {
-        lessonTitle: "Unit 2: Speaking - Expressing opinion on rules",
-        type: "speaking",
-        score: 85,
-        xpEarned: 50,
-        timeAgo: "10 phút trước",
-        passed: true
-      },
-      {
-        lessonTitle: "Unit 2: Dictation - Generation gap discussions",
-        type: "dictation",
-        score: 100,
-        xpEarned: 100,
-        timeAgo: "1 giờ trước",
-        passed: true
-      },
-      {
-        lessonTitle: "Unit 2: Quiz - Generation Gap & Modal Verbs",
-        type: "quiz",
-        score: 60,
-        xpEarned: 20,
-        timeAgo: "3 giờ trước",
-        passed: false
-      },
-      {
-        lessonTitle: "Unit 1: Vocabulary - Health & Fitness",
-        type: "vocabulary",
-        score: 95,
-        xpEarned: 50,
-        timeAgo: "1 ngày trước",
-        passed: true
-      },
-      {
-        lessonTitle: "Unit 1: Grammar - Past Simple vs. Present Perfect",
-        type: "grammar",
-        score: 90,
-        xpEarned: 50,
-        timeAgo: "2 ngày trước",
-        passed: true
-      }
-    ];
+    const defaultLogs: LearningLogItem[] = [];
     setLearningLogs(defaultLogs);
 
     return () => {
@@ -246,48 +195,7 @@ export default function HistoryPage() {
       setAvgSpeakingScore(currentAvgScore);
 
       // 3. Đọc logs từ localStorage để tính toán các huy hiệu mở khóa động
-      const defaultLogs: LearningLogItem[] = [
-        {
-          lessonTitle: "Unit 2: Speaking - Expressing opinion on rules",
-          type: "speaking",
-          score: 85,
-          xpEarned: 50,
-          timeAgo: "10 phút trước",
-          passed: true
-        },
-        {
-          lessonTitle: "Unit 2: Dictation - Generation gap discussions",
-          type: "dictation",
-          score: 100,
-          xpEarned: 100,
-          timeAgo: "1 giờ trước",
-          passed: true
-        },
-        {
-          lessonTitle: "Unit 2: Quiz - Generation Gap & Modal Verbs",
-          type: "quiz",
-          score: 60,
-          xpEarned: 20,
-          timeAgo: "3 giờ trước",
-          passed: false
-        },
-        {
-          lessonTitle: "Unit 1: Vocabulary - Health & Fitness",
-          type: "vocabulary",
-          score: 95,
-          xpEarned: 50,
-          timeAgo: "1 ngày trước",
-          passed: true
-        },
-        {
-          lessonTitle: "Unit 1: Grammar - Past Simple vs. Present Perfect",
-          type: "grammar",
-          score: 90,
-          xpEarned: 50,
-          timeAgo: "2 ngày trước",
-          passed: true
-        }
-      ];
+      const defaultLogs: LearningLogItem[] = [];
 
       const storedLogs = localStorage.getItem("gsa-learning-logs");
       let currentLogs = defaultLogs;
@@ -326,17 +234,7 @@ export default function HistoryPage() {
       setUnlockedBadgesCount(finalCount);
 
       // 5. Dựng bảng xếp hạng động
-      const otherStudents: LeaderboardUser[] = [
-        { name: "Nguyễn Mạnh Hùng", class: "11A1", xp: 2850, streak: 25, badgesCount: 5 },
-        { name: "Trần Minh Ánh", class: "11A3", xp: 2450, streak: 18, badgesCount: 4 },
-        { name: "Lê Hoàng Nam", class: "11A1", xp: 2100, streak: 14, badgesCount: 3 },
-        { name: "Phạm Thùy Chi", class: "11A2", xp: 1350, streak: 8, badgesCount: 3 },
-        { name: "Hoàng Đức Hải", class: "11A1", xp: 1080, streak: 3, badgesCount: 2 },
-        { name: "Đỗ Phương Thảo", class: "11A4", xp: 950, streak: 6, badgesCount: 2 },
-        { name: "Vũ Quốc Việt", class: "11A2", xp: 820, streak: 4, badgesCount: 2 },
-        { name: "Ngô Minh Thư", class: "11A3", xp: 750, streak: 2, badgesCount: 1 },
-        { name: "Phan Anh Tuấn", class: "11A1", xp: 480, streak: 1, badgesCount: 1 }
-      ];
+      const otherStudents: LeaderboardUser[] = [];
 
       const currentUser: LeaderboardUser = {
         name: "Khánh Tân",

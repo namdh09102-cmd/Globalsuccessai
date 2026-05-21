@@ -102,7 +102,7 @@ export default function RightPanel() {
           {/* XP tally */}
           <div className="flex items-center gap-1 bg-violet-500/10 border border-violet-500/20 px-2 py-0.5 rounded-lg text-violet-400 text-[10px] font-bold">
             <Zap className="w-3 h-3 text-violet-400" />
-            <span>{(stats.xp + 680).toLocaleString()} XP</span>
+            <span>{(stats.xp).toLocaleString()} XP</span>
           </div>
         </div>
 
@@ -276,49 +276,14 @@ export default function RightPanel() {
           </div>
 
           <div className="space-y-2">
-            {/* Top 1 */}
-            <div className="flex items-center justify-between p-2 rounded-xl bg-slate-800/10 border border-slate-900/40 text-xs">
-              <div className="flex items-center gap-2">
-                <span className="text-xs">🥇</span>
-                <div className="w-6 h-6 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-slate-300 text-[9px]">HN</div>
-                <span className="text-[11px] font-semibold text-slate-200">Hoàng Nam</span>
-              </div>
-              <span className="text-[10px] font-black text-slate-400">1,450 XP</span>
-            </div>
-
-            {/* Top 2 */}
-            <div className="flex items-center justify-between p-2 rounded-xl bg-slate-800/10 border border-slate-900/40 text-xs">
-              <div className="flex items-center gap-2">
-                <span className="text-xs">🥈</span>
-                <div className="w-6 h-6 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-slate-300 text-[9px]">MT</div>
-                <span className="text-[11px] font-semibold text-slate-200">Minh Thư</span>
-              </div>
-              <span className="text-[10px] font-black text-slate-400">1,220 XP</span>
-            </div>
-
-            {/* Top 3 */}
-            <div className="flex items-center justify-between p-2 rounded-xl bg-slate-800/10 border border-slate-900/40 text-xs">
-              <div className="flex items-center gap-2">
-                <span className="text-xs">🥉</span>
-                <div className="w-6 h-6 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-slate-300 text-[9px]">KV</div>
-                <span className="text-[11px] font-semibold text-slate-200">Khánh Vy</span>
-              </div>
-              <span className="text-[10px] font-black text-slate-400">980 XP</span>
-            </div>
-
-            {/* Divider */}
-            <div className="flex justify-center py-0.5">
-              <div className="h-[15px] w-[1px] bg-slate-800 border-dashed border-l border-slate-700" />
-            </div>
-
             {/* Current user anchored */}
             <div className="flex items-center justify-between p-2 rounded-xl bg-indigo-600/10 border border-indigo-500/30 text-xs shadow-inner">
               <div className="flex items-center gap-2">
-                <span className="text-[10px] font-bold text-indigo-400 w-4 text-center">12</span>
+                <span className="text-[10px] font-bold text-indigo-400 w-4 text-center">-</span>
                 <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-indigo-500 to-violet-600 flex items-center justify-center font-bold text-white text-[9px] shadow-inner">KT</div>
                 <span className="text-[11px] font-black text-indigo-300">Khánh Tân</span>
               </div>
-              <span className="text-[10px] font-black text-indigo-400">{(stats.xp + 680).toLocaleString()} XP</span>
+              <span className="text-[10px] font-black text-indigo-400">{(stats.xp).toLocaleString()} XP</span>
             </div>
           </div>
         </div>

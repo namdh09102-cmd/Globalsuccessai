@@ -89,7 +89,7 @@ export default function ProfilePage() {
     const syncSkills = () => {
       // Đọc điểm trung bình phát âm từ gsa-pronunciation-accuracy
       const storedAccuracy = localStorage.getItem("gsa-pronunciation-accuracy");
-      let pronScore = 85;
+      let pronScore = 0;
       if (storedAccuracy) {
         const parsed = parseInt(storedAccuracy, 10);
         if (!isNaN(parsed)) pronScore = parsed;
@@ -97,10 +97,10 @@ export default function ProfilePage() {
 
       // Đọc điểm trung bình nghe chép từ logs
       const storedLogs = localStorage.getItem("gsa-learning-logs");
-      let dictScore = 90;
-      let gramScore = 75;
-      let vocabScore = 80;
-      let fluScore = 70;
+      let dictScore = 0;
+      let gramScore = 0;
+      let vocabScore = 0;
+      let fluScore = 0;
 
       if (storedLogs) {
         try {
@@ -137,11 +137,11 @@ export default function ProfilePage() {
       }
 
       setSkillScores({
-        pronunciation: Math.min(100, Math.max(30, pronScore)),
-        dictation: Math.min(100, Math.max(30, dictScore)),
-        grammar: Math.min(100, Math.max(30, gramScore)),
-        vocabulary: Math.min(100, Math.max(30, vocabScore)),
-        fluency: Math.min(100, Math.max(30, fluScore))
+        pronunciation: Math.min(100, Math.max(0, pronScore)),
+        dictation: Math.min(100, Math.max(0, dictScore)),
+        grammar: Math.min(100, Math.max(0, gramScore)),
+        vocabulary: Math.min(100, Math.max(0, vocabScore)),
+        fluency: Math.min(100, Math.max(0, fluScore))
       });
     };
     syncSkills();

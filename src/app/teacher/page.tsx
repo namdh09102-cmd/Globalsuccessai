@@ -152,19 +152,10 @@ export default function TeacherPortal() {
   const getStudentsList = (): StudentTrackerItem[] => {
     if (selectedClassId === "class-1") {
       return [
-        { name: "Khánh Tân", streak: khanhTanStats.streak, accuracy: khanhTanStats.accuracy, lastLesson: khanhTanStats.lastLesson, isCurrentUser: true },
-        { name: "Nguyễn Mạnh Hùng", streak: 25, accuracy: 88, lastLesson: "Unit 1: Speaking - Health & Fitness" },
-        { name: "Trần Minh Ánh", streak: 18, accuracy: 92, lastLesson: "Unit 1: Dictation - Family Values" },
-        { name: "Lê Hoàng Nam", streak: 2, accuracy: 64, lastLesson: "Unit 1: Quiz - Modal Verbs" },
-        { name: "Phạm Thùy Chi", streak: 8, accuracy: 72, lastLesson: "Unit 1: Speaking - Healthy Living" }
+        { name: "Khánh Tân", streak: khanhTanStats.streak, accuracy: khanhTanStats.accuracy, lastLesson: khanhTanStats.lastLesson, isCurrentUser: true }
       ];
     } else {
-      return [
-        { name: "Vũ Quốc Việt", streak: 4, accuracy: 82, lastLesson: "Unit 1: Vocabulary - My New School" },
-        { name: "Đỗ Phương Thảo", streak: 6, accuracy: 91, lastLesson: "Unit 1: Dictation - School Friends" },
-        { name: "Ngô Minh Thư", streak: 1, accuracy: 58, lastLesson: "Unit 1: Quiz - Present Simple" },
-        { name: "Phan Anh Tuấn", streak: 3, accuracy: 70, lastLesson: "Unit 1: Speaking - Introducing Myself" }
-      ];
+      return [];
     }
   };
 

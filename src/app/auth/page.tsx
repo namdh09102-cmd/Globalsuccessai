@@ -37,7 +37,16 @@ export default function AuthPage() {
       }
 
       const storedUsersStr = localStorage.getItem("gsa-users");
-      let storedUsers = storedUsersStr ? JSON.parse(storedUsersStr) : [];
+      let storedUsers = storedUsersStr ? JSON.parse(storedUsersStr) : [
+        { id: "ADMIN-000", name: "Super Admin", email: "admin@globalsuccess.ai", password: "admin123", role: "admin", tier: "pro", joinDate: "2026-01-01" },
+        { id: "TEACHER-001", name: "Đinh Hoàng Nam", email: "teacher@globalsuccess.ai", password: "teacher123", role: "teacher", tier: "pro", joinDate: "2026-05-01" },
+        { id: "STUDENT-001", name: "Khánh Tân", email: "student@globalsuccess.ai", password: "student123", role: "student", tier: "free", joinDate: "2026-05-20" }
+      ];
+
+      // Save initial users back if it was empty to ensure they persist
+      if (!storedUsersStr) {
+        localStorage.setItem("gsa-users", JSON.stringify(storedUsers));
+      }
 
       if (isLogin) {
         // ĐĂNG NHẬP
