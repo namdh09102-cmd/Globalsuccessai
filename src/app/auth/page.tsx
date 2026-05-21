@@ -192,7 +192,7 @@ export default function AuthPage() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Mật khẩu (Gợi ý Admin: admin123)" 
+              placeholder="Mật khẩu" 
               className="w-full bg-[#151B2B] border border-slate-800 text-slate-200 text-sm rounded-xl pl-12 pr-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all font-mono"
             />
           </div>
