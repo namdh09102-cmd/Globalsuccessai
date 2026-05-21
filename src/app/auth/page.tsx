@@ -243,30 +243,7 @@ export default function AuthPage() {
           </p>
         </div>
 
-        {/* Quick Admin Access Button */}
-        {isLogin && (
-          <div className="mt-4 pt-4 border-t border-slate-800/40">
-            <button
-              type="button"
-              onClick={() => {
-                setEmail("admin@globalsuccess.ai");
-                setPassword("admin123");
-                setError("");
-                setIsLoading(true);
-                setTimeout(() => {
-                  const adminUser = { id: "ADMIN-000", name: "Super Admin", email: "admin@globalsuccess.ai", role: "admin", tier: "pro" };
-                  localStorage.setItem("gsa-current-user", JSON.stringify(adminUser));
-                  window.dispatchEvent(new Event("auth-changed"));
-                  router.push("/admin");
-                }, 600);
-              }}
-              className="w-full py-2.5 rounded-xl bg-[#1e150a] hover:bg-[#2b1f0f] border border-amber-500/30 hover:border-amber-400/60 text-amber-400 hover:text-amber-300 text-xs font-black uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-amber-950/20 active:scale-[0.98]"
-            >
-              <ShieldCheck className="w-4 h-4 text-amber-400 animate-pulse" />
-              Đăng nhập nhanh Admin ⚡
-            </button>
-          </div>
-        )}
+
 
       </motion.div>
     </div>
