@@ -34,7 +34,7 @@ export default function Sidebar() {
   const [streak, setStreak] = useState(0);
   const [isPro, setIsPro] = useState(false);
   const [fullName, setFullName] = useState("Khánh Tân");
-  const [isLightMode, setIsLightMode] = useState(false);
+  const [isLightMode, setIsLightMode] = useState(true);
 
   const [userRole, setUserRole] = useState<string>("student");
   const [userEmail, setUserEmail] = useState<string>("");
@@ -107,7 +107,7 @@ export default function Sidebar() {
 
     // Đọc Theme
     const loadTheme = () => {
-      const isLight = localStorage.getItem("gsa-theme") === "light";
+      const isLight = localStorage.getItem("gsa-theme") !== "dark";
       setIsLightMode(isLight);
       if (isLight) {
         document.documentElement.classList.add("light-mode");

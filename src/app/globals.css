@@ -80,3 +80,8 @@ body {
   color: #475569 !important;
 }
 
+.light-mode [class*="placeholder-slate-500"]::placeholder,
+.light-mode [class*="placeholder-slate-400"]::placeholder {
+  color: #94a3b8 !important;
+}
+
