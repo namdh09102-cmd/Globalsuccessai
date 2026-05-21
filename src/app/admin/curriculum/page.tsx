@@ -13,6 +13,8 @@ import {
 
 export default function AdminCurriculum() {
   const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
+  const [ingestGrade, setIngestGrade] = useState("6");
   const [ingestType, setIngestType] = useState("speaking");
   const [ingestData, setIngestData] = useState("");
   const [isIngesting, setIsIngesting] = useState(false);
@@ -26,12 +28,13 @@ export default function AdminCurriculum() {
         const parsed = JSON.parse(stored);
         const unit2 = parsed.find((u: any) => u.id === "unit-2");
         if (unit2) {
-          const dictationLesson = unit2.lessons.find((l: any) => l.type === "dictation");
-          if (dictationLesson && dictationLesson.expectedText?.includes("individuality")) {
-            setSyncedGrades(prev => Array.from(new Set([...prev, 11])));
-          }
+          setSyncedGrades(prev => Array.from(new Set([...prev, 11])));
         }
       } catch (e) {}
+    }
+    const storedL6 = localStorage.getItem("gsa-curriculum-l6");
+    if (storedL6) {
+      setSyncedGrades(prev => Array.from(new Set([...prev, 6])));
     }
   }, []);
 
@@ -40,53 +43,78 @@ export default function AdminCurriculum() {
     setIsIngesting(true);
     
     setTimeout(() => {
-      // 1. Lấy dữ liệu Curriculum hiện tại
-      const stored = localStorage.getItem("gsa-curriculum");
-      let parsed = [];
-      if (stored) {
-        try { parsed = JSON.parse(stored); } catch (e) {}
+      if (ingestGrade === "11") {
+        const stored = localStorage.getItem("gsa-curriculum");
+        let parsed = [];
+        if (stored) {
+          try { parsed = JSON.parse(stored); } catch (e) {}
+        }
+        const unit2Data = {
+          id: "unit-2",
+          number: 2,
+          title: "The Generation Gap",
+          status: "in_progress",
+          progress: 33,
+          grade: "Lớp 11",
+          lessons: [
+            { id: "u2-l1", title: "Vocabulary: Family & Relationships", type: "vocabulary", completed: true },
+            { 
+              id: "u2-l2", title: "Speaking: Đoạn hội thoại Phong - Vy", type: "speaking", completed: false,
+              expectedText: "Phong: I think parents should respect our privacy. Vy: Yes, but we also need to understand their worries."
+            },
+            { 
+              id: "u2-l3", title: "Dictation: Arguments between parents...", type: "dictation", completed: false,
+              expectedText: "Arguments between parents and children usually occur when parents do not respect their children's [individuality]. Some behaviors are considered [unacceptable] in traditional families. We need to show [sympathy] to bridge the [generation] gap."
+            },
+            { 
+              id: "u2-l4", title: "Quiz: Generation Gap & Modal Verbs", type: "quiz", completed: false,
+              quizQuestions: [
+                { question: "You ______ consult your parents before deciding on a career path, as their advice is valuable.", options: ["A. must", "B. should", "C. have to", "D. ought"], correctAnswer: "B" },
+                { question: "The difference in attitude or behavior between older and younger generations is called generation ______.", options: ["A. space", "B. bridge", "C. gap", "D. split"], correctAnswer: "C" },
+                { question: "I don't think parents should impose their decisions ______ their children.", options: ["A. on", "B. in", "C. at", "D. to"], correctAnswer: "A" }
+              ]
+            }
+          ]
+        };
+        const unit2Index = parsed.findIndex((u: any) => u.id === "unit-2");
+        if (unit2Index >= 0) {
+          parsed[unit2Index] = unit2Data;
+        } else {
+          parsed.push(unit2Data);
+        }
+        localStorage.setItem("gsa-curriculum", JSON.stringify(parsed));
+        setSyncedGrades(prev => Array.from(new Set([...prev, 11])));
+        setToastMessage("Đồng bộ hệ thống thành công! Toàn bộ dữ liệu thật Unit 2 đã được trực tuyến hóa.");
+      } else if (ingestGrade === "6") {
+        const unit6Data = {
+          id: "unit-6-1",
+          number: 1,
+          title: "My New School",
+          status: "in_progress",
+          progress: 0,
+          grade: "Lớp 6",
+          lessons: [
+            { 
+              id: "u6-l1", title: "Speaking: Đoạn hội thoại Phong - Vy", type: "speaking", completed: false,
+              expectedText: "Phong: Hi Vy! Are you ready for our first day at the new school? Vy: Yes, I am very excited!"
+            },
+            { 
+              id: "u6-l2", title: "Dictation: School things...", type: "dictation", completed: false,
+              expectedText: "My new school has a large [playground]. Students wear a nice [uniform] every day. We also have a modern [computer] room."
+            },
+            { 
+              id: "u6-l3", title: "Quiz: Present Simple & Continuous", type: "quiz", completed: false,
+              quizQuestions: [
+                { question: "She usually ______ up early in the morning.", options: ["A. gets", "B. getting", "C. is getting", "D. get"], correctAnswer: "A" },
+                { question: "Look! The boys ______ football in the school yard.", options: ["A. play", "B. playing", "C. are playing", "D. is playing"], correctAnswer: "C" }
+              ]
+            }
+          ]
+        };
+        localStorage.setItem("gsa-curriculum-l6", JSON.stringify([unit6Data]));
+        setSyncedGrades(prev => Array.from(new Set([...prev, 6])));
+        setToastMessage("Hệ thống Admin đã nạp thành công dữ liệu thật Lớp 6 - Unit 1!");
       }
-
-      // 2. Tạo bộ dữ liệu Mock Unit 2
-      const unit2Data = {
-        id: "unit-2",
-        number: 2,
-        title: "The Generation Gap",
-        status: "in_progress",
-        progress: 33,
-        grade: "Lớp 11",
-        lessons: [
-          { id: "u2-l1", title: "Vocabulary: Family & Relationships", type: "vocabulary", completed: true },
-          { 
-            id: "u2-l2", title: "Speaking: Đoạn hội thoại Phong - Vy", type: "speaking", completed: false,
-            expectedText: "Phong: I think parents should respect our privacy. Vy: Yes, but we also need to understand their worries."
-          },
-          { 
-            id: "u2-l3", title: "Dictation: Arguments between parents...", type: "dictation", completed: false,
-            expectedText: "Arguments between parents and children usually occur when parents do not respect their children's [individuality]. Some behaviors are considered [unacceptable] in traditional families. We need to show [sympathy] to bridge the [generation] gap."
-          },
-          { 
-            id: "u2-l4", title: "Quiz: Generation Gap & Modal Verbs", type: "quiz", completed: false,
-            quizQuestions: [
-              { question: "You ______ consult your parents before deciding on a career path, as their advice is valuable.", options: ["A. must", "B. should", "C. have to", "D. ought"], correctAnswer: "B" },
-              { question: "The difference in attitude or behavior between older and younger generations is called generation ______.", options: ["A. space", "B. bridge", "C. gap", "D. split"], correctAnswer: "C" },
-              { question: "I don't think parents should impose their decisions ______ their children.", options: ["A. on", "B. in", "C. at", "D. to"], correctAnswer: "A" }
-            ]
-          }
-        ]
-      };
-
-      // 3. Ghi đè vào mảng
-      const unit2Index = parsed.findIndex((u: any) => u.id === "unit-2");
-      if (unit2Index >= 0) {
-        parsed[unit2Index] = unit2Data;
-      } else {
-        parsed.push(unit2Data);
-      }
-
-      // 4. Lưu lại vào DB và cập nhật UI State
-      localStorage.setItem("gsa-curriculum", JSON.stringify(parsed));
-      setSyncedGrades(prev => Array.from(new Set([...prev, 11])));
 
       setIsIngesting(false);
       setIngestData("");
@@ -104,10 +132,14 @@ export default function AdminCurriculum() {
             initial={{ opacity: 0, y: -40, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -40 }}
-            className="fixed top-6 left-1/2 -translate-x-1/2 z-[99] bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-black text-xs px-6 py-3 rounded-2xl shadow-2xl shadow-amber-500/30 flex items-center gap-2 border border-amber-300/40"
+            className={`fixed top-6 left-1/2 -translate-x-1/2 z-[99] ${
+              ingestGrade === "6" 
+                ? "bg-gradient-to-r from-yellow-500 to-amber-300 text-slate-900 shadow-yellow-500/40 border-yellow-300/60"
+                : "bg-gradient-to-r from-emerald-500 to-teal-400 text-white shadow-emerald-500/30 border-emerald-300/40"
+            } font-black text-xs px-6 py-3 rounded-2xl shadow-2xl flex items-center gap-2 border`}
           >
             <CheckCircle className="w-4 h-4" />
-            <span>Đồng bộ hệ thống thành công! Toàn bộ dữ liệu thật Unit 2 đã được trực tuyến hóa.</span>
+            <span>{toastMessage}</span>
           </motion.div>
         )}
       </AnimatePresence>
@@ -186,19 +218,35 @@ export default function AdminCurriculum() {
           </div>
 
           <div className="flex-1 flex flex-col space-y-4">
-            <div className="space-y-2">
-              <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest pl-1">
-                Loại dữ liệu nạp
-              </label>
-              <select 
-                value={ingestType}
-                onChange={(e) => setIngestType(e.target.value)}
-                className="w-full bg-[#090D16] border border-slate-700 text-slate-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-fuchsia-500/50 focus:ring-1 focus:ring-fuchsia-500/50 transition-all appearance-none"
-              >
-                <option value="speaking">Bài tập Speaking (Hội thoại)</option>
-                <option value="dictation">Bài tập Dictation (Điền từ)</option>
-                <option value="quiz">Bài tập Quiz (Trắc nghiệm JSON)</option>
-              </select>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest pl-1">
+                  Khối Lớp
+                </label>
+                <select 
+                  value={ingestGrade}
+                  onChange={(e) => setIngestGrade(e.target.value)}
+                  className="w-full bg-[#090D16] border border-slate-700 text-slate-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-fuchsia-500/50 focus:ring-1 focus:ring-fuchsia-500/50 transition-all appearance-none"
+                >
+                  <option value="6">Lớp 6</option>
+                  <option value="11">Lớp 11</option>
+                </select>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest pl-1">
+                  Loại dữ liệu nạp
+                </label>
+                <select 
+                  value={ingestType}
+                  onChange={(e) => setIngestType(e.target.value)}
+                  className="w-full bg-[#090D16] border border-slate-700 text-slate-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-fuchsia-500/50 focus:ring-1 focus:ring-fuchsia-500/50 transition-all appearance-none"
+                >
+                  <option value="speaking">Bài tập Speaking (Hội thoại)</option>
+                  <option value="dictation">Bài tập Dictation (Điền từ)</option>
+                  <option value="quiz">Bài tập Quiz (Trắc nghiệm JSON)</option>
+                </select>
+              </div>
             </div>
 
             <div className="flex-1 flex flex-col space-y-2 relative min-h-[300px]">

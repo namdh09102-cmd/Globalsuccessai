@@ -392,6 +392,20 @@ export default function Dashboard() {
           return u;
         });
 
+        // Nạp dữ liệu thật Lớp 6
+        const storedL6 = localStorage.getItem("gsa-curriculum-l6");
+        if (storedL6) {
+          try {
+            const parsedL6 = JSON.parse(storedL6);
+            if (Array.isArray(parsedL6) && parsedL6.length > 0) {
+              const u6 = parsedL6[0];
+              const idx = parsed.findIndex((u: any) => u.id === u6.id || (u.grade === "Lớp 6" && u.number === 1));
+              if (idx >= 0) parsed[idx] = u6;
+              else parsed.push(u6);
+            }
+          } catch(e) {}
+        }
+
         setUnits(parsed);
         // Chọn Unit 2 của Lớp 11 làm mặc định hiển thị ban đầu
         const u2 = parsed.find((u: any) => u.grade === "Lớp 11" && u.number === 2) 
@@ -415,6 +429,21 @@ export default function Dashboard() {
         }
         return u;
       });
+      
+      // Nạp dữ liệu thật Lớp 6
+      const storedL6 = localStorage.getItem("gsa-curriculum-l6");
+      if (storedL6) {
+        try {
+          const parsedL6 = JSON.parse(storedL6);
+          if (Array.isArray(parsedL6) && parsedL6.length > 0) {
+            const u6 = parsedL6[0];
+            const idx = defaultMapped.findIndex((u: any) => u.id === u6.id || (u.grade === "Lớp 6" && u.number === 1));
+            if (idx >= 0) defaultMapped[idx] = u6;
+            else defaultMapped.push(u6);
+          }
+        } catch(e) {}
+      }
+
       setUnits(defaultMapped);
       const u2 = defaultMapped.find(u => u.grade === "Lớp 11" && u.number === 2) || defaultMapped[0];
       setSelectedUnit(u2);
