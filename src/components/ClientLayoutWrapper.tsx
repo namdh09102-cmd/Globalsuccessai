@@ -74,22 +74,22 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
 
       // ROUTE GUARD LOGIC
       if (!user) {
-        // Khách (Chưa đăng nhập) -> Không đá về Auth ngay, cho dùng thử 5 phút
+        // Khách (Chưa đăng nhập) -> Không đá về Auth ngay, cho dùng thử 2 phút
         if (!isAuthRoute) {
           const guestStartTime = localStorage.getItem("gsa-guest-start");
           if (!guestStartTime) {
             localStorage.setItem("gsa-guest-start", Date.now().toString());
-            // Đặt timer 5 phút (300,000 ms)
+            // Đặt timer 2 phút (120,000 ms)
             setTimeout(() => {
               const u = localStorage.getItem("gsa-current-user");
               if (!u) {
                 alert("Hết thời gian trải nghiệm. Vui lòng đăng nhập để tiếp tục học!");
                 window.location.href = "/auth";
               }
-            }, 300000);
+            }, 120000);
           } else {
             const elapsed = Date.now() - parseInt(guestStartTime);
-            if (elapsed >= 300000) {
+            if (elapsed >= 120000) {
               router.push("/auth");
             } else {
               setTimeout(() => {
@@ -98,7 +98,7 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
                   alert("Hết thời gian trải nghiệm. Vui lòng đăng nhập để tiếp tục học!");
                   window.location.href = "/auth";
                 }
-              }, 300000 - elapsed);
+              }, 120000 - elapsed);
             }
           }
         }
