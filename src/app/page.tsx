@@ -322,6 +322,7 @@ export default function Dashboard() {
 
   // Trạng thái stats để đồng bộ thời gian thực với RightPanel và Welcome Banner
   const [stats, setStats] = useState({ xp: 0, diamonds: 0, streak: 0 });
+  const [fullName, setFullName] = useState("Học viên");
 
   const loadStats = () => {
     if (typeof window !== "undefined") {
@@ -344,6 +345,31 @@ export default function Dashboard() {
     }
   };
 
+  const loadProfile = () => {
+    if (typeof window !== "undefined") {
+      const currentUserStr = localStorage.getItem("gsa-current-user");
+      if (currentUserStr) {
+        try {
+          const parsed = JSON.parse(currentUserStr);
+          if (parsed.name) {
+            setFullName(parsed.name);
+            return;
+          }
+        } catch (e) {}
+      } else {
+        setFullName("Học viên");
+      }
+
+      const storedProfile = localStorage.getItem("gsa-user-profile");
+      if (storedProfile) {
+        try {
+          const parsed = JSON.parse(storedProfile);
+          if (parsed.fullName) setFullName(parsed.fullName);
+        } catch (e) {}
+      }
+    }
+  };
+
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const timerIntervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -353,14 +379,19 @@ export default function Dashboard() {
     loadCurriculum();
     loadStats();
     loadUserTier();
+    loadProfile();
     if (typeof window !== "undefined") {
       window.addEventListener("stats-updated", loadStats);
       window.addEventListener("tier-updated", loadUserTier);
+      window.addEventListener("profile-updated", loadProfile);
+      window.addEventListener("auth-changed", loadProfile);
     }
     return () => {
       if (typeof window !== "undefined") {
         window.removeEventListener("stats-updated", loadStats);
         window.removeEventListener("tier-updated", loadUserTier);
+        window.removeEventListener("profile-updated", loadProfile);
+        window.removeEventListener("auth-changed", loadProfile);
       }
     };
   }, []);
@@ -989,7 +1020,7 @@ export default function Dashboard() {
                 <div className="space-y-1">
                   <span className="text-xs font-bold text-indigo-400 tracking-wide block">Chào mừng trở lại,</span>
                   <h1 className="text-3xl md:text-4xl font-black text-white tracking-tight flex items-center gap-2">
-                    Khánh Tân! <span className="animate-bounce inline-block">👋</span>
+                    {fullName}! <span className="animate-bounce inline-block">👋</span>
                   </h1>
                   <p className="text-xs text-slate-350 max-w-sm mt-2 leading-relaxed">
                     Bạn đã sẵn sàng để tiếp tục hành trình chinh phục tiếng Anh hôm nay chưa?

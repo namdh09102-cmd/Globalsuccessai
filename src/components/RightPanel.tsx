@@ -23,7 +23,7 @@ interface StudentStats {
 
 export default function RightPanel() {
   const [stats, setStats] = useState<StudentStats>({ xp: 0, diamonds: 0, streak: 0 });
-  const [fullName, setFullName] = useState("Khánh Tân");
+  const [fullName, setFullName] = useState("Học viên");
 
   const loadStats = () => {
     if (typeof window !== "undefined") {
@@ -57,6 +57,8 @@ export default function RightPanel() {
             return;
           }
         } catch (e) {}
+      } else {
+        setFullName("Học viên");
       }
 
       const storedProfile = localStorage.getItem("gsa-user-profile");
@@ -281,7 +283,7 @@ export default function RightPanel() {
               <div className="flex items-center gap-2">
                 <span className="text-[10px] font-bold text-indigo-400 w-4 text-center">-</span>
                 <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-indigo-500 to-violet-600 flex items-center justify-center font-bold text-white text-[9px] shadow-inner">KT</div>
-                <span className="text-[11px] font-black text-indigo-300">Khánh Tân</span>
+                <span className="text-[11px] font-black text-indigo-300">{fullName}</span>
               </div>
               <span className="text-[10px] font-black text-indigo-400">{(stats.xp).toLocaleString()} XP</span>
             </div>

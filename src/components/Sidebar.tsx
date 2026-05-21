@@ -33,7 +33,7 @@ export default function Sidebar() {
   const [xp, setXp] = useState(0);
   const [streak, setStreak] = useState(0);
   const [isPro, setIsPro] = useState(false);
-  const [fullName, setFullName] = useState("Khánh Tân");
+  const [fullName, setFullName] = useState("Học viên");
   const [isLightMode, setIsLightMode] = useState(false);
 
   const [userRole, setUserRole] = useState<string>("student");
@@ -89,6 +89,8 @@ export default function Sidebar() {
             return;
           }
         } catch (e) {}
+      } else {
+        setFullName("Học viên");
       }
 
       const storedProfile = localStorage.getItem("gsa-user-profile");
