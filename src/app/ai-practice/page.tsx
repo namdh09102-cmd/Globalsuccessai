@@ -140,7 +140,7 @@ export default function AIPracticePage() {
       // Thưởng điểm offline nếu điểm cao (>=75)
       if (res.success && res.score >= 75) {
         const storedStats = localStorage.getItem("gsa-student-stats");
-        let stats = { xp: 560, diamonds: 15, streak: 5 };
+        let stats = { xp: 0, diamonds: 0, streak: 0 };
         if (storedStats) {
           try {
             stats = JSON.parse(storedStats);

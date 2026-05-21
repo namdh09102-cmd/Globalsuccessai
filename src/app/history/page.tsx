@@ -109,7 +109,7 @@ const badgeVariants = {
 };
 
 export default function HistoryPage() {
-  const [stats, setStats] = useState<StudentStats>({ xp: 560, diamonds: 15, streak: 5 });
+  const [stats, setStats] = useState<StudentStats>({ xp: 0, diamonds: 0, streak: 0 });
   const [leaderboard, setLeaderboard] = useState<LeaderboardUser[]>([]);
   const [learningLogs, setLearningLogs] = useState<LearningLogItem[]>([]);
 
@@ -118,7 +118,7 @@ export default function HistoryPage() {
     // 1. Đọc stats từ localStorage
     const loadStats = () => {
       const storedStats = localStorage.getItem("gsa-student-stats");
-      let currentStats = { xp: 560, diamonds: 15, streak: 5 };
+      let currentStats = { xp: 0, diamonds: 0, streak: 0 };
       if (storedStats) {
         try {
           currentStats = JSON.parse(storedStats);
@@ -166,7 +166,7 @@ export default function HistoryPage() {
     // 1. Đọc stats từ localStorage
     const loadStats = () => {
       const storedStats = localStorage.getItem("gsa-student-stats");
-      let currentStats = { xp: 560, diamonds: 15, streak: 5 };
+      let currentStats = { xp: 0, diamonds: 0, streak: 0 };
       if (storedStats) {
         try {
           currentStats = JSON.parse(storedStats);

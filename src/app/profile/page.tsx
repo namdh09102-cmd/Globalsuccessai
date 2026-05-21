@@ -41,18 +41,18 @@ export default function ProfilePage() {
 
   // 2. Quản lý chỉ số stats học sinh
   const [stats, setStats] = useState<StudentStats>({
-    xp: 1200,
-    diamonds: 15,
-    streak: 5
+    xp: 0,
+    diamonds: 0,
+    streak: 0
   });
 
   // 3. Quản lý điểm số kỹ năng phân tích bằng AI
   const [skillScores, setSkillScores] = useState({
-    pronunciation: 85,
-    dictation: 90,
-    grammar: 75,
-    vocabulary: 80,
-    fluency: 70
+    pronunciation: 0,
+    dictation: 0,
+    grammar: 0,
+    vocabulary: 0,
+    fluency: 0
   });
 
   // Trạng thái lưu thông báo thành công
@@ -67,9 +67,9 @@ export default function ProfilePage() {
         try {
           const parsed = JSON.parse(storedStats);
           setStats({
-            xp: parsed.xp ?? 1200,
-            diamonds: parsed.diamonds ?? 15,
-            streak: parsed.streak ?? 5
+            xp: parsed.xp ?? 0,
+            diamonds: parsed.diamonds ?? 0,
+            streak: parsed.streak ?? 0
           });
         } catch (e) {}
       }

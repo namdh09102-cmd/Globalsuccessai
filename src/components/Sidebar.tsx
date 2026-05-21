@@ -30,8 +30,8 @@ export interface NavigationItem {
 export default function Sidebar() {
   const pathname = usePathname() || "/";
   const router = useRouter();
-  const [xp, setXp] = useState(560);
-  const [streak, setStreak] = useState(5);
+  const [xp, setXp] = useState(0);
+  const [streak, setStreak] = useState(0);
   const [isPro, setIsPro] = useState(false);
   const [fullName, setFullName] = useState("Khánh Tân");
   const [isLightMode, setIsLightMode] = useState(false);
@@ -54,8 +54,8 @@ export default function Sidebar() {
       if (stored) {
         try {
           const parsed = JSON.parse(stored);
-          setXp(parsed.xp || 560);
-          setStreak(parsed.streak || 5);
+          setXp(parsed.xp || 0);
+          setStreak(parsed.streak || 0);
         } catch (e) {}
       }
     };

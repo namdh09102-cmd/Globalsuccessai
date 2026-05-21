@@ -321,7 +321,7 @@ export default function Dashboard() {
   const [recordingSeconds, setRecordingSeconds] = useState(0);
 
   // Trạng thái stats để đồng bộ thời gian thực với RightPanel và Welcome Banner
-  const [stats, setStats] = useState({ xp: 560, diamonds: 15, streak: 5 });
+  const [stats, setStats] = useState({ xp: 0, diamonds: 0, streak: 0 });
 
   const loadStats = () => {
     if (typeof window !== "undefined") {
@@ -330,15 +330,15 @@ export default function Dashboard() {
         try {
           const parsed = JSON.parse(stored);
           setStats({
-            xp: parsed.xp || 560,
-            diamonds: parsed.diamonds || 15,
-            streak: parsed.streak || 5
+            xp: parsed.xp || 0,
+            diamonds: parsed.diamonds || 0,
+            streak: parsed.streak || 0
           });
         } catch (e) {
           console.error(e);
         }
       } else {
-        const defaultStats = { xp: 560, diamonds: 15, streak: 5 };
+        const defaultStats = { xp: 0, diamonds: 0, streak: 0 };
         localStorage.setItem("gsa-student-stats", JSON.stringify(defaultStats));
       }
     }
@@ -503,7 +503,7 @@ export default function Dashboard() {
         // Tự động kích hoạt thưởng +50 XP và +2 Kim cương nếu điểm >= 75
         if (res.score >= 75) {
           const storedStats = localStorage.getItem("gsa-student-stats");
-          let stats = { xp: 1200, diamonds: 15, streak: 5 };
+          let stats = { xp: 0, diamonds: 0, streak: 0 };
           if (storedStats) {
             try {
               stats = JSON.parse(storedStats);
@@ -573,7 +573,7 @@ export default function Dashboard() {
 
     // 2. Cộng điểm thưởng offline (100 XP + 5 Kim cương)
     const storedStats = localStorage.getItem("gsa-student-stats");
-    let stats = { xp: 1200, diamonds: 15, streak: 5 };
+    let stats = { xp: 0, diamonds: 0, streak: 0 };
     if (storedStats) {
       try {
         stats = JSON.parse(storedStats);

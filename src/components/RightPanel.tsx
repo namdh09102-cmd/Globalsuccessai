@@ -22,7 +22,7 @@ interface StudentStats {
 }
 
 export default function RightPanel() {
-  const [stats, setStats] = useState<StudentStats>({ xp: 560, diamonds: 15, streak: 5 });
+  const [stats, setStats] = useState<StudentStats>({ xp: 0, diamonds: 0, streak: 0 });
   const [fullName, setFullName] = useState("Khánh Tân");
 
   const loadStats = () => {
@@ -32,15 +32,15 @@ export default function RightPanel() {
         try {
           const parsed = JSON.parse(stored);
           setStats({
-            xp: parsed.xp || 560,
-            diamonds: parsed.diamonds || 15,
-            streak: parsed.streak || 5
+            xp: parsed.xp || 0,
+            diamonds: parsed.diamonds || 0,
+            streak: parsed.streak || 0
           });
         } catch (e) {
           console.error(e);
         }
       } else {
-        const defaultStats = { xp: 560, diamonds: 15, streak: 5 };
+        const defaultStats = { xp: 0, diamonds: 0, streak: 0 };
         localStorage.setItem("gsa-student-stats", JSON.stringify(defaultStats));
       }
     }

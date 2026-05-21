@@ -48,7 +48,7 @@ interface UnitData {
 }
 
 export default function DashboardPage() {
-  const [stats, setStats] = useState<StudentStats>({ xp: 1200, diamonds: 15, streak: 5 });
+  const [stats, setStats] = useState<StudentStats>({ xp: 0, diamonds: 0, streak: 0 });
   const [nextLesson, setNextLesson] = useState<{ unitTitle: string; lessonTitle: string; type: string } | null>(null);
 
   useEffect(() => {
@@ -132,10 +132,10 @@ export default function DashboardPage() {
   // Góc quay tương ứng: Listening (0 độ - Top), Speaking (90 độ - Right), Reading (180 độ - Bottom), Writing (270 độ - Left)
   // Bán kính r = 100. Tâm biểu đồ ở (150, 150)
   const skills = [
-    { name: "Listening (Nghe)", value: 82, angle: 0 },
-    { name: "Speaking (Nói)", value: 85, angle: 90 },
-    { name: "Reading (Đọc)", value: 78, angle: 180 },
-    { name: "Writing (Viết)", value: 70, angle: 270 },
+    { name: "Listening (Nghe)", value: 0, angle: 0 },
+    { name: "Speaking (Nói)", value: 0, angle: 90 },
+    { name: "Reading (Đọc)", value: 0, angle: 180 },
+    { name: "Writing (Viết)", value: 0, angle: 270 },
   ];
 
   const getCoordinates = (value: number, angle: number) => {
@@ -324,11 +324,11 @@ export default function DashboardPage() {
           <div className="grid grid-cols-2 gap-3 pt-4 border-t border-slate-800/40">
             <div className="p-3 rounded-2xl bg-slate-800/10 border border-slate-800/30 flex items-center justify-between">
               <span className="text-[10px] font-semibold text-slate-400">Kỹ năng mạnh nhất:</span>
-              <span className="text-xs font-black text-indigo-400">SPEAKING (85%)</span>
+              <span className="text-xs font-black text-indigo-400">CHƯA CÓ DỮ LIỆU</span>
             </div>
             <div className="p-3 rounded-2xl bg-slate-800/10 border border-slate-800/30 flex items-center justify-between">
               <span className="text-[10px] font-semibold text-slate-400">Cần cải thiện:</span>
-              <span className="text-xs font-black text-pink-400">WRITING (70%)</span>
+              <span className="text-xs font-black text-pink-400">CHƯA CÓ DỮ LIỆU</span>
             </div>
           </div>
         </div>
@@ -369,14 +369,14 @@ export default function DashboardPage() {
                   <span>Tổng tích lũy: <b className="text-violet-400">{stats.xp} XP</b></span>
                 </div>
                 <div className="text-[10px] text-slate-400 mt-0.5">
-                  Bạn đang thuộc Top 10% học sinh xuất sắc nhất!
+                  Hãy bắt đầu bài học đầu tiên ngay hôm nay!
                 </div>
               </div>
             </div>
 
             <div className="p-3.5 rounded-2xl bg-amber-500/5 border border-amber-500/10 text-center">
               <p className="text-[10px] font-medium text-amber-400 leading-relaxed">
-                Học liên tiếp 2 ngày nữa để nhận Huy hiệu <span className="font-bold underline">"Chiến Binh Chuyên Cần"</span> phát sáng!
+                Học liên tiếp 5 ngày để nhận Huy hiệu <span className="font-bold underline">"Chiến Binh Chuyên Cần"</span> phát sáng!
               </p>
             </div>
           </div>
@@ -440,7 +440,7 @@ export default function DashboardPage() {
           </div>
           <div>
             <div className="text-[10px] text-slate-400 font-semibold uppercase">Danh hiệu đạt được</div>
-            <div className="text-base font-black text-slate-100">4 / 12 Huy hiệu</div>
+            <div className="text-base font-black text-slate-100">0 / 12 Huy hiệu</div>
           </div>
         </div>
 
@@ -450,7 +450,7 @@ export default function DashboardPage() {
           </div>
           <div>
             <div className="text-[10px] text-slate-400 font-semibold uppercase">Xếp hạng tuần</div>
-            <div className="text-base font-black text-slate-100">Hạng #4 lớp 11A1</div>
+            <div className="text-base font-black text-slate-100">Chưa xếp hạng</div>
           </div>
         </div>
 
@@ -460,7 +460,7 @@ export default function DashboardPage() {
           </div>
           <div>
             <div className="text-[10px] text-slate-400 font-semibold uppercase">Tỷ lệ chính xác</div>
-            <div className="text-base font-black text-slate-100">86.4% Bài Luyện</div>
+            <div className="text-base font-black text-slate-100">0% Bài Luyện</div>
           </div>
         </div>
       </div>
