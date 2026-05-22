@@ -397,89 +397,78 @@ export default function Dashboard() {
   }, []);
 
   const loadCurriculum = () => {
+    let baseUnits = [...defaultUnits];
+    
+    // Đọc từ localStorage chung
     const stored = localStorage.getItem("gsa-curriculum");
     if (stored) {
       try {
-        let parsed = JSON.parse(stored);
-        
-        // SEEDING SCRIPT (Bulk Ingestion Check)
-        // If parsed is old single-grade or missing Lớp 10/12, seed with full new defaultUnits!
-        const hasGrade10 = parsed.some((u: any) => u.grade === "Lớp 10");
-        const hasGrade12 = parsed.some((u: any) => u.grade === "Lớp 12");
-        if (!hasGrade10 || !hasGrade12) {
-          parsed = defaultUnits;
-          localStorage.setItem("gsa-curriculum", JSON.stringify(defaultUnits));
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          baseUnits = parsed;
         }
-        // Khóa tất cả các bài trừ Lớp 11 Unit 2
-        parsed = parsed.map((u: any) => {
-          if (u.id !== "unit-11-2") {
-            return {
-              ...u,
-              status: "locked",
-              progress: 0,
-              lessons: u.lessons.map((l: any) => ({ ...l, completed: false }))
-            };
-          }
-          return u;
-        });
-
-        // Nạp dữ liệu thật Lớp 6
-        const storedL6 = localStorage.getItem("gsa-curriculum-l6");
-        if (storedL6) {
-          try {
-            const parsedL6 = JSON.parse(storedL6);
-            if (Array.isArray(parsedL6) && parsedL6.length > 0) {
-              const u6 = parsedL6[0];
-              const idx = parsed.findIndex((u: any) => u.id === u6.id || (u.grade === "Lớp 6" && u.number === 1));
-              if (idx >= 0) parsed[idx] = u6;
-              else parsed.push(u6);
-            }
-          } catch(e) {}
-        }
-
-        setUnits(parsed);
-        // Chọn Unit 2 của Lớp 11 làm mặc định hiển thị ban đầu
-        const u2 = parsed.find((u: any) => u.grade === "Lớp 11" && u.number === 2) 
-                   || parsed.find((u: any) => u.grade === "Lớp 11") 
-                   || parsed[0];
-        setSelectedUnit(u2);
-      } catch (e) {
-        setUnits(defaultUnits);
-        const u2 = defaultUnits.find(u => u.grade === "Lớp 11" && u.number === 2) || defaultUnits[0];
-        setSelectedUnit(u2);
-      }
-    } else {
-      let defaultMapped = defaultUnits.map((u: any) => {
-        if (u.id !== "unit-11-2") {
-          return {
-            ...u,
-            status: "locked",
-            progress: 0,
-            lessons: u.lessons.map((l: any) => ({ ...l, completed: false }))
-          };
-        }
-        return u;
-      });
-      
-      // Nạp dữ liệu thật Lớp 6
-      const storedL6 = localStorage.getItem("gsa-curriculum-l6");
-      if (storedL6) {
-        try {
-          const parsedL6 = JSON.parse(storedL6);
-          if (Array.isArray(parsedL6) && parsedL6.length > 0) {
-            const u6 = parsedL6[0];
-            const idx = defaultMapped.findIndex((u: any) => u.id === u6.id || (u.grade === "Lớp 6" && u.number === 1));
-            if (idx >= 0) defaultMapped[idx] = u6;
-            else defaultMapped.push(u6);
-          }
-        } catch(e) {}
-      }
-
-      setUnits(defaultMapped);
-      const u2 = defaultMapped.find(u => u.grade === "Lớp 11" && u.number === 2) || defaultMapped[0];
-      setSelectedUnit(u2);
-      localStorage.setItem("gsa-curriculum", JSON.stringify(defaultMapped));
+      } catch (e) {}
     }
+
+    // Khóa tất cả các bài mặc định (trừ Unit 11-2)
+    baseUnits = baseUnits.map((u: any) => {
+      if (u.id !== "unit-11-2") {
+        return {
+          ...u,
+          status: "locked",
+          progress: 0,
+          lessons: u.lessons.map((l: any) => ({ ...l, completed: false }))
+        };
+      }
+      return u;
+    });
+
+    // Gom dữ liệu từ 12 khối lớp
+    const allUnits = [...baseUnits];
+    
+    for (let grade = 1; grade <= 12; grade++) {
+      const gradeStr = `Lớp ${grade}`;
+      const storedData = localStorage.getItem(`gsa-curriculum-l${grade}`);
+      let hasRealData = false;
+      
+      if (storedData) {
+        try {
+          const parsedData = JSON.parse(storedData);
+          if (Array.isArray(parsedData) && parsedData.length > 0) {
+            hasRealData = true;
+            // Gộp tất cả các Unit của lớp này
+            for (const uNew of parsedData) {
+              const idx = allUnits.findIndex((u: any) => u.id === uNew.id || (u.grade === gradeStr && u.number === uNew.number));
+              if (idx >= 0) allUnits[idx] = uNew;
+              else allUnits.push(uNew);
+            }
+          }
+        } catch (e) {}
+      }
+
+      // Nếu không có dữ liệu thật và cũng chưa có Unit mặc định nào cho khối này, thêm một Unit "Sắp ra mắt"
+      if (!hasRealData && !allUnits.some(u => u.grade === gradeStr)) {
+        allUnits.push({
+          id: `unit-${grade}-coming-soon`,
+          number: 1,
+          title: "Chương trình mới đang cập nhật",
+          grade: gradeStr,
+          status: "locked",
+          progress: 0,
+          lessons: [
+            { id: `u${grade}-coming-l1`, title: "Sắp ra mắt", type: "vocabulary", completed: false },
+            { id: `u${grade}-coming-l2`, title: "Sắp ra mắt", type: "speaking", completed: false },
+            { id: `u${grade}-coming-l3`, title: "Sắp ra mắt", type: "dictation", completed: false }
+          ]
+        });
+      }
+    }
+
+    setUnits(allUnits);
+    const u2 = allUnits.find((u: any) => u.grade === "Lớp 11" && u.number === 2) 
+               || allUnits.find((u: any) => u.grade === "Lớp 11") 
+               || allUnits[0];
+    setSelectedUnit(u2);
   };
 
   // Đồng bộ đếm giờ ghi âm
@@ -980,26 +969,29 @@ export default function Dashboard() {
             </div>
             
             <div className="flex flex-wrap items-center gap-3">
-              <div className="flex gap-1 p-1 rounded-2xl bg-[#111625] border border-slate-850 w-fit">
-                {["Lớp 10", "Lớp 11", "Lớp 12"].map((grade) => (
-                  <button
-                    key={grade}
-                    onClick={() => {
-                      setActiveGrade(grade);
-                      const unit2 = units.find(u => u.grade === grade && u.number === 2);
-                      if (unit2) {
-                        setSelectedUnit(unit2);
-                      }
-                    }}
-                    className={`px-4 py-1.5 rounded-xl text-xs font-semibold tracking-wide transition-all ${
-                      activeGrade === grade
-                        ? "bg-purple-600 text-white shadow-lg shadow-purple-600/20"
-                        : "text-slate-500/60 hover:text-slate-300"
-                    }`}
-                  >
-                    {grade}
-                  </button>
-                ))}
+              <div className="flex overflow-x-auto hide-scrollbar space-x-2 p-1 rounded-2xl bg-[#111625] border border-slate-850 w-full md:w-fit max-w-[calc(100vw-3rem)]">
+                {[...Array(12)].map((_, i) => {
+                  const grade = `Lớp ${i + 1}`;
+                  return (
+                    <button
+                      key={grade}
+                      onClick={() => {
+                        setActiveGrade(grade);
+                        const unit1 = units.find(u => u.grade === grade && u.number === 1) || units.find(u => u.grade === grade);
+                        if (unit1) {
+                          setSelectedUnit(unit1);
+                        }
+                      }}
+                      className={`shrink-0 px-4 py-1.5 rounded-xl text-xs font-semibold tracking-wide transition-all ${
+                        activeGrade === grade
+                          ? "bg-violet-600 text-white shadow-lg shadow-violet-600/20"
+                          : "text-slate-500/60 hover:text-slate-300"
+                      }`}
+                    >
+                      {grade}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
