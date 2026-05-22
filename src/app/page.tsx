@@ -794,6 +794,8 @@ export default function Dashboard() {
       setActiveRoom("visual");
     } else if (lesson.type === "exam") {
       setActiveRoom("exam");
+    } else if (lesson.type === "worksheet") {
+      setActiveRoom("worksheet");
     }
   };
 
