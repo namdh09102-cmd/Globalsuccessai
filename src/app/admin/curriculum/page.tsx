@@ -57,7 +57,27 @@ export default function AdminCurriculum() {
           lessonDataToMerge = { expectedText: ingestData.trim() };
         } else {
           // Validate JSON cho Speaking, Quiz
-          lessonDataToMerge = JSON.parse(ingestData);
+          const parsed = JSON.parse(ingestData);
+          
+          if (ingestType === "quiz") {
+            if (Array.isArray(parsed)) {
+              lessonDataToMerge = { quizQuestions: parsed };
+            } else {
+              lessonDataToMerge = parsed.quizQuestions ? parsed : { quizQuestions: [parsed] };
+            }
+          } else if (ingestType === "speaking") {
+            if (Array.isArray(parsed)) {
+              lessonDataToMerge = parsed[0]?.expectedText ? parsed[0] : { expectedText: JSON.stringify(parsed) };
+            } else if (typeof parsed === "object" && parsed !== null) {
+              lessonDataToMerge = parsed.expectedText 
+                ? parsed 
+                : { expectedText: parsed.text || parsed.content || Object.values(parsed)[0] || JSON.stringify(parsed) };
+            } else {
+              lessonDataToMerge = { expectedText: String(parsed) };
+            }
+          } else {
+            lessonDataToMerge = parsed;
+          }
         }
         
         const storageKey = `gsa-curriculum-l${ingestGrade}`;
