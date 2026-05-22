@@ -8,7 +8,8 @@ import {
   Edit3, 
   Plus,
   CheckCircle,
-  AlertCircle
+  AlertCircle,
+  Trash2
 } from "lucide-react";
 
 export default function AdminCurriculum() {
@@ -40,6 +41,18 @@ export default function AdminCurriculum() {
     }
     setSyncedGrades(Array.from(new Set(loadedGrades)));
   }, []);
+
+  const handleResetGrade = (grade: number, e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (window.confirm(`XÁC NHẬN XÓA: Bạn có chắc chắn muốn xóa toàn bộ dữ liệu của Lớp ${grade}?`)) {
+      localStorage.removeItem(`gsa-curriculum-l${grade}`);
+      setSyncedGrades(prev => prev.filter(g => g !== grade));
+      setToastMessage(`Đã xóa sạch dữ liệu Lớp ${grade}!`);
+      setToastType("success");
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 4000);
+    }
+  };
 
   const handleBulkIngestion = () => {
     if (!ingestData.trim()) return;
@@ -222,9 +235,15 @@ export default function AdminCurriculum() {
                     <button className="p-1.5 rounded bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/20 text-indigo-400 transition-all shadow-[0_2px_0_rgba(99,102,241,0.2)] active:translate-y-[2px] active:shadow-none" title="Thêm bài học">
                       <Plus className="w-3.5 h-3.5" />
                     </button>
-                    <button className="p-1.5 rounded bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 transition-all shadow-[0_2px_0_rgba(51,65,85,0.4)] active:translate-y-[2px] active:shadow-none" title="Chỉnh sửa nhanh">
-                      <Edit3 className="w-3.5 h-3.5" />
-                    </button>
+                    {hasData && (
+                      <button 
+                        onClick={(e) => handleResetGrade(grade, e)}
+                        className="p-1.5 rounded bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/20 text-rose-400 transition-all shadow-[0_2px_0_rgba(244,63,94,0.2)] active:translate-y-[2px] active:shadow-none" 
+                        title="Xóa dữ liệu lớp này"
+                      >
+                        <Trash2 className="w-3.5 h-3.5" />
+                      </button>
+                    )}
                   </div>
                 </div>
               );
