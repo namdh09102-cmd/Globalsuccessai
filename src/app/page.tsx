@@ -50,6 +50,7 @@ interface Lesson {
   completed: boolean;
   expectedText?: string;
   quizQuestions?: QuizQuestion[];
+  questions?: any[];
   imageUrl?: string;
   mainAudio?: string;
   audioTracks?: string[];
@@ -797,14 +798,18 @@ export default function Dashboard() {
     setActiveLesson(lesson);
     
     // Mở phòng tương ứng
-    if (lesson.type === "speaking") {
+    if (lesson.type === "speaking" && lesson.expectedText) {
       setActiveRoom("speaking");
       setEvaluationResult(null);
       setAudioUrl(null);
       setAudioBase64(null);
-    } else if (lesson.type === "dictation") {
+    } else if (lesson.type === "speaking" && !lesson.expectedText) {
+      setActiveRoom("quiz");
+    } else if (lesson.type === "dictation" && lesson.expectedText) {
       setActiveRoom("dictation");
-    } else if (lesson.type === "quiz") {
+    } else if (lesson.type === "dictation" && !lesson.expectedText) {
+      setActiveRoom("quiz");
+    } else if (lesson.type === "quiz" || lesson.type === "vocabulary" || lesson.type === "grammar" || lesson.type === "reading") {
       setActiveRoom("quiz");
     } else if (lesson.type === "visual") {
       setActiveRoom("visual");
@@ -884,7 +889,7 @@ export default function Dashboard() {
       {activeRoom === "quiz" && activeLesson && (
         <QuizRoom
           lessonTitle={activeLesson.title}
-          questions={activeLesson.quizQuestions}
+          questions={activeLesson.quizQuestions || activeLesson.questions}
           onComplete={(score) => handleLessonCompletion(activeLesson.id, score)}
           onBack={() => setActiveRoom("dashboard")}
         />
