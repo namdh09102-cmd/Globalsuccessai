@@ -12,30 +12,26 @@ import {
 } from "lucide-react";
 
 export default function AdminCurriculum() {
-  const [showToast, setShowToast] = useState(false);
-  const [toastMessage, setToastMessage] = useState("");
-  const [ingestGrade, setIngestGrade] = useState("6");
-  const [ingestType, setIngestType] = useState("speaking");
-  const [ingestData, setIngestData] = useState("");
-  const [isIngesting, setIsIngesting] = useState(false);
-  const [syncedGrades, setSyncedGrades] = useState<number[]>([6]);
+  const [toastType, setToastType] = useState<"success" | "error">("success");
 
   // Kiểm tra trạng thái nạp dữ liệu ban đầu
   React.useEffect(() => {
-    const stored = localStorage.getItem("gsa-curriculum");
-    if (stored) {
+    let loadedGrades = [];
+    for (let i = 1; i <= 12; i++) {
+      const stored = localStorage.getItem(`gsa-curriculum-l${i}`);
+      if (stored) loadedGrades.push(i);
+    }
+    // Check old Lớp 11
+    const storedOld = localStorage.getItem("gsa-curriculum");
+    if (storedOld) {
       try {
-        const parsed = JSON.parse(stored);
-        const unit2 = parsed.find((u: any) => u.id === "unit-2");
-        if (unit2) {
-          setSyncedGrades(prev => Array.from(new Set([...prev, 11])));
+        const parsed = JSON.parse(storedOld);
+        if (parsed.some((u: any) => u.id === "unit-2")) {
+          loadedGrades.push(11);
         }
       } catch (e) {}
     }
-    const storedL6 = localStorage.getItem("gsa-curriculum-l6");
-    if (storedL6) {
-      setSyncedGrades(prev => Array.from(new Set([...prev, 6])));
-    }
+    setSyncedGrades(Array.from(new Set(loadedGrades)));
   }, []);
 
   const handleBulkIngestion = () => {
@@ -43,77 +39,49 @@ export default function AdminCurriculum() {
     setIsIngesting(true);
     
     setTimeout(() => {
-      if (ingestGrade === "11") {
-        const stored = localStorage.getItem("gsa-curriculum");
-        let parsed = [];
-        if (stored) {
-          try { parsed = JSON.parse(stored); } catch (e) {}
+      try {
+        // Validate JSON
+        const parsedData = JSON.parse(ingestData);
+        
+        const storageKey = `gsa-curriculum-l${ingestGrade}`;
+        let existingData: any[] = [];
+        
+        try {
+          const stored = localStorage.getItem(storageKey);
+          if (stored) existingData = JSON.parse(stored);
+        } catch(e) {}
+
+        if (!Array.isArray(existingData) || existingData.length === 0) {
+          existingData = [{
+            id: `unit-${ingestGrade}-1`,
+            number: 1,
+            title: `Chương trình học Lớp ${ingestGrade}`,
+            status: "in_progress",
+            progress: 0,
+            grade: `Lớp ${ingestGrade}`,
+            lessons: []
+          }];
         }
-        const unit2Data = {
-          id: "unit-2",
-          number: 2,
-          title: "The Generation Gap",
-          status: "in_progress",
-          progress: 33,
-          grade: "Lớp 11",
-          lessons: [
-            { id: "u2-l1", title: "Vocabulary: Family & Relationships", type: "vocabulary", completed: true },
-            { 
-              id: "u2-l2", title: "Speaking: Đoạn hội thoại Phong - Vy", type: "speaking", completed: false,
-              expectedText: "Phong: I think parents should respect our privacy. Vy: Yes, but we also need to understand their worries."
-            },
-            { 
-              id: "u2-l3", title: "Dictation: Arguments between parents...", type: "dictation", completed: false,
-              expectedText: "Arguments between parents and children usually occur when parents do not respect their children's [individuality]. Some behaviors are considered [unacceptable] in traditional families. We need to show [sympathy] to bridge the [generation] gap."
-            },
-            { 
-              id: "u2-l4", title: "Quiz: Generation Gap & Modal Verbs", type: "quiz", completed: false,
-              quizQuestions: [
-                { question: "You ______ consult your parents before deciding on a career path, as their advice is valuable.", options: ["A. must", "B. should", "C. have to", "D. ought"], correctAnswer: "B" },
-                { question: "The difference in attitude or behavior between older and younger generations is called generation ______.", options: ["A. space", "B. bridge", "C. gap", "D. split"], correctAnswer: "C" },
-                { question: "I don't think parents should impose their decisions ______ their children.", options: ["A. on", "B. in", "C. at", "D. to"], correctAnswer: "A" }
-              ]
-            }
-          ]
+
+        // Tạo bài học mới từ dữ liệu JSON dán vào
+        const newLesson = {
+          id: `u${ingestGrade}-l${Date.now()}`,
+          title: `Bài tập ${ingestType.toUpperCase()}`,
+          type: ingestType,
+          completed: false,
+          ...parsedData
         };
-        const unit2Index = parsed.findIndex((u: any) => u.id === "unit-2");
-        if (unit2Index >= 0) {
-          parsed[unit2Index] = unit2Data;
-        } else {
-          parsed.push(unit2Data);
-        }
-        localStorage.setItem("gsa-curriculum", JSON.stringify(parsed));
-        setSyncedGrades(prev => Array.from(new Set([...prev, 11])));
-        setToastMessage("Đồng bộ hệ thống thành công! Toàn bộ dữ liệu thật Unit 2 đã được trực tuyến hóa.");
-      } else if (ingestGrade === "6") {
-        const unit6Data = {
-          id: "unit-6-1",
-          number: 1,
-          title: "My New School",
-          status: "in_progress",
-          progress: 0,
-          grade: "Lớp 6",
-          lessons: [
-            { 
-              id: "u6-l1", title: "Speaking: Đoạn hội thoại Phong - Vy", type: "speaking", completed: false,
-              expectedText: "Phong: Hi Vy! Are you ready for our first day at the new school? Vy: Yes, I am very excited!"
-            },
-            { 
-              id: "u6-l2", title: "Dictation: School things...", type: "dictation", completed: false,
-              expectedText: "My new school has a large [playground]. Students wear a nice [uniform] every day. We also have a modern [computer] room."
-            },
-            { 
-              id: "u6-l3", title: "Quiz: Present Simple & Continuous", type: "quiz", completed: false,
-              quizQuestions: [
-                { question: "She usually ______ up early in the morning.", options: ["A. gets", "B. getting", "C. is getting", "D. get"], correctAnswer: "A" },
-                { question: "Look! The boys ______ football in the school yard.", options: ["A. play", "B. playing", "C. are playing", "D. is playing"], correctAnswer: "C" }
-              ]
-            }
-          ]
-        };
-        localStorage.setItem("gsa-curriculum-l6", JSON.stringify([unit6Data]));
-        setSyncedGrades(prev => Array.from(new Set([...prev, 6])));
-        setToastMessage("Hệ thống Admin đã nạp thành công dữ liệu thật Lớp 6 - Unit 1!");
+
+        existingData[0].lessons.push(newLesson);
+
+        localStorage.setItem(storageKey, JSON.stringify(existingData));
+        
+        setSyncedGrades(prev => Array.from(new Set([...prev, parseInt(ingestGrade)])));
+        setToastMessage(`Đã nạp thành công dữ liệu thật Lớp ${ingestGrade}!`);
+        setToastType("success");
+      } catch (e) {
+        setToastMessage("Lỗi định dạng dữ liệu JSON!");
+        setToastType("error");
       }
 
       setIsIngesting(false);
@@ -133,12 +101,12 @@ export default function AdminCurriculum() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -40 }}
             className={`fixed top-6 left-1/2 -translate-x-1/2 z-[99] ${
-              ingestGrade === "6" 
-                ? "bg-gradient-to-r from-yellow-500 to-amber-300 text-slate-900 shadow-yellow-500/40 border-yellow-300/60"
+              toastType === "error"
+                ? "bg-gradient-to-r from-red-600 to-rose-500 text-white shadow-red-500/40 border-red-400/60"
                 : "bg-gradient-to-r from-emerald-500 to-teal-400 text-white shadow-emerald-500/30 border-emerald-300/40"
             } font-black text-xs px-6 py-3 rounded-2xl shadow-2xl flex items-center gap-2 border`}
           >
-            <CheckCircle className="w-4 h-4" />
+            {toastType === "error" ? <AlertCircle className="w-4 h-4" /> : <CheckCircle className="w-4 h-4" />}
             <span>{toastMessage}</span>
           </motion.div>
         )}
