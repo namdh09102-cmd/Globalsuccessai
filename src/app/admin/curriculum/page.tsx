@@ -74,9 +74,11 @@ export default function AdminCurriculum() {
       setCurriculumData(prev => {
         const newData = { ...prev };
         const gradeData = [...(newData[`l${grade}`] || [])];
-        if (gradeData[0] && gradeData[0].lessons) {
-          gradeData[0].lessons = gradeData[0].lessons.filter((l: any) => l.id !== lessonId);
-        }
+        gradeData.forEach(unit => {
+          if (unit.lessons) {
+            unit.lessons = unit.lessons.filter((l: any) => l.id !== lessonId);
+          }
+        });
         newData[`l${grade}`] = gradeData;
         localStorage.setItem(`gsa-curriculum-l${grade}`, JSON.stringify(gradeData));
         return newData;
@@ -340,9 +342,9 @@ export default function AdminCurriculum() {
                   </div>
                   
                   {/* Expanded Lessons List */}
-                  {isSelected && hasData && curriculumData[`l${grade}`]?.[0]?.lessons && (
+                  {isSelected && hasData && curriculumData[`l${grade}`] && (
                     <div className="mt-1 ml-4 pl-4 border-l-2 border-slate-800/60 space-y-2 mb-2">
-                      {curriculumData[`l${grade}`][0].lessons.map((lesson: any) => (
+                      {curriculumData[`l${grade}`].flatMap((unit: any) => unit.lessons || []).map((lesson: any) => (
                         <div key={lesson.id} className="flex items-center justify-between p-2.5 rounded-xl bg-[#090D16]/80 border border-slate-800/40 group/lesson transition-all hover:border-slate-700/50">
                           <div className="flex flex-col min-w-0 pr-2">
                             <span className="text-[11px] font-bold text-slate-300 truncate">{lesson.title}</span>
@@ -357,7 +359,7 @@ export default function AdminCurriculum() {
                           </button>
                         </div>
                       ))}
-                      {curriculumData[`l${grade}`][0].lessons.length === 0 && (
+                      {curriculumData[`l${grade}`].flatMap((u: any) => u.lessons || []).length === 0 && (
                         <div className="text-[10px] text-slate-500 italic p-2">Chưa có bài học nào.</div>
                       )}
                     </div>
