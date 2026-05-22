@@ -82,7 +82,7 @@ export default function AIPracticePage() {
       audioChunksRef.current = [];
 
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const mediaRecorder = new MediaRecorder(stream, { mimeType: "audio/webm" });
+      const mediaRecorder = new MediaRecorder(stream);
       mediaRecorderRef.current = mediaRecorder;
 
       mediaRecorder.ondataavailable = (event) => {
@@ -92,7 +92,7 @@ export default function AIPracticePage() {
       };
 
       mediaRecorder.onstop = () => {
-        const audioBlob = new Blob(audioChunksRef.current, { type: "audio/webm" });
+        const audioBlob = new Blob(audioChunksRef.current, { type: mediaRecorder.mimeType || "audio/mp4" });
         setAudioUrl(URL.createObjectURL(audioBlob));
 
         const reader = new FileReader();
@@ -116,7 +116,9 @@ export default function AIPracticePage() {
   // Dừng ghi âm
   const stopRecording = () => {
     if (mediaRecorderRef.current && isRecording) {
-      mediaRecorderRef.current.stop();
+      try {
+        mediaRecorderRef.current.stop();
+      } catch (e) {}
       setIsRecording(false);
     }
   };
