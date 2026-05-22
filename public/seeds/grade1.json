@@ -41,6 +41,13 @@
             "explanation": "Từ vựng mở rộng Unit 1: bike"
           }
         ]
+      },
+      {
+        "id": "l1_u1_dictation",
+        "title": "Dictation - Unit 1: In the school playground",
+        "type": "dictation",
+        "audioUrl": "/audio/l1/u1_dictation.mp3",
+        "expectedText": "Hello. I have a [ball] and a [bike]."
       }
     ]
   },
@@ -86,6 +93,13 @@
             "explanation": "Từ vựng mở rộng Unit 2: cat"
           }
         ]
+      },
+      {
+        "id": "l1_u2_dictation",
+        "title": "Dictation - Unit 2: In the dining room",
+        "type": "dictation",
+        "audioUrl": "/audio/l1/u2_dictation.mp3",
+        "expectedText": "Hello. I have a [car] and a [cat]."
       }
     ]
   },
@@ -131,6 +145,13 @@
             "explanation": "Từ vựng mở rộng Unit 3: book3"
           }
         ]
+      },
+      {
+        "id": "l1_u3_dictation",
+        "title": "Dictation - Unit 3",
+        "type": "dictation",
+        "audioUrl": "/audio/l1/u3_dictation.mp3",
+        "expectedText": "Hello. I have a [apple] and a [book]."
       }
     ]
   },
@@ -176,6 +197,13 @@
             "explanation": "Từ vựng mở rộng Unit 4: duck"
           }
         ]
+      },
+      {
+        "id": "l1_u4_dictation",
+        "title": "Dictation - Unit 4: In the bedroom",
+        "type": "dictation",
+        "audioUrl": "/audio/l1/u4_dictation.mp3",
+        "expectedText": "Hello. I have a [dog] and a [duck]."
       }
     ]
   },
@@ -221,6 +249,13 @@
             "explanation": "Từ vựng mở rộng Unit 5: food"
           }
         ]
+      },
+      {
+        "id": "l1_u5_dictation",
+        "title": "Dictation - Unit 5",
+        "type": "dictation",
+        "audioUrl": "/audio/l1/u5_dictation.mp3",
+        "expectedText": "Hello. I have a [few] and a [food]."
       }
     ]
   },
@@ -266,6 +301,13 @@
             "explanation": "Từ vựng mở rộng Unit 6: few"
           }
         ]
+      },
+      {
+        "id": "l1_u6_dictation",
+        "title": "Dictation - Unit 6: In the classroom",
+        "type": "dictation",
+        "audioUrl": "/audio/l1/u6_dictation.mp3",
+        "expectedText": "Hello. I have a [red] and a [few]."
       }
     ]
   },
@@ -311,6 +353,13 @@
             "explanation": "Từ vựng mở rộng Unit 7: gate"
           }
         ]
+      },
+      {
+        "id": "l1_u7_dictation",
+        "title": "Dictation - Unit 7: In the garden",
+        "type": "dictation",
+        "audioUrl": "/audio/l1/u7_dictation.mp3",
+        "expectedText": "Hello. I have a [garden] and a [gate]."
       }
     ]
   },
@@ -356,6 +405,13 @@
             "explanation": "Từ vựng mở rộng Unit 8: command"
           }
         ]
+      },
+      {
+        "id": "l1_u8_dictation",
+        "title": "Dictation - Unit 8",
+        "type": "dictation",
+        "audioUrl": "/audio/l1/u8_dictation.mp3",
+        "expectedText": "Hello. I have a [hand] and a [command]."
       }
     ]
   },
@@ -401,6 +457,13 @@
             "explanation": "Từ vựng mở rộng Unit 9: group"
           }
         ]
+      },
+      {
+        "id": "l1_u9_dictation",
+        "title": "Dictation - Unit 9: In the shop",
+        "type": "dictation",
+        "audioUrl": "/audio/l1/u9_dictation.mp3",
+        "expectedText": "Hello. I have a [few] and a [group]."
       }
     ]
   },
@@ -446,6 +509,13 @@
             "explanation": "Từ vựng mở rộng Unit 10: mouse"
           }
         ]
+      },
+      {
+        "id": "l1_u10_dictation",
+        "title": "Dictation - Unit 10: At the zoo",
+        "type": "dictation",
+        "audioUrl": "/audio/l1/u10_dictation.mp3",
+        "expectedText": "Hello. I have a [monkey] and a [mouse]."
       }
     ]
   },
@@ -491,6 +561,13 @@
             "explanation": "Từ vựng mở rộng Unit 11: bus"
           }
         ]
+      },
+      {
+        "id": "l1_u11_dictation",
+        "title": "Dictation - Unit 11: At the bus stop",
+        "type": "dictation",
+        "audioUrl": "/audio/l1/u11_dictation.mp3",
+        "expectedText": "Hello. I have a [few] and a [bus]."
       }
     ]
   },
@@ -536,6 +613,13 @@
             "explanation": "Từ vựng mở rộng Unit 12: and"
           }
         ]
+      },
+      {
+        "id": "l1_u12_dictation",
+        "title": "Dictation - Unit 12: At the lake",
+        "type": "dictation",
+        "audioUrl": "/audio/l1/u12_dictation.mp3",
+        "expectedText": "Hello. I have a [few] and a [and]."
       }
     ]
   },
@@ -581,6 +665,13 @@
             "explanation": "Từ vựng mở rộng Unit 13: better"
           }
         ]
+      },
+      {
+        "id": "l1_u13_dictation",
+        "title": "Dictation - Unit 13: In the school canteen",
+        "type": "dictation",
+        "audioUrl": "/audio/l1/u13_dictation.mp3",
+        "expectedText": "Hello. I have a [few] and a [better]."
       }
     ]
   },
@@ -626,6 +717,13 @@
             "explanation": "Từ vựng mở rộng Unit 14: teddy"
           }
         ]
+      },
+      {
+        "id": "l1_u14_dictation",
+        "title": "Dictation - Unit 14",
+        "type": "dictation",
+        "audioUrl": "/audio/l1/u14_dictation.mp3",
+        "expectedText": "Hello. I have a [tiger] and a [teddy]."
       }
     ]
   },
@@ -671,6 +769,13 @@
             "explanation": "Từ vựng mở rộng Unit 15: face"
           }
         ]
+      },
+      {
+        "id": "l1_u15_dictation",
+        "title": "Dictation - Unit 15",
+        "type": "dictation",
+        "audioUrl": "/audio/l1/u15_dictation.mp3",
+        "expectedText": "Hello. I have a [foot] and a [face]."
       }
     ]
   },
@@ -716,6 +821,13 @@
             "explanation": "Từ vựng mở rộng Unit 16: word"
           }
         ]
+      },
+      {
+        "id": "l1_u16_dictation",
+        "title": "Dictation - Unit 16",
+        "type": "dictation",
+        "audioUrl": "/audio/l1/u16_dictation.mp3",
+        "expectedText": "Hello. I have a [few] and a [word]."
       }
     ]
   }
