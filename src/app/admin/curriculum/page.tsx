@@ -21,13 +21,20 @@ export default function AdminCurriculum() {
   const [ingestData, setIngestData] = useState("");
   const [isIngesting, setIsIngesting] = useState(false);
   const [syncedGrades, setSyncedGrades] = useState<number[]>([]);
+  const [curriculumData, setCurriculumData] = useState<Record<string, any>>({});
 
   // Kiểm tra trạng thái nạp dữ liệu ban đầu
   React.useEffect(() => {
     let loadedGrades = [];
+    const allData: Record<string, any> = {};
     for (let i = 1; i <= 12; i++) {
       const stored = localStorage.getItem(`gsa-curriculum-l${i}`);
-      if (stored) loadedGrades.push(i);
+      if (stored) {
+        loadedGrades.push(i);
+        try {
+          allData[`l${i}`] = JSON.parse(stored);
+        } catch (e) {}
+      }
     }
     // Check old Lớp 11
     const storedOld = localStorage.getItem("gsa-curriculum");
@@ -36,10 +43,12 @@ export default function AdminCurriculum() {
         const parsed = JSON.parse(storedOld);
         if (parsed.some((u: any) => u.id === "unit-2")) {
           loadedGrades.push(11);
+          allData["l11"] = parsed;
         }
       } catch (e) {}
     }
     setSyncedGrades(Array.from(new Set(loadedGrades)));
+    setCurriculumData(allData);
   }, []);
 
   const handleResetGrade = (grade: number, e: React.MouseEvent) => {
@@ -47,7 +56,32 @@ export default function AdminCurriculum() {
     if (window.confirm(`XÁC NHẬN XÓA: Bạn có chắc chắn muốn xóa toàn bộ dữ liệu của Lớp ${grade}?`)) {
       localStorage.removeItem(`gsa-curriculum-l${grade}`);
       setSyncedGrades(prev => prev.filter(g => g !== grade));
+      setCurriculumData(prev => {
+        const newData = { ...prev };
+        delete newData[`l${grade}`];
+        return newData;
+      });
       setToastMessage(`Đã xóa sạch dữ liệu Lớp ${grade}!`);
+      setToastType("success");
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 4000);
+    }
+  };
+
+  const handleDeleteLesson = (grade: number, lessonId: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (window.confirm("Xác nhận xóa bài học này khỏi giáo trình?")) {
+      setCurriculumData(prev => {
+        const newData = { ...prev };
+        const gradeData = [...(newData[`l${grade}`] || [])];
+        if (gradeData[0] && gradeData[0].lessons) {
+          gradeData[0].lessons = gradeData[0].lessons.filter((l: any) => l.id !== lessonId);
+        }
+        newData[`l${grade}`] = gradeData;
+        localStorage.setItem(`gsa-curriculum-l${grade}`, JSON.stringify(gradeData));
+        return newData;
+      });
+      setToastMessage("Đã xóa bài học!");
       setToastType("success");
       setShowToast(true);
       setTimeout(() => setShowToast(false), 4000);
@@ -140,6 +174,11 @@ export default function AdminCurriculum() {
         localStorage.setItem(storageKey, JSON.stringify(existingData));
         
         setSyncedGrades(prev => Array.from(new Set([...prev, parseInt(ingestGrade)])));
+        setCurriculumData(prev => ({
+          ...prev,
+          [`l${ingestGrade}`]: existingData
+        }));
+        
         setToastMessage(`Đã nạp thành công dữ liệu thật Lớp ${ingestGrade}!`);
         setToastType("success");
       } catch (e: any) {
@@ -211,53 +250,78 @@ export default function AdminCurriculum() {
               const isSelected = ingestGrade === grade.toString();
               
               return (
-                <div 
-                  key={grade} 
-                  onClick={() => setIngestGrade(grade.toString())}
-                  className={`flex items-center justify-between p-3 rounded-xl border transition-all group cursor-pointer ${
-                    isSelected 
-                      ? "border-fuchsia-500/50 bg-fuchsia-500/10 shadow-[0_0_15px_rgba(217,70,239,0.15)]" 
-                      : "border-slate-800/50 bg-[#090D16]/50 hover:bg-[#090D16] hover:border-slate-700/50"
-                  }`}
-                >
-                  <div className="flex items-center gap-3">
-                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-black text-xs transition-colors ${
-                      hasData 
-                        ? 'bg-emerald-500/10 text-emerald-400' 
-                        : isSelected
-                          ? 'bg-fuchsia-500/20 text-fuchsia-400'
-                          : 'bg-slate-800 text-slate-500'
-                    }`}>
-                      {grade}
+                <div key={grade} className="flex flex-col gap-1">
+                  <div 
+                    onClick={() => setIngestGrade(grade.toString())}
+                    className={`flex items-center justify-between p-3 rounded-xl border transition-all group cursor-pointer ${
+                      isSelected 
+                        ? "border-fuchsia-500/50 bg-fuchsia-500/10 shadow-[0_0_15px_rgba(217,70,239,0.15)]" 
+                        : "border-slate-800/50 bg-[#090D16]/50 hover:bg-[#090D16] hover:border-slate-700/50"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-black text-xs transition-colors ${
+                        hasData 
+                          ? 'bg-emerald-500/10 text-emerald-400' 
+                          : isSelected
+                            ? 'bg-fuchsia-500/20 text-fuchsia-400'
+                            : 'bg-slate-800 text-slate-500'
+                      }`}>
+                        {grade}
+                      </div>
+                      <div>
+                        <h3 className="text-xs font-bold text-slate-200">Khối Lớp {grade}</h3>
+                        {hasData ? (
+                          <span className="inline-block mt-0.5 text-[8px] font-black uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20">
+                            Đã nạp Data thật
+                          </span>
+                        ) : (
+                          <span className="inline-block mt-0.5 text-[8px] font-black uppercase tracking-wider text-slate-500 bg-slate-800 px-1.5 py-0.5 rounded border border-slate-700">
+                            Bản thô / Chờ duyệt
+                          </span>
+                        )}
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-xs font-bold text-slate-200">Khối Lớp {grade}</h3>
-                      {hasData ? (
-                        <span className="inline-block mt-0.5 text-[8px] font-black uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20">
-                          Đã nạp Data thật
-                        </span>
-                      ) : (
-                        <span className="inline-block mt-0.5 text-[8px] font-black uppercase tracking-wider text-slate-500 bg-slate-800 px-1.5 py-0.5 rounded border border-slate-700">
-                          Bản thô / Chờ duyệt
-                        </span>
+                    
+                    <div className="flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <button className="p-1.5 rounded bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/20 text-indigo-400 transition-all shadow-[0_2px_0_rgba(99,102,241,0.2)] active:translate-y-[2px] active:shadow-none" title="Thêm bài học">
+                        <Plus className="w-3.5 h-3.5" />
+                      </button>
+                      {hasData && (
+                        <button 
+                          onClick={(e) => handleResetGrade(grade, e)}
+                          className="p-1.5 rounded bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/20 text-rose-400 transition-all shadow-[0_2px_0_rgba(244,63,94,0.2)] active:translate-y-[2px] active:shadow-none" 
+                          title="Xóa toàn bộ dữ liệu lớp này"
+                        >
+                          <Trash2 className="w-3.5 h-3.5" />
+                        </button>
                       )}
                     </div>
                   </div>
                   
-                  <div className="flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <button className="p-1.5 rounded bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/20 text-indigo-400 transition-all shadow-[0_2px_0_rgba(99,102,241,0.2)] active:translate-y-[2px] active:shadow-none" title="Thêm bài học">
-                      <Plus className="w-3.5 h-3.5" />
-                    </button>
-                    {hasData && (
-                      <button 
-                        onClick={(e) => handleResetGrade(grade, e)}
-                        className="p-1.5 rounded bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/20 text-rose-400 transition-all shadow-[0_2px_0_rgba(244,63,94,0.2)] active:translate-y-[2px] active:shadow-none" 
-                        title="Xóa dữ liệu lớp này"
-                      >
-                        <Trash2 className="w-3.5 h-3.5" />
-                      </button>
-                    )}
-                  </div>
+                  {/* Expanded Lessons List */}
+                  {isSelected && hasData && curriculumData[`l${grade}`]?.[0]?.lessons && (
+                    <div className="mt-1 ml-4 pl-4 border-l-2 border-slate-800/60 space-y-2 mb-2">
+                      {curriculumData[`l${grade}`][0].lessons.map((lesson: any) => (
+                        <div key={lesson.id} className="flex items-center justify-between p-2.5 rounded-xl bg-[#090D16]/80 border border-slate-800/40 group/lesson transition-all hover:border-slate-700/50">
+                          <div className="flex flex-col min-w-0 pr-2">
+                            <span className="text-[11px] font-bold text-slate-300 truncate">{lesson.title}</span>
+                            <span className="text-[9px] text-slate-500 uppercase tracking-widest font-mono mt-0.5">{lesson.type}</span>
+                          </div>
+                          <button 
+                            onClick={(e) => handleDeleteLesson(grade, lesson.id, e)}
+                            className="p-1.5 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/20 text-rose-400 opacity-0 group-hover/lesson:opacity-100 transition-all active:scale-95"
+                            title="Xóa bài học này"
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                      ))}
+                      {curriculumData[`l${grade}`][0].lessons.length === 0 && (
+                        <div className="text-[10px] text-slate-500 italic p-2">Chưa có bài học nào.</div>
+                      )}
+                    </div>
+                  )}
                 </div>
               );
             })}
