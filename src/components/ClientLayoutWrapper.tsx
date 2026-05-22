@@ -201,7 +201,7 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
         <Sidebar />
         
         {/* Main Content Area */}
-        <main className="flex-1 min-w-0 h-full overflow-y-auto custom-scrollbar pb-16 md:pb-0">
+        <main className="flex-1 min-w-0 h-full overflow-y-auto custom-scrollbar pb-28 md:pb-0">
           {children}
         </main>
         
