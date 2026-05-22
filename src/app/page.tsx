@@ -621,7 +621,7 @@ export default function Dashboard() {
       if (updatedSel) setSelectedUnit(updatedSel);
     }
 
-    // Tìm bài học vừa hoàn thành
+    // Tìm bài học vừa hoàn thành và lưu vào localStorage của Khối Lớp tương ứng
     let completedLesson: Lesson | undefined;
     let unitNumber = 1;
     updatedUnits.forEach((unit) => {
@@ -629,6 +629,15 @@ export default function Dashboard() {
       if (found) {
         completedLesson = found;
         unitNumber = unit.number;
+        // Lưu ngược lại vào localStorage theo khối lớp
+        if (unit.grade) {
+          const gradeMatch = unit.grade.match(/\d+/);
+          if (gradeMatch) {
+            const gradeNum = gradeMatch[0];
+            const gradeUnits = updatedUnits.filter(u => u.grade === unit.grade);
+            localStorage.setItem(`gsa-curriculum-l${gradeNum}`, JSON.stringify(gradeUnits));
+          }
+        }
       }
     });
 
