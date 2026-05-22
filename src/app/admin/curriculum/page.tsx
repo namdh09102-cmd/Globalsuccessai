@@ -47,8 +47,18 @@ export default function AdminCurriculum() {
     
     setTimeout(() => {
       try {
-        // Validate JSON
-        const parsedData = JSON.parse(ingestData);
+        let lessonDataToMerge: any = {};
+
+        if (ingestType === "dictation") {
+          // Bỏ qua JSON parse, kiểm tra cặp ngoặc vuông
+          if (!ingestData.includes("[") || !ingestData.includes("]")) {
+            throw new Error("DICTATION_INVALID");
+          }
+          lessonDataToMerge = { expectedText: ingestData.trim() };
+        } else {
+          // Validate JSON cho Speaking, Quiz
+          lessonDataToMerge = JSON.parse(ingestData);
+        }
         
         const storageKey = `gsa-curriculum-l${ingestGrade}`;
         let existingData: any[] = [];
@@ -70,13 +80,13 @@ export default function AdminCurriculum() {
           }];
         }
 
-        // Tạo bài học mới từ dữ liệu JSON dán vào
+        // Tạo bài học mới từ dữ liệu
         const newLesson = {
           id: `u${ingestGrade}-l${Date.now()}`,
           title: `Bài tập ${ingestType.toUpperCase()}`,
           type: ingestType,
           completed: false,
-          ...parsedData
+          ...lessonDataToMerge
         };
 
         existingData[0].lessons.push(newLesson);
@@ -86,8 +96,12 @@ export default function AdminCurriculum() {
         setSyncedGrades(prev => Array.from(new Set([...prev, parseInt(ingestGrade)])));
         setToastMessage(`Đã nạp thành công dữ liệu thật Lớp ${ingestGrade}!`);
         setToastType("success");
-      } catch (e) {
-        setToastMessage("Lỗi định dạng dữ liệu JSON!");
+      } catch (e: any) {
+        if (e.message === "DICTATION_INVALID") {
+          setToastMessage("Văn bản Dictation phải chứa từ khóa bọc trong ngoặc vuông [ ]!");
+        } else {
+          setToastMessage("Lỗi định dạng dữ liệu JSON!");
+        }
         setToastType("error");
       }
 
