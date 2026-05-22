@@ -218,6 +218,33 @@ export default function AdminCurriculum() {
       }));
       
       setToastMessage("Đã Auto-Seed toàn bộ 16 Units Lớp 1!");
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 3000);
+    } catch (e) {
+      console.error(e);
+      alert("Lỗi khi đọc file grade1.json");
+    } finally {
+      setIsIngesting(false);
+    }
+  };
+
+  const handleAutoSeedL2 = async () => {
+    if (!window.confirm("Bắt đầu tự động nạp 16 Units Lớp 2 từ file seed (ghi đè dữ liệu cũ)?")) return;
+    try {
+      setIsIngesting(true);
+      const res = await fetch("/seeds/grade2.json");
+      if (!res.ok) throw new Error("Không tìm thấy file seed");
+      const gradeData = await res.json();
+      
+      localStorage.setItem("gsa-curriculum-l2", JSON.stringify(gradeData));
+      
+      setSyncedGrades(prev => Array.from(new Set([...prev, 2])));
+      setCurriculumData(prev => ({
+        ...prev,
+        l2: gradeData
+      }));
+      
+      setToastMessage("Đã Auto-Seed toàn bộ 16 Units Lớp 2!");
       setToastType("success");
     } catch (e: any) {
       setToastMessage("Lỗi Auto-Seed: " + e.message);
@@ -275,14 +302,24 @@ export default function AdminCurriculum() {
               <BookOpen className="w-5 h-5 text-emerald-400 fill-emerald-400/20" />
               <h2 className="text-sm font-black uppercase tracking-wider">Cấu Trúc Kho Bài Giảng K-12</h2>
             </div>
-            <button
-              onClick={handleAutoSeedL1}
-              disabled={isIngesting}
-              className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/20 px-3 py-1.5 rounded-lg hover:bg-fuchsia-500/20 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
-            >
-              <Rocket className="w-3.5 h-3.5" />
-              Auto-Seed Lớp 1
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={handleAutoSeedL1}
+                disabled={isIngesting}
+                className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/20 px-3 py-1.5 rounded-lg hover:bg-fuchsia-500/20 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
+              >
+                <Rocket className="w-3.5 h-3.5" />
+                Auto Lớp 1
+              </button>
+              <button
+                onClick={handleAutoSeedL2}
+                disabled={isIngesting}
+                className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-3 py-1.5 rounded-lg hover:bg-indigo-500/20 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
+              >
+                <Rocket className="w-3.5 h-3.5" />
+                Auto Lớp 2
+              </button>
+            </div>
           </div>
 
           <div className="flex-1 overflow-y-auto custom-scrollbar pr-2 space-y-2 max-h-[500px]">

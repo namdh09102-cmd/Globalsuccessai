@@ -300,7 +300,7 @@ const defaultUnits: UnitData[] = [
 ];
 
 export default function Dashboard() {
-  const [activeGrade, setActiveGrade] = useState("Lớp 11");
+  const [activeGrade, setActiveGrade] = useState("Lớp 1");
   const [units, setUnits] = useState<UnitData[]>([]);
   const [selectedUnit, setSelectedUnit] = useState<UnitData | null>(null);
   
@@ -479,10 +479,11 @@ export default function Dashboard() {
     }
 
     setUnits(allUnits);
-    const u2 = allUnits.find((u: any) => u.grade === "Lớp 11" && u.number === 2) 
-               || allUnits.find((u: any) => u.grade === "Lớp 11") 
-               || allUnits[0];
-    setSelectedUnit(u2);
+    const selectedUnitFromList = 
+      allUnits.find((u: any) => u.grade === activeGrade && u.number === 2) 
+      || allUnits.find((u: any) => u.grade === activeGrade) 
+      || allUnits[0] || null;
+    setSelectedUnit(selectedUnitFromList);
   };
 
   // Đồng bộ đếm giờ ghi âm

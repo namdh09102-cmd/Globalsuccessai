@@ -1,0 +1,825 @@
+[
+  {
+    "id": "l2-u1",
+    "number": 1,
+    "title": "Unit 1",
+    "status": "in_progress",
+    "progress": 0,
+    "grade": "Lớp 2",
+    "lessons": [
+      {
+        "id": "l2-u1-mindmap",
+        "title": "Vocabulary Flashcards Unit 1",
+        "type": "visual",
+        "completed": false,
+        "imageUrl": ""
+      },
+      {
+        "id": "l2-u1-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello"
+      },
+      {
+        "id": "l2-u1-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "apple"
+      },
+      {
+        "id": "l2-u1-quiz",
+        "title": "Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "What is this?",
+            "options": [
+              "apple",
+              "banana",
+              "cat"
+            ],
+            "correctAnswer": "apple"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l2-u2",
+    "number": 2,
+    "title": "Unit 2",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 2",
+    "lessons": [
+      {
+        "id": "l2-u2-mindmap",
+        "title": "Vocabulary Flashcards Unit 2",
+        "type": "visual",
+        "completed": false,
+        "imageUrl": ""
+      },
+      {
+        "id": "l2-u2-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello"
+      },
+      {
+        "id": "l2-u2-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "apple"
+      },
+      {
+        "id": "l2-u2-quiz",
+        "title": "Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "What is this?",
+            "options": [
+              "apple",
+              "banana",
+              "cat"
+            ],
+            "correctAnswer": "apple"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l2-u3",
+    "number": 3,
+    "title": "Unit 3",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 2",
+    "lessons": [
+      {
+        "id": "l2-u3-mindmap",
+        "title": "Vocabulary Flashcards Unit 3",
+        "type": "visual",
+        "completed": false,
+        "imageUrl": ""
+      },
+      {
+        "id": "l2-u3-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello"
+      },
+      {
+        "id": "l2-u3-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "apple"
+      },
+      {
+        "id": "l2-u3-quiz",
+        "title": "Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "What is this?",
+            "options": [
+              "apple",
+              "banana",
+              "cat"
+            ],
+            "correctAnswer": "apple"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l2-u4",
+    "number": 4,
+    "title": "Unit 4",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 2",
+    "lessons": [
+      {
+        "id": "l2-u4-mindmap",
+        "title": "Vocabulary Flashcards Unit 4",
+        "type": "visual",
+        "completed": false,
+        "imageUrl": ""
+      },
+      {
+        "id": "l2-u4-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello"
+      },
+      {
+        "id": "l2-u4-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "apple"
+      },
+      {
+        "id": "l2-u4-quiz",
+        "title": "Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "What is this?",
+            "options": [
+              "apple",
+              "banana",
+              "cat"
+            ],
+            "correctAnswer": "apple"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l2-u5",
+    "number": 5,
+    "title": "Unit 5",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 2",
+    "lessons": [
+      {
+        "id": "l2-u5-mindmap",
+        "title": "Vocabulary Flashcards Unit 5",
+        "type": "visual",
+        "completed": false,
+        "imageUrl": ""
+      },
+      {
+        "id": "l2-u5-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello"
+      },
+      {
+        "id": "l2-u5-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "apple"
+      },
+      {
+        "id": "l2-u5-quiz",
+        "title": "Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "What is this?",
+            "options": [
+              "apple",
+              "banana",
+              "cat"
+            ],
+            "correctAnswer": "apple"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l2-u6",
+    "number": 6,
+    "title": "Unit 6",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 2",
+    "lessons": [
+      {
+        "id": "l2-u6-mindmap",
+        "title": "Vocabulary Flashcards Unit 6",
+        "type": "visual",
+        "completed": false,
+        "imageUrl": ""
+      },
+      {
+        "id": "l2-u6-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello"
+      },
+      {
+        "id": "l2-u6-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "apple"
+      },
+      {
+        "id": "l2-u6-quiz",
+        "title": "Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "What is this?",
+            "options": [
+              "apple",
+              "banana",
+              "cat"
+            ],
+            "correctAnswer": "apple"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l2-u7",
+    "number": 7,
+    "title": "Unit 7",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 2",
+    "lessons": [
+      {
+        "id": "l2-u7-mindmap",
+        "title": "Vocabulary Flashcards Unit 7",
+        "type": "visual",
+        "completed": false,
+        "imageUrl": ""
+      },
+      {
+        "id": "l2-u7-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello"
+      },
+      {
+        "id": "l2-u7-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "apple"
+      },
+      {
+        "id": "l2-u7-quiz",
+        "title": "Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "What is this?",
+            "options": [
+              "apple",
+              "banana",
+              "cat"
+            ],
+            "correctAnswer": "apple"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l2-u8",
+    "number": 8,
+    "title": "Unit 8",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 2",
+    "lessons": [
+      {
+        "id": "l2-u8-mindmap",
+        "title": "Vocabulary Flashcards Unit 8",
+        "type": "visual",
+        "completed": false,
+        "imageUrl": ""
+      },
+      {
+        "id": "l2-u8-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello"
+      },
+      {
+        "id": "l2-u8-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "apple"
+      },
+      {
+        "id": "l2-u8-quiz",
+        "title": "Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "What is this?",
+            "options": [
+              "apple",
+              "banana",
+              "cat"
+            ],
+            "correctAnswer": "apple"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l2-u9",
+    "number": 9,
+    "title": "Unit 9",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 2",
+    "lessons": [
+      {
+        "id": "l2-u9-mindmap",
+        "title": "Vocabulary Flashcards Unit 9",
+        "type": "visual",
+        "completed": false,
+        "imageUrl": ""
+      },
+      {
+        "id": "l2-u9-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello"
+      },
+      {
+        "id": "l2-u9-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "apple"
+      },
+      {
+        "id": "l2-u9-quiz",
+        "title": "Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "What is this?",
+            "options": [
+              "apple",
+              "banana",
+              "cat"
+            ],
+            "correctAnswer": "apple"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l2-u10",
+    "number": 10,
+    "title": "Unit 10",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 2",
+    "lessons": [
+      {
+        "id": "l2-u10-mindmap",
+        "title": "Vocabulary Flashcards Unit 10",
+        "type": "visual",
+        "completed": false,
+        "imageUrl": ""
+      },
+      {
+        "id": "l2-u10-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello"
+      },
+      {
+        "id": "l2-u10-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "apple"
+      },
+      {
+        "id": "l2-u10-quiz",
+        "title": "Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "What is this?",
+            "options": [
+              "apple",
+              "banana",
+              "cat"
+            ],
+            "correctAnswer": "apple"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l2-u11",
+    "number": 11,
+    "title": "Unit 11",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 2",
+    "lessons": [
+      {
+        "id": "l2-u11-mindmap",
+        "title": "Vocabulary Flashcards Unit 11",
+        "type": "visual",
+        "completed": false,
+        "imageUrl": ""
+      },
+      {
+        "id": "l2-u11-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello"
+      },
+      {
+        "id": "l2-u11-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "apple"
+      },
+      {
+        "id": "l2-u11-quiz",
+        "title": "Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "What is this?",
+            "options": [
+              "apple",
+              "banana",
+              "cat"
+            ],
+            "correctAnswer": "apple"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l2-u12",
+    "number": 12,
+    "title": "Unit 12",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 2",
+    "lessons": [
+      {
+        "id": "l2-u12-mindmap",
+        "title": "Vocabulary Flashcards Unit 12",
+        "type": "visual",
+        "completed": false,
+        "imageUrl": ""
+      },
+      {
+        "id": "l2-u12-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello"
+      },
+      {
+        "id": "l2-u12-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "apple"
+      },
+      {
+        "id": "l2-u12-quiz",
+        "title": "Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "What is this?",
+            "options": [
+              "apple",
+              "banana",
+              "cat"
+            ],
+            "correctAnswer": "apple"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l2-u13",
+    "number": 13,
+    "title": "Unit 13",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 2",
+    "lessons": [
+      {
+        "id": "l2-u13-mindmap",
+        "title": "Vocabulary Flashcards Unit 13",
+        "type": "visual",
+        "completed": false,
+        "imageUrl": ""
+      },
+      {
+        "id": "l2-u13-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello"
+      },
+      {
+        "id": "l2-u13-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "apple"
+      },
+      {
+        "id": "l2-u13-quiz",
+        "title": "Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "What is this?",
+            "options": [
+              "apple",
+              "banana",
+              "cat"
+            ],
+            "correctAnswer": "apple"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l2-u14",
+    "number": 14,
+    "title": "Unit 14",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 2",
+    "lessons": [
+      {
+        "id": "l2-u14-mindmap",
+        "title": "Vocabulary Flashcards Unit 14",
+        "type": "visual",
+        "completed": false,
+        "imageUrl": ""
+      },
+      {
+        "id": "l2-u14-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello"
+      },
+      {
+        "id": "l2-u14-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "apple"
+      },
+      {
+        "id": "l2-u14-quiz",
+        "title": "Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "What is this?",
+            "options": [
+              "apple",
+              "banana",
+              "cat"
+            ],
+            "correctAnswer": "apple"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l2-u15",
+    "number": 15,
+    "title": "Unit 15",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 2",
+    "lessons": [
+      {
+        "id": "l2-u15-mindmap",
+        "title": "Vocabulary Flashcards Unit 15",
+        "type": "visual",
+        "completed": false,
+        "imageUrl": ""
+      },
+      {
+        "id": "l2-u15-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello"
+      },
+      {
+        "id": "l2-u15-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "apple"
+      },
+      {
+        "id": "l2-u15-quiz",
+        "title": "Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "What is this?",
+            "options": [
+              "apple",
+              "banana",
+              "cat"
+            ],
+            "correctAnswer": "apple"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l2-u16",
+    "number": 16,
+    "title": "Unit 16",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 2",
+    "lessons": [
+      {
+        "id": "l2-u16-mindmap",
+        "title": "Vocabulary Flashcards Unit 16",
+        "type": "visual",
+        "completed": false,
+        "imageUrl": ""
+      },
+      {
+        "id": "l2-u16-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello"
+      },
+      {
+        "id": "l2-u16-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "apple"
+      },
+      {
+        "id": "l2-u16-quiz",
+        "title": "Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "What is this?",
+            "options": [
+              "apple",
+              "banana",
+              "cat"
+            ],
+            "correctAnswer": "apple"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l2-mindmap-book",
+    "number": 17,
+    "title": "MINDMAP TOÀN TẬP (E-BOOK)",
+    "status": "in_progress",
+    "progress": 0,
+    "grade": "Lớp 2",
+    "lessons": [
+      {
+        "id": "l2-mindmap-all",
+        "title": "Sơ Đồ Tư Duy Tiếng Anh 2",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l2/mindmap.pdf"
+      }
+    ]
+  },
+  {
+    "id": "l2-test-18",
+    "number": 18,
+    "title": "ĐỀ SỐ 1 KÌ 2 LOP 2",
+    "status": "in_progress",
+    "progress": 0,
+    "grade": "Lớp 2",
+    "lessons": [
+      {
+        "id": "l2-test-18-exam",
+        "title": "The Final Term Test - Lớp 2",
+        "type": "exam",
+        "completed": false,
+        "examDuration": 35,
+        "examAudio": "/audio/l2/tests/NGHE De 1 lop 2 ki 2.mp3",
+        "examQuestions": [
+          {
+            "question": "Nghe và chọn đáp án đúng (Dựa theo Audio)",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Đọc đoạn văn và trả lời",
+            "options": [
+              "Yes",
+              "No",
+              "Not Given"
+            ],
+            "correctAnswer": "Yes"
+          }
+        ]
+      }
+    ]
+  }
+]
