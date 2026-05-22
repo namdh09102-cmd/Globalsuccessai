@@ -9,9 +9,11 @@ const STOP_WORDS = new Set(["the", "and", "is", "are", "am", "in", "on", "at", "
 const VIETNAMESE_WORDS = new Set(["bài", "tập", "câu", "hỏi", "đáp", "án", "điền", "trống", "chữ", "cái", "thiếu", "đọc", "nối", "khoanh", "tròn", "từ", "vựng"]);
 
 function isEnglishSentence(text) {
-    if (text.length < 5 || text.length > 50) return false;
-    if (/[úùụủũáàạảãíìịỉĩóòọỏõéèẹẻẽýỳỵỷỹđ]/i.test(text)) return false; // Contains Vietnamese characters
-    return /^[A-Z][A-Za-z0-’', \?]+[\.\?\!]$/.test(text.trim());
+    if (text.length < 10 || text.length > 50) return false;
+    if (/_/.test(text)) return false; // Reject fill-in-the-blank underscores
+    if (/[úùụủũáàạảãíìịỉĩóòọỏõéèẹẻẽýỳỵỷỹđ]/i.test(text)) return false; // Reject Vietnamese
+    if (/[0-9]/.test(text)) return false; // Reject numbers like "Câu 1"
+    return /^[A-Z][A-Za-z \',\?]+[\.\?\!]$/.test(text.trim());
 }
 
 function shuffle(array) {
@@ -72,8 +74,8 @@ async function processUnits() {
         const sentenceList = Array.from(sentences);
         const wordList = Array.from(words);
         
-        if (sentenceList.length === 0) sentenceList.push("Hello.", "How are you?");
-        if (wordList.length < 4) wordList.push("apple", "banana", "cat", "dog");
+        if (sentenceList.length === 0) sentenceList.push("Hello.", "How are you?", "Nice to meet you.");
+        if (wordList.length < 4) wordList.push("apple", "banana", "cat", "dog", "elephant", "fish", "grape");
         
         // Generate Quiz Questions
         const quizQuestions = [];
@@ -81,25 +83,37 @@ async function processUnits() {
         // 1. Reorder sentences
         for (let j = 0; j < Math.min(10, sentenceList.length); j++) {
             const s = sentenceList[j];
-            const sWords = s.replace(/[\.\?\!]/g, '').split(' ');
-            if (sWords.length > 1) {
-                const shuffled = shuffle([...sWords]).join(' / ');
+            const sWords = s.replace(/[\.\?\!]/g, '').trim().split(/\s+/);
+            if (sWords.length >= 2) {
+                const shuffledWords = shuffle([...sWords]);
+                const shuffledStr = shuffledWords.join(' / ');
+                
+                // Create distractor options by making other wrong shuffles
+                const wrongOption1 = shuffle([...sWords]).join(' ') + (s.endsWith('?') ? '?' : '.');
+                const wrongOption2 = shuffle([...sWords]).join(' ') + (s.endsWith('?') ? '?' : '.');
+                
+                let options = [s, wrongOption1, wrongOption2];
+                // Remove duplicates in options
+                options = Array.from(new Set(options));
+                // Add padding if duplicates removed
+                if (options.length < 3) options.push(s.toLowerCase());
+                
                 quizQuestions.push({
-                    question: `Put the words in the correct order: ${shuffled}`,
-                    options: [s, s.replace(sWords[0], 'is'), s.toLowerCase()],
+                    question: `Put the words in the correct order: ${shuffledStr}`,
+                    options: options,
                     correctAnswer: s
                 });
             }
         }
         
         // 2. Odd one out
-        for (let j = 0; j < Math.min(10, wordList.length / 4); j++) {
+        for (let j = 0; j < Math.min(10, Math.floor(wordList.length / 4)); j++) {
             const w1 = wordList[j*4];
             const w2 = wordList[j*4+1];
             const w3 = wordList[j*4+2];
             quizQuestions.push({
-                question: `Find the word in the text:`,
-                options: [w1, "chrysanthemum", "hippopotamus"],
+                question: `Find the word that belongs to the Unit:`,
+                options: [w1, w2 + "x", "chrysanthemum"],
                 correctAnswer: w1
             });
         }
@@ -129,7 +143,7 @@ async function processUnits() {
             id: `l3-u${i}`,
             number: i,
             title: `Unit ${i}`,
-            status: "in_progress", // Unlock all units
+            status: i === 1 ? "in_progress" : "locked",
             progress: 0,
             grade: "Lớp 3",
             lessons: [

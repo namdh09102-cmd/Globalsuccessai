@@ -12,14 +12,14 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "How _____ you ?"
+        "expectedText": "Bye, Quan."
       },
       {
         "id": "l3-u1-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "Bye, Quan."
+        "expectedWord": "Bye , Nam."
       },
       {
         "id": "l3-u1-quiz",
@@ -28,47 +28,38 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: How /  / you / _____",
-            "options": [
-              "How _____ you ?",
-              "is _____ you ?",
-              "how _____ you ?"
-            ],
-            "correctAnswer": "How _____ you ?"
-          },
-          {
             "question": "Put the words in the correct order: Quan / Bye,",
             "options": [
               "Bye, Quan.",
-              "is Quan.",
+              "Quan Bye,.",
               "bye, quan."
             ],
             "correctAnswer": "Bye, Quan."
           },
           {
-            "question": "Put the words in the correct order: Bye / , / Nam",
+            "question": "Put the words in the correct order: , / Nam / Bye",
             "options": [
               "Bye , Nam.",
-              "is , Nam.",
-              "bye , nam."
+              "Nam , Bye.",
+              ", Nam Bye."
             ],
             "correctAnswer": "Bye , Nam."
           },
           {
-            "question": "Put the words in the correct order: too / to / Nice / meet / you,",
+            "question": "Put the words in the correct order: to / too / meet / Nice / you,",
             "options": [
               "Nice to meet you, too.",
-              "is to meet you, too.",
+              "too to you, Nice meet.",
               "nice to meet you, too."
             ],
             "correctAnswer": "Nice to meet you, too."
           },
           {
-            "question": "Put the words in the correct order: How / you /  / are",
+            "question": "Put the words in the correct order: How / you / are",
             "options": [
               "How are you ?",
-              "is are you ?",
-              "how are you ?"
+              "are How you?",
+              "you How are?"
             ],
             "correctAnswer": "How are you ?"
           },
@@ -76,125 +67,142 @@
             "question": "Put the words in the correct order: Hello, / Quan",
             "options": [
               "Hello, Quan.",
-              "is Quan.",
               "hello, quan."
             ],
             "correctAnswer": "Hello, Quan."
           },
           {
-            "question": "Put the words in the correct order: Phong / I’m",
-            "options": [
-              "I’m Phong.",
-              "is Phong.",
-              "i’m phong."
-            ],
-            "correctAnswer": "I’m Phong."
-          },
-          {
-            "question": "Put the words in the correct order: Nice /  / you / to / meet",
+            "question": "Put the words in the correct order: to / Nice / meet / you",
             "options": [
               "Nice to meet you .",
-              "is to meet you .",
-              "nice to meet you ."
+              "to Nice meet you.",
+              "to you meet Nice."
             ],
             "correctAnswer": "Nice to meet you ."
           },
           {
-            "question": "Put the words in the correct order: I’m / Nam",
+            "question": "Put the words in the correct order: the / Circle / out / one / odd",
             "options": [
-              "I’m Nam.",
-              "is Nam.",
-              "i’m nam."
+              "Circle the odd one out.",
+              "Circle one odd out the.",
+              "odd out the one Circle."
             ],
-            "correctAnswer": "I’m Nam."
+            "correctAnswer": "Circle the odd one out."
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Put the words in the correct order: is / hat / It / a",
+            "options": [
+              "It is a hat.",
+              "is hat a It.",
+              "hat a It is."
+            ],
+            "correctAnswer": "It is a hat."
+          },
+          {
+            "question": "Put the words in the correct order: My / name / is / Sophie",
+            "options": [
+              "My name is Sophie.",
+              "My is name Sophie.",
+              "My Sophie is name."
+            ],
+            "correctAnswer": "My name is Sophie."
+          },
+          {
+            "question": "Put the words in the correct order: How / you / are",
+            "options": [
+              "How are you?",
+              "you How are?",
+              "how are you?"
+            ],
+            "correctAnswer": "How are you?"
+          },
+          {
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "exercise",
-              "chrysanthemum",
-              "hippopotamus"
+              "writex",
+              "chrysanthemum"
             ],
             "correctAnswer": "exercise"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "how",
-              "chrysanthemum",
-              "hippopotamus"
+              "youx",
+              "chrysanthemum"
             ],
             "correctAnswer": "how"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "hello",
-              "chrysanthemum",
-              "hippopotamus"
+              "missx",
+              "chrysanthemum"
             ],
             "correctAnswer": "hello"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "quan",
-              "chrysanthemum",
-              "hippopotamus"
+              "nicex",
+              "chrysanthemum"
             ],
             "correctAnswer": "quan"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "too",
-              "chrysanthemum",
-              "hippopotamus"
+              "phongx",
+              "chrysanthemum"
             ],
             "correctAnswer": "too"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "mai",
-              "chrysanthemum",
-              "hippopotamus"
+              "circlex",
+              "chrysanthemum"
             ],
             "correctAnswer": "mai"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "out",
-              "chrysanthemum",
-              "hippopotamus"
+              "peterx",
+              "chrysanthemum"
             ],
             "correctAnswer": "out"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "yellow",
-              "chrysanthemum",
-              "hippopotamus"
+              "tenx",
+              "chrysanthemum"
             ],
             "correctAnswer": "yellow"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "your",
-              "chrysanthemum",
-              "hippopotamus"
+              "putx",
+              "chrysanthemum"
             ],
             "correctAnswer": "your"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "order",
-              "chrysanthemum",
-              "hippopotamus"
+              "makex",
+              "chrysanthemum"
             ],
             "correctAnswer": "order"
           },
@@ -305,7 +313,7 @@
     "id": "l3-u2",
     "number": 2,
     "title": "Unit 2",
-    "status": "in_progress",
+    "status": "locked",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -314,14 +322,14 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Lisa :What’s your name ?"
+        "expectedText": "Hi, Linda."
       },
       {
         "id": "l3-u2-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "Mimi : My name is Mimi."
+        "expectedWord": "How do you spell your name ?"
       },
       {
         "id": "l3-u2-quiz",
@@ -330,182 +338,181 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order:  / :What’s / name / your / Lisa",
+            "question": "Put the words in the correct order: Linda / Hi,",
             "options": [
-              "Lisa :What’s your name ?",
-              "is :What’s your name ?",
-              "lisa :what’s your name ?"
+              "Hi, Linda.",
+              "hi, linda."
             ],
-            "correctAnswer": "Lisa :What’s your name ?"
+            "correctAnswer": "Hi, Linda."
           },
           {
-            "question": "Put the words in the correct order: is / : / Mimi / name / My / Mimi",
+            "question": "Put the words in the correct order: name / you / spell / do / your / How",
             "options": [
-              "Mimi : My name is Mimi.",
-              "is : My name is Mimi.",
-              "mimi : my name is mimi."
+              "How do you spell your name ?",
+              "you How spell your name do?",
+              "your do spell name How you?"
             ],
-            "correctAnswer": "Mimi : My name is Mimi."
+            "correctAnswer": "How do you spell your name ?"
           },
           {
-            "question": "Put the words in the correct order: name /  / your / :What’s / Ben",
+            "question": "Put the words in the correct order: you / How / are",
             "options": [
-              "Ben :What’s your name ?",
-              "is :What’s your name ?",
-              "ben :what’s your name ?"
+              "How are you ?",
+              "you are How?",
+              "you How are?"
             ],
-            "correctAnswer": "Ben :What’s your name ?"
+            "correctAnswer": "How are you ?"
           },
           {
-            "question": "Put the words in the correct order: : /  / your / Alex / name / What’s",
+            "question": "Put the words in the correct order: you / to / Nice / meet",
             "options": [
-              "Alex : What’s your name ?",
-              "is : What’s your name ?",
-              "alex : what’s your name ?"
+              "Nice to meet you.",
+              "to Nice you meet.",
+              "nice to meet you."
             ],
-            "correctAnswer": "Alex : What’s your name ?"
+            "correctAnswer": "Nice to meet you."
           },
           {
-            "question": "Put the words in the correct order: Lily /  / What’s / your / : / name",
+            "question": "Put the words in the correct order: name / My / Linh",
             "options": [
-              "Lily : What’s your name ?",
-              "is : What’s your name ?",
-              "lily : what’s your name ?"
+              "My name Linh.",
+              "Linh name My.",
+              "my name linh."
             ],
-            "correctAnswer": "Lily : What’s your name ?"
+            "correctAnswer": "My name Linh."
           },
           {
-            "question": "Put the words in the correct order:  / : / Anna / What’s / your / name",
+            "question": "Put the words in the correct order: name / What / your",
             "options": [
-              "Anna : What’s your name ?",
-              "is : What’s your name ?",
-              "anna : what’s your name ?"
+              "What your name ?",
+              "What your name?",
+              "name What your?"
             ],
-            "correctAnswer": "Anna : What’s your name ?"
+            "correctAnswer": "What your name ?"
           },
           {
-            "question": "Put the words in the correct order: Toby /  / your / What’s / : / name",
+            "question": "Put the words in the correct order: do / you / you / How / spell / name",
             "options": [
-              "Toby : What’s your name ?",
-              "is : What’s your name ?",
-              "toby : what’s your name ?"
+              "How do you spell you name ?",
+              "do you How you spell name?",
+              "spell How do you name you?"
             ],
-            "correctAnswer": "Toby : What’s your name ?"
+            "correctAnswer": "How do you spell you name ?"
           },
           {
-            "question": "Put the words in the correct order:  / ___________ / Nam / I",
+            "question": "Put the words in the correct order: How / you / , / Miss / is / Hien",
             "options": [
-              "I ___________ Nam .",
-              "is ___________ Nam .",
-              "i ___________ nam ."
+              "How is you , Miss Hien ?",
+              "How , Hien Miss you is?",
+              "you Miss , is Hien How?"
             ],
-            "correctAnswer": "I ___________ Nam ."
+            "correctAnswer": "How is you , Miss Hien ?"
           },
           {
-            "question": "Put the words in the correct order: boy / I / _______a",
+            "question": "Put the words in the correct order: is / her / name / What",
             "options": [
-              "I _______a boy.",
-              "is _______a boy.",
-              "i _______a boy."
+              "What is her name ?",
+              "her is name What?",
+              "her What name is?"
             ],
-            "correctAnswer": "I _______a boy."
+            "correctAnswer": "What is her name ?"
           },
           {
-            "question": "Put the words in the correct order: __________a / girl / I",
+            "question": "Put the words in the correct order: is / name / Anna / Her",
             "options": [
-              "I __________a girl.",
-              "is __________a girl.",
-              "i __________a girl."
+              "Her name is Anna.",
+              "name Her is Anna.",
+              "Her Anna name is."
             ],
-            "correctAnswer": "I __________a girl."
+            "correctAnswer": "Her name is Anna."
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "exercise",
-              "chrysanthemum",
-              "hippopotamus"
+              "lookx",
+              "chrysanthemum"
             ],
             "correctAnswer": "exercise"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "dialogue",
-              "chrysanthemum",
-              "hippopotamus"
+              "mimix",
+              "chrysanthemum"
             ],
             "correctAnswer": "dialogue"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "your",
-              "chrysanthemum",
-              "hippopotamus"
+              "namex",
+              "chrysanthemum"
             ],
             "correctAnswer": "your"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "john",
-              "chrysanthemum",
-              "hippopotamus"
+              "alexx",
+              "chrysanthemum"
             ],
             "correctAnswer": "john"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "toby",
-              "chrysanthemum",
-              "hippopotamus"
+              "writex",
+              "chrysanthemum"
             ],
             "correctAnswer": "toby"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "boy",
-              "chrysanthemum",
-              "hippopotamus"
+              "howx",
+              "chrysanthemum"
             ],
             "correctAnswer": "boy"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "hien",
-              "chrysanthemum",
-              "hippopotamus"
+              "finex",
+              "chrysanthemum"
             ],
             "correctAnswer": "hien"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "girl",
-              "chrysanthemum",
-              "hippopotamus"
+              "putx",
+              "chrysanthemum"
             ],
             "correctAnswer": "girl"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "order",
-              "chrysanthemum",
-              "hippopotamus"
+              "peterx",
+              "chrysanthemum"
             ],
             "correctAnswer": "order"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "meet",
-              "chrysanthemum",
-              "hippopotamus"
+              "herx",
+              "chrysanthemum"
             ],
             "correctAnswer": "meet"
           },
@@ -643,7 +650,7 @@
     "id": "l3-u3",
     "number": 3,
     "title": "Unit 3",
-    "status": "in_progress",
+    "status": "locked",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -652,14 +659,14 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello."
+        "expectedText": "How are you?"
       },
       {
         "id": "l3-u3-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "How are you?"
+        "expectedWord": "I am fine."
       },
       {
         "id": "l3-u3-quiz",
@@ -668,20 +675,19 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: How / are / you",
+            "question": "Put the words in the correct order: you / How / are",
             "options": [
               "How are you?",
-              "is are you?",
               "how are you?"
             ],
             "correctAnswer": "How are you?"
           },
           {
-            "question": "Put the words in the correct order: fine / I / am",
+            "question": "Put the words in the correct order: fine / am / I",
             "options": [
               "I am fine.",
-              "is am fine.",
-              "i am fine."
+              "fine I am.",
+              "am I fine."
             ],
             "correctAnswer": "I am fine."
           },
@@ -689,55 +695,46 @@
             "question": "Put the words in the correct order: name / your / What / is",
             "options": [
               "What is your name?",
-              "is is your name?",
-              "what is your name?"
+              "your What name is?",
+              "your is What name?"
             ],
             "correctAnswer": "What is your name?"
           },
           {
-            "question": "Put the words in the correct order: student / is / name / My",
+            "question": "Put the words in the correct order: student / name / My / is",
             "options": [
               "My name is student.",
-              "is name is student.",
-              "my name is student."
+              "student is name My.",
+              "student name My is."
             ],
             "correctAnswer": "My name is student."
           },
           {
-            "question": "Put the words in the correct order: meet / to / you / Nice",
+            "question": "Put the words in the correct order: meet / Nice / to / you",
             "options": [
               "Nice to meet you.",
-              "is to meet you.",
-              "nice to meet you."
+              "you to Nice meet.",
+              "meet you to Nice."
             ],
             "correctAnswer": "Nice to meet you."
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "hello",
-              "chrysanthemum",
-              "hippopotamus"
+              "howx",
+              "chrysanthemum"
             ],
             "correctAnswer": "hello"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "what",
-              "chrysanthemum",
-              "hippopotamus"
+              "yourx",
+              "chrysanthemum"
             ],
             "correctAnswer": "what"
-          },
-          {
-            "question": "Find the word in the text:",
-            "options": [
-              "nice",
-              "chrysanthemum",
-              "hippopotamus"
-            ],
-            "correctAnswer": "nice"
           },
           {
             "question": "Complete the word: h_llo",
@@ -819,7 +816,7 @@
     "id": "l3-u4",
     "number": 4,
     "title": "Unit 4",
-    "status": "in_progress",
+    "status": "locked",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -828,14 +825,14 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello."
+        "expectedText": "How are you?"
       },
       {
         "id": "l3-u4-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "How are you?"
+        "expectedWord": "I am fine."
       },
       {
         "id": "l3-u4-quiz",
@@ -844,76 +841,67 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: How / you / are",
+            "question": "Put the words in the correct order: are / you / How",
             "options": [
               "How are you?",
-              "is are you?",
-              "how are you?"
+              "you are How?",
+              "you How are?"
             ],
             "correctAnswer": "How are you?"
           },
           {
-            "question": "Put the words in the correct order: I / fine / am",
+            "question": "Put the words in the correct order: am / I / fine",
             "options": [
               "I am fine.",
-              "is am fine.",
+              "fine I am.",
               "i am fine."
             ],
             "correctAnswer": "I am fine."
           },
           {
-            "question": "Put the words in the correct order: What / is / name / your",
+            "question": "Put the words in the correct order: is / name / What / your",
             "options": [
               "What is your name?",
-              "is is your name?",
+              "What name your is?",
               "what is your name?"
             ],
             "correctAnswer": "What is your name?"
           },
           {
-            "question": "Put the words in the correct order: is / name / student / My",
+            "question": "Put the words in the correct order: name / student / is / My",
             "options": [
               "My name is student.",
-              "is name is student.",
-              "my name is student."
+              "student My is name.",
+              "My name student is."
             ],
             "correctAnswer": "My name is student."
           },
           {
-            "question": "Put the words in the correct order: meet / you / to / Nice",
+            "question": "Put the words in the correct order: to / you / meet / Nice",
             "options": [
               "Nice to meet you.",
-              "is to meet you.",
-              "nice to meet you."
+              "you meet to Nice.",
+              "meet to Nice you."
             ],
             "correctAnswer": "Nice to meet you."
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "hello",
-              "chrysanthemum",
-              "hippopotamus"
+              "howx",
+              "chrysanthemum"
             ],
             "correctAnswer": "hello"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "what",
-              "chrysanthemum",
-              "hippopotamus"
+              "yourx",
+              "chrysanthemum"
             ],
             "correctAnswer": "what"
-          },
-          {
-            "question": "Find the word in the text:",
-            "options": [
-              "nice",
-              "chrysanthemum",
-              "hippopotamus"
-            ],
-            "correctAnswer": "nice"
           },
           {
             "question": "Complete the word: h_llo",
@@ -995,7 +983,7 @@
     "id": "l3-u5",
     "number": 5,
     "title": "Unit 5",
-    "status": "in_progress",
+    "status": "locked",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -1004,14 +992,14 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello."
+        "expectedText": "How are you?"
       },
       {
         "id": "l3-u5-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "How are you?"
+        "expectedWord": "I am fine."
       },
       {
         "id": "l3-u5-quiz",
@@ -1023,73 +1011,64 @@
             "question": "Put the words in the correct order: How / you / are",
             "options": [
               "How are you?",
-              "is are you?",
-              "how are you?"
+              "you are How?",
+              "are How you?"
             ],
             "correctAnswer": "How are you?"
           },
           {
-            "question": "Put the words in the correct order: am / fine / I",
+            "question": "Put the words in the correct order: I / am / fine",
             "options": [
               "I am fine.",
-              "is am fine.",
+              "fine am I.",
               "i am fine."
             ],
             "correctAnswer": "I am fine."
           },
           {
-            "question": "Put the words in the correct order: your / name / What / is",
+            "question": "Put the words in the correct order: is / your / What / name",
             "options": [
               "What is your name?",
-              "is is your name?",
-              "what is your name?"
+              "name your is What?",
+              "name your What is?"
             ],
             "correctAnswer": "What is your name?"
           },
           {
-            "question": "Put the words in the correct order: is / My / name / student",
+            "question": "Put the words in the correct order: is / name / student / My",
             "options": [
               "My name is student.",
-              "is name is student.",
-              "my name is student."
+              "student My name is.",
+              "My is name student."
             ],
             "correctAnswer": "My name is student."
           },
           {
-            "question": "Put the words in the correct order: Nice / to / meet / you",
+            "question": "Put the words in the correct order: Nice / you / meet / to",
             "options": [
               "Nice to meet you.",
-              "is to meet you.",
+              "to meet you Nice.",
               "nice to meet you."
             ],
             "correctAnswer": "Nice to meet you."
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "hello",
-              "chrysanthemum",
-              "hippopotamus"
+              "howx",
+              "chrysanthemum"
             ],
             "correctAnswer": "hello"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "what",
-              "chrysanthemum",
-              "hippopotamus"
+              "yourx",
+              "chrysanthemum"
             ],
             "correctAnswer": "what"
-          },
-          {
-            "question": "Find the word in the text:",
-            "options": [
-              "nice",
-              "chrysanthemum",
-              "hippopotamus"
-            ],
-            "correctAnswer": "nice"
           },
           {
             "question": "Complete the word: h_llo",
@@ -1171,7 +1150,7 @@
     "id": "l3-u6",
     "number": 6,
     "title": "Unit 6",
-    "status": "in_progress",
+    "status": "locked",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -1180,14 +1159,14 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello."
+        "expectedText": "How are you?"
       },
       {
         "id": "l3-u6-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "How are you?"
+        "expectedWord": "I am fine."
       },
       {
         "id": "l3-u6-quiz",
@@ -1196,76 +1175,67 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: How / are / you",
+            "question": "Put the words in the correct order: are / How / you",
             "options": [
               "How are you?",
-              "is are you?",
-              "how are you?"
+              "are How you?",
+              "How you are?"
             ],
             "correctAnswer": "How are you?"
           },
           {
-            "question": "Put the words in the correct order: am / I / fine",
+            "question": "Put the words in the correct order: fine / am / I",
             "options": [
               "I am fine.",
-              "is am fine.",
+              "am I fine.",
               "i am fine."
             ],
             "correctAnswer": "I am fine."
           },
           {
-            "question": "Put the words in the correct order: What / name / your / is",
+            "question": "Put the words in the correct order: What / is / your / name",
             "options": [
               "What is your name?",
-              "is is your name?",
+              "is name your What?",
               "what is your name?"
             ],
             "correctAnswer": "What is your name?"
           },
           {
-            "question": "Put the words in the correct order: name / student / is / My",
+            "question": "Put the words in the correct order: is / My / name / student",
             "options": [
               "My name is student.",
-              "is name is student.",
-              "my name is student."
+              "student name is My.",
+              "name My is student."
             ],
             "correctAnswer": "My name is student."
           },
           {
-            "question": "Put the words in the correct order: to / you / Nice / meet",
+            "question": "Put the words in the correct order: you / meet / Nice / to",
             "options": [
               "Nice to meet you.",
-              "is to meet you.",
-              "nice to meet you."
+              "meet you Nice to.",
+              "to Nice you meet."
             ],
             "correctAnswer": "Nice to meet you."
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "hello",
-              "chrysanthemum",
-              "hippopotamus"
+              "howx",
+              "chrysanthemum"
             ],
             "correctAnswer": "hello"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "what",
-              "chrysanthemum",
-              "hippopotamus"
+              "yourx",
+              "chrysanthemum"
             ],
             "correctAnswer": "what"
-          },
-          {
-            "question": "Find the word in the text:",
-            "options": [
-              "nice",
-              "chrysanthemum",
-              "hippopotamus"
-            ],
-            "correctAnswer": "nice"
           },
           {
             "question": "Complete the word: h_llo",
@@ -1347,7 +1317,7 @@
     "id": "l3-u7",
     "number": 7,
     "title": "Unit 7",
-    "status": "in_progress",
+    "status": "locked",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -1356,14 +1326,14 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello."
+        "expectedText": "How are you?"
       },
       {
         "id": "l3-u7-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "How are you?"
+        "expectedWord": "I am fine."
       },
       {
         "id": "l3-u7-quiz",
@@ -1372,11 +1342,11 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: you / are / How",
+            "question": "Put the words in the correct order: are / you / How",
             "options": [
               "How are you?",
-              "is are you?",
-              "how are you?"
+              "are How you?",
+              "How you are?"
             ],
             "correctAnswer": "How are you?"
           },
@@ -1384,64 +1354,55 @@
             "question": "Put the words in the correct order: am / fine / I",
             "options": [
               "I am fine.",
-              "is am fine.",
-              "i am fine."
+              "am fine I.",
+              "I fine am."
             ],
             "correctAnswer": "I am fine."
           },
           {
-            "question": "Put the words in the correct order: is / What / your / name",
+            "question": "Put the words in the correct order: name / your / is / What",
             "options": [
               "What is your name?",
-              "is is your name?",
-              "what is your name?"
+              "your name What is?",
+              "name What your is?"
             ],
             "correctAnswer": "What is your name?"
           },
           {
-            "question": "Put the words in the correct order: My / is / name / student",
+            "question": "Put the words in the correct order: name / is / student / My",
             "options": [
               "My name is student.",
-              "is name is student.",
-              "my name is student."
+              "name My student is.",
+              "My name student is."
             ],
             "correctAnswer": "My name is student."
           },
           {
-            "question": "Put the words in the correct order: you / to / meet / Nice",
+            "question": "Put the words in the correct order: to / Nice / meet / you",
             "options": [
               "Nice to meet you.",
-              "is to meet you.",
-              "nice to meet you."
+              "meet to you Nice.",
+              "you Nice meet to."
             ],
             "correctAnswer": "Nice to meet you."
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "hello",
-              "chrysanthemum",
-              "hippopotamus"
+              "howx",
+              "chrysanthemum"
             ],
             "correctAnswer": "hello"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "what",
-              "chrysanthemum",
-              "hippopotamus"
+              "yourx",
+              "chrysanthemum"
             ],
             "correctAnswer": "what"
-          },
-          {
-            "question": "Find the word in the text:",
-            "options": [
-              "nice",
-              "chrysanthemum",
-              "hippopotamus"
-            ],
-            "correctAnswer": "nice"
           },
           {
             "question": "Complete the word: h_llo",
@@ -1523,7 +1484,7 @@
     "id": "l3-u8",
     "number": 8,
     "title": "Unit 8",
-    "status": "in_progress",
+    "status": "locked",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -1532,14 +1493,14 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello."
+        "expectedText": "How are you?"
       },
       {
         "id": "l3-u8-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "How are you?"
+        "expectedWord": "I am fine."
       },
       {
         "id": "l3-u8-quiz",
@@ -1551,73 +1512,64 @@
             "question": "Put the words in the correct order: How / you / are",
             "options": [
               "How are you?",
-              "is are you?",
+              "How you are?",
               "how are you?"
             ],
             "correctAnswer": "How are you?"
           },
           {
-            "question": "Put the words in the correct order: I / fine / am",
+            "question": "Put the words in the correct order: fine / am / I",
             "options": [
               "I am fine.",
-              "is am fine.",
+              "am fine I.",
               "i am fine."
             ],
             "correctAnswer": "I am fine."
           },
           {
-            "question": "Put the words in the correct order: name / your / What / is",
+            "question": "Put the words in the correct order: What / your / name / is",
             "options": [
               "What is your name?",
-              "is is your name?",
-              "what is your name?"
+              "is What your name?",
+              "your name What is?"
             ],
             "correctAnswer": "What is your name?"
           },
           {
-            "question": "Put the words in the correct order: name / My / student / is",
+            "question": "Put the words in the correct order: My / student / name / is",
             "options": [
               "My name is student.",
-              "is name is student.",
-              "my name is student."
+              "My student is name.",
+              "name student My is."
             ],
             "correctAnswer": "My name is student."
           },
           {
-            "question": "Put the words in the correct order: to / meet / you / Nice",
+            "question": "Put the words in the correct order: meet / to / you / Nice",
             "options": [
               "Nice to meet you.",
-              "is to meet you.",
-              "nice to meet you."
+              "you meet to Nice.",
+              "meet to Nice you."
             ],
             "correctAnswer": "Nice to meet you."
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "hello",
-              "chrysanthemum",
-              "hippopotamus"
+              "howx",
+              "chrysanthemum"
             ],
             "correctAnswer": "hello"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "what",
-              "chrysanthemum",
-              "hippopotamus"
+              "yourx",
+              "chrysanthemum"
             ],
             "correctAnswer": "what"
-          },
-          {
-            "question": "Find the word in the text:",
-            "options": [
-              "nice",
-              "chrysanthemum",
-              "hippopotamus"
-            ],
-            "correctAnswer": "nice"
           },
           {
             "question": "Complete the word: h_llo",
@@ -1699,7 +1651,7 @@
     "id": "l3-u9",
     "number": 9,
     "title": "Unit 9",
-    "status": "in_progress",
+    "status": "locked",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -1708,14 +1660,14 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello."
+        "expectedText": "How are you?"
       },
       {
         "id": "l3-u9-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "How are you?"
+        "expectedWord": "I am fine."
       },
       {
         "id": "l3-u9-quiz",
@@ -1724,76 +1676,67 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: are / you / How",
+            "question": "Put the words in the correct order: are / How / you",
             "options": [
               "How are you?",
-              "is are you?",
+              "How you are?",
               "how are you?"
             ],
             "correctAnswer": "How are you?"
           },
           {
-            "question": "Put the words in the correct order: I / am / fine",
+            "question": "Put the words in the correct order: am / fine / I",
             "options": [
               "I am fine.",
-              "is am fine.",
-              "i am fine."
+              "I fine am.",
+              "am I fine."
             ],
             "correctAnswer": "I am fine."
           },
           {
-            "question": "Put the words in the correct order: is / your / What / name",
+            "question": "Put the words in the correct order: your / What / is / name",
             "options": [
               "What is your name?",
-              "is is your name?",
+              "What name is your?",
               "what is your name?"
             ],
             "correctAnswer": "What is your name?"
           },
           {
-            "question": "Put the words in the correct order: name / student / My / is",
+            "question": "Put the words in the correct order: My / is / student / name",
             "options": [
               "My name is student.",
-              "is name is student.",
-              "my name is student."
+              "student My is name.",
+              "My name student is."
             ],
             "correctAnswer": "My name is student."
           },
           {
-            "question": "Put the words in the correct order: meet / to / Nice / you",
+            "question": "Put the words in the correct order: you / Nice / to / meet",
             "options": [
               "Nice to meet you.",
-              "is to meet you.",
-              "nice to meet you."
+              "Nice meet to you.",
+              "to you Nice meet."
             ],
             "correctAnswer": "Nice to meet you."
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "hello",
-              "chrysanthemum",
-              "hippopotamus"
+              "howx",
+              "chrysanthemum"
             ],
             "correctAnswer": "hello"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "what",
-              "chrysanthemum",
-              "hippopotamus"
+              "yourx",
+              "chrysanthemum"
             ],
             "correctAnswer": "what"
-          },
-          {
-            "question": "Find the word in the text:",
-            "options": [
-              "nice",
-              "chrysanthemum",
-              "hippopotamus"
-            ],
-            "correctAnswer": "nice"
           },
           {
             "question": "Complete the word: h_llo",
@@ -1875,7 +1818,7 @@
     "id": "l3-u10",
     "number": 10,
     "title": "Unit 10",
-    "status": "in_progress",
+    "status": "locked",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -1900,182 +1843,182 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: Peter / at / time / do / break",
+            "question": "Put the words in the correct order: time / at / do / Peter / break",
             "options": [
               "Peter do at break time?",
-              "is do at break time?",
-              "peter do at break time?"
+              "break Peter time do at?",
+              "Peter at do time break?"
             ],
             "correctAnswer": "Peter do at break time?"
           },
           {
-            "question": "Put the words in the correct order: play / badminton / I / ",
+            "question": "Put the words in the correct order: play / I / badminton",
             "options": [
               "I play badminton .",
-              "is play badminton .",
+              "I badminton play.",
               "i play badminton ."
             ],
             "correctAnswer": "I play badminton ."
           },
           {
-            "question": "Put the words in the correct order: doesn’t / he / No,",
-            "options": [
-              "No, he doesn’t.",
-              "is he doesn’t.",
-              "no, he doesn’t."
-            ],
-            "correctAnswer": "No, he doesn’t."
-          },
-          {
-            "question": "Put the words in the correct order: No, / I / don’t",
-            "options": [
-              "No, I don’t.",
-              "is I don’t.",
-              "no, i don’t."
-            ],
-            "correctAnswer": "No, I don’t."
-          },
-          {
-            "question": "Put the words in the correct order: choose / 4 / answers / the / correct / and / Read / Exercise",
-            "options": [
-              "Exercise 4 Read and choose the correct answers.",
-              "is 4 Read and choose the correct answers.",
-              "exercise 4 read and choose the correct answers."
-            ],
-            "correctAnswer": "Exercise 4 Read and choose the correct answers."
-          },
-          {
-            "question": "Put the words in the correct order: the / Exercise / right / Put / in / words / 5 / the / columns",
-            "options": [
-              "Exercise 5 Put the words in the right columns.",
-              "is 5 Put the words in the right columns.",
-              "exercise 5 put the words in the right columns."
-            ],
-            "correctAnswer": "Exercise 5 Put the words in the right columns."
-          },
-          {
-            "question": "Put the words in the correct order: May / in, / Mr / I / Loc / come",
+            "question": "Put the words in the correct order: Loc / in, / Mr / May / I / come",
             "options": [
               "May I come in, Mr Loc?",
-              "is I come in, Mr Loc?",
-              "may i come in, mr loc?"
+              "I in, Mr come Loc May?",
+              "May Loc come I in, Mr?"
             ],
             "correctAnswer": "May I come in, Mr Loc?"
           },
           {
-            "question": "Put the words in the correct order: isn’t / No, / it",
-            "options": [
-              "No, it isn’t.",
-              "is it isn’t.",
-              "no, it isn’t."
-            ],
-            "correctAnswer": "No, it isn’t."
-          },
-          {
-            "question": "Put the words in the correct order: It’s / new",
-            "options": [
-              "It’s new.",
-              "is new.",
-              "it’s new."
-            ],
-            "correctAnswer": "It’s new."
-          },
-          {
-            "question": "Put the words in the correct order: your / old / Is /  / school",
+            "question": "Put the words in the correct order: old / Is / your / school",
             "options": [
               "Is your school old ?",
-              "is your school old ?",
-              "is your school old ?"
+              "Is school old your?",
+              "school Is your old?"
             ],
             "correctAnswer": "Is your school old ?"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Put the words in the correct order: you / Yes, / can",
+            "options": [
+              "Yes, you can.",
+              "you can Yes,.",
+              "can Yes, you."
+            ],
+            "correctAnswer": "Yes, you can."
+          },
+          {
+            "question": "Put the words in the correct order: this / is / What",
+            "options": [
+              "What is this ?",
+              "is What this?",
+              "this What is?"
+            ],
+            "correctAnswer": "What is this ?"
+          },
+          {
+            "question": "Put the words in the correct order: are / my / They / friends",
+            "options": [
+              "They are my friends.",
+              "are They my friends.",
+              "They my friends are."
+            ],
+            "correctAnswer": "They are my friends."
+          },
+          {
+            "question": "Put the words in the correct order: Are / books / those / your",
+            "options": [
+              "Are those your books ?",
+              "books your Are those?",
+              "books those your Are?"
+            ],
+            "correctAnswer": "Are those your books ?"
+          },
+          {
+            "question": "Put the words in the correct order: my / pen / is / This",
+            "options": [
+              "This is my pen.",
+              "This pen my is.",
+              "my This is pen."
+            ],
+            "correctAnswer": "This is my pen."
+          },
+          {
+            "question": "Put the words in the correct order: is / What / bag / colour / school / your",
+            "options": [
+              "What colour is your school bag ?",
+              "What colour is school bag your?",
+              "What your school bag colour is?"
+            ],
+            "correctAnswer": "What colour is your school bag ?"
+          },
+          {
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "exercise",
-              "chrysanthemum",
-              "hippopotamus"
+              "readx",
+              "chrysanthemum"
             ],
             "correctAnswer": "exercise"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "info",
-              "chrysanthemum",
-              "hippopotamus"
+              "columnx",
+              "chrysanthemum"
             ],
             "correctAnswer": "info"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "tennis",
-              "chrysanthemum",
-              "hippopotamus"
+              "tablex",
+              "chrysanthemum"
             ],
             "correctAnswer": "tennis"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "game",
-              "chrysanthemum",
-              "hippopotamus"
+              "blindx",
+              "chrysanthemum"
             ],
             "correctAnswer": "game"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "mouse",
-              "chrysanthemum",
-              "hippopotamus"
+              "manx",
+              "chrysanthemum"
             ],
             "correctAnswer": "mouse"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "first",
-              "chrysanthemum",
-              "hippopotamus"
+              "partx",
+              "chrysanthemum"
             ],
             "correctAnswer": "first"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "correct",
-              "chrysanthemum",
-              "hippopotamus"
+              "sentencesx",
+              "chrysanthemum"
             ],
             "correctAnswer": "correct"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "what",
-              "chrysanthemum",
-              "hippopotamus"
+              "colourx",
+              "chrysanthemum"
             ],
             "correctAnswer": "what"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "school",
-              "chrysanthemum",
-              "hippopotamus"
+              "bagx",
+              "chrysanthemum"
             ],
             "correctAnswer": "school"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "chess",
-              "chrysanthemum",
-              "hippopotamus"
+              "fillx",
+              "chrysanthemum"
             ],
             "correctAnswer": "chess"
           },
@@ -2213,7 +2156,7 @@
     "id": "l3-u11",
     "number": 11,
     "title": "Unit 11",
-    "status": "in_progress",
+    "status": "locked",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -2222,14 +2165,14 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Exercise 1 : Circle the correct answer."
+        "expectedText": "What is his name?"
       },
       {
         "id": "l3-u11-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "Exercise 3 :Look at the pictures and write."
+        "expectedWord": "My sister is ten years old."
       },
       {
         "id": "l3-u11-quiz",
@@ -2238,182 +2181,182 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: Circle / correct / : / 1 / answer / the / Exercise",
-            "options": [
-              "Exercise 1 : Circle the correct answer.",
-              "is 1 : Circle the correct answer.",
-              "exercise 1 : circle the correct answer."
-            ],
-            "correctAnswer": "Exercise 1 : Circle the correct answer."
-          },
-          {
-            "question": "Put the words in the correct order: 3 / pictures / :Look / and / write / at / the / Exercise",
-            "options": [
-              "Exercise 3 :Look at the pictures and write.",
-              "is 3 :Look at the pictures and write.",
-              "exercise 3 :look at the pictures and write."
-            ],
-            "correctAnswer": "Exercise 3 :Look at the pictures and write."
-          },
-          {
-            "question": "Put the words in the correct order: Exercise / the / : / Match / to / the / answer / question / 4 / ",
-            "options": [
-              "Exercise  4 : Match the question to the answer.",
-              "is  4 : Match the question to the answer.",
-              "exercise  4 : match the question to the answer."
-            ],
-            "correctAnswer": "Exercise  4 : Match the question to the answer."
-          },
-          {
-            "question": "Put the words in the correct order: is / his / name / What",
+            "question": "Put the words in the correct order: name / is / his / What",
             "options": [
               "What is his name?",
-              "is is his name?",
-              "what is his name?"
+              "name What is his?",
+              "his name is What?"
             ],
             "correctAnswer": "What is his name?"
           },
           {
-            "question": "Put the words in the correct order: sister / My / years / old / ten / is",
+            "question": "Put the words in the correct order: sister / old / ten / My / years / is",
             "options": [
               "My sister is ten years old.",
-              "is sister is ten years old.",
-              "my sister is ten years old."
+              "years old My ten sister is.",
+              "years sister My is ten old."
             ],
             "correctAnswer": "My sister is ten years old."
           },
           {
-            "question": "Put the words in the correct order: How / are / old / you",
+            "question": "Put the words in the correct order: are / old / you / How",
             "options": [
               "How old are you?",
-              "is old are you?",
-              "how old are you?"
+              "old How are you?",
+              "you old How are?"
             ],
             "correctAnswer": "How old are you?"
           },
           {
-            "question": "Put the words in the correct order: He’s / old / forty / years",
-            "options": [
-              "He’s forty years old.",
-              "is forty years old.",
-              "he’s forty years old."
-            ],
-            "correctAnswer": "He’s forty years old."
-          },
-          {
-            "question": "Put the words in the correct order: father / old / your / is / How",
+            "question": "Put the words in the correct order: father / How / your / old / is",
             "options": [
               "How old is your father?",
-              "is old is your father?",
-              "how old is your father?"
+              "your How father old is?",
+              "is old father How your?"
             ],
             "correctAnswer": "How old is your father?"
           },
           {
-            "question": "Put the words in the correct order: name /  / John / is / His",
+            "question": "Put the words in the correct order: John / His / is / name",
             "options": [
               "His name is  John.",
-              "is name is  John.",
+              "name His is John.",
               "his name is  john."
             ],
             "correctAnswer": "His name is  John."
           },
           {
-            "question": "Put the words in the correct order: Is / a /  / pen / it",
+            "question": "Put the words in the correct order: pen / it / a / Is",
             "options": [
               "Is it a  pen?",
-              "is it a  pen?",
-              "is it a  pen?"
+              "pen Is it a?",
+              "it pen a Is?"
             ],
             "correctAnswer": "Is it a  pen?"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Put the words in the correct order: is / a / pencil / It",
+            "options": [
+              "It is a pencil.",
+              "is a pencil It.",
+              "It is pencil a."
+            ],
+            "correctAnswer": "It is a pencil."
+          },
+          {
+            "question": "Put the words in the correct order: grandfather / my / He / is",
+            "options": [
+              "He is my grandfather.",
+              "my is He grandfather.",
+              "my is grandfather He."
+            ],
+            "correctAnswer": "He is my grandfather."
+          },
+          {
+            "question": "Put the words in the correct order: old / your / How / sister / is",
+            "options": [
+              "How old is your sister?",
+              "sister How old your is?",
+              "old your sister How is?"
+            ],
+            "correctAnswer": "How old is your sister?"
+          },
+          {
+            "question": "Put the words in the correct order: I / old / years / five / am",
+            "options": [
+              "I am five years old.",
+              "I years five am old.",
+              "am five years I old."
+            ],
+            "correctAnswer": "I am five years old."
+          },
+          {
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "exercise",
-              "chrysanthemum",
-              "hippopotamus"
+              "circlex",
+              "chrysanthemum"
             ],
             "correctAnswer": "exercise"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "look",
-              "chrysanthemum",
-              "hippopotamus"
+              "writex",
+              "chrysanthemum"
             ],
             "correctAnswer": "look"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "sister",
-              "chrysanthemum",
-              "hippopotamus"
+              "matchx",
+              "chrysanthemum"
             ],
             "correctAnswer": "sister"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "john",
-              "chrysanthemum",
-              "hippopotamus"
+              "whatx",
+              "chrysanthemum"
             ],
             "correctAnswer": "john"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "ten",
-              "chrysanthemum",
-              "hippopotamus"
+              "yearsx",
+              "chrysanthemum"
             ],
             "correctAnswer": "ten"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "you",
-              "chrysanthemum",
-              "hippopotamus"
+              "fortyx",
+              "chrysanthemum"
             ],
             "correctAnswer": "you"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "pen",
-              "chrysanthemum",
-              "hippopotamus"
+              "isnx",
+              "chrysanthemum"
             ],
             "correctAnswer": "pen"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "five",
-              "chrysanthemum",
-              "hippopotamus"
+              "rearrangex",
+              "chrysanthemum"
             ],
             "correctAnswer": "five"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "family",
-              "chrysanthemum",
-              "hippopotamus"
+              "motherx",
+              "chrysanthemum"
             ],
             "correctAnswer": "family"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "read",
-              "chrysanthemum",
-              "hippopotamus"
+              "completex",
+              "chrysanthemum"
             ],
             "correctAnswer": "read"
           },
@@ -2542,7 +2485,7 @@
     "id": "l3-u12",
     "number": 12,
     "title": "Unit 12",
-    "status": "in_progress",
+    "status": "locked",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -2551,14 +2494,14 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Exercise 2: Number the rooms in the picture above."
+        "expectedText": "Where am I?"
       },
       {
         "id": "l3-u12-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "Exercise 3: Look and answer the questions."
+        "expectedWord": "I am in the hall."
       },
       {
         "id": "l3-u12-quiz",
@@ -2567,56 +2510,38 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: Number / 2: / Exercise / above / picture / rooms / in / the / the",
-            "options": [
-              "Exercise 2: Number the rooms in the picture above.",
-              "is 2: Number the rooms in the picture above.",
-              "exercise 2: number the rooms in the picture above."
-            ],
-            "correctAnswer": "Exercise 2: Number the rooms in the picture above."
-          },
-          {
-            "question": "Put the words in the correct order: answer / Exercise / Look / questions / the / 3: / and",
-            "options": [
-              "Exercise 3: Look and answer the questions.",
-              "is 3: Look and answer the questions.",
-              "exercise 3: look and answer the questions."
-            ],
-            "correctAnswer": "Exercise 3: Look and answer the questions."
-          },
-          {
-            "question": "Put the words in the correct order: Where / am / I",
+            "question": "Put the words in the correct order: Where / I / am",
             "options": [
               "Where am I?",
-              "is am I?",
+              "am I Where?",
               "where am i?"
             ],
             "correctAnswer": "Where am I?"
           },
           {
-            "question": "Put the words in the correct order: am / in / hall / the / I",
+            "question": "Put the words in the correct order: the / I / hall / in / am",
             "options": [
               "I am in the hall.",
-              "is am in the hall.",
-              "i am in the hall."
+              "am hall I in the.",
+              "hall I am the in."
             ],
             "correctAnswer": "I am in the hall."
           },
           {
-            "question": "Put the words in the correct order: my / Where / is /  / mother",
+            "question": "Put the words in the correct order: mother / my / is / Where",
             "options": [
               "Where is my mother ?",
-              "is is my mother ?",
-              "where is my mother ?"
+              "Where mother is my?",
+              "Where my mother is?"
             ],
             "correctAnswer": "Where is my mother ?"
           },
           {
-            "question": "Put the words in the correct order: Where / my / is / brother",
+            "question": "Put the words in the correct order: brother / my / Where / is",
             "options": [
               "Where is my brother?",
-              "is is my brother?",
-              "where is my brother?"
+              "is my Where brother?",
+              "is brother my Where?"
             ],
             "correctAnswer": "Where is my brother?"
           },
@@ -2624,125 +2549,143 @@
             "question": "Put the words in the correct order: Where / my / is / grandmother",
             "options": [
               "Where is my grandmother?",
-              "is is my grandmother?",
-              "where is my grandmother?"
+              "grandmother my is Where?",
+              "grandmother Where my is?"
             ],
             "correctAnswer": "Where is my grandmother?"
           },
           {
-            "question": "Put the words in the correct order: my / is / Where / dog",
+            "question": "Put the words in the correct order: is / Where / dog / my",
             "options": [
               "Where is my dog?",
-              "is is my dog?",
-              "where is my dog?"
+              "dog Where my is?",
+              "Where my dog is?"
             ],
             "correctAnswer": "Where is my dog?"
           },
           {
-            "question": "Put the words in the correct order: Where / my / father / is",
+            "question": "Put the words in the correct order: Where / is / my / father",
             "options": [
               "Where is my father?",
-              "is is my father?",
-              "where is my father?"
+              "is Where my father?",
+              "is Where father my?"
             ],
             "correctAnswer": "Where is my father?"
           },
           {
-            "question": "Put the words in the correct order: complete / the / sentences / Read / 4: / and / Exercise",
+            "question": "Put the words in the correct order: my / There / bedroom / bed / a / in / is",
             "options": [
-              "Exercise 4: Read and complete the sentences.",
-              "is 4: Read and complete the sentences.",
-              "exercise 4: read and complete the sentences."
+              "There is a bed in my bedroom.",
+              "a in bedroom my There is bed.",
+              "There my in is a bedroom bed."
             ],
-            "correctAnswer": "Exercise 4: Read and complete the sentences."
+            "correctAnswer": "There is a bed in my bedroom."
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Put the words in the correct order: is / there / Yes,",
+            "options": [
+              "Yes, there is.",
+              "there Yes, is.",
+              "is there Yes,."
+            ],
+            "correctAnswer": "Yes, there is."
+          },
+          {
+            "question": "Put the words in the correct order: a / behind / the / there / house / pond / Is",
+            "options": [
+              "Is there a pond behind the house?",
+              "the behind a house Is there pond?",
+              "Is there the behind pond a house?"
+            ],
+            "correctAnswer": "Is there a pond behind the house?"
+          },
+          {
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "exercise",
-              "chrysanthemum",
-              "hippopotamus"
+              "lookx",
+              "chrysanthemum"
             ],
             "correctAnswer": "exercise"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "room",
-              "chrysanthemum",
-              "hippopotamus"
+              "livingx",
+              "chrysanthemum"
             ],
             "correctAnswer": "room"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "bedroom",
-              "chrysanthemum",
-              "hippopotamus"
+              "gardenx",
+              "chrysanthemum"
             ],
             "correctAnswer": "bedroom"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "picture",
-              "chrysanthemum",
-              "hippopotamus"
+              "abovex",
+              "chrysanthemum"
             ],
             "correctAnswer": "picture"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "where",
-              "chrysanthemum",
-              "hippopotamus"
+              "hallx",
+              "chrysanthemum"
             ],
             "correctAnswer": "where"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "dog",
-              "chrysanthemum",
-              "hippopotamus"
+              "fatherx",
+              "chrysanthemum"
             ],
             "correctAnswer": "dog"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "sentences",
-              "chrysanthemum",
-              "hippopotamus"
+              "therex",
+              "chrysanthemum"
             ],
             "correctAnswer": "sentences"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "over",
-              "chrysanthemum",
-              "hippopotamus"
+              "smallx",
+              "chrysanthemum"
             ],
             "correctAnswer": "over"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "name",
-              "chrysanthemum",
-              "hippopotamus"
+              "benx",
+              "chrysanthemum"
             ],
             "correctAnswer": "name"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "nice",
-              "chrysanthemum",
-              "hippopotamus"
+              "deskx",
+              "chrysanthemum"
             ],
             "correctAnswer": "nice"
           },
@@ -2889,7 +2832,7 @@
     "id": "l3-u13",
     "number": 13,
     "title": "Unit 13",
-    "status": "in_progress",
+    "status": "locked",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -2898,14 +2841,14 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Exercise 1: Look and write."
+        "expectedText": "It's here."
       },
       {
         "id": "l3-u13-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "Exercise 2: Look ,read and answer these questions."
+        "expectedWord": "Where are the pens?"
       },
       {
         "id": "l3-u13-quiz",
@@ -2914,182 +2857,182 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: Look / and / write / Exercise / 1:",
-            "options": [
-              "Exercise 1: Look and write.",
-              "is 1: Look and write.",
-              "exercise 1: look and write."
-            ],
-            "correctAnswer": "Exercise 1: Look and write."
-          },
-          {
-            "question": "Put the words in the correct order: and / Exercise / questions / Look / these / ,read / answer / 2:",
-            "options": [
-              "Exercise 2: Look ,read and answer these questions.",
-              "is 2: Look ,read and answer these questions.",
-              "exercise 2: look ,read and answer these questions."
-            ],
-            "correctAnswer": "Exercise 2: Look ,read and answer these questions."
-          },
-          {
-            "question": "Put the words in the correct order: It's / here",
+            "question": "Put the words in the correct order: here / It's",
             "options": [
               "It's here.",
-              "is here.",
+              "here It's.",
               "it's here."
             ],
             "correctAnswer": "It's here."
           },
           {
-            "question": "Put the words in the correct order: and / Look, / Exercise / 3 / : / answer / read",
-            "options": [
-              "Exercise 3 : Look, read and answer.",
-              "is 3 : Look, read and answer.",
-              "exercise 3 : look, read and answer."
-            ],
-            "correctAnswer": "Exercise 3 : Look, read and answer."
-          },
-          {
-            "question": "Put the words in the correct order: pens / Where / the / are",
+            "question": "Put the words in the correct order: pens / the / Where / are",
             "options": [
               "Where are the pens?",
-              "is are the pens?",
+              "pens Where the are?",
               "where are the pens?"
             ],
             "correctAnswer": "Where are the pens?"
           },
           {
-            "question": "Put the words in the correct order: TV / is / Where / the",
+            "question": "Put the words in the correct order: TV / is / the / Where",
             "options": [
               "Where is the TV?",
-              "is is the TV?",
-              "where is the tv?"
+              "the TV is Where?",
+              "Where the is TV?"
             ],
             "correctAnswer": "Where is the TV?"
           },
           {
-            "question": "Put the words in the correct order: the / are / posters / Where",
+            "question": "Put the words in the correct order: the / Where / are / posters",
             "options": [
               "Where are the posters?",
-              "is are the posters?",
-              "where are the posters?"
+              "Where posters are the?",
+              "the Where are posters?"
             ],
             "correctAnswer": "Where are the posters?"
           },
           {
-            "question": "Put the words in the correct order: is / the / Where / kite",
+            "question": "Put the words in the correct order: kite / the / Where / is",
             "options": [
               "Where is the kite?",
-              "is is the kite?",
-              "where is the kite?"
+              "the is Where kite?",
+              "kite is the Where?"
             ],
             "correctAnswer": "Where is the kite?"
           },
           {
-            "question": "Put the words in the correct order: is / the / school / bag / Where",
+            "question": "Put the words in the correct order: the / is / Where / bag / school",
             "options": [
               "Where is the school bag?",
-              "is is the school bag?",
-              "where is the school bag?"
+              "bag the school Where is?",
+              "is bag the Where school?"
             ],
             "correctAnswer": "Where is the school bag?"
           },
           {
-            "question": "Put the words in the correct order: book / the / is / Where",
+            "question": "Put the words in the correct order: book / the / Where / is",
             "options": [
               "Where is the book?",
-              "is is the book?",
-              "where is the book?"
+              "book is the Where?",
+              "Where the book is?"
             ],
             "correctAnswer": "Where is the book?"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Put the words in the correct order: cars / the / Where / are",
+            "options": [
+              "Where are the cars?",
+              "the are cars Where?",
+              "the cars Where are?"
+            ],
+            "correctAnswer": "Where are the cars?"
+          },
+          {
+            "question": "Put the words in the correct order: Where / the / notebook / is",
+            "options": [
+              "Where is the notebook?",
+              "is Where the notebook?",
+              "the Where notebook is?"
+            ],
+            "correctAnswer": "Where is the notebook?"
+          },
+          {
+            "question": "Put the words in the correct order: table / the / is / Where",
+            "options": [
+              "Where is the table?",
+              "Where the table is?",
+              "where is the table?"
+            ],
+            "correctAnswer": "Where is the table?"
+          },
+          {
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "exercise",
-              "chrysanthemum",
-              "hippopotamus"
+              "lookx",
+              "chrysanthemum"
             ],
             "correctAnswer": "exercise"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "ball",
-              "chrysanthemum",
-              "hippopotamus"
+              "posterx",
+              "chrysanthemum"
             ],
             "correctAnswer": "ball"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "picture",
-              "chrysanthemum",
-              "hippopotamus"
+              "coatx",
+              "chrysanthemum"
             ],
             "correctAnswer": "picture"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "these",
-              "chrysanthemum",
-              "hippopotamus"
+              "questionsx",
+              "chrysanthemum"
             ],
             "correctAnswer": "these"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "pens",
-              "chrysanthemum",
-              "hippopotamus"
+              "postersx",
+              "chrysanthemum"
             ],
             "correctAnswer": "pens"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "bag",
-              "chrysanthemum",
-              "hippopotamus"
+              "bookx",
+              "chrysanthemum"
             ],
             "correctAnswer": "bag"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "table",
-              "chrysanthemum",
-              "hippopotamus"
+              "circlex",
+              "chrysanthemum"
             ],
             "correctAnswer": "table"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "plane",
-              "chrysanthemum",
-              "hippopotamus"
+              "deskx",
+              "chrysanthemum"
             ],
             "correctAnswer": "plane"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "wall",
-              "chrysanthemum",
-              "hippopotamus"
+              "nextx",
+              "chrysanthemum"
             ],
             "correctAnswer": "wall"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "pillow",
-              "chrysanthemum",
-              "hippopotamus"
+              "putx",
+              "chrysanthemum"
             ],
             "correctAnswer": "pillow"
           },
@@ -3227,7 +3170,7 @@
     "id": "l3-u14",
     "number": 14,
     "title": "Unit 14",
-    "status": "in_progress",
+    "status": "locked",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -3236,14 +3179,14 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Exercise 2 : Look and write ."
+        "expectedText": "No, there aren't."
       },
       {
         "id": "l3-u14-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "No, there aren't."
+        "expectedWord": "There are three books on the table."
       },
       {
         "id": "l3-u14-quiz",
@@ -3252,182 +3195,182 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: Exercise / Look / 2 / : /  / write / and",
-            "options": [
-              "Exercise 2 : Look and write .",
-              "is 2 : Look and write .",
-              "exercise 2 : look and write ."
-            ],
-            "correctAnswer": "Exercise 2 : Look and write ."
-          },
-          {
             "question": "Put the words in the correct order: there / aren't / No,",
             "options": [
               "No, there aren't.",
-              "is there aren't.",
+              "No, aren't there.",
               "no, there aren't."
             ],
             "correctAnswer": "No, there aren't."
           },
           {
-            "question": "Put the words in the correct order: : / Look / 3 / ,read / and / answer / Exercise",
-            "options": [
-              "Exercise 3 : Look ,read and answer.",
-              "is 3 : Look ,read and answer.",
-              "exercise 3 : look ,read and answer."
-            ],
-            "correctAnswer": "Exercise 3 : Look ,read and answer."
-          },
-          {
-            "question": "Put the words in the correct order: sentences / using / 4 / Make / words / given / Exercise / : / the",
-            "options": [
-              "Exercise 4 : Make sentences using the words given.",
-              "is 4 : Make sentences using the words given.",
-              "exercise 4 : make sentences using the words given."
-            ],
-            "correctAnswer": "Exercise 4 : Make sentences using the words given."
-          },
-          {
-            "question": "Put the words in the correct order: books / There / table / the / on / three / are",
+            "question": "Put the words in the correct order: are / on / books / table / There / three / the",
             "options": [
               "There are three books on the table.",
-              "is are three books on the table.",
-              "there are three books on the table."
+              "are books the on There table three.",
+              "the table books on are There three."
             ],
             "correctAnswer": "There are three books on the table."
           },
           {
-            "question": "Put the words in the correct order: the / and / Make / answer / : / 5 / questions / Exercise",
-            "options": [
-              "Exercise 5 : Make and answer the questions.",
-              "is 5 : Make and answer the questions.",
-              "exercise 5 : make and answer the questions."
-            ],
-            "correctAnswer": "Exercise 5 : Make and answer the questions."
-          },
-          {
-            "question": "Put the words in the correct order: there / are / Yes,",
+            "question": "Put the words in the correct order: are / there / Yes,",
             "options": [
               "Yes, there are.",
-              "is there are.",
+              "are there Yes,.",
               "yes, there are."
             ],
             "correctAnswer": "Yes, there are."
           },
           {
-            "question": "Put the words in the correct order: No, / there / aren’t",
-            "options": [
-              "No, there aren’t.",
-              "is there aren’t.",
-              "no, there aren’t."
-            ],
-            "correctAnswer": "No, there aren’t."
-          },
-          {
-            "question": "Put the words in the correct order: a / is / in / There / the / cupboard / kitchen",
+            "question": "Put the words in the correct order: cupboard / There / the / kitchen / a / in / is",
             "options": [
               "There is a cupboard in the kitchen.",
-              "is is a cupboard in the kitchen.",
-              "there is a cupboard in the kitchen."
+              "in a kitchen There the cupboard is.",
+              "cupboard the is kitchen a in There."
             ],
             "correctAnswer": "There is a cupboard in the kitchen."
           },
           {
-            "question": "Put the words in the correct order: in / thirty / classroom / the / are / students / There",
+            "question": "Put the words in the correct order: students / in / There / thirty / the / are / classroom",
             "options": [
               "There are thirty students in the classroom.",
-              "is are thirty students in the classroom.",
-              "there are thirty students in the classroom."
+              "in classroom are the students There thirty.",
+              "are in students the thirty There classroom."
             ],
             "correctAnswer": "There are thirty students in the classroom."
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Put the words in the correct order: living / is / room / my / This",
+            "options": [
+              "This is my living room.",
+              "is my This room living.",
+              "my living is room This."
+            ],
+            "correctAnswer": "This is my living room."
+          },
+          {
+            "question": "Put the words in the correct order: in / the / room / are / There / things / many",
+            "options": [
+              "There are many things in the room.",
+              "the are There room in things many.",
+              "things are in There room many the."
+            ],
+            "correctAnswer": "There are many things in the room."
+          },
+          {
+            "question": "Put the words in the correct order: three / There / are / door / windows / one / and",
+            "options": [
+              "There are three windows and one door.",
+              "are three one and There door windows.",
+              "are three windows and one There door."
+            ],
+            "correctAnswer": "There are three windows and one door."
+          },
+          {
+            "question": "Put the words in the correct order: is / a / sofa, / desk, / chairs / six / a / There",
+            "options": [
+              "There is a sofa, a desk, six chairs.",
+              "a chairs six sofa, is a desk, There.",
+              "a sofa, desk, a There chairs six is."
+            ],
+            "correctAnswer": "There is a sofa, a desk, six chairs."
+          },
+          {
+            "question": "Put the words in the correct order: and / are / five / There / pictures / on / wall / fan / a / the",
+            "options": [
+              "There are five pictures and a fan on the wall.",
+              "a and are There on five pictures wall the fan.",
+              "and on pictures a There fan wall five the are."
+            ],
+            "correctAnswer": "There are five pictures and a fan on the wall."
+          },
+          {
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "exercise",
-              "chrysanthemum",
-              "hippopotamus"
+              "lookx",
+              "chrysanthemum"
             ],
             "correctAnswer": "exercise"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "mirrors",
-              "chrysanthemum",
-              "hippopotamus"
+              "doorsx",
+              "chrysanthemum"
             ],
             "correctAnswer": "mirrors"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "sofas",
-              "chrysanthemum",
-              "hippopotamus"
+              "wardrobesx",
+              "chrysanthemum"
             ],
             "correctAnswer": "sofas"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "there",
-              "chrysanthemum",
-              "hippopotamus"
+              "arenx",
+              "chrysanthemum"
             ],
             "correctAnswer": "there"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "read",
-              "chrysanthemum",
-              "hippopotamus"
+              "answerx",
+              "chrysanthemum"
             ],
             "correctAnswer": "read"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "chair",
-              "chrysanthemum",
-              "hippopotamus"
+              "howx",
+              "chrysanthemum"
             ],
             "correctAnswer": "chair"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "wall",
-              "chrysanthemum",
-              "hippopotamus"
+              "fourx",
+              "chrysanthemum"
             ],
             "correctAnswer": "wall"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "next",
-              "chrysanthemum",
-              "hippopotamus"
+              "deskx",
+              "chrysanthemum"
             ],
             "correctAnswer": "next"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "dog",
-              "chrysanthemum",
-              "hippopotamus"
+              "makex",
+              "chrysanthemum"
             ],
             "correctAnswer": "dog"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "words",
-              "chrysanthemum",
-              "hippopotamus"
+              "givenx",
+              "chrysanthemum"
             ],
             "correctAnswer": "words"
           },
@@ -3556,7 +3499,7 @@
     "id": "l3-u15",
     "number": 15,
     "title": "Unit 15",
-    "status": "in_progress",
+    "status": "locked",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -3565,14 +3508,14 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Exercise 1: Look and drag the words."
+        "expectedText": "Is it a ship ?"
       },
       {
         "id": "l3-u15-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "Exercise 2: Odd one out."
+        "expectedWord": "Is it a doll ?"
       },
       {
         "id": "l3-u15-quiz",
@@ -3581,182 +3524,182 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: 1: / and / Look / Exercise / words / the / drag",
-            "options": [
-              "Exercise 1: Look and drag the words.",
-              "is 1: Look and drag the words.",
-              "exercise 1: look and drag the words."
-            ],
-            "correctAnswer": "Exercise 1: Look and drag the words."
-          },
-          {
-            "question": "Put the words in the correct order: Exercise / Odd / one / out / 2:",
-            "options": [
-              "Exercise 2: Odd one out.",
-              "is 2: Odd one out.",
-              "exercise 2: odd one out."
-            ],
-            "correctAnswer": "Exercise 2: Odd one out."
-          },
-          {
-            "question": "Put the words in the correct order: ship / Is / it /  / a",
+            "question": "Put the words in the correct order: Is / it / ship / a",
             "options": [
               "Is it a ship ?",
-              "is it a ship ?",
-              "is it a ship ?"
+              "it a ship Is?",
+              "a ship Is it?"
             ],
             "correctAnswer": "Is it a ship ?"
           },
           {
-            "question": "Put the words in the correct order: – / a /  / it / yo / yo / Is",
-            "options": [
-              "Is it a yo – yo ?",
-              "is it a yo – yo ?",
-              "is it a yo – yo ?"
-            ],
-            "correctAnswer": "Is it a yo – yo ?"
-          },
-          {
-            "question": "Put the words in the correct order: it / a / Is /  / doll",
+            "question": "Put the words in the correct order: it / doll / a / Is",
             "options": [
               "Is it a doll ?",
-              "is it a doll ?",
-              "is it a doll ?"
+              "doll Is a it?",
+              "it a doll Is?"
             ],
             "correctAnswer": "Is it a doll ?"
           },
           {
-            "question": "Put the words in the correct order: it / a / car /  / Is",
+            "question": "Put the words in the correct order: car / a / it / Is",
             "options": [
               "Is it a car ?",
-              "is it a car ?",
-              "is it a car ?"
+              "a car Is it?",
+              "it Is car a?"
             ],
             "correctAnswer": "Is it a car ?"
           },
           {
-            "question": "Put the words in the correct order: it / ball / a /  / Is",
+            "question": "Put the words in the correct order: it / Is / ball / a",
             "options": [
               "Is it a ball ?",
-              "is it a ball ?",
-              "is it a ball ?"
+              "a ball it Is?",
+              "ball a Is it?"
             ],
             "correctAnswer": "Is it a ball ?"
           },
           {
-            "question": "Put the words in the correct order:  / Is / a / it / plane",
+            "question": "Put the words in the correct order: a / Is / plane / it",
             "options": [
               "Is it a plane ?",
-              "is it a plane ?",
-              "is it a plane ?"
+              "Is it plane a?",
+              "a it Is plane?"
             ],
             "correctAnswer": "Is it a plane ?"
-          },
-          {
-            "question": "Put the words in the correct order:  / write / Look / 4: / Exercise / and",
-            "options": [
-              "Exercise 4: Look and write .",
-              "is 4: Look and write .",
-              "exercise 4: look and write ."
-            ],
-            "correctAnswer": "Exercise 4: Look and write ."
           },
           {
             "question": "Put the words in the correct order: I / Yes, / do",
             "options": [
               "Yes, I do.",
-              "is I do.",
+              "do I Yes,.",
               "yes, i do."
             ],
             "correctAnswer": "Yes, I do."
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Put the words in the correct order: does / he / Yes,",
+            "options": [
+              "Yes, he does.",
+              "does Yes, he.",
+              "yes, he does."
+            ],
+            "correctAnswer": "Yes, he does."
+          },
+          {
+            "question": "Put the words in the correct order: does / Yes, / she",
+            "options": [
+              "Yes, she does.",
+              "she does Yes,.",
+              "does Yes, she."
+            ],
+            "correctAnswer": "Yes, she does."
+          },
+          {
+            "question": "Put the words in the correct order: a / Do / plane / you / have",
+            "options": [
+              "Do you have a plane?",
+              "Do have you a plane?",
+              "a you Do plane have?"
+            ],
+            "correctAnswer": "Do you have a plane?"
+          },
+          {
+            "question": "Put the words in the correct order: have / car / Does / a / he",
+            "options": [
+              "Does he have a car?",
+              "car a Does have he?",
+              "have a he Does car?"
+            ],
+            "correctAnswer": "Does he have a car?"
+          },
+          {
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "exercise",
-              "chrysanthemum",
-              "hippopotamus"
+              "lookx",
+              "chrysanthemum"
             ],
             "correctAnswer": "exercise"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "odd",
-              "chrysanthemum",
-              "hippopotamus"
+              "onex",
+              "chrysanthemum"
             ],
             "correctAnswer": "odd"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "living",
-              "chrysanthemum",
-              "hippopotamus"
+              "roomx",
+              "chrysanthemum"
             ],
             "correctAnswer": "living"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "plane",
-              "chrysanthemum",
-              "hippopotamus"
+              "kitex",
+              "chrysanthemum"
             ],
             "correctAnswer": "plane"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "car",
-              "chrysanthemum",
-              "hippopotamus"
+              "ballx",
+              "chrysanthemum"
             ],
             "correctAnswer": "car"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "doll",
-              "chrysanthemum",
-              "hippopotamus"
+              "treex",
+              "chrysanthemum"
             ],
             "correctAnswer": "doll"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "flower",
-              "chrysanthemum",
-              "hippopotamus"
+              "puzzlex",
+              "chrysanthemum"
             ],
             "correctAnswer": "flower"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "yard",
-              "chrysanthemum",
-              "hippopotamus"
+              "yellowx",
+              "chrysanthemum"
             ],
             "correctAnswer": "yard"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "isn",
-              "chrysanthemum",
-              "hippopotamus"
+              "donx",
+              "chrysanthemum"
             ],
             "correctAnswer": "isn"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "you",
-              "chrysanthemum",
-              "hippopotamus"
+              "havex",
+              "chrysanthemum"
             ],
             "correctAnswer": "you"
           },
@@ -3876,7 +3819,7 @@
     "id": "l3-u16",
     "number": 16,
     "title": "Unit 16",
-    "status": "in_progress",
+    "status": "locked",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -3885,14 +3828,14 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Exercise 1: Look and write."
+        "expectedText": "He has two goldfish."
       },
       {
         "id": "l3-u16-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "Exercise 2: Look ,read and answer."
+        "expectedWord": "They're next to the flower pot."
       },
       {
         "id": "l3-u16-quiz",
@@ -3901,182 +3844,182 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: Exercise / 1: / Look / and / write",
-            "options": [
-              "Exercise 1: Look and write.",
-              "is 1: Look and write.",
-              "exercise 1: look and write."
-            ],
-            "correctAnswer": "Exercise 1: Look and write."
-          },
-          {
-            "question": "Put the words in the correct order: ,read / answer / Look / 2: / Exercise / and",
-            "options": [
-              "Exercise 2: Look ,read and answer.",
-              "is 2: Look ,read and answer.",
-              "exercise 2: look ,read and answer."
-            ],
-            "correctAnswer": "Exercise 2: Look ,read and answer."
-          },
-          {
-            "question": "Put the words in the correct order: 3: / write / Exercise /  / and / Read",
-            "options": [
-              "Exercise 3: Read and write .",
-              "is 3: Read and write .",
-              "exercise 3: read and write ."
-            ],
-            "correctAnswer": "Exercise 3: Read and write ."
-          },
-          {
-            "question": "Put the words in the correct order: two / He / goldfish / has",
+            "question": "Put the words in the correct order: two / goldfish / He / has",
             "options": [
               "He has two goldfish.",
-              "is has two goldfish.",
-              "he has two goldfish."
+              "two has He goldfish.",
+              "goldfish He two has."
             ],
             "correctAnswer": "He has two goldfish."
           },
           {
-            "question": "Put the words in the correct order: she / doesn’t / No,",
-            "options": [
-              "No, she doesn’t.",
-              "is she doesn’t.",
-              "no, she doesn’t."
-            ],
-            "correctAnswer": "No, she doesn’t."
-          },
-          {
-            "question": "Put the words in the correct order: They're / next / flower / to / pot / the",
+            "question": "Put the words in the correct order: pot / They're / next / to / the / flower",
             "options": [
               "They're next to the flower pot.",
-              "is next to the flower pot.",
-              "they're next to the flower pot."
+              "the flower next They're to pot.",
+              "They're next pot to flower the."
             ],
             "correctAnswer": "They're next to the flower pot."
           },
           {
-            "question": "Put the words in the correct order: the / desk / They’re / under",
-            "options": [
-              "They’re under the desk.",
-              "is under the desk.",
-              "they’re under the desk."
-            ],
-            "correctAnswer": "They’re under the desk."
-          },
-          {
-            "question": "Put the words in the correct order: They / in / are / the / garden",
+            "question": "Put the words in the correct order: garden / in / are / They / the",
             "options": [
               "They are in the garden.",
-              "is are in the garden.",
-              "they are in the garden."
+              "the in garden are They.",
+              "They are the garden in."
             ],
             "correctAnswer": "They are in the garden."
-          },
-          {
-            "question": "Put the words in the correct order: in / the / They’re / cage",
-            "options": [
-              "They’re in the cage.",
-              "is in the cage.",
-              "they’re in the cage."
-            ],
-            "correctAnswer": "They’re in the cage."
           },
           {
             "question": "Put the words in the correct order: she / Yes, / does",
             "options": [
               "Yes, she does.",
-              "is she does.",
-              "yes, she does."
+              "Yes, does she.",
+              "she does Yes,."
             ],
             "correctAnswer": "Yes, she does."
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Put the words in the correct order: am / I / Mary",
+            "options": [
+              "I am Mary.",
+              "am Mary I.",
+              "i am mary."
+            ],
+            "correctAnswer": "I am Mary."
+          },
+          {
+            "question": "Put the words in the correct order: pets / I / have / four",
+            "options": [
+              "I have four pets.",
+              "have pets I four.",
+              "have four pets I."
+            ],
+            "correctAnswer": "I have four pets."
+          },
+          {
+            "question": "Put the words in the correct order: are / dog, / a / They / goldfish / and / a / bird, / two",
+            "options": [
+              "They are a dog, a bird, and two goldfish.",
+              "and two a goldfish are dog, They bird, a.",
+              "and are a They dog, a two bird, goldfish."
+            ],
+            "correctAnswer": "They are a dog, a bird, and two goldfish."
+          },
+          {
+            "question": "Put the words in the correct order: dog / is / The / garden / the / in",
+            "options": [
+              "The dog is in the garden.",
+              "is The in garden the dog.",
+              "dog garden is the in The."
+            ],
+            "correctAnswer": "The dog is in the garden."
+          },
+          {
+            "question": "Put the words in the correct order: and / black / white / It / is",
+            "options": [
+              "It is black and white.",
+              "is black white and It.",
+              "black is and It white."
+            ],
+            "correctAnswer": "It is black and white."
+          },
+          {
+            "question": "Put the words in the correct order: in / is / The / bird / the / cage",
+            "options": [
+              "The bird is in the cage.",
+              "The the is bird in cage.",
+              "The the is cage in bird."
+            ],
+            "correctAnswer": "The bird is in the cage."
+          },
+          {
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "exercise",
-              "chrysanthemum",
-              "hippopotamus"
+              "lookx",
+              "chrysanthemum"
             ],
             "correctAnswer": "exercise"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "parrots",
-              "chrysanthemum",
-              "hippopotamus"
+              "rabbitsx",
+              "chrysanthemum"
             ],
             "correctAnswer": "parrots"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "monkeys",
-              "chrysanthemum",
-              "hippopotamus"
+              "readx",
+              "chrysanthemum"
             ],
             "correctAnswer": "monkeys"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "have",
-              "chrysanthemum",
-              "hippopotamus"
+              "anyx",
+              "chrysanthemum"
             ],
             "correctAnswer": "have"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "three",
-              "chrysanthemum",
-              "hippopotamus"
+              "twox",
+              "chrysanthemum"
             ],
             "correctAnswer": "three"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "black",
-              "chrysanthemum",
-              "hippopotamus"
+              "dogx",
+              "chrysanthemum"
             ],
             "correctAnswer": "black"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "rabbit",
-              "chrysanthemum",
-              "hippopotamus"
+              "amyx",
+              "chrysanthemum"
             ],
             "correctAnswer": "rabbit"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "birds",
-              "chrysanthemum",
-              "hippopotamus"
+              "sisterx",
+              "chrysanthemum"
             ],
             "correctAnswer": "birds"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "sentences",
-              "chrysanthemum",
-              "hippopotamus"
+              "donx",
+              "chrysanthemum"
             ],
             "correctAnswer": "sentences"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "doesn",
-              "chrysanthemum",
-              "hippopotamus"
+              "wherex",
+              "chrysanthemum"
             ],
             "correctAnswer": "doesn"
           },
@@ -4205,7 +4148,7 @@
     "id": "l3-u17",
     "number": 17,
     "title": "Unit 17",
-    "status": "in_progress",
+    "status": "locked",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -4214,14 +4157,14 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Exercise 1: Look and write."
+        "expectedText": "Are they balls ?"
       },
       {
         "id": "l3-u17-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "Exercise 2: Look and write."
+        "expectedWord": "Are they trucks ?"
       },
       {
         "id": "l3-u17-quiz",
@@ -4230,182 +4173,182 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: Exercise / Look / write / 1: / and",
-            "options": [
-              "Exercise 1: Look and write.",
-              "is 1: Look and write.",
-              "exercise 1: look and write."
-            ],
-            "correctAnswer": "Exercise 1: Look and write."
-          },
-          {
-            "question": "Put the words in the correct order: write / 2: / and / Look / Exercise",
-            "options": [
-              "Exercise 2: Look and write.",
-              "is 2: Look and write.",
-              "exercise 2: look and write."
-            ],
-            "correctAnswer": "Exercise 2: Look and write."
-          },
-          {
-            "question": "Put the words in the correct order: Are / balls /  / they",
+            "question": "Put the words in the correct order: Are / balls / they",
             "options": [
               "Are they balls ?",
-              "is they balls ?",
-              "are they balls ?"
+              "balls they Are?",
+              "balls Are they?"
             ],
             "correctAnswer": "Are they balls ?"
           },
           {
-            "question": "Put the words in the correct order: Are / they / trucks / ",
+            "question": "Put the words in the correct order: Are / trucks / they",
             "options": [
               "Are they trucks ?",
-              "is they trucks ?",
-              "are they trucks ?"
+              "they Are trucks?",
+              "trucks Are they?"
             ],
             "correctAnswer": "Are they trucks ?"
           },
           {
-            "question": "Put the words in the correct order:  / they / kites / Are",
+            "question": "Put the words in the correct order: kites / they / Are",
             "options": [
               "Are they kites ?",
-              "is they kites ?",
-              "are they kites ?"
+              "kites they Are?",
+              "Are kites they?"
             ],
             "correctAnswer": "Are they kites ?"
           },
           {
-            "question": "Put the words in the correct order: Are / they / dolls / ",
+            "question": "Put the words in the correct order: Are / dolls / they",
             "options": [
               "Are they dolls ?",
-              "is they dolls ?",
-              "are they dolls ?"
+              "dolls they Are?",
+              "Are dolls they?"
             ],
             "correctAnswer": "Are they dolls ?"
           },
           {
-            "question": "Put the words in the correct order: they / cars / Are",
+            "question": "Put the words in the correct order: cars / they / Are",
             "options": [
               "Are they cars?",
-              "is they cars?",
-              "are they cars?"
+              "Are cars they?",
+              "cars they Are?"
             ],
             "correctAnswer": "Are they cars?"
           },
           {
-            "question": "Put the words in the correct order: Read / Exercise / : / 4 / match / and",
-            "options": [
-              "Exercise 4 : Read and match.",
-              "is 4 : Read and match.",
-              "exercise 4 : read and match."
-            ],
-            "correctAnswer": "Exercise 4 : Read and match."
-          },
-          {
-            "question": "Put the words in the correct order: cats / you / do / How / have / many",
+            "question": "Put the words in the correct order: have / you / do / many / How / cats",
             "options": [
               "How many cats do you have?",
-              "is many cats do you have?",
-              "how many cats do you have?"
+              "you many cats How do have?",
+              "you How many do have cats?"
             ],
             "correctAnswer": "How many cats do you have?"
           },
           {
-            "question": "Put the words in the correct order: do / Yes, / I",
+            "question": "Put the words in the correct order: I / Yes, / do",
             "options": [
               "Yes, I do.",
-              "is I do.",
+              "Yes, do I.",
               "yes, i do."
             ],
             "correctAnswer": "Yes, I do."
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Put the words in the correct order: like / you / do / What / toys",
+            "options": [
+              "What toys do you like?",
+              "do What toys you like?",
+              "do What you like toys?"
+            ],
+            "correctAnswer": "What toys do you like?"
+          },
+          {
+            "question": "Put the words in the correct order: He / robots / balls / likes / and",
+            "options": [
+              "He likes balls and robots.",
+              "balls and He robots likes.",
+              "likes He balls robots and."
+            ],
+            "correctAnswer": "He likes balls and robots."
+          },
+          {
+            "question": "Put the words in the correct order: does / like / What / toys / he",
+            "options": [
+              "What toys does he like?",
+              "he What like does toys?",
+              "What like does he toys?"
+            ],
+            "correctAnswer": "What toys does he like?"
+          },
+          {
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "exercise",
-              "chrysanthemum",
-              "hippopotamus"
+              "lookx",
+              "chrysanthemum"
             ],
             "correctAnswer": "exercise"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "kites",
-              "chrysanthemum",
-              "hippopotamus"
+              "carsx",
+              "chrysanthemum"
             ],
             "correctAnswer": "kites"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "trucks",
-              "chrysanthemum",
-              "hippopotamus"
+              "yesx",
+              "chrysanthemum"
             ],
             "correctAnswer": "trucks"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "words",
-              "chrysanthemum",
-              "hippopotamus"
+              "correctx",
+              "chrysanthemum"
             ],
             "correctAnswer": "words"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "sentences",
-              "chrysanthemum",
-              "hippopotamus"
+              "toysx",
+              "chrysanthemum"
             ],
             "correctAnswer": "sentences"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "like",
-              "chrysanthemum",
-              "hippopotamus"
+              "shipsx",
+              "chrysanthemum"
             ],
             "correctAnswer": "like"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "you",
-              "chrysanthemum",
-              "hippopotamus"
+              "peterx",
+              "chrysanthemum"
             ],
             "correctAnswer": "you"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "brother",
-              "chrysanthemum",
-              "hippopotamus"
+              "rabbitsx",
+              "chrysanthemum"
             ],
             "correctAnswer": "brother"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "have",
-              "chrysanthemum",
-              "hippopotamus"
+              "shelfx",
+              "chrysanthemum"
             ],
             "correctAnswer": "have"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "tony",
-              "chrysanthemum",
-              "hippopotamus"
+              "parrotsx",
+              "chrysanthemum"
             ],
             "correctAnswer": "tony"
           },
@@ -4534,7 +4477,7 @@
     "id": "l3-u18",
     "number": 18,
     "title": "Unit 18",
-    "status": "in_progress",
+    "status": "locked",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -4559,182 +4502,181 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: is / she /  / doing / What",
+            "question": "Put the words in the correct order: What / doing / is / she",
             "options": [
               "What is she doing ?",
-              "is is she doing ?",
-              "what is she doing ?"
+              "she What is doing?",
+              "is doing she What?"
             ],
             "correctAnswer": "What is she doing ?"
           },
           {
-            "question": "Put the words in the correct order: What / doing /  / you / are",
+            "question": "Put the words in the correct order: are / What / you / doing",
             "options": [
               "What are you doing ?",
-              "is are you doing ?",
+              "doing are you What?",
               "what are you doing ?"
             ],
             "correctAnswer": "What are you doing ?"
           },
           {
-            "question": "Put the words in the correct order: he / What /  / doing / is",
+            "question": "Put the words in the correct order: What / he / is / doing",
             "options": [
               "What is he doing ?",
-              "is is he doing ?",
-              "what is he doing ?"
+              "What is he doing?",
+              "is What he doing?"
             ],
             "correctAnswer": "What is he doing ?"
           },
           {
-            "question": "Put the words in the correct order:  / What / doing / are / they",
+            "question": "Put the words in the correct order: doing / they / are / What",
             "options": [
               "What are they doing ?",
-              "is are they doing ?",
-              "what are they doing ?"
+              "are doing What they?",
+              "they are doing What?"
             ],
             "correctAnswer": "What are they doing ?"
           },
           {
-            "question": "Put the words in the correct order: complete / and / 4: / Exercise / Read",
-            "options": [
-              "Exercise 4: Read and complete.",
-              "is 4: Read and complete.",
-              "exercise 4: read and complete."
-            ],
-            "correctAnswer": "Exercise 4: Read and complete."
-          },
-          {
-            "question": "Put the words in the correct order: name / My / Peter / is",
+            "question": "Put the words in the correct order: is / Peter / name / My",
             "options": [
               "My name is Peter.",
-              "is name is Peter.",
-              "my name is peter."
+              "My is name Peter.",
+              "name is My Peter."
             ],
             "correctAnswer": "My name is Peter."
           },
           {
-            "question": "Put the words in the correct order: Exercise / the / Choose / answer / 5: / correct",
-            "options": [
-              "Exercise 5: Choose the correct answer.",
-              "is 5: Choose the correct answer.",
-              "exercise 5: choose the correct answer."
-            ],
-            "correctAnswer": "Exercise 5: Choose the correct answer."
-          },
-          {
-            "question": "Put the words in the correct order: Yes, / they / are",
+            "question": "Put the words in the correct order: they / are / Yes,",
             "options": [
               "Yes, they are.",
-              "is they are.",
+              "are they Yes,.",
               "yes, they are."
             ],
             "correctAnswer": "Yes, they are."
           },
           {
-            "question": "Put the words in the correct order: they / No, / aren’t",
-            "options": [
-              "No, they aren’t.",
-              "is they aren’t.",
-              "no, they aren’t."
-            ],
-            "correctAnswer": "No, they aren’t."
-          },
-          {
-            "question": "Put the words in the correct order: is / Yes, / she",
+            "question": "Put the words in the correct order: she / Yes, / is",
             "options": [
               "Yes, she is.",
-              "is she is.",
               "yes, she is."
             ],
             "correctAnswer": "Yes, she is."
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Put the words in the correct order: is / Yes, / he",
+            "options": [
+              "Yes, he is.",
+              "he Yes, is.",
+              "he is Yes,."
+            ],
+            "correctAnswer": "Yes, he is."
+          },
+          {
+            "question": "Put the words in the correct order: cooking / she / Is",
+            "options": [
+              "Is she cooking ?",
+              "she Is cooking?",
+              "Is cooking she?"
+            ],
+            "correctAnswer": "Is she cooking ?"
+          },
+          {
+            "question": "Put the words in the correct order: the / he / Is / piano / playing",
+            "options": [
+              "Is he playing the piano ?",
+              "piano he Is playing the?",
+              "playing he piano the Is?"
+            ],
+            "correctAnswer": "Is he playing the piano ?"
+          },
+          {
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "exercise",
-              "chrysanthemum",
-              "hippopotamus"
+              "lookx",
+              "chrysanthemum"
             ],
             "correctAnswer": "exercise"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "play",
-              "chrysanthemum",
-              "hippopotamus"
+              "pianox",
+              "chrysanthemum"
             ],
             "correctAnswer": "play"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "music",
-              "chrysanthemum",
-              "hippopotamus"
+              "drawx",
+              "chrysanthemum"
             ],
             "correctAnswer": "music"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "clean",
-              "chrysanthemum",
-              "hippopotamus"
+              "floorx",
+              "chrysanthemum"
             ],
             "correctAnswer": "clean"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "doing",
-              "chrysanthemum",
-              "hippopotamus"
+              "youx",
+              "chrysanthemum"
             ],
             "correctAnswer": "doing"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "correct",
-              "chrysanthemum",
-              "hippopotamus"
+              "orderx",
+              "chrysanthemum"
             ],
             "correctAnswer": "correct"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "singing",
-              "chrysanthemum",
-              "hippopotamus"
+              "drawingx",
+              "chrysanthemum"
             ],
             "correctAnswer": "singing"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "dinner",
-              "chrysanthemum",
-              "hippopotamus"
+              "listeningx",
+              "chrysanthemum"
             ],
             "correctAnswer": "dinner"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "cleaning",
-              "chrysanthemum",
-              "hippopotamus"
+              "tonyx",
+              "chrysanthemum"
             ],
             "correctAnswer": "cleaning"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "name",
-              "chrysanthemum",
-              "hippopotamus"
+              "peterx",
+              "chrysanthemum"
             ],
             "correctAnswer": "name"
           },
@@ -4881,7 +4823,7 @@
     "id": "l3-u19",
     "number": 19,
     "title": "Unit 19",
-    "status": "in_progress",
+    "status": "locked",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -4890,14 +4832,14 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Exercise 1 : Look and write."
+        "expectedText": "What are they doing ?"
       },
       {
         "id": "l3-u19-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "Exercise 2: Look ,read and answer."
+        "expectedWord": "Are they playing football ?"
       },
       {
         "id": "l3-u19-quiz",
@@ -4906,182 +4848,182 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: write / Look / Exercise / 1 / : / and",
-            "options": [
-              "Exercise 1 : Look and write.",
-              "is 1 : Look and write.",
-              "exercise 1 : look and write."
-            ],
-            "correctAnswer": "Exercise 1 : Look and write."
-          },
-          {
-            "question": "Put the words in the correct order: ,read / Exercise / Look / 2: / answer / and",
-            "options": [
-              "Exercise 2: Look ,read and answer.",
-              "is 2: Look ,read and answer.",
-              "exercise 2: look ,read and answer."
-            ],
-            "correctAnswer": "Exercise 2: Look ,read and answer."
-          },
-          {
-            "question": "Put the words in the correct order: they /  / What / doing / are",
+            "question": "Put the words in the correct order: they / are / doing / What",
             "options": [
               "What are they doing ?",
-              "is are they doing ?",
-              "what are they doing ?"
+              "they are doing What?",
+              "they What doing are?"
             ],
             "correctAnswer": "What are they doing ?"
           },
           {
-            "question": "Put the words in the correct order: Look / write / Exercise / 3: / and",
-            "options": [
-              "Exercise 3: Look and write.",
-              "is 3: Look and write.",
-              "exercise 3: look and write."
-            ],
-            "correctAnswer": "Exercise 3: Look and write."
-          },
-          {
-            "question": "Put the words in the correct order: football / Are / playing /  / they",
+            "question": "Put the words in the correct order: they / Are / football / playing",
             "options": [
               "Are they playing football ?",
-              "is they playing football ?",
-              "are they playing football ?"
+              "they Are football playing?",
+              "playing Are football they?"
             ],
             "correctAnswer": "Are they playing football ?"
           },
           {
-            "question": "Put the words in the correct order:  / skipping / they / Are",
+            "question": "Put the words in the correct order: skipping / Are / they",
             "options": [
               "Are they skipping ?",
-              "is they skipping ?",
-              "are they skipping ?"
+              "Are skipping they?",
+              "skipping they Are?"
             ],
             "correctAnswer": "Are they skipping ?"
           },
           {
-            "question": "Put the words in the correct order: they / Are /  / skating",
+            "question": "Put the words in the correct order: skating / Are / they",
             "options": [
               "Are they skating ?",
-              "is they skating ?",
-              "are they skating ?"
+              "skating Are they?",
+              "skating they Are?"
             ],
             "correctAnswer": "Are they skating ?"
           },
           {
-            "question": "Put the words in the correct order: Are /  / they cycling",
-            "options": [
-              "Are they cycling ?",
-              "is they cycling ?",
-              "are they cycling ?"
-            ],
-            "correctAnswer": "Are they cycling ?"
-          },
-          {
-            "question": "Put the words in the correct order: Are / they / flying / kites",
+            "question": "Put the words in the correct order: Are / flying / kites / they",
             "options": [
               "Are they flying kites?",
-              "is they flying kites?",
-              "are they flying kites?"
+              "flying kites Are they?",
+              "Are they kites flying?"
             ],
             "correctAnswer": "Are they flying kites?"
           },
           {
-            "question": "Put the words in the correct order: match / and / Read / 4: / Exercise",
+            "question": "Put the words in the correct order: doing / What / is / she",
             "options": [
-              "Exercise 4: Read and match.",
-              "is 4: Read and match.",
-              "exercise 4: read and match."
+              "What is she doing?",
+              "she is What doing?",
+              "doing What is she?"
             ],
-            "correctAnswer": "Exercise 4: Read and match."
+            "correctAnswer": "What is she doing?"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Put the words in the correct order: rabbits / are / many / How / in / cage / there / the",
+            "options": [
+              "How many rabbits are there in the cage?",
+              "cage there How the rabbits are in many?",
+              "there rabbits in the cage are many How?"
+            ],
+            "correctAnswer": "How many rabbits are there in the cage?"
+          },
+          {
+            "question": "Put the words in the correct order: do / many / How / you / cats / have",
+            "options": [
+              "How many cats do you have?",
+              "How have cats many do you?",
+              "many How have cats do you?"
+            ],
+            "correctAnswer": "How many cats do you have?"
+          },
+          {
+            "question": "Put the words in the correct order: like / is / weather / the / today / What",
+            "options": [
+              "What is the weather like today?",
+              "weather like is the today What?",
+              "today is the What weather like?"
+            ],
+            "correctAnswer": "What is the weather like today?"
+          },
+          {
+            "question": "Put the words in the correct order: sofas / are / room / the / two / There / living / in",
+            "options": [
+              "There are two sofas in the living room.",
+              "room in living are There sofas two the.",
+              "two sofas are There room living the in."
+            ],
+            "correctAnswer": "There are two sofas in the living room."
+          },
+          {
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "exercise",
-              "chrysanthemum",
-              "hippopotamus"
+              "lookx",
+              "chrysanthemum"
             ],
             "correctAnswer": "exercise"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "cycling",
-              "chrysanthemum",
-              "hippopotamus"
+              "skatingx",
+              "chrysanthemum"
             ],
             "correctAnswer": "cycling"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "skipping",
-              "chrysanthemum",
-              "hippopotamus"
+              "playingx",
+              "chrysanthemum"
             ],
             "correctAnswer": "skipping"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "read",
-              "chrysanthemum",
-              "hippopotamus"
+              "answerx",
+              "chrysanthemum"
             ],
             "correctAnswer": "read"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "yes",
-              "chrysanthemum",
-              "hippopotamus"
+              "arenx",
+              "chrysanthemum"
             ],
             "correctAnswer": "yes"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "how",
-              "chrysanthemum",
-              "hippopotamus"
+              "manyx",
+              "chrysanthemum"
             ],
             "correctAnswer": "how"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "cage",
-              "chrysanthemum",
-              "hippopotamus"
+              "cleaningx",
+              "chrysanthemum"
             ],
             "correctAnswer": "cage"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "you",
-              "chrysanthemum",
-              "hippopotamus"
+              "havex",
+              "chrysanthemum"
             ],
             "correctAnswer": "you"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "like",
-              "chrysanthemum",
-              "hippopotamus"
+              "todayx",
+              "chrysanthemum"
             ],
             "correctAnswer": "like"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "living",
-              "chrysanthemum",
-              "hippopotamus"
+              "roomx",
+              "chrysanthemum"
             ],
             "correctAnswer": "living"
           },
@@ -5228,7 +5170,7 @@
     "id": "l3-u20",
     "number": 20,
     "title": "Unit 20",
-    "status": "in_progress",
+    "status": "locked",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -5237,14 +5179,14 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Viet Nam."
+        "expectedText": "It is a big country ."
       },
       {
         "id": "l3-u20-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "It is a big country ."
+        "expectedWord": "Ho Chi Minh city is a big city in south Viet Nam."
       },
       {
         "id": "l3-u20-quiz",
@@ -5253,182 +5195,182 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: Viet / Nam",
-            "options": [
-              "Viet Nam.",
-              "is Nam.",
-              "viet nam."
-            ],
-            "correctAnswer": "Viet Nam."
-          },
-          {
-            "question": "Put the words in the correct order:  / big / country / is / a / It",
+            "question": "Put the words in the correct order: It / is / a / big / country",
             "options": [
               "It is a big country .",
-              "is is a big country .",
-              "it is a big country ."
+              "a is country It big.",
+              "big is It country a."
             ],
             "correctAnswer": "It is a big country ."
           },
           {
-            "question": "Put the words in the correct order: Minh / in / Nam / Chi / a / is / Viet / city / city / big / Ho / south",
+            "question": "Put the words in the correct order: big / Viet / city / is / Chi / city / south / Minh / in / a / Ho / Nam",
             "options": [
               "Ho Chi Minh city is a big city in south Viet Nam.",
-              "is Chi Minh city is a big city in south Viet Nam.",
-              "ho chi minh city is a big city in south viet nam."
+              "in is Nam south Minh city city a Viet big Ho Chi.",
+              "Chi Viet big is Ho Minh Nam in a south city city."
             ],
             "correctAnswer": "Ho Chi Minh city is a big city in south Viet Nam."
           },
           {
-            "question": "Put the words in the correct order: is / Where / place / your",
+            "question": "Put the words in the correct order: is / Where / your / place",
             "options": [
               "Where is your place?",
-              "is is your place?",
-              "where is your place?"
+              "place is your Where?",
+              "your place Where is?"
             ],
             "correctAnswer": "Where is your place?"
           },
           {
-            "question": "Put the words in the correct order: Where / Noi / Ha / is",
+            "question": "Put the words in the correct order: is / Where / Noi / Ha",
             "options": [
               "Where is Ha Noi?",
-              "is is Ha Noi?",
-              "where is ha noi?"
+              "is Noi Where Ha?",
+              "Noi is Ha Where?"
             ],
             "correctAnswer": "Where is Ha Noi?"
           },
           {
-            "question": "Put the words in the correct order: Where / Hue / is / ",
+            "question": "Put the words in the correct order: is / Where / Hue",
             "options": [
               "Where is Hue ?",
-              "is is Hue ?",
-              "where is hue ?"
+              "Hue Where is?",
+              "Hue is Where?"
             ],
             "correctAnswer": "Where is Hue ?"
           },
           {
-            "question": "Put the words in the correct order: is / Saigon / Where",
+            "question": "Put the words in the correct order: Saigon / Where / is",
             "options": [
               "Where is Saigon?",
-              "is is Saigon?",
-              "where is saigon?"
+              "is Saigon Where?",
+              "Saigon is Where?"
             ],
             "correctAnswer": "Where is Saigon?"
           },
           {
-            "question": "Put the words in the correct order: Pa / Trang / Is /  / Sa / near / Nha",
+            "question": "Put the words in the correct order: Pa / Trang / Nha / Sa / Is / near",
             "options": [
               "Is Sa Pa near Nha Trang ?",
-              "is Sa Pa near Nha Trang ?",
-              "is sa pa near nha trang ?"
+              "Nha Is Trang near Pa Sa?",
+              "Sa Nha near Is Trang Pa?"
             ],
             "correctAnswer": "Is Sa Pa near Nha Trang ?"
           },
           {
-            "question": "Put the words in the correct order:  / Where / An / Hoi / is",
+            "question": "Put the words in the correct order: An / Hoi / Where / is",
             "options": [
               "Where is Hoi An ?",
-              "is is Hoi An ?",
-              "where is hoi an ?"
+              "An Where Hoi is?",
+              "Where is Hoi An?"
             ],
             "correctAnswer": "Where is Hoi An ?"
           },
           {
-            "question": "Put the words in the correct order: Hoi /  / Hue / An / near / Is",
+            "question": "Put the words in the correct order: Is / An / Hoi / near / Hue",
             "options": [
               "Is Hoi An near Hue ?",
-              "is Hoi An near Hue ?",
-              "is hoi an near hue ?"
+              "Is Hue Hoi near An?",
+              "near An Is Hue Hoi?"
             ],
             "correctAnswer": "Is Hoi An near Hue ?"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Put the words in the correct order: Noi / Is / Ha / Hue / near",
+            "options": [
+              "Is Hue near Ha Noi?",
+              "near Hue Is Noi Ha?",
+              "is hue near ha noi?"
+            ],
+            "correctAnswer": "Is Hue near Ha Noi?"
+          },
+          {
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "exercise",
-              "chrysanthemum",
-              "hippopotamus"
+              "readx",
+              "chrysanthemum"
             ],
             "correctAnswer": "exercise"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "north",
-              "chrysanthemum",
-              "hippopotamus"
+              "centralx",
+              "chrysanthemum"
             ],
             "correctAnswer": "north"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "where",
-              "chrysanthemum",
-              "hippopotamus"
+              "noix",
+              "chrysanthemum"
             ],
             "correctAnswer": "where"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "long",
-              "chrysanthemum",
-              "hippopotamus"
+              "bayx",
+              "chrysanthemum"
             ],
             "correctAnswer": "long"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "chi",
-              "chrysanthemum",
-              "hippopotamus"
+              "minhx",
+              "chrysanthemum"
             ],
             "correctAnswer": "chi"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "tho",
-              "chrysanthemum",
-              "hippopotamus"
+              "fillx",
+              "chrysanthemum"
             ],
             "correctAnswer": "tho"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "words",
-              "chrysanthemum",
-              "hippopotamus"
+              "completex",
+              "chrysanthemum"
             ],
             "correctAnswer": "words"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "too",
-              "chrysanthemum",
-              "hippopotamus"
+              "sapax",
+              "chrysanthemum"
             ],
             "correctAnswer": "too"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "big",
-              "chrysanthemum",
-              "hippopotamus"
+              "countryx",
+              "chrysanthemum"
             ],
             "correctAnswer": "big"
           },
           {
-            "question": "Find the word in the text:",
+            "question": "Find the word that belongs to the Unit:",
             "options": [
               "hai",
-              "chrysanthemum",
-              "hippopotamus"
+              "phongx",
+              "chrysanthemum"
             ],
             "correctAnswer": "hai"
           },
