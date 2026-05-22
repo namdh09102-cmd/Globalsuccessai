@@ -173,11 +173,26 @@ export default function AdminCurriculum() {
             {[...Array(12)].map((_, i) => {
               const grade = i + 1;
               const hasData = syncedGrades.includes(grade);
+              const isSelected = ingestGrade === grade.toString();
               
               return (
-                <div key={grade} className="flex items-center justify-between p-3 rounded-xl border border-slate-800/50 bg-[#090D16]/50 hover:bg-[#090D16] transition-colors group">
+                <div 
+                  key={grade} 
+                  onClick={() => setIngestGrade(grade.toString())}
+                  className={`flex items-center justify-between p-3 rounded-xl border transition-all group cursor-pointer ${
+                    isSelected 
+                      ? "border-fuchsia-500/50 bg-fuchsia-500/10 shadow-[0_0_15px_rgba(217,70,239,0.15)]" 
+                      : "border-slate-800/50 bg-[#090D16]/50 hover:bg-[#090D16] hover:border-slate-700/50"
+                  }`}
+                >
                   <div className="flex items-center gap-3">
-                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-black text-xs ${hasData ? 'bg-emerald-500/10 text-emerald-400' : 'bg-slate-800 text-slate-500'}`}>
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-black text-xs transition-colors ${
+                      hasData 
+                        ? 'bg-emerald-500/10 text-emerald-400' 
+                        : isSelected
+                          ? 'bg-fuchsia-500/20 text-fuchsia-400'
+                          : 'bg-slate-800 text-slate-500'
+                    }`}>
                       {grade}
                     </div>
                     <div>
@@ -226,10 +241,13 @@ export default function AdminCurriculum() {
                 <select 
                   value={ingestGrade}
                   onChange={(e) => setIngestGrade(e.target.value)}
-                  className="w-full bg-[#090D16] border border-slate-700 text-slate-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-fuchsia-500/50 focus:ring-1 focus:ring-fuchsia-500/50 transition-all appearance-none"
+                  className="w-full bg-[#090D16] border border-slate-700 text-slate-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-fuchsia-500/50 focus:ring-1 focus:ring-fuchsia-500/50 transition-all appearance-none cursor-pointer"
                 >
-                  <option value="6">Lớp 6</option>
-                  <option value="11">Lớp 11</option>
+                  {[...Array(12)].map((_, i) => (
+                    <option key={i + 1} value={(i + 1).toString()}>
+                      Lớp {i + 1}
+                    </option>
+                  ))}
                 </select>
               </div>
 
