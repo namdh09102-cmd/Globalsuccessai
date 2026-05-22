@@ -1224,12 +1224,12 @@ export default function Dashboard() {
               </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
+            <div className="flex gap-4 overflow-x-auto pb-3 -mx-1 px-1 [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-slate-700/50 [&::-webkit-scrollbar-thumb]:rounded-full">
               {units.filter(u => u.grade === activeGrade).map((unit, idx) => {
                 const bgImages = [
-                  "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=400&auto=format&fit=crop", // Unit 1
-                  "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=400&auto=format&fit=crop", // Unit 2
-                  "https://images.unsplash.com/photo-1536859355448-76f92eb7a3c8?q=80&w=400&auto=format&fit=crop", // Unit 3
+                  "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=400&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=400&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1536859355448-76f92eb7a3c8?q=80&w=400&auto=format&fit=crop",
                 ];
                 
                 const difficultyTags = [
@@ -1247,19 +1247,29 @@ export default function Dashboard() {
                 const bgImg = bgImages[idx % bgImages.length];
                 const diffTag = difficultyTags[idx % difficultyTags.length];
                 const subDesc = subDescriptions[idx % subDescriptions.length];
-                const isSelected = selectedUnit.id === unit.id;
+                const isSelected = selectedUnit?.id === unit.id;
 
                 return (
                   <div
                     key={unit.id}
-                    className={`w-full min-w-0 relative rounded-3xl overflow-hidden border flex flex-col justify-between min-h-[240px] transition-all duration-300 shadow-xl group ${
+                    className={`flex-none w-[220px] relative rounded-2xl overflow-hidden border flex flex-col justify-between min-h-[180px] transition-all duration-300 shadow-xl group cursor-pointer ${
                       isSelected 
                         ? "border-indigo-500/50 bg-[#151B2B]" 
                         : "border-slate-800/80 bg-[#111625] hover:border-slate-700"
                     }`}
+                    onClick={() => {
+                      if (unit.status !== "locked") {
+                        setSelectedUnit(unit);
+                        setTimeout(() => {
+                          document.getElementById("curriculum-section")?.scrollIntoView({ behavior: "smooth" });
+                        }, 100);
+                      } else {
+                        alert("Ử dung đang được ban sư phạm biên soạn. Vui lòng quay lại sau!");
+                      }
+                    }}
                   >
-                    {/* Card Top Image with Gradient Overlay */}
-                    <div className="relative h-28 w-full overflow-hidden shrink-0">
+                    {/* Card Top Image */}
+                    <div className="relative h-20 w-full overflow-hidden shrink-0">
                       <div 
                         className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                         style={{ backgroundImage: `url('${bgImg}')` }}
@@ -1268,79 +1278,46 @@ export default function Dashboard() {
                       
                       {unit.status === "locked" && (
                         <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] flex items-center justify-center z-20">
-                          <div className="flex flex-col items-center">
-                            <Lock className="w-8 h-8 text-slate-400 mb-1 opacity-80" />
-                            <span className="text-[9px] font-black text-slate-300 uppercase tracking-widest bg-black/40 px-2 py-0.5 rounded border border-slate-700/50">Sắp ra mắt</span>
-                          </div>
+                          <Lock className="w-6 h-6 text-slate-400" />
                         </div>
                       )}
                       
-                      {/* UNIT tag & Difficulty tag */}
-                      <div className="absolute top-3 inset-x-3 flex items-center justify-between z-10">
-                        <span className="px-2 py-0.5 rounded text-[8px] font-black bg-black/60 text-slate-200 border border-slate-700/50 uppercase tracking-widest font-mono">
+                      <div className="absolute top-2 inset-x-2 flex items-center justify-between z-10">
+                        <span className="px-1.5 py-0.5 rounded text-[7px] font-black bg-black/60 text-slate-200 border border-slate-700/50 uppercase tracking-widest font-mono">
                           UNIT {unit.number}
                         </span>
-                        
-                        <span className={`px-2 py-0.5 rounded text-[8px] font-black border ${diffTag.style} uppercase tracking-wider`}>
+                        <span className={`px-1.5 py-0.5 rounded text-[7px] font-black border ${diffTag.style} uppercase tracking-wider`}>
                           {diffTag.label}
                         </span>
                       </div>
                     </div>
 
                     {/* Card Body */}
-                    <div className="p-4 flex-1 flex flex-col justify-between space-y-3">
+                    <div className="p-3 flex-1 flex flex-col justify-between space-y-2">
                       <div>
-                        <h4 className="text-xs font-black text-slate-100 group-hover:text-indigo-400 transition-colors">
+                        <h4 className="text-[10px] font-black text-slate-100 group-hover:text-indigo-400 transition-colors leading-tight">
                           {unit.title}
                         </h4>
-                        <p className="text-[10px] text-slate-400 mt-0.5">
-                          {subDesc}
-                        </p>
+                        <p className="text-[8px] text-slate-400 mt-0.5 line-clamp-1">{subDesc}</p>
                       </div>
 
-                      {/* Progress and bottom actions */}
-                      <div className="space-y-2">
-                        {/* Progress Slider */}
-                        <div className="space-y-1">
-                          <div className="flex items-center justify-between text-[9px] font-bold text-slate-500">
-                            <span>Tiến độ hoàn thành</span>
-                            <span className="text-indigo-400">{unit.progress}%</span>
-                          </div>
-                          <div className="w-full h-1 bg-slate-900 rounded-full overflow-hidden">
+                      <div className="flex items-center justify-between">
+                        <div className="flex-1 mr-2">
+                          <div className="h-1 bg-slate-800 rounded-full overflow-hidden">
                             <div 
-                              className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 transition-all duration-500" 
-                              style={{ width: `${unit.progress}%` }}
+                              className="h-full rounded-full transition-all duration-500"
+                              style={{ 
+                                width: `${unit.progress}%`,
+                                background: unit.progress >= 100 ? "#10b981" : "linear-gradient(90deg, #6366f1, #8b5cf6)"
+                              }}
                             />
                           </div>
+                          <span className="text-[7px] text-slate-500 font-bold mt-0.5 block">{unit.progress}% • {unit.lessons.length} bài</span>
                         </div>
-
-                        {/* Card Footer Actions */}
-                        <div className="flex items-center justify-between pt-2 border-t border-slate-800/40">
-                          <span className="text-[9px] text-slate-500 font-bold">
-                            {unit.lessons.length} bài học
-                          </span>
-                          
-                          <button
-                            onClick={() => {
-                              if (unit.status !== "locked") {
-                                setSelectedUnit(unit);
-                                setTimeout(() => {
-                                  document.getElementById("curriculum-section")?.scrollIntoView({ behavior: "smooth" });
-                                }, 100);
-                              } else {
-                                alert("Nội dung đang được ban sư phạm biên soạn. Vui lòng quay lại sau!");
-                              }
-                            }}
-                            className={`px-3 py-1.5 rounded-xl text-[9px] font-bold transition-all ${
-                              isSelected 
-                                ? "bg-indigo-600 text-white shadow-md shadow-indigo-600/10" 
-                                : "bg-[#111625] text-slate-400 hover:text-slate-200 border border-slate-800/80"
-                            }`}
-                          >
-                            {unit.status === "locked" ? (
-                              <div className="flex items-center gap-1"><Lock className="w-3 h-3"/> Khóa</div>
-                            ) : isSelected ? "Đang học" : "Học tiếp"}
-                          </button>
+                        <div className={`w-6 h-6 rounded-full flex items-center justify-center transition-all ${
+                          isSelected ? "bg-indigo-600 text-white" : "bg-slate-800 text-slate-400 group-hover:bg-indigo-600/30 group-hover:text-indigo-400"
+                        }`}>
+                          {unit.status === "locked" ? <Lock className="w-3 h-3" /> : <ChevronRight className="w-3 h-3" />}
                         </div>
                       </div>
                     </div>
