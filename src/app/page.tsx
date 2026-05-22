@@ -410,7 +410,7 @@ export default function Dashboard() {
     };
   }, []);
 
-  const loadCurriculum = () => {
+  const loadCurriculum = async () => {
     let baseUnits = [...defaultUnits];
     
     // Đọc từ localStorage chung
@@ -442,7 +442,22 @@ export default function Dashboard() {
     
     for (let grade = 1; grade <= 12; grade++) {
       const gradeStr = `Lớp ${grade}`;
-      const storedData = localStorage.getItem(`gsa-curriculum-l${grade}`);
+      let storedData = localStorage.getItem(`gsa-curriculum-l${grade}`);
+      
+      // Tự động tải dữ liệu ngầm cho Lớp 1, 2, 3 nếu chưa có trong máy
+      if (!storedData && (grade === 1 || grade === 2 || grade === 3)) {
+        try {
+          const res = await fetch(`/seeds/grade${grade}.json`);
+          if (res.ok) {
+            const data = await res.json();
+            storedData = JSON.stringify(data);
+            localStorage.setItem(`gsa-curriculum-l${grade}`, storedData);
+          }
+        } catch (e) {
+          console.error(`Lỗi tải ngầm dữ liệu Lớp ${grade}:`, e);
+        }
+      }
+      
       let hasRealData = false;
       
       if (storedData) {
