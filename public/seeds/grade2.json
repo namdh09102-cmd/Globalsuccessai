@@ -2,7 +2,7 @@
   {
     "id": "l2-u1",
     "number": 1,
-    "title": "Unit 1",
+    "title": "Unit 1: At my birthday party",
     "status": "in_progress",
     "progress": 0,
     "grade": "Lớp 2",
@@ -19,29 +19,65 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello"
+        "expectedText": "I have a pizza"
       },
       {
         "id": "l2-u1-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "apple"
+        "expectedWord": "pizza"
       },
       {
         "id": "l2-u1-quiz",
-        "title": "Quiz",
+        "title": "Vocabulary Quiz",
         "type": "quiz",
         "completed": false,
         "quizQuestions": [
           {
-            "question": "What is this?",
+            "question": "Choose the correct word for the image:",
             "options": [
-              "apple",
-              "banana",
-              "cat"
+              "pizza",
+              "popcorn",
+              "pasta"
             ],
-            "correctAnswer": "apple"
+            "correctAnswer": "pizza"
+          },
+          {
+            "question": "How do you spell: popcorn?",
+            "options": [
+              "popcorn",
+              "popcorns",
+              "opcorn"
+            ],
+            "correctAnswer": "popcorn"
+          },
+          {
+            "question": "Which word starts with the same sound?",
+            "options": [
+              "pizza",
+              "dog",
+              "elephant"
+            ],
+            "correctAnswer": "pizza"
+          },
+          {
+            "question": "I like eating _______.",
+            "options": [
+              "pizza",
+              "book",
+              "pencil"
+            ],
+            "correctAnswer": "pizza"
+          },
+          {
+            "question": "Translate into Vietnamese: pizza",
+            "options": [
+              "Từ vựng đúng",
+              "Con mèo",
+              "Ngôi nhà"
+            ],
+            "correctAnswer": "Từ vựng đúng"
           }
         ]
       }
@@ -50,7 +86,7 @@
   {
     "id": "l2-u2",
     "number": 2,
-    "title": "Unit 2",
+    "title": "Unit 2: In the backyard",
     "status": "locked",
     "progress": 0,
     "grade": "Lớp 2",
@@ -67,29 +103,65 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello"
+        "expectedText": "I have a kite"
       },
       {
         "id": "l2-u2-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "apple"
+        "expectedWord": "kite"
       },
       {
         "id": "l2-u2-quiz",
-        "title": "Quiz",
+        "title": "Vocabulary Quiz",
         "type": "quiz",
         "completed": false,
         "quizQuestions": [
           {
-            "question": "What is this?",
+            "question": "Choose the correct word for the image:",
             "options": [
-              "apple",
-              "banana",
-              "cat"
+              "kite",
+              "bike",
+              "kitten"
             ],
-            "correctAnswer": "apple"
+            "correctAnswer": "kite"
+          },
+          {
+            "question": "How do you spell: bike?",
+            "options": [
+              "bike",
+              "bikes",
+              "ike"
+            ],
+            "correctAnswer": "bike"
+          },
+          {
+            "question": "Which word starts with the same sound?",
+            "options": [
+              "kite",
+              "dog",
+              "elephant"
+            ],
+            "correctAnswer": "kite"
+          },
+          {
+            "question": "I like eating _______.",
+            "options": [
+              "kite",
+              "book",
+              "pencil"
+            ],
+            "correctAnswer": "kite"
+          },
+          {
+            "question": "Translate into Vietnamese: kite",
+            "options": [
+              "Từ vựng đúng",
+              "Con mèo",
+              "Ngôi nhà"
+            ],
+            "correctAnswer": "Từ vựng đúng"
           }
         ]
       }
@@ -98,7 +170,7 @@
   {
     "id": "l2-u3",
     "number": 3,
-    "title": "Unit 3",
+    "title": "Unit 3: At the seaside",
     "status": "locked",
     "progress": 0,
     "grade": "Lớp 2",
@@ -115,29 +187,65 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello"
+        "expectedText": "I have a sail"
       },
       {
         "id": "l2-u3-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "apple"
+        "expectedWord": "sail"
       },
       {
         "id": "l2-u3-quiz",
-        "title": "Quiz",
+        "title": "Vocabulary Quiz",
         "type": "quiz",
         "completed": false,
         "quizQuestions": [
           {
-            "question": "What is this?",
+            "question": "Choose the correct word for the image:",
             "options": [
-              "apple",
-              "banana",
-              "cat"
+              "sail",
+              "sand",
+              "sea"
             ],
-            "correctAnswer": "apple"
+            "correctAnswer": "sail"
+          },
+          {
+            "question": "How do you spell: sand?",
+            "options": [
+              "sand",
+              "sands",
+              "and"
+            ],
+            "correctAnswer": "sand"
+          },
+          {
+            "question": "Which word starts with the same sound?",
+            "options": [
+              "sail",
+              "dog",
+              "elephant"
+            ],
+            "correctAnswer": "sail"
+          },
+          {
+            "question": "I like eating _______.",
+            "options": [
+              "sail",
+              "book",
+              "pencil"
+            ],
+            "correctAnswer": "sail"
+          },
+          {
+            "question": "Translate into Vietnamese: sail",
+            "options": [
+              "Từ vựng đúng",
+              "Con mèo",
+              "Ngôi nhà"
+            ],
+            "correctAnswer": "Từ vựng đúng"
           }
         ]
       }
@@ -146,7 +254,7 @@
   {
     "id": "l2-u4",
     "number": 4,
-    "title": "Unit 4",
+    "title": "Unit 4: In the countryside",
     "status": "locked",
     "progress": 0,
     "grade": "Lớp 2",
@@ -163,29 +271,65 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello"
+        "expectedText": "I have a rainbow"
       },
       {
         "id": "l2-u4-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "apple"
+        "expectedWord": "rainbow"
       },
       {
         "id": "l2-u4-quiz",
-        "title": "Quiz",
+        "title": "Vocabulary Quiz",
         "type": "quiz",
         "completed": false,
         "quizQuestions": [
           {
-            "question": "What is this?",
+            "question": "Choose the correct word for the image:",
             "options": [
-              "apple",
-              "banana",
-              "cat"
+              "rainbow",
+              "river",
+              "road"
             ],
-            "correctAnswer": "apple"
+            "correctAnswer": "rainbow"
+          },
+          {
+            "question": "How do you spell: river?",
+            "options": [
+              "river",
+              "rivers",
+              "iver"
+            ],
+            "correctAnswer": "river"
+          },
+          {
+            "question": "Which word starts with the same sound?",
+            "options": [
+              "rainbow",
+              "dog",
+              "elephant"
+            ],
+            "correctAnswer": "rainbow"
+          },
+          {
+            "question": "I like eating _______.",
+            "options": [
+              "rainbow",
+              "book",
+              "pencil"
+            ],
+            "correctAnswer": "rainbow"
+          },
+          {
+            "question": "Translate into Vietnamese: rainbow",
+            "options": [
+              "Từ vựng đúng",
+              "Con mèo",
+              "Ngôi nhà"
+            ],
+            "correctAnswer": "Từ vựng đúng"
           }
         ]
       }
@@ -194,7 +338,7 @@
   {
     "id": "l2-u5",
     "number": 5,
-    "title": "Unit 5",
+    "title": "Unit 5: In the classroom",
     "status": "locked",
     "progress": 0,
     "grade": "Lớp 2",
@@ -211,29 +355,65 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello"
+        "expectedText": "I have a question"
       },
       {
         "id": "l2-u5-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "apple"
+        "expectedWord": "question"
       },
       {
         "id": "l2-u5-quiz",
-        "title": "Quiz",
+        "title": "Vocabulary Quiz",
         "type": "quiz",
         "completed": false,
         "quizQuestions": [
           {
-            "question": "What is this?",
+            "question": "Choose the correct word for the image:",
             "options": [
-              "apple",
-              "banana",
-              "cat"
+              "question",
+              "square",
+              "quiz"
             ],
-            "correctAnswer": "apple"
+            "correctAnswer": "question"
+          },
+          {
+            "question": "How do you spell: square?",
+            "options": [
+              "square",
+              "squares",
+              "quare"
+            ],
+            "correctAnswer": "square"
+          },
+          {
+            "question": "Which word starts with the same sound?",
+            "options": [
+              "question",
+              "dog",
+              "elephant"
+            ],
+            "correctAnswer": "question"
+          },
+          {
+            "question": "I like eating _______.",
+            "options": [
+              "question",
+              "book",
+              "pencil"
+            ],
+            "correctAnswer": "question"
+          },
+          {
+            "question": "Translate into Vietnamese: question",
+            "options": [
+              "Từ vựng đúng",
+              "Con mèo",
+              "Ngôi nhà"
+            ],
+            "correctAnswer": "Từ vựng đúng"
           }
         ]
       }
@@ -242,7 +422,7 @@
   {
     "id": "l2-u6",
     "number": 6,
-    "title": "Unit 6",
+    "title": "Unit 6: On the farm",
     "status": "locked",
     "progress": 0,
     "grade": "Lớp 2",
@@ -259,29 +439,65 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello"
+        "expectedText": "I have a fox"
       },
       {
         "id": "l2-u6-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "apple"
+        "expectedWord": "fox"
       },
       {
         "id": "l2-u6-quiz",
-        "title": "Quiz",
+        "title": "Vocabulary Quiz",
         "type": "quiz",
         "completed": false,
         "quizQuestions": [
           {
-            "question": "What is this?",
+            "question": "Choose the correct word for the image:",
             "options": [
-              "apple",
-              "banana",
-              "cat"
+              "fox",
+              "box",
+              "ox"
             ],
-            "correctAnswer": "apple"
+            "correctAnswer": "fox"
+          },
+          {
+            "question": "How do you spell: box?",
+            "options": [
+              "box",
+              "boxs",
+              "ox"
+            ],
+            "correctAnswer": "box"
+          },
+          {
+            "question": "Which word starts with the same sound?",
+            "options": [
+              "fox",
+              "dog",
+              "elephant"
+            ],
+            "correctAnswer": "fox"
+          },
+          {
+            "question": "I like eating _______.",
+            "options": [
+              "fox",
+              "book",
+              "pencil"
+            ],
+            "correctAnswer": "fox"
+          },
+          {
+            "question": "Translate into Vietnamese: fox",
+            "options": [
+              "Từ vựng đúng",
+              "Con mèo",
+              "Ngôi nhà"
+            ],
+            "correctAnswer": "Từ vựng đúng"
           }
         ]
       }
@@ -290,7 +506,7 @@
   {
     "id": "l2-u7",
     "number": 7,
-    "title": "Unit 7",
+    "title": "Unit 7: In the kitchen",
     "status": "locked",
     "progress": 0,
     "grade": "Lớp 2",
@@ -307,29 +523,65 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello"
+        "expectedText": "I have a juice"
       },
       {
         "id": "l2-u7-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "apple"
+        "expectedWord": "juice"
       },
       {
         "id": "l2-u7-quiz",
-        "title": "Quiz",
+        "title": "Vocabulary Quiz",
         "type": "quiz",
         "completed": false,
         "quizQuestions": [
           {
-            "question": "What is this?",
+            "question": "Choose the correct word for the image:",
             "options": [
-              "apple",
-              "banana",
-              "cat"
+              "juice",
+              "jelly",
+              "jam"
             ],
-            "correctAnswer": "apple"
+            "correctAnswer": "juice"
+          },
+          {
+            "question": "How do you spell: jelly?",
+            "options": [
+              "jelly",
+              "jellys",
+              "elly"
+            ],
+            "correctAnswer": "jelly"
+          },
+          {
+            "question": "Which word starts with the same sound?",
+            "options": [
+              "juice",
+              "dog",
+              "elephant"
+            ],
+            "correctAnswer": "juice"
+          },
+          {
+            "question": "I like eating _______.",
+            "options": [
+              "juice",
+              "book",
+              "pencil"
+            ],
+            "correctAnswer": "juice"
+          },
+          {
+            "question": "Translate into Vietnamese: juice",
+            "options": [
+              "Từ vựng đúng",
+              "Con mèo",
+              "Ngôi nhà"
+            ],
+            "correctAnswer": "Từ vựng đúng"
           }
         ]
       }
@@ -338,7 +590,7 @@
   {
     "id": "l2-u8",
     "number": 8,
-    "title": "Unit 8",
+    "title": "Unit 8: In the village",
     "status": "locked",
     "progress": 0,
     "grade": "Lớp 2",
@@ -355,29 +607,65 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello"
+        "expectedText": "I have a van"
       },
       {
         "id": "l2-u8-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "apple"
+        "expectedWord": "van"
       },
       {
         "id": "l2-u8-quiz",
-        "title": "Quiz",
+        "title": "Vocabulary Quiz",
         "type": "quiz",
         "completed": false,
         "quizQuestions": [
           {
-            "question": "What is this?",
+            "question": "Choose the correct word for the image:",
             "options": [
-              "apple",
-              "banana",
-              "cat"
+              "van",
+              "village",
+              "volleyball"
             ],
-            "correctAnswer": "apple"
+            "correctAnswer": "van"
+          },
+          {
+            "question": "How do you spell: village?",
+            "options": [
+              "village",
+              "villages",
+              "illage"
+            ],
+            "correctAnswer": "village"
+          },
+          {
+            "question": "Which word starts with the same sound?",
+            "options": [
+              "van",
+              "dog",
+              "elephant"
+            ],
+            "correctAnswer": "van"
+          },
+          {
+            "question": "I like eating _______.",
+            "options": [
+              "van",
+              "book",
+              "pencil"
+            ],
+            "correctAnswer": "van"
+          },
+          {
+            "question": "Translate into Vietnamese: van",
+            "options": [
+              "Từ vựng đúng",
+              "Con mèo",
+              "Ngôi nhà"
+            ],
+            "correctAnswer": "Từ vựng đúng"
           }
         ]
       }
@@ -386,7 +674,7 @@
   {
     "id": "l2-u9",
     "number": 9,
-    "title": "Unit 9",
+    "title": "Unit 9: In the grocery store",
     "status": "locked",
     "progress": 0,
     "grade": "Lớp 2",
@@ -403,29 +691,65 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello"
+        "expectedText": "I have a yam"
       },
       {
         "id": "l2-u9-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "apple"
+        "expectedWord": "yam"
       },
       {
         "id": "l2-u9-quiz",
-        "title": "Quiz",
+        "title": "Vocabulary Quiz",
         "type": "quiz",
         "completed": false,
         "quizQuestions": [
           {
-            "question": "What is this?",
+            "question": "Choose the correct word for the image:",
             "options": [
-              "apple",
-              "banana",
-              "cat"
+              "yam",
+              "yogurt",
+              "yoyo"
             ],
-            "correctAnswer": "apple"
+            "correctAnswer": "yam"
+          },
+          {
+            "question": "How do you spell: yogurt?",
+            "options": [
+              "yogurt",
+              "yogurts",
+              "ogurt"
+            ],
+            "correctAnswer": "yogurt"
+          },
+          {
+            "question": "Which word starts with the same sound?",
+            "options": [
+              "yam",
+              "dog",
+              "elephant"
+            ],
+            "correctAnswer": "yam"
+          },
+          {
+            "question": "I like eating _______.",
+            "options": [
+              "yam",
+              "book",
+              "pencil"
+            ],
+            "correctAnswer": "yam"
+          },
+          {
+            "question": "Translate into Vietnamese: yam",
+            "options": [
+              "Từ vựng đúng",
+              "Con mèo",
+              "Ngôi nhà"
+            ],
+            "correctAnswer": "Từ vựng đúng"
           }
         ]
       }
@@ -434,7 +758,7 @@
   {
     "id": "l2-u10",
     "number": 10,
-    "title": "Unit 10",
+    "title": "Unit 10: At the zoo",
     "status": "locked",
     "progress": 0,
     "grade": "Lớp 2",
@@ -451,29 +775,65 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello"
+        "expectedText": "I have a zoo"
       },
       {
         "id": "l2-u10-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "apple"
+        "expectedWord": "zoo"
       },
       {
         "id": "l2-u10-quiz",
-        "title": "Quiz",
+        "title": "Vocabulary Quiz",
         "type": "quiz",
         "completed": false,
         "quizQuestions": [
           {
-            "question": "What is this?",
+            "question": "Choose the correct word for the image:",
             "options": [
-              "apple",
-              "banana",
-              "cat"
+              "zoo",
+              "zebra",
+              "zebu"
             ],
-            "correctAnswer": "apple"
+            "correctAnswer": "zoo"
+          },
+          {
+            "question": "How do you spell: zebra?",
+            "options": [
+              "zebra",
+              "zebras",
+              "ebra"
+            ],
+            "correctAnswer": "zebra"
+          },
+          {
+            "question": "Which word starts with the same sound?",
+            "options": [
+              "zoo",
+              "dog",
+              "elephant"
+            ],
+            "correctAnswer": "zoo"
+          },
+          {
+            "question": "I like eating _______.",
+            "options": [
+              "zoo",
+              "book",
+              "pencil"
+            ],
+            "correctAnswer": "zoo"
+          },
+          {
+            "question": "Translate into Vietnamese: zoo",
+            "options": [
+              "Từ vựng đúng",
+              "Con mèo",
+              "Ngôi nhà"
+            ],
+            "correctAnswer": "Từ vựng đúng"
           }
         ]
       }
@@ -482,7 +842,7 @@
   {
     "id": "l2-u11",
     "number": 11,
-    "title": "Unit 11",
+    "title": "Unit 11: In the playground",
     "status": "locked",
     "progress": 0,
     "grade": "Lớp 2",
@@ -499,29 +859,65 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello"
+        "expectedText": "I have a riding"
       },
       {
         "id": "l2-u11-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "apple"
+        "expectedWord": "riding"
       },
       {
         "id": "l2-u11-quiz",
-        "title": "Quiz",
+        "title": "Vocabulary Quiz",
         "type": "quiz",
         "completed": false,
         "quizQuestions": [
           {
-            "question": "What is this?",
+            "question": "Choose the correct word for the image:",
             "options": [
-              "apple",
-              "banana",
-              "cat"
+              "riding",
+              "playing",
+              "skating"
             ],
-            "correctAnswer": "apple"
+            "correctAnswer": "riding"
+          },
+          {
+            "question": "How do you spell: playing?",
+            "options": [
+              "playing",
+              "playings",
+              "laying"
+            ],
+            "correctAnswer": "playing"
+          },
+          {
+            "question": "Which word starts with the same sound?",
+            "options": [
+              "riding",
+              "dog",
+              "elephant"
+            ],
+            "correctAnswer": "riding"
+          },
+          {
+            "question": "I like eating _______.",
+            "options": [
+              "riding",
+              "book",
+              "pencil"
+            ],
+            "correctAnswer": "riding"
+          },
+          {
+            "question": "Translate into Vietnamese: riding",
+            "options": [
+              "Từ vựng đúng",
+              "Con mèo",
+              "Ngôi nhà"
+            ],
+            "correctAnswer": "Từ vựng đúng"
           }
         ]
       }
@@ -530,7 +926,7 @@
   {
     "id": "l2-u12",
     "number": 12,
-    "title": "Unit 12",
+    "title": "Unit 12: At the cafe",
     "status": "locked",
     "progress": 0,
     "grade": "Lớp 2",
@@ -547,29 +943,65 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello"
+        "expectedText": "I have a grapes"
       },
       {
         "id": "l2-u12-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "apple"
+        "expectedWord": "grapes"
       },
       {
         "id": "l2-u12-quiz",
-        "title": "Quiz",
+        "title": "Vocabulary Quiz",
         "type": "quiz",
         "completed": false,
         "quizQuestions": [
           {
-            "question": "What is this?",
+            "question": "Choose the correct word for the image:",
             "options": [
-              "apple",
-              "banana",
-              "cat"
+              "grapes",
+              "cake",
+              "table"
             ],
-            "correctAnswer": "apple"
+            "correctAnswer": "grapes"
+          },
+          {
+            "question": "How do you spell: cake?",
+            "options": [
+              "cake",
+              "cakes",
+              "ake"
+            ],
+            "correctAnswer": "cake"
+          },
+          {
+            "question": "Which word starts with the same sound?",
+            "options": [
+              "grapes",
+              "dog",
+              "elephant"
+            ],
+            "correctAnswer": "grapes"
+          },
+          {
+            "question": "I like eating _______.",
+            "options": [
+              "grapes",
+              "book",
+              "pencil"
+            ],
+            "correctAnswer": "grapes"
+          },
+          {
+            "question": "Translate into Vietnamese: grapes",
+            "options": [
+              "Từ vựng đúng",
+              "Con mèo",
+              "Ngôi nhà"
+            ],
+            "correctAnswer": "Từ vựng đúng"
           }
         ]
       }
@@ -578,7 +1010,7 @@
   {
     "id": "l2-u13",
     "number": 13,
-    "title": "Unit 13",
+    "title": "Unit 13: In the maths class",
     "status": "locked",
     "progress": 0,
     "grade": "Lớp 2",
@@ -595,29 +1027,65 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello"
+        "expectedText": "I have a number"
       },
       {
         "id": "l2-u13-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "apple"
+        "expectedWord": "number"
       },
       {
         "id": "l2-u13-quiz",
-        "title": "Quiz",
+        "title": "Vocabulary Quiz",
         "type": "quiz",
         "completed": false,
         "quizQuestions": [
           {
-            "question": "What is this?",
+            "question": "Choose the correct word for the image:",
             "options": [
-              "apple",
-              "banana",
-              "cat"
+              "number",
+              "circle",
+              "square"
             ],
-            "correctAnswer": "apple"
+            "correctAnswer": "number"
+          },
+          {
+            "question": "How do you spell: circle?",
+            "options": [
+              "circle",
+              "circles",
+              "ircle"
+            ],
+            "correctAnswer": "circle"
+          },
+          {
+            "question": "Which word starts with the same sound?",
+            "options": [
+              "number",
+              "dog",
+              "elephant"
+            ],
+            "correctAnswer": "number"
+          },
+          {
+            "question": "I like eating _______.",
+            "options": [
+              "number",
+              "book",
+              "pencil"
+            ],
+            "correctAnswer": "number"
+          },
+          {
+            "question": "Translate into Vietnamese: number",
+            "options": [
+              "Từ vựng đúng",
+              "Con mèo",
+              "Ngôi nhà"
+            ],
+            "correctAnswer": "Từ vựng đúng"
           }
         ]
       }
@@ -626,7 +1094,7 @@
   {
     "id": "l2-u14",
     "number": 14,
-    "title": "Unit 14",
+    "title": "Unit 14: At home",
     "status": "locked",
     "progress": 0,
     "grade": "Lớp 2",
@@ -643,29 +1111,65 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello"
+        "expectedText": "I have a brother"
       },
       {
         "id": "l2-u14-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "apple"
+        "expectedWord": "brother"
       },
       {
         "id": "l2-u14-quiz",
-        "title": "Quiz",
+        "title": "Vocabulary Quiz",
         "type": "quiz",
         "completed": false,
         "quizQuestions": [
           {
-            "question": "What is this?",
+            "question": "Choose the correct word for the image:",
             "options": [
-              "apple",
-              "banana",
-              "cat"
+              "brother",
+              "mother",
+              "father"
             ],
-            "correctAnswer": "apple"
+            "correctAnswer": "brother"
+          },
+          {
+            "question": "How do you spell: mother?",
+            "options": [
+              "mother",
+              "mothers",
+              "other"
+            ],
+            "correctAnswer": "mother"
+          },
+          {
+            "question": "Which word starts with the same sound?",
+            "options": [
+              "brother",
+              "dog",
+              "elephant"
+            ],
+            "correctAnswer": "brother"
+          },
+          {
+            "question": "I like eating _______.",
+            "options": [
+              "brother",
+              "book",
+              "pencil"
+            ],
+            "correctAnswer": "brother"
+          },
+          {
+            "question": "Translate into Vietnamese: brother",
+            "options": [
+              "Từ vựng đúng",
+              "Con mèo",
+              "Ngôi nhà"
+            ],
+            "correctAnswer": "Từ vựng đúng"
           }
         ]
       }
@@ -674,7 +1178,7 @@
   {
     "id": "l2-u15",
     "number": 15,
-    "title": "Unit 15",
+    "title": "Unit 15: In the clothes shop",
     "status": "locked",
     "progress": 0,
     "grade": "Lớp 2",
@@ -691,29 +1195,65 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello"
+        "expectedText": "I have a shirt"
       },
       {
         "id": "l2-u15-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "apple"
+        "expectedWord": "shirt"
       },
       {
         "id": "l2-u15-quiz",
-        "title": "Quiz",
+        "title": "Vocabulary Quiz",
         "type": "quiz",
         "completed": false,
         "quizQuestions": [
           {
-            "question": "What is this?",
+            "question": "Choose the correct word for the image:",
             "options": [
-              "apple",
-              "banana",
-              "cat"
+              "shirt",
+              "shorts",
+              "shoes"
             ],
-            "correctAnswer": "apple"
+            "correctAnswer": "shirt"
+          },
+          {
+            "question": "How do you spell: shorts?",
+            "options": [
+              "shorts",
+              "shortss",
+              "horts"
+            ],
+            "correctAnswer": "shorts"
+          },
+          {
+            "question": "Which word starts with the same sound?",
+            "options": [
+              "shirt",
+              "dog",
+              "elephant"
+            ],
+            "correctAnswer": "shirt"
+          },
+          {
+            "question": "I like eating _______.",
+            "options": [
+              "shirt",
+              "book",
+              "pencil"
+            ],
+            "correctAnswer": "shirt"
+          },
+          {
+            "question": "Translate into Vietnamese: shirt",
+            "options": [
+              "Từ vựng đúng",
+              "Con mèo",
+              "Ngôi nhà"
+            ],
+            "correctAnswer": "Từ vựng đúng"
           }
         ]
       }
@@ -722,7 +1262,7 @@
   {
     "id": "l2-u16",
     "number": 16,
-    "title": "Unit 16",
+    "title": "Unit 16: At the campsite",
     "status": "locked",
     "progress": 0,
     "grade": "Lớp 2",
@@ -739,29 +1279,65 @@
         "title": "Speaking & Pronunciation",
         "type": "speaking",
         "completed": false,
-        "expectedText": "Hello"
+        "expectedText": "I have a tent"
       },
       {
         "id": "l2-u16-dict",
         "title": "Listening & Dictation",
         "type": "dictation",
         "completed": false,
-        "expectedWord": "apple"
+        "expectedWord": "tent"
       },
       {
         "id": "l2-u16-quiz",
-        "title": "Quiz",
+        "title": "Vocabulary Quiz",
         "type": "quiz",
         "completed": false,
         "quizQuestions": [
           {
-            "question": "What is this?",
+            "question": "Choose the correct word for the image:",
             "options": [
-              "apple",
-              "banana",
-              "cat"
+              "tent",
+              "teapot",
+              "blanket"
             ],
-            "correctAnswer": "apple"
+            "correctAnswer": "tent"
+          },
+          {
+            "question": "How do you spell: teapot?",
+            "options": [
+              "teapot",
+              "teapots",
+              "eapot"
+            ],
+            "correctAnswer": "teapot"
+          },
+          {
+            "question": "Which word starts with the same sound?",
+            "options": [
+              "tent",
+              "dog",
+              "elephant"
+            ],
+            "correctAnswer": "tent"
+          },
+          {
+            "question": "I like eating _______.",
+            "options": [
+              "tent",
+              "book",
+              "pencil"
+            ],
+            "correctAnswer": "tent"
+          },
+          {
+            "question": "Translate into Vietnamese: tent",
+            "options": [
+              "Từ vựng đúng",
+              "Con mèo",
+              "Ngôi nhà"
+            ],
+            "correctAnswer": "Từ vựng đúng"
           }
         ]
       }
@@ -781,44 +1357,6 @@
         "type": "worksheet",
         "completed": false,
         "worksheetUrl": "/worksheets/l2/mindmap.pdf"
-      }
-    ]
-  },
-  {
-    "id": "l2-test-18",
-    "number": 18,
-    "title": "ĐỀ SỐ 1 KÌ 2 LOP 2",
-    "status": "in_progress",
-    "progress": 0,
-    "grade": "Lớp 2",
-    "lessons": [
-      {
-        "id": "l2-test-18-exam",
-        "title": "The Final Term Test - Lớp 2",
-        "type": "exam",
-        "completed": false,
-        "examDuration": 35,
-        "examAudio": "/audio/l2/tests/NGHE De 1 lop 2 ki 2.mp3",
-        "examQuestions": [
-          {
-            "question": "Nghe và chọn đáp án đúng (Dựa theo Audio)",
-            "options": [
-              "A",
-              "B",
-              "C"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Đọc đoạn văn và trả lời",
-            "options": [
-              "Yes",
-              "No",
-              "Not Given"
-            ],
-            "correctAnswer": "Yes"
-          }
-        ]
       }
     ]
   }

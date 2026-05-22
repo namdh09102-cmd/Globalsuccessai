@@ -1351,15 +1351,12 @@ export default function Dashboard() {
                   { label: "Trung bình", style: "bg-amber-500/10 text-amber-400 border-amber-500/20" },
                 ];
 
-                const subDescriptions = [
-                  "Giới thiệu sức khỏe & lối sống",
-                  "Tranh luận lối sống & thế hệ",
-                  "Khám phá đô thị thông minh",
-                ];
-
                 const bgImg = bgImages[idx % bgImages.length];
                 const diffTag = difficultyTags[idx % difficultyTags.length];
-                const subDesc = subDescriptions[idx % subDescriptions.length];
+                
+                // Trích xuất phần mô tả từ title (Ví dụ: "Unit 1: At my birthday party" -> "At my birthday party")
+                const titleParts = unit.title ? unit.title.split(':') : [];
+                const subDesc = titleParts.length > 1 ? titleParts[1].trim() : (unit.title || "Bài học mới");
                 const isSelected = selectedUnit?.id === unit.id;
 
                 return (
