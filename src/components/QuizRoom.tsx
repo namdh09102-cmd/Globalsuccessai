@@ -9,14 +9,17 @@ import {
   Sparkles, 
   ChevronRight,
   RotateCcw,
-  Check
+  Check,
+  Bot,
+  Loader2
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface QuizQuestion {
   question: string;
-  options: string[];
+  options: string[] | { [key: string]: string };
   correctAnswer: "A" | "B" | "C" | "D";
+  explanation?: string;
 }
 
 interface QuizRoomProps {
@@ -61,6 +64,11 @@ export default function QuizRoom({
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const [score, setScore] = useState(0);
+
+  // AI State
+  const [isAiLoading, setIsAiLoading] = useState(false);
+  const [aiResponse, setAiResponse] = useState<string | null>(null);
+  const [showAiModal, setShowAiModal] = useState(false);
   
   // Hiệu ứng pháo hoa nhẹ (chỉ lưu tọa độ hạt để vẽ)
   const [fireworks, setFireworks] = useState<{id: number, x: number, y: number, color: string}[]>([]);
@@ -117,7 +125,54 @@ export default function QuizRoom({
     setSelectedOption(null);
     setIsSubmitted(false);
     setIsCorrect(false);
-    setScore(0);
+    setShowAiModal(false);
+    setAiResponse(null);
+  };
+
+  const handleAskAI = async () => {
+    const apiKey = localStorage.getItem("gemini_api_key");
+    if (!apiKey) {
+      alert("Vui lòng nhập Gemini API Key trong trang Admin trước khi dùng Gia sư AI!");
+      return;
+    }
+
+    setShowAiModal(true);
+    setIsAiLoading(true);
+    setAiResponse(null);
+
+    const normalizedOpts = Array.isArray(activeQuestion.options)
+      ? activeQuestion.options
+      : Object.entries(activeQuestion.options).map(([k, v]) => `${k}. ${v}`);
+
+    const prompt = `Bạn là một gia sư Tiếng Anh nhiệt tình, thân thiện.
+Học sinh vừa làm câu hỏi sau:
+Câu hỏi: ${activeQuestion.question}
+Các đáp án:
+${normalizedOpts.join("\n")}
+Học sinh chọn: ${selectedOption}
+Đáp án đúng là: ${activeQuestion.correctAnswer}
+Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestion.correctAnswer} là đúng, và tại sao ${selectedOption} là sai (nếu học sinh chọn sai). Khen ngợi hoặc động viên học sinh một cách dễ thương. Trình bày văn bản rõ ràng.`;
+
+    try {
+      // Gọi trực tiếp REST API của Gemini 1.5 Flash
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }]
+        })
+      });
+      const data = await res.json();
+      if (data.candidates && data.candidates[0] && data.candidates[0].content) {
+        setAiResponse(data.candidates[0].content.parts[0].text);
+      } else {
+        setAiResponse("Lỗi: AI không thể trả lời lúc này. Bạn kiểm tra lại API Key nhé.");
+      }
+    } catch (err) {
+      setAiResponse("Lỗi kết nối tới AI: " + (err as Error).message);
+    } finally {
+      setIsAiLoading(false);
+    }
   };
 
   // Ánh xạ chữ cái thành Index của mảng options (A->0, B->1, C->2, D->3)
@@ -190,7 +245,12 @@ export default function QuizRoom({
 
         {/* 2x2 Options Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
-          {activeQuestion.options.map((opt) => {
+          {(() => {
+            const normalizedOptions = Array.isArray(activeQuestion.options)
+              ? activeQuestion.options
+              : Object.entries(activeQuestion.options).map(([k, v]) => `${k}. ${v}`);
+            
+            return normalizedOptions.map((opt) => {
             const letter = opt.substring(0, 1) as "A" | "B" | "C" | "D";
             const isSelected = selectedOption === letter;
             
@@ -220,7 +280,8 @@ export default function QuizRoom({
                 </div>
               </div>
             );
-          })}
+            });
+          })()}
         </div>
 
         {/* Submission Panel (Bottom button) */}
@@ -275,22 +336,84 @@ export default function QuizRoom({
                 <p className="text-xs text-slate-300 mt-0.5">
                   {isCorrect
                     ? "Bạn đã xuất sắc làm đúng câu hỏi này! Hãy tiếp tục phát huy."
-                    : `Đáp án đúng là ${activeQuestion.correctAnswer}: ${activeQuestion.options[letterToIdx(activeQuestion.correctAnswer)].substring(2).trim()}`}
+                    : `Đáp án đúng là ${activeQuestion.correctAnswer}`}
                 </p>
               </div>
             </div>
 
-            <button
-              onClick={handleNext}
-              className={`px-6 py-3 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-1.5 self-end sm:self-auto shadow-md ${
-                isCorrect
-                  ? "bg-emerald-600 hover:bg-emerald-500 text-white"
-                  : "bg-rose-600 hover:bg-rose-500 text-white"
-              }`}
+            <div className="flex items-center gap-3 self-end sm:self-auto">
+              <button
+                onClick={handleAskAI}
+                className="px-4 py-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 bg-[#1E293B] hover:bg-[#334155] border border-slate-600 text-slate-200"
+              >
+                <Bot className="w-4 h-4 text-rose-400" />
+                <span className="hidden sm:inline">Hỏi Cô giáo AI</span>
+              </button>
+
+              <button
+                onClick={handleNext}
+                className={`px-6 py-3 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-1.5 shadow-md ${
+                  isCorrect
+                    ? "bg-emerald-600 hover:bg-emerald-500 text-white"
+                    : "bg-rose-600 hover:bg-rose-500 text-white"
+                }`}
+              >
+                <span>{currentIdx + 1 < questions.length ? "Câu tiếp theo" : "Hoàn thành thử thách"}</span>
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* AI Tutor Modal */}
+      <AnimatePresence>
+        {showAiModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#090D16]/80 backdrop-blur-sm"
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              className="w-full max-w-lg bg-[#151B2B] border border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden"
             >
-              <span>{currentIdx + 1 < questions.length ? "Câu tiếp theo" : "Hoàn thành thử thách"}</span>
-              <ChevronRight className="w-4 h-4" />
-            </button>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-rose-500/10 rounded-full blur-[80px] pointer-events-none" />
+              
+              <div className="flex items-center justify-between mb-6 relative z-10">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-rose-500/20 border border-rose-500/30 flex items-center justify-center text-rose-400">
+                    <Bot className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-black text-white">Cô giáo AI</h3>
+                    <p className="text-[10px] text-rose-400 font-bold uppercase tracking-wider">Gemini Pro Tutor</p>
+                  </div>
+                </div>
+                <button 
+                  onClick={() => setShowAiModal(false)}
+                  className="p-2 text-slate-500 hover:text-white transition-colors bg-slate-800/50 hover:bg-slate-800 rounded-full"
+                >
+                  <XCircle className="w-5 h-5" />
+                </button>
+              </div>
+
+              <div className="min-h-[150px] max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar relative z-10">
+                {isAiLoading ? (
+                  <div className="h-full flex flex-col items-center justify-center gap-3 text-slate-400 pt-10">
+                    <Loader2 className="w-8 h-8 animate-spin text-rose-500" />
+                    <p className="text-xs font-bold animate-pulse">Cô giáo đang suy nghĩ...</p>
+                  </div>
+                ) : (
+                  <div className="text-sm text-slate-300 leading-relaxed whitespace-pre-wrap">
+                    {aiResponse}
+                  </div>
+                )}
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
