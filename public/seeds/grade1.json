@@ -73,158 +73,208 @@
       },
       {
         "id": "l1_u1_test",
-        "title": "Quiz & Unit Test (15 Questions)",
+        "title": "Quiz & Unit Test - 15 câu từ sách",
         "type": "quiz",
         "quizQuestions": [
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Từ nào bắt đầu bằng chữ \"B\"?",
             "options": [
-              "A. jam",
-              "B. ball",
-              "C. net",
-              "D. cup"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. bike",
-              "B. ikeb",
-              "C. ekib",
-              "D. bbike"
+              "A. ball",
+              "B. axe",
+              "C. cake",
+              "D. cat"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "Which word starts with the letter \"B\"?",
+            "question": "Đây là gì? \"It's a ball.\" - Chọn từ đúng:",
             "options": [
-              "A. pig",
-              "B. monkey",
-              "C. jacket",
-              "D. book"
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "Is this a boy?",
-            "options": [
-              "A. No, I don't.",
-              "B. No, it isn't.",
-              "C. Yes, it is.",
-              "D. Yes, I do."
+              "A. apple",
+              "B. alligator",
+              "C. ball",
+              "D. cake"
             ],
             "correctAnswer": "C"
           },
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"b-l-a-l\"",
             "options": [
-              "A. car",
-              "B. doll",
-              "C. bill",
-              "D. lamp"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. llab",
-              "B. allb",
-              "C. bball",
+              "A. bxll",
+              "B. bball",
+              "C. balls",
               "D. ball"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Which word starts with the letter \"B\"?",
+            "question": "Từ nào bắt đầu bằng chữ \"B\"?",
             "options": [
-              "A. lemon",
-              "B. ink",
-              "C. lamp",
+              "A. arm",
+              "B. cow",
+              "C. book",
+              "D. car"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Đây là gì? \"It's a book.\" - Chọn từ đúng:",
+            "options": [
+              "A. car",
+              "B. book",
+              "C. dog",
+              "D. ant"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"k-o-o-b\"",
+            "options": [
+              "A. bbook",
+              "B. book",
+              "C. books",
+              "D. bxok"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"B\"?",
+            "options": [
+              "A. apple",
+              "B. alligator",
+              "C. cup",
               "D. bike"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Is this a book?",
+            "question": "Đây là gì? \"It's a bike.\" - Chọn từ đúng:",
             "options": [
-              "A. Yes, it is.",
-              "B. Yes, I do.",
-              "C. No, it isn't.",
-              "D. No, I don't."
+              "A. cup",
+              "B. duck",
+              "C. axe",
+              "D. bike"
             ],
-            "correctAnswer": "A"
+            "correctAnswer": "D"
           },
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"e-b-k-i\"",
             "options": [
-              "A. monkey",
-              "B. horse",
-              "C. boy",
-              "D. mouse"
+              "A. bbike",
+              "B. bxke",
+              "C. bike",
+              "D. bikes"
             ],
             "correctAnswer": "C"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Từ nào bắt đầu bằng chữ \"B\"?",
             "options": [
-              "A. llib",
+              "A. dog",
+              "B. ant",
+              "C. boy",
+              "D. cat"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Đây là gì? \"It's a boy.\" - Chọn từ đúng:",
+            "options": [
+              "A. desk",
+              "B. arm",
+              "C. boy",
+              "D. cat"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"y-o-b\"",
+            "options": [
+              "A. boy",
+              "B. boys",
+              "C. bboy",
+              "D. bxy"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"B\"?",
+            "options": [
+              "A. bill",
+              "B. cow",
+              "C. duck",
+              "D. axe"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Đây là gì? \"It's a bill.\" - Chọn từ đúng:",
+            "options": [
+              "A. bill",
+              "B. door",
+              "C. cow",
+              "D. alligator"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"l-l-b-i\"",
+            "options": [
+              "A. bbill",
               "B. bill",
-              "C. bbill",
-              "D. illb"
+              "C. bxll",
+              "D. bills"
             ],
             "correctAnswer": "B"
           },
           {
-            "question": "Which word starts with the letter \"B\"?",
+            "question": "Sắp xếp thành câu đúng: \"a / It's / ball.\"",
             "options": [
-              "A. lion",
-              "B. kite",
-              "C. hand",
-              "D. ball"
+              "A. It's a ball.",
+              "B. a It's ball.",
+              "C. ball. a It's",
+              "D. It's a ball."
             ],
-            "correctAnswer": "D"
+            "correctAnswer": "A"
           },
           {
-            "question": "Is this a bike?",
+            "question": "Sắp xếp thành câu đúng: \"Hi, / Book. / I'm\"",
             "options": [
-              "A. Yes, I do.",
-              "B. No, it isn't.",
-              "C. No, I don't.",
-              "D. Yes, it is."
+              "A. Hi, I'm Book.",
+              "B. Hi, Book. I'm",
+              "C. Book. I'm Hi,",
+              "D. Book. I'm Hi,"
             ],
-            "correctAnswer": "D"
+            "correctAnswer": "A"
           },
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Sắp xếp thành câu đúng: \"This / a / is / bike.\"",
             "options": [
-              "A. key",
-              "B. orange",
-              "C. face",
-              "D. book"
+              "A. This is a bike.",
+              "B. This a is bike.",
+              "C. bike. a is This",
+              "D. a bike. is This"
             ],
-            "correctAnswer": "D"
+            "correctAnswer": "A"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Sắp xếp thành câu đúng: \"have / a / I / boy.\"",
             "options": [
-              "A. yob",
-              "B. boy",
-              "C. oyb",
-              "D. bboy"
+              "A. I have a boy.",
+              "B. have a I boy.",
+              "C. boy. a have I",
+              "D. I boy. have a"
             ],
-            "correctAnswer": "B"
+            "correctAnswer": "A"
           },
           {
-            "question": "Which word starts with the letter \"B\"?",
+            "question": "Sắp xếp thành câu đúng: \"It / a / bill. / is\"",
             "options": [
-              "A. iguana",
-              "B. ink",
-              "C. car",
-              "D. bill"
+              "A. It is a bill.",
+              "B. It a bill. is",
+              "C. bill. a is It",
+              "D. a is It bill."
             ],
-            "correctAnswer": "D"
+            "correctAnswer": "A"
           }
         ]
       }
@@ -304,158 +354,208 @@
       },
       {
         "id": "l1_u2_test",
-        "title": "Quiz & Unit Test (15 Questions)",
+        "title": "Quiz & Unit Test - 15 câu từ sách",
         "type": "quiz",
         "quizQuestions": [
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Từ nào bắt đầu bằng chữ \"C\"?",
             "options": [
-              "A. cake",
-              "B. mother",
-              "C. fish",
-              "D. bike"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. rac",
-              "B. arc",
-              "C. car",
-              "D. ccar"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Which word starts with the letter \"C\"?",
-            "options": [
-              "A. cup",
-              "B. fan",
-              "C. ant",
-              "D. nut"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Is this a cat?",
-            "options": [
-              "A. Yes, I do.",
-              "B. No, it isn't.",
-              "C. Yes, it is.",
-              "D. No, I don't."
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. girl",
-              "B. fish",
-              "C. house",
-              "D. cow"
+              "A. ball",
+              "B. boy",
+              "C. axe",
+              "D. cake"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Đây là gì? \"It's a cake.\" - Chọn từ đúng:",
             "options": [
-              "A. akec",
-              "B. ekac",
+              "A. apple",
+              "B. alligator",
               "C. cake",
-              "D. ccake"
+              "D. ball"
             ],
             "correctAnswer": "C"
           },
           {
-            "question": "Which word starts with the letter \"C\"?",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"a-k-c-e\"",
             "options": [
-              "A. nine",
+              "A. cake",
+              "B. cxke",
+              "C. ccake",
+              "D. cakes"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"C\"?",
+            "options": [
+              "A. book",
               "B. car",
-              "C. eraser",
-              "D. fish"
+              "C. bill",
+              "D. arm"
             ],
             "correctAnswer": "B"
           },
           {
-            "question": "Is this a cup?",
+            "question": "Đây là gì? \"It's a car.\" - Chọn từ đúng:",
             "options": [
-              "A. No, it isn't.",
-              "B. Yes, it is.",
-              "C. No, I don't.",
-              "D. Yes, I do."
+              "A. book",
+              "B. car",
+              "C. ant",
+              "D. dog"
             ],
             "correctAnswer": "B"
           },
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"c-a-r\"",
             "options": [
-              "A. pink",
-              "B. game",
-              "C. mother",
+              "A. car",
+              "B. cxr",
+              "C. ccar",
+              "D. cars"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"C\"?",
+            "options": [
+              "A. bike",
+              "B. cup",
+              "C. alligator",
+              "D. apple"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Đây là gì? \"It's a cup.\" - Chọn từ đúng:",
+            "options": [
+              "A. duck",
+              "B. axe",
+              "C. bike",
+              "D. cup"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"c-p-u\"",
+            "options": [
+              "A. cups",
+              "B. ccup",
+              "C. cup",
+              "D. cxp"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"C\"?",
+            "options": [
+              "A. boy",
+              "B. dog",
+              "C. cat",
+              "D. ant"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Đây là gì? \"It's a cat.\" - Chọn từ đúng:",
+            "options": [
+              "A. desk",
+              "B. boy",
+              "C. arm",
               "D. cat"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"t-a-c\"",
             "options": [
-              "A. woc",
-              "B. owc",
+              "A. cats",
+              "B. cat",
+              "C. ccat",
+              "D. cxt"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"C\"?",
+            "options": [
+              "A. duck",
+              "B. bill",
+              "C. cow",
+              "D. axe"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Đây là gì? \"It's a cow.\" - Chọn từ đúng:",
+            "options": [
+              "A. cow",
+              "B. door",
+              "C. bill",
+              "D. alligator"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"c-o-w\"",
+            "options": [
+              "A. cows",
+              "B. cxw",
               "C. cow",
               "D. ccow"
             ],
             "correctAnswer": "C"
           },
           {
-            "question": "Which word starts with the letter \"C\"?",
+            "question": "Sắp xếp thành câu đúng: \"a / It's / cake.\"",
             "options": [
-              "A. apple",
-              "B. fan",
-              "C. cake",
-              "D. goat"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Is this a car?",
-            "options": [
-              "A. No, I don't.",
-              "B. Yes, I do.",
-              "C. No, it isn't.",
-              "D. Yes, it is."
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. cup",
-              "B. pen",
-              "C. elephant",
-              "D. jam"
+              "A. It's a cake.",
+              "B. a It's cake.",
+              "C. cake. a It's",
+              "D. It's a cake."
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Sắp xếp thành câu đúng: \"Hi, / I'm / Car.\"",
             "options": [
-              "A. atc",
-              "B. tac",
-              "C. ccat",
-              "D. cat"
+              "A. Hi, I'm Car.",
+              "B. Hi, I'm Car.",
+              "C. Car. I'm Hi,",
+              "D. Car. I'm Hi,"
             ],
-            "correctAnswer": "D"
+            "correctAnswer": "A"
           },
           {
-            "question": "Which word starts with the letter \"C\"?",
+            "question": "Sắp xếp thành câu đúng: \"This / cup. / is / a\"",
             "options": [
-              "A. jump",
-              "B. jam",
-              "C. ink",
-              "D. cow"
+              "A. This is a cup.",
+              "B. This cup. is a",
+              "C. cup. a is This",
+              "D. This cup. is a"
             ],
-            "correctAnswer": "D"
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"have / cat. / a / I\"",
+            "options": [
+              "A. I have a cat.",
+              "B. have cat. a I",
+              "C. cat. a have I",
+              "D. have I a cat."
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"cow. / It / is / a\"",
+            "options": [
+              "A. It is a cow.",
+              "B. cow. It is a",
+              "C. cow. a is It",
+              "D. It a cow. is"
+            ],
+            "correctAnswer": "A"
           }
         ]
       }
@@ -535,158 +635,208 @@
       },
       {
         "id": "l1_u3_test",
-        "title": "Quiz & Unit Test (15 Questions)",
+        "title": "Quiz & Unit Test - 15 câu từ sách",
         "type": "quiz",
         "quizQuestions": [
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Từ nào bắt đầu bằng chữ \"A\"?",
             "options": [
               "A. apple",
-              "B. dog",
-              "C. ball",
-              "D. milk"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. nta",
-              "B. tna",
-              "C. ant",
-              "D. aant"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Which word starts with the letter \"A\"?",
-            "options": [
-              "A. jam",
-              "B. egg",
-              "C. kite",
-              "D. axe"
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "Is this a arm?",
-            "options": [
-              "A. Yes, it is.",
-              "B. No, I don't.",
-              "C. Yes, I do.",
-              "D. No, it isn't."
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. iguana",
-              "B. pig",
-              "C. animal",
-              "D. hair"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. pplea",
-              "B. aapple",
-              "C. apple",
-              "D. elppa"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Which word starts with the letter \"A\"?",
-            "options": [
-              "A. ant",
-              "B. cow",
-              "C. hand",
-              "D. kangaroo"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Is this a axe?",
-            "options": [
-              "A. No, I don't.",
-              "B. No, it isn't.",
-              "C. Yes, I do.",
-              "D. Yes, it is."
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. arm",
-              "B. juice",
-              "C. doll",
+              "B. ball",
+              "C. boy",
               "D. cup"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Đây là gì? \"It's a apple.\" - Chọn từ đúng:",
             "options": [
-              "A. nimala",
-              "B. animal",
-              "C. aanimal",
-              "D. lamina"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Which word starts with the letter \"A\"?",
-            "options": [
-              "A. lake",
+              "A. cake",
               "B. apple",
-              "C. orange",
-              "D. bill"
+              "C. ball",
+              "D. cow"
             ],
             "correctAnswer": "B"
           },
           {
-            "question": "Is this a ant?",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"a-p-l-p-e\"",
             "options": [
-              "A. Yes, it is.",
-              "B. No, I don't.",
-              "C. Yes, I do.",
-              "D. No, it isn't."
+              "A. axple",
+              "B. aapple",
+              "C. apples",
+              "D. apple"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"A\"?",
+            "options": [
+              "A. book",
+              "B. bill",
+              "C. ant",
+              "D. cat"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Đây là gì? \"It's a ant.\" - Chọn từ đúng:",
+            "options": [
+              "A. book",
+              "B. ant",
+              "C. car",
+              "D. dog"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"a-n-t\"",
+            "options": [
+              "A. ants",
+              "B. ant",
+              "C. aant",
+              "D. axt"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"A\"?",
+            "options": [
+              "A. cake",
+              "B. bike",
+              "C. cow",
+              "D. axe"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Đây là gì? \"It's a axe.\" - Chọn từ đúng:",
+            "options": [
+              "A. cup",
+              "B. bike",
+              "C. axe",
+              "D. duck"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"a-x-e\"",
+            "options": [
+              "A. axe",
+              "B. aaxe",
+              "C. axes",
+              "D. axe"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Từ nào bắt đầu bằng chữ \"A\"?",
             "options": [
-              "A. lion",
-              "B. ink",
-              "C. axe",
-              "D. insect"
+              "A. dog",
+              "B. boy",
+              "C. car",
+              "D. arm"
             ],
-            "correctAnswer": "C"
+            "correctAnswer": "D"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Đây là gì? \"It's a arm.\" - Chọn từ đúng:",
             "options": [
-              "A. mra",
-              "B. rma",
+              "A. desk",
+              "B. boy",
+              "C. cat",
+              "D. arm"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"r-a-m\"",
+            "options": [
+              "A. axm",
+              "B. aarm",
               "C. arm",
-              "D. aarm"
+              "D. arms"
             ],
             "correctAnswer": "C"
           },
           {
-            "question": "Which word starts with the letter \"A\"?",
+            "question": "Từ nào bắt đầu bằng chữ \"A\"?",
             "options": [
-              "A. king",
-              "B. animal",
-              "C. kitten",
-              "D. key"
+              "A. bill",
+              "B. cup",
+              "C. duck",
+              "D. alligator"
             ],
-            "correctAnswer": "B"
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Đây là gì? \"It's a alligator.\" - Chọn từ đúng:",
+            "options": [
+              "A. door",
+              "B. bill",
+              "C. cow",
+              "D. alligator"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"l-t-a-i-a-o-g-r-l\"",
+            "options": [
+              "A. aalligator",
+              "B. axligator",
+              "C. alligator",
+              "D. alligators"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"apple. / a / It's\"",
+            "options": [
+              "A. It's a apple.",
+              "B. apple. a It's",
+              "C. apple. a It's",
+              "D. apple. It's a"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"Hi, / Ant. / I'm\"",
+            "options": [
+              "A. Hi, I'm Ant.",
+              "B. Hi, Ant. I'm",
+              "C. Ant. I'm Hi,",
+              "D. Ant. Hi, I'm"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"is / This / a / axe.\"",
+            "options": [
+              "A. This is a axe.",
+              "B. is This a axe.",
+              "C. axe. a is This",
+              "D. This is axe. a"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"arm. / I / a / have\"",
+            "options": [
+              "A. I have a arm.",
+              "B. arm. I a have",
+              "C. arm. a have I",
+              "D. arm. a I have"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"It / alligator. / is / a\"",
+            "options": [
+              "A. It is a alligator.",
+              "B. It alligator. is a",
+              "C. alligator. a is It",
+              "D. It is alligator. a"
+            ],
+            "correctAnswer": "A"
           }
         ]
       }
@@ -766,158 +916,208 @@
       },
       {
         "id": "l1_u4_test",
-        "title": "Quiz & Unit Test (15 Questions)",
+        "title": "Quiz & Unit Test - 15 câu từ sách",
         "type": "quiz",
         "quizQuestions": [
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Từ nào bắt đầu bằng chữ \"D\"?",
             "options": [
-              "A. bike",
-              "B. ink",
-              "C. ostrich",
+              "A. boy",
+              "B. cup",
+              "C. ball",
               "D. dog"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Đây là gì? \"It's a dog.\" - Chọn từ đúng:",
             "options": [
-              "A. kcud",
-              "B. uckd",
-              "C. dduck",
+              "A. ball",
+              "B. dog",
+              "C. cow",
+              "D. cake"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"d-o-g\"",
+            "options": [
+              "A. dog",
+              "B. dxg",
+              "C. ddog",
+              "D. dogs"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"D\"?",
+            "options": [
+              "A. cat",
+              "B. bill",
+              "C. book",
               "D. duck"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Which word starts with the letter \"D\"?",
+            "question": "Đây là gì? \"It's a duck.\" - Chọn từ đúng:",
             "options": [
-              "A. egg",
-              "B. girl",
-              "C. desk",
-              "D. pizza"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Is this a door?",
-            "options": [
-              "A. Yes, it is.",
-              "B. No, it isn't.",
-              "C. Yes, I do.",
-              "D. No, I don't."
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. nest",
-              "B. doll",
-              "C. car",
-              "D. book"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. ddog",
-              "B. ogd",
-              "C. dog",
-              "D. god"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Which word starts with the letter \"D\"?",
-            "options": [
-              "A. leaf",
-              "B. nest",
-              "C. duck",
-              "D. juice"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Is this a desk?",
-            "options": [
-              "A. Yes, it is.",
-              "B. No, I don't.",
-              "C. No, it isn't.",
-              "D. Yes, I do."
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. eraser",
-              "B. door",
-              "C. orange",
-              "D. pink"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. olld",
-              "B. llod",
-              "C. ddoll",
-              "D. doll"
+              "A. car",
+              "B. book",
+              "C. apple",
+              "D. duck"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Which word starts with the letter \"D\"?",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"k-u-d-c\"",
             "options": [
-              "A. dog",
-              "B. key",
-              "C. nest",
-              "D. fish"
+              "A. dduck",
+              "B. ducks",
+              "C. dxck",
+              "D. duck"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"D\"?",
+            "options": [
+              "A. cow",
+              "B. bike",
+              "C. cake",
+              "D. desk"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Đây là gì? \"It's a desk.\" - Chọn từ đúng:",
+            "options": [
+              "A. bike",
+              "B. desk",
+              "C. ant",
+              "D. cup"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"e-s-d-k\"",
+            "options": [
+              "A. desk",
+              "B. ddesk",
+              "C. desks",
+              "D. dxsk"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "Is this a duck?",
+            "question": "Từ nào bắt đầu bằng chữ \"D\"?",
             "options": [
-              "A. Yes, it is.",
-              "B. No, I don't.",
-              "C. Yes, I do.",
-              "D. No, it isn't."
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. cup",
-              "B. lemon",
-              "C. desk",
-              "D. bike"
+              "A. apple",
+              "B. car",
+              "C. door",
+              "D. boy"
             ],
             "correctAnswer": "C"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Đây là gì? \"It's a door.\" - Chọn từ đúng:",
             "options": [
-              "A. rood",
-              "B. ddoor",
-              "C. oord",
+              "A. axe",
+              "B. cat",
+              "C. boy",
               "D. door"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Which word starts with the letter \"D\"?",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"r-o-d-o\"",
             "options": [
-              "A. ostrich",
-              "B. doll",
-              "C. onion",
-              "D. juice"
+              "A. door",
+              "B. doors",
+              "C. dxor",
+              "D. ddoor"
             ],
-            "correctAnswer": "B"
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"D\"?",
+            "options": [
+              "A. ant",
+              "B. cup",
+              "C. doll",
+              "D. bill"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Đây là gì? \"It's a doll.\" - Chọn từ đúng:",
+            "options": [
+              "A. bill",
+              "B. arm",
+              "C. cow",
+              "D. doll"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"l-d-o-l\"",
+            "options": [
+              "A. dxll",
+              "B. dolls",
+              "C. doll",
+              "D. ddoll"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"It's / dog. / a\"",
+            "options": [
+              "A. It's a dog.",
+              "B. It's dog. a",
+              "C. dog. a It's",
+              "D. dog. a It's"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"I'm / Hi, / Duck.\"",
+            "options": [
+              "A. Hi, I'm Duck.",
+              "B. I'm Hi, Duck.",
+              "C. Duck. I'm Hi,",
+              "D. I'm Hi, Duck."
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"desk. / a / This / is\"",
+            "options": [
+              "A. This is a desk.",
+              "B. desk. a This is",
+              "C. desk. a is This",
+              "D. This a is desk."
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"have / a / door. / I\"",
+            "options": [
+              "A. I have a door.",
+              "B. have a door. I",
+              "C. door. a have I",
+              "D. I door. have a"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"doll. / a / It / is\"",
+            "options": [
+              "A. It is a doll.",
+              "B. doll. a It is",
+              "C. doll. a is It",
+              "D. a It doll. is"
+            ],
+            "correctAnswer": "A"
           }
         ]
       }
@@ -997,158 +1197,208 @@
       },
       {
         "id": "l1_u5_test",
-        "title": "Quiz & Unit Test (15 Questions)",
+        "title": "Quiz & Unit Test - 15 câu từ sách",
         "type": "quiz",
         "quizQuestions": [
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Từ nào bắt đầu bằng chữ \"E\"?",
             "options": [
-              "A. desk",
-              "B. pink",
-              "C. octopus",
-              "D. elephant"
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. gge",
-              "B. gge",
-              "C. egg",
-              "D. eegg"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Which word starts with the letter \"E\"?",
-            "options": [
-              "A. apple",
-              "B. guitar",
-              "C. eraser",
-              "D. house"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Is this a eye?",
-            "options": [
-              "A. No, it isn't.",
-              "B. Yes, I do.",
-              "C. No, I don't.",
-              "D. Yes, it is."
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. ear",
-              "B. hand",
-              "C. nose",
-              "D. pencil"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. lephante",
-              "B. eelephant",
+              "A. boy",
+              "B. ball",
               "C. elephant",
-              "D. tnahpele"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Which word starts with the letter \"E\"?",
-            "options": [
-              "A. egg",
-              "B. pencil",
-              "C. island",
-              "D. pen"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Is this a eraser?",
-            "options": [
-              "A. Yes, I do.",
-              "B. Yes, it is.",
-              "C. No, it isn't.",
-              "D. No, I don't."
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. island",
-              "B. jelly",
-              "C. bill",
-              "D. eye"
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. eear",
-              "B. rae",
-              "C. ear",
-              "D. are"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Which word starts with the letter \"E\"?",
-            "options": [
-              "A. cake",
-              "B. lamp",
-              "C. arm",
-              "D. elephant"
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "Is this a egg?",
-            "options": [
-              "A. No, it isn't.",
-              "B. Yes, it is.",
-              "C. No, I don't.",
-              "D. Yes, I do."
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. eraser",
-              "B. animal",
-              "C. fan",
               "D. cup"
             ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Đây là gì? \"It's a elephant.\" - Chọn từ đúng:",
+            "options": [
+              "A. cow",
+              "B. ball",
+              "C. cake",
+              "D. elephant"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"e-t-l-a-h-e-p-n\"",
+            "options": [
+              "A. elephants",
+              "B. exephant",
+              "C. elephant",
+              "D. eelephant"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"E\"?",
+            "options": [
+              "A. cat",
+              "B. egg",
+              "C. book",
+              "D. bill"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Đây là gì? \"It's a egg.\" - Chọn từ đúng:",
+            "options": [
+              "A. book",
+              "B. car",
+              "C. apple",
+              "D. egg"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"e-g-g\"",
+            "options": [
+              "A. eggs",
+              "B. eegg",
+              "C. egg",
+              "D. exg"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"E\"?",
+            "options": [
+              "A. bike",
+              "B. eraser",
+              "C. cow",
+              "D. cake"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Đây là gì? \"It's a eraser.\" - Chọn từ đúng:",
+            "options": [
+              "A. cup",
+              "B. bike",
+              "C. eraser",
+              "D. ant"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"r-a-s-e-r-e\"",
+            "options": [
+              "A. eeraser",
+              "B. exaser",
+              "C. eraser",
+              "D. erasers"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"E\"?",
+            "options": [
+              "A. car",
+              "B. eye",
+              "C. boy",
+              "D. apple"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Đây là gì? \"It's a eye.\" - Chọn từ đúng:",
+            "options": [
+              "A. eye",
+              "B. boy",
+              "C. cat",
+              "D. axe"
+            ],
             "correctAnswer": "A"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"e-y-e\"",
             "options": [
               "A. eeye",
-              "B. yee",
-              "C. eyes",
+              "B. eyes",
+              "C. exe",
               "D. eye"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Which word starts with the letter \"E\"?",
+            "question": "Từ nào bắt đầu bằng chữ \"E\"?",
             "options": [
-              "A. monkey",
-              "B. ear",
-              "C. dog",
-              "D. kite"
+              "A. ant",
+              "B. cup",
+              "C. bill",
+              "D. ear"
             ],
-            "correctAnswer": "B"
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Đây là gì? \"It's a ear.\" - Chọn từ đúng:",
+            "options": [
+              "A. cow",
+              "B. arm",
+              "C. ear",
+              "D. bill"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"r-a-e\"",
+            "options": [
+              "A. ears",
+              "B. eear",
+              "C. exr",
+              "D. ear"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"a / elephant. / It's\"",
+            "options": [
+              "A. It's a elephant.",
+              "B. a elephant. It's",
+              "C. elephant. a It's",
+              "D. a It's elephant."
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"Hi, / Egg. / I'm\"",
+            "options": [
+              "A. Hi, I'm Egg.",
+              "B. Hi, Egg. I'm",
+              "C. Egg. I'm Hi,",
+              "D. Hi, I'm Egg."
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"a / is / This / eraser.\"",
+            "options": [
+              "A. This is a eraser.",
+              "B. a is This eraser.",
+              "C. eraser. a is This",
+              "D. is eraser. a This"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"I / a / have / eye.\"",
+            "options": [
+              "A. I have a eye.",
+              "B. I a have eye.",
+              "C. eye. a have I",
+              "D. eye. a I have"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"It / a / is / ear.\"",
+            "options": [
+              "A. It is a ear.",
+              "B. It a is ear.",
+              "C. ear. a is It",
+              "D. ear. is a It"
+            ],
+            "correctAnswer": "A"
           }
         ]
       }
@@ -1228,158 +1478,208 @@
       },
       {
         "id": "l1_u6_test",
-        "title": "Quiz & Unit Test (15 Questions)",
+        "title": "Quiz & Unit Test - 15 câu từ sách",
         "type": "quiz",
         "quizQuestions": [
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Từ nào bắt đầu bằng chữ \"F\"?",
             "options": [
               "A. father",
-              "B. insect",
-              "C. nose",
-              "D. lion"
+              "B. boy",
+              "C. cup",
+              "D. ball"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Đây là gì? \"It's a father.\" - Chọn từ đúng:",
             "options": [
-              "A. fan",
-              "B. ffan",
-              "C. naf",
-              "D. anf"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Which word starts with the letter \"F\"?",
-            "options": [
-              "A. game",
-              "B. door",
-              "C. face",
-              "D. octopus"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Is this a fish?",
-            "options": [
-              "A. Yes, I do.",
-              "B. Yes, it is.",
-              "C. No, it isn't.",
-              "D. No, I don't."
+              "A. ball",
+              "B. father",
+              "C. cake",
+              "D. cow"
             ],
             "correctAnswer": "B"
           },
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"f-e-h-r-t-a\"",
             "options": [
-              "A. nut",
-              "B. eye",
-              "C. foot",
-              "D. jump"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. rehtaf",
-              "B. ffather",
-              "C. atherf",
-              "D. father"
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "Which word starts with the letter \"F\"?",
-            "options": [
-              "A. net",
-              "B. egg",
-              "C. fan",
-              "D. jelly"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Is this a face?",
-            "options": [
-              "A. Yes, it is.",
-              "B. No, it isn't.",
-              "C. No, I don't.",
-              "D. Yes, I do."
+              "A. father",
+              "B. fathers",
+              "C. fxther",
+              "D. ffather"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Từ nào bắt đầu bằng chữ \"F\"?",
             "options": [
-              "A. mother",
-              "B. house",
-              "C. jump",
+              "A. bill",
+              "B. book",
+              "C. cat",
+              "D. fan"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Đây là gì? \"It's a fan.\" - Chọn từ đúng:",
+            "options": [
+              "A. apple",
+              "B. book",
+              "C. car",
+              "D. fan"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"n-f-a\"",
+            "options": [
+              "A. fan",
+              "B. ffan",
+              "C. fxn",
+              "D. fans"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"F\"?",
+            "options": [
+              "A. cake",
+              "B. cow",
+              "C. face",
+              "D. bike"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Đây là gì? \"It's a face.\" - Chọn từ đúng:",
+            "options": [
+              "A. ant",
+              "B. cup",
+              "C. face",
+              "D. bike"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"e-f-c-a\"",
+            "options": [
+              "A. face",
+              "B. fface",
+              "C. faces",
+              "D. fxce"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"F\"?",
+            "options": [
+              "A. apple",
+              "B. fish",
+              "C. car",
+              "D. boy"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Đây là gì? \"It's a fish.\" - Chọn từ đúng:",
+            "options": [
+              "A. boy",
+              "B. cat",
+              "C. axe",
               "D. fish"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"h-i-f-s\"",
             "options": [
-              "A. toof",
-              "B. ffoot",
-              "C. ootf",
+              "A. fish",
+              "B. fishs",
+              "C. ffish",
+              "D. fxsh"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"F\"?",
+            "options": [
+              "A. cup",
+              "B. ant",
+              "C. foot",
+              "D. bill"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Đây là gì? \"It's a foot.\" - Chọn từ đúng:",
+            "options": [
+              "A. arm",
+              "B. cow",
+              "C. bill",
               "D. foot"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Which word starts with the letter \"F\"?",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"f-o-o-t\"",
             "options": [
-              "A. father",
-              "B. eraser",
-              "C. pencil",
-              "D. nose"
+              "A. foot",
+              "B. foots",
+              "C. ffoot",
+              "D. fxot"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "Is this a fan?",
+            "question": "Sắp xếp thành câu đúng: \"It's / father. / a\"",
             "options": [
-              "A. Yes, I do.",
-              "B. Yes, it is.",
-              "C. No, I don't.",
-              "D. No, it isn't."
+              "A. It's a father.",
+              "B. It's father. a",
+              "C. father. a It's",
+              "D. a father. It's"
             ],
-            "correctAnswer": "B"
+            "correctAnswer": "A"
           },
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Sắp xếp thành câu đúng: \"I'm / Hi, / Fan.\"",
             "options": [
-              "A. door",
-              "B. face",
-              "C. jump",
-              "D. mother"
+              "A. Hi, I'm Fan.",
+              "B. I'm Hi, Fan.",
+              "C. Fan. I'm Hi,",
+              "D. I'm Fan. Hi,"
             ],
-            "correctAnswer": "B"
+            "correctAnswer": "A"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Sắp xếp thành câu đúng: \"This / is / a / face.\"",
             "options": [
-              "A. ishf",
-              "B. fish",
-              "C. ffish",
-              "D. hsif"
+              "A. This is a face.",
+              "B. This is a face.",
+              "C. face. a is This",
+              "D. This a is face."
             ],
-            "correctAnswer": "B"
+            "correctAnswer": "A"
           },
           {
-            "question": "Which word starts with the letter \"F\"?",
+            "question": "Sắp xếp thành câu đúng: \"have / I / fish. / a\"",
             "options": [
-              "A. igloo",
-              "B. goat",
-              "C. foot",
-              "D. monkey"
+              "A. I have a fish.",
+              "B. have I fish. a",
+              "C. fish. a have I",
+              "D. fish. have a I"
             ],
-            "correctAnswer": "C"
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"is / It / foot. / a\"",
+            "options": [
+              "A. It is a foot.",
+              "B. is It foot. a",
+              "C. foot. a is It",
+              "D. a It is foot."
+            ],
+            "correctAnswer": "A"
           }
         ]
       }
@@ -1459,158 +1759,208 @@
       },
       {
         "id": "l1_u7_test",
-        "title": "Quiz & Unit Test (15 Questions)",
+        "title": "Quiz & Unit Test - 15 câu từ sách",
         "type": "quiz",
         "quizQuestions": [
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Từ nào bắt đầu bằng chữ \"G\"?",
             "options": [
-              "A. egg",
-              "B. goat",
-              "C. leaf",
-              "D. onion"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. irlg",
-              "B. girl",
-              "C. lrig",
-              "D. ggirl"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Which word starts with the letter \"G\"?",
-            "options": [
-              "A. duck",
-              "B. hand",
-              "C. gate",
-              "D. juice"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Is this a game?",
-            "options": [
-              "A. No, it isn't.",
-              "B. No, I don't.",
-              "C. Yes, I do.",
-              "D. Yes, it is."
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. hair",
-              "B. book",
-              "C. father",
-              "D. guitar"
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. ggoat",
-              "B. oatg",
+              "A. boy",
+              "B. ball",
               "C. goat",
-              "D. taog"
+              "D. cup"
             ],
             "correctAnswer": "C"
           },
           {
-            "question": "Which word starts with the letter \"G\"?",
+            "question": "Đây là gì? \"It's a goat.\" - Chọn từ đúng:",
+            "options": [
+              "A. ball",
+              "B. cow",
+              "C. goat",
+              "D. cake"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"a-o-g-t\"",
+            "options": [
+              "A. goat",
+              "B. ggoat",
+              "C. gxat",
+              "D. goats"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"G\"?",
+            "options": [
+              "A. girl",
+              "B. cat",
+              "C. bill",
+              "D. book"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Đây là gì? \"It's a girl.\" - Chọn từ đúng:",
+            "options": [
+              "A. girl",
+              "B. apple",
+              "C. car",
+              "D. book"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"r-i-l-g\"",
+            "options": [
+              "A. girls",
+              "B. ggirl",
+              "C. girl",
+              "D. gxrl"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"G\"?",
+            "options": [
+              "A. gate",
+              "B. bike",
+              "C. cow",
+              "D. cake"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Đây là gì? \"It's a gate.\" - Chọn từ đúng:",
+            "options": [
+              "A. ant",
+              "B. bike",
+              "C. cup",
+              "D. gate"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"a-g-t-e\"",
+            "options": [
+              "A. ggate",
+              "B. gates",
+              "C. gxte",
+              "D. gate"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"G\"?",
             "options": [
               "A. apple",
-              "B. onion",
-              "C. girl",
-              "D. net"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Is this a gate?",
-            "options": [
-              "A. No, I don't.",
-              "B. No, it isn't.",
-              "C. Yes, it is.",
-              "D. Yes, I do."
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. lion",
-              "B. jacket",
-              "C. game",
-              "D. hand"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. guitar",
-              "B. uitarg",
-              "C. ratiug",
-              "D. gguitar"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Which word starts with the letter \"G\"?",
-            "options": [
-              "A. kitten",
-              "B. desk",
-              "C. cake",
-              "D. goat"
+              "B. boy",
+              "C. car",
+              "D. game"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Is this a girl?",
-            "options": [
-              "A. Yes, I do.",
-              "B. No, it isn't.",
-              "C. No, I don't.",
-              "D. Yes, it is."
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. cake",
-              "B. gate",
-              "C. cup",
-              "D. onion"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Choose the correct spelling:",
+            "question": "Đây là gì? \"It's a game.\" - Chọn từ đúng:",
             "options": [
               "A. game",
-              "B. emag",
-              "C. ggame",
-              "D. ameg"
+              "B. cat",
+              "C. axe",
+              "D. boy"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "Which word starts with the letter \"G\"?",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"g-e-m-a\"",
             "options": [
-              "A. pig",
+              "A. game",
+              "B. ggame",
+              "C. gxme",
+              "D. games"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"G\"?",
+            "options": [
+              "A. cup",
               "B. guitar",
-              "C. dog",
-              "D. kite"
+              "C. bill",
+              "D. ant"
             ],
             "correctAnswer": "B"
+          },
+          {
+            "question": "Đây là gì? \"It's a guitar.\" - Chọn từ đúng:",
+            "options": [
+              "A. bill",
+              "B. guitar",
+              "C. arm",
+              "D. cow"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"u-g-r-i-a-t\"",
+            "options": [
+              "A. guitars",
+              "B. guitar",
+              "C. gguitar",
+              "D. gxitar"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"a / goat. / It's\"",
+            "options": [
+              "A. It's a goat.",
+              "B. a goat. It's",
+              "C. goat. a It's",
+              "D. goat. It's a"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"I'm / Hi, / Girl.\"",
+            "options": [
+              "A. Hi, I'm Girl.",
+              "B. I'm Hi, Girl.",
+              "C. Girl. I'm Hi,",
+              "D. Hi, I'm Girl."
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"is / This / gate. / a\"",
+            "options": [
+              "A. This is a gate.",
+              "B. is This gate. a",
+              "C. gate. a is This",
+              "D. gate. a This is"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"game. / a / have / I\"",
+            "options": [
+              "A. I have a game.",
+              "B. game. a have I",
+              "C. game. a have I",
+              "D. I game. a have"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"is / It / a / guitar.\"",
+            "options": [
+              "A. It is a guitar.",
+              "B. is It a guitar.",
+              "C. guitar. a is It",
+              "D. guitar. It a is"
+            ],
+            "correctAnswer": "A"
           }
         ]
       }
@@ -1690,158 +2040,208 @@
       },
       {
         "id": "l1_u8_test",
-        "title": "Quiz & Unit Test (15 Questions)",
+        "title": "Quiz & Unit Test - 15 câu từ sách",
         "type": "quiz",
         "quizQuestions": [
           {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. insect",
-              "B. lion",
-              "C. hair",
-              "D. ball"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. andh",
-              "B. hand",
-              "C. dnah",
-              "D. hhand"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Which word starts with the letter \"H\"?",
-            "options": [
-              "A. juice",
-              "B. bill",
-              "C. horse",
-              "D. guitar"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Is this a hat?",
-            "options": [
-              "A. No, it isn't.",
-              "B. Yes, I do.",
-              "C. No, I don't.",
-              "D. Yes, it is."
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. house",
-              "B. pink",
-              "C. girl",
-              "D. mother"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Choose the correct spelling:",
+            "question": "Từ nào bắt đầu bằng chữ \"H\"?",
             "options": [
               "A. hair",
-              "B. airh",
-              "C. hhair",
-              "D. riah"
+              "B. cup",
+              "C. boy",
+              "D. ball"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "Which word starts with the letter \"H\"?",
+            "question": "Đây là gì? \"It's a hair.\" - Chọn từ đúng:",
             "options": [
-              "A. elephant",
-              "B. father",
-              "C. hand",
-              "D. jacket"
+              "A. hair",
+              "B. ball",
+              "C. cow",
+              "D. cake"
             ],
-            "correctAnswer": "C"
+            "correctAnswer": "A"
           },
           {
-            "question": "Is this a horse?",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"h-a-i-r\"",
             "options": [
-              "A. No, it isn't.",
-              "B. Yes, I do.",
-              "C. Yes, it is.",
-              "D. No, I don't."
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. iguana",
-              "B. cow",
-              "C. lake",
-              "D. hat"
+              "A. hairs",
+              "B. hxir",
+              "C. hhair",
+              "D. hair"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Từ nào bắt đầu bằng chữ \"H\"?",
             "options": [
-              "A. esuoh",
-              "B. house",
-              "C. hhouse",
-              "D. ouseh"
+              "A. book",
+              "B. cat",
+              "C. bill",
+              "D. hand"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Đây là gì? \"It's a hand.\" - Chọn từ đúng:",
+            "options": [
+              "A. car",
+              "B. book",
+              "C. hand",
+              "D. apple"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"h-d-a-n\"",
+            "options": [
+              "A. hand",
+              "B. hxnd",
+              "C. hands",
+              "D. hhand"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"H\"?",
+            "options": [
+              "A. bike",
+              "B. cake",
+              "C. horse",
+              "D. cow"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Đây là gì? \"It's a horse.\" - Chọn từ đúng:",
+            "options": [
+              "A. bike",
+              "B. ant",
+              "C. cup",
+              "D. horse"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"s-r-o-e-h\"",
+            "options": [
+              "A. hhorse",
+              "B. hxrse",
+              "C. horse",
+              "D. horses"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"H\"?",
+            "options": [
+              "A. car",
+              "B. hat",
+              "C. apple",
+              "D. boy"
             ],
             "correctAnswer": "B"
           },
           {
-            "question": "Which word starts with the letter \"H\"?",
+            "question": "Đây là gì? \"It's a hat.\" - Chọn từ đúng:",
             "options": [
-              "A. kangaroo",
-              "B. arm",
-              "C. hair",
-              "D. ox"
+              "A. axe",
+              "B. cat",
+              "C. hat",
+              "D. boy"
             ],
             "correctAnswer": "C"
           },
           {
-            "question": "Is this a hand?",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"h-a-t\"",
             "options": [
-              "A. Yes, I do.",
-              "B. No, I don't.",
-              "C. Yes, it is.",
-              "D. No, it isn't."
+              "A. hxt",
+              "B. hats",
+              "C. hat",
+              "D. hhat"
             ],
             "correctAnswer": "C"
           },
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Từ nào bắt đầu bằng chữ \"H\"?",
+            "options": [
+              "A. house",
+              "B. cup",
+              "C. bill",
+              "D. ant"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Đây là gì? \"It's a house.\" - Chọn từ đúng:",
             "options": [
               "A. bill",
-              "B. horse",
-              "C. octopus",
-              "D. cat"
+              "B. arm",
+              "C. cow",
+              "D. house"
             ],
-            "correctAnswer": "B"
+            "correctAnswer": "D"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"h-o-e-u-s\"",
             "options": [
-              "A. hhat",
-              "B. hat",
-              "C. ath",
-              "D. tah"
+              "A. hxuse",
+              "B. hhouse",
+              "C. houses",
+              "D. house"
             ],
-            "correctAnswer": "B"
+            "correctAnswer": "D"
           },
           {
-            "question": "Which word starts with the letter \"H\"?",
+            "question": "Sắp xếp thành câu đúng: \"It's / a / hair.\"",
             "options": [
-              "A. onion",
-              "B. insect",
-              "C. house",
-              "D. eye"
+              "A. It's a hair.",
+              "B. It's a hair.",
+              "C. hair. a It's",
+              "D. It's a hair."
             ],
-            "correctAnswer": "C"
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"I'm / Hand. / Hi,\"",
+            "options": [
+              "A. Hi, I'm Hand.",
+              "B. I'm Hand. Hi,",
+              "C. Hand. I'm Hi,",
+              "D. Hand. Hi, I'm"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"a / This / is / horse.\"",
+            "options": [
+              "A. This is a horse.",
+              "B. a This is horse.",
+              "C. horse. a is This",
+              "D. is a horse. This"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"hat. / a / I / have\"",
+            "options": [
+              "A. I have a hat.",
+              "B. hat. a I have",
+              "C. hat. a have I",
+              "D. have I a hat."
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"It / is / a / house.\"",
+            "options": [
+              "A. It is a house.",
+              "B. It is a house.",
+              "C. house. a is It",
+              "D. house. a It is"
+            ],
+            "correctAnswer": "A"
           }
         ]
       }
@@ -1921,156 +2321,206 @@
       },
       {
         "id": "l1_u9_test",
-        "title": "Quiz & Unit Test (15 Questions)",
+        "title": "Quiz & Unit Test - 15 câu từ sách",
         "type": "quiz",
         "quizQuestions": [
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Từ nào bắt đầu bằng chữ \"I\"?",
             "options": [
-              "A. game",
-              "B. ink",
-              "C. cat",
-              "D. fan"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. nsecti",
-              "B. tcesni",
-              "C. iinsect",
-              "D. insect"
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "Which word starts with the letter \"I\"?",
-            "options": [
-              "A. eraser",
-              "B. fish",
-              "C. dog",
-              "D. igloo"
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "Is this a iguana?",
-            "options": [
-              "A. Yes, it is.",
-              "B. Yes, I do.",
-              "C. No, it isn't.",
-              "D. No, I don't."
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. island",
-              "B. pink",
-              "C. pig",
-              "D. juice"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. nki",
-              "B. ink",
-              "C. iink",
-              "D. kni"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Which word starts with the letter \"I\"?",
-            "options": [
-              "A. kite",
-              "B. insect",
-              "C. onion",
-              "D. octopus"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Is this a igloo?",
-            "options": [
-              "A. Yes, it is.",
-              "B. No, I don't.",
-              "C. Yes, I do.",
-              "D. No, it isn't."
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. iguana",
-              "B. jacket",
-              "C. juice",
-              "D. goat"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. iisland",
-              "B. dnalsi",
-              "C. island",
-              "D. slandi"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Which word starts with the letter \"I\"?",
-            "options": [
-              "A. juice",
-              "B. milk",
-              "C. kangaroo",
+              "A. cup",
+              "B. boy",
+              "C. ball",
               "D. ink"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Is this a insect?",
+            "question": "Đây là gì? \"It's a ink.\" - Chọn từ đúng:",
             "options": [
-              "A. Yes, it is.",
-              "B. No, it isn't.",
-              "C. Yes, I do.",
-              "D. No, I don't."
+              "A. cake",
+              "B. ball",
+              "C. ink",
+              "D. cow"
             ],
-            "correctAnswer": "A"
+            "correctAnswer": "C"
           },
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"n-i-k\"",
             "options": [
-              "A. door",
-              "B. duck",
-              "C. pizza",
-              "D. igloo"
+              "A. inks",
+              "B. ixk",
+              "C. iink",
+              "D. ink"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Từ nào bắt đầu bằng chữ \"I\"?",
             "options": [
-              "A. iiguana",
-              "B. iguana",
-              "C. anaugi",
-              "D. guanai"
+              "A. bill",
+              "B. book",
+              "C. insect",
+              "D. cat"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Đây là gì? \"It's a insect.\" - Chọn từ đúng:",
+            "options": [
+              "A. insect",
+              "B. apple",
+              "C. car",
+              "D. book"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"c-t-i-n-s-e\"",
+            "options": [
+              "A. iinsect",
+              "B. insects",
+              "C. ixsect",
+              "D. insect"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"I\"?",
+            "options": [
+              "A. cow",
+              "B. igloo",
+              "C. bike",
+              "D. cake"
             ],
             "correctAnswer": "B"
           },
           {
-            "question": "Which word starts with the letter \"I\"?",
+            "question": "Đây là gì? \"It's a igloo.\" - Chọn từ đúng:",
             "options": [
-              "A. island",
-              "B. pink",
-              "C. nest",
-              "D. house"
+              "A. igloo",
+              "B. bike",
+              "C. ant",
+              "D. cup"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"o-o-l-g-i\"",
+            "options": [
+              "A. igloo",
+              "B. iigloo",
+              "C. ixloo",
+              "D. igloos"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"I\"?",
+            "options": [
+              "A. apple",
+              "B. iguana",
+              "C. boy",
+              "D. car"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Đây là gì? \"It's a iguana.\" - Chọn từ đúng:",
+            "options": [
+              "A. iguana",
+              "B. cat",
+              "C. axe",
+              "D. boy"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"i-g-u-a-n-a\"",
+            "options": [
+              "A. iiguana",
+              "B. ixuana",
+              "C. iguanas",
+              "D. iguana"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"I\"?",
+            "options": [
+              "A. ant",
+              "B. island",
+              "C. cup",
+              "D. bill"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Đây là gì? \"It's a island.\" - Chọn từ đúng:",
+            "options": [
+              "A. cow",
+              "B. arm",
+              "C. island",
+              "D. bill"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"s-l-a-i-n-d\"",
+            "options": [
+              "A. ixland",
+              "B. island",
+              "C. iisland",
+              "D. islands"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"a / It's / ink.\"",
+            "options": [
+              "A. It's a ink.",
+              "B. a It's ink.",
+              "C. ink. a It's",
+              "D. It's ink. a"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"I'm / Hi, / Insect.\"",
+            "options": [
+              "A. Hi, I'm Insect.",
+              "B. I'm Hi, Insect.",
+              "C. Insect. I'm Hi,",
+              "D. Insect. Hi, I'm"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"a / This / is / igloo.\"",
+            "options": [
+              "A. This is a igloo.",
+              "B. a This is igloo.",
+              "C. igloo. a is This",
+              "D. is This igloo. a"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"a / have / iguana. / I\"",
+            "options": [
+              "A. I have a iguana.",
+              "B. a have iguana. I",
+              "C. iguana. a have I",
+              "D. iguana. I a have"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"It / island. / a / is\"",
+            "options": [
+              "A. It is a island.",
+              "B. It island. a is",
+              "C. island. a is It",
+              "D. It is a island."
             ],
             "correctAnswer": "A"
           }
@@ -2152,158 +2602,208 @@
       },
       {
         "id": "l1_u10_test",
-        "title": "Quiz & Unit Test (15 Questions)",
+        "title": "Quiz & Unit Test - 15 câu từ sách",
         "type": "quiz",
         "quizQuestions": [
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Từ nào bắt đầu bằng chữ \"J\"?",
             "options": [
               "A. jam",
-              "B. lemon",
-              "C. car",
-              "D. mouse"
+              "B. cup",
+              "C. ball",
+              "D. boy"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Đây là gì? \"It's a jam.\" - Chọn từ đúng:",
             "options": [
-              "A. eciuj",
-              "B. jjuice",
-              "C. juice",
-              "D. uicej"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Which word starts with the letter \"J\"?",
-            "options": [
-              "A. lion",
-              "B. lamp",
-              "C. jelly",
-              "D. hat"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Is this a jacket?",
-            "options": [
-              "A. Yes, it is.",
-              "B. Yes, I do.",
-              "C. No, it isn't.",
-              "D. No, I don't."
+              "A. jam",
+              "B. cow",
+              "C. ball",
+              "D. cake"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"m-a-j\"",
             "options": [
-              "A. pink",
-              "B. jump",
-              "C. orange",
-              "D. pizza"
+              "A. jams",
+              "B. jjam",
+              "C. jam",
+              "D. jxm"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"J\"?",
+            "options": [
+              "A. juice",
+              "B. book",
+              "C. cat",
+              "D. bill"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Đây là gì? \"It's a juice.\" - Chọn từ đúng:",
+            "options": [
+              "A. book",
+              "B. juice",
+              "C. apple",
+              "D. car"
             ],
             "correctAnswer": "B"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"c-i-u-e-j\"",
             "options": [
-              "A. jjam",
-              "B. maj",
-              "C. jam",
-              "D. amj"
+              "A. jjuice",
+              "B. juice",
+              "C. jxice",
+              "D. juices"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"J\"?",
+            "options": [
+              "A. cake",
+              "B. jelly",
+              "C. bike",
+              "D. cow"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Đây là gì? \"It's a jelly.\" - Chọn từ đúng:",
+            "options": [
+              "A. bike",
+              "B. ant",
+              "C. cup",
+              "D. jelly"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"l-l-j-e-y\"",
+            "options": [
+              "A. jxlly",
+              "B. jjelly",
+              "C. jelly",
+              "D. jellys"
             ],
             "correctAnswer": "C"
           },
           {
-            "question": "Which word starts with the letter \"J\"?",
+            "question": "Từ nào bắt đầu bằng chữ \"J\"?",
             "options": [
-              "A. juice",
+              "A. boy",
+              "B. car",
+              "C. jacket",
+              "D. apple"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Đây là gì? \"It's a jacket.\" - Chọn từ đúng:",
+            "options": [
+              "A. cat",
               "B. boy",
-              "C. lion",
-              "D. guitar"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Is this a jelly?",
-            "options": [
-              "A. No, it isn't.",
-              "B. No, I don't.",
-              "C. Yes, it is.",
-              "D. Yes, I do."
+              "C. jacket",
+              "D. axe"
             ],
             "correctAnswer": "C"
           },
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"e-j-k-a-t-c\"",
             "options": [
-              "A. jacket",
-              "B. bill",
-              "C. onion",
-              "D. duck"
+              "A. jackets",
+              "B. jacket",
+              "C. jjacket",
+              "D. jxcket"
             ],
-            "correctAnswer": "A"
+            "correctAnswer": "B"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Từ nào bắt đầu bằng chữ \"J\"?",
+            "options": [
+              "A. cup",
+              "B. ant",
+              "C. bill",
+              "D. jump"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Đây là gì? \"It's a jump.\" - Chọn từ đúng:",
             "options": [
               "A. jump",
-              "B. umpj",
-              "C. pmuj",
-              "D. jjump"
+              "B. arm",
+              "C. cow",
+              "D. bill"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "Which word starts with the letter \"J\"?",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"p-m-u-j\"",
             "options": [
-              "A. jam",
-              "B. horse",
-              "C. island",
-              "D. pen"
+              "A. jump",
+              "B. jjump",
+              "C. jumps",
+              "D. jxmp"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "Is this a juice?",
+            "question": "Sắp xếp thành câu đúng: \"It's / a / jam.\"",
             "options": [
-              "A. Yes, it is.",
-              "B. No, it isn't.",
-              "C. No, I don't.",
-              "D. Yes, I do."
+              "A. It's a jam.",
+              "B. It's a jam.",
+              "C. jam. a It's",
+              "D. a It's jam."
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Sắp xếp thành câu đúng: \"Juice. / Hi, / I'm\"",
             "options": [
-              "A. ostrich",
-              "B. pencil",
-              "C. jelly",
-              "D. goat"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. jacket",
-              "B. jjacket",
-              "C. acketj",
-              "D. tekcaj"
+              "A. Hi, I'm Juice.",
+              "B. Juice. Hi, I'm",
+              "C. Juice. I'm Hi,",
+              "D. Juice. Hi, I'm"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "Which word starts with the letter \"J\"?",
+            "question": "Sắp xếp thành câu đúng: \"This / jelly. / is / a\"",
             "options": [
-              "A. animal",
-              "B. cat",
-              "C. jump",
-              "D. hair"
+              "A. This is a jelly.",
+              "B. This jelly. is a",
+              "C. jelly. a is This",
+              "D. jelly. This is a"
             ],
-            "correctAnswer": "C"
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"jacket. / have / a / I\"",
+            "options": [
+              "A. I have a jacket.",
+              "B. jacket. have a I",
+              "C. jacket. a have I",
+              "D. a have jacket. I"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"is / It / a / jump.\"",
+            "options": [
+              "A. It is a jump.",
+              "B. is It a jump.",
+              "C. jump. a is It",
+              "D. jump. It is a"
+            ],
+            "correctAnswer": "A"
           }
         ]
       }
@@ -2383,156 +2883,206 @@
       },
       {
         "id": "l1_u11_test",
-        "title": "Quiz & Unit Test (15 Questions)",
+        "title": "Quiz & Unit Test - 15 câu từ sách",
         "type": "quiz",
         "quizQuestions": [
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Từ nào bắt đầu bằng chữ \"K\"?",
             "options": [
-              "A. kite",
-              "B. goat",
-              "C. doll",
-              "D. pizza"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. kkitten",
-              "B. kitten",
-              "C. ittenk",
-              "D. nettik"
+              "A. cup",
+              "B. kite",
+              "C. ball",
+              "D. boy"
             ],
             "correctAnswer": "B"
           },
           {
-            "question": "Which word starts with the letter \"K\"?",
+            "question": "Đây là gì? \"It's a kite.\" - Chọn từ đúng:",
+            "options": [
+              "A. ball",
+              "B. kite",
+              "C. cow",
+              "D. cake"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"k-i-t-e\"",
+            "options": [
+              "A. kxte",
+              "B. kites",
+              "C. kite",
+              "D. kkite"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"K\"?",
+            "options": [
+              "A. book",
+              "B. kitten",
+              "C. cat",
+              "D. bill"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Đây là gì? \"It's a kitten.\" - Chọn từ đúng:",
             "options": [
               "A. car",
-              "B. cat",
-              "C. kangaroo",
-              "D. duck"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Is this a key?",
-            "options": [
-              "A. Yes, I do.",
-              "B. No, it isn't.",
-              "C. Yes, it is.",
-              "D. No, I don't."
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. door",
-              "B. king",
-              "C. eraser",
-              "D. egg"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. etik",
-              "B. kite",
-              "C. kkite",
-              "D. itek"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Which word starts with the letter \"K\"?",
-            "options": [
-              "A. jam",
-              "B. kitten",
-              "C. elephant",
-              "D. iguana"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Is this a kangaroo?",
-            "options": [
-              "A. Yes, I do.",
-              "B. Yes, it is.",
-              "C. No, it isn't.",
-              "D. No, I don't."
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. key",
-              "B. milk",
-              "C. fan",
-              "D. jacket"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. ingk",
-              "B. gnik",
-              "C. king",
-              "D. kking"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Which word starts with the letter \"K\"?",
-            "options": [
-              "A. monkey",
-              "B. kite",
-              "C. dog",
-              "D. animal"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Is this a kitten?",
-            "options": [
-              "A. Yes, I do.",
-              "B. No, it isn't.",
-              "C. No, I don't.",
-              "D. Yes, it is."
+              "B. apple",
+              "C. book",
+              "D. kitten"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"k-i-e-t-t-n\"",
             "options": [
-              "A. kangaroo",
-              "B. cake",
-              "C. juice",
-              "D. house"
+              "A. kittens",
+              "B. kitten",
+              "C. kxtten",
+              "D. kkitten"
             ],
-            "correctAnswer": "A"
+            "correctAnswer": "B"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Từ nào bắt đầu bằng chữ \"K\"?",
             "options": [
-              "A. kkey",
-              "B. yek",
-              "C. eyk",
+              "A. cow",
+              "B. cake",
+              "C. kangaroo",
+              "D. bike"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Đây là gì? \"It's a kangaroo.\" - Chọn từ đúng:",
+            "options": [
+              "A. cup",
+              "B. ant",
+              "C. bike",
+              "D. kangaroo"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"a-o-k-r-a-o-n-g\"",
+            "options": [
+              "A. kangaroos",
+              "B. kxngaroo",
+              "C. kangaroo",
+              "D. kkangaroo"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"K\"?",
+            "options": [
+              "A. apple",
+              "B. boy",
+              "C. car",
               "D. key"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Which word starts with the letter \"K\"?",
+            "question": "Đây là gì? \"It's a key.\" - Chọn từ đúng:",
             "options": [
-              "A. king",
+              "A. cat",
+              "B. axe",
+              "C. boy",
+              "D. key"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"k-e-y\"",
+            "options": [
+              "A. keys",
+              "B. kxy",
+              "C. kkey",
+              "D. key"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"K\"?",
+            "options": [
+              "A. bill",
+              "B. cup",
+              "C. king",
+              "D. ant"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Đây là gì? \"It's a king.\" - Chọn từ đúng:",
+            "options": [
+              "A. bill",
               "B. cow",
-              "C. egg",
-              "D. house"
+              "C. arm",
+              "D. king"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"g-n-i-k\"",
+            "options": [
+              "A. kings",
+              "B. kxng",
+              "C. kking",
+              "D. king"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"a / It's / kite.\"",
+            "options": [
+              "A. It's a kite.",
+              "B. a It's kite.",
+              "C. kite. a It's",
+              "D. kite. It's a"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"Hi, / Kitten. / I'm\"",
+            "options": [
+              "A. Hi, I'm Kitten.",
+              "B. Hi, Kitten. I'm",
+              "C. Kitten. I'm Hi,",
+              "D. Kitten. I'm Hi,"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"This / kangaroo. / a / is\"",
+            "options": [
+              "A. This is a kangaroo.",
+              "B. This kangaroo. a is",
+              "C. kangaroo. a is This",
+              "D. a kangaroo. is This"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"a / I / have / key.\"",
+            "options": [
+              "A. I have a key.",
+              "B. a I have key.",
+              "C. key. a have I",
+              "D. a I key. have"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"king. / It / a / is\"",
+            "options": [
+              "A. It is a king.",
+              "B. king. It a is",
+              "C. king. a is It",
+              "D. a is It king."
             ],
             "correctAnswer": "A"
           }
@@ -2614,156 +3164,206 @@
       },
       {
         "id": "l1_u12_test",
-        "title": "Quiz & Unit Test (15 Questions)",
+        "title": "Quiz & Unit Test - 15 câu từ sách",
         "type": "quiz",
         "quizQuestions": [
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Từ nào bắt đầu bằng chữ \"L\"?",
             "options": [
-              "A. lake",
-              "B. fish",
-              "C. desk",
+              "A. ball",
+              "B. lake",
+              "C. boy",
+              "D. cup"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Đây là gì? \"It's a lake.\" - Chọn từ đúng:",
+            "options": [
+              "A. cake",
+              "B. lake",
+              "C. cow",
+              "D. ball"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"e-k-a-l\"",
+            "options": [
+              "A. llake",
+              "B. lxke",
+              "C. lake",
+              "D. lakes"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"L\"?",
+            "options": [
+              "A. leaf",
+              "B. book",
+              "C. bill",
               "D. cat"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Đây là gì? \"It's a leaf.\" - Chọn từ đúng:",
             "options": [
-              "A. fael",
-              "B. leaf",
-              "C. eafl",
-              "D. lleaf"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Which word starts with the letter \"L\"?",
-            "options": [
-              "A. lemon",
-              "B. hair",
-              "C. hat",
-              "D. ox"
+              "A. leaf",
+              "B. apple",
+              "C. book",
+              "D. car"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "Is this a lion?",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"l-f-a-e\"",
             "options": [
-              "A. No, I don't.",
-              "B. Yes, I do.",
-              "C. Yes, it is.",
-              "D. No, it isn't."
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. lamp",
-              "B. fan",
-              "C. nut",
-              "D. cake"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. akel",
-              "B. lake",
-              "C. llake",
-              "D. ekal"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Which word starts with the letter \"L\"?",
-            "options": [
-              "A. net",
-              "B. gate",
-              "C. cup",
+              "A. leafs",
+              "B. lxaf",
+              "C. lleaf",
               "D. leaf"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Is this a lemon?",
+            "question": "Từ nào bắt đầu bằng chữ \"L\"?",
             "options": [
-              "A. No, it isn't.",
-              "B. No, I don't.",
-              "C. Yes, it is.",
-              "D. Yes, I do."
+              "A. lemon",
+              "B. cake",
+              "C. cow",
+              "D. bike"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Đây là gì? \"It's a lemon.\" - Chọn từ đúng:",
+            "options": [
+              "A. lemon",
+              "B. cup",
+              "C. bike",
+              "D. ant"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"o-e-m-n-l\"",
+            "options": [
+              "A. lxmon",
+              "B. lemon",
+              "C. lemons",
+              "D. llemon"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"L\"?",
+            "options": [
+              "A. car",
+              "B. apple",
+              "C. lion",
+              "D. boy"
             ],
             "correctAnswer": "C"
           },
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Đây là gì? \"It's a lion.\" - Chọn từ đúng:",
             "options": [
-              "A. hand",
-              "B. jam",
-              "C. ant",
+              "A. axe",
+              "B. boy",
+              "C. lion",
+              "D. cat"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"i-n-l-o\"",
+            "options": [
+              "A. llion",
+              "B. lxon",
+              "C. lions",
               "D. lion"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Từ nào bắt đầu bằng chữ \"L\"?",
             "options": [
-              "A. ampl",
+              "A. bill",
+              "B. ant",
+              "C. cup",
+              "D. lamp"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Đây là gì? \"It's a lamp.\" - Chọn từ đúng:",
+            "options": [
+              "A. lamp",
+              "B. bill",
+              "C. cow",
+              "D. arm"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"l-a-m-p\"",
+            "options": [
+              "A. llamp",
               "B. lamp",
-              "C. pmal",
-              "D. llamp"
+              "C. lamps",
+              "D. lxmp"
             ],
             "correctAnswer": "B"
           },
           {
-            "question": "Which word starts with the letter \"L\"?",
+            "question": "Sắp xếp thành câu đúng: \"a / lake. / It's\"",
             "options": [
-              "A. jump",
-              "B. king",
-              "C. eye",
-              "D. lake"
+              "A. It's a lake.",
+              "B. a lake. It's",
+              "C. lake. a It's",
+              "D. It's a lake."
             ],
-            "correctAnswer": "D"
+            "correctAnswer": "A"
           },
           {
-            "question": "Is this a leaf?",
+            "question": "Sắp xếp thành câu đúng: \"I'm / Leaf. / Hi,\"",
             "options": [
-              "A. No, I don't.",
-              "B. Yes, I do.",
-              "C. No, it isn't.",
-              "D. Yes, it is."
+              "A. Hi, I'm Leaf.",
+              "B. I'm Leaf. Hi,",
+              "C. Leaf. I'm Hi,",
+              "D. Hi, I'm Leaf."
             ],
-            "correctAnswer": "D"
+            "correctAnswer": "A"
           },
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Sắp xếp thành câu đúng: \"a / This / lemon. / is\"",
             "options": [
-              "A. kite",
-              "B. jelly",
-              "C. lemon",
-              "D. octopus"
+              "A. This is a lemon.",
+              "B. a This lemon. is",
+              "C. lemon. a is This",
+              "D. is This lemon. a"
             ],
-            "correctAnswer": "C"
+            "correctAnswer": "A"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Sắp xếp thành câu đúng: \"lion. / a / I / have\"",
             "options": [
-              "A. llion",
-              "B. noil",
-              "C. lion",
-              "D. ionl"
+              "A. I have a lion.",
+              "B. lion. a I have",
+              "C. lion. a have I",
+              "D. a I lion. have"
             ],
-            "correctAnswer": "C"
+            "correctAnswer": "A"
           },
           {
-            "question": "Which word starts with the letter \"L\"?",
+            "question": "Sắp xếp thành câu đúng: \"a / lamp. / is / It\"",
             "options": [
-              "A. lamp",
-              "B. animal",
-              "C. fan",
-              "D. apple"
+              "A. It is a lamp.",
+              "B. a lamp. is It",
+              "C. lamp. a is It",
+              "D. lamp. a is It"
             ],
             "correctAnswer": "A"
           }
@@ -2845,158 +3445,208 @@
       },
       {
         "id": "l1_u13_test",
-        "title": "Quiz & Unit Test (15 Questions)",
+        "title": "Quiz & Unit Test - 15 câu từ sách",
         "type": "quiz",
         "quizQuestions": [
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Từ nào bắt đầu bằng chữ \"M\"?",
             "options": [
-              "A. milk",
-              "B. bill",
-              "C. door",
-              "D. iguana"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. rehtom",
-              "B. otherm",
-              "C. mother",
-              "D. mmother"
+              "A. boy",
+              "B. cup",
+              "C. milk",
+              "D. ball"
             ],
             "correctAnswer": "C"
           },
           {
-            "question": "Which word starts with the letter \"M\"?",
+            "question": "Đây là gì? \"It's a milk.\" - Chọn từ đúng:",
             "options": [
-              "A. dog",
-              "B. pencil",
-              "C. pizza",
-              "D. mouse"
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "Is this a monkey?",
-            "options": [
-              "A. No, it isn't.",
-              "B. Yes, it is.",
-              "C. No, I don't.",
-              "D. Yes, I do."
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. ant",
-              "B. jump",
-              "C. moon",
-              "D. dog"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. milk",
-              "B. mmilk",
-              "C. ilkm",
-              "D. klim"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Which word starts with the letter \"M\"?",
-            "options": [
-              "A. insect",
-              "B. mother",
-              "C. elephant",
-              "D. animal"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Is this a mouse?",
-            "options": [
-              "A. No, I don't.",
-              "B. Yes, I do.",
-              "C. No, it isn't.",
-              "D. Yes, it is."
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. monkey",
-              "B. iguana",
-              "C. girl",
-              "D. ink"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. oonm",
-              "B. moon",
-              "C. noom",
-              "D. mmoon"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Which word starts with the letter \"M\"?",
-            "options": [
-              "A. gate",
-              "B. pizza",
-              "C. jump",
+              "A. ball",
+              "B. cow",
+              "C. cake",
               "D. milk"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Is this a mother?",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"l-k-i-m\"",
             "options": [
-              "A. Yes, it is.",
-              "B. No, I don't.",
-              "C. No, it isn't.",
-              "D. Yes, I do."
+              "A. milk",
+              "B. mmilk",
+              "C. milks",
+              "D. mxlk"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Từ nào bắt đầu bằng chữ \"M\"?",
             "options": [
-              "A. nine",
-              "B. mouse",
+              "A. mother",
+              "B. book",
+              "C. cat",
+              "D. bill"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Đây là gì? \"It's a mother.\" - Chọn từ đúng:",
+            "options": [
+              "A. apple",
+              "B. mother",
               "C. book",
-              "D. leaf"
+              "D. car"
             ],
             "correctAnswer": "B"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"h-t-r-o-e-m\"",
             "options": [
-              "A. onkeym",
-              "B. yeknom",
-              "C. monkey",
-              "D. mmonkey"
+              "A. mmother",
+              "B. mxther",
+              "C. mother",
+              "D. mothers"
             ],
             "correctAnswer": "C"
           },
           {
-            "question": "Which word starts with the letter \"M\"?",
+            "question": "Từ nào bắt đầu bằng chữ \"M\"?",
             "options": [
-              "A. door",
+              "A. cow",
+              "B. bike",
+              "C. mouse",
+              "D. cake"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Đây là gì? \"It's a mouse.\" - Chọn từ đúng:",
+            "options": [
+              "A. cup",
+              "B. bike",
+              "C. ant",
+              "D. mouse"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"u-m-s-o-e\"",
+            "options": [
+              "A. mmouse",
+              "B. mouses",
+              "C. mxuse",
+              "D. mouse"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"M\"?",
+            "options": [
+              "A. monkey",
+              "B. car",
+              "C. apple",
+              "D. boy"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Đây là gì? \"It's a monkey.\" - Chọn từ đúng:",
+            "options": [
+              "A. boy",
+              "B. cat",
+              "C. axe",
+              "D. monkey"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"k-e-m-y-o-n\"",
+            "options": [
+              "A. mmonkey",
+              "B. monkeys",
+              "C. monkey",
+              "D. mxnkey"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"M\"?",
+            "options": [
+              "A. cup",
+              "B. ant",
+              "C. moon",
+              "D. bill"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Đây là gì? \"It's a moon.\" - Chọn từ đúng:",
+            "options": [
+              "A. cow",
               "B. moon",
-              "C. ostrich",
-              "D. orange"
+              "C. arm",
+              "D. bill"
             ],
             "correctAnswer": "B"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"o-m-n-o\"",
+            "options": [
+              "A. mmoon",
+              "B. moon",
+              "C. mxon",
+              "D. moons"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"It's / a / milk.\"",
+            "options": [
+              "A. It's a milk.",
+              "B. It's a milk.",
+              "C. milk. a It's",
+              "D. milk. a It's"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"Mother. / I'm / Hi,\"",
+            "options": [
+              "A. Hi, I'm Mother.",
+              "B. Mother. I'm Hi,",
+              "C. Mother. I'm Hi,",
+              "D. Hi, I'm Mother."
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"is / a / mouse. / This\"",
+            "options": [
+              "A. This is a mouse.",
+              "B. is a mouse. This",
+              "C. mouse. a is This",
+              "D. This is a mouse."
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"a / I / monkey. / have\"",
+            "options": [
+              "A. I have a monkey.",
+              "B. a I monkey. have",
+              "C. monkey. a have I",
+              "D. I a monkey. have"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"moon. / It / a / is\"",
+            "options": [
+              "A. It is a moon.",
+              "B. moon. It a is",
+              "C. moon. a is It",
+              "D. It a is moon."
+            ],
+            "correctAnswer": "A"
           }
         ]
       }
@@ -3076,158 +3726,208 @@
       },
       {
         "id": "l1_u14_test",
-        "title": "Quiz & Unit Test (15 Questions)",
+        "title": "Quiz & Unit Test - 15 câu từ sách",
         "type": "quiz",
         "quizQuestions": [
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Từ nào bắt đầu bằng chữ \"N\"?",
             "options": [
-              "A. nut",
-              "B. lemon",
-              "C. onion",
-              "D. dog"
+              "A. cup",
+              "B. boy",
+              "C. ball",
+              "D. nut"
             ],
-            "correctAnswer": "A"
+            "correctAnswer": "D"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Đây là gì? \"It's a nut.\" - Chọn từ đúng:",
             "options": [
-              "A. osen",
+              "A. ball",
+              "B. cake",
+              "C. cow",
+              "D. nut"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"n-u-t\"",
+            "options": [
+              "A. nuts",
+              "B. nnut",
+              "C. nxt",
+              "D. nut"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"N\"?",
+            "options": [
+              "A. cat",
+              "B. nose",
+              "C. bill",
+              "D. book"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Đây là gì? \"It's a nose.\" - Chọn từ đúng:",
+            "options": [
+              "A. apple",
+              "B. car",
+              "C. book",
+              "D. nose"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"s-n-o-e\"",
+            "options": [
+              "A. nxse",
               "B. nnose",
               "C. nose",
-              "D. eson"
+              "D. noses"
             ],
             "correctAnswer": "C"
           },
           {
-            "question": "Which word starts with the letter \"N\"?",
+            "question": "Từ nào bắt đầu bằng chữ \"N\"?",
             "options": [
-              "A. kitten",
-              "B. hair",
-              "C. car",
+              "A. cake",
+              "B. bike",
+              "C. nine",
+              "D. cow"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Đây là gì? \"It's a nine.\" - Chọn từ đúng:",
+            "options": [
+              "A. cup",
+              "B. bike",
+              "C. ant",
               "D. nine"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Is this a nest?",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"e-n-i-n\"",
             "options": [
-              "A. No, it isn't.",
-              "B. Yes, it is.",
-              "C. Yes, I do.",
-              "D. No, I don't."
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. igloo",
-              "B. net",
-              "C. bike",
-              "D. octopus"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. tun",
-              "B. utn",
-              "C. nut",
-              "D. nnut"
+              "A. nnine",
+              "B. nines",
+              "C. nine",
+              "D. nxne"
             ],
             "correctAnswer": "C"
           },
           {
-            "question": "Which word starts with the letter \"N\"?",
+            "question": "Từ nào bắt đầu bằng chữ \"N\"?",
             "options": [
-              "A. octopus",
-              "B. mouse",
-              "C. nose",
-              "D. ox"
+              "A. boy",
+              "B. car",
+              "C. nest",
+              "D. apple"
             ],
             "correctAnswer": "C"
           },
           {
-            "question": "Is this a nine?",
+            "question": "Đây là gì? \"It's a nest.\" - Chọn từ đúng:",
             "options": [
-              "A. Yes, I do.",
-              "B. No, it isn't.",
-              "C. No, I don't.",
-              "D. Yes, it is."
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. mother",
-              "B. orange",
-              "C. key",
-              "D. nest"
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. net",
-              "B. ten",
-              "C. nnet",
-              "D. etn"
+              "A. nest",
+              "B. axe",
+              "C. cat",
+              "D. boy"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "Which word starts with the letter \"N\"?",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"n-e-t-s\"",
             "options": [
-              "A. key",
-              "B. axe",
-              "C. nut",
-              "D. jacket"
+              "A. nest",
+              "B. nnest",
+              "C. nxst",
+              "D. nests"
             ],
-            "correctAnswer": "C"
+            "correctAnswer": "A"
           },
           {
-            "question": "Is this a nose?",
+            "question": "Từ nào bắt đầu bằng chữ \"N\"?",
             "options": [
-              "A. Yes, I do.",
-              "B. No, I don't.",
-              "C. Yes, it is.",
-              "D. No, it isn't."
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. horse",
-              "B. nine",
-              "C. cat",
-              "D. jam"
+              "A. bill",
+              "B. net",
+              "C. cup",
+              "D. ant"
             ],
             "correctAnswer": "B"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Đây là gì? \"It's a net.\" - Chọn từ đúng:",
             "options": [
-              "A. estn",
-              "B. nnest",
-              "C. tsen",
-              "D. nest"
+              "A. net",
+              "B. bill",
+              "C. cow",
+              "D. arm"
             ],
-            "correctAnswer": "D"
+            "correctAnswer": "A"
           },
           {
-            "question": "Which word starts with the letter \"N\"?",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"n-e-t\"",
             "options": [
-              "A. cow",
-              "B. lion",
-              "C. ostrich",
-              "D. net"
+              "A. net",
+              "B. nets",
+              "C. nnet",
+              "D. nxt"
             ],
-            "correctAnswer": "D"
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"nut. / a / It's\"",
+            "options": [
+              "A. It's a nut.",
+              "B. nut. a It's",
+              "C. nut. a It's",
+              "D. It's a nut."
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"Nose. / I'm / Hi,\"",
+            "options": [
+              "A. Hi, I'm Nose.",
+              "B. Nose. I'm Hi,",
+              "C. Nose. I'm Hi,",
+              "D. I'm Hi, Nose."
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"This / nine. / a / is\"",
+            "options": [
+              "A. This is a nine.",
+              "B. This nine. a is",
+              "C. nine. a is This",
+              "D. a is This nine."
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"have / a / nest. / I\"",
+            "options": [
+              "A. I have a nest.",
+              "B. have a nest. I",
+              "C. nest. a have I",
+              "D. a have I nest."
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"a / is / net. / It\"",
+            "options": [
+              "A. It is a net.",
+              "B. a is net. It",
+              "C. net. a is It",
+              "D. net. a is It"
+            ],
+            "correctAnswer": "A"
           }
         ]
       }
@@ -3307,158 +4007,208 @@
       },
       {
         "id": "l1_u15_test",
-        "title": "Quiz & Unit Test (15 Questions)",
+        "title": "Quiz & Unit Test - 15 câu từ sách",
         "type": "quiz",
         "quizQuestions": [
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Từ nào bắt đầu bằng chữ \"O\"?",
             "options": [
-              "A. cat",
-              "B. ox",
-              "C. lemon",
-              "D. hand"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. egnaro",
-              "B. oorange",
-              "C. rangeo",
-              "D. orange"
+              "A. ball",
+              "B. cup",
+              "C. boy",
+              "D. ox"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Which word starts with the letter \"O\"?",
+            "question": "Đây là gì? \"It's a ox.\" - Chọn từ đúng:",
             "options": [
-              "A. elephant",
-              "B. gate",
-              "C. juice",
+              "A. ball",
+              "B. cow",
+              "C. ox",
+              "D. cake"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"o-x\"",
+            "options": [
+              "A. oxs",
+              "B. ox",
+              "C. oox",
+              "D. ox"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"O\"?",
+            "options": [
+              "A. cat",
+              "B. orange",
+              "C. bill",
+              "D. book"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Đây là gì? \"It's a orange.\" - Chọn từ đúng:",
+            "options": [
+              "A. apple",
+              "B. orange",
+              "C. book",
+              "D. car"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"n-a-r-e-g-o\"",
+            "options": [
+              "A. oxange",
+              "B. orange",
+              "C. oranges",
+              "D. oorange"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"O\"?",
+            "options": [
+              "A. cow",
+              "B. bike",
+              "C. cake",
               "D. ostrich"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "Is this a octopus?",
+            "question": "Đây là gì? \"It's a ostrich.\" - Chọn từ đúng:",
             "options": [
-              "A. Yes, I do.",
-              "B. Yes, it is.",
-              "C. No, I don't.",
-              "D. No, it isn't."
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. guitar",
-              "B. eye",
-              "C. leaf",
-              "D. onion"
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. xo",
-              "B. ox",
-              "C. xo",
-              "D. oox"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Which word starts with the letter \"O\"?",
-            "options": [
-              "A. orange",
-              "B. lamp",
-              "C. hair",
-              "D. boy"
+              "A. ostrich",
+              "B. ant",
+              "C. cup",
+              "D. bike"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "Is this a ostrich?",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"o-s-t-r-i-c-h\"",
             "options": [
-              "A. No, it isn't.",
-              "B. No, I don't.",
-              "C. Yes, I do.",
-              "D. Yes, it is."
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. kitten",
-              "B. door",
-              "C. octopus",
-              "D. leaf"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. oonion",
-              "B. noino",
-              "C. niono",
-              "D. onion"
-            ],
-            "correctAnswer": "D"
-          },
-          {
-            "question": "Which word starts with the letter \"O\"?",
-            "options": [
-              "A. guitar",
-              "B. ox",
-              "C. igloo",
-              "D. hair"
+              "A. oxtrich",
+              "B. ostrich",
+              "C. oostrich",
+              "D. ostrichs"
             ],
             "correctAnswer": "B"
           },
           {
-            "question": "Is this a orange?",
-            "options": [
-              "A. No, I don't.",
-              "B. Yes, it is.",
-              "C. Yes, I do.",
-              "D. No, it isn't."
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. iguana",
-              "B. milk",
-              "C. ostrich",
-              "D. lion"
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "question": "Choose the correct spelling:",
+            "question": "Từ nào bắt đầu bằng chữ \"O\"?",
             "options": [
               "A. octopus",
-              "B. ooctopus",
-              "C. supotco",
-              "D. ctopuso"
+              "B. boy",
+              "C. car",
+              "D. apple"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "Which word starts with the letter \"O\"?",
+            "question": "Đây là gì? \"It's a octopus.\" - Chọn từ đúng:",
             "options": [
-              "A. mother",
-              "B. key",
-              "C. onion",
-              "D. lake"
+              "A. cat",
+              "B. axe",
+              "C. octopus",
+              "D. boy"
             ],
             "correctAnswer": "C"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"u-o-c-s-t-p-o\"",
+            "options": [
+              "A. octopuss",
+              "B. oxtopus",
+              "C. octopus",
+              "D. ooctopus"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"O\"?",
+            "options": [
+              "A. cup",
+              "B. onion",
+              "C. ant",
+              "D. bill"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Đây là gì? \"It's a onion.\" - Chọn từ đúng:",
+            "options": [
+              "A. cow",
+              "B. onion",
+              "C. arm",
+              "D. bill"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"o-n-n-o-i\"",
+            "options": [
+              "A. onions",
+              "B. oonion",
+              "C. onion",
+              "D. oxion"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"It's / ox. / a\"",
+            "options": [
+              "A. It's a ox.",
+              "B. It's ox. a",
+              "C. ox. a It's",
+              "D. ox. It's a"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"Hi, / I'm / Orange.\"",
+            "options": [
+              "A. Hi, I'm Orange.",
+              "B. Hi, I'm Orange.",
+              "C. Orange. I'm Hi,",
+              "D. Orange. Hi, I'm"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"This / ostrich. / a / is\"",
+            "options": [
+              "A. This is a ostrich.",
+              "B. This ostrich. a is",
+              "C. ostrich. a is This",
+              "D. This a is ostrich."
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"octopus. / a / have / I\"",
+            "options": [
+              "A. I have a octopus.",
+              "B. octopus. a have I",
+              "C. octopus. a have I",
+              "D. I have a octopus."
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"is / onion. / a / It\"",
+            "options": [
+              "A. It is a onion.",
+              "B. is onion. a It",
+              "C. onion. a is It",
+              "D. It a is onion."
+            ],
+            "correctAnswer": "A"
           }
         ]
       }
@@ -3538,158 +4288,208 @@
       },
       {
         "id": "l1_u16_test",
-        "title": "Quiz & Unit Test (15 Questions)",
+        "title": "Quiz & Unit Test - 15 câu từ sách",
         "type": "quiz",
         "quizQuestions": [
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Từ nào bắt đầu bằng chữ \"P\"?",
             "options": [
-              "A. pen",
-              "B. dog",
-              "C. lamp",
-              "D. face"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. pig",
-              "B. ppig",
-              "C. gip",
-              "D. igp"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Which word starts with the letter \"P\"?",
-            "options": [
-              "A. jam",
-              "B. pencil",
-              "C. iguana",
-              "D. apple"
+              "A. ball",
+              "B. pen",
+              "C. cup",
+              "D. boy"
             ],
             "correctAnswer": "B"
           },
           {
-            "question": "Is this a pizza?",
+            "question": "Đây là gì? \"It's a pen.\" - Chọn từ đúng:",
             "options": [
-              "A. No, I don't.",
-              "B. Yes, I do.",
-              "C. No, it isn't.",
-              "D. Yes, it is."
+              "A. ball",
+              "B. cake",
+              "C. cow",
+              "D. pen"
             ],
             "correctAnswer": "D"
           },
           {
-            "question": "What is this? It's a/an _______.",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"n-e-p\"",
             "options": [
-              "A. kite",
-              "B. duck",
-              "C. pink",
-              "D. game"
+              "A. pens",
+              "B. pxn",
+              "C. pen",
+              "D. ppen"
             ],
             "correctAnswer": "C"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Từ nào bắt đầu bằng chữ \"P\"?",
             "options": [
-              "A. nep",
-              "B. pen",
-              "C. ppen",
-              "D. enp"
+              "A. cat",
+              "B. bill",
+              "C. pig",
+              "D. book"
             ],
-            "correctAnswer": "B"
+            "correctAnswer": "C"
           },
           {
-            "question": "Which word starts with the letter \"P\"?",
+            "question": "Đây là gì? \"It's a pig.\" - Chọn từ đúng:",
             "options": [
-              "A. milk",
+              "A. car",
               "B. pig",
-              "C. guitar",
-              "D. eraser"
+              "C. apple",
+              "D. book"
             ],
             "correctAnswer": "B"
           },
           {
-            "question": "Is this a pencil?",
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"p-g-i\"",
             "options": [
-              "A. No, I don't.",
-              "B. Yes, it is.",
-              "C. No, it isn't.",
-              "D. Yes, I do."
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. elephant",
-              "B. pizza",
-              "C. key",
-              "D. eraser"
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "question": "Choose the correct spelling:",
-            "options": [
-              "A. pink",
-              "B. ppink",
-              "C. knip",
-              "D. inkp"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Which word starts with the letter \"P\"?",
-            "options": [
-              "A. pen",
-              "B. onion",
-              "C. fish",
-              "D. gate"
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "Is this a pig?",
-            "options": [
-              "A. Yes, it is.",
-              "B. No, I don't.",
-              "C. Yes, I do.",
-              "D. No, it isn't."
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "question": "What is this? It's a/an _______.",
-            "options": [
-              "A. lake",
-              "B. nose",
-              "C. pencil",
-              "D. cup"
+              "A. pigs",
+              "B. pxg",
+              "C. pig",
+              "D. ppig"
             ],
             "correctAnswer": "C"
           },
           {
-            "question": "Choose the correct spelling:",
+            "question": "Từ nào bắt đầu bằng chữ \"P\"?",
+            "options": [
+              "A. bike",
+              "B. cake",
+              "C. pencil",
+              "D. cow"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Đây là gì? \"It's a pencil.\" - Chọn từ đúng:",
+            "options": [
+              "A. bike",
+              "B. ant",
+              "C. cup",
+              "D. pencil"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"l-e-n-c-i-p\"",
+            "options": [
+              "A. pxncil",
+              "B. pencils",
+              "C. pencil",
+              "D. ppencil"
+            ],
+            "correctAnswer": "C"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"P\"?",
             "options": [
               "A. pizza",
-              "B. azzip",
-              "C. ppizza",
-              "D. izzap"
+              "B. apple",
+              "C. car",
+              "D. boy"
             ],
             "correctAnswer": "A"
           },
           {
-            "question": "Which word starts with the letter \"P\"?",
+            "question": "Đây là gì? \"It's a pizza.\" - Chọn từ đúng:",
             "options": [
-              "A. horse",
-              "B. kitten",
-              "C. igloo",
+              "A. cat",
+              "B. pizza",
+              "C. boy",
+              "D. axe"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"p-a-i-z-z\"",
+            "options": [
+              "A. pizzas",
+              "B. ppizza",
+              "C. pxzza",
+              "D. pizza"
+            ],
+            "correctAnswer": "D"
+          },
+          {
+            "question": "Từ nào bắt đầu bằng chữ \"P\"?",
+            "options": [
+              "A. pink",
+              "B. bill",
+              "C. ant",
+              "D. cup"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Đây là gì? \"It's a pink.\" - Chọn từ đúng:",
+            "options": [
+              "A. pink",
+              "B. bill",
+              "C. arm",
+              "D. cow"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Chọn cách viết đúng của từ có chữ cái: \"n-k-i-p\"",
+            "options": [
+              "A. ppink",
+              "B. pxnk",
+              "C. pinks",
               "D. pink"
             ],
             "correctAnswer": "D"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"It's / pen. / a\"",
+            "options": [
+              "A. It's a pen.",
+              "B. It's pen. a",
+              "C. pen. a It's",
+              "D. It's a pen."
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"Pig. / Hi, / I'm\"",
+            "options": [
+              "A. Hi, I'm Pig.",
+              "B. Pig. Hi, I'm",
+              "C. Pig. I'm Hi,",
+              "D. Hi, I'm Pig."
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"a / pencil. / This / is\"",
+            "options": [
+              "A. This is a pencil.",
+              "B. a pencil. This is",
+              "C. pencil. a is This",
+              "D. is a This pencil."
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"I / have / a / pizza.\"",
+            "options": [
+              "A. I have a pizza.",
+              "B. I have a pizza.",
+              "C. pizza. a have I",
+              "D. have a pizza. I"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "question": "Sắp xếp thành câu đúng: \"It / a / pink. / is\"",
+            "options": [
+              "A. It is a pink.",
+              "B. It a pink. is",
+              "C. pink. a is It",
+              "D. It pink. is a"
+            ],
+            "correctAnswer": "A"
           }
         ]
       }
