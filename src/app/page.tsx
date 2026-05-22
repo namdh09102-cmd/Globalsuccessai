@@ -31,6 +31,7 @@ import { evaluateSpeaking, saveLessonProgress, SpeakingEvaluationResult } from "
 // Import các phòng học offline & màn ăn mừng
 import DictationRoom from "@/components/DictationRoom";
 import QuizRoom from "@/components/QuizRoom";
+import VisualRoom from "@/components/VisualRoom";
 import CelebrationArena from "@/components/CelebrationArena";
 import PaywallModal from "@/components/PaywallModal";
 
@@ -43,10 +44,11 @@ interface QuizQuestion {
 interface Lesson {
   id: string;
   title: string;
-  type: "vocabulary" | "speaking" | "grammar" | "reading" | "dictation" | "quiz";
+  type: "vocabulary" | "speaking" | "grammar" | "reading" | "dictation" | "quiz" | "visual";
   completed: boolean;
   expectedText?: string;
   quizQuestions?: QuizQuestion[];
+  imageUrl?: string;
 }
 
 interface UnitData {
@@ -295,7 +297,7 @@ export default function Dashboard() {
   const [selectedUnit, setSelectedUnit] = useState<UnitData | null>(null);
   
   // Điều hướng các phòng học: "dashboard" | "speaking" | "dictation" | "quiz"
-  const [activeRoom, setActiveRoom] = useState<"dashboard" | "speaking" | "dictation" | "quiz">("dashboard");
+  const [activeRoom, setActiveRoom] = useState<"dashboard" | "speaking" | "dictation" | "quiz" | "visual">("dashboard");
   const [activeLesson, setActiveLesson] = useState<Lesson | null>(null);
 
   // Màn ăn mừng Celebration
@@ -1407,7 +1409,7 @@ export default function Dashboard() {
                                 {locked ? (
                                   <span className="text-amber-600/70">🔒 Yêu cầu PRO</span>
                                 ) : (
-                                  <>Hình thức: {lesson.type === "speaking" ? "AI speaking" : lesson.type === "dictation" ? "Nghe chép" : "Trắc nghiệm"}</>
+                                  <>Hình thức: {lesson.type === "speaking" ? "AI speaking" : lesson.type === "dictation" ? "Nghe chép" : lesson.type === "visual" ? "Sơ đồ tư duy" : "Trắc nghiệm"}</>
                                 )}
                               </p>
                             </div>

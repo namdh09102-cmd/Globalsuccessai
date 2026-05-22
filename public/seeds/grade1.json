@@ -12,6 +12,12 @@
         "expectedText": "Hello. I have a ball and a bike."
       },
       {
+        "id": "l1_u1_visual",
+        "title": "Mindmap - Unit 1: In the school playground",
+        "type": "visual",
+        "imageUrl": "/images/mindmaps/l1/u1_mindmap.jpeg"
+      },
+      {
         "id": "l1_u1_quiz",
         "title": "Quiz - Unit 1: In the school playground",
         "type": "quiz",
@@ -169,6 +175,12 @@
         "title": "Speaking - Unit 2: In the dining room",
         "type": "speaking",
         "expectedText": "Hello. I have a car and a cat."
+      },
+      {
+        "id": "l1_u2_visual",
+        "title": "Mindmap - Unit 2: In the dining room",
+        "type": "visual",
+        "imageUrl": "/images/mindmaps/l1/u2_mindmap.png"
       },
       {
         "id": "l1_u2_quiz",
@@ -330,6 +342,12 @@
         "expectedText": "Hello. I have a apple3 and a book3."
       },
       {
+        "id": "l1_u3_visual",
+        "title": "Mindmap - Unit 3",
+        "type": "visual",
+        "imageUrl": "/images/mindmaps/l1/u3_mindmap.png"
+      },
+      {
         "id": "l1_u3_quiz",
         "title": "Quiz - Unit 3",
         "type": "quiz",
@@ -487,6 +505,12 @@
         "title": "Speaking - Unit 4: In the bedroom",
         "type": "speaking",
         "expectedText": "Hello. I have a dog and a duck."
+      },
+      {
+        "id": "l1_u4_visual",
+        "title": "Mindmap - Unit 4: In the bedroom",
+        "type": "visual",
+        "imageUrl": "/images/mindmaps/l1/u4_mindmap.png"
       },
       {
         "id": "l1_u4_quiz",
@@ -648,6 +672,12 @@
         "expectedText": "Hello. I have a few and a food."
       },
       {
+        "id": "l1_u5_visual",
+        "title": "Mindmap - Unit 5",
+        "type": "visual",
+        "imageUrl": "/images/mindmaps/l1/u5_mindmap.png"
+      },
+      {
         "id": "l1_u5_quiz",
         "title": "Quiz - Unit 5",
         "type": "quiz",
@@ -805,6 +835,12 @@
         "title": "Speaking - Unit 6: In the classroom",
         "type": "speaking",
         "expectedText": "Hello. I have a red and a few."
+      },
+      {
+        "id": "l1_u6_visual",
+        "title": "Mindmap - Unit 6: In the classroom",
+        "type": "visual",
+        "imageUrl": "/images/mindmaps/l1/u6_mindmap.png"
       },
       {
         "id": "l1_u6_quiz",
@@ -966,6 +1002,12 @@
         "expectedText": "Hello. I have a garden and a gate."
       },
       {
+        "id": "l1_u7_visual",
+        "title": "Mindmap - Unit 7: In the garden",
+        "type": "visual",
+        "imageUrl": "/images/mindmaps/l1/u7_mindmap.png"
+      },
+      {
         "id": "l1_u7_quiz",
         "title": "Quiz - Unit 7: In the garden",
         "type": "quiz",
@@ -1123,6 +1165,12 @@
         "title": "Speaking - Unit 8",
         "type": "speaking",
         "expectedText": "Hello. I have a hand and a command."
+      },
+      {
+        "id": "l1_u8_visual",
+        "title": "Mindmap - Unit 8",
+        "type": "visual",
+        "imageUrl": "/images/mindmaps/l1/u8_mindmap.png"
       },
       {
         "id": "l1_u8_quiz",
@@ -1284,6 +1332,12 @@
         "expectedText": "Hello. I have a few and a group."
       },
       {
+        "id": "l1_u9_visual",
+        "title": "Mindmap - Unit 9: In the shop",
+        "type": "visual",
+        "imageUrl": "/images/mindmaps/l1/u9_mindmap.png"
+      },
+      {
         "id": "l1_u9_quiz",
         "title": "Quiz - Unit 9: In the shop",
         "type": "quiz",
@@ -1441,6 +1495,12 @@
         "title": "Speaking - Unit 10: At the zoo",
         "type": "speaking",
         "expectedText": "Hello. I have a monkey and a mouse."
+      },
+      {
+        "id": "l1_u10_visual",
+        "title": "Mindmap - Unit 10: At the zoo",
+        "type": "visual",
+        "imageUrl": "/images/mindmaps/l1/u10_mindmap.png"
       },
       {
         "id": "l1_u10_quiz",
@@ -1602,6 +1662,12 @@
         "expectedText": "Hello. I have a few and a bus."
       },
       {
+        "id": "l1_u11_visual",
+        "title": "Mindmap - Unit 11: At the bus stop",
+        "type": "visual",
+        "imageUrl": "/images/mindmaps/l1/u11_mindmap.png"
+      },
+      {
         "id": "l1_u11_quiz",
         "title": "Quiz - Unit 11: At the bus stop",
         "type": "quiz",
@@ -1759,6 +1825,12 @@
         "title": "Speaking - Unit 12: At the lake",
         "type": "speaking",
         "expectedText": "Hello. I have a few and a and."
+      },
+      {
+        "id": "l1_u12_visual",
+        "title": "Mindmap - Unit 12: At the lake",
+        "type": "visual",
+        "imageUrl": "/images/mindmaps/l1/u12_mindmap.png"
       },
       {
         "id": "l1_u12_quiz",
@@ -1920,6 +1992,12 @@
         "expectedText": "Hello. I have a few and a better."
       },
       {
+        "id": "l1_u13_visual",
+        "title": "Mindmap - Unit 13: In the school canteen",
+        "type": "visual",
+        "imageUrl": "/images/mindmaps/l1/u13_mindmap.png"
+      },
+      {
         "id": "l1_u13_quiz",
         "title": "Quiz - Unit 13: In the school canteen",
         "type": "quiz",
@@ -2077,6 +2155,12 @@
         "title": "Speaking - Unit 14",
         "type": "speaking",
         "expectedText": "Hello. I have a tiger and a teddy."
+      },
+      {
+        "id": "l1_u14_visual",
+        "title": "Mindmap - Unit 14",
+        "type": "visual",
+        "imageUrl": "/images/mindmaps/l1/u14_mindmap.png"
       },
       {
         "id": "l1_u14_quiz",
@@ -2238,6 +2322,12 @@
         "expectedText": "Hello. I have a foot and a face."
       },
       {
+        "id": "l1_u15_visual",
+        "title": "Mindmap - Unit 15",
+        "type": "visual",
+        "imageUrl": "/images/mindmaps/l1/u15_mindmap.png"
+      },
+      {
         "id": "l1_u15_quiz",
         "title": "Quiz - Unit 15",
         "type": "quiz",
@@ -2395,6 +2485,12 @@
         "title": "Speaking - Unit 16",
         "type": "speaking",
         "expectedText": "Hello. I have a few and a word."
+      },
+      {
+        "id": "l1_u16_visual",
+        "title": "Mindmap - Unit 16",
+        "type": "visual",
+        "imageUrl": "/images/mindmaps/l1/u16_mindmap.png"
       },
       {
         "id": "l1_u16_quiz",
