@@ -27,7 +27,7 @@ const examUnit = {
   id: "l1-exam-final",
   number: 17,
   title: "ĐỀ THI HỌC KỲ 2 (2020-2021)",
-  status: "locked",
+  status: "in_progress",
   progress: 0,
   grade: "Lớp 1",
   lessons: [
