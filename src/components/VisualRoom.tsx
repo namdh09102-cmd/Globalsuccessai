@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { ArrowLeft, CheckCircle2, Image as ImageIcon } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { ArrowLeft, CheckCircle2, Image as ImageIcon, ChevronLeft, ChevronRight, Grid, BookOpen } from "lucide-react";
 import Image from "next/image";
 
 interface VisualRoomProps {
@@ -23,6 +23,25 @@ export default function VisualRoom({
   onBack,
   onComplete,
 }: VisualRoomProps) {
+  const [flashcards, setFlashcards] = useState<string[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [viewMode, setViewMode] = useState<"mindmap" | "flashcards">("mindmap");
+
+  useEffect(() => {
+    // Extract unit number from lessonId (e.g. u1-l1 or unit-1-l1)
+    const match = lessonId.match(/u(?:nit-)?(\d+)/i);
+    if (match) {
+      const unitNum = match[1];
+      fetch("/flashcards/l1_index.json")
+        .then(res => res.json())
+        .then(data => {
+          if (data[`u${unitNum}`]) {
+            setFlashcards(data[`u${unitNum}`]);
+          }
+        })
+        .catch(e => console.log("No flashcards found"));
+    }
+  }, [lessonId]);
   return (
     <div className="w-full max-w-4xl mx-auto flex flex-col items-center">
       {/* Header */}
@@ -49,14 +68,31 @@ export default function VisualRoom({
               </div>
               <div>
                 <h2 className="text-sm font-black text-indigo-400 uppercase tracking-widest mb-1">
-                  MINDMAP & VOCABULARY
+                  MINDMAP & FLASHCARDS
                 </h2>
                 <h3 className="text-xl font-bold text-white">{title}</h3>
               </div>
             </div>
+            
+            {flashcards.length > 0 && (
+              <div className="flex bg-slate-800 p-1 rounded-lg">
+                <button 
+                  onClick={() => setViewMode("mindmap")}
+                  className={`px-4 py-2 rounded-md text-sm font-bold transition-colors flex items-center gap-2 ${viewMode === "mindmap" ? "bg-indigo-600 text-white" : "text-slate-400 hover:text-white"}`}
+                >
+                  <Grid className="w-4 h-4" /> Mindmap
+                </button>
+                <button 
+                  onClick={() => setViewMode("flashcards")}
+                  className={`px-4 py-2 rounded-md text-sm font-bold transition-colors flex items-center gap-2 ${viewMode === "flashcards" ? "bg-indigo-600 text-white" : "text-slate-400 hover:text-white"}`}
+                >
+                  <BookOpen className="w-4 h-4" /> Flashcards
+                </button>
+              </div>
+            )}
           </div>
 
-          <div className="w-full flex flex-col items-center justify-center p-4 bg-[#0a0d14] rounded-2xl border border-slate-800">
+          <div className="w-full flex flex-col items-center justify-center p-4 bg-[#0a0d14] rounded-2xl border border-slate-800 min-h-[400px]">
             {/* Audio Player Section */}
             {mainAudio && (
               <div className="w-full mb-6 p-4 bg-slate-900/50 rounded-xl border border-slate-700/50 flex flex-col gap-3">
@@ -70,36 +106,41 @@ export default function VisualRoom({
                   <source src={mainAudio} type="audio/mpeg" />
                   Your browser does not support the audio element.
                 </audio>
-                
-                {/* Playlist (nếu có nhiều track) */}
-                {audioTracks && audioTracks.length > 1 && (
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    <span className="text-xs text-slate-500 mr-2 flex items-center">Các Track khác:</span>
-                    {audioTracks.map((track, idx) => (
-                      <button 
-                        key={idx}
-                        onClick={() => {
-                          const audioEl = document.querySelector('audio');
-                          if (audioEl) {
-                            audioEl.src = track;
-                            audioEl.play().catch(e => console.log("Auto-play prevented", e));
-                          }
-                        }}
-                        className="px-3 py-1 bg-slate-800 hover:bg-slate-700 rounded-md text-xs font-medium text-slate-300 transition-colors border border-slate-700 hover:border-slate-500"
-                      >
-                        Track {idx + 1}
-                      </button>
-                    ))}
-                  </div>
-                )}
               </div>
             )}
 
-            <img
-              src={imageUrl}
-              alt={title}
-              className="max-w-full max-h-[50vh] object-contain rounded-xl"
-            />
+            {viewMode === "mindmap" ? (
+              <img
+                src={imageUrl}
+                alt={title}
+                className="max-w-full max-h-[60vh] object-contain rounded-xl"
+              />
+            ) : (
+              <div className="w-full relative flex flex-col items-center justify-center">
+                <div className="relative w-full max-w-2xl h-[50vh] flex items-center justify-center bg-white rounded-xl shadow-inner border border-slate-200 overflow-hidden">
+                  <img 
+                    src={flashcards[currentIndex]} 
+                    alt="Flashcard" 
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+                <div className="flex items-center gap-6 mt-6">
+                  <button 
+                    onClick={() => setCurrentIndex(prev => prev > 0 ? prev - 1 : flashcards.length - 1)}
+                    className="w-12 h-12 rounded-full bg-slate-800 hover:bg-indigo-600 flex items-center justify-center text-white transition-colors"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+                  <span className="text-white font-bold">{currentIndex + 1} / {flashcards.length}</span>
+                  <button 
+                    onClick={() => setCurrentIndex(prev => prev < flashcards.length - 1 ? prev + 1 : 0)}
+                    className="w-12 h-12 rounded-full bg-slate-800 hover:bg-indigo-600 flex items-center justify-center text-white transition-colors"
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="mt-8 flex justify-center">

@@ -285,6 +285,13 @@
             "correctAnswer": "A"
           }
         ]
+      },
+      {
+        "id": "u1-worksheet",
+        "title": "Phiếu Bài Tập Unit 1",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/u1.html"
       }
     ]
   },
@@ -574,6 +581,13 @@
             "correctAnswer": "A"
           }
         ]
+      },
+      {
+        "id": "u2-worksheet",
+        "title": "Phiếu Bài Tập Unit 2",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/u2.html"
       }
     ]
   },
@@ -863,6 +877,13 @@
             "correctAnswer": "A"
           }
         ]
+      },
+      {
+        "id": "u3-worksheet",
+        "title": "Phiếu Bài Tập Unit 3",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/u3.html"
       }
     ]
   },
@@ -1152,6 +1173,13 @@
             "correctAnswer": "A"
           }
         ]
+      },
+      {
+        "id": "u4-worksheet",
+        "title": "Phiếu Bài Tập Unit 4",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/u4.html"
       }
     ]
   },
@@ -1441,6 +1469,13 @@
             "correctAnswer": "A"
           }
         ]
+      },
+      {
+        "id": "u5-worksheet",
+        "title": "Phiếu Bài Tập Unit 5",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/u5.html"
       }
     ]
   },
@@ -1730,6 +1765,13 @@
             "correctAnswer": "A"
           }
         ]
+      },
+      {
+        "id": "u6-worksheet",
+        "title": "Phiếu Bài Tập Unit 6",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/u6.html"
       }
     ]
   },
@@ -2019,6 +2061,13 @@
             "correctAnswer": "A"
           }
         ]
+      },
+      {
+        "id": "u7-worksheet",
+        "title": "Phiếu Bài Tập Unit 7",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/u7.html"
       }
     ]
   },
@@ -2308,6 +2357,13 @@
             "correctAnswer": "A"
           }
         ]
+      },
+      {
+        "id": "u8-worksheet",
+        "title": "Phiếu Bài Tập Unit 8",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/u8.html"
       }
     ]
   },
@@ -2597,6 +2653,13 @@
             "correctAnswer": "A"
           }
         ]
+      },
+      {
+        "id": "u9-worksheet",
+        "title": "Phiếu Bài Tập Unit 9",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/u9.html"
       }
     ]
   },
@@ -2886,6 +2949,13 @@
             "correctAnswer": "A"
           }
         ]
+      },
+      {
+        "id": "u10-worksheet",
+        "title": "Phiếu Bài Tập Unit 10",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/u10.html"
       }
     ]
   },
@@ -3175,6 +3245,13 @@
             "correctAnswer": "A"
           }
         ]
+      },
+      {
+        "id": "u11-worksheet",
+        "title": "Phiếu Bài Tập Unit 11",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/u11.html"
       }
     ]
   },
@@ -3464,6 +3541,13 @@
             "correctAnswer": "A"
           }
         ]
+      },
+      {
+        "id": "u12-worksheet",
+        "title": "Phiếu Bài Tập Unit 12",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/u12.html"
       }
     ]
   },
@@ -3753,6 +3837,13 @@
             "correctAnswer": "A"
           }
         ]
+      },
+      {
+        "id": "u13-worksheet",
+        "title": "Phiếu Bài Tập Unit 13",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/u13.html"
       }
     ]
   },
@@ -4042,6 +4133,13 @@
             "correctAnswer": "A"
           }
         ]
+      },
+      {
+        "id": "u14-worksheet",
+        "title": "Phiếu Bài Tập Unit 14",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/u14.html"
       }
     ]
   },
@@ -4331,6 +4429,13 @@
             "correctAnswer": "A"
           }
         ]
+      },
+      {
+        "id": "u15-worksheet",
+        "title": "Phiếu Bài Tập Unit 15",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/u15.html"
       }
     ]
   },
@@ -4620,6 +4725,13 @@
             "correctAnswer": "A"
           }
         ]
+      },
+      {
+        "id": "u16-worksheet",
+        "title": "Phiếu Bài Tập Unit 16",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/u16.html"
       }
     ]
   },
@@ -4754,6 +4866,61 @@
             "correctAnswer": "A"
           }
         ]
+      },
+      {
+        "id": "u17-worksheet",
+        "title": "Phiếu Bài Tập Unit 17",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/u17.html"
+      },
+      {
+        "id": "l1-exam-html-2",
+        "title": "ĐỀ SỐ 2 KÌ 2 LOP 1",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/tests/test2.html",
+        "mainAudio": "/audio/l1/exam/test2.mp3"
+      },
+      {
+        "id": "l1-exam-html-3",
+        "title": "ĐỀ SỐ 3 KÌ 2 LOP 1",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/tests/test3.html",
+        "mainAudio": "/audio/l1/exam/test3.mp3"
+      },
+      {
+        "id": "l1-exam-html-4",
+        "title": "ĐỀ SỐ 4KÌ 2 LOP 1",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/tests/test4.html",
+        "mainAudio": "/audio/l1/exam/test4.mp3"
+      },
+      {
+        "id": "l1-exam-html-5",
+        "title": "ĐỀ THI CUỐI HK2 TIẾNG ANH 1",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/tests/test5.html"
+      }
+    ]
+  },
+  {
+    "id": "l1-weekend-hw",
+    "number": 18,
+    "title": "BÀI TẬP CUỐI TUẦN (E-BOOK)",
+    "status": "in_progress",
+    "progress": 0,
+    "grade": "Lớp 1",
+    "lessons": [
+      {
+        "id": "l1-hw-all",
+        "title": "Phiếu Bài Tập Cuối Tuần (Cả năm)",
+        "type": "worksheet",
+        "completed": false,
+        "worksheetUrl": "/worksheets/l1/baitap_cuoituan.pdf"
       }
     ]
   }

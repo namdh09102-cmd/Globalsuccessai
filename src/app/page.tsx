@@ -33,6 +33,7 @@ import DictationRoom from "@/components/DictationRoom";
 import QuizRoom from "@/components/QuizRoom";
 import VisualRoom from "@/components/VisualRoom";
 import ExamRoom from "@/components/ExamRoom";
+import WorksheetRoom from "@/components/WorksheetRoom";
 import CelebrationArena from "@/components/CelebrationArena";
 import PaywallModal from "@/components/PaywallModal";
 
@@ -45,7 +46,7 @@ interface QuizQuestion {
 interface Lesson {
   id: string;
   title: string;
-  type: "vocabulary" | "speaking" | "grammar" | "reading" | "dictation" | "quiz" | "visual" | "exam";
+  type: "vocabulary" | "speaking" | "grammar" | "reading" | "dictation" | "quiz" | "visual" | "exam" | "worksheet";
   completed: boolean;
   expectedText?: string;
   quizQuestions?: QuizQuestion[];
@@ -55,6 +56,7 @@ interface Lesson {
   examQuestions?: any[];
   examDuration?: number;
   examAudio?: string;
+  worksheetUrl?: string;
 }
 
 interface UnitData {
@@ -302,8 +304,8 @@ export default function Dashboard() {
   const [units, setUnits] = useState<UnitData[]>([]);
   const [selectedUnit, setSelectedUnit] = useState<UnitData | null>(null);
   
-  // Điều hướng các phòng học: "dashboard" | "speaking" | "dictation" | "quiz" | "visual" | "exam"
-  const [activeRoom, setActiveRoom] = useState<"dashboard" | "speaking" | "dictation" | "quiz" | "visual" | "exam">("dashboard");
+  // Điều hướng các phòng học: "dashboard" | "speaking" | "dictation" | "quiz" | "visual" | "exam" | "worksheet"
+  const [activeRoom, setActiveRoom] = useState<"dashboard" | "speaking" | "dictation" | "quiz" | "visual" | "exam" | "worksheet">("dashboard");
   const [activeLesson, setActiveLesson] = useState<Lesson | null>(null);
 
   // Session: danh sách bài cùng loại để học liên tiếp
@@ -898,6 +900,22 @@ export default function Dashboard() {
           onComplete={(score) => handleLessonCompletion(activeLesson.id, score)}
         />
       )}
+
+      {/* ========================================================
+          RENDER PHÒNG WORKSHEET (BÀI TẬP BỔ TRỢ / ĐỀ THI HTML)
+          ======================================================== */}
+      {activeRoom === "worksheet" && activeLesson?.worksheetUrl && (
+        <WorksheetRoom
+          title={activeLesson.title}
+          worksheetUrl={activeLesson.worksheetUrl}
+          mainAudio={activeLesson.mainAudio}
+          onBack={() => {
+            setActiveRoom("dashboard");
+            setActiveLesson(null);
+          }}
+        />
+      )}
+
 
       {/* ========================================================
           RENDER PHÒNG SPEAKING CHI TIẾT (Focus Mode)
