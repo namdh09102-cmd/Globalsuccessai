@@ -28,7 +28,7 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: How / _____ /  / you",
+            "question": "Put the words in the correct order: How /  / you / _____",
             "options": [
               "How _____ you ?",
               "is _____ you ?",
@@ -46,13 +46,67 @@
             "correctAnswer": "Bye, Quan."
           },
           {
-            "question": "Put the words in the correct order: Bye / Nam / ,",
+            "question": "Put the words in the correct order: Bye / , / Nam",
             "options": [
               "Bye , Nam.",
               "is , Nam.",
               "bye , nam."
             ],
             "correctAnswer": "Bye , Nam."
+          },
+          {
+            "question": "Put the words in the correct order: too / to / Nice / meet / you,",
+            "options": [
+              "Nice to meet you, too.",
+              "is to meet you, too.",
+              "nice to meet you, too."
+            ],
+            "correctAnswer": "Nice to meet you, too."
+          },
+          {
+            "question": "Put the words in the correct order: How / you /  / are",
+            "options": [
+              "How are you ?",
+              "is are you ?",
+              "how are you ?"
+            ],
+            "correctAnswer": "How are you ?"
+          },
+          {
+            "question": "Put the words in the correct order: Hello, / Quan",
+            "options": [
+              "Hello, Quan.",
+              "is Quan.",
+              "hello, quan."
+            ],
+            "correctAnswer": "Hello, Quan."
+          },
+          {
+            "question": "Put the words in the correct order: Phong / I’m",
+            "options": [
+              "I’m Phong.",
+              "is Phong.",
+              "i’m phong."
+            ],
+            "correctAnswer": "I’m Phong."
+          },
+          {
+            "question": "Put the words in the correct order: Nice /  / you / to / meet",
+            "options": [
+              "Nice to meet you .",
+              "is to meet you .",
+              "nice to meet you ."
+            ],
+            "correctAnswer": "Nice to meet you ."
+          },
+          {
+            "question": "Put the words in the correct order: I’m / Nam",
+            "options": [
+              "I’m Nam.",
+              "is Nam.",
+              "i’m nam."
+            ],
+            "correctAnswer": "I’m Nam."
           },
           {
             "question": "Find the word in the text:",
@@ -73,6 +127,78 @@
             "correctAnswer": "how"
           },
           {
+            "question": "Find the word in the text:",
+            "options": [
+              "hello",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "hello"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "quan",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "quan"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "too",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "too"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "mai",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "mai"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "out",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "out"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "yellow",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "yellow"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "your",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "your"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "order",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "order"
+          },
+          {
             "question": "Complete the word: e_ercise",
             "options": [
               "exercise",
@@ -89,6 +215,87 @@
               "writes"
             ],
             "correctAnswer": "write"
+          },
+          {
+            "question": "Complete the word: m_ssing",
+            "options": [
+              "missing",
+              "missin",
+              "missings"
+            ],
+            "correctAnswer": "missing"
+          },
+          {
+            "question": "Complete the word: l_tters",
+            "options": [
+              "letters",
+              "letter",
+              "letterss"
+            ],
+            "correctAnswer": "letters"
+          },
+          {
+            "question": "Complete the word: r_ad",
+            "options": [
+              "read",
+              "rea",
+              "reads"
+            ],
+            "correctAnswer": "read"
+          },
+          {
+            "question": "Complete the word: m_tch",
+            "options": [
+              "match",
+              "matc",
+              "matchs"
+            ],
+            "correctAnswer": "match"
+          },
+          {
+            "question": "Complete the word: h_llo",
+            "options": [
+              "hello",
+              "hell",
+              "hellos"
+            ],
+            "correctAnswer": "hello"
+          },
+          {
+            "question": "Complete the word: m_ss",
+            "options": [
+              "miss",
+              "mis",
+              "misss"
+            ],
+            "correctAnswer": "miss"
+          },
+          {
+            "question": "Complete the word: q_an",
+            "options": [
+              "quan",
+              "qua",
+              "quans"
+            ],
+            "correctAnswer": "quan"
+          },
+          {
+            "question": "Complete the word: n_ce",
+            "options": [
+              "nice",
+              "nic",
+              "nices"
+            ],
+            "correctAnswer": "nice"
+          },
+          {
+            "question": "Complete the word: m_et",
+            "options": [
+              "meet",
+              "mee",
+              "meets"
+            ],
+            "correctAnswer": "meet"
           }
         ]
       }
@@ -98,7 +305,7 @@
     "id": "l3-u2",
     "number": 2,
     "title": "Unit 2",
-    "status": "locked",
+    "status": "in_progress",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -123,7 +330,7 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: :What’s / your / name /  / Lisa",
+            "question": "Put the words in the correct order:  / :What’s / name / your / Lisa",
             "options": [
               "Lisa :What’s your name ?",
               "is :What’s your name ?",
@@ -132,7 +339,7 @@
             "correctAnswer": "Lisa :What’s your name ?"
           },
           {
-            "question": "Put the words in the correct order: name / is / : / Mimi / My / Mimi",
+            "question": "Put the words in the correct order: is / : / Mimi / name / My / Mimi",
             "options": [
               "Mimi : My name is Mimi.",
               "is : My name is Mimi.",
@@ -141,13 +348,76 @@
             "correctAnswer": "Mimi : My name is Mimi."
           },
           {
-            "question": "Put the words in the correct order: Ben / name /  / :What’s / your",
+            "question": "Put the words in the correct order: name /  / your / :What’s / Ben",
             "options": [
               "Ben :What’s your name ?",
               "is :What’s your name ?",
               "ben :what’s your name ?"
             ],
             "correctAnswer": "Ben :What’s your name ?"
+          },
+          {
+            "question": "Put the words in the correct order: : /  / your / Alex / name / What’s",
+            "options": [
+              "Alex : What’s your name ?",
+              "is : What’s your name ?",
+              "alex : what’s your name ?"
+            ],
+            "correctAnswer": "Alex : What’s your name ?"
+          },
+          {
+            "question": "Put the words in the correct order: Lily /  / What’s / your / : / name",
+            "options": [
+              "Lily : What’s your name ?",
+              "is : What’s your name ?",
+              "lily : what’s your name ?"
+            ],
+            "correctAnswer": "Lily : What’s your name ?"
+          },
+          {
+            "question": "Put the words in the correct order:  / : / Anna / What’s / your / name",
+            "options": [
+              "Anna : What’s your name ?",
+              "is : What’s your name ?",
+              "anna : what’s your name ?"
+            ],
+            "correctAnswer": "Anna : What’s your name ?"
+          },
+          {
+            "question": "Put the words in the correct order: Toby /  / your / What’s / : / name",
+            "options": [
+              "Toby : What’s your name ?",
+              "is : What’s your name ?",
+              "toby : what’s your name ?"
+            ],
+            "correctAnswer": "Toby : What’s your name ?"
+          },
+          {
+            "question": "Put the words in the correct order:  / ___________ / Nam / I",
+            "options": [
+              "I ___________ Nam .",
+              "is ___________ Nam .",
+              "i ___________ nam ."
+            ],
+            "correctAnswer": "I ___________ Nam ."
+          },
+          {
+            "question": "Put the words in the correct order: boy / I / _______a",
+            "options": [
+              "I _______a boy.",
+              "is _______a boy.",
+              "i _______a boy."
+            ],
+            "correctAnswer": "I _______a boy."
+          },
+          {
+            "question": "Put the words in the correct order: __________a / girl / I",
+            "options": [
+              "I __________a girl.",
+              "is __________a girl.",
+              "i __________a girl."
+            ],
+            "correctAnswer": "I __________a girl."
           },
           {
             "question": "Find the word in the text:",
@@ -168,6 +438,78 @@
             "correctAnswer": "dialogue"
           },
           {
+            "question": "Find the word in the text:",
+            "options": [
+              "your",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "your"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "john",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "john"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "toby",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "toby"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "boy",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "boy"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "hien",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "hien"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "girl",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "girl"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "order",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "order"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "meet",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "meet"
+          },
+          {
             "question": "Complete the word: e_ercise",
             "options": [
               "exercise",
@@ -184,6 +526,114 @@
               "looks"
             ],
             "correctAnswer": "look"
+          },
+          {
+            "question": "Complete the word: r_ad",
+            "options": [
+              "read",
+              "rea",
+              "reads"
+            ],
+            "correctAnswer": "read"
+          },
+          {
+            "question": "Complete the word: c_mplete",
+            "options": [
+              "complete",
+              "complet",
+              "completes"
+            ],
+            "correctAnswer": "complete"
+          },
+          {
+            "question": "Complete the word: d_alogue",
+            "options": [
+              "dialogue",
+              "dialogu",
+              "dialogues"
+            ],
+            "correctAnswer": "dialogue"
+          },
+          {
+            "question": "Complete the word: m_mi",
+            "options": [
+              "mimi",
+              "mim",
+              "mimis"
+            ],
+            "correctAnswer": "mimi"
+          },
+          {
+            "question": "Complete the word: l_sa",
+            "options": [
+              "lisa",
+              "lis",
+              "lisas"
+            ],
+            "correctAnswer": "lisa"
+          },
+          {
+            "question": "Complete the word: w_at",
+            "options": [
+              "what",
+              "wha",
+              "whats"
+            ],
+            "correctAnswer": "what"
+          },
+          {
+            "question": "Complete the word: y_ur",
+            "options": [
+              "your",
+              "you",
+              "yours"
+            ],
+            "correctAnswer": "your"
+          },
+          {
+            "question": "Complete the word: n_me",
+            "options": [
+              "name",
+              "nam",
+              "names"
+            ],
+            "correctAnswer": "name"
+          },
+          {
+            "question": "Complete the word: l_ly",
+            "options": [
+              "lily",
+              "lil",
+              "lilys"
+            ],
+            "correctAnswer": "lily"
+          },
+          {
+            "question": "Complete the word: j_hn",
+            "options": [
+              "john",
+              "joh",
+              "johns"
+            ],
+            "correctAnswer": "john"
+          },
+          {
+            "question": "Complete the word: a_ex",
+            "options": [
+              "alex",
+              "ale",
+              "alexs"
+            ],
+            "correctAnswer": "alex"
+          },
+          {
+            "question": "Complete the word: m_ry",
+            "options": [
+              "mary",
+              "mar",
+              "marys"
+            ],
+            "correctAnswer": "mary"
           }
         ]
       }
@@ -193,7 +643,7 @@
     "id": "l3-u3",
     "number": 3,
     "title": "Unit 3",
-    "status": "locked",
+    "status": "in_progress",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -218,7 +668,7 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: are / How / you",
+            "question": "Put the words in the correct order: How / are / you",
             "options": [
               "How are you?",
               "is are you?",
@@ -227,13 +677,40 @@
             "correctAnswer": "How are you?"
           },
           {
-            "question": "Put the words in the correct order: am / I / fine",
+            "question": "Put the words in the correct order: fine / I / am",
             "options": [
               "I am fine.",
               "is am fine.",
               "i am fine."
             ],
             "correctAnswer": "I am fine."
+          },
+          {
+            "question": "Put the words in the correct order: name / your / What / is",
+            "options": [
+              "What is your name?",
+              "is is your name?",
+              "what is your name?"
+            ],
+            "correctAnswer": "What is your name?"
+          },
+          {
+            "question": "Put the words in the correct order: student / is / name / My",
+            "options": [
+              "My name is student.",
+              "is name is student.",
+              "my name is student."
+            ],
+            "correctAnswer": "My name is student."
+          },
+          {
+            "question": "Put the words in the correct order: meet / to / you / Nice",
+            "options": [
+              "Nice to meet you.",
+              "is to meet you.",
+              "nice to meet you."
+            ],
+            "correctAnswer": "Nice to meet you."
           },
           {
             "question": "Find the word in the text:",
@@ -254,6 +731,15 @@
             "correctAnswer": "what"
           },
           {
+            "question": "Find the word in the text:",
+            "options": [
+              "nice",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "nice"
+          },
+          {
             "question": "Complete the word: h_llo",
             "options": [
               "hello",
@@ -261,6 +747,69 @@
               "hellos"
             ],
             "correctAnswer": "hello"
+          },
+          {
+            "question": "Complete the word: f_ne",
+            "options": [
+              "fine",
+              "fin",
+              "fines"
+            ],
+            "correctAnswer": "fine"
+          },
+          {
+            "question": "Complete the word: w_at",
+            "options": [
+              "what",
+              "wha",
+              "whats"
+            ],
+            "correctAnswer": "what"
+          },
+          {
+            "question": "Complete the word: y_ur",
+            "options": [
+              "your",
+              "you",
+              "yours"
+            ],
+            "correctAnswer": "your"
+          },
+          {
+            "question": "Complete the word: n_me",
+            "options": [
+              "name",
+              "nam",
+              "names"
+            ],
+            "correctAnswer": "name"
+          },
+          {
+            "question": "Complete the word: s_udent",
+            "options": [
+              "student",
+              "studen",
+              "students"
+            ],
+            "correctAnswer": "student"
+          },
+          {
+            "question": "Complete the word: n_ce",
+            "options": [
+              "nice",
+              "nic",
+              "nices"
+            ],
+            "correctAnswer": "nice"
+          },
+          {
+            "question": "Complete the word: m_et",
+            "options": [
+              "meet",
+              "mee",
+              "meets"
+            ],
+            "correctAnswer": "meet"
           }
         ]
       }
@@ -270,7 +819,7 @@
     "id": "l3-u4",
     "number": 4,
     "title": "Unit 4",
-    "status": "locked",
+    "status": "in_progress",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -295,7 +844,7 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: are / How / you",
+            "question": "Put the words in the correct order: How / you / are",
             "options": [
               "How are you?",
               "is are you?",
@@ -304,13 +853,40 @@
             "correctAnswer": "How are you?"
           },
           {
-            "question": "Put the words in the correct order: fine / I / am",
+            "question": "Put the words in the correct order: I / fine / am",
             "options": [
               "I am fine.",
               "is am fine.",
               "i am fine."
             ],
             "correctAnswer": "I am fine."
+          },
+          {
+            "question": "Put the words in the correct order: What / is / name / your",
+            "options": [
+              "What is your name?",
+              "is is your name?",
+              "what is your name?"
+            ],
+            "correctAnswer": "What is your name?"
+          },
+          {
+            "question": "Put the words in the correct order: is / name / student / My",
+            "options": [
+              "My name is student.",
+              "is name is student.",
+              "my name is student."
+            ],
+            "correctAnswer": "My name is student."
+          },
+          {
+            "question": "Put the words in the correct order: meet / you / to / Nice",
+            "options": [
+              "Nice to meet you.",
+              "is to meet you.",
+              "nice to meet you."
+            ],
+            "correctAnswer": "Nice to meet you."
           },
           {
             "question": "Find the word in the text:",
@@ -331,6 +907,15 @@
             "correctAnswer": "what"
           },
           {
+            "question": "Find the word in the text:",
+            "options": [
+              "nice",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "nice"
+          },
+          {
             "question": "Complete the word: h_llo",
             "options": [
               "hello",
@@ -338,6 +923,69 @@
               "hellos"
             ],
             "correctAnswer": "hello"
+          },
+          {
+            "question": "Complete the word: f_ne",
+            "options": [
+              "fine",
+              "fin",
+              "fines"
+            ],
+            "correctAnswer": "fine"
+          },
+          {
+            "question": "Complete the word: w_at",
+            "options": [
+              "what",
+              "wha",
+              "whats"
+            ],
+            "correctAnswer": "what"
+          },
+          {
+            "question": "Complete the word: y_ur",
+            "options": [
+              "your",
+              "you",
+              "yours"
+            ],
+            "correctAnswer": "your"
+          },
+          {
+            "question": "Complete the word: n_me",
+            "options": [
+              "name",
+              "nam",
+              "names"
+            ],
+            "correctAnswer": "name"
+          },
+          {
+            "question": "Complete the word: s_udent",
+            "options": [
+              "student",
+              "studen",
+              "students"
+            ],
+            "correctAnswer": "student"
+          },
+          {
+            "question": "Complete the word: n_ce",
+            "options": [
+              "nice",
+              "nic",
+              "nices"
+            ],
+            "correctAnswer": "nice"
+          },
+          {
+            "question": "Complete the word: m_et",
+            "options": [
+              "meet",
+              "mee",
+              "meets"
+            ],
+            "correctAnswer": "meet"
           }
         ]
       }
@@ -347,7 +995,7 @@
     "id": "l3-u5",
     "number": 5,
     "title": "Unit 5",
-    "status": "locked",
+    "status": "in_progress",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -372,7 +1020,7 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: you / How / are",
+            "question": "Put the words in the correct order: How / you / are",
             "options": [
               "How are you?",
               "is are you?",
@@ -381,13 +1029,40 @@
             "correctAnswer": "How are you?"
           },
           {
-            "question": "Put the words in the correct order: I / fine / am",
+            "question": "Put the words in the correct order: am / fine / I",
             "options": [
               "I am fine.",
               "is am fine.",
               "i am fine."
             ],
             "correctAnswer": "I am fine."
+          },
+          {
+            "question": "Put the words in the correct order: your / name / What / is",
+            "options": [
+              "What is your name?",
+              "is is your name?",
+              "what is your name?"
+            ],
+            "correctAnswer": "What is your name?"
+          },
+          {
+            "question": "Put the words in the correct order: is / My / name / student",
+            "options": [
+              "My name is student.",
+              "is name is student.",
+              "my name is student."
+            ],
+            "correctAnswer": "My name is student."
+          },
+          {
+            "question": "Put the words in the correct order: Nice / to / meet / you",
+            "options": [
+              "Nice to meet you.",
+              "is to meet you.",
+              "nice to meet you."
+            ],
+            "correctAnswer": "Nice to meet you."
           },
           {
             "question": "Find the word in the text:",
@@ -408,6 +1083,15 @@
             "correctAnswer": "what"
           },
           {
+            "question": "Find the word in the text:",
+            "options": [
+              "nice",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "nice"
+          },
+          {
             "question": "Complete the word: h_llo",
             "options": [
               "hello",
@@ -415,6 +1099,69 @@
               "hellos"
             ],
             "correctAnswer": "hello"
+          },
+          {
+            "question": "Complete the word: f_ne",
+            "options": [
+              "fine",
+              "fin",
+              "fines"
+            ],
+            "correctAnswer": "fine"
+          },
+          {
+            "question": "Complete the word: w_at",
+            "options": [
+              "what",
+              "wha",
+              "whats"
+            ],
+            "correctAnswer": "what"
+          },
+          {
+            "question": "Complete the word: y_ur",
+            "options": [
+              "your",
+              "you",
+              "yours"
+            ],
+            "correctAnswer": "your"
+          },
+          {
+            "question": "Complete the word: n_me",
+            "options": [
+              "name",
+              "nam",
+              "names"
+            ],
+            "correctAnswer": "name"
+          },
+          {
+            "question": "Complete the word: s_udent",
+            "options": [
+              "student",
+              "studen",
+              "students"
+            ],
+            "correctAnswer": "student"
+          },
+          {
+            "question": "Complete the word: n_ce",
+            "options": [
+              "nice",
+              "nic",
+              "nices"
+            ],
+            "correctAnswer": "nice"
+          },
+          {
+            "question": "Complete the word: m_et",
+            "options": [
+              "meet",
+              "mee",
+              "meets"
+            ],
+            "correctAnswer": "meet"
           }
         ]
       }
@@ -424,7 +1171,7 @@
     "id": "l3-u6",
     "number": 6,
     "title": "Unit 6",
-    "status": "locked",
+    "status": "in_progress",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -458,13 +1205,40 @@
             "correctAnswer": "How are you?"
           },
           {
-            "question": "Put the words in the correct order: am / fine / I",
+            "question": "Put the words in the correct order: am / I / fine",
             "options": [
               "I am fine.",
               "is am fine.",
               "i am fine."
             ],
             "correctAnswer": "I am fine."
+          },
+          {
+            "question": "Put the words in the correct order: What / name / your / is",
+            "options": [
+              "What is your name?",
+              "is is your name?",
+              "what is your name?"
+            ],
+            "correctAnswer": "What is your name?"
+          },
+          {
+            "question": "Put the words in the correct order: name / student / is / My",
+            "options": [
+              "My name is student.",
+              "is name is student.",
+              "my name is student."
+            ],
+            "correctAnswer": "My name is student."
+          },
+          {
+            "question": "Put the words in the correct order: to / you / Nice / meet",
+            "options": [
+              "Nice to meet you.",
+              "is to meet you.",
+              "nice to meet you."
+            ],
+            "correctAnswer": "Nice to meet you."
           },
           {
             "question": "Find the word in the text:",
@@ -485,6 +1259,15 @@
             "correctAnswer": "what"
           },
           {
+            "question": "Find the word in the text:",
+            "options": [
+              "nice",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "nice"
+          },
+          {
             "question": "Complete the word: h_llo",
             "options": [
               "hello",
@@ -492,6 +1275,69 @@
               "hellos"
             ],
             "correctAnswer": "hello"
+          },
+          {
+            "question": "Complete the word: f_ne",
+            "options": [
+              "fine",
+              "fin",
+              "fines"
+            ],
+            "correctAnswer": "fine"
+          },
+          {
+            "question": "Complete the word: w_at",
+            "options": [
+              "what",
+              "wha",
+              "whats"
+            ],
+            "correctAnswer": "what"
+          },
+          {
+            "question": "Complete the word: y_ur",
+            "options": [
+              "your",
+              "you",
+              "yours"
+            ],
+            "correctAnswer": "your"
+          },
+          {
+            "question": "Complete the word: n_me",
+            "options": [
+              "name",
+              "nam",
+              "names"
+            ],
+            "correctAnswer": "name"
+          },
+          {
+            "question": "Complete the word: s_udent",
+            "options": [
+              "student",
+              "studen",
+              "students"
+            ],
+            "correctAnswer": "student"
+          },
+          {
+            "question": "Complete the word: n_ce",
+            "options": [
+              "nice",
+              "nic",
+              "nices"
+            ],
+            "correctAnswer": "nice"
+          },
+          {
+            "question": "Complete the word: m_et",
+            "options": [
+              "meet",
+              "mee",
+              "meets"
+            ],
+            "correctAnswer": "meet"
           }
         ]
       }
@@ -501,7 +1347,7 @@
     "id": "l3-u7",
     "number": 7,
     "title": "Unit 7",
-    "status": "locked",
+    "status": "in_progress",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -535,13 +1381,40 @@
             "correctAnswer": "How are you?"
           },
           {
-            "question": "Put the words in the correct order: fine / am / I",
+            "question": "Put the words in the correct order: am / fine / I",
             "options": [
               "I am fine.",
               "is am fine.",
               "i am fine."
             ],
             "correctAnswer": "I am fine."
+          },
+          {
+            "question": "Put the words in the correct order: is / What / your / name",
+            "options": [
+              "What is your name?",
+              "is is your name?",
+              "what is your name?"
+            ],
+            "correctAnswer": "What is your name?"
+          },
+          {
+            "question": "Put the words in the correct order: My / is / name / student",
+            "options": [
+              "My name is student.",
+              "is name is student.",
+              "my name is student."
+            ],
+            "correctAnswer": "My name is student."
+          },
+          {
+            "question": "Put the words in the correct order: you / to / meet / Nice",
+            "options": [
+              "Nice to meet you.",
+              "is to meet you.",
+              "nice to meet you."
+            ],
+            "correctAnswer": "Nice to meet you."
           },
           {
             "question": "Find the word in the text:",
@@ -562,6 +1435,15 @@
             "correctAnswer": "what"
           },
           {
+            "question": "Find the word in the text:",
+            "options": [
+              "nice",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "nice"
+          },
+          {
             "question": "Complete the word: h_llo",
             "options": [
               "hello",
@@ -569,6 +1451,69 @@
               "hellos"
             ],
             "correctAnswer": "hello"
+          },
+          {
+            "question": "Complete the word: f_ne",
+            "options": [
+              "fine",
+              "fin",
+              "fines"
+            ],
+            "correctAnswer": "fine"
+          },
+          {
+            "question": "Complete the word: w_at",
+            "options": [
+              "what",
+              "wha",
+              "whats"
+            ],
+            "correctAnswer": "what"
+          },
+          {
+            "question": "Complete the word: y_ur",
+            "options": [
+              "your",
+              "you",
+              "yours"
+            ],
+            "correctAnswer": "your"
+          },
+          {
+            "question": "Complete the word: n_me",
+            "options": [
+              "name",
+              "nam",
+              "names"
+            ],
+            "correctAnswer": "name"
+          },
+          {
+            "question": "Complete the word: s_udent",
+            "options": [
+              "student",
+              "studen",
+              "students"
+            ],
+            "correctAnswer": "student"
+          },
+          {
+            "question": "Complete the word: n_ce",
+            "options": [
+              "nice",
+              "nic",
+              "nices"
+            ],
+            "correctAnswer": "nice"
+          },
+          {
+            "question": "Complete the word: m_et",
+            "options": [
+              "meet",
+              "mee",
+              "meets"
+            ],
+            "correctAnswer": "meet"
           }
         ]
       }
@@ -578,7 +1523,7 @@
     "id": "l3-u8",
     "number": 8,
     "title": "Unit 8",
-    "status": "locked",
+    "status": "in_progress",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -603,7 +1548,7 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: you / are / How",
+            "question": "Put the words in the correct order: How / you / are",
             "options": [
               "How are you?",
               "is are you?",
@@ -612,13 +1557,40 @@
             "correctAnswer": "How are you?"
           },
           {
-            "question": "Put the words in the correct order: am / I / fine",
+            "question": "Put the words in the correct order: I / fine / am",
             "options": [
               "I am fine.",
               "is am fine.",
               "i am fine."
             ],
             "correctAnswer": "I am fine."
+          },
+          {
+            "question": "Put the words in the correct order: name / your / What / is",
+            "options": [
+              "What is your name?",
+              "is is your name?",
+              "what is your name?"
+            ],
+            "correctAnswer": "What is your name?"
+          },
+          {
+            "question": "Put the words in the correct order: name / My / student / is",
+            "options": [
+              "My name is student.",
+              "is name is student.",
+              "my name is student."
+            ],
+            "correctAnswer": "My name is student."
+          },
+          {
+            "question": "Put the words in the correct order: to / meet / you / Nice",
+            "options": [
+              "Nice to meet you.",
+              "is to meet you.",
+              "nice to meet you."
+            ],
+            "correctAnswer": "Nice to meet you."
           },
           {
             "question": "Find the word in the text:",
@@ -639,6 +1611,15 @@
             "correctAnswer": "what"
           },
           {
+            "question": "Find the word in the text:",
+            "options": [
+              "nice",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "nice"
+          },
+          {
             "question": "Complete the word: h_llo",
             "options": [
               "hello",
@@ -646,6 +1627,69 @@
               "hellos"
             ],
             "correctAnswer": "hello"
+          },
+          {
+            "question": "Complete the word: f_ne",
+            "options": [
+              "fine",
+              "fin",
+              "fines"
+            ],
+            "correctAnswer": "fine"
+          },
+          {
+            "question": "Complete the word: w_at",
+            "options": [
+              "what",
+              "wha",
+              "whats"
+            ],
+            "correctAnswer": "what"
+          },
+          {
+            "question": "Complete the word: y_ur",
+            "options": [
+              "your",
+              "you",
+              "yours"
+            ],
+            "correctAnswer": "your"
+          },
+          {
+            "question": "Complete the word: n_me",
+            "options": [
+              "name",
+              "nam",
+              "names"
+            ],
+            "correctAnswer": "name"
+          },
+          {
+            "question": "Complete the word: s_udent",
+            "options": [
+              "student",
+              "studen",
+              "students"
+            ],
+            "correctAnswer": "student"
+          },
+          {
+            "question": "Complete the word: n_ce",
+            "options": [
+              "nice",
+              "nic",
+              "nices"
+            ],
+            "correctAnswer": "nice"
+          },
+          {
+            "question": "Complete the word: m_et",
+            "options": [
+              "meet",
+              "mee",
+              "meets"
+            ],
+            "correctAnswer": "meet"
           }
         ]
       }
@@ -655,7 +1699,7 @@
     "id": "l3-u9",
     "number": 9,
     "title": "Unit 9",
-    "status": "locked",
+    "status": "in_progress",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -680,7 +1724,7 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: are / How / you",
+            "question": "Put the words in the correct order: are / you / How",
             "options": [
               "How are you?",
               "is are you?",
@@ -689,13 +1733,40 @@
             "correctAnswer": "How are you?"
           },
           {
-            "question": "Put the words in the correct order: I / fine / am",
+            "question": "Put the words in the correct order: I / am / fine",
             "options": [
               "I am fine.",
               "is am fine.",
               "i am fine."
             ],
             "correctAnswer": "I am fine."
+          },
+          {
+            "question": "Put the words in the correct order: is / your / What / name",
+            "options": [
+              "What is your name?",
+              "is is your name?",
+              "what is your name?"
+            ],
+            "correctAnswer": "What is your name?"
+          },
+          {
+            "question": "Put the words in the correct order: name / student / My / is",
+            "options": [
+              "My name is student.",
+              "is name is student.",
+              "my name is student."
+            ],
+            "correctAnswer": "My name is student."
+          },
+          {
+            "question": "Put the words in the correct order: meet / to / Nice / you",
+            "options": [
+              "Nice to meet you.",
+              "is to meet you.",
+              "nice to meet you."
+            ],
+            "correctAnswer": "Nice to meet you."
           },
           {
             "question": "Find the word in the text:",
@@ -716,6 +1787,15 @@
             "correctAnswer": "what"
           },
           {
+            "question": "Find the word in the text:",
+            "options": [
+              "nice",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "nice"
+          },
+          {
             "question": "Complete the word: h_llo",
             "options": [
               "hello",
@@ -723,6 +1803,69 @@
               "hellos"
             ],
             "correctAnswer": "hello"
+          },
+          {
+            "question": "Complete the word: f_ne",
+            "options": [
+              "fine",
+              "fin",
+              "fines"
+            ],
+            "correctAnswer": "fine"
+          },
+          {
+            "question": "Complete the word: w_at",
+            "options": [
+              "what",
+              "wha",
+              "whats"
+            ],
+            "correctAnswer": "what"
+          },
+          {
+            "question": "Complete the word: y_ur",
+            "options": [
+              "your",
+              "you",
+              "yours"
+            ],
+            "correctAnswer": "your"
+          },
+          {
+            "question": "Complete the word: n_me",
+            "options": [
+              "name",
+              "nam",
+              "names"
+            ],
+            "correctAnswer": "name"
+          },
+          {
+            "question": "Complete the word: s_udent",
+            "options": [
+              "student",
+              "studen",
+              "students"
+            ],
+            "correctAnswer": "student"
+          },
+          {
+            "question": "Complete the word: n_ce",
+            "options": [
+              "nice",
+              "nic",
+              "nices"
+            ],
+            "correctAnswer": "nice"
+          },
+          {
+            "question": "Complete the word: m_et",
+            "options": [
+              "meet",
+              "mee",
+              "meets"
+            ],
+            "correctAnswer": "meet"
           }
         ]
       }
@@ -732,7 +1875,7 @@
     "id": "l3-u10",
     "number": 10,
     "title": "Unit 10",
-    "status": "locked",
+    "status": "in_progress",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -757,7 +1900,7 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: at / break / Peter / time / do",
+            "question": "Put the words in the correct order: Peter / at / time / do / break",
             "options": [
               "Peter do at break time?",
               "is do at break time?",
@@ -766,7 +1909,7 @@
             "correctAnswer": "Peter do at break time?"
           },
           {
-            "question": "Put the words in the correct order: play /  / I / badminton",
+            "question": "Put the words in the correct order: play / badminton / I / ",
             "options": [
               "I play badminton .",
               "is play badminton .",
@@ -775,13 +1918,76 @@
             "correctAnswer": "I play badminton ."
           },
           {
-            "question": "Put the words in the correct order: No, / doesn’t / he",
+            "question": "Put the words in the correct order: doesn’t / he / No,",
             "options": [
               "No, he doesn’t.",
               "is he doesn’t.",
               "no, he doesn’t."
             ],
             "correctAnswer": "No, he doesn’t."
+          },
+          {
+            "question": "Put the words in the correct order: No, / I / don’t",
+            "options": [
+              "No, I don’t.",
+              "is I don’t.",
+              "no, i don’t."
+            ],
+            "correctAnswer": "No, I don’t."
+          },
+          {
+            "question": "Put the words in the correct order: choose / 4 / answers / the / correct / and / Read / Exercise",
+            "options": [
+              "Exercise 4 Read and choose the correct answers.",
+              "is 4 Read and choose the correct answers.",
+              "exercise 4 read and choose the correct answers."
+            ],
+            "correctAnswer": "Exercise 4 Read and choose the correct answers."
+          },
+          {
+            "question": "Put the words in the correct order: the / Exercise / right / Put / in / words / 5 / the / columns",
+            "options": [
+              "Exercise 5 Put the words in the right columns.",
+              "is 5 Put the words in the right columns.",
+              "exercise 5 put the words in the right columns."
+            ],
+            "correctAnswer": "Exercise 5 Put the words in the right columns."
+          },
+          {
+            "question": "Put the words in the correct order: May / in, / Mr / I / Loc / come",
+            "options": [
+              "May I come in, Mr Loc?",
+              "is I come in, Mr Loc?",
+              "may i come in, mr loc?"
+            ],
+            "correctAnswer": "May I come in, Mr Loc?"
+          },
+          {
+            "question": "Put the words in the correct order: isn’t / No, / it",
+            "options": [
+              "No, it isn’t.",
+              "is it isn’t.",
+              "no, it isn’t."
+            ],
+            "correctAnswer": "No, it isn’t."
+          },
+          {
+            "question": "Put the words in the correct order: It’s / new",
+            "options": [
+              "It’s new.",
+              "is new.",
+              "it’s new."
+            ],
+            "correctAnswer": "It’s new."
+          },
+          {
+            "question": "Put the words in the correct order: your / old / Is /  / school",
+            "options": [
+              "Is your school old ?",
+              "is your school old ?",
+              "is your school old ?"
+            ],
+            "correctAnswer": "Is your school old ?"
           },
           {
             "question": "Find the word in the text:",
@@ -802,6 +2008,78 @@
             "correctAnswer": "info"
           },
           {
+            "question": "Find the word in the text:",
+            "options": [
+              "tennis",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "tennis"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "game",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "game"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "mouse",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "mouse"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "first",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "first"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "correct",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "correct"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "what",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "what"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "school",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "school"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "chess",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "chess"
+          },
+          {
             "question": "Complete the word: e_ercise",
             "options": [
               "exercise",
@@ -818,6 +2096,114 @@
               "reads"
             ],
             "correctAnswer": "read"
+          },
+          {
+            "question": "Complete the word: c_mplete",
+            "options": [
+              "complete",
+              "complet",
+              "completes"
+            ],
+            "correctAnswer": "complete"
+          },
+          {
+            "question": "Complete the word: w_rd",
+            "options": [
+              "word",
+              "wor",
+              "words"
+            ],
+            "correctAnswer": "word"
+          },
+          {
+            "question": "Complete the word: i_fo",
+            "options": [
+              "info",
+              "inf",
+              "infos"
+            ],
+            "correctAnswer": "info"
+          },
+          {
+            "question": "Complete the word: c_lumn",
+            "options": [
+              "column",
+              "colum",
+              "columns"
+            ],
+            "correctAnswer": "column"
+          },
+          {
+            "question": "Complete the word: b_eak",
+            "options": [
+              "break",
+              "brea",
+              "breaks"
+            ],
+            "correctAnswer": "break"
+          },
+          {
+            "question": "Complete the word: t_nnis",
+            "options": [
+              "tennis",
+              "tenni",
+              "tenniss"
+            ],
+            "correctAnswer": "tennis"
+          },
+          {
+            "question": "Complete the word: t_ble",
+            "options": [
+              "table",
+              "tabl",
+              "tables"
+            ],
+            "correctAnswer": "table"
+          },
+          {
+            "question": "Complete the word: s_ek",
+            "options": [
+              "seek",
+              "see",
+              "seeks"
+            ],
+            "correctAnswer": "seek"
+          },
+          {
+            "question": "Complete the word: h_de",
+            "options": [
+              "hide",
+              "hid",
+              "hides"
+            ],
+            "correctAnswer": "hide"
+          },
+          {
+            "question": "Complete the word: g_me",
+            "options": [
+              "game",
+              "gam",
+              "games"
+            ],
+            "correctAnswer": "game"
+          },
+          {
+            "question": "Complete the word: b_ind",
+            "options": [
+              "blind",
+              "blin",
+              "blinds"
+            ],
+            "correctAnswer": "blind"
+          },
+          {
+            "question": "Complete the word: t_me",
+            "options": [
+              "time",
+              "tim",
+              "times"
+            ],
+            "correctAnswer": "time"
           }
         ]
       }
@@ -827,7 +2213,7 @@
     "id": "l3-u11",
     "number": 11,
     "title": "Unit 11",
-    "status": "locked",
+    "status": "in_progress",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -852,7 +2238,7 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: Exercise / Circle / : / answer / the / correct / 1",
+            "question": "Put the words in the correct order: Circle / correct / : / 1 / answer / the / Exercise",
             "options": [
               "Exercise 1 : Circle the correct answer.",
               "is 1 : Circle the correct answer.",
@@ -861,7 +2247,7 @@
             "correctAnswer": "Exercise 1 : Circle the correct answer."
           },
           {
-            "question": "Put the words in the correct order: write / the / :Look / 3 / at / Exercise / and / pictures",
+            "question": "Put the words in the correct order: 3 / pictures / :Look / and / write / at / the / Exercise",
             "options": [
               "Exercise 3 :Look at the pictures and write.",
               "is 3 :Look at the pictures and write.",
@@ -870,13 +2256,76 @@
             "correctAnswer": "Exercise 3 :Look at the pictures and write."
           },
           {
-            "question": "Put the words in the correct order: answer / Match / to / Exercise / : / the / the / question / 4 / ",
+            "question": "Put the words in the correct order: Exercise / the / : / Match / to / the / answer / question / 4 / ",
             "options": [
               "Exercise  4 : Match the question to the answer.",
               "is  4 : Match the question to the answer.",
               "exercise  4 : match the question to the answer."
             ],
             "correctAnswer": "Exercise  4 : Match the question to the answer."
+          },
+          {
+            "question": "Put the words in the correct order: is / his / name / What",
+            "options": [
+              "What is his name?",
+              "is is his name?",
+              "what is his name?"
+            ],
+            "correctAnswer": "What is his name?"
+          },
+          {
+            "question": "Put the words in the correct order: sister / My / years / old / ten / is",
+            "options": [
+              "My sister is ten years old.",
+              "is sister is ten years old.",
+              "my sister is ten years old."
+            ],
+            "correctAnswer": "My sister is ten years old."
+          },
+          {
+            "question": "Put the words in the correct order: How / are / old / you",
+            "options": [
+              "How old are you?",
+              "is old are you?",
+              "how old are you?"
+            ],
+            "correctAnswer": "How old are you?"
+          },
+          {
+            "question": "Put the words in the correct order: He’s / old / forty / years",
+            "options": [
+              "He’s forty years old.",
+              "is forty years old.",
+              "he’s forty years old."
+            ],
+            "correctAnswer": "He’s forty years old."
+          },
+          {
+            "question": "Put the words in the correct order: father / old / your / is / How",
+            "options": [
+              "How old is your father?",
+              "is old is your father?",
+              "how old is your father?"
+            ],
+            "correctAnswer": "How old is your father?"
+          },
+          {
+            "question": "Put the words in the correct order: name /  / John / is / His",
+            "options": [
+              "His name is  John.",
+              "is name is  John.",
+              "his name is  john."
+            ],
+            "correctAnswer": "His name is  John."
+          },
+          {
+            "question": "Put the words in the correct order: Is / a /  / pen / it",
+            "options": [
+              "Is it a  pen?",
+              "is it a  pen?",
+              "is it a  pen?"
+            ],
+            "correctAnswer": "Is it a  pen?"
           },
           {
             "question": "Find the word in the text:",
@@ -897,6 +2346,78 @@
             "correctAnswer": "look"
           },
           {
+            "question": "Find the word in the text:",
+            "options": [
+              "sister",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "sister"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "john",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "john"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "ten",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "ten"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "you",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "you"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "pen",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "pen"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "five",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "five"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "family",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "family"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "read",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "read"
+          },
+          {
             "question": "Complete the word: e_ercise",
             "options": [
               "exercise",
@@ -913,6 +2434,105 @@
               "circles"
             ],
             "correctAnswer": "circle"
+          },
+          {
+            "question": "Complete the word: c_rrect",
+            "options": [
+              "correct",
+              "correc",
+              "corrects"
+            ],
+            "correctAnswer": "correct"
+          },
+          {
+            "question": "Complete the word: a_swer",
+            "options": [
+              "answer",
+              "answe",
+              "answers"
+            ],
+            "correctAnswer": "answer"
+          },
+          {
+            "question": "Complete the word: l_ok",
+            "options": [
+              "look",
+              "loo",
+              "looks"
+            ],
+            "correctAnswer": "look"
+          },
+          {
+            "question": "Complete the word: w_ite",
+            "options": [
+              "write",
+              "writ",
+              "writes"
+            ],
+            "correctAnswer": "write"
+          },
+          {
+            "question": "Complete the word: p_ctures",
+            "options": [
+              "pictures",
+              "picture",
+              "picturess"
+            ],
+            "correctAnswer": "pictures"
+          },
+          {
+            "question": "Complete the word: s_ster",
+            "options": [
+              "sister",
+              "siste",
+              "sisters"
+            ],
+            "correctAnswer": "sister"
+          },
+          {
+            "question": "Complete the word: m_tch",
+            "options": [
+              "match",
+              "matc",
+              "matchs"
+            ],
+            "correctAnswer": "match"
+          },
+          {
+            "question": "Complete the word: q_estion",
+            "options": [
+              "question",
+              "questio",
+              "questions"
+            ],
+            "correctAnswer": "question"
+          },
+          {
+            "question": "Complete the word: s_lly",
+            "options": [
+              "sally",
+              "sall",
+              "sallys"
+            ],
+            "correctAnswer": "sally"
+          },
+          {
+            "question": "Complete the word: j_hn",
+            "options": [
+              "john",
+              "joh",
+              "johns"
+            ],
+            "correctAnswer": "john"
+          },
+          {
+            "question": "Complete the word: w_at",
+            "options": [
+              "what",
+              "wha",
+              "whats"
+            ],
+            "correctAnswer": "what"
           }
         ]
       }
@@ -922,7 +2542,7 @@
     "id": "l3-u12",
     "number": 12,
     "title": "Unit 12",
-    "status": "locked",
+    "status": "in_progress",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -947,7 +2567,7 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: in / 2: / above / the / Number / Exercise / rooms / the / picture",
+            "question": "Put the words in the correct order: Number / 2: / Exercise / above / picture / rooms / in / the / the",
             "options": [
               "Exercise 2: Number the rooms in the picture above.",
               "is 2: Number the rooms in the picture above.",
@@ -956,7 +2576,7 @@
             "correctAnswer": "Exercise 2: Number the rooms in the picture above."
           },
           {
-            "question": "Put the words in the correct order: and / questions / Look / 3: / the / answer / Exercise",
+            "question": "Put the words in the correct order: answer / Exercise / Look / questions / the / 3: / and",
             "options": [
               "Exercise 3: Look and answer the questions.",
               "is 3: Look and answer the questions.",
@@ -965,13 +2585,76 @@
             "correctAnswer": "Exercise 3: Look and answer the questions."
           },
           {
-            "question": "Put the words in the correct order: I / Where / am",
+            "question": "Put the words in the correct order: Where / am / I",
             "options": [
               "Where am I?",
               "is am I?",
               "where am i?"
             ],
             "correctAnswer": "Where am I?"
+          },
+          {
+            "question": "Put the words in the correct order: am / in / hall / the / I",
+            "options": [
+              "I am in the hall.",
+              "is am in the hall.",
+              "i am in the hall."
+            ],
+            "correctAnswer": "I am in the hall."
+          },
+          {
+            "question": "Put the words in the correct order: my / Where / is /  / mother",
+            "options": [
+              "Where is my mother ?",
+              "is is my mother ?",
+              "where is my mother ?"
+            ],
+            "correctAnswer": "Where is my mother ?"
+          },
+          {
+            "question": "Put the words in the correct order: Where / my / is / brother",
+            "options": [
+              "Where is my brother?",
+              "is is my brother?",
+              "where is my brother?"
+            ],
+            "correctAnswer": "Where is my brother?"
+          },
+          {
+            "question": "Put the words in the correct order: Where / my / is / grandmother",
+            "options": [
+              "Where is my grandmother?",
+              "is is my grandmother?",
+              "where is my grandmother?"
+            ],
+            "correctAnswer": "Where is my grandmother?"
+          },
+          {
+            "question": "Put the words in the correct order: my / is / Where / dog",
+            "options": [
+              "Where is my dog?",
+              "is is my dog?",
+              "where is my dog?"
+            ],
+            "correctAnswer": "Where is my dog?"
+          },
+          {
+            "question": "Put the words in the correct order: Where / my / father / is",
+            "options": [
+              "Where is my father?",
+              "is is my father?",
+              "where is my father?"
+            ],
+            "correctAnswer": "Where is my father?"
+          },
+          {
+            "question": "Put the words in the correct order: complete / the / sentences / Read / 4: / and / Exercise",
+            "options": [
+              "Exercise 4: Read and complete the sentences.",
+              "is 4: Read and complete the sentences.",
+              "exercise 4: read and complete the sentences."
+            ],
+            "correctAnswer": "Exercise 4: Read and complete the sentences."
           },
           {
             "question": "Find the word in the text:",
@@ -992,6 +2675,78 @@
             "correctAnswer": "room"
           },
           {
+            "question": "Find the word in the text:",
+            "options": [
+              "bedroom",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "bedroom"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "picture",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "picture"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "where",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "where"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "dog",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "dog"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "sentences",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "sentences"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "over",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "over"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "name",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "name"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "nice",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "nice"
+          },
+          {
             "question": "Complete the word: e_ercise",
             "options": [
               "exercise",
@@ -1008,6 +2763,123 @@
               "looks"
             ],
             "correctAnswer": "look"
+          },
+          {
+            "question": "Complete the word: w_ite",
+            "options": [
+              "write",
+              "writ",
+              "writes"
+            ],
+            "correctAnswer": "write"
+          },
+          {
+            "question": "Complete the word: d_ning",
+            "options": [
+              "dining",
+              "dinin",
+              "dinings"
+            ],
+            "correctAnswer": "dining"
+          },
+          {
+            "question": "Complete the word: r_om",
+            "options": [
+              "room",
+              "roo",
+              "rooms"
+            ],
+            "correctAnswer": "room"
+          },
+          {
+            "question": "Complete the word: l_ving",
+            "options": [
+              "living",
+              "livin",
+              "livings"
+            ],
+            "correctAnswer": "living"
+          },
+          {
+            "question": "Complete the word: k_tchen",
+            "options": [
+              "kitchen",
+              "kitche",
+              "kitchens"
+            ],
+            "correctAnswer": "kitchen"
+          },
+          {
+            "question": "Complete the word: b_throom",
+            "options": [
+              "bathroom",
+              "bathroo",
+              "bathrooms"
+            ],
+            "correctAnswer": "bathroom"
+          },
+          {
+            "question": "Complete the word: b_droom",
+            "options": [
+              "bedroom",
+              "bedroo",
+              "bedrooms"
+            ],
+            "correctAnswer": "bedroom"
+          },
+          {
+            "question": "Complete the word: g_rden",
+            "options": [
+              "garden",
+              "garde",
+              "gardens"
+            ],
+            "correctAnswer": "garden"
+          },
+          {
+            "question": "Complete the word: n_mber",
+            "options": [
+              "number",
+              "numbe",
+              "numbers"
+            ],
+            "correctAnswer": "number"
+          },
+          {
+            "question": "Complete the word: r_oms",
+            "options": [
+              "rooms",
+              "room",
+              "roomss"
+            ],
+            "correctAnswer": "rooms"
+          },
+          {
+            "question": "Complete the word: p_cture",
+            "options": [
+              "picture",
+              "pictur",
+              "pictures"
+            ],
+            "correctAnswer": "picture"
+          },
+          {
+            "question": "Complete the word: a_ove",
+            "options": [
+              "above",
+              "abov",
+              "aboves"
+            ],
+            "correctAnswer": "above"
+          },
+          {
+            "question": "Complete the word: a_swer",
+            "options": [
+              "answer",
+              "answe",
+              "answers"
+            ],
+            "correctAnswer": "answer"
           }
         ]
       }
@@ -1017,7 +2889,7 @@
     "id": "l3-u13",
     "number": 13,
     "title": "Unit 13",
-    "status": "locked",
+    "status": "in_progress",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -1042,7 +2914,7 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: Exercise / write / and / Look / 1:",
+            "question": "Put the words in the correct order: Look / and / write / Exercise / 1:",
             "options": [
               "Exercise 1: Look and write.",
               "is 1: Look and write.",
@@ -1051,7 +2923,7 @@
             "correctAnswer": "Exercise 1: Look and write."
           },
           {
-            "question": "Put the words in the correct order: questions / these / ,read / answer / and / Exercise / 2: / Look",
+            "question": "Put the words in the correct order: and / Exercise / questions / Look / these / ,read / answer / 2:",
             "options": [
               "Exercise 2: Look ,read and answer these questions.",
               "is 2: Look ,read and answer these questions.",
@@ -1067,6 +2939,69 @@
               "it's here."
             ],
             "correctAnswer": "It's here."
+          },
+          {
+            "question": "Put the words in the correct order: and / Look, / Exercise / 3 / : / answer / read",
+            "options": [
+              "Exercise 3 : Look, read and answer.",
+              "is 3 : Look, read and answer.",
+              "exercise 3 : look, read and answer."
+            ],
+            "correctAnswer": "Exercise 3 : Look, read and answer."
+          },
+          {
+            "question": "Put the words in the correct order: pens / Where / the / are",
+            "options": [
+              "Where are the pens?",
+              "is are the pens?",
+              "where are the pens?"
+            ],
+            "correctAnswer": "Where are the pens?"
+          },
+          {
+            "question": "Put the words in the correct order: TV / is / Where / the",
+            "options": [
+              "Where is the TV?",
+              "is is the TV?",
+              "where is the tv?"
+            ],
+            "correctAnswer": "Where is the TV?"
+          },
+          {
+            "question": "Put the words in the correct order: the / are / posters / Where",
+            "options": [
+              "Where are the posters?",
+              "is are the posters?",
+              "where are the posters?"
+            ],
+            "correctAnswer": "Where are the posters?"
+          },
+          {
+            "question": "Put the words in the correct order: is / the / Where / kite",
+            "options": [
+              "Where is the kite?",
+              "is is the kite?",
+              "where is the kite?"
+            ],
+            "correctAnswer": "Where is the kite?"
+          },
+          {
+            "question": "Put the words in the correct order: is / the / school / bag / Where",
+            "options": [
+              "Where is the school bag?",
+              "is is the school bag?",
+              "where is the school bag?"
+            ],
+            "correctAnswer": "Where is the school bag?"
+          },
+          {
+            "question": "Put the words in the correct order: book / the / is / Where",
+            "options": [
+              "Where is the book?",
+              "is is the book?",
+              "where is the book?"
+            ],
+            "correctAnswer": "Where is the book?"
           },
           {
             "question": "Find the word in the text:",
@@ -1087,6 +3022,78 @@
             "correctAnswer": "ball"
           },
           {
+            "question": "Find the word in the text:",
+            "options": [
+              "picture",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "picture"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "these",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "these"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "pens",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "pens"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "bag",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "bag"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "table",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "table"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "plane",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "plane"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "wall",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "wall"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "pillow",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "pillow"
+          },
+          {
             "question": "Complete the word: e_ercise",
             "options": [
               "exercise",
@@ -1103,6 +3110,114 @@
               "looks"
             ],
             "correctAnswer": "look"
+          },
+          {
+            "question": "Complete the word: w_ite",
+            "options": [
+              "write",
+              "writ",
+              "writes"
+            ],
+            "correctAnswer": "write"
+          },
+          {
+            "question": "Complete the word: i_fo",
+            "options": [
+              "info",
+              "inf",
+              "infos"
+            ],
+            "correctAnswer": "info"
+          },
+          {
+            "question": "Complete the word: b_ll",
+            "options": [
+              "ball",
+              "bal",
+              "balls"
+            ],
+            "correctAnswer": "ball"
+          },
+          {
+            "question": "Complete the word: p_ster",
+            "options": [
+              "poster",
+              "poste",
+              "posters"
+            ],
+            "correctAnswer": "poster"
+          },
+          {
+            "question": "Complete the word: c_air",
+            "options": [
+              "chair",
+              "chai",
+              "chairs"
+            ],
+            "correctAnswer": "chair"
+          },
+          {
+            "question": "Complete the word: p_cture",
+            "options": [
+              "picture",
+              "pictur",
+              "pictures"
+            ],
+            "correctAnswer": "picture"
+          },
+          {
+            "question": "Complete the word: c_at",
+            "options": [
+              "coat",
+              "coa",
+              "coats"
+            ],
+            "correctAnswer": "coat"
+          },
+          {
+            "question": "Complete the word: r_ad",
+            "options": [
+              "read",
+              "rea",
+              "reads"
+            ],
+            "correctAnswer": "read"
+          },
+          {
+            "question": "Complete the word: a_swer",
+            "options": [
+              "answer",
+              "answe",
+              "answers"
+            ],
+            "correctAnswer": "answer"
+          },
+          {
+            "question": "Complete the word: t_ese",
+            "options": [
+              "these",
+              "thes",
+              "theses"
+            ],
+            "correctAnswer": "these"
+          },
+          {
+            "question": "Complete the word: q_estions",
+            "options": [
+              "questions",
+              "question",
+              "questionss"
+            ],
+            "correctAnswer": "questions"
+          },
+          {
+            "question": "Complete the word: w_ere",
+            "options": [
+              "where",
+              "wher",
+              "wheres"
+            ],
+            "correctAnswer": "where"
           }
         ]
       }
@@ -1112,7 +3227,7 @@
     "id": "l3-u14",
     "number": 14,
     "title": "Unit 14",
-    "status": "locked",
+    "status": "in_progress",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -1137,7 +3252,7 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: Exercise / Look / write / and / 2 / : / ",
+            "question": "Put the words in the correct order: Exercise / Look / 2 / : /  / write / and",
             "options": [
               "Exercise 2 : Look and write .",
               "is 2 : Look and write .",
@@ -1146,7 +3261,7 @@
             "correctAnswer": "Exercise 2 : Look and write ."
           },
           {
-            "question": "Put the words in the correct order: No, / there / aren't",
+            "question": "Put the words in the correct order: there / aren't / No,",
             "options": [
               "No, there aren't.",
               "is there aren't.",
@@ -1155,13 +3270,76 @@
             "correctAnswer": "No, there aren't."
           },
           {
-            "question": "Put the words in the correct order: 3 / : / and / Exercise / answer / Look / ,read",
+            "question": "Put the words in the correct order: : / Look / 3 / ,read / and / answer / Exercise",
             "options": [
               "Exercise 3 : Look ,read and answer.",
               "is 3 : Look ,read and answer.",
               "exercise 3 : look ,read and answer."
             ],
             "correctAnswer": "Exercise 3 : Look ,read and answer."
+          },
+          {
+            "question": "Put the words in the correct order: sentences / using / 4 / Make / words / given / Exercise / : / the",
+            "options": [
+              "Exercise 4 : Make sentences using the words given.",
+              "is 4 : Make sentences using the words given.",
+              "exercise 4 : make sentences using the words given."
+            ],
+            "correctAnswer": "Exercise 4 : Make sentences using the words given."
+          },
+          {
+            "question": "Put the words in the correct order: books / There / table / the / on / three / are",
+            "options": [
+              "There are three books on the table.",
+              "is are three books on the table.",
+              "there are three books on the table."
+            ],
+            "correctAnswer": "There are three books on the table."
+          },
+          {
+            "question": "Put the words in the correct order: the / and / Make / answer / : / 5 / questions / Exercise",
+            "options": [
+              "Exercise 5 : Make and answer the questions.",
+              "is 5 : Make and answer the questions.",
+              "exercise 5 : make and answer the questions."
+            ],
+            "correctAnswer": "Exercise 5 : Make and answer the questions."
+          },
+          {
+            "question": "Put the words in the correct order: there / are / Yes,",
+            "options": [
+              "Yes, there are.",
+              "is there are.",
+              "yes, there are."
+            ],
+            "correctAnswer": "Yes, there are."
+          },
+          {
+            "question": "Put the words in the correct order: No, / there / aren’t",
+            "options": [
+              "No, there aren’t.",
+              "is there aren’t.",
+              "no, there aren’t."
+            ],
+            "correctAnswer": "No, there aren’t."
+          },
+          {
+            "question": "Put the words in the correct order: a / is / in / There / the / cupboard / kitchen",
+            "options": [
+              "There is a cupboard in the kitchen.",
+              "is is a cupboard in the kitchen.",
+              "there is a cupboard in the kitchen."
+            ],
+            "correctAnswer": "There is a cupboard in the kitchen."
+          },
+          {
+            "question": "Put the words in the correct order: in / thirty / classroom / the / are / students / There",
+            "options": [
+              "There are thirty students in the classroom.",
+              "is are thirty students in the classroom.",
+              "there are thirty students in the classroom."
+            ],
+            "correctAnswer": "There are thirty students in the classroom."
           },
           {
             "question": "Find the word in the text:",
@@ -1182,6 +3360,78 @@
             "correctAnswer": "mirrors"
           },
           {
+            "question": "Find the word in the text:",
+            "options": [
+              "sofas",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "sofas"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "there",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "there"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "read",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "read"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "chair",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "chair"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "wall",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "wall"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "next",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "next"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "dog",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "dog"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "words",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "words"
+          },
+          {
             "question": "Complete the word: e_ercise",
             "options": [
               "exercise",
@@ -1198,6 +3448,105 @@
               "looks"
             ],
             "correctAnswer": "look"
+          },
+          {
+            "question": "Complete the word: w_ite",
+            "options": [
+              "write",
+              "writ",
+              "writes"
+            ],
+            "correctAnswer": "write"
+          },
+          {
+            "question": "Complete the word: f_ns",
+            "options": [
+              "fans",
+              "fan",
+              "fanss"
+            ],
+            "correctAnswer": "fans"
+          },
+          {
+            "question": "Complete the word: m_rrors",
+            "options": [
+              "mirrors",
+              "mirror",
+              "mirrorss"
+            ],
+            "correctAnswer": "mirrors"
+          },
+          {
+            "question": "Complete the word: d_ors",
+            "options": [
+              "doors",
+              "door",
+              "doorss"
+            ],
+            "correctAnswer": "doors"
+          },
+          {
+            "question": "Complete the word: w_ndows",
+            "options": [
+              "windows",
+              "window",
+              "windowss"
+            ],
+            "correctAnswer": "windows"
+          },
+          {
+            "question": "Complete the word: m_ps",
+            "options": [
+              "maps",
+              "map",
+              "mapss"
+            ],
+            "correctAnswer": "maps"
+          },
+          {
+            "question": "Complete the word: s_fas",
+            "options": [
+              "sofas",
+              "sofa",
+              "sofass"
+            ],
+            "correctAnswer": "sofas"
+          },
+          {
+            "question": "Complete the word: w_rdrobes",
+            "options": [
+              "wardrobes",
+              "wardrobe",
+              "wardrobess"
+            ],
+            "correctAnswer": "wardrobes"
+          },
+          {
+            "question": "Complete the word: c_pboards",
+            "options": [
+              "cupboards",
+              "cupboard",
+              "cupboardss"
+            ],
+            "correctAnswer": "cupboards"
+          },
+          {
+            "question": "Complete the word: t_ere",
+            "options": [
+              "there",
+              "ther",
+              "theres"
+            ],
+            "correctAnswer": "there"
+          },
+          {
+            "question": "Complete the word: a_en",
+            "options": [
+              "aren",
+              "are",
+              "arens"
+            ],
+            "correctAnswer": "aren"
           }
         ]
       }
@@ -1207,7 +3556,7 @@
     "id": "l3-u15",
     "number": 15,
     "title": "Unit 15",
-    "status": "locked",
+    "status": "in_progress",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -1232,7 +3581,7 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: 1: / words / Look / the / Exercise / drag / and",
+            "question": "Put the words in the correct order: 1: / and / Look / Exercise / words / the / drag",
             "options": [
               "Exercise 1: Look and drag the words.",
               "is 1: Look and drag the words.",
@@ -1241,7 +3590,7 @@
             "correctAnswer": "Exercise 1: Look and drag the words."
           },
           {
-            "question": "Put the words in the correct order: 2: / Odd / one / Exercise / out",
+            "question": "Put the words in the correct order: Exercise / Odd / one / out / 2:",
             "options": [
               "Exercise 2: Odd one out.",
               "is 2: Odd one out.",
@@ -1250,13 +3599,76 @@
             "correctAnswer": "Exercise 2: Odd one out."
           },
           {
-            "question": "Put the words in the correct order: it / a /  / ship / Is",
+            "question": "Put the words in the correct order: ship / Is / it /  / a",
             "options": [
               "Is it a ship ?",
               "is it a ship ?",
               "is it a ship ?"
             ],
             "correctAnswer": "Is it a ship ?"
+          },
+          {
+            "question": "Put the words in the correct order: – / a /  / it / yo / yo / Is",
+            "options": [
+              "Is it a yo – yo ?",
+              "is it a yo – yo ?",
+              "is it a yo – yo ?"
+            ],
+            "correctAnswer": "Is it a yo – yo ?"
+          },
+          {
+            "question": "Put the words in the correct order: it / a / Is /  / doll",
+            "options": [
+              "Is it a doll ?",
+              "is it a doll ?",
+              "is it a doll ?"
+            ],
+            "correctAnswer": "Is it a doll ?"
+          },
+          {
+            "question": "Put the words in the correct order: it / a / car /  / Is",
+            "options": [
+              "Is it a car ?",
+              "is it a car ?",
+              "is it a car ?"
+            ],
+            "correctAnswer": "Is it a car ?"
+          },
+          {
+            "question": "Put the words in the correct order: it / ball / a /  / Is",
+            "options": [
+              "Is it a ball ?",
+              "is it a ball ?",
+              "is it a ball ?"
+            ],
+            "correctAnswer": "Is it a ball ?"
+          },
+          {
+            "question": "Put the words in the correct order:  / Is / a / it / plane",
+            "options": [
+              "Is it a plane ?",
+              "is it a plane ?",
+              "is it a plane ?"
+            ],
+            "correctAnswer": "Is it a plane ?"
+          },
+          {
+            "question": "Put the words in the correct order:  / write / Look / 4: / Exercise / and",
+            "options": [
+              "Exercise 4: Look and write .",
+              "is 4: Look and write .",
+              "exercise 4: look and write ."
+            ],
+            "correctAnswer": "Exercise 4: Look and write ."
+          },
+          {
+            "question": "Put the words in the correct order: I / Yes, / do",
+            "options": [
+              "Yes, I do.",
+              "is I do.",
+              "yes, i do."
+            ],
+            "correctAnswer": "Yes, I do."
           },
           {
             "question": "Find the word in the text:",
@@ -1277,6 +3689,78 @@
             "correctAnswer": "odd"
           },
           {
+            "question": "Find the word in the text:",
+            "options": [
+              "living",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "living"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "plane",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "plane"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "car",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "car"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "doll",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "doll"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "flower",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "flower"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "yard",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "yard"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "isn",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "isn"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "you",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "you"
+          },
+          {
             "question": "Complete the word: e_ercise",
             "options": [
               "exercise",
@@ -1293,6 +3777,96 @@
               "looks"
             ],
             "correctAnswer": "look"
+          },
+          {
+            "question": "Complete the word: d_ag",
+            "options": [
+              "drag",
+              "dra",
+              "drags"
+            ],
+            "correctAnswer": "drag"
+          },
+          {
+            "question": "Complete the word: w_rds",
+            "options": [
+              "words",
+              "word",
+              "wordss"
+            ],
+            "correctAnswer": "words"
+          },
+          {
+            "question": "Complete the word: k_tchen",
+            "options": [
+              "kitchen",
+              "kitche",
+              "kitchens"
+            ],
+            "correctAnswer": "kitchen"
+          },
+          {
+            "question": "Complete the word: l_ving",
+            "options": [
+              "living",
+              "livin",
+              "livings"
+            ],
+            "correctAnswer": "living"
+          },
+          {
+            "question": "Complete the word: r_om",
+            "options": [
+              "room",
+              "roo",
+              "rooms"
+            ],
+            "correctAnswer": "room"
+          },
+          {
+            "question": "Complete the word: b_throom",
+            "options": [
+              "bathroom",
+              "bathroo",
+              "bathrooms"
+            ],
+            "correctAnswer": "bathroom"
+          },
+          {
+            "question": "Complete the word: c_assroom",
+            "options": [
+              "classroom",
+              "classroo",
+              "classrooms"
+            ],
+            "correctAnswer": "classroom"
+          },
+          {
+            "question": "Complete the word: p_ane",
+            "options": [
+              "plane",
+              "plan",
+              "planes"
+            ],
+            "correctAnswer": "plane"
+          },
+          {
+            "question": "Complete the word: k_te",
+            "options": [
+              "kite",
+              "kit",
+              "kites"
+            ],
+            "correctAnswer": "kite"
+          },
+          {
+            "question": "Complete the word: s_hool",
+            "options": [
+              "school",
+              "schoo",
+              "schools"
+            ],
+            "correctAnswer": "school"
           }
         ]
       }
@@ -1302,7 +3876,7 @@
     "id": "l3-u16",
     "number": 16,
     "title": "Unit 16",
-    "status": "locked",
+    "status": "in_progress",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -1327,7 +3901,7 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: and / write / 1: / Exercise / Look",
+            "question": "Put the words in the correct order: Exercise / 1: / Look / and / write",
             "options": [
               "Exercise 1: Look and write.",
               "is 1: Look and write.",
@@ -1336,7 +3910,7 @@
             "correctAnswer": "Exercise 1: Look and write."
           },
           {
-            "question": "Put the words in the correct order: ,read / answer / Exercise / Look / 2: / and",
+            "question": "Put the words in the correct order: ,read / answer / Look / 2: / Exercise / and",
             "options": [
               "Exercise 2: Look ,read and answer.",
               "is 2: Look ,read and answer.",
@@ -1345,13 +3919,76 @@
             "correctAnswer": "Exercise 2: Look ,read and answer."
           },
           {
-            "question": "Put the words in the correct order: and / Read / write / 3: / Exercise / ",
+            "question": "Put the words in the correct order: 3: / write / Exercise /  / and / Read",
             "options": [
               "Exercise 3: Read and write .",
               "is 3: Read and write .",
               "exercise 3: read and write ."
             ],
             "correctAnswer": "Exercise 3: Read and write ."
+          },
+          {
+            "question": "Put the words in the correct order: two / He / goldfish / has",
+            "options": [
+              "He has two goldfish.",
+              "is has two goldfish.",
+              "he has two goldfish."
+            ],
+            "correctAnswer": "He has two goldfish."
+          },
+          {
+            "question": "Put the words in the correct order: she / doesn’t / No,",
+            "options": [
+              "No, she doesn’t.",
+              "is she doesn’t.",
+              "no, she doesn’t."
+            ],
+            "correctAnswer": "No, she doesn’t."
+          },
+          {
+            "question": "Put the words in the correct order: They're / next / flower / to / pot / the",
+            "options": [
+              "They're next to the flower pot.",
+              "is next to the flower pot.",
+              "they're next to the flower pot."
+            ],
+            "correctAnswer": "They're next to the flower pot."
+          },
+          {
+            "question": "Put the words in the correct order: the / desk / They’re / under",
+            "options": [
+              "They’re under the desk.",
+              "is under the desk.",
+              "they’re under the desk."
+            ],
+            "correctAnswer": "They’re under the desk."
+          },
+          {
+            "question": "Put the words in the correct order: They / in / are / the / garden",
+            "options": [
+              "They are in the garden.",
+              "is are in the garden.",
+              "they are in the garden."
+            ],
+            "correctAnswer": "They are in the garden."
+          },
+          {
+            "question": "Put the words in the correct order: in / the / They’re / cage",
+            "options": [
+              "They’re in the cage.",
+              "is in the cage.",
+              "they’re in the cage."
+            ],
+            "correctAnswer": "They’re in the cage."
+          },
+          {
+            "question": "Put the words in the correct order: she / Yes, / does",
+            "options": [
+              "Yes, she does.",
+              "is she does.",
+              "yes, she does."
+            ],
+            "correctAnswer": "Yes, she does."
           },
           {
             "question": "Find the word in the text:",
@@ -1372,6 +4009,78 @@
             "correctAnswer": "parrots"
           },
           {
+            "question": "Find the word in the text:",
+            "options": [
+              "monkeys",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "monkeys"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "have",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "have"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "three",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "three"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "black",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "black"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "rabbit",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "rabbit"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "birds",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "birds"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "sentences",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "sentences"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "doesn",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "doesn"
+          },
+          {
             "question": "Complete the word: e_ercise",
             "options": [
               "exercise",
@@ -1388,6 +4097,105 @@
               "looks"
             ],
             "correctAnswer": "look"
+          },
+          {
+            "question": "Complete the word: w_ite",
+            "options": [
+              "write",
+              "writ",
+              "writes"
+            ],
+            "correctAnswer": "write"
+          },
+          {
+            "question": "Complete the word: c_ts",
+            "options": [
+              "cats",
+              "cat",
+              "catss"
+            ],
+            "correctAnswer": "cats"
+          },
+          {
+            "question": "Complete the word: p_rrots",
+            "options": [
+              "parrots",
+              "parrot",
+              "parrotss"
+            ],
+            "correctAnswer": "parrots"
+          },
+          {
+            "question": "Complete the word: r_bbits",
+            "options": [
+              "rabbits",
+              "rabbit",
+              "rabbitss"
+            ],
+            "correctAnswer": "rabbits"
+          },
+          {
+            "question": "Complete the word: d_gs",
+            "options": [
+              "dogs",
+              "dog",
+              "dogss"
+            ],
+            "correctAnswer": "dogs"
+          },
+          {
+            "question": "Complete the word: g_ldfish",
+            "options": [
+              "goldfish",
+              "goldfis",
+              "goldfishs"
+            ],
+            "correctAnswer": "goldfish"
+          },
+          {
+            "question": "Complete the word: m_nkeys",
+            "options": [
+              "monkeys",
+              "monkey",
+              "monkeyss"
+            ],
+            "correctAnswer": "monkeys"
+          },
+          {
+            "question": "Complete the word: r_ad",
+            "options": [
+              "read",
+              "rea",
+              "reads"
+            ],
+            "correctAnswer": "read"
+          },
+          {
+            "question": "Complete the word: a_swer",
+            "options": [
+              "answer",
+              "answe",
+              "answers"
+            ],
+            "correctAnswer": "answer"
+          },
+          {
+            "question": "Complete the word: h_ve",
+            "options": [
+              "have",
+              "hav",
+              "haves"
+            ],
+            "correctAnswer": "have"
+          },
+          {
+            "question": "Complete the word: d_es",
+            "options": [
+              "does",
+              "doe",
+              "doess"
+            ],
+            "correctAnswer": "does"
           }
         ]
       }
@@ -1397,7 +4205,7 @@
     "id": "l3-u17",
     "number": 17,
     "title": "Unit 17",
-    "status": "locked",
+    "status": "in_progress",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -1422,7 +4230,7 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: 1: / and / write / Look / Exercise",
+            "question": "Put the words in the correct order: Exercise / Look / write / 1: / and",
             "options": [
               "Exercise 1: Look and write.",
               "is 1: Look and write.",
@@ -1431,7 +4239,7 @@
             "correctAnswer": "Exercise 1: Look and write."
           },
           {
-            "question": "Put the words in the correct order: Exercise / write / and / 2: / Look",
+            "question": "Put the words in the correct order: write / 2: / and / Look / Exercise",
             "options": [
               "Exercise 2: Look and write.",
               "is 2: Look and write.",
@@ -1440,13 +4248,76 @@
             "correctAnswer": "Exercise 2: Look and write."
           },
           {
-            "question": "Put the words in the correct order:  / balls / they / Are",
+            "question": "Put the words in the correct order: Are / balls /  / they",
             "options": [
               "Are they balls ?",
               "is they balls ?",
               "are they balls ?"
             ],
             "correctAnswer": "Are they balls ?"
+          },
+          {
+            "question": "Put the words in the correct order: Are / they / trucks / ",
+            "options": [
+              "Are they trucks ?",
+              "is they trucks ?",
+              "are they trucks ?"
+            ],
+            "correctAnswer": "Are they trucks ?"
+          },
+          {
+            "question": "Put the words in the correct order:  / they / kites / Are",
+            "options": [
+              "Are they kites ?",
+              "is they kites ?",
+              "are they kites ?"
+            ],
+            "correctAnswer": "Are they kites ?"
+          },
+          {
+            "question": "Put the words in the correct order: Are / they / dolls / ",
+            "options": [
+              "Are they dolls ?",
+              "is they dolls ?",
+              "are they dolls ?"
+            ],
+            "correctAnswer": "Are they dolls ?"
+          },
+          {
+            "question": "Put the words in the correct order: they / cars / Are",
+            "options": [
+              "Are they cars?",
+              "is they cars?",
+              "are they cars?"
+            ],
+            "correctAnswer": "Are they cars?"
+          },
+          {
+            "question": "Put the words in the correct order: Read / Exercise / : / 4 / match / and",
+            "options": [
+              "Exercise 4 : Read and match.",
+              "is 4 : Read and match.",
+              "exercise 4 : read and match."
+            ],
+            "correctAnswer": "Exercise 4 : Read and match."
+          },
+          {
+            "question": "Put the words in the correct order: cats / you / do / How / have / many",
+            "options": [
+              "How many cats do you have?",
+              "is many cats do you have?",
+              "how many cats do you have?"
+            ],
+            "correctAnswer": "How many cats do you have?"
+          },
+          {
+            "question": "Put the words in the correct order: do / Yes, / I",
+            "options": [
+              "Yes, I do.",
+              "is I do.",
+              "yes, i do."
+            ],
+            "correctAnswer": "Yes, I do."
           },
           {
             "question": "Find the word in the text:",
@@ -1467,6 +4338,78 @@
             "correctAnswer": "kites"
           },
           {
+            "question": "Find the word in the text:",
+            "options": [
+              "trucks",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "trucks"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "words",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "words"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "sentences",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "sentences"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "like",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "like"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "you",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "you"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "brother",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "brother"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "have",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "have"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "tony",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "tony"
+          },
+          {
             "question": "Complete the word: e_ercise",
             "options": [
               "exercise",
@@ -1483,6 +4426,105 @@
               "looks"
             ],
             "correctAnswer": "look"
+          },
+          {
+            "question": "Complete the word: w_ite",
+            "options": [
+              "write",
+              "writ",
+              "writes"
+            ],
+            "correctAnswer": "write"
+          },
+          {
+            "question": "Complete the word: d_lls",
+            "options": [
+              "dolls",
+              "doll",
+              "dollss"
+            ],
+            "correctAnswer": "dolls"
+          },
+          {
+            "question": "Complete the word: k_tes",
+            "options": [
+              "kites",
+              "kite",
+              "kitess"
+            ],
+            "correctAnswer": "kites"
+          },
+          {
+            "question": "Complete the word: c_rs",
+            "options": [
+              "cars",
+              "car",
+              "carss"
+            ],
+            "correctAnswer": "cars"
+          },
+          {
+            "question": "Complete the word: b_lls",
+            "options": [
+              "balls",
+              "ball",
+              "ballss"
+            ],
+            "correctAnswer": "balls"
+          },
+          {
+            "question": "Complete the word: p_anes",
+            "options": [
+              "planes",
+              "plane",
+              "planess"
+            ],
+            "correctAnswer": "planes"
+          },
+          {
+            "question": "Complete the word: t_ucks",
+            "options": [
+              "trucks",
+              "truck",
+              "truckss"
+            ],
+            "correctAnswer": "trucks"
+          },
+          {
+            "question": "Complete the word: a_en",
+            "options": [
+              "aren",
+              "are",
+              "arens"
+            ],
+            "correctAnswer": "aren"
+          },
+          {
+            "question": "Complete the word: w_rds",
+            "options": [
+              "words",
+              "word",
+              "wordss"
+            ],
+            "correctAnswer": "words"
+          },
+          {
+            "question": "Complete the word: c_rrect",
+            "options": [
+              "correct",
+              "correc",
+              "corrects"
+            ],
+            "correctAnswer": "correct"
+          },
+          {
+            "question": "Complete the word: o_der",
+            "options": [
+              "order",
+              "orde",
+              "orders"
+            ],
+            "correctAnswer": "order"
           }
         ]
       }
@@ -1492,7 +4534,7 @@
     "id": "l3-u18",
     "number": 18,
     "title": "Unit 18",
-    "status": "locked",
+    "status": "in_progress",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -1517,7 +4559,7 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: doing / is /  / she / What",
+            "question": "Put the words in the correct order: is / she /  / doing / What",
             "options": [
               "What is she doing ?",
               "is is she doing ?",
@@ -1526,7 +4568,7 @@
             "correctAnswer": "What is she doing ?"
           },
           {
-            "question": "Put the words in the correct order: you / What / are / doing / ",
+            "question": "Put the words in the correct order: What / doing /  / you / are",
             "options": [
               "What are you doing ?",
               "is are you doing ?",
@@ -1535,13 +4577,76 @@
             "correctAnswer": "What are you doing ?"
           },
           {
-            "question": "Put the words in the correct order: What / is / doing / he / ",
+            "question": "Put the words in the correct order: he / What /  / doing / is",
             "options": [
               "What is he doing ?",
               "is is he doing ?",
               "what is he doing ?"
             ],
             "correctAnswer": "What is he doing ?"
+          },
+          {
+            "question": "Put the words in the correct order:  / What / doing / are / they",
+            "options": [
+              "What are they doing ?",
+              "is are they doing ?",
+              "what are they doing ?"
+            ],
+            "correctAnswer": "What are they doing ?"
+          },
+          {
+            "question": "Put the words in the correct order: complete / and / 4: / Exercise / Read",
+            "options": [
+              "Exercise 4: Read and complete.",
+              "is 4: Read and complete.",
+              "exercise 4: read and complete."
+            ],
+            "correctAnswer": "Exercise 4: Read and complete."
+          },
+          {
+            "question": "Put the words in the correct order: name / My / Peter / is",
+            "options": [
+              "My name is Peter.",
+              "is name is Peter.",
+              "my name is peter."
+            ],
+            "correctAnswer": "My name is Peter."
+          },
+          {
+            "question": "Put the words in the correct order: Exercise / the / Choose / answer / 5: / correct",
+            "options": [
+              "Exercise 5: Choose the correct answer.",
+              "is 5: Choose the correct answer.",
+              "exercise 5: choose the correct answer."
+            ],
+            "correctAnswer": "Exercise 5: Choose the correct answer."
+          },
+          {
+            "question": "Put the words in the correct order: Yes, / they / are",
+            "options": [
+              "Yes, they are.",
+              "is they are.",
+              "yes, they are."
+            ],
+            "correctAnswer": "Yes, they are."
+          },
+          {
+            "question": "Put the words in the correct order: they / No, / aren’t",
+            "options": [
+              "No, they aren’t.",
+              "is they aren’t.",
+              "no, they aren’t."
+            ],
+            "correctAnswer": "No, they aren’t."
+          },
+          {
+            "question": "Put the words in the correct order: is / Yes, / she",
+            "options": [
+              "Yes, she is.",
+              "is she is.",
+              "yes, she is."
+            ],
+            "correctAnswer": "Yes, she is."
           },
           {
             "question": "Find the word in the text:",
@@ -1562,6 +4667,78 @@
             "correctAnswer": "play"
           },
           {
+            "question": "Find the word in the text:",
+            "options": [
+              "music",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "music"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "clean",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "clean"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "doing",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "doing"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "correct",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "correct"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "singing",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "singing"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "dinner",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "dinner"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "cleaning",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "cleaning"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "name",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "name"
+          },
+          {
             "question": "Complete the word: e_ercise",
             "options": [
               "exercise",
@@ -1578,6 +4755,123 @@
               "looks"
             ],
             "correctAnswer": "look"
+          },
+          {
+            "question": "Complete the word: w_ite",
+            "options": [
+              "write",
+              "writ",
+              "writes"
+            ],
+            "correctAnswer": "write"
+          },
+          {
+            "question": "Complete the word: s_ng",
+            "options": [
+              "sing",
+              "sin",
+              "sings"
+            ],
+            "correctAnswer": "sing"
+          },
+          {
+            "question": "Complete the word: p_ay",
+            "options": [
+              "play",
+              "pla",
+              "plays"
+            ],
+            "correctAnswer": "play"
+          },
+          {
+            "question": "Complete the word: p_ano",
+            "options": [
+              "piano",
+              "pian",
+              "pianos"
+            ],
+            "correctAnswer": "piano"
+          },
+          {
+            "question": "Complete the word: r_ad",
+            "options": [
+              "read",
+              "rea",
+              "reads"
+            ],
+            "correctAnswer": "read"
+          },
+          {
+            "question": "Complete the word: l_sten",
+            "options": [
+              "listen",
+              "liste",
+              "listens"
+            ],
+            "correctAnswer": "listen"
+          },
+          {
+            "question": "Complete the word: m_sic",
+            "options": [
+              "music",
+              "musi",
+              "musics"
+            ],
+            "correctAnswer": "music"
+          },
+          {
+            "question": "Complete the word: d_aw",
+            "options": [
+              "draw",
+              "dra",
+              "draws"
+            ],
+            "correctAnswer": "draw"
+          },
+          {
+            "question": "Complete the word: w_tch",
+            "options": [
+              "watch",
+              "watc",
+              "watchs"
+            ],
+            "correctAnswer": "watch"
+          },
+          {
+            "question": "Complete the word: c_ok",
+            "options": [
+              "cook",
+              "coo",
+              "cooks"
+            ],
+            "correctAnswer": "cook"
+          },
+          {
+            "question": "Complete the word: c_ean",
+            "options": [
+              "clean",
+              "clea",
+              "cleans"
+            ],
+            "correctAnswer": "clean"
+          },
+          {
+            "question": "Complete the word: f_oor",
+            "options": [
+              "floor",
+              "floo",
+              "floors"
+            ],
+            "correctAnswer": "floor"
+          },
+          {
+            "question": "Complete the word: a_swer",
+            "options": [
+              "answer",
+              "answe",
+              "answers"
+            ],
+            "correctAnswer": "answer"
           }
         ]
       }
@@ -1587,7 +4881,7 @@
     "id": "l3-u19",
     "number": 19,
     "title": "Unit 19",
-    "status": "locked",
+    "status": "in_progress",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -1612,7 +4906,7 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: write / Look / and / : / 1 / Exercise",
+            "question": "Put the words in the correct order: write / Look / Exercise / 1 / : / and",
             "options": [
               "Exercise 1 : Look and write.",
               "is 1 : Look and write.",
@@ -1621,7 +4915,7 @@
             "correctAnswer": "Exercise 1 : Look and write."
           },
           {
-            "question": "Put the words in the correct order: 2: / ,read / Look / and / Exercise / answer",
+            "question": "Put the words in the correct order: ,read / Exercise / Look / 2: / answer / and",
             "options": [
               "Exercise 2: Look ,read and answer.",
               "is 2: Look ,read and answer.",
@@ -1630,13 +4924,76 @@
             "correctAnswer": "Exercise 2: Look ,read and answer."
           },
           {
-            "question": "Put the words in the correct order: What / they / are /  / doing",
+            "question": "Put the words in the correct order: they /  / What / doing / are",
             "options": [
               "What are they doing ?",
               "is are they doing ?",
               "what are they doing ?"
             ],
             "correctAnswer": "What are they doing ?"
+          },
+          {
+            "question": "Put the words in the correct order: Look / write / Exercise / 3: / and",
+            "options": [
+              "Exercise 3: Look and write.",
+              "is 3: Look and write.",
+              "exercise 3: look and write."
+            ],
+            "correctAnswer": "Exercise 3: Look and write."
+          },
+          {
+            "question": "Put the words in the correct order: football / Are / playing /  / they",
+            "options": [
+              "Are they playing football ?",
+              "is they playing football ?",
+              "are they playing football ?"
+            ],
+            "correctAnswer": "Are they playing football ?"
+          },
+          {
+            "question": "Put the words in the correct order:  / skipping / they / Are",
+            "options": [
+              "Are they skipping ?",
+              "is they skipping ?",
+              "are they skipping ?"
+            ],
+            "correctAnswer": "Are they skipping ?"
+          },
+          {
+            "question": "Put the words in the correct order: they / Are /  / skating",
+            "options": [
+              "Are they skating ?",
+              "is they skating ?",
+              "are they skating ?"
+            ],
+            "correctAnswer": "Are they skating ?"
+          },
+          {
+            "question": "Put the words in the correct order: Are /  / they cycling",
+            "options": [
+              "Are they cycling ?",
+              "is they cycling ?",
+              "are they cycling ?"
+            ],
+            "correctAnswer": "Are they cycling ?"
+          },
+          {
+            "question": "Put the words in the correct order: Are / they / flying / kites",
+            "options": [
+              "Are they flying kites?",
+              "is they flying kites?",
+              "are they flying kites?"
+            ],
+            "correctAnswer": "Are they flying kites?"
+          },
+          {
+            "question": "Put the words in the correct order: match / and / Read / 4: / Exercise",
+            "options": [
+              "Exercise 4: Read and match.",
+              "is 4: Read and match.",
+              "exercise 4: read and match."
+            ],
+            "correctAnswer": "Exercise 4: Read and match."
           },
           {
             "question": "Find the word in the text:",
@@ -1657,6 +5014,78 @@
             "correctAnswer": "cycling"
           },
           {
+            "question": "Find the word in the text:",
+            "options": [
+              "skipping",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "skipping"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "read",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "read"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "yes",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "yes"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "how",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "how"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "cage",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "cage"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "you",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "you"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "like",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "like"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "living",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "living"
+          },
+          {
             "question": "Complete the word: e_ercise",
             "options": [
               "exercise",
@@ -1673,6 +5102,123 @@
               "looks"
             ],
             "correctAnswer": "look"
+          },
+          {
+            "question": "Complete the word: w_ite",
+            "options": [
+              "write",
+              "writ",
+              "writes"
+            ],
+            "correctAnswer": "write"
+          },
+          {
+            "question": "Complete the word: i_fo",
+            "options": [
+              "info",
+              "inf",
+              "infos"
+            ],
+            "correctAnswer": "info"
+          },
+          {
+            "question": "Complete the word: c_cling",
+            "options": [
+              "cycling",
+              "cyclin",
+              "cyclings"
+            ],
+            "correctAnswer": "cycling"
+          },
+          {
+            "question": "Complete the word: s_ating",
+            "options": [
+              "skating",
+              "skatin",
+              "skatings"
+            ],
+            "correctAnswer": "skating"
+          },
+          {
+            "question": "Complete the word: f_ying",
+            "options": [
+              "flying",
+              "flyin",
+              "flyings"
+            ],
+            "correctAnswer": "flying"
+          },
+          {
+            "question": "Complete the word: k_tes",
+            "options": [
+              "kites",
+              "kite",
+              "kitess"
+            ],
+            "correctAnswer": "kites"
+          },
+          {
+            "question": "Complete the word: s_ipping",
+            "options": [
+              "skipping",
+              "skippin",
+              "skippings"
+            ],
+            "correctAnswer": "skipping"
+          },
+          {
+            "question": "Complete the word: p_aying",
+            "options": [
+              "playing",
+              "playin",
+              "playings"
+            ],
+            "correctAnswer": "playing"
+          },
+          {
+            "question": "Complete the word: b_dmiton",
+            "options": [
+              "badmiton",
+              "badmito",
+              "badmitons"
+            ],
+            "correctAnswer": "badmiton"
+          },
+          {
+            "question": "Complete the word: f_otball",
+            "options": [
+              "football",
+              "footbal",
+              "footballs"
+            ],
+            "correctAnswer": "football"
+          },
+          {
+            "question": "Complete the word: r_ad",
+            "options": [
+              "read",
+              "rea",
+              "reads"
+            ],
+            "correctAnswer": "read"
+          },
+          {
+            "question": "Complete the word: a_swer",
+            "options": [
+              "answer",
+              "answe",
+              "answers"
+            ],
+            "correctAnswer": "answer"
+          },
+          {
+            "question": "Complete the word: w_at",
+            "options": [
+              "what",
+              "wha",
+              "whats"
+            ],
+            "correctAnswer": "what"
           }
         ]
       }
@@ -1682,7 +5228,7 @@
     "id": "l3-u20",
     "number": 20,
     "title": "Unit 20",
-    "status": "locked",
+    "status": "in_progress",
     "progress": 0,
     "grade": "Lớp 3",
     "lessons": [
@@ -1707,7 +5253,7 @@
         "completed": false,
         "quizQuestions": [
           {
-            "question": "Put the words in the correct order: Nam / Viet",
+            "question": "Put the words in the correct order: Viet / Nam",
             "options": [
               "Viet Nam.",
               "is Nam.",
@@ -1716,7 +5262,7 @@
             "correctAnswer": "Viet Nam."
           },
           {
-            "question": "Put the words in the correct order: is /  / big / It / a / country",
+            "question": "Put the words in the correct order:  / big / country / is / a / It",
             "options": [
               "It is a big country .",
               "is is a big country .",
@@ -1725,13 +5271,76 @@
             "correctAnswer": "It is a big country ."
           },
           {
-            "question": "Put the words in the correct order: Minh / city / a / Viet / Ho / is / city / big / Chi / in / Nam / south",
+            "question": "Put the words in the correct order: Minh / in / Nam / Chi / a / is / Viet / city / city / big / Ho / south",
             "options": [
               "Ho Chi Minh city is a big city in south Viet Nam.",
               "is Chi Minh city is a big city in south Viet Nam.",
               "ho chi minh city is a big city in south viet nam."
             ],
             "correctAnswer": "Ho Chi Minh city is a big city in south Viet Nam."
+          },
+          {
+            "question": "Put the words in the correct order: is / Where / place / your",
+            "options": [
+              "Where is your place?",
+              "is is your place?",
+              "where is your place?"
+            ],
+            "correctAnswer": "Where is your place?"
+          },
+          {
+            "question": "Put the words in the correct order: Where / Noi / Ha / is",
+            "options": [
+              "Where is Ha Noi?",
+              "is is Ha Noi?",
+              "where is ha noi?"
+            ],
+            "correctAnswer": "Where is Ha Noi?"
+          },
+          {
+            "question": "Put the words in the correct order: Where / Hue / is / ",
+            "options": [
+              "Where is Hue ?",
+              "is is Hue ?",
+              "where is hue ?"
+            ],
+            "correctAnswer": "Where is Hue ?"
+          },
+          {
+            "question": "Put the words in the correct order: is / Saigon / Where",
+            "options": [
+              "Where is Saigon?",
+              "is is Saigon?",
+              "where is saigon?"
+            ],
+            "correctAnswer": "Where is Saigon?"
+          },
+          {
+            "question": "Put the words in the correct order: Pa / Trang / Is /  / Sa / near / Nha",
+            "options": [
+              "Is Sa Pa near Nha Trang ?",
+              "is Sa Pa near Nha Trang ?",
+              "is sa pa near nha trang ?"
+            ],
+            "correctAnswer": "Is Sa Pa near Nha Trang ?"
+          },
+          {
+            "question": "Put the words in the correct order:  / Where / An / Hoi / is",
+            "options": [
+              "Where is Hoi An ?",
+              "is is Hoi An ?",
+              "where is hoi an ?"
+            ],
+            "correctAnswer": "Where is Hoi An ?"
+          },
+          {
+            "question": "Put the words in the correct order: Hoi /  / Hue / An / near / Is",
+            "options": [
+              "Is Hoi An near Hue ?",
+              "is Hoi An near Hue ?",
+              "is hoi an near hue ?"
+            ],
+            "correctAnswer": "Is Hoi An near Hue ?"
           },
           {
             "question": "Find the word in the text:",
@@ -1752,6 +5361,78 @@
             "correctAnswer": "north"
           },
           {
+            "question": "Find the word in the text:",
+            "options": [
+              "where",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "where"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "long",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "long"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "chi",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "chi"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "tho",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "tho"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "words",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "words"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "too",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "too"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "big",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "big"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "hai",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "hai"
+          },
+          {
             "question": "Complete the word: e_ercise",
             "options": [
               "exercise",
@@ -1768,6 +5449,96 @@
               "reads"
             ],
             "correctAnswer": "read"
+          },
+          {
+            "question": "Complete the word: w_ite",
+            "options": [
+              "write",
+              "writ",
+              "writes"
+            ],
+            "correctAnswer": "write"
+          },
+          {
+            "question": "Complete the word: i_fo",
+            "options": [
+              "info",
+              "inf",
+              "infos"
+            ],
+            "correctAnswer": "info"
+          },
+          {
+            "question": "Complete the word: n_rth",
+            "options": [
+              "north",
+              "nort",
+              "norths"
+            ],
+            "correctAnswer": "north"
+          },
+          {
+            "question": "Complete the word: c_ntral",
+            "options": [
+              "central",
+              "centra",
+              "centrals"
+            ],
+            "correctAnswer": "central"
+          },
+          {
+            "question": "Complete the word: s_uth",
+            "options": [
+              "south",
+              "sout",
+              "souths"
+            ],
+            "correctAnswer": "south"
+          },
+          {
+            "question": "Complete the word: w_st",
+            "options": [
+              "west",
+              "wes",
+              "wests"
+            ],
+            "correctAnswer": "west"
+          },
+          {
+            "question": "Complete the word: w_ere",
+            "options": [
+              "where",
+              "wher",
+              "wheres"
+            ],
+            "correctAnswer": "where"
+          },
+          {
+            "question": "Complete the word: v_et",
+            "options": [
+              "viet",
+              "vie",
+              "viets"
+            ],
+            "correctAnswer": "viet"
+          },
+          {
+            "question": "Complete the word: l_ng",
+            "options": [
+              "long",
+              "lon",
+              "longs"
+            ],
+            "correctAnswer": "long"
+          },
+          {
+            "question": "Complete the word: n_ng",
+            "options": [
+              "nang",
+              "nan",
+              "nangs"
+            ],
+            "correctAnswer": "nang"
           }
         ]
       }

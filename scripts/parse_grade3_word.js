@@ -79,7 +79,7 @@ async function processUnits() {
         const quizQuestions = [];
         
         // 1. Reorder sentences
-        for (let j = 0; j < Math.min(3, sentenceList.length); j++) {
+        for (let j = 0; j < Math.min(10, sentenceList.length); j++) {
             const s = sentenceList[j];
             const sWords = s.replace(/[\.\?\!]/g, '').split(' ');
             if (sWords.length > 1) {
@@ -93,7 +93,7 @@ async function processUnits() {
         }
         
         // 2. Odd one out
-        for (let j = 0; j < Math.min(2, wordList.length / 4); j++) {
+        for (let j = 0; j < Math.min(10, wordList.length / 4); j++) {
             const w1 = wordList[j*4];
             const w2 = wordList[j*4+1];
             const w3 = wordList[j*4+2];
@@ -105,7 +105,7 @@ async function processUnits() {
         }
         
         // 3. Fill missing letter
-        for (let j = 0; j < Math.min(2, wordList.length); j++) {
+        for (let j = 0; j < Math.min(15, wordList.length); j++) {
             const w = wordList[j];
             if (w.length > 3) {
                 const missing = w.substring(0, 1) + "_" + w.substring(2);
@@ -129,7 +129,7 @@ async function processUnits() {
             id: `l3-u${i}`,
             number: i,
             title: `Unit ${i}`,
-            status: i === 1 ? "in_progress" : "locked",
+            status: "in_progress", // Unlock all units
             progress: 0,
             grade: "Lớp 3",
             lessons: [
