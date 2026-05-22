@@ -296,9 +296,13 @@ export default function Dashboard() {
   const [units, setUnits] = useState<UnitData[]>([]);
   const [selectedUnit, setSelectedUnit] = useState<UnitData | null>(null);
   
-  // Điều hướng các phòng học: "dashboard" | "speaking" | "dictation" | "quiz"
+  // Điều hướng các phòng học: "dashboard" | "speaking" | "dictation" | "quiz" | "visual"
   const [activeRoom, setActiveRoom] = useState<"dashboard" | "speaking" | "dictation" | "quiz" | "visual">("dashboard");
   const [activeLesson, setActiveLesson] = useState<Lesson | null>(null);
+
+  // Session: danh sách bài cùng loại để học liên tiếp
+  const [sessionLessons, setSessionLessons] = useState<Lesson[]>([]);
+  const [sessionIndex, setSessionIndex] = useState(0);
 
   // Màn ăn mừng Celebration
   const [celebrationOpen, setCelebrationOpen] = useState(false);
@@ -717,8 +721,18 @@ export default function Dashboard() {
     // Kích hoạt sự kiện toàn hệ thống để cập nhật điểm trên RightPanel tức thì
     window.dispatchEvent(new Event("stats-updated"));
 
-    // 5. Mở màn hình ăn mừng Cúp vàng 3D
-    setCelebrationOpen(true);
+    // 5. Nếu còn bài tiếp theo trong session, chuyển sang bài đó
+    //    Nếu là bài cuối cùng → mở màn ăn mừng
+    const nextIdx = sessionIndex + 1;
+    if (sessionLessons.length > 1 && nextIdx < sessionLessons.length) {
+      // Có bài tiếp theo - tự động chuyển sau 600ms
+      setTimeout(() => {
+        handleNextInSession();
+      }, 600);
+    } else {
+      // Hết session → ăn mừng
+      setCelebrationOpen(true);
+    }
 
     // Lưu DB thông qua Server Action
     saveLessonProgress("student-khanh-tran-11", lessonId, finalScore, "completed");
@@ -734,7 +748,7 @@ export default function Dashboard() {
   };
 
   // Khởi động một phòng học cụ thể
-  const handleStartLesson = (lesson: Lesson) => {
+  const handleStartLesson = (lesson: Lesson, forceUnit?: UnitData) => {
     const user = localStorage.getItem("gsa-current-user");
     if (!user) {
       alert("Bạn cần đăng nhập để học và lưu kết quả!");
@@ -748,12 +762,19 @@ export default function Dashboard() {
       return;
     }
 
+    // Gom tất cả bài cùng type từ unit hiện tại vào một phiên học
+    const currentUnit = forceUnit || selectedUnit;
+    const sameLessons = currentUnit
+      ? currentUnit.lessons.filter(l => l.type === lesson.type)
+      : [lesson];
+    const startIdx = sameLessons.findIndex(l => l.id === lesson.id);
+    setSessionLessons(sameLessons);
+    setSessionIndex(startIdx >= 0 ? startIdx : 0);
     setActiveLesson(lesson);
     
     // Mở phòng tương ứng
     if (lesson.type === "speaking") {
       setActiveRoom("speaking");
-      // Reset các trạng thái ghi âm cũ
       setEvaluationResult(null);
       setAudioUrl(null);
       setAudioBase64(null);
@@ -761,8 +782,30 @@ export default function Dashboard() {
       setActiveRoom("dictation");
     } else if (lesson.type === "quiz") {
       setActiveRoom("quiz");
+    } else if (lesson.type === "visual") {
+      setActiveRoom("visual");
     }
   };
+
+  // Chuyển sang bài tiếp theo trong phiên học
+  const handleNextInSession = () => {
+    const nextIdx = sessionIndex + 1;
+    if (nextIdx < sessionLessons.length) {
+      const nextLesson = sessionLessons[nextIdx];
+      setSessionIndex(nextIdx);
+      setActiveLesson(nextLesson);
+      // Reset speaking state nếu cần
+      if (nextLesson.type === "speaking") {
+        setEvaluationResult(null);
+        setAudioUrl(null);
+        setAudioBase64(null);
+      }
+    } else {
+      // Hết session, về dashboard
+      setActiveRoom("dashboard");
+    }
+  };
+
 
   const handleCloseCelebration = () => {
     setCelebrationOpen(false);
@@ -820,16 +863,41 @@ export default function Dashboard() {
       )}
 
       {/* ========================================================
+          RENDER PHÒNG VISUAL
+          ======================================================== */}
+      {activeRoom === "visual" && activeLesson && (
+        <VisualRoom
+          lessonId={activeLesson.id}
+          title={activeLesson.title}
+          imageUrl={activeLesson.imageUrl || ""}
+          onBack={() => setActiveRoom("dashboard")}
+          onComplete={(score) => handleLessonCompletion(activeLesson.id, score)}
+        />
+      )}
+
+      {/* ========================================================
           RENDER PHÒNG SPEAKING CHI TIẾT (Focus Mode)
           ======================================================== */}
       {activeRoom === "speaking" && activeLesson && (
         <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center p-6 bg-[#0B0F19]">
-          <button
-            onClick={() => setActiveRoom("dashboard")}
-            className="self-start mb-6 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:text-slate-100 hover:bg-slate-800/40 transition-all text-xs font-semibold flex items-center gap-1.5"
-          >
-            <ArrowLeft className="w-4.5 h-4.5" /> Về Bảng Điều Khiển
-          </button>
+          <div className="w-full max-w-2xl flex items-center justify-between mb-4">
+            <button
+              onClick={() => setActiveRoom("dashboard")}
+              className="px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:text-slate-100 hover:bg-slate-800/40 transition-all text-xs font-semibold flex items-center gap-1.5"
+            >
+              <ArrowLeft className="w-4.5 h-4.5" /> Về Bảng Điều Khiển
+            </button>
+            {sessionLessons.length > 1 && (
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] text-slate-400 font-bold">{sessionIndex + 1}/{sessionLessons.length}</span>
+                <div className="flex gap-1">
+                  {sessionLessons.map((_, i) => (
+                    <div key={i} className={`w-4 h-1.5 rounded-full transition-all ${i <= sessionIndex ? "bg-indigo-500" : "bg-slate-700"}`} />
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
           
           <div className="w-full max-w-2xl rounded-3xl border border-slate-800 bg-[#151B2B] p-8 space-y-6 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-80 h-80 bg-indigo-500/5 rounded-full blur-[80px] pointer-events-none" />
