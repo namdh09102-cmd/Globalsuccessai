@@ -73,11 +73,24 @@ export default function AdminCurriculum() {
           const parsed = JSON.parse(ingestData);
           
           if (ingestType === "quiz") {
-            if (Array.isArray(parsed)) {
-              lessonDataToMerge = { quizQuestions: parsed };
-            } else {
-              lessonDataToMerge = parsed.quizQuestions ? parsed : { quizQuestions: [parsed] };
-            }
+            let questions = Array.isArray(parsed) ? parsed : (parsed.quizQuestions ? parsed.quizQuestions : [parsed]);
+            
+            // Magical Normalizer cho Quiz
+            questions = questions.map((q: any) => {
+              let options = q.options;
+              if (!Array.isArray(options) && typeof options === "object" && options !== null) {
+                // Biến đổi { A: "book", B: "apple" } thành ["A. book", "B. apple", "C. cat", "D. duck"]
+                options = Object.entries(options).map(([k, v]) => `${k}. ${v}`);
+              }
+              return {
+                ...q,
+                question: q.question || "",
+                options: options || [],
+                correctAnswer: q.correctAnswer || q.correct || "A"
+              };
+            });
+
+            lessonDataToMerge = { quizQuestions: questions };
           } else if (ingestType === "speaking") {
             if (Array.isArray(parsed)) {
               lessonDataToMerge = parsed[0]?.expectedText ? parsed[0] : { expectedText: JSON.stringify(parsed) };
