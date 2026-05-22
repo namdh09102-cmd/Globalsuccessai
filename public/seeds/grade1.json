@@ -1,0 +1,690 @@
+[
+  {
+    "id": "unit-1",
+    "title": "Unit 1: In the school playground",
+    "lessons": [
+      {
+        "id": "l1_u1_speak",
+        "title": "Speaking - Unit 1: In the school playground",
+        "type": "speaking",
+        "expectedText": "Hello. I have a ball and a bike."
+      },
+      {
+        "id": "l1_u1_quiz",
+        "title": "Quiz - Unit 1: In the school playground",
+        "type": "quiz",
+        "quizQuestions": [
+          {
+            "id": "l1_u1_q1",
+            "question": "What is this? It's a _____.",
+            "options": [
+              "A. ball",
+              "B. bike",
+              "C. book",
+              "D. better"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng cốt lõi Unit 1: ball"
+          },
+          {
+            "id": "l1_u1_q2",
+            "question": "Look and choose: ______",
+            "options": [
+              "A. bike",
+              "B. ball",
+              "C. pen",
+              "D. ruler"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng mở rộng Unit 1: bike"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-2",
+    "title": "Unit 2: In the dining room",
+    "lessons": [
+      {
+        "id": "l1_u2_speak",
+        "title": "Speaking - Unit 2: In the dining room",
+        "type": "speaking",
+        "expectedText": "Hello. I have a car and a cat."
+      },
+      {
+        "id": "l1_u2_quiz",
+        "title": "Quiz - Unit 2: In the dining room",
+        "type": "quiz",
+        "quizQuestions": [
+          {
+            "id": "l1_u2_q1",
+            "question": "What is this? It's a _____.",
+            "options": [
+              "A. car",
+              "B. cat",
+              "C. cup",
+              "D. cake"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng cốt lõi Unit 2: car"
+          },
+          {
+            "id": "l1_u2_q2",
+            "question": "Look and choose: ______",
+            "options": [
+              "A. cat",
+              "B. car",
+              "C. pen",
+              "D. ruler"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng mở rộng Unit 2: cat"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-3",
+    "title": "Unit 3",
+    "lessons": [
+      {
+        "id": "l1_u3_speak",
+        "title": "Speaking - Unit 3",
+        "type": "speaking",
+        "expectedText": "Hello. I have a apple3 and a book3."
+      },
+      {
+        "id": "l1_u3_quiz",
+        "title": "Quiz - Unit 3",
+        "type": "quiz",
+        "quizQuestions": [
+          {
+            "id": "l1_u3_q1",
+            "question": "What is this? It's a _____.",
+            "options": [
+              "A. apple3",
+              "B. book3",
+              "C. cat3",
+              "D. dog3"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng cốt lõi Unit 3: apple3"
+          },
+          {
+            "id": "l1_u3_q2",
+            "question": "Look and choose: ______",
+            "options": [
+              "A. book3",
+              "B. apple3",
+              "C. pen",
+              "D. ruler"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng mở rộng Unit 3: book3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-4",
+    "title": "Unit 4: In the bedroom",
+    "lessons": [
+      {
+        "id": "l1_u4_speak",
+        "title": "Speaking - Unit 4: In the bedroom",
+        "type": "speaking",
+        "expectedText": "Hello. I have a dog and a duck."
+      },
+      {
+        "id": "l1_u4_quiz",
+        "title": "Quiz - Unit 4: In the bedroom",
+        "type": "quiz",
+        "quizQuestions": [
+          {
+            "id": "l1_u4_q1",
+            "question": "What is this? It's a _____.",
+            "options": [
+              "A. dog",
+              "B. duck",
+              "C. few",
+              "D. desk"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng cốt lõi Unit 4: dog"
+          },
+          {
+            "id": "l1_u4_q2",
+            "question": "Look and choose: ______",
+            "options": [
+              "A. duck",
+              "B. dog",
+              "C. pen",
+              "D. ruler"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng mở rộng Unit 4: duck"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-5",
+    "title": "Unit 5",
+    "lessons": [
+      {
+        "id": "l1_u5_speak",
+        "title": "Speaking - Unit 5",
+        "type": "speaking",
+        "expectedText": "Hello. I have a few and a food."
+      },
+      {
+        "id": "l1_u5_quiz",
+        "title": "Quiz - Unit 5",
+        "type": "quiz",
+        "quizQuestions": [
+          {
+            "id": "l1_u5_q1",
+            "question": "What is this? It's a _____.",
+            "options": [
+              "A. few",
+              "B. food",
+              "C. duck",
+              "D. dog"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng cốt lõi Unit 5: few"
+          },
+          {
+            "id": "l1_u5_q2",
+            "question": "Look and choose: ______",
+            "options": [
+              "A. food",
+              "B. few",
+              "C. pen",
+              "D. ruler"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng mở rộng Unit 5: food"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-6",
+    "title": "Unit 6: In the classroom",
+    "lessons": [
+      {
+        "id": "l1_u6_speak",
+        "title": "Speaking - Unit 6: In the classroom",
+        "type": "speaking",
+        "expectedText": "Hello. I have a red and a few."
+      },
+      {
+        "id": "l1_u6_quiz",
+        "title": "Quiz - Unit 6: In the classroom",
+        "type": "quiz",
+        "quizQuestions": [
+          {
+            "id": "l1_u6_q1",
+            "question": "What is this? It's a _____.",
+            "options": [
+              "A. red",
+              "B. few",
+              "C. pen",
+              "D. and"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng cốt lõi Unit 6: red"
+          },
+          {
+            "id": "l1_u6_q2",
+            "question": "Look and choose: ______",
+            "options": [
+              "A. few",
+              "B. red",
+              "C. pen",
+              "D. ruler"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng mở rộng Unit 6: few"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-7",
+    "title": "Unit 7: In the garden",
+    "lessons": [
+      {
+        "id": "l1_u7_speak",
+        "title": "Speaking - Unit 7: In the garden",
+        "type": "speaking",
+        "expectedText": "Hello. I have a garden and a gate."
+      },
+      {
+        "id": "l1_u7_quiz",
+        "title": "Quiz - Unit 7: In the garden",
+        "type": "quiz",
+        "quizQuestions": [
+          {
+            "id": "l1_u7_q1",
+            "question": "What is this? It's a _____.",
+            "options": [
+              "A. garden",
+              "B. gate",
+              "C. girl",
+              "D. few"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng cốt lõi Unit 7: garden"
+          },
+          {
+            "id": "l1_u7_q2",
+            "question": "Look and choose: ______",
+            "options": [
+              "A. gate",
+              "B. garden",
+              "C. pen",
+              "D. ruler"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng mở rộng Unit 7: gate"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-8",
+    "title": "Unit 8",
+    "lessons": [
+      {
+        "id": "l1_u8_speak",
+        "title": "Speaking - Unit 8",
+        "type": "speaking",
+        "expectedText": "Hello. I have a hand and a command."
+      },
+      {
+        "id": "l1_u8_quiz",
+        "title": "Quiz - Unit 8",
+        "type": "quiz",
+        "quizQuestions": [
+          {
+            "id": "l1_u8_q1",
+            "question": "What is this? It's a _____.",
+            "options": [
+              "A. hand",
+              "B. command",
+              "C. girl",
+              "D. few"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng cốt lõi Unit 8: hand"
+          },
+          {
+            "id": "l1_u8_q2",
+            "question": "Look and choose: ______",
+            "options": [
+              "A. command",
+              "B. hand",
+              "C. pen",
+              "D. ruler"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng mở rộng Unit 8: command"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-9",
+    "title": "Unit 9: In the shop",
+    "lessons": [
+      {
+        "id": "l1_u9_speak",
+        "title": "Speaking - Unit 9: In the shop",
+        "type": "speaking",
+        "expectedText": "Hello. I have a few and a group."
+      },
+      {
+        "id": "l1_u9_quiz",
+        "title": "Quiz - Unit 9: In the shop",
+        "type": "quiz",
+        "quizQuestions": [
+          {
+            "id": "l1_u9_q1",
+            "question": "What is this? It's a _____.",
+            "options": [
+              "A. few",
+              "B. group",
+              "C. better",
+              "D. model"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng cốt lõi Unit 9: few"
+          },
+          {
+            "id": "l1_u9_q2",
+            "question": "Look and choose: ______",
+            "options": [
+              "A. group",
+              "B. few",
+              "C. pen",
+              "D. ruler"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng mở rộng Unit 9: group"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-10",
+    "title": "Unit 10: At the zoo",
+    "lessons": [
+      {
+        "id": "l1_u10_speak",
+        "title": "Speaking - Unit 10: At the zoo",
+        "type": "speaking",
+        "expectedText": "Hello. I have a monkey and a mouse."
+      },
+      {
+        "id": "l1_u10_quiz",
+        "title": "Quiz - Unit 10: At the zoo",
+        "type": "quiz",
+        "quizQuestions": [
+          {
+            "id": "l1_u10_q1",
+            "question": "What is this? It's a _____.",
+            "options": [
+              "A. monkey",
+              "B. mouse",
+              "C. few",
+              "D. model"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng cốt lõi Unit 10: monkey"
+          },
+          {
+            "id": "l1_u10_q2",
+            "question": "Look and choose: ______",
+            "options": [
+              "A. mouse",
+              "B. monkey",
+              "C. pen",
+              "D. ruler"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng mở rộng Unit 10: mouse"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-11",
+    "title": "Unit 11: At the bus stop",
+    "lessons": [
+      {
+        "id": "l1_u11_speak",
+        "title": "Speaking - Unit 11: At the bus stop",
+        "type": "speaking",
+        "expectedText": "Hello. I have a few and a bus."
+      },
+      {
+        "id": "l1_u11_quiz",
+        "title": "Quiz - Unit 11: At the bus stop",
+        "type": "quiz",
+        "quizQuestions": [
+          {
+            "id": "l1_u11_q1",
+            "question": "What is this? It's a _____.",
+            "options": [
+              "A. few",
+              "B. bus",
+              "C. better",
+              "D. group"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng cốt lõi Unit 11: few"
+          },
+          {
+            "id": "l1_u11_q2",
+            "question": "Look and choose: ______",
+            "options": [
+              "A. bus",
+              "B. few",
+              "C. pen",
+              "D. ruler"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng mở rộng Unit 11: bus"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-12",
+    "title": "Unit 12: At the lake",
+    "lessons": [
+      {
+        "id": "l1_u12_speak",
+        "title": "Speaking - Unit 12: At the lake",
+        "type": "speaking",
+        "expectedText": "Hello. I have a few and a and."
+      },
+      {
+        "id": "l1_u12_quiz",
+        "title": "Quiz - Unit 12: At the lake",
+        "type": "quiz",
+        "quizQuestions": [
+          {
+            "id": "l1_u12_q1",
+            "question": "What is this? It's a _____.",
+            "options": [
+              "A. few",
+              "B. and",
+              "C. group",
+              "D. command"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng cốt lõi Unit 12: few"
+          },
+          {
+            "id": "l1_u12_q2",
+            "question": "Look and choose: ______",
+            "options": [
+              "A. and",
+              "B. few",
+              "C. pen",
+              "D. ruler"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng mở rộng Unit 12: and"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-13",
+    "title": "Unit 13: In the school canteen",
+    "lessons": [
+      {
+        "id": "l1_u13_speak",
+        "title": "Speaking - Unit 13: In the school canteen",
+        "type": "speaking",
+        "expectedText": "Hello. I have a few and a better."
+      },
+      {
+        "id": "l1_u13_quiz",
+        "title": "Quiz - Unit 13: In the school canteen",
+        "type": "quiz",
+        "quizQuestions": [
+          {
+            "id": "l1_u13_q1",
+            "question": "What is this? It's a _____.",
+            "options": [
+              "A. few",
+              "B. better",
+              "C. and",
+              "D. set"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng cốt lõi Unit 13: few"
+          },
+          {
+            "id": "l1_u13_q2",
+            "question": "Look and choose: ______",
+            "options": [
+              "A. better",
+              "B. few",
+              "C. pen",
+              "D. ruler"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng mở rộng Unit 13: better"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-14",
+    "title": "Unit 14",
+    "lessons": [
+      {
+        "id": "l1_u14_speak",
+        "title": "Speaking - Unit 14",
+        "type": "speaking",
+        "expectedText": "Hello. I have a tiger and a teddy."
+      },
+      {
+        "id": "l1_u14_quiz",
+        "title": "Quiz - Unit 14",
+        "type": "quiz",
+        "quizQuestions": [
+          {
+            "id": "l1_u14_q1",
+            "question": "What is this? It's a _____.",
+            "options": [
+              "A. tiger",
+              "B. teddy",
+              "C. top",
+              "D. and"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng cốt lõi Unit 14: tiger"
+          },
+          {
+            "id": "l1_u14_q2",
+            "question": "Look and choose: ______",
+            "options": [
+              "A. teddy",
+              "B. tiger",
+              "C. pen",
+              "D. ruler"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng mở rộng Unit 14: teddy"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-15",
+    "title": "Unit 15",
+    "lessons": [
+      {
+        "id": "l1_u15_speak",
+        "title": "Speaking - Unit 15",
+        "type": "speaking",
+        "expectedText": "Hello. I have a foot and a face."
+      },
+      {
+        "id": "l1_u15_quiz",
+        "title": "Quiz - Unit 15",
+        "type": "quiz",
+        "quizQuestions": [
+          {
+            "id": "l1_u15_q1",
+            "question": "What is this? It's a _____.",
+            "options": [
+              "A. foot",
+              "B. face",
+              "C. command",
+              "D. few"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng cốt lõi Unit 15: foot"
+          },
+          {
+            "id": "l1_u15_q2",
+            "question": "Look and choose: ______",
+            "options": [
+              "A. face",
+              "B. foot",
+              "C. pen",
+              "D. ruler"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng mở rộng Unit 15: face"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unit-16",
+    "title": "Unit 16",
+    "lessons": [
+      {
+        "id": "l1_u16_speak",
+        "title": "Speaking - Unit 16",
+        "type": "speaking",
+        "expectedText": "Hello. I have a few and a word."
+      },
+      {
+        "id": "l1_u16_quiz",
+        "title": "Quiz - Unit 16",
+        "type": "quiz",
+        "quizQuestions": [
+          {
+            "id": "l1_u16_q1",
+            "question": "What is this? It's a _____.",
+            "options": [
+              "A. few",
+              "B. word",
+              "C. window",
+              "D. example"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng cốt lõi Unit 16: few"
+          },
+          {
+            "id": "l1_u16_q2",
+            "question": "Look and choose: ______",
+            "options": [
+              "A. word",
+              "B. few",
+              "C. pen",
+              "D. ruler"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Từ vựng mở rộng Unit 16: word"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -199,6 +199,34 @@ export default function AdminCurriculum() {
     }, 1200);
   };
 
+  const handleAutoSeedL1 = async () => {
+    if (!window.confirm("Bắt đầu tự động nạp 16 Units Lớp 1 từ file seed (ghi đè dữ liệu cũ)?")) return;
+    try {
+      setIsIngesting(true);
+      const res = await fetch("/seeds/grade1.json");
+      if (!res.ok) throw new Error("Không tìm thấy file seed");
+      const gradeData = await res.json();
+      
+      localStorage.setItem("gsa-curriculum-l1", JSON.stringify(gradeData));
+      
+      setSyncedGrades(prev => Array.from(new Set([...prev, 1])));
+      setCurriculumData(prev => ({
+        ...prev,
+        l1: gradeData
+      }));
+      
+      setToastMessage("Đã Auto-Seed toàn bộ 16 Units Lớp 1!");
+      setToastType("success");
+    } catch (e: any) {
+      setToastMessage("Lỗi Auto-Seed: " + e.message);
+      setToastType("error");
+    } finally {
+      setIsIngesting(false);
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 4000);
+    }
+  };
+
   return (
     <div className="min-h-full p-6 space-y-6 select-none bg-[#090D16]">
       {/* Toast Notification */}
@@ -240,9 +268,19 @@ export default function AdminCurriculum() {
         <div className="rounded-3xl bg-[#111827] border border-slate-800 p-6 flex flex-col space-y-6 relative overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-[60px] pointer-events-none" />
           
-          <div className="flex items-center gap-2 text-slate-300 border-b border-slate-800/60 pb-3">
-            <BookOpen className="w-5 h-5 text-emerald-400 fill-emerald-400/20" />
-            <h2 className="text-sm font-black uppercase tracking-wider">Cấu Trúc Kho Bài Giảng K-12</h2>
+          <div className="flex items-center justify-between border-b border-slate-800/60 pb-3">
+            <div className="flex items-center gap-2 text-slate-300">
+              <BookOpen className="w-5 h-5 text-emerald-400 fill-emerald-400/20" />
+              <h2 className="text-sm font-black uppercase tracking-wider">Cấu Trúc Kho Bài Giảng K-12</h2>
+            </div>
+            <button
+              onClick={handleAutoSeedL1}
+              disabled={isIngesting}
+              className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/20 px-3 py-1.5 rounded-lg hover:bg-fuchsia-500/20 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
+            >
+              <Rocket className="w-3.5 h-3.5" />
+              Auto-Seed Lớp 1
+            </button>
           </div>
 
           <div className="flex-1 overflow-y-auto custom-scrollbar pr-2 space-y-2 max-h-[500px]">
