@@ -9,7 +9,15 @@
         "id": "l1_u1_visual",
         "title": "Mindmap - Unit 1: In the school playground",
         "type": "visual",
-        "imageUrl": "/images/mindmaps/l1/u1_real_visual.png"
+        "imageUrl": "/images/mindmaps/l1/u1_real_visual.png",
+        "audioTracks": [
+          "/audio/l1/u1/Track_002.mp3",
+          "/audio/l1/u1/Track_003.mp3",
+          "/audio/l1/u1/Track_004.mp3",
+          "/audio/l1/u1/Track_005.mp3",
+          "/audio/l1/u1/Track_006.mp3"
+        ],
+        "mainAudio": "/audio/l1/u1/Track_002.mp3"
       },
       {
         "id": "l1_u1_speak_0",
@@ -290,7 +298,15 @@
         "id": "l1_u2_visual",
         "title": "Mindmap - Unit 2: In the dining room",
         "type": "visual",
-        "imageUrl": "/images/mindmaps/l1/u2_real_visual.png"
+        "imageUrl": "/images/mindmaps/l1/u2_real_visual.png",
+        "audioTracks": [
+          "/audio/l1/u2/Track_007.mp3",
+          "/audio/l1/u2/Track_008.mp3",
+          "/audio/l1/u2/Track_009.mp3",
+          "/audio/l1/u2/Track_010.mp3",
+          "/audio/l1/u2/Track_011.mp3"
+        ],
+        "mainAudio": "/audio/l1/u2/Track_007.mp3"
       },
       {
         "id": "l1_u2_speak_0",
@@ -571,7 +587,15 @@
         "id": "l1_u3_visual",
         "title": "Mindmap - Unit 3",
         "type": "visual",
-        "imageUrl": "/images/mindmaps/l1/u3_real_visual.png"
+        "imageUrl": "/images/mindmaps/l1/u3_real_visual.png",
+        "audioTracks": [
+          "/audio/l1/u3/Track_012.mp3",
+          "/audio/l1/u3/Track_013.mp3",
+          "/audio/l1/u3/Track_014.mp3",
+          "/audio/l1/u3/Track_015.mp3",
+          "/audio/l1/u3/Track_016.mp3"
+        ],
+        "mainAudio": "/audio/l1/u3/Track_012.mp3"
       },
       {
         "id": "l1_u3_speak_0",
@@ -852,7 +876,15 @@
         "id": "l1_u4_visual",
         "title": "Mindmap - Unit 4: In the bedroom",
         "type": "visual",
-        "imageUrl": "/images/mindmaps/l1/u4_real_visual.png"
+        "imageUrl": "/images/mindmaps/l1/u4_real_visual.png",
+        "audioTracks": [
+          "/audio/l1/u4/Track_017.mp3",
+          "/audio/l1/u4/Track_018.mp3",
+          "/audio/l1/u4/Track_019.mp3",
+          "/audio/l1/u4/Track_020.mp3",
+          "/audio/l1/u4/Track_021.mp3"
+        ],
+        "mainAudio": "/audio/l1/u4/Track_017.mp3"
       },
       {
         "id": "l1_u4_speak_0",
@@ -1133,7 +1165,15 @@
         "id": "l1_u5_visual",
         "title": "Mindmap - Unit 5",
         "type": "visual",
-        "imageUrl": "/images/mindmaps/l1/u5_real_visual.png"
+        "imageUrl": "/images/mindmaps/l1/u5_real_visual.png",
+        "audioTracks": [
+          "/audio/l1/u5/Track_026.mp3",
+          "/audio/l1/u5/Track_027.mp3",
+          "/audio/l1/u5/Track_028.mp3",
+          "/audio/l1/u5/Track_029.mp3",
+          "/audio/l1/u5/Track_030.mp3"
+        ],
+        "mainAudio": "/audio/l1/u5/Track_026.mp3"
       },
       {
         "id": "l1_u5_speak_0",
@@ -1414,7 +1454,15 @@
         "id": "l1_u6_visual",
         "title": "Mindmap - Unit 6: In the classroom",
         "type": "visual",
-        "imageUrl": "/images/mindmaps/l1/u6_real_visual.png"
+        "imageUrl": "/images/mindmaps/l1/u6_real_visual.png",
+        "audioTracks": [
+          "/audio/l1/u6/Track_031.mp3",
+          "/audio/l1/u6/Track_032.mp3",
+          "/audio/l1/u6/Track_033.mp3",
+          "/audio/l1/u6/Track_034.mp3",
+          "/audio/l1/u6/Track_035.mp3"
+        ],
+        "mainAudio": "/audio/l1/u6/Track_031.mp3"
       },
       {
         "id": "l1_u6_speak_0",
@@ -1695,7 +1743,15 @@
         "id": "l1_u7_visual",
         "title": "Mindmap - Unit 7: In the garden",
         "type": "visual",
-        "imageUrl": "/images/mindmaps/l1/u7_real_visual.png"
+        "imageUrl": "/images/mindmaps/l1/u7_real_visual.png",
+        "audioTracks": [
+          "/audio/l1/u7/Track_036.mp3",
+          "/audio/l1/u7/Track_037.mp3",
+          "/audio/l1/u7/Track_038.mp3",
+          "/audio/l1/u7/Track_039.mp3",
+          "/audio/l1/u7/Track_040.mp3"
+        ],
+        "mainAudio": "/audio/l1/u7/Track_036.mp3"
       },
       {
         "id": "l1_u7_speak_0",
@@ -1976,7 +2032,15 @@
         "id": "l1_u8_visual",
         "title": "Mindmap - Unit 8",
         "type": "visual",
-        "imageUrl": "/images/mindmaps/l1/u8_real_visual.png"
+        "imageUrl": "/images/mindmaps/l1/u8_real_visual.png",
+        "audioTracks": [
+          "/audio/l1/u8/Track_041.mp3",
+          "/audio/l1/u8/Track_042.mp3",
+          "/audio/l1/u8/Track_043.mp3",
+          "/audio/l1/u8/Track_044.mp3",
+          "/audio/l1/u8/Track_045.mp3"
+        ],
+        "mainAudio": "/audio/l1/u8/Track_041.mp3"
       },
       {
         "id": "l1_u8_speak_0",
@@ -2257,7 +2321,15 @@
         "id": "l1_u9_visual",
         "title": "Mindmap - Unit 9: In the shop",
         "type": "visual",
-        "imageUrl": "/images/mindmaps/l1/u9_real_visual.png"
+        "imageUrl": "/images/mindmaps/l1/u9_real_visual.png",
+        "audioTracks": [
+          "/audio/l1/u9/Track_050.mp3",
+          "/audio/l1/u9/Track_051.mp3",
+          "/audio/l1/u9/Track_052.mp3",
+          "/audio/l1/u9/Track_053.mp3",
+          "/audio/l1/u9/Track_054.mp3"
+        ],
+        "mainAudio": "/audio/l1/u9/Track_050.mp3"
       },
       {
         "id": "l1_u9_speak_0",
@@ -2538,7 +2610,15 @@
         "id": "l1_u10_visual",
         "title": "Mindmap - Unit 10: At the zoo",
         "type": "visual",
-        "imageUrl": "/images/mindmaps/l1/u10_real_visual.png"
+        "imageUrl": "/images/mindmaps/l1/u10_real_visual.png",
+        "audioTracks": [
+          "/audio/l1/u10/Track_055.mp3",
+          "/audio/l1/u10/Track_056.mp3",
+          "/audio/l1/u10/Track_057.mp3",
+          "/audio/l1/u10/Track_058.mp3",
+          "/audio/l1/u10/Track_059.mp3"
+        ],
+        "mainAudio": "/audio/l1/u10/Track_055.mp3"
       },
       {
         "id": "l1_u10_speak_0",
@@ -2819,7 +2899,15 @@
         "id": "l1_u11_visual",
         "title": "Mindmap - Unit 11: At the bus stop",
         "type": "visual",
-        "imageUrl": "/images/mindmaps/l1/u11_real_visual.png"
+        "imageUrl": "/images/mindmaps/l1/u11_real_visual.png",
+        "audioTracks": [
+          "/audio/l1/u11/Track_060.mp3",
+          "/audio/l1/u11/Track_061.mp3",
+          "/audio/l1/u11/Track_062.mp3",
+          "/audio/l1/u11/Track_063.mp3",
+          "/audio/l1/u11/Track_064.mp3"
+        ],
+        "mainAudio": "/audio/l1/u11/Track_060.mp3"
       },
       {
         "id": "l1_u11_speak_0",
@@ -3100,7 +3188,15 @@
         "id": "l1_u12_visual",
         "title": "Mindmap - Unit 12: At the lake",
         "type": "visual",
-        "imageUrl": "/images/mindmaps/l1/u12_real_visual.png"
+        "imageUrl": "/images/mindmaps/l1/u12_real_visual.png",
+        "audioTracks": [
+          "/audio/l1/u12/Track_065.mp3",
+          "/audio/l1/u12/Track_066.mp3",
+          "/audio/l1/u12/Track_067.mp3",
+          "/audio/l1/u12/Track_068.mp3",
+          "/audio/l1/u12/Track_069.mp3"
+        ],
+        "mainAudio": "/audio/l1/u12/Track_065.mp3"
       },
       {
         "id": "l1_u12_speak_0",
@@ -3381,7 +3477,15 @@
         "id": "l1_u13_visual",
         "title": "Mindmap - Unit 13: In the school canteen",
         "type": "visual",
-        "imageUrl": "/images/mindmaps/l1/u13_real_visual.png"
+        "imageUrl": "/images/mindmaps/l1/u13_real_visual.png",
+        "audioTracks": [
+          "/audio/l1/u13/Track_074.mp3",
+          "/audio/l1/u13/Track_075.mp3",
+          "/audio/l1/u13/Track_076.mp3",
+          "/audio/l1/u13/Track_077.mp3",
+          "/audio/l1/u13/Track_078.mp3"
+        ],
+        "mainAudio": "/audio/l1/u13/Track_074.mp3"
       },
       {
         "id": "l1_u13_speak_0",
@@ -3662,7 +3766,15 @@
         "id": "l1_u14_visual",
         "title": "Mindmap - Unit 14",
         "type": "visual",
-        "imageUrl": "/images/mindmaps/l1/u14_real_visual.png"
+        "imageUrl": "/images/mindmaps/l1/u14_real_visual.png",
+        "audioTracks": [
+          "/audio/l1/u14/Track_079.mp3",
+          "/audio/l1/u14/Track_080.mp3",
+          "/audio/l1/u14/Track_081.mp3",
+          "/audio/l1/u14/Track_082.mp3",
+          "/audio/l1/u14/Track_083.mp3"
+        ],
+        "mainAudio": "/audio/l1/u14/Track_079.mp3"
       },
       {
         "id": "l1_u14_speak_0",
@@ -3943,7 +4055,15 @@
         "id": "l1_u15_visual",
         "title": "Mindmap - Unit 15",
         "type": "visual",
-        "imageUrl": "/images/mindmaps/l1/u15_real_visual.png"
+        "imageUrl": "/images/mindmaps/l1/u15_real_visual.png",
+        "audioTracks": [
+          "/audio/l1/u15/Track_084.mp3",
+          "/audio/l1/u15/Track_085.mp3",
+          "/audio/l1/u15/Track_086.mp3",
+          "/audio/l1/u15/Track_087.mp3",
+          "/audio/l1/u15/Track_088.mp3"
+        ],
+        "mainAudio": "/audio/l1/u15/Track_084.mp3"
       },
       {
         "id": "l1_u15_speak_0",
@@ -4224,7 +4344,15 @@
         "id": "l1_u16_visual",
         "title": "Mindmap - Unit 16",
         "type": "visual",
-        "imageUrl": "/images/mindmaps/l1/u16_real_visual.png"
+        "imageUrl": "/images/mindmaps/l1/u16_real_visual.png",
+        "audioTracks": [
+          "/audio/l1/u16/Track_089.mp3",
+          "/audio/l1/u16/Track_090.mp3",
+          "/audio/l1/u16/Track_091.mp3",
+          "/audio/l1/u16/Track_092.mp3",
+          "/audio/l1/u16/Track_093.mp3"
+        ],
+        "mainAudio": "/audio/l1/u16/Track_089.mp3"
       },
       {
         "id": "l1_u16_speak_0",
@@ -4488,6 +4616,140 @@
               "B. It a pink. is",
               "C. pink. a is It",
               "D. It pink. is a"
+            ],
+            "correctAnswer": "A"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l1-exam-final",
+    "number": 17,
+    "title": "ĐỀ THI HỌC KỲ 2 (2020-2021)",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 1",
+    "lessons": [
+      {
+        "id": "l1-exam-final-test",
+        "title": "The Final Term Test - Đề số 1",
+        "type": "exam",
+        "completed": false,
+        "examDuration": 35,
+        "examAudio": "/audio/l1/exam/test1.mp3",
+        "examQuestions": [
+          {
+            "id": "e1-l1",
+            "section": "Listening",
+            "text": "Listen and choose: A. Truck / B. Teddy bear",
+            "options": [
+              "A. Truck",
+              "B. Teddy bear"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "id": "e1-l2",
+            "section": "Listening",
+            "text": "Listen and choose the letter",
+            "options": [
+              "A. w",
+              "B. o",
+              "C. u",
+              "D. v"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "id": "e1-l3",
+            "section": "Listening",
+            "text": "Listen and match: What is it?",
+            "options": [
+              "A. Tiger",
+              "B. Noodles",
+              "C. Monkey",
+              "D. Bear"
+            ],
+            "correctAnswer": "B"
+          },
+          {
+            "id": "e1-l4",
+            "section": "Listening",
+            "text": "Listen and tick (True) or cross (False): The lake is big.",
+            "options": [
+              "A. True",
+              "B. False"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "id": "e1-r1",
+            "section": "Reading",
+            "text": "Read and match: It's a monkey.",
+            "options": [
+              "A. Image of Monkey",
+              "B. Image of Foot",
+              "C. Image of Hand"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "id": "e1-r2",
+            "section": "Reading",
+            "text": "Read and circle: I like bananas.",
+            "options": [
+              "A. Bananas",
+              "B. Apples",
+              "C. Nick",
+              "D. Jack"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "id": "e1-r3",
+            "section": "Reading",
+            "text": "Read and match: Point to your foot.",
+            "options": [
+              "A. Pointing foot",
+              "B. Pointing hand",
+              "C. It's a mouse"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "id": "e1-w1",
+            "section": "Writing",
+            "text": "Look and write the missing letter: f_otball",
+            "options": [
+              "A. o",
+              "B. a",
+              "C. i",
+              "D. e"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "id": "e1-w2",
+            "section": "Writing",
+            "text": "Reorder the letters: w - i - d - o - n - w",
+            "options": [
+              "A. window",
+              "B. widnow",
+              "C. downiw",
+              "D. winwod"
+            ],
+            "correctAnswer": "A"
+          },
+          {
+            "id": "e1-w3",
+            "section": "Writing",
+            "text": "Reorder the letters: r - a - f - e - t - h",
+            "options": [
+              "A. father",
+              "B. faterh",
+              "C. ftaher",
+              "D. rafter"
             ],
             "correctAnswer": "A"
           }

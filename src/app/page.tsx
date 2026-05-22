@@ -32,6 +32,7 @@ import { evaluateSpeaking, saveLessonProgress, SpeakingEvaluationResult } from "
 import DictationRoom from "@/components/DictationRoom";
 import QuizRoom from "@/components/QuizRoom";
 import VisualRoom from "@/components/VisualRoom";
+import ExamRoom from "@/components/ExamRoom";
 import CelebrationArena from "@/components/CelebrationArena";
 import PaywallModal from "@/components/PaywallModal";
 
@@ -44,11 +45,16 @@ interface QuizQuestion {
 interface Lesson {
   id: string;
   title: string;
-  type: "vocabulary" | "speaking" | "grammar" | "reading" | "dictation" | "quiz" | "visual";
+  type: "vocabulary" | "speaking" | "grammar" | "reading" | "dictation" | "quiz" | "visual" | "exam";
   completed: boolean;
   expectedText?: string;
   quizQuestions?: QuizQuestion[];
   imageUrl?: string;
+  mainAudio?: string;
+  audioTracks?: string[];
+  examQuestions?: any[];
+  examDuration?: number;
+  examAudio?: string;
 }
 
 interface UnitData {
@@ -296,8 +302,8 @@ export default function Dashboard() {
   const [units, setUnits] = useState<UnitData[]>([]);
   const [selectedUnit, setSelectedUnit] = useState<UnitData | null>(null);
   
-  // Điều hướng các phòng học: "dashboard" | "speaking" | "dictation" | "quiz" | "visual"
-  const [activeRoom, setActiveRoom] = useState<"dashboard" | "speaking" | "dictation" | "quiz" | "visual">("dashboard");
+  // Điều hướng các phòng học: "dashboard" | "speaking" | "dictation" | "quiz" | "visual" | "exam"
+  const [activeRoom, setActiveRoom] = useState<"dashboard" | "speaking" | "dictation" | "quiz" | "visual" | "exam">("dashboard");
   const [activeLesson, setActiveLesson] = useState<Lesson | null>(null);
 
   // Session: danh sách bài cùng loại để học liên tiếp
@@ -784,6 +790,8 @@ export default function Dashboard() {
       setActiveRoom("quiz");
     } else if (lesson.type === "visual") {
       setActiveRoom("visual");
+    } else if (lesson.type === "exam") {
+      setActiveRoom("exam");
     }
   };
 
@@ -870,6 +878,22 @@ export default function Dashboard() {
           lessonId={activeLesson.id}
           title={activeLesson.title}
           imageUrl={activeLesson.imageUrl || ""}
+          mainAudio={activeLesson.mainAudio}
+          audioTracks={activeLesson.audioTracks}
+          onBack={() => setActiveRoom("dashboard")}
+          onComplete={(score) => handleLessonCompletion(activeLesson.id, score)}
+        />
+      )}
+
+      {/* ========================================================
+          RENDER PHÒNG THI (EXAM)
+          ======================================================== */}
+      {activeRoom === "exam" && activeLesson && (
+        <ExamRoom
+          examTitle={activeLesson.title}
+          durationMinutes={activeLesson.examDuration || 35}
+          audioUrl={activeLesson.examAudio}
+          questions={activeLesson.examQuestions || []}
           onBack={() => setActiveRoom("dashboard")}
           onComplete={(score) => handleLessonCompletion(activeLesson.id, score)}
         />

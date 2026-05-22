@@ -8,6 +8,8 @@ interface VisualRoomProps {
   lessonId: string;
   title: string;
   imageUrl: string;
+  mainAudio?: string;
+  audioTracks?: string[];
   onBack: () => void;
   onComplete: (score: number) => void;
 }
@@ -16,6 +18,8 @@ export default function VisualRoom({
   lessonId,
   title,
   imageUrl,
+  mainAudio,
+  audioTracks,
   onBack,
   onComplete,
 }: VisualRoomProps) {
@@ -52,11 +56,49 @@ export default function VisualRoom({
             </div>
           </div>
 
-          <div className="w-full flex items-center justify-center p-4 bg-[#0a0d14] rounded-2xl border border-slate-800">
+          <div className="w-full flex flex-col items-center justify-center p-4 bg-[#0a0d14] rounded-2xl border border-slate-800">
+            {/* Audio Player Section */}
+            {mainAudio && (
+              <div className="w-full mb-6 p-4 bg-slate-900/50 rounded-xl border border-slate-700/50 flex flex-col gap-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-indigo-500/20 flex items-center justify-center">
+                    <span className="text-indigo-400 text-xs font-bold">MP3</span>
+                  </div>
+                  <span className="text-sm font-semibold text-slate-300">File Nghe Gốc (Native Speaker)</span>
+                </div>
+                <audio controls className="w-full h-10 outline-none rounded-lg" key={mainAudio}>
+                  <source src={mainAudio} type="audio/mpeg" />
+                  Your browser does not support the audio element.
+                </audio>
+                
+                {/* Playlist (nếu có nhiều track) */}
+                {audioTracks && audioTracks.length > 1 && (
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    <span className="text-xs text-slate-500 mr-2 flex items-center">Các Track khác:</span>
+                    {audioTracks.map((track, idx) => (
+                      <button 
+                        key={idx}
+                        onClick={() => {
+                          const audioEl = document.querySelector('audio');
+                          if (audioEl) {
+                            audioEl.src = track;
+                            audioEl.play().catch(e => console.log("Auto-play prevented", e));
+                          }
+                        }}
+                        className="px-3 py-1 bg-slate-800 hover:bg-slate-700 rounded-md text-xs font-medium text-slate-300 transition-colors border border-slate-700 hover:border-slate-500"
+                      >
+                        Track {idx + 1}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
             <img
               src={imageUrl}
               alt={title}
-              className="max-w-full max-h-[60vh] object-contain rounded-xl"
+              className="max-w-full max-h-[50vh] object-contain rounded-xl"
             />
           </div>
 
