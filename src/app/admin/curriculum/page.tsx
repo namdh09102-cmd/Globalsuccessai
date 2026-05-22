@@ -104,7 +104,9 @@ export default function AdminCurriculum() {
           lessonDataToMerge = { expectedText: ingestData.trim() };
         } else {
           // Validate JSON cho Speaking, Quiz
-          const parsed = JSON.parse(ingestData);
+          // AI thường sinh rác (ví dụ: dấu xuống dòng thực tế nằm lọt thỏm trong dấu nháy kép) làm vỡ JSON.parse
+          const cleanedData = ingestData.replace(/\n/g, " ").replace(/\r/g, "");
+          const parsed = JSON.parse(cleanedData);
           
           if (ingestType === "quiz") {
             let questions = Array.isArray(parsed) ? parsed : (parsed.quizQuestions ? parsed.quizQuestions : [parsed]);
