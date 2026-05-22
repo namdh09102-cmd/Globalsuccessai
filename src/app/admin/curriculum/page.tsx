@@ -12,7 +12,14 @@ import {
 } from "lucide-react";
 
 export default function AdminCurriculum() {
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
   const [toastType, setToastType] = useState<"success" | "error">("success");
+  const [ingestGrade, setIngestGrade] = useState("6");
+  const [ingestType, setIngestType] = useState("speaking");
+  const [ingestData, setIngestData] = useState("");
+  const [isIngesting, setIsIngesting] = useState(false);
+  const [syncedGrades, setSyncedGrades] = useState<number[]>([]);
 
   // Kiểm tra trạng thái nạp dữ liệu ban đầu
   React.useEffect(() => {
