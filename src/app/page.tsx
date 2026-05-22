@@ -1374,7 +1374,7 @@ export default function Dashboard() {
                     Các phòng học offline
                   </span>
                   
-                  <div className="space-y-2.5">
+                  <div className="space-y-2.5 max-h-[500px] overflow-y-auto pr-2 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-slate-700/50 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-slate-600">
                     {selectedUnit.lessons.map((lesson) => {
                       const LessonIcon = getLessonIcon(lesson.type);
                       const colorStyles = getLessonColor(lesson.type);
