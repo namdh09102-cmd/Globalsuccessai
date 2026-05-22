@@ -86,7 +86,9 @@ async function processAllFiles() {
 
     gradeData.push({
       id: `unit-${i}`,
+      number: i,
       title: topic,
+      grade: "Lớp 1",
       lessons: [
         {
           id: `l1_u${i}_speak`,

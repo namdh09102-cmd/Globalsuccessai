@@ -1,7 +1,9 @@
 [
   {
     "id": "unit-1",
+    "number": 1,
     "title": "Unit 1: In the school playground",
+    "grade": "Lớp 1",
     "lessons": [
       {
         "id": "l1_u1_speak",
@@ -44,7 +46,9 @@
   },
   {
     "id": "unit-2",
+    "number": 2,
     "title": "Unit 2: In the dining room",
+    "grade": "Lớp 1",
     "lessons": [
       {
         "id": "l1_u2_speak",
@@ -87,7 +91,9 @@
   },
   {
     "id": "unit-3",
+    "number": 3,
     "title": "Unit 3",
+    "grade": "Lớp 1",
     "lessons": [
       {
         "id": "l1_u3_speak",
@@ -130,7 +136,9 @@
   },
   {
     "id": "unit-4",
+    "number": 4,
     "title": "Unit 4: In the bedroom",
+    "grade": "Lớp 1",
     "lessons": [
       {
         "id": "l1_u4_speak",
@@ -173,7 +181,9 @@
   },
   {
     "id": "unit-5",
+    "number": 5,
     "title": "Unit 5",
+    "grade": "Lớp 1",
     "lessons": [
       {
         "id": "l1_u5_speak",
@@ -216,7 +226,9 @@
   },
   {
     "id": "unit-6",
+    "number": 6,
     "title": "Unit 6: In the classroom",
+    "grade": "Lớp 1",
     "lessons": [
       {
         "id": "l1_u6_speak",
@@ -259,7 +271,9 @@
   },
   {
     "id": "unit-7",
+    "number": 7,
     "title": "Unit 7: In the garden",
+    "grade": "Lớp 1",
     "lessons": [
       {
         "id": "l1_u7_speak",
@@ -302,7 +316,9 @@
   },
   {
     "id": "unit-8",
+    "number": 8,
     "title": "Unit 8",
+    "grade": "Lớp 1",
     "lessons": [
       {
         "id": "l1_u8_speak",
@@ -345,7 +361,9 @@
   },
   {
     "id": "unit-9",
+    "number": 9,
     "title": "Unit 9: In the shop",
+    "grade": "Lớp 1",
     "lessons": [
       {
         "id": "l1_u9_speak",
@@ -388,7 +406,9 @@
   },
   {
     "id": "unit-10",
+    "number": 10,
     "title": "Unit 10: At the zoo",
+    "grade": "Lớp 1",
     "lessons": [
       {
         "id": "l1_u10_speak",
@@ -431,7 +451,9 @@
   },
   {
     "id": "unit-11",
+    "number": 11,
     "title": "Unit 11: At the bus stop",
+    "grade": "Lớp 1",
     "lessons": [
       {
         "id": "l1_u11_speak",
@@ -474,7 +496,9 @@
   },
   {
     "id": "unit-12",
+    "number": 12,
     "title": "Unit 12: At the lake",
+    "grade": "Lớp 1",
     "lessons": [
       {
         "id": "l1_u12_speak",
@@ -517,7 +541,9 @@
   },
   {
     "id": "unit-13",
+    "number": 13,
     "title": "Unit 13: In the school canteen",
+    "grade": "Lớp 1",
     "lessons": [
       {
         "id": "l1_u13_speak",
@@ -560,7 +586,9 @@
   },
   {
     "id": "unit-14",
+    "number": 14,
     "title": "Unit 14",
+    "grade": "Lớp 1",
     "lessons": [
       {
         "id": "l1_u14_speak",
@@ -603,7 +631,9 @@
   },
   {
     "id": "unit-15",
+    "number": 15,
     "title": "Unit 15",
+    "grade": "Lớp 1",
     "lessons": [
       {
         "id": "l1_u15_speak",
@@ -646,7 +676,9 @@
   },
   {
     "id": "unit-16",
+    "number": 16,
     "title": "Unit 16",
+    "grade": "Lớp 1",
     "lessons": [
       {
         "id": "l1_u16_speak",
