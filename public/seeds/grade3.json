@@ -1,0 +1,1776 @@
+[
+  {
+    "id": "l3-u1",
+    "number": 1,
+    "title": "Unit 1",
+    "status": "in_progress",
+    "progress": 0,
+    "grade": "Lớp 3",
+    "lessons": [
+      {
+        "id": "l3-u1-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "How _____ you ?"
+      },
+      {
+        "id": "l3-u1-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "Bye, Quan."
+      },
+      {
+        "id": "l3-u1-quiz",
+        "title": "Multiple Choice Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "Put the words in the correct order: How / _____ /  / you",
+            "options": [
+              "How _____ you ?",
+              "is _____ you ?",
+              "how _____ you ?"
+            ],
+            "correctAnswer": "How _____ you ?"
+          },
+          {
+            "question": "Put the words in the correct order: Quan / Bye,",
+            "options": [
+              "Bye, Quan.",
+              "is Quan.",
+              "bye, quan."
+            ],
+            "correctAnswer": "Bye, Quan."
+          },
+          {
+            "question": "Put the words in the correct order: Bye / Nam / ,",
+            "options": [
+              "Bye , Nam.",
+              "is , Nam.",
+              "bye , nam."
+            ],
+            "correctAnswer": "Bye , Nam."
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "exercise",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "how",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "how"
+          },
+          {
+            "question": "Complete the word: e_ercise",
+            "options": [
+              "exercise",
+              "exercis",
+              "exercises"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Complete the word: w_ite",
+            "options": [
+              "write",
+              "writ",
+              "writes"
+            ],
+            "correctAnswer": "write"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l3-u2",
+    "number": 2,
+    "title": "Unit 2",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 3",
+    "lessons": [
+      {
+        "id": "l3-u2-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Lisa :What’s your name ?"
+      },
+      {
+        "id": "l3-u2-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "Mimi : My name is Mimi."
+      },
+      {
+        "id": "l3-u2-quiz",
+        "title": "Multiple Choice Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "Put the words in the correct order: :What’s / your / name /  / Lisa",
+            "options": [
+              "Lisa :What’s your name ?",
+              "is :What’s your name ?",
+              "lisa :what’s your name ?"
+            ],
+            "correctAnswer": "Lisa :What’s your name ?"
+          },
+          {
+            "question": "Put the words in the correct order: name / is / : / Mimi / My / Mimi",
+            "options": [
+              "Mimi : My name is Mimi.",
+              "is : My name is Mimi.",
+              "mimi : my name is mimi."
+            ],
+            "correctAnswer": "Mimi : My name is Mimi."
+          },
+          {
+            "question": "Put the words in the correct order: Ben / name /  / :What’s / your",
+            "options": [
+              "Ben :What’s your name ?",
+              "is :What’s your name ?",
+              "ben :what’s your name ?"
+            ],
+            "correctAnswer": "Ben :What’s your name ?"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "exercise",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "dialogue",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "dialogue"
+          },
+          {
+            "question": "Complete the word: e_ercise",
+            "options": [
+              "exercise",
+              "exercis",
+              "exercises"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Complete the word: l_ok",
+            "options": [
+              "look",
+              "loo",
+              "looks"
+            ],
+            "correctAnswer": "look"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l3-u3",
+    "number": 3,
+    "title": "Unit 3",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 3",
+    "lessons": [
+      {
+        "id": "l3-u3-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello."
+      },
+      {
+        "id": "l3-u3-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "How are you?"
+      },
+      {
+        "id": "l3-u3-quiz",
+        "title": "Multiple Choice Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "Put the words in the correct order: are / How / you",
+            "options": [
+              "How are you?",
+              "is are you?",
+              "how are you?"
+            ],
+            "correctAnswer": "How are you?"
+          },
+          {
+            "question": "Put the words in the correct order: am / I / fine",
+            "options": [
+              "I am fine.",
+              "is am fine.",
+              "i am fine."
+            ],
+            "correctAnswer": "I am fine."
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "hello",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "hello"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "what",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "what"
+          },
+          {
+            "question": "Complete the word: h_llo",
+            "options": [
+              "hello",
+              "hell",
+              "hellos"
+            ],
+            "correctAnswer": "hello"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l3-u4",
+    "number": 4,
+    "title": "Unit 4",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 3",
+    "lessons": [
+      {
+        "id": "l3-u4-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello."
+      },
+      {
+        "id": "l3-u4-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "How are you?"
+      },
+      {
+        "id": "l3-u4-quiz",
+        "title": "Multiple Choice Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "Put the words in the correct order: are / How / you",
+            "options": [
+              "How are you?",
+              "is are you?",
+              "how are you?"
+            ],
+            "correctAnswer": "How are you?"
+          },
+          {
+            "question": "Put the words in the correct order: fine / I / am",
+            "options": [
+              "I am fine.",
+              "is am fine.",
+              "i am fine."
+            ],
+            "correctAnswer": "I am fine."
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "hello",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "hello"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "what",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "what"
+          },
+          {
+            "question": "Complete the word: h_llo",
+            "options": [
+              "hello",
+              "hell",
+              "hellos"
+            ],
+            "correctAnswer": "hello"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l3-u5",
+    "number": 5,
+    "title": "Unit 5",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 3",
+    "lessons": [
+      {
+        "id": "l3-u5-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello."
+      },
+      {
+        "id": "l3-u5-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "How are you?"
+      },
+      {
+        "id": "l3-u5-quiz",
+        "title": "Multiple Choice Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "Put the words in the correct order: you / How / are",
+            "options": [
+              "How are you?",
+              "is are you?",
+              "how are you?"
+            ],
+            "correctAnswer": "How are you?"
+          },
+          {
+            "question": "Put the words in the correct order: I / fine / am",
+            "options": [
+              "I am fine.",
+              "is am fine.",
+              "i am fine."
+            ],
+            "correctAnswer": "I am fine."
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "hello",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "hello"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "what",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "what"
+          },
+          {
+            "question": "Complete the word: h_llo",
+            "options": [
+              "hello",
+              "hell",
+              "hellos"
+            ],
+            "correctAnswer": "hello"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l3-u6",
+    "number": 6,
+    "title": "Unit 6",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 3",
+    "lessons": [
+      {
+        "id": "l3-u6-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello."
+      },
+      {
+        "id": "l3-u6-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "How are you?"
+      },
+      {
+        "id": "l3-u6-quiz",
+        "title": "Multiple Choice Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "Put the words in the correct order: How / are / you",
+            "options": [
+              "How are you?",
+              "is are you?",
+              "how are you?"
+            ],
+            "correctAnswer": "How are you?"
+          },
+          {
+            "question": "Put the words in the correct order: am / fine / I",
+            "options": [
+              "I am fine.",
+              "is am fine.",
+              "i am fine."
+            ],
+            "correctAnswer": "I am fine."
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "hello",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "hello"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "what",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "what"
+          },
+          {
+            "question": "Complete the word: h_llo",
+            "options": [
+              "hello",
+              "hell",
+              "hellos"
+            ],
+            "correctAnswer": "hello"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l3-u7",
+    "number": 7,
+    "title": "Unit 7",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 3",
+    "lessons": [
+      {
+        "id": "l3-u7-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello."
+      },
+      {
+        "id": "l3-u7-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "How are you?"
+      },
+      {
+        "id": "l3-u7-quiz",
+        "title": "Multiple Choice Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "Put the words in the correct order: you / are / How",
+            "options": [
+              "How are you?",
+              "is are you?",
+              "how are you?"
+            ],
+            "correctAnswer": "How are you?"
+          },
+          {
+            "question": "Put the words in the correct order: fine / am / I",
+            "options": [
+              "I am fine.",
+              "is am fine.",
+              "i am fine."
+            ],
+            "correctAnswer": "I am fine."
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "hello",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "hello"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "what",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "what"
+          },
+          {
+            "question": "Complete the word: h_llo",
+            "options": [
+              "hello",
+              "hell",
+              "hellos"
+            ],
+            "correctAnswer": "hello"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l3-u8",
+    "number": 8,
+    "title": "Unit 8",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 3",
+    "lessons": [
+      {
+        "id": "l3-u8-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello."
+      },
+      {
+        "id": "l3-u8-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "How are you?"
+      },
+      {
+        "id": "l3-u8-quiz",
+        "title": "Multiple Choice Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "Put the words in the correct order: you / are / How",
+            "options": [
+              "How are you?",
+              "is are you?",
+              "how are you?"
+            ],
+            "correctAnswer": "How are you?"
+          },
+          {
+            "question": "Put the words in the correct order: am / I / fine",
+            "options": [
+              "I am fine.",
+              "is am fine.",
+              "i am fine."
+            ],
+            "correctAnswer": "I am fine."
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "hello",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "hello"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "what",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "what"
+          },
+          {
+            "question": "Complete the word: h_llo",
+            "options": [
+              "hello",
+              "hell",
+              "hellos"
+            ],
+            "correctAnswer": "hello"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l3-u9",
+    "number": 9,
+    "title": "Unit 9",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 3",
+    "lessons": [
+      {
+        "id": "l3-u9-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Hello."
+      },
+      {
+        "id": "l3-u9-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "How are you?"
+      },
+      {
+        "id": "l3-u9-quiz",
+        "title": "Multiple Choice Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "Put the words in the correct order: are / How / you",
+            "options": [
+              "How are you?",
+              "is are you?",
+              "how are you?"
+            ],
+            "correctAnswer": "How are you?"
+          },
+          {
+            "question": "Put the words in the correct order: I / fine / am",
+            "options": [
+              "I am fine.",
+              "is am fine.",
+              "i am fine."
+            ],
+            "correctAnswer": "I am fine."
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "hello",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "hello"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "what",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "what"
+          },
+          {
+            "question": "Complete the word: h_llo",
+            "options": [
+              "hello",
+              "hell",
+              "hellos"
+            ],
+            "correctAnswer": "hello"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l3-u10",
+    "number": 10,
+    "title": "Unit 10",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 3",
+    "lessons": [
+      {
+        "id": "l3-u10-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Peter do at break time?"
+      },
+      {
+        "id": "l3-u10-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "I play badminton ."
+      },
+      {
+        "id": "l3-u10-quiz",
+        "title": "Multiple Choice Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "Put the words in the correct order: at / break / Peter / time / do",
+            "options": [
+              "Peter do at break time?",
+              "is do at break time?",
+              "peter do at break time?"
+            ],
+            "correctAnswer": "Peter do at break time?"
+          },
+          {
+            "question": "Put the words in the correct order: play /  / I / badminton",
+            "options": [
+              "I play badminton .",
+              "is play badminton .",
+              "i play badminton ."
+            ],
+            "correctAnswer": "I play badminton ."
+          },
+          {
+            "question": "Put the words in the correct order: No, / doesn’t / he",
+            "options": [
+              "No, he doesn’t.",
+              "is he doesn’t.",
+              "no, he doesn’t."
+            ],
+            "correctAnswer": "No, he doesn’t."
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "exercise",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "info",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "info"
+          },
+          {
+            "question": "Complete the word: e_ercise",
+            "options": [
+              "exercise",
+              "exercis",
+              "exercises"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Complete the word: r_ad",
+            "options": [
+              "read",
+              "rea",
+              "reads"
+            ],
+            "correctAnswer": "read"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l3-u11",
+    "number": 11,
+    "title": "Unit 11",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 3",
+    "lessons": [
+      {
+        "id": "l3-u11-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Exercise 1 : Circle the correct answer."
+      },
+      {
+        "id": "l3-u11-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "Exercise 3 :Look at the pictures and write."
+      },
+      {
+        "id": "l3-u11-quiz",
+        "title": "Multiple Choice Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "Put the words in the correct order: Exercise / Circle / : / answer / the / correct / 1",
+            "options": [
+              "Exercise 1 : Circle the correct answer.",
+              "is 1 : Circle the correct answer.",
+              "exercise 1 : circle the correct answer."
+            ],
+            "correctAnswer": "Exercise 1 : Circle the correct answer."
+          },
+          {
+            "question": "Put the words in the correct order: write / the / :Look / 3 / at / Exercise / and / pictures",
+            "options": [
+              "Exercise 3 :Look at the pictures and write.",
+              "is 3 :Look at the pictures and write.",
+              "exercise 3 :look at the pictures and write."
+            ],
+            "correctAnswer": "Exercise 3 :Look at the pictures and write."
+          },
+          {
+            "question": "Put the words in the correct order: answer / Match / to / Exercise / : / the / the / question / 4 / ",
+            "options": [
+              "Exercise  4 : Match the question to the answer.",
+              "is  4 : Match the question to the answer.",
+              "exercise  4 : match the question to the answer."
+            ],
+            "correctAnswer": "Exercise  4 : Match the question to the answer."
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "exercise",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "look",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "look"
+          },
+          {
+            "question": "Complete the word: e_ercise",
+            "options": [
+              "exercise",
+              "exercis",
+              "exercises"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Complete the word: c_rcle",
+            "options": [
+              "circle",
+              "circl",
+              "circles"
+            ],
+            "correctAnswer": "circle"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l3-u12",
+    "number": 12,
+    "title": "Unit 12",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 3",
+    "lessons": [
+      {
+        "id": "l3-u12-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Exercise 2: Number the rooms in the picture above."
+      },
+      {
+        "id": "l3-u12-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "Exercise 3: Look and answer the questions."
+      },
+      {
+        "id": "l3-u12-quiz",
+        "title": "Multiple Choice Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "Put the words in the correct order: in / 2: / above / the / Number / Exercise / rooms / the / picture",
+            "options": [
+              "Exercise 2: Number the rooms in the picture above.",
+              "is 2: Number the rooms in the picture above.",
+              "exercise 2: number the rooms in the picture above."
+            ],
+            "correctAnswer": "Exercise 2: Number the rooms in the picture above."
+          },
+          {
+            "question": "Put the words in the correct order: and / questions / Look / 3: / the / answer / Exercise",
+            "options": [
+              "Exercise 3: Look and answer the questions.",
+              "is 3: Look and answer the questions.",
+              "exercise 3: look and answer the questions."
+            ],
+            "correctAnswer": "Exercise 3: Look and answer the questions."
+          },
+          {
+            "question": "Put the words in the correct order: I / Where / am",
+            "options": [
+              "Where am I?",
+              "is am I?",
+              "where am i?"
+            ],
+            "correctAnswer": "Where am I?"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "exercise",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "room",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "room"
+          },
+          {
+            "question": "Complete the word: e_ercise",
+            "options": [
+              "exercise",
+              "exercis",
+              "exercises"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Complete the word: l_ok",
+            "options": [
+              "look",
+              "loo",
+              "looks"
+            ],
+            "correctAnswer": "look"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l3-u13",
+    "number": 13,
+    "title": "Unit 13",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 3",
+    "lessons": [
+      {
+        "id": "l3-u13-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Exercise 1: Look and write."
+      },
+      {
+        "id": "l3-u13-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "Exercise 2: Look ,read and answer these questions."
+      },
+      {
+        "id": "l3-u13-quiz",
+        "title": "Multiple Choice Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "Put the words in the correct order: Exercise / write / and / Look / 1:",
+            "options": [
+              "Exercise 1: Look and write.",
+              "is 1: Look and write.",
+              "exercise 1: look and write."
+            ],
+            "correctAnswer": "Exercise 1: Look and write."
+          },
+          {
+            "question": "Put the words in the correct order: questions / these / ,read / answer / and / Exercise / 2: / Look",
+            "options": [
+              "Exercise 2: Look ,read and answer these questions.",
+              "is 2: Look ,read and answer these questions.",
+              "exercise 2: look ,read and answer these questions."
+            ],
+            "correctAnswer": "Exercise 2: Look ,read and answer these questions."
+          },
+          {
+            "question": "Put the words in the correct order: It's / here",
+            "options": [
+              "It's here.",
+              "is here.",
+              "it's here."
+            ],
+            "correctAnswer": "It's here."
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "exercise",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "ball",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "ball"
+          },
+          {
+            "question": "Complete the word: e_ercise",
+            "options": [
+              "exercise",
+              "exercis",
+              "exercises"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Complete the word: l_ok",
+            "options": [
+              "look",
+              "loo",
+              "looks"
+            ],
+            "correctAnswer": "look"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l3-u14",
+    "number": 14,
+    "title": "Unit 14",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 3",
+    "lessons": [
+      {
+        "id": "l3-u14-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Exercise 2 : Look and write ."
+      },
+      {
+        "id": "l3-u14-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "No, there aren't."
+      },
+      {
+        "id": "l3-u14-quiz",
+        "title": "Multiple Choice Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "Put the words in the correct order: Exercise / Look / write / and / 2 / : / ",
+            "options": [
+              "Exercise 2 : Look and write .",
+              "is 2 : Look and write .",
+              "exercise 2 : look and write ."
+            ],
+            "correctAnswer": "Exercise 2 : Look and write ."
+          },
+          {
+            "question": "Put the words in the correct order: No, / there / aren't",
+            "options": [
+              "No, there aren't.",
+              "is there aren't.",
+              "no, there aren't."
+            ],
+            "correctAnswer": "No, there aren't."
+          },
+          {
+            "question": "Put the words in the correct order: 3 / : / and / Exercise / answer / Look / ,read",
+            "options": [
+              "Exercise 3 : Look ,read and answer.",
+              "is 3 : Look ,read and answer.",
+              "exercise 3 : look ,read and answer."
+            ],
+            "correctAnswer": "Exercise 3 : Look ,read and answer."
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "exercise",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "mirrors",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "mirrors"
+          },
+          {
+            "question": "Complete the word: e_ercise",
+            "options": [
+              "exercise",
+              "exercis",
+              "exercises"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Complete the word: l_ok",
+            "options": [
+              "look",
+              "loo",
+              "looks"
+            ],
+            "correctAnswer": "look"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l3-u15",
+    "number": 15,
+    "title": "Unit 15",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 3",
+    "lessons": [
+      {
+        "id": "l3-u15-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Exercise 1: Look and drag the words."
+      },
+      {
+        "id": "l3-u15-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "Exercise 2: Odd one out."
+      },
+      {
+        "id": "l3-u15-quiz",
+        "title": "Multiple Choice Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "Put the words in the correct order: 1: / words / Look / the / Exercise / drag / and",
+            "options": [
+              "Exercise 1: Look and drag the words.",
+              "is 1: Look and drag the words.",
+              "exercise 1: look and drag the words."
+            ],
+            "correctAnswer": "Exercise 1: Look and drag the words."
+          },
+          {
+            "question": "Put the words in the correct order: 2: / Odd / one / Exercise / out",
+            "options": [
+              "Exercise 2: Odd one out.",
+              "is 2: Odd one out.",
+              "exercise 2: odd one out."
+            ],
+            "correctAnswer": "Exercise 2: Odd one out."
+          },
+          {
+            "question": "Put the words in the correct order: it / a /  / ship / Is",
+            "options": [
+              "Is it a ship ?",
+              "is it a ship ?",
+              "is it a ship ?"
+            ],
+            "correctAnswer": "Is it a ship ?"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "exercise",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "odd",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "odd"
+          },
+          {
+            "question": "Complete the word: e_ercise",
+            "options": [
+              "exercise",
+              "exercis",
+              "exercises"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Complete the word: l_ok",
+            "options": [
+              "look",
+              "loo",
+              "looks"
+            ],
+            "correctAnswer": "look"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l3-u16",
+    "number": 16,
+    "title": "Unit 16",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 3",
+    "lessons": [
+      {
+        "id": "l3-u16-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Exercise 1: Look and write."
+      },
+      {
+        "id": "l3-u16-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "Exercise 2: Look ,read and answer."
+      },
+      {
+        "id": "l3-u16-quiz",
+        "title": "Multiple Choice Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "Put the words in the correct order: and / write / 1: / Exercise / Look",
+            "options": [
+              "Exercise 1: Look and write.",
+              "is 1: Look and write.",
+              "exercise 1: look and write."
+            ],
+            "correctAnswer": "Exercise 1: Look and write."
+          },
+          {
+            "question": "Put the words in the correct order: ,read / answer / Exercise / Look / 2: / and",
+            "options": [
+              "Exercise 2: Look ,read and answer.",
+              "is 2: Look ,read and answer.",
+              "exercise 2: look ,read and answer."
+            ],
+            "correctAnswer": "Exercise 2: Look ,read and answer."
+          },
+          {
+            "question": "Put the words in the correct order: and / Read / write / 3: / Exercise / ",
+            "options": [
+              "Exercise 3: Read and write .",
+              "is 3: Read and write .",
+              "exercise 3: read and write ."
+            ],
+            "correctAnswer": "Exercise 3: Read and write ."
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "exercise",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "parrots",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "parrots"
+          },
+          {
+            "question": "Complete the word: e_ercise",
+            "options": [
+              "exercise",
+              "exercis",
+              "exercises"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Complete the word: l_ok",
+            "options": [
+              "look",
+              "loo",
+              "looks"
+            ],
+            "correctAnswer": "look"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l3-u17",
+    "number": 17,
+    "title": "Unit 17",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 3",
+    "lessons": [
+      {
+        "id": "l3-u17-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Exercise 1: Look and write."
+      },
+      {
+        "id": "l3-u17-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "Exercise 2: Look and write."
+      },
+      {
+        "id": "l3-u17-quiz",
+        "title": "Multiple Choice Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "Put the words in the correct order: 1: / and / write / Look / Exercise",
+            "options": [
+              "Exercise 1: Look and write.",
+              "is 1: Look and write.",
+              "exercise 1: look and write."
+            ],
+            "correctAnswer": "Exercise 1: Look and write."
+          },
+          {
+            "question": "Put the words in the correct order: Exercise / write / and / 2: / Look",
+            "options": [
+              "Exercise 2: Look and write.",
+              "is 2: Look and write.",
+              "exercise 2: look and write."
+            ],
+            "correctAnswer": "Exercise 2: Look and write."
+          },
+          {
+            "question": "Put the words in the correct order:  / balls / they / Are",
+            "options": [
+              "Are they balls ?",
+              "is they balls ?",
+              "are they balls ?"
+            ],
+            "correctAnswer": "Are they balls ?"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "exercise",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "kites",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "kites"
+          },
+          {
+            "question": "Complete the word: e_ercise",
+            "options": [
+              "exercise",
+              "exercis",
+              "exercises"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Complete the word: l_ok",
+            "options": [
+              "look",
+              "loo",
+              "looks"
+            ],
+            "correctAnswer": "look"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l3-u18",
+    "number": 18,
+    "title": "Unit 18",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 3",
+    "lessons": [
+      {
+        "id": "l3-u18-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "What is she doing ?"
+      },
+      {
+        "id": "l3-u18-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "What are you doing ?"
+      },
+      {
+        "id": "l3-u18-quiz",
+        "title": "Multiple Choice Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "Put the words in the correct order: doing / is /  / she / What",
+            "options": [
+              "What is she doing ?",
+              "is is she doing ?",
+              "what is she doing ?"
+            ],
+            "correctAnswer": "What is she doing ?"
+          },
+          {
+            "question": "Put the words in the correct order: you / What / are / doing / ",
+            "options": [
+              "What are you doing ?",
+              "is are you doing ?",
+              "what are you doing ?"
+            ],
+            "correctAnswer": "What are you doing ?"
+          },
+          {
+            "question": "Put the words in the correct order: What / is / doing / he / ",
+            "options": [
+              "What is he doing ?",
+              "is is he doing ?",
+              "what is he doing ?"
+            ],
+            "correctAnswer": "What is he doing ?"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "exercise",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "play",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "play"
+          },
+          {
+            "question": "Complete the word: e_ercise",
+            "options": [
+              "exercise",
+              "exercis",
+              "exercises"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Complete the word: l_ok",
+            "options": [
+              "look",
+              "loo",
+              "looks"
+            ],
+            "correctAnswer": "look"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l3-u19",
+    "number": 19,
+    "title": "Unit 19",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 3",
+    "lessons": [
+      {
+        "id": "l3-u19-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Exercise 1 : Look and write."
+      },
+      {
+        "id": "l3-u19-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "Exercise 2: Look ,read and answer."
+      },
+      {
+        "id": "l3-u19-quiz",
+        "title": "Multiple Choice Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "Put the words in the correct order: write / Look / and / : / 1 / Exercise",
+            "options": [
+              "Exercise 1 : Look and write.",
+              "is 1 : Look and write.",
+              "exercise 1 : look and write."
+            ],
+            "correctAnswer": "Exercise 1 : Look and write."
+          },
+          {
+            "question": "Put the words in the correct order: 2: / ,read / Look / and / Exercise / answer",
+            "options": [
+              "Exercise 2: Look ,read and answer.",
+              "is 2: Look ,read and answer.",
+              "exercise 2: look ,read and answer."
+            ],
+            "correctAnswer": "Exercise 2: Look ,read and answer."
+          },
+          {
+            "question": "Put the words in the correct order: What / they / are /  / doing",
+            "options": [
+              "What are they doing ?",
+              "is are they doing ?",
+              "what are they doing ?"
+            ],
+            "correctAnswer": "What are they doing ?"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "exercise",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "cycling",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "cycling"
+          },
+          {
+            "question": "Complete the word: e_ercise",
+            "options": [
+              "exercise",
+              "exercis",
+              "exercises"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Complete the word: l_ok",
+            "options": [
+              "look",
+              "loo",
+              "looks"
+            ],
+            "correctAnswer": "look"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l3-u20",
+    "number": 20,
+    "title": "Unit 20",
+    "status": "locked",
+    "progress": 0,
+    "grade": "Lớp 3",
+    "lessons": [
+      {
+        "id": "l3-u20-speak",
+        "title": "Speaking & Pronunciation",
+        "type": "speaking",
+        "completed": false,
+        "expectedText": "Viet Nam."
+      },
+      {
+        "id": "l3-u20-dict",
+        "title": "Listening & Dictation",
+        "type": "dictation",
+        "completed": false,
+        "expectedWord": "It is a big country ."
+      },
+      {
+        "id": "l3-u20-quiz",
+        "title": "Multiple Choice Quiz",
+        "type": "quiz",
+        "completed": false,
+        "quizQuestions": [
+          {
+            "question": "Put the words in the correct order: Nam / Viet",
+            "options": [
+              "Viet Nam.",
+              "is Nam.",
+              "viet nam."
+            ],
+            "correctAnswer": "Viet Nam."
+          },
+          {
+            "question": "Put the words in the correct order: is /  / big / It / a / country",
+            "options": [
+              "It is a big country .",
+              "is is a big country .",
+              "it is a big country ."
+            ],
+            "correctAnswer": "It is a big country ."
+          },
+          {
+            "question": "Put the words in the correct order: Minh / city / a / Viet / Ho / is / city / big / Chi / in / Nam / south",
+            "options": [
+              "Ho Chi Minh city is a big city in south Viet Nam.",
+              "is Chi Minh city is a big city in south Viet Nam.",
+              "ho chi minh city is a big city in south viet nam."
+            ],
+            "correctAnswer": "Ho Chi Minh city is a big city in south Viet Nam."
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "exercise",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Find the word in the text:",
+            "options": [
+              "north",
+              "chrysanthemum",
+              "hippopotamus"
+            ],
+            "correctAnswer": "north"
+          },
+          {
+            "question": "Complete the word: e_ercise",
+            "options": [
+              "exercise",
+              "exercis",
+              "exercises"
+            ],
+            "correctAnswer": "exercise"
+          },
+          {
+            "question": "Complete the word: r_ad",
+            "options": [
+              "read",
+              "rea",
+              "reads"
+            ],
+            "correctAnswer": "read"
+          }
+        ]
+      }
+    ]
+  }
+]

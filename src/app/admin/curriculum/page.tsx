@@ -256,6 +256,34 @@ export default function AdminCurriculum() {
     }
   };
 
+  const handleAutoSeedL3 = async () => {
+    if (!window.confirm("Bắt đầu tự động nạp 20 Units Lớp 3 từ file seed (ghi đè dữ liệu cũ)?")) return;
+    try {
+      setIsIngesting(true);
+      const res = await fetch("/seeds/grade3.json");
+      if (!res.ok) throw new Error("Không tìm thấy file seed");
+      const gradeData = await res.json();
+      
+      localStorage.setItem("gsa-curriculum-l3", JSON.stringify(gradeData));
+      
+      setSyncedGrades(prev => Array.from(new Set([...prev, 3])));
+      setCurriculumData(prev => ({
+        ...prev,
+        l3: gradeData
+      }));
+      
+      setToastMessage("Đã Auto-Seed toàn bộ 20 Units Lớp 3!");
+      setToastType("success");
+    } catch (e: any) {
+      setToastMessage("Lỗi Auto-Seed: " + e.message);
+      setToastType("error");
+    } finally {
+      setIsIngesting(false);
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 4000);
+    }
+  };
+
   return (
     <div className="min-h-full p-6 space-y-6 select-none bg-[#090D16]">
       {/* Toast Notification */}
@@ -318,6 +346,14 @@ export default function AdminCurriculum() {
               >
                 <Rocket className="w-3.5 h-3.5" />
                 Auto Lớp 2
+              </button>
+              <button
+                onClick={handleAutoSeedL3}
+                disabled={isIngesting}
+                className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1.5 rounded-lg hover:bg-emerald-500/20 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
+              >
+                <Rocket className="w-3.5 h-3.5" />
+                Auto Lớp 3
               </button>
             </div>
           </div>
