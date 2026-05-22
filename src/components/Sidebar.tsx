@@ -34,6 +34,7 @@ export default function Sidebar() {
   const [streak, setStreak] = useState(0);
   const [isPro, setIsPro] = useState(false);
   const [fullName, setFullName] = useState("Học viên");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLightMode, setIsLightMode] = useState(false);
 
   const [userRole, setUserRole] = useState<string>("student");
@@ -86,11 +87,13 @@ export default function Sidebar() {
           }
           if (parsed.role) {
             setUserRole(parsed.role);
+            setIsLoggedIn(true);
             return;
           }
         } catch (e) {}
       } else {
         setFullName("Học viên");
+        setIsLoggedIn(false);
       }
 
       const storedProfile = localStorage.getItem("gsa-user-profile");
@@ -278,46 +281,56 @@ export default function Sidebar() {
 
       {/* User Profile Footer Card */}
       <div className="p-4 border-t border-slate-850/40 bg-[#04060d]/60">
-        <div className="space-y-3">
-          <div className="flex items-center gap-3">
-            <div className="relative">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-violet-600 flex items-center justify-center font-black text-white text-xs shadow-md uppercase">
-                {fullName.substring(0, 2)}
+        {isLoggedIn ? (
+          <div className="space-y-3">
+            <div className="flex items-center gap-3">
+              <div className="relative">
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-violet-600 flex items-center justify-center font-black text-white text-xs shadow-md uppercase">
+                  {fullName.substring(0, 2)}
+                </div>
+                <div className="absolute bottom-[-1px] right-[-1px] w-3 h-3 bg-emerald-500 rounded-full border-2 border-[#070A13]" />
               </div>
-              <div className="absolute bottom-[-1px] right-[-1px] w-3 h-3 bg-emerald-500 rounded-full border-2 border-[#070A13]" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-1.5">
-                <h2 className="text-xs font-bold text-slate-200 truncate" title={fullName}>
-                  {fullName}
-                </h2>
-                {isPro && (
-                  <span className="shrink-0 px-1.5 py-0.5 rounded-md bg-amber-500/15 border border-amber-500/25 text-amber-400 text-[7px] font-black uppercase tracking-wider">
-                    PRO
-                  </span>
-                )}
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-1.5">
+                  <h2 className="text-xs font-bold text-slate-200 truncate" title={fullName}>
+                    {fullName}
+                  </h2>
+                  {isPro && (
+                    <span className="shrink-0 px-1.5 py-0.5 rounded-md bg-amber-500/15 border border-amber-500/25 text-amber-400 text-[7px] font-black uppercase tracking-wider">
+                      PRO
+                    </span>
+                  )}
+                </div>
+                <p className="text-[10px] text-slate-500 truncate">
+                  {userRole === "teacher" || isTeacherRoute ? "Giáo viên giảng dạy" : "Học sinh - Lớp 11A3"}
+                </p>
               </div>
-              <p className="text-[10px] text-slate-500 truncate">
-                {userRole === "teacher" || isTeacherRoute ? "Giáo viên giảng dạy" : "Học sinh - Lớp 11A3"}
-              </p>
             </div>
-          </div>
 
-          {/* Level Progress Slider */}
-          <div className="space-y-1">
-            <div className="flex justify-between text-[9px] font-bold">
-              <span className="text-slate-400">Cấp độ 12</span>
-              <span className="text-indigo-400 font-black">{xp} / 1000 XP</span>
-            </div>
-            <div className="w-full h-1.5 rounded-full bg-slate-800/80 overflow-hidden border border-slate-900/40">
-              <div 
-                style={{ width: `${Math.min(100, (xp / 1000) * 100)}%` }} 
-                className="h-full bg-gradient-to-r from-indigo-500 to-violet-500 rounded-full transition-all duration-500 shadow-md shadow-indigo-500/20"
-              />
+            {/* Level Progress Slider */}
+            <div className="space-y-1">
+              <div className="flex justify-between text-[9px] font-bold">
+                <span className="text-slate-400">Cấp độ 12</span>
+                <span className="text-indigo-400 font-black">{xp} / 1000 XP</span>
+              </div>
+              <div className="w-full h-1.5 rounded-full bg-slate-800/80 overflow-hidden border border-slate-900/40">
+                <div 
+                  style={{ width: `${Math.min(100, (xp / 1000) * 100)}%` }} 
+                  className="h-full bg-gradient-to-r from-indigo-500 to-violet-500 rounded-full transition-all duration-500 shadow-md shadow-indigo-500/20"
+                />
+              </div>
             </div>
           </div>
+        ) : (
+          <div className="flex flex-col items-center mb-3">
+            <p className="text-[10px] text-slate-400 mb-2 text-center">Bạn đang dùng thử với tư cách Khách</p>
+            <Link href="/auth" className="w-full py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-xs font-bold text-center transition-all">
+              Đăng nhập / Đăng ký
+            </Link>
+          </div>
+        )}
           
-          {/* Admin System Link (Subtle) */}
+        {/* Admin System Link (Subtle) & Bottom controls */}
           {(userRole.toUpperCase() === "ADMIN" || userEmail.toLowerCase() === "admin@globalsuccess.ai") && (
             <div className="pt-1.5">
               <Link
@@ -330,15 +343,18 @@ export default function Sidebar() {
           )}
 
           {/* Light/Dark Mode Toggle & Logout Button */}
-          <div className="pt-2 flex items-center justify-between gap-2">
-            <button
-              onClick={handleLogout}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-red-500/20 hover:border-red-500/40 bg-red-950/10 hover:bg-red-950/20 transition-all duration-300 group"
-              title="Đăng xuất khỏi hệ thống"
-            >
-              <LogOut className="w-3.5 h-3.5 text-red-400/80 group-hover:text-red-400 transition-colors" />
-              <span className="text-[9px] font-bold text-red-400/80 group-hover:text-red-400 uppercase tracking-wider transition-colors">Đăng xuất</span>
-            </button>
+          <div className="flex items-center justify-between p-3 px-4 bg-[#020308] border-t border-slate-800/80 mt-auto">
+        {isLoggedIn ? (
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-1.5 text-[9px] font-bold text-rose-500/70 hover:text-rose-400 transition-colors"
+          >
+            <LogOut className="w-3.5 h-3.5" />
+            ĐĂNG XUẤT
+          </button>
+        ) : (
+          <span className="text-[9px] font-bold text-slate-500">GUEST MODE</span>
+        )}
 
             <button
               onClick={toggleTheme}
@@ -357,9 +373,7 @@ export default function Sidebar() {
               )}
             </button>
           </div>
-
         </div>
-      </div>
     </aside>
   );
 }
