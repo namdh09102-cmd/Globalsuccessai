@@ -57,11 +57,11 @@ const PLANS = [
     popular: false,
     tag: null,
     accentColor: "violet",
-    borderClass: "border-violet-600/40",
-    bgGlow: "bg-violet-500/5",
-    tagClass: "from-violet-600 to-purple-500",
+    borderClass: "border-indigo-600/40",
+    bgGlow: "bg-indigo-500/5",
+    tagClass: "from-indigo-600 to-indigo-500",
     btnClass:
-      "bg-violet-600 hover:bg-violet-500 shadow-[0_4px_0_#4c1d95] active:translate-y-[4px] active:shadow-none",
+      "bg-indigo-600 hover:bg-indigo-500 shadow-[0_4px_0_#4c1d95] active:translate-y-[4px] active:shadow-none",
     features: [
       "Toàn bộ giáo trình Lớp 6–12",
       "AI Chấm phát âm không giới hạn",
@@ -81,7 +81,7 @@ const PLANS = [
     tag: "🔥 BÁN CHẠY NHẤT",
     accentColor: "amber",
     borderClass:
-      "border-violet-500 ring-2 ring-violet-500/50 ring-offset-2 ring-offset-[#0B0F19]",
+      "border-indigo-500 ring-2 ring-indigo-500/50 ring-offset-2 ring-offset-[#0B0F19]",
     bgGlow: "bg-amber-500/5",
     tagClass: "from-amber-500 to-orange-500",
     btnClass:
@@ -158,7 +158,7 @@ export default function UpgradePage() {
             initial={{ opacity: 0, y: -40, scale: 0.92 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -40 }}
-            className="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-black text-xs px-6 py-3 rounded-2xl shadow-2xl shadow-amber-500/30 flex items-center gap-2 border border-amber-300/40 whitespace-nowrap"
+            className="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-black text-xs px-6 py-3 rounded-xl shadow-2xl shadow-amber-500/30 flex items-center gap-2 border border-amber-300/40 whitespace-nowrap"
           >
             <Crown className="w-4 h-4" />
             <span>🎉 Đã nâng cấp PRO thành công! Toàn bộ giáo trình Lớp 1 – 12 đã được mở khóa.</span>
@@ -192,15 +192,15 @@ export default function UpgradePage() {
           className="text-center space-y-4 relative"
         >
           {/* Ambient glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-48 bg-violet-600/10 rounded-full blur-[80px] pointer-events-none" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-48 bg-indigo-600/10 rounded-full blur-[80px] pointer-events-none" />
 
           <div className="relative">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/25 text-violet-600 text-[10px] font-black uppercase tracking-widest mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-600 text-[10px] font-black uppercase tracking-widest mb-4">
               <Crown className="w-3.5 h-3.5 animate-pulse" />
               <span>Global Success PRO — Nền Tảng EdTech K-12 #1</span>
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-800 via-violet-600 to-amber-600 tracking-tight leading-tight">
+            <h1 className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-800 via-indigo-600 to-amber-600 tracking-tight leading-tight">
               Mở Khóa Toàn Diện
               <br />
               <span className="text-2xl md:text-3xl">Quyền Năng AI</span>
@@ -240,7 +240,7 @@ export default function UpgradePage() {
               initial="hidden"
               animate="show"
               onClick={() => setSelectedPlan(plan.id)}
-              className={`relative rounded-3xl border bg-[#0F1520] p-6 cursor-pointer transition-all duration-200 overflow-hidden ${plan.borderClass} ${
+              className={`relative rounded-xl border bg-[#0F1520] p-6 cursor-pointer transition-all duration-200 overflow-hidden ${plan.borderClass} ${
                 selectedPlan === plan.id
                   ? "scale-[1.02] shadow-2xl"
                   : "hover:scale-[1.01] hover:shadow-xl opacity-90 hover:opacity-100"
@@ -286,7 +286,7 @@ export default function UpgradePage() {
                   </div>
                   <p className="text-[10px] text-slate-600 font-bold">{plan.priceNote}</p>
                   {plan.savings && (
-                    <span className="inline-block px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-600 text-[9px] font-black uppercase tracking-wider">
+                    <span className="inline-block px-2 py-0.5 rounded-full bg-teal-500/10 border border-teal-500/25 text-teal-600 text-[9px] font-black uppercase tracking-wider">
                       {plan.savings}
                     </span>
                   )}
@@ -328,7 +328,7 @@ export default function UpgradePage() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
-            className="rounded-3xl border border-slate-200 bg-[#0F1520] p-6 space-y-5"
+            className="rounded-xl border border-slate-200 bg-[#0F1520] p-6 space-y-5"
           >
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-xl bg-indigo-500/10 border border-indigo-300 flex items-center justify-center text-indigo-600">
@@ -342,7 +342,7 @@ export default function UpgradePage() {
 
             <div className="flex flex-col items-center gap-4">
               {/* QR Mockup */}
-              <div className="relative w-44 h-44 rounded-2xl border-2 border-indigo-500/25 bg-white p-3 shadow-xl shadow-indigo-950/20">
+              <div className="relative w-44 h-44 rounded-xl border-2 border-indigo-500/25 bg-white p-3 shadow-xl shadow-indigo-950/20">
                 <div className="w-full h-full rounded-xl overflow-hidden flex items-center justify-center bg-white">
                   {/* QR Pattern grid mockup */}
                   <div className="grid grid-cols-9 gap-0.5">
@@ -376,7 +376,7 @@ export default function UpgradePage() {
                   </div>
                 </div>
                 {/* VietQR badge */}
-                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 text-slate-800 text-[8px] font-black tracking-wider shadow-lg whitespace-nowrap">
+                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-600 text-slate-800 text-[8px] font-black tracking-wider shadow-lg whitespace-nowrap">
                   VietQR · Vietcombank
                 </div>
               </div>
@@ -393,10 +393,10 @@ export default function UpgradePage() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}
-            className="rounded-3xl border border-slate-200 bg-[#0F1520] p-6 space-y-5"
+            className="rounded-xl border border-slate-200 bg-[#0F1520] p-6 space-y-5"
           >
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-xl bg-emerald-500/10 border border-emerald-300 flex items-center justify-center text-emerald-600">
+              <div className="w-8 h-8 rounded-xl bg-teal-500/10 border border-teal-300 flex items-center justify-center text-teal-600">
                 <Shield className="w-4 h-4" />
               </div>
               <div>
@@ -424,7 +424,7 @@ export default function UpgradePage() {
                         onClick={handleCopyBank}
                         className={`p-1.5 rounded-lg transition-all ${
                           copiedBank
-                            ? "bg-emerald-500/15 text-emerald-600"
+                            ? "bg-teal-500/15 text-teal-600"
                             : "bg-slate-100 text-slate-500 hover:text-slate-800"
                         }`}
                       >
@@ -450,7 +450,7 @@ export default function UpgradePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="rounded-3xl border border-slate-200 bg-[#0F1520] overflow-hidden"
+          className="rounded-xl border border-slate-200 bg-[#0F1520] overflow-hidden"
         >
           <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between">
             <h3 className="text-sm font-black text-slate-800">So Sánh Tính Năng</h3>
@@ -461,14 +461,14 @@ export default function UpgradePage() {
             <div className="grid grid-cols-3 px-6 py-3 text-[10px] font-black uppercase tracking-wider text-slate-500">
               <span>Tính năng</span>
               <span className="text-center">Miễn phí</span>
-              <span className="text-center text-violet-600">PRO ✦</span>
+              <span className="text-center text-indigo-600">PRO ✦</span>
             </div>
             {FEATURES_COMPARISON.map((feat) => (
               <div key={feat.name} className="grid grid-cols-3 px-6 py-3 hover:bg-slate-100 transition-colors">
                 <span className="text-[10px] text-slate-500 font-semibold">{feat.name}</span>
                 <div className="flex justify-center">
                   {feat.free === true ? (
-                    <CheckCircle className="w-4 h-4 text-emerald-600" />
+                    <CheckCircle className="w-4 h-4 text-teal-600" />
                   ) : feat.free === false ? (
                     <Lock className="w-4 h-4 text-slate-700" />
                   ) : (
@@ -477,7 +477,7 @@ export default function UpgradePage() {
                 </div>
                 <div className="flex justify-center">
                   {feat.pro === true ? (
-                    <CheckCircle className="w-4 h-4 text-violet-600" />
+                    <CheckCircle className="w-4 h-4 text-indigo-600" />
                   ) : typeof feat.pro === "string" ? (
                     <span className="text-[9px] text-amber-600 font-black">{feat.pro}</span>
                   ) : null}
@@ -504,10 +504,9 @@ export default function UpgradePage() {
           </div>
 
           {/* Admin secret button */}
-          <button
+          <button 
             onClick={handleActivateVIP}
-            title="[ADMIN] Giả lập kích hoạt VIP"
-            className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-dashed border-slate-300/60 text-slate-600 hover:text-amber-600 hover:border-amber-500/40 hover:bg-amber-500/5 text-[9px] font-bold transition-all group"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-dashed border-slate-300 text-slate-600 hover:text-amber-600 hover:border-amber-500/40 hover:bg-amber-500/5 text-[9px] font-bold transition-all group"
           >
             <Gift className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
             <span>[Admin] Giả lập kích hoạt VIP</span>

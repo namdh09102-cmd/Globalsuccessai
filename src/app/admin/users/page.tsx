@@ -67,7 +67,7 @@ export default function AdminUsers() {
             initial={{ opacity: 0, y: -40, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -40 }}
-            className="fixed top-6 left-1/2 -translate-x-1/2 z-[99] bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-black text-xs px-6 py-3 rounded-2xl shadow-2xl shadow-amber-500/30 flex items-center gap-2 border border-amber-300/40"
+            className="fixed top-6 left-1/2 -translate-x-1/2 z-[99] bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-black text-xs px-6 py-3 rounded-xl shadow-2xl shadow-amber-500/30 flex items-center gap-2 border border-amber-300/40"
           >
             <CheckCircle className="w-4 h-4" />
             <span>{toastMsg}</span>
@@ -76,7 +76,7 @@ export default function AdminUsers() {
       </AnimatePresence>
 
       <div className="flex items-center gap-3 border-b border-slate-800/60 pb-4">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+        <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-indigo-500/20">
           <Users className="w-6 h-6 text-white" />
         </div>
         <div>
@@ -89,7 +89,7 @@ export default function AdminUsers() {
         </div>
       </div>
 
-      <div className="bg-[#111827] border border-slate-800 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] space-y-4">
+      <div className="bg-[#111827] border border-slate-800 rounded-xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] space-y-4">
         
         {/* Thanh công cụ */}
         <div className="flex items-center justify-between gap-4">
@@ -126,8 +126,8 @@ export default function AdminUsers() {
                   <td className="px-6 py-4 font-bold text-slate-200">{user.name}</td>
                   <td className="px-6 py-4">
                     {user.role === "student" && <span className="text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2 py-1 rounded text-[10px] font-black uppercase">Học Sinh</span>}
-                    {user.role === "teacher" && <span className="text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-1 rounded text-[10px] font-black uppercase">Giáo Viên</span>}
-                    {user.role === "admin" && <span className="text-fuchsia-400 bg-fuchsia-500/10 border border-fuchsia-500/20 px-2 py-1 rounded text-[10px] font-black uppercase flex items-center gap-1 w-max"><Shield className="w-3 h-3"/> Admin</span>}
+                    {user.role === "teacher" && <span className="text-teal-400 bg-teal-500/10 border border-teal-500/20 px-2 py-1 rounded text-[10px] font-black uppercase">Giáo Viên</span>}
+                    {user.role === "admin" && <span className="text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-2 py-1 rounded text-[10px] font-black uppercase flex items-center gap-1 w-max"><Shield className="w-3 h-3"/> Admin</span>}
                   </td>
                   <td className="px-6 py-4">
                     {user.tier === "pro" ? (

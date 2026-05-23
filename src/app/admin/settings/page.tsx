@@ -55,7 +55,7 @@ export default function AdminSettings() {
             initial={{ opacity: 0, y: -40, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -40 }}
-            className="fixed top-6 left-1/2 -translate-x-1/2 z-[99] bg-gradient-to-r from-emerald-500 to-teal-400 text-black font-black text-xs px-6 py-3 rounded-2xl shadow-2xl shadow-emerald-500/30 flex items-center gap-2 border border-emerald-300/40"
+            className="fixed top-6 left-1/2 -translate-x-1/2 z-[99] bg-gradient-to-r from-teal-500 to-teal-400 text-black font-black text-xs px-6 py-3 rounded-xl shadow-2xl shadow-teal-500/30 flex items-center gap-2 border border-teal-300/40"
           >
             <CheckCircle className="w-4 h-4" />
             <span>Lưu cấu hình hệ thống thành công!</span>
@@ -80,7 +80,7 @@ export default function AdminSettings() {
         
         <button 
           onClick={handleSaveSettings}
-          className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-500 hover:from-indigo-500 hover:to-violet-400 text-white font-black text-xs uppercase tracking-wider transition-all shadow-[0_4px_0_#4c1d95] active:translate-y-[2px] active:shadow-none"
+          className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-black text-xs uppercase tracking-wider transition-all shadow-[0_4px_0_#4c1d95] active:translate-y-[2px] active:shadow-none"
         >
           <Save className="w-4 h-4" />
           <span>Lưu Cấu Hình</span>
@@ -90,7 +90,7 @@ export default function AdminSettings() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         
         {/* API KEYS CONFIG */}
-        <div className="bg-[#111827] border border-slate-800 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] space-y-6">
+        <div className="bg-[#111827] border border-slate-800 rounded-xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] space-y-6">
           <div className="flex items-center gap-2 text-slate-300 border-b border-slate-800/60 pb-3">
             <Key className="w-5 h-5 text-indigo-400" />
             <h2 className="text-sm font-black uppercase tracking-wider">Cổng Kết Nối Trí Tuệ Nhân Tạo</h2>
@@ -120,9 +120,9 @@ export default function AdminSettings() {
         </div>
 
         {/* BANK CONFIG */}
-        <div className="bg-[#111827] border border-slate-800 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] space-y-6">
+        <div className="bg-[#111827] border border-slate-800 rounded-xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] space-y-6">
           <div className="flex items-center gap-2 text-slate-300 border-b border-slate-800/60 pb-3">
-            <Building2 className="w-5 h-5 text-emerald-400" />
+            <Building2 className="w-5 h-5 text-teal-400" />
             <h2 className="text-sm font-black uppercase tracking-wider">Cấu Hình Cổng Thanh Toán PRO</h2>
           </div>
           <div className="space-y-4">
@@ -132,7 +132,7 @@ export default function AdminSettings() {
                 type="text"
                 value={bankInfo.bankName}
                 onChange={(e) => setBankInfo({...bankInfo, bankName: e.target.value})}
-                className="w-full bg-[#090D16] border border-slate-800 text-slate-300 text-xs rounded-xl px-4 py-3 outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/50 transition-all"
+                className="w-full bg-[#090D16] border border-slate-800 text-slate-300 text-xs rounded-xl px-4 py-3 outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/50 transition-all"
               />
             </div>
             <div className="space-y-2">
@@ -141,7 +141,7 @@ export default function AdminSettings() {
                 type="text"
                 value={bankInfo.accountNumber}
                 onChange={(e) => setBankInfo({...bankInfo, accountNumber: e.target.value})}
-                className="w-full bg-[#090D16] border border-slate-800 text-slate-300 text-xs rounded-xl px-4 py-3 outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/50 transition-all font-mono font-bold text-emerald-400"
+                className="w-full bg-[#090D16] border border-slate-800 text-slate-300 text-xs rounded-xl px-4 py-3 outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/50 transition-all font-mono font-bold text-teal-400"
               />
             </div>
             <div className="space-y-2">
@@ -150,14 +150,14 @@ export default function AdminSettings() {
                 type="text"
                 value={bankInfo.ownerName}
                 onChange={(e) => setBankInfo({...bankInfo, ownerName: e.target.value})}
-                className="w-full bg-[#090D16] border border-slate-800 text-slate-300 text-xs rounded-xl px-4 py-3 outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/50 transition-all font-bold uppercase"
+                className="w-full bg-[#090D16] border border-slate-800 text-slate-300 text-xs rounded-xl px-4 py-3 outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/50 transition-all font-bold uppercase"
               />
             </div>
           </div>
         </div>
 
         {/* MAINTENANCE MODE */}
-        <div className="lg:col-span-2 bg-[#111827] border border-rose-500/20 rounded-3xl p-6 shadow-[0_8px_30px_rgba(225,29,72,0.05)] flex items-center justify-between">
+        <div className="lg:col-span-2 bg-[#111827] border border-rose-500/20 rounded-xl p-6 shadow-[0_8px_30px_rgba(225,29,72,0.05)] flex items-center justify-between">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center">
               <ShieldAlert className={`w-6 h-6 text-rose-500 ${isMaintenance ? "animate-pulse" : ""}`} />

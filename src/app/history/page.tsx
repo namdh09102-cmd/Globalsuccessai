@@ -288,9 +288,9 @@ export default function HistoryPage() {
       name: "Thần Sấm Phát Âm",
       description: "Phát âm chuẩn xác vượt trội dưới sự đánh giá của AI Coach.",
       icon: Mic,
-      glowColor: "text-violet-600 bg-violet-500/10 border-violet-500/30",
-      borderColor: "group-hover:border-violet-400/40",
-      neonShadow: "shadow-violet-500/20",
+      glowColor: "text-indigo-600 bg-indigo-500/10 border-indigo-500/30",
+      borderColor: "group-hover:border-indigo-400/40",
+      neonShadow: "shadow-indigo-500/20",
       unlocked: avgSpeakingScore >= 90, // Mở khóa động nếu Độ chính xác phát âm TB >= 90%
       requirement: "Phát âm TB >= 90%"
     },
@@ -299,9 +299,9 @@ export default function HistoryPage() {
       name: "Sát Thủ Từ Vựng",
       description: "Thuộc lòng và viết chính xác toàn bộ từ vựng cốt lõi.",
       icon: BookOpen,
-      glowColor: "text-emerald-600 bg-emerald-500/10 border-emerald-500/30",
-      borderColor: "group-hover:border-emerald-400/40",
-      neonShadow: "shadow-emerald-500/20",
+      glowColor: "text-teal-600 bg-teal-500/10 border-teal-500/30",
+      borderColor: "group-hover:border-teal-400/40",
+      neonShadow: "shadow-teal-500/20",
       unlocked: learningLogs.some(log => log.type === "vocabulary" && log.score === 100),
       requirement: "Đúng 100% từ vựng SGK"
     },
@@ -369,7 +369,7 @@ export default function HistoryPage() {
       
       {/* Header */}
       <div className="border-b border-slate-200 pb-6 relative">
-        <div className="absolute top-0 right-0 w-24 h-24 bg-violet-600/10 rounded-full blur-2xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-24 h-24 bg-indigo-600/10 rounded-full blur-2xl pointer-events-none" />
         <div className="flex items-center gap-2 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-1">
           <Trophy className="w-3.5 h-3.5" />
           <span>Bảng Vàng Học Viên K-12</span>
@@ -386,7 +386,7 @@ export default function HistoryPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
         {/* PHÂN HỆ 1: BẢNG VÀNG TIẾN BỘ (Leaderboard Grid - col-span-2) */}
-        <div className="lg:col-span-2 rounded-3xl border border-slate-200 bg-white p-6 shadow-xl space-y-6 hover:border-slate-300/30 transition-all duration-300">
+        <div className="lg:col-span-2 rounded-xl border border-slate-200 bg-white p-6 shadow-xl space-y-6 hover:border-slate-300/30 transition-all duration-300">
           
           <div className="flex items-center justify-between border-b border-slate-200 pb-3">
             <div className="flex items-center gap-2.5">
@@ -406,7 +406,7 @@ export default function HistoryPage() {
           {/* Bục Vinh Quang Top 3 */}
           {podiumOrder[0] && (
             <div className="grid grid-cols-3 gap-4 pt-4 pb-2 items-end max-w-md mx-auto relative">
-              <div className="absolute inset-0 bg-gradient-to-t from-violet-500/5 via-transparent to-transparent blur-xl rounded-3xl pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-indigo-500/5 via-transparent to-transparent blur-xl rounded-xl pointer-events-none" />
               
               {podiumOrder.map((student, idx) => {
                 if (!student) return null;
@@ -420,11 +420,11 @@ export default function HistoryPage() {
 
                 if (isTop1) {
                   rankBadge = "👑";
-                  borderColor = "border-yellow-500/40 bg-yellow-950/20 text-yellow-400 shadow-[0_0_20px_rgba(234,179,8,0.2)]";
+                  borderColor = "bg-gradient-to-r from-indigo-50 to-white border-l-4 border-indigo-500 text-slate-800 shadow-md";
                   heightClass = "h-32";
                 } else if (isTop2) {
                   rankBadge = "🥈";
-                  borderColor = "border-slate-400/30 bg-slate-100/30 text-slate-400";
+                  borderColor = "border-slate-200 bg-slate-50 text-slate-500 border-x border-t";
                   heightClass = "h-28";
                 }
 
@@ -459,10 +459,10 @@ export default function HistoryPage() {
 
                     {/* Bục */}
                     <div className={`w-full rounded-t-2xl border-t border-x flex flex-col justify-between p-3 select-none transition-all duration-300 relative ${heightClass} ${borderColor} ${
-                      isUserHighlight ? "ring-2 ring-violet-500 bg-violet-950/30 shadow-[0_0_20px_rgba(139,92,246,0.4)] border-violet-500/50" : ""
+                      isUserHighlight ? "ring-2 ring-indigo-500 bg-indigo-950/30 shadow-[0_0_20px_rgba(139,92,246,0.4)] border-indigo-500/50" : ""
                     }`}>
                       <div className="space-y-1">
-                        <span className={`text-[10px] md:text-xs font-black truncate block max-w-full ${isUserHighlight ? "text-violet-600" : "text-slate-800"}`}>
+                        <span className={`text-[10px] md:text-xs font-black truncate block max-w-full ${isUserHighlight ? "text-indigo-600" : "text-slate-800"}`}>
                           {student.name}
                         </span>
                         <span className="text-[8px] font-bold text-slate-500 block uppercase">Lớp {student.class}</span>
@@ -495,9 +495,9 @@ export default function HistoryPage() {
                 <motion.div
                   key={student.name}
                   variants={itemVariants}
-                  className={`flex items-center justify-between p-3 rounded-2xl border transition-all duration-300 group ${
+                  className={`flex items-center justify-between p-3 rounded-xl border transition-all duration-300 group ${
                     isUserHighlight
-                      ? "ring-2 ring-violet-500 bg-violet-950/30 shadow-[0_0_20px_rgba(139,92,246,0.4)] border-violet-500/50 translate-x-1"
+                      ? "ring-2 ring-indigo-500 bg-indigo-950/30 shadow-[0_0_20px_rgba(139,92,246,0.4)] border-indigo-500/50 translate-x-1"
                       : "bg-slate-50 border-slate-200 hover:bg-slate-100 hover:border-slate-200"
                   }`}
                 >
@@ -510,21 +510,21 @@ export default function HistoryPage() {
                     {/* Avatar */}
                     <div className={`w-8 h-8 rounded-xl flex items-center justify-center text-xs font-black text-slate-800 shadow-inner relative transition-transform duration-300 group-hover:scale-105 ${
                       isUserHighlight 
-                        ? "bg-gradient-to-tr from-violet-500 to-indigo-600 border border-violet-400/30"
+                        ? "bg-gradient-to-tr from-indigo-500 to-indigo-600 border border-indigo-400/30"
                         : "bg-slate-100 border border-slate-200"
                     }`}>
                       {student.name.split(" ").slice(-1)[0][0]}
-                      {isUserHighlight && <div className="absolute bottom-[-1px] right-[-1px] w-2 h-2 bg-emerald-500 rounded-full border border-[#151B2B]" />}
+                      {isUserHighlight && <div className="absolute bottom-[-1px] right-[-1px] w-2 h-2 bg-teal-500 rounded-full border border-[#151B2B]" />}
                     </div>
 
                     {/* Name & Class */}
                     <div className="min-w-0">
                       <div className="flex items-center gap-1.5">
-                        <span className={`text-xs font-black truncate ${isUserHighlight ? "text-violet-600 font-extrabold" : "text-slate-800"}`}>
+                        <span className={`text-xs font-black truncate ${isUserHighlight ? "text-indigo-600 font-extrabold" : "text-slate-800"}`}>
                           {student.name}
                         </span>
                         {isUserHighlight && (
-                          <span className="text-[7px] font-black bg-violet-500/20 text-violet-600 px-1 py-0.2 rounded border border-violet-500/30 uppercase tracking-widest">
+                          <span className="text-[7px] font-black bg-indigo-500/20 text-indigo-600 px-1 py-0.2 rounded border border-indigo-500/30 uppercase tracking-widest">
                             Bạn
                           </span>
                         )}
@@ -560,13 +560,13 @@ export default function HistoryPage() {
           </motion.div>
 
           {/* Khích lệ người dùng */}
-          <div className="p-4 rounded-2xl bg-indigo-500/5 border border-indigo-500/10 flex items-center justify-between gap-3 text-center sm:text-left">
+          <div className="p-4 rounded-xl bg-indigo-500/5 border border-indigo-500/10 flex items-center justify-between gap-3 text-center sm:text-left">
             <p className="text-[10px] md:text-xs font-bold text-indigo-600">
               ⚡ Hãy chăm chỉ tích lũy thêm XP để thăng hạng vượt qua các bạn học khác trên Bảng Vàng! Luyện tập ngay nào!
             </p>
             <button 
               onClick={() => window.location.href = "/learn"} 
-              className="text-[10px] font-black text-white bg-gradient-to-r from-violet-600 to-indigo-600 px-3 py-1.5 rounded-xl hover:scale-102 active:scale-95 transition-all shadow-md shrink-0"
+              className="text-[10px] font-black text-white bg-gradient-to-r from-indigo-600 to-indigo-600 px-3 py-1.5 rounded-xl hover:scale-102 active:scale-95 transition-all shadow-md shrink-0"
             >
               Học ngay
             </button>
@@ -575,11 +575,11 @@ export default function HistoryPage() {
         </div>
 
         {/* PHÂN HỆ 2: BẢNG TÀNG HUY HIỆU (Badges Collection - col-span-1) */}
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl space-y-6 hover:border-slate-300/30 transition-all duration-300 flex flex-col justify-between">
+        <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xl space-y-6 hover:border-slate-300/30 transition-all duration-300 flex flex-col justify-between">
           
           <div className="space-y-4 flex-1">
             <div className="flex items-center gap-2.5 border-b border-slate-200 pb-3">
-              <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-300 flex items-center justify-center text-emerald-600 shadow-md">
+              <div className="w-8 h-8 rounded-lg bg-teal-500/10 border border-teal-300 flex items-center justify-center text-teal-600 shadow-md">
                 <Award className="w-4 h-4" />
               </div>
               <div>
@@ -601,20 +601,20 @@ export default function HistoryPage() {
                   <motion.div
                     key={badge.id}
                     variants={badgeVariants}
-                    className={`relative rounded-2xl border p-3 flex flex-col justify-between min-h-[145px] transition-all duration-300 group shadow-md hover:scale-[1.02] ${
+                    className={`relative rounded-xl p-3 flex flex-col justify-between min-h-[145px] transition-all duration-300 group shadow-md hover:scale-[1.02] ${
                       badge.unlocked
-                        ? `${badge.glowColor} ${badge.neonShadow} cursor-pointer`
-                        : "border-slate-900 bg-slate-100 overflow-hidden"
+                        ? `${badge.glowColor} ${badge.neonShadow} border border-indigo-400 cursor-pointer`
+                        : "border border-dashed border-slate-300 bg-slate-50 overflow-hidden"
                     }`}
                   >
                     {/* Glassmorphism lock overlay cho các huy hiệu chưa đạt */}
                     {!badge.unlocked && (
-                      <div className="absolute inset-0 bg-slate-50 backdrop-blur-[2.5px] rounded-2xl flex flex-col items-center justify-center p-3 text-center z-10 border border-slate-900/60 transition-all duration-300 group-hover:bg-slate-50">
-                        <div className="w-8 h-8 rounded-xl bg-slate-950/80 border border-slate-200 flex items-center justify-center text-slate-500 mb-1.5 shadow-md">
+                      <div className="absolute inset-0 bg-slate-50/80 backdrop-blur-[2.5px] rounded-xl flex flex-col items-center justify-center p-3 text-center z-10 border border-slate-300 transition-all duration-300 group-hover:bg-slate-50/90">
+                        <div className="w-8 h-8 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-500 mb-1.5 shadow-md">
                           <Lock className="w-3.5 h-3.5" />
                         </div>
                         <span className="text-[8px] font-bold text-slate-500 uppercase tracking-widest block mb-0.5">Chưa đạt</span>
-                        <span className="text-[9px] font-black text-violet-600 max-w-[95%] leading-tight text-center break-words">
+                        <span className="text-[9px] font-black text-indigo-600 max-w-[95%] leading-tight text-center break-words">
                           {badge.requirement}
                         </span>
                       </div>
@@ -626,7 +626,7 @@ export default function HistoryPage() {
                         {/* Icon Neon 3D phát sáng */}
                         <div className={`w-9 h-9 rounded-xl flex items-center justify-center border transition-all duration-500 group-hover:rotate-[15deg] group-hover:scale-105 shadow-inner ${
                           badge.unlocked
-                            ? `text-white bg-gradient-to-tr from-violet-600 to-indigo-600 border-violet-400/25`
+                            ? `text-white bg-gradient-to-tr from-indigo-600 to-indigo-600 border-indigo-400/25`
                             : "bg-slate-100 border-slate-200 text-slate-700"
                         }`}>
                           <Icon className="w-4 h-4" />
@@ -647,7 +647,7 @@ export default function HistoryPage() {
 
                       {/* Neon bottom line */}
                       {badge.unlocked && (
-                        <div className="w-[80%] mx-auto h-[2px] rounded-full bg-gradient-to-r from-violet-500 to-indigo-500 opacity-30 group-hover:opacity-100 transition-all duration-300 mt-2" />
+                        <div className="w-[80%] mx-auto h-[2px] rounded-full bg-gradient-to-r from-indigo-500 to-indigo-500 opacity-30 group-hover:opacity-100 transition-all duration-300 mt-2" />
                       )}
                     </div>
                   </motion.div>
@@ -657,10 +657,10 @@ export default function HistoryPage() {
           </div>
 
           {/* Thống kê chung huy hiệu */}
-          <div className="grid grid-cols-2 gap-3 pt-4 border-t border-slate-200 mt-4 bg-slate-100 p-2.5 rounded-2xl select-none">
+          <div className="grid grid-cols-2 gap-3 pt-4 border-t border-slate-200 mt-4 bg-slate-100 p-2.5 rounded-xl select-none">
             <div className="text-center space-y-0.5">
               <span className="text-[8px] text-slate-500 font-bold block uppercase tracking-wider">Đã mở khóa</span>
-              <span className="text-xs font-black text-emerald-600">
+              <span className="text-xs font-black text-teal-600">
                 {unlockedBadgesCount} / 6 Danh hiệu
               </span>
             </div>
@@ -677,10 +677,10 @@ export default function HistoryPage() {
       </div>
 
       {/* PHÂN HỆ 3: NHẬT KÝ LUYỆN TẬP CHUYÊN SÂU (Learning Log - Hàng ngang đáy trang) */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl space-y-4 hover:border-slate-300/30 transition-all duration-300">
+      <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xl space-y-4 hover:border-slate-300/30 transition-all duration-300">
         
         <div className="flex items-center gap-2.5 border-b border-slate-200 pb-3">
-          <div className="w-8 h-8 rounded-lg bg-violet-500/10 border border-violet-300 flex items-center justify-center text-violet-600 shadow-md">
+          <div className="w-8 h-8 rounded-lg bg-indigo-500/10 border border-indigo-300 flex items-center justify-center text-indigo-600 shadow-md">
             <History className="w-4 h-4" />
           </div>
           <div>
@@ -718,12 +718,12 @@ export default function HistoryPage() {
                   <td className="py-3 px-4 uppercase text-[10px] font-black tracking-wider text-slate-500">
                     <span className={`px-2 py-0.5 rounded-lg border text-[9px] ${
                       log.type === "speaking" 
-                        ? "bg-violet-500/10 border-violet-300 text-violet-600"
+                        ? "bg-indigo-500/10 border-indigo-300 text-indigo-600"
                         : log.type === "dictation"
                         ? "bg-blue-500/10 border-blue-300 text-blue-600"
                         : log.type === "quiz"
                         ? "bg-yellow-500/10 border-yellow-500/20 text-yellow-400"
-                        : "bg-emerald-500/10 border-emerald-300 text-emerald-600"
+                        : "bg-teal-500/10 border-teal-300 text-teal-600"
                     }`}>
                       {log.type}
                     </span>
@@ -733,7 +733,7 @@ export default function HistoryPage() {
                   </td>
                   <td className="py-3 px-4 font-bold">
                     {log.passed ? (
-                      <span className="flex items-center gap-1 text-emerald-600 text-[10px] bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/15 w-fit">
+                      <span className="flex items-center gap-1 text-teal-600 text-[10px] bg-teal-500/10 px-2 py-0.5 rounded-full border border-teal-500/15 w-fit">
                         <CheckCircle2 className="w-3 h-3" />
                         <span>Đạt</span>
                       </span>

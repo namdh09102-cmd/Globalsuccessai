@@ -125,10 +125,10 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="w-[250px] shrink-0 border-r border-slate-200 bg-white hidden md:flex flex-col h-full overflow-hidden select-none shadow-[4px_0_24px_rgba(0,0,0,0.02)]">
+    <aside className="w-[250px] shrink-0 border-r border-slate-200 bg-slate-100 hidden md:flex flex-col h-full overflow-hidden select-none shadow-[4px_0_24px_rgba(0,0,0,0.02)]">
       {/* Brand Header */}
-      <div className="p-6 border-b border-slate-100 flex items-center gap-3 bg-slate-50/50">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+      <div className="p-6 border-b border-slate-200 flex items-center gap-3 bg-slate-100">
+        <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-indigo-500/20">
           <PlayCircle className="w-6 h-6 text-white" />
         </div>
         <div>
@@ -158,23 +158,23 @@ export default function Sidebar() {
             <Link
               key={item.name}
               href={item.href}
-              className={`flex items-center justify-between px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 group ${
+              className={`flex items-center justify-between px-4 py-2.5 rounded-lg text-xs font-bold transition-all duration-300 group ${
                 isActive
-                  ? "bg-indigo-50 text-indigo-700 shadow-sm"
-                  : "text-slate-500 hover:bg-slate-50 hover:text-indigo-600"
+                  ? "bg-indigo-600 text-white shadow-sm"
+                  : "text-slate-500 hover:bg-slate-200 hover:text-indigo-600"
               }`}
             >
               <div className="flex items-center gap-3">
                 <Icon
                   className={`w-4 h-4 transition-transform duration-300 group-hover:scale-110 ${
-                    isActive ? "text-indigo-600" : "text-slate-400 group-hover:text-indigo-500"
+                    isActive ? "text-white" : "text-slate-400 group-hover:text-indigo-500"
                   }`}
                 />
                 <span>{item.name}</span>
               </div>
               
               {isActive && (
-                <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 shadow-[0_0_4px_rgba(99,102,241,0.5)]" />
+                <div className="w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_4px_rgba(255,255,255,0.5)]" />
               )}
             </Link>
           );
@@ -184,17 +184,13 @@ export default function Sidebar() {
       {/* Role Switcher */}
       <div className="px-4 py-2 border-t border-slate-100 pt-3">
         {isTeacherRoute ? (
-          <Link
-            href="/dashboard"
-            className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-white text-[11px] font-black text-center flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 active:scale-[0.98] transition-all group/btn"
+          <Link href="/dashboard" className="w-full py-2.5 px-4 rounded-lg bg-gradient-to-r from-teal-500 to-teal-400 hover:from-teal-400 hover:to-teal-300 text-white text-[11px] font-black text-center flex items-center justify-center gap-2 shadow-lg shadow-teal-500/20 active:scale-[0.98] transition-all group/btn"
           >
             <User className="w-3.5 h-3.5 transition-transform group-hover/btn:scale-110" />
             <span>Giao diện Học Sinh</span>
           </Link>
         ) : (
-          <Link
-            href="/teacher"
-            className="w-full py-2.5 px-4 rounded-xl bg-indigo-50 hover:bg-indigo-100 border border-indigo-100 text-indigo-600 text-[11px] font-black text-center flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all group/btn"
+          <Link href="/teacher" className="w-full py-2.5 px-4 rounded-lg bg-indigo-50 hover:bg-indigo-100 border border-indigo-100 text-indigo-600 text-[11px] font-black text-center flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all group/btn"
           >
             <School className="w-3.5 h-3.5 transition-transform group-hover/btn:scale-110" />
             <span>Giao diện Giáo Viên</span>
@@ -206,7 +202,7 @@ export default function Sidebar() {
       <div className="px-4 py-2">
         {isPro ? (
           /* PRO Active Badge */
-          <div className="relative overflow-hidden rounded-2xl border border-amber-200 bg-gradient-to-b from-amber-50 to-white p-4 space-y-2 shadow-sm">
+          <div className="relative overflow-hidden rounded-xl border border-amber-200 bg-gradient-to-b from-amber-50 to-white p-4 space-y-2 shadow-sm">
             <div className="relative flex items-center gap-3">
               <div className="w-7 h-7 rounded-lg bg-amber-100 border border-amber-200 flex items-center justify-center text-amber-600 shadow-sm">
                 <Crown className="w-4 h-4" />
@@ -224,7 +220,7 @@ export default function Sidebar() {
           </div>
         ) : (
           /* Upgrade Card */
-          <div className="relative overflow-hidden rounded-2xl border border-indigo-100 bg-gradient-to-b from-indigo-50 to-white p-4 space-y-3 shadow-sm group hover:shadow-md transition-shadow">
+          <div className="relative overflow-hidden rounded-xl border border-indigo-100 bg-gradient-to-b from-indigo-50 to-white p-4 space-y-3 shadow-sm group hover:shadow-md transition-shadow">
             <div className="relative z-10 flex items-start gap-3">
               <div className="w-7 h-7 rounded-lg bg-amber-100 border border-amber-200 flex items-center justify-center text-amber-500 shadow-sm animate-pulse">
                 <Crown className="w-4 h-4" />
@@ -240,9 +236,7 @@ export default function Sidebar() {
               </div>
             </div>
             
-            <Link
-              href="/upgrade"
-              className="relative z-10 block w-full py-2 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white text-[10px] font-bold text-center active:scale-[0.98] transition-all shadow-md shadow-indigo-500/20"
+            <Link href="/upgrade" className="relative z-10 block w-full py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-indigo-500 hover:from-indigo-600 hover:to-indigo-600 text-white text-[10px] font-bold text-center active:scale-[0.98] transition-all shadow-md shadow-indigo-500/20"
             >
               Xem bảng giá →
             </Link>
@@ -256,10 +250,10 @@ export default function Sidebar() {
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-violet-500 flex items-center justify-center font-black text-white text-xs shadow-md uppercase">
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-indigo-500 flex items-center justify-center font-black text-white text-xs shadow-md uppercase">
                   {fullName.substring(0, 2)}
                 </div>
-                <div className="absolute bottom-[-2px] right-[-2px] w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-white" />
+                <div className="absolute bottom-[-2px] right-[-2px] w-3.5 h-3.5 bg-teal-500 rounded-full border-2 border-white" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-1.5">
@@ -287,7 +281,7 @@ export default function Sidebar() {
               <div className="w-full h-1.5 rounded-full bg-slate-200 overflow-hidden">
                 <div 
                   style={{ width: `${Math.min(100, (xp / 1000) * 100)}%` }} 
-                  className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full transition-all duration-500"
+                  className="h-full bg-gradient-to-r from-indigo-500 to-indigo-500 rounded-full transition-all duration-500"
                 />
               </div>
             </div>
@@ -304,9 +298,7 @@ export default function Sidebar() {
         {/* Admin System Link (Subtle) & Bottom controls */}
         {(userRole.toUpperCase() === "ADMIN" || userEmail.toLowerCase() === "admin@globalsuccess.ai") && (
           <div className="pt-2">
-            <Link
-              href="/admin"
-              className="w-full flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 hover:border-indigo-200 text-slate-600 hover:text-indigo-600 text-[10px] font-extrabold uppercase tracking-wider transition-all duration-300"
+            <Link href="/admin" className="w-full flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 hover:border-indigo-200 text-slate-600 hover:text-indigo-600 text-[10px] font-extrabold uppercase tracking-wider transition-all duration-300"
             >
               <span>🛠️ Quản trị hệ thống</span>
             </Link>

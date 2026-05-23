@@ -184,9 +184,7 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
     <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center p-6 bg-slate-50 text-slate-700 relative overflow-hidden">
       
       {/* Nút quay lại */}
-      <button
-        onClick={onBack}
-        className="self-start mb-6 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-200 hover:text-slate-100 hover:bg-slate-800/40 transition-all text-xs font-semibold flex items-center gap-1.5 z-10"
+      <button className="self-start mb-6 px-4 py-2 rounded-lg bg-slate-900/60 border border-slate-200 hover:text-slate-100 hover:bg-slate-800/40 transition-all text-xs font-semibold flex items-center gap-1.5 z-10"
       >
         <ArrowLeft className="w-4 h-4" /> Về Bảng Điều Khiển
       </button>
@@ -211,18 +209,18 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
       </div>
 
       {/* Question Card */}
-      <div className="w-full max-w-2xl rounded-3xl border border-slate-200 bg-white p-8 space-y-8 shadow-2xl relative overflow-hidden z-10 pb-12">
+      <div className="w-full max-w-2xl rounded-xl border border-slate-200 bg-white p-8 space-y-8 shadow-2xl relative overflow-hidden z-10 pb-12">
         {/* Ambient glow */}
-        <div className="absolute top-0 right-0 w-80 h-80 bg-violet-500/5 rounded-full blur-[80px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-80 h-80 bg-indigo-500/5 rounded-full blur-[80px] pointer-events-none" />
 
         {/* Room Header */}
         <div className="flex items-center justify-between border-b border-slate-200 pb-4 relative z-10">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-300 flex items-center justify-center text-violet-600 shadow">
+            <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-300 flex items-center justify-center text-indigo-600 shadow">
               <HelpCircle className="w-5 h-5 animate-pulse" />
             </div>
             <div>
-              <span className="text-[10px] font-black text-violet-600 tracking-wider uppercase">
+              <span className="text-[10px] font-black text-indigo-600 tracking-wider uppercase">
                 Quiz Room (Offline)
               </span>
               <h2 className="text-sm font-bold text-slate-800">{lessonTitle}</h2>
@@ -230,7 +228,7 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
           </div>
           
           <div className="flex items-center gap-2">
-            <span className="px-2.5 py-0.5 rounded-full text-[9px] font-extrabold bg-violet-600/10 text-violet-600 border border-violet-300 uppercase">
+            <span className="px-2.5 py-0.5 rounded-full text-[9px] font-extrabold bg-indigo-600/10 text-indigo-600 border border-indigo-300 uppercase">
               Câu {currentIdx + 1}/{questions.length}
             </span>
           </div>
@@ -260,16 +258,16 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
               <div
                 key={opt}
                 onClick={() => handleSelectOption(opt)}
-                className={`p-4 rounded-2xl border transition-all duration-100 cursor-pointer select-none relative ${
+                className={`p-4 rounded-xl border transition-all duration-100 cursor-pointer select-none relative ${
                   isSelected
-                    ? "bg-indigo-50 border-violet-500 translate-y-[4px] shadow-[0_0px_0_#e2e8f0]"
+                    ? "bg-indigo-50 border-indigo-500 translate-y-[4px] shadow-[0_0px_0_#e2e8f0]"
                     : "bg-white border-slate-200 hover:border-slate-300 hover:bg-slate-50 shadow-[0_4px_0_#e2e8f0] active:translate-y-[4px] active:shadow-[0_0px_0_#e2e8f0]"
                 }`}
               >
                 <div className="flex items-center gap-3">
                   <div className={`w-6 h-6 rounded-lg flex items-center justify-center text-xs font-black border transition-colors ${
                     isSelected
-                      ? "bg-violet-500 border-violet-400 text-white"
+                      ? "bg-indigo-500 border-indigo-400 text-white"
                       : "bg-slate-900 border-slate-200 text-slate-500"
                   }`}>
                     {letter}
@@ -290,9 +288,9 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
             <button
               onClick={handleSubmit}
               disabled={!selectedOption}
-              className={`px-8 py-2.5 rounded-xl text-xs font-black transition-colors flex items-center gap-1.5 shadow-lg ${
+              className={`px-8 py-2.5 rounded-lg text-xs font-black transition-colors flex items-center gap-1.5 shadow-lg ${
                 selectedOption
-                  ? "bg-violet-600 hover:bg-violet-500 text-white shadow-violet-950/20"
+                  ? "bg-indigo-600 hover:bg-indigo-500 text-white shadow-indigo-950/20"
                   : "bg-slate-200 text-slate-700 cursor-not-allowed shadow-none"
               }`}
             >
@@ -315,13 +313,13 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
             exit={{ y: 100, opacity: 0 }}
             className={`fixed bottom-0 left-0 right-0 z-40 backdrop-blur border-t px-8 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-t-3xl shadow-2xl ${
               isCorrect
-                ? "bg-emerald-950/80 border-emerald-800 text-emerald-600"
+                ? "bg-teal-950/80 border-teal-800 text-teal-600"
                 : "bg-rose-950/80 border-rose-800 text-rose-600"
             }`}
           >
             <div className="flex items-center gap-4">
               <div className={`w-12 h-12 rounded-full flex items-center justify-center shrink-0 ${
-                isCorrect ? "bg-emerald-500/10 text-emerald-600" : "bg-rose-500/10 text-rose-600"
+                isCorrect ? "bg-teal-500/10 text-teal-600" : "bg-rose-500/10 text-rose-600"
               }`}>
                 {isCorrect ? (
                   <CheckCircle2 className="w-6 h-6 animate-bounce" />
@@ -342,9 +340,7 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
             </div>
 
             <div className="flex items-center gap-3 self-end sm:self-auto">
-              <button
-                onClick={handleAskAI}
-                className="px-4 py-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 bg-white hover:bg-slate-100 border border-slate-600 text-slate-800"
+              <button className="px-4 py-3 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2 bg-white hover:bg-slate-100 border border-slate-600 text-slate-800"
               >
                 <Bot className="w-4 h-4 text-rose-600" />
                 <span className="hidden sm:inline">Hỏi Cô giáo AI</span>
@@ -352,9 +348,9 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
 
               <button
                 onClick={handleNext}
-                className={`px-6 py-3 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-1.5 shadow-md ${
+                className={`px-6 py-3 rounded-lg text-xs font-black transition-all flex items-center justify-center gap-1.5 shadow-md ${
                   isCorrect
-                    ? "bg-emerald-600 hover:bg-emerald-500 text-white"
+                    ? "bg-teal-600 hover:bg-teal-500 text-white"
                     : "bg-rose-600 hover:bg-rose-500 text-white"
                 }`}
               >
@@ -379,7 +375,7 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="w-full max-w-lg bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden"
+              className="w-full max-w-lg bg-white border border-slate-200 rounded-xl p-6 md:p-8 shadow-2xl relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-rose-500/10 rounded-full blur-[80px] pointer-events-none" />
               

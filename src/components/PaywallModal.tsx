@@ -56,10 +56,10 @@ const PLANS = [
     priceNote: "~3.800đ / ngày",
     savings: "Tiết kiệm 40%",
     color: "violet",
-    borderClass: "border-violet-600/40",
+    borderClass: "border-indigo-600/40",
     bgClass: "bg-[#0F1520]",
     buttonClass:
-      "bg-violet-600 hover:bg-violet-500 shadow-[0_4px_0_#4c1d95] hover:shadow-[0_2px_0_#4c1d95] active:translate-y-[3px] active:shadow-none",
+      "bg-indigo-600 hover:bg-indigo-500 shadow-[0_4px_0_#4c1d95] hover:shadow-[0_2px_0_#4c1d95] active:translate-y-[3px] active:shadow-none",
     features: [
       "Toàn bộ giáo trình Lớp 6–12",
       "AI Chấm phát âm không giới hạn",
@@ -77,7 +77,7 @@ const PLANS = [
     priceNote: "~2.700đ / ngày",
     savings: "Tiết kiệm 58%",
     color: "amber",
-    borderClass: "border-violet-500 ring-2 ring-violet-500/60 ring-offset-2 ring-offset-[#0B0F19]",
+    borderClass: "border-indigo-500 ring-2 ring-indigo-500/60 ring-offset-2 ring-offset-[#0B0F19]",
     bgClass: "bg-gradient-to-b from-[#161032] to-[#0F1520]",
     buttonClass:
       "bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-black shadow-[0_4px_0_#92400e] hover:shadow-[0_2px_0_#92400e] active:translate-y-[3px] active:shadow-none font-black",
@@ -184,7 +184,7 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
                 initial={{ opacity: 0, y: -40, scale: 0.9 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -40 }}
-                className="fixed top-6 left-1/2 -translate-x-1/2 z-[99] bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-black text-xs px-6 py-3 rounded-2xl shadow-2xl shadow-amber-500/30 flex items-center gap-2 border border-amber-300/40"
+                className="fixed top-6 left-1/2 -translate-x-1/2 z-[99] bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-black text-xs px-6 py-3 rounded-xl shadow-2xl shadow-amber-500/30 flex items-center gap-2 border border-amber-300/40"
               >
                 <Crown className="w-4 h-4" />
                 <span>{toastMsg}</span>
@@ -210,10 +210,10 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="pointer-events-auto w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-[#0B0F19] rounded-3xl border border-slate-800/60 shadow-2xl shadow-black/50 relative"
+              className="pointer-events-auto w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-[#0B0F19] rounded-xl border border-slate-800/60 shadow-2xl shadow-black/50 relative"
             >
               {/* Ambient Glows */}
-              <div className="absolute top-0 left-1/4 w-96 h-48 bg-violet-600/8 rounded-full blur-[80px] pointer-events-none" />
+              <div className="absolute top-0 left-1/4 w-96 h-48 bg-indigo-600/8 rounded-full blur-[80px] pointer-events-none" />
               <div className="absolute bottom-0 right-1/4 w-64 h-48 bg-amber-500/5 rounded-full blur-[60px] pointer-events-none" />
 
               {/* Close Button */}
@@ -227,12 +227,12 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
               <div className="p-6 md:p-8 space-y-8">
                 {/* Header */}
                 <div className="text-center space-y-3 relative">
-                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/25 text-violet-400 text-[10px] font-black uppercase tracking-widest">
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-400 text-[10px] font-black uppercase tracking-widest">
                     <Crown className="w-3.5 h-3.5" />
                     <span>Global Success PRO</span>
                   </div>
 
-                  <h2 className="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-violet-200 to-amber-300 tracking-tight">
+                  <h2 className="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-200 to-amber-300 tracking-tight">
                     Mở Khóa Toàn Diện Quyền Năng AI
                   </h2>
                   <p className="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">
@@ -260,7 +260,7 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
                     <div
                       key={plan.id}
                       onClick={() => setSelectedPlan(plan.id)}
-                      className={`relative rounded-2xl border p-5 cursor-pointer transition-all duration-200 ${plan.bgClass} ${plan.borderClass} ${
+                      className={`relative rounded-xl border p-5 cursor-pointer transition-all duration-200 ${plan.bgClass} ${plan.borderClass} ${
                         selectedPlan === plan.id ? "scale-[1.02]" : "hover:scale-[1.01] opacity-90 hover:opacity-100"
                       }`}
                     >
@@ -278,7 +278,7 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
                             {plan.name}
                           </h3>
                           {plan.savings && (
-                            <span className="inline-block mt-1 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-[9px] font-black uppercase tracking-wider">
+                            <span className="inline-block mt-1 px-2 py-0.5 rounded-full bg-teal-500/10 border border-teal-500/25 text-teal-400 text-[9px] font-black uppercase tracking-wider">
                               {plan.savings}
                             </span>
                           )}
@@ -323,14 +323,14 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
                 {/* Payment Section */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   {/* VietQR Mock */}
-                  <div className="rounded-2xl border border-slate-800 bg-[#0F1520] p-5 space-y-4">
+                  <div className="rounded-xl border border-slate-800 bg-[#0F1520] p-5 space-y-4">
                     <div className="flex items-center gap-2 text-slate-400">
                       <QrCode className="w-4 h-4 text-indigo-400" />
                       <h4 className="text-xs font-black uppercase tracking-wider">Quét Mã QR Thanh Toán</h4>
                     </div>
 
                     <div className="flex justify-center">
-                      <div className="relative w-36 h-36 rounded-2xl border-2 border-indigo-500/30 bg-white p-2 shadow-lg shadow-indigo-950/20">
+                      <div className="relative w-36 h-36 rounded-xl border-2 border-indigo-500/30 bg-white p-2 shadow-lg shadow-indigo-950/20">
                         <img 
                           src={`https://img.vietqr.io/image/mb-${bankInfo.accountNumber}-compact.png?amount=999000&addInfo=VIP%20KHANH%20TRAN&accountName=${encodeURIComponent(bankInfo.ownerName)}`}
                           alt="VietQR" 
@@ -345,9 +345,9 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
                   </div>
 
                   {/* Bank Transfer Info */}
-                  <div className="rounded-2xl border border-slate-800 bg-[#0F1520] p-5 space-y-4">
+                  <div className="rounded-xl border border-slate-800 bg-[#0F1520] p-5 space-y-4">
                     <div className="flex items-center gap-2 text-slate-400">
-                      <Shield className="w-4 h-4 text-emerald-400" />
+                      <Shield className="w-4 h-4 text-teal-400" />
                       <h4 className="text-xs font-black uppercase tracking-wider">Thông Tin Chuyển Khoản</h4>
                     </div>
 
@@ -365,7 +365,7 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
                             {item.copyable && (
                               <button
                                 onClick={handleCopyBank}
-                                className={`p-1 rounded-lg transition-colors ${copiedBank ? "bg-emerald-500/15 text-emerald-400" : "bg-slate-800 text-slate-400 hover:text-slate-200"}`}
+                                className={`p-1 rounded-lg transition-colors ${copiedBank ? "bg-teal-500/15 text-teal-400" : "bg-slate-800 text-slate-400 hover:text-slate-200"}`}
                               >
                                 {copiedBank ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
                               </button>

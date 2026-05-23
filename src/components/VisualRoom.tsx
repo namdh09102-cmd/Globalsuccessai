@@ -56,7 +56,7 @@ export default function VisualRoom({
       </div>
 
       {/* Main Content */}
-      <div className="w-full bg-white border border-slate-200 rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
+      <div className="w-full bg-white border border-slate-200 rounded-xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
         {/* Glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -92,7 +92,7 @@ export default function VisualRoom({
             )}
           </div>
 
-          <div className="w-full flex flex-col items-center justify-center p-4 bg-[#0a0d14] rounded-2xl border border-slate-200 min-h-[400px]">
+          <div className="w-full flex flex-col items-center justify-center p-4 bg-[#0a0d14] rounded-xl border border-slate-200 min-h-[400px]">
             {/* Audio Player Section */}
             {mainAudio && (
               <div className="w-full mb-6 p-4 bg-slate-900/50 rounded-xl border border-slate-300/50 flex flex-col gap-3">
@@ -146,7 +146,7 @@ export default function VisualRoom({
           <div className="mt-8 flex justify-center">
             <button
               onClick={() => onComplete(100)}
-              className="px-8 py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-2xl font-bold transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:shadow-[0_0_30px_rgba(79,70,229,0.5)] flex items-center gap-2 transform hover:-translate-y-0.5"
+              className="px-8 py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-bold transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:shadow-[0_0_30px_rgba(79,70,229,0.5)] flex items-center gap-2 transform hover:-translate-y-0.5"
             >
               <CheckCircle2 className="w-5 h-5" />
               Đã hiểu & Hoàn thành

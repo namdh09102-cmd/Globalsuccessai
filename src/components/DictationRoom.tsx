@@ -169,7 +169,7 @@ export default function DictationRoom({
       </button>
 
       {/* Thẻ luyện nghe trung tâm */}
-      <div className="w-full max-w-2xl rounded-3xl border border-slate-200 bg-white p-8 space-y-8 shadow-2xl relative overflow-hidden">
+      <div className="w-full max-w-2xl rounded-xl border border-slate-200 bg-white p-8 space-y-8 shadow-2xl relative overflow-hidden">
         {/* Glow */}
         <div className="absolute top-0 right-0 w-80 h-80 bg-indigo-500/5 rounded-full blur-[80px] pointer-events-none" />
 
@@ -204,7 +204,7 @@ export default function DictationRoom({
             
             <button
               onClick={handlePlayAudio}
-              className={`w-20 h-20 rounded-full bg-gradient-to-tr from-violet-600 via-indigo-600 to-blue-500 hover:opacity-95 flex items-center justify-center text-white shadow-xl shadow-indigo-950/50 border border-indigo-500/30 transition-transform ${
+              className={`w-20 h-20 rounded-full bg-gradient-to-tr from-indigo-600 via-indigo-600 to-blue-500 hover:opacity-95 flex items-center justify-center text-white shadow-xl shadow-indigo-950/50 border border-indigo-500/30 transition-transform ${
                 isPlaying ? "scale-95" : "hover:scale-105"
               }`}
             >
@@ -221,7 +221,7 @@ export default function DictationRoom({
         </div>
 
         {/* Interactive Text Display */}
-        <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 leading-loose text-sm font-medium z-10 relative">
+        <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 leading-loose text-sm font-medium z-10 relative">
           <div className="flex flex-wrap items-center gap-x-2 gap-y-4">
             {parts.map((part, idx) => {
               if (idx % 2 === 0) {
@@ -247,10 +247,10 @@ export default function DictationRoom({
                     style={isMobile ? { width: "100%" } : { width: `${Math.max(80, part.length * 11)}px` }}
                     className={`px-3 py-2 md:py-1 text-base md:text-xs font-bold font-mono text-center rounded-lg bg-slate-50 text-slate-100 placeholder-slate-600 outline-none transition-all border-b-2 w-full md:w-auto ${
                       isCorrect
-                        ? "border-b-emerald-500 shadow-[0_4px_12px_rgba(16,185,129,0.2)]"
+                        ? "border-b-teal-500 shadow-[0_4px_12px_rgba(16,185,129,0.2)]"
                         : isIncorrect
                         ? "border-b-rose-500 shadow-[0_4px_12px_rgba(244,63,94,0.2)] animate-shake"
-                        : "border-b-indigo-500/50 hover:border-b-indigo-400 focus:border-b-violet-500"
+                        : "border-b-indigo-500/50 hover:border-b-indigo-400 focus:border-b-indigo-500"
                     }`}
                   />
                 );
@@ -271,7 +271,7 @@ export default function DictationRoom({
           </button>
 
           {allCorrect ? (
-            <div className="px-4 py-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-extrabold flex items-center gap-1.5">
+            <div className="px-4 py-2.5 rounded-xl bg-teal-500/10 border border-teal-500/20 text-teal-400 text-xs font-extrabold flex items-center gap-1.5">
               <Check className="w-4 h-4 animate-bounce" />
               <span>Chính xác hoàn toàn! Đang lưu kết quả...</span>
             </div>

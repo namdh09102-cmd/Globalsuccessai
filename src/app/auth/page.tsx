@@ -116,15 +116,15 @@ export default function AuthPage() {
       
       {/* Background Effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-fuchsia-500/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none" />
       
       {/* Auth Card */}
       <motion.div 
         layout
-        className="w-full max-w-md bg-slate-50 backdrop-blur-xl border border-slate-200 rounded-3xl shadow-2xl p-8 relative z-10"
+        className="w-full max-w-md bg-slate-50 backdrop-blur-xl border border-slate-200 rounded-xl shadow-2xl p-8 relative z-10"
       >
         <div className="flex flex-col items-center mb-8">
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-500/20 mb-4">
+          <div className="w-14 h-14 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-indigo-500/20 mb-4">
             <ShieldCheck className="w-7 h-7 text-slate-800" />
           </div>
           <h1 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-500">
@@ -211,10 +211,7 @@ export default function AuthPage() {
             )}
           </AnimatePresence>
 
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="w-full py-4 mt-2 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-500 hover:from-indigo-500 hover:to-violet-400 text-slate-800 text-sm font-black uppercase tracking-wider shadow-[0_4px_0_#3730a3] hover:shadow-[0_2px_0_#3730a3] active:translate-y-[2px] active:shadow-none transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+          <button className="w-full py-4 mt-2 rounded-lg bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-slate-800 text-sm font-black uppercase tracking-wider shadow-[0_4px_0_#3730a3] hover:shadow-[0_2px_0_#3730a3] active:translate-y-[2px] active:shadow-none transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
           >
             {isLoading ? (
               <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />

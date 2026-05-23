@@ -296,8 +296,8 @@ export default function AdminCurriculum() {
             className={`fixed top-6 left-1/2 -translate-x-1/2 z-[99] ${
               toastType === "error"
                 ? "bg-gradient-to-r from-red-600 to-rose-500 text-white shadow-red-500/40 border-red-400/60"
-                : "bg-gradient-to-r from-emerald-500 to-teal-400 text-white shadow-emerald-500/30 border-emerald-300/40"
-            } font-black text-xs px-6 py-3 rounded-2xl shadow-2xl flex items-center gap-2 border`}
+                : "bg-gradient-to-r from-teal-500 to-teal-400 text-white shadow-teal-500/30 border-teal-300/40"
+            } font-black text-xs px-6 py-3 rounded-xl shadow-2xl flex items-center gap-2 border`}
           >
             {toastType === "error" ? <AlertCircle className="w-4 h-4" /> : <CheckCircle className="w-4 h-4" />}
             <span>{toastMessage}</span>
@@ -306,7 +306,7 @@ export default function AdminCurriculum() {
       </AnimatePresence>
 
       <div className="flex items-center gap-3 border-b border-slate-800/60 pb-4">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+        <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-teal-600 to-teal-500 flex items-center justify-center shadow-lg shadow-teal-500/20">
           <BookOpen className="w-6 h-6 text-white" />
         </div>
         <div>
@@ -322,19 +322,19 @@ export default function AdminCurriculum() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         
         {/* BENTO CARD #2: KHỐI QUẢN LÝ GIÁO TRÌNH */}
-        <div className="rounded-3xl bg-[#111827] border border-slate-800 p-6 flex flex-col space-y-6 relative overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-[60px] pointer-events-none" />
+        <div className="rounded-xl bg-[#111827] border border-slate-800 p-6 flex flex-col space-y-6 relative overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-500/5 rounded-full blur-[60px] pointer-events-none" />
           
           <div className="flex items-center justify-between border-b border-slate-800/60 pb-3">
             <div className="flex items-center gap-2 text-slate-300">
-              <BookOpen className="w-5 h-5 text-emerald-400 fill-emerald-400/20" />
+              <BookOpen className="w-5 h-5 text-teal-400 fill-teal-400/20" />
               <h2 className="text-sm font-black uppercase tracking-wider">Cấu Trúc Kho Bài Giảng K-12</h2>
             </div>
             <div className="flex items-center gap-2">
               <button
                 onClick={handleAutoSeedL1}
                 disabled={isIngesting}
-                className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/20 px-3 py-1.5 rounded-lg hover:bg-fuchsia-500/20 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
+                className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-3 py-1.5 rounded-lg hover:bg-indigo-500/20 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
               >
                 <Rocket className="w-3.5 h-3.5" />
                 Auto Lớp 1
@@ -350,7 +350,7 @@ export default function AdminCurriculum() {
               <button
                 onClick={handleAutoSeedL3}
                 disabled={isIngesting}
-                className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1.5 rounded-lg hover:bg-emerald-500/20 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
+                className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider bg-teal-500/10 text-teal-400 border border-teal-500/20 px-3 py-1.5 rounded-lg hover:bg-teal-500/20 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
               >
                 <Rocket className="w-3.5 h-3.5" />
                 Auto Lớp 3
@@ -370,16 +370,16 @@ export default function AdminCurriculum() {
                     onClick={() => setIngestGrade(grade.toString())}
                     className={`flex items-center justify-between p-3 rounded-xl border transition-all group cursor-pointer ${
                       isSelected 
-                        ? "border-fuchsia-500/50 bg-fuchsia-500/10 shadow-[0_0_15px_rgba(217,70,239,0.15)]" 
+                        ? "border-indigo-500/50 bg-indigo-500/10 shadow-[0_0_15px_rgba(217,70,239,0.15)]" 
                         : "border-slate-800/50 bg-[#090D16]/50 hover:bg-[#090D16] hover:border-slate-700/50"
                     }`}
                   >
                     <div className="flex items-center gap-3">
                       <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-black text-xs transition-colors ${
                         hasData 
-                          ? 'bg-emerald-500/10 text-emerald-400' 
+                          ? 'bg-teal-500/10 text-teal-400' 
                           : isSelected
-                            ? 'bg-fuchsia-500/20 text-fuchsia-400'
+                            ? 'bg-indigo-500/20 text-indigo-400'
                             : 'bg-slate-800 text-slate-500'
                       }`}>
                         {grade}
@@ -387,7 +387,7 @@ export default function AdminCurriculum() {
                       <div>
                         <h3 className="text-xs font-bold text-slate-200">Khối Lớp {grade}</h3>
                         {hasData ? (
-                          <span className="inline-block mt-0.5 text-[8px] font-black uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20">
+                          <span className="inline-block mt-0.5 text-[8px] font-black uppercase tracking-wider text-teal-400 bg-teal-500/10 px-1.5 py-0.5 rounded border border-teal-500/20">
                             Đã nạp Data thật
                           </span>
                         ) : (
@@ -444,11 +444,11 @@ export default function AdminCurriculum() {
         </div>
 
         {/* BENTO CARD #3: CỬA SỔ NẠP DATA */}
-        <div className="rounded-3xl bg-[#111827] border border-slate-800 p-6 flex flex-col space-y-6 relative overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-fuchsia-500/5 rounded-full blur-[80px] pointer-events-none" />
+        <div className="rounded-xl bg-[#111827] border border-slate-800 p-6 flex flex-col space-y-6 relative overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-500/5 rounded-full blur-[80px] pointer-events-none" />
           
           <div className="flex items-center gap-2 text-slate-300 border-b border-slate-800/60 pb-3">
-            <Rocket className="w-5 h-5 text-fuchsia-400 fill-fuchsia-400/20" />
+            <Rocket className="w-5 h-5 text-indigo-400 fill-indigo-400/20" />
             <h2 className="text-sm font-black uppercase tracking-wider">Trình Nạp Dữ Liệu AI Cấp Tốc</h2>
           </div>
 
@@ -461,7 +461,7 @@ export default function AdminCurriculum() {
                 <select 
                   value={ingestGrade}
                   onChange={(e) => setIngestGrade(e.target.value)}
-                  className="w-full bg-[#090D16] border border-slate-700 text-slate-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-fuchsia-500/50 focus:ring-1 focus:ring-fuchsia-500/50 transition-all appearance-none cursor-pointer"
+                  className="w-full bg-[#090D16] border border-slate-700 text-slate-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all appearance-none cursor-pointer"
                 >
                   {[...Array(12)].map((_, i) => (
                     <option key={i + 1} value={(i + 1).toString()}>
@@ -478,7 +478,7 @@ export default function AdminCurriculum() {
                 <select 
                   value={ingestType}
                   onChange={(e) => setIngestType(e.target.value)}
-                  className="w-full bg-[#090D16] border border-slate-700 text-slate-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-fuchsia-500/50 focus:ring-1 focus:ring-fuchsia-500/50 transition-all appearance-none"
+                  className="w-full bg-[#090D16] border border-slate-700 text-slate-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all appearance-none"
                 >
                   <option value="speaking">Bài tập Speaking (Hội thoại)</option>
                   <option value="dictation">Bài tập Dictation (Điền từ)</option>
@@ -490,13 +490,13 @@ export default function AdminCurriculum() {
             <div className="flex-1 flex flex-col space-y-2 relative min-h-[300px]">
               <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest pl-1 flex items-center justify-between">
                 <span>Nội dung thô (Raw Data)</span>
-                <span className="text-fuchsia-400 bg-fuchsia-500/10 px-1.5 py-0.5 rounded text-[8px]">Auto-Seeding</span>
+                <span className="text-indigo-400 bg-indigo-500/10 px-1.5 py-0.5 rounded text-[8px]">Auto-Seeding</span>
               </label>
               <textarea
                 value={ingestData}
                 onChange={(e) => setIngestData(e.target.value)}
                 placeholder="Dán cấu trúc JSON hoặc đoạn văn bản chứa ngoặc vuông [ ] vào đây để hệ thống tự động Seeding..."
-                className="flex-1 w-full bg-[#090D16] border border-slate-700 text-slate-300 text-xs rounded-xl p-4 outline-none focus:border-fuchsia-500/50 focus:ring-1 focus:ring-fuchsia-500/50 transition-all resize-none custom-scrollbar font-mono leading-relaxed placeholder:text-slate-600"
+                className="flex-1 w-full bg-[#090D16] border border-slate-700 text-slate-300 text-xs rounded-xl p-4 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all resize-none custom-scrollbar font-mono leading-relaxed placeholder:text-slate-600"
               />
               <div className="absolute bottom-4 right-4 flex items-center gap-1.5 text-[9px] text-slate-500 bg-[#111827] px-2 py-1 rounded-md border border-slate-800">
                 <AlertCircle className="w-3 h-3 text-amber-500" />
@@ -507,7 +507,7 @@ export default function AdminCurriculum() {
             <button
               onClick={handleBulkIngestion}
               disabled={isIngesting || !ingestData.trim()}
-              className="w-full py-4 rounded-xl bg-gradient-to-r from-fuchsia-600 to-pink-500 hover:from-fuchsia-500 hover:to-pink-400 text-white text-xs font-black uppercase tracking-wider shadow-[0_6px_0_#831843] hover:shadow-[0_3px_0_#831843] active:translate-y-[3px] active:shadow-none transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-[0_6px_0_#831843] disabled:active:translate-y-0 mt-4"
+              className="w-full py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-pink-500 hover:from-indigo-500 hover:to-pink-400 text-white text-xs font-black uppercase tracking-wider shadow-[0_6px_0_#831843] hover:shadow-[0_3px_0_#831843] active:translate-y-[3px] active:shadow-none transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-[0_6px_0_#831843] disabled:active:translate-y-0 mt-4"
             >
               {isIngesting ? "Đang xử lý đồng bộ..." : "Kích Hoạt Đồng Bộ Toàn Hệ Thống"}
             </button>

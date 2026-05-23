@@ -101,14 +101,14 @@ export default function RightPanel() {
       <div className="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
         <div className="flex items-center gap-3">
           {/* Flame streak */}
-          <div className="flex items-center gap-1 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-lg text-amber-600 text-[10px] font-bold shadow-sm">
+          <div className="flex items-center gap-1 bg-amber-100 border border-amber-200 px-2 py-0.5 rounded-full text-amber-600 text-[10px] font-bold shadow-sm">
             <Flame className="w-3.5 h-3.5 fill-amber-500" />
             <span>{stats.streak.toString().padStart(2, "0")} ngày</span>
           </div>
 
           {/* XP tally */}
-          <div className="flex items-center gap-1 bg-indigo-50 border border-indigo-200 px-2 py-0.5 rounded-lg text-indigo-600 text-[10px] font-bold shadow-sm">
-            <Zap className="w-3 h-3 text-indigo-500" />
+          <div className="flex items-center gap-1 bg-amber-400 border border-amber-500/20 px-2 py-0.5 rounded-full text-amber-800 text-[10px] font-bold shadow-sm">
+            <Zap className="w-3 h-3 fill-amber-800 text-amber-800" />
             <span>{(stats.xp).toLocaleString()} XP</span>
           </div>
         </div>
@@ -120,7 +120,7 @@ export default function RightPanel() {
             <div className="absolute top-1 right-1 w-2 h-2 rounded-full bg-rose-500" />
           </button>
           
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center font-bold text-white text-[10px] shadow-sm uppercase">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-500 to-indigo-500 flex items-center justify-center font-bold text-white text-[10px] shadow-sm uppercase">
             {fullName.substring(0, 2)}
           </div>
         </div>
@@ -136,18 +136,18 @@ export default function RightPanel() {
           </h3>
 
           {/* Streak Card custom */}
-          <div className="relative overflow-hidden rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-orange-50 p-4 flex items-center gap-4 shadow-sm group hover:shadow-md transition-shadow">
-            <div className="w-10 h-10 rounded-xl bg-amber-100 border border-amber-200 flex items-center justify-center text-amber-500 shadow-sm">
+          <div className="relative overflow-hidden rounded-xl border border-amber-200 bg-amber-100 p-4 flex items-center gap-4 shadow-sm group hover:shadow-md transition-shadow">
+            <div className="w-10 h-10 rounded-xl bg-white border border-amber-200 flex items-center justify-center text-amber-500 shadow-sm">
               <Flame className="w-5 h-5 animate-bounce fill-amber-500 group-hover:scale-110 transition-transform" />
             </div>
             <div>
-              <div className="text-[9px] font-bold text-slate-500 uppercase tracking-wider">
+              <div className="text-[9px] font-bold text-amber-600/80 uppercase tracking-wider">
                 Chuỗi học tập liên tục
               </div>
-              <p className="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500 tracking-tight">
+              <p className="text-xl font-black text-amber-600 tracking-tight">
                 {stats.streak.toString().padStart(2, "0")} NGÀY
               </p>
-              <p className="text-[9px] text-slate-500 mt-0.5 font-medium">
+              <p className="text-[9px] text-amber-600/70 mt-0.5 font-medium">
                 Hãy giữ vững phong độ nhé!
               </p>
             </div>
@@ -176,7 +176,7 @@ export default function RightPanel() {
             {/* Stat 3 */}
             <div className="p-2.5 rounded-xl border border-slate-200 bg-slate-50 border-slate-200 flex flex-col hover:border-indigo-300 hover:bg-white hover:shadow-md transition-all justify-between h-[60px] shadow-sm">
               <div className="flex items-center gap-1.5 text-slate-500 font-medium">
-                <Sparkles className="w-3.5 h-3.5 text-emerald-500" />
+                <Sparkles className="w-3.5 h-3.5 text-teal-500" />
                 <span className="text-[9px]">Kim cương</span>
               </div>
               <span className="text-xs font-bold text-slate-800">{stats.diamonds} 💎</span>
@@ -202,18 +202,18 @@ export default function RightPanel() {
               </h3>
               <div className="space-y-2">
                 {/* Task 1 */}
-                <div className="p-3 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-between group cursor-pointer hover:bg-emerald-100 transition-colors shadow-sm">
+                <div className="p-3 rounded-xl bg-teal-50 border border-teal-200 flex items-center justify-between group cursor-pointer hover:bg-teal-100 transition-colors shadow-sm">
                   <div className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 shadow-sm border border-emerald-200">
+                    <div className="w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 shadow-sm border border-teal-200">
                       <CheckCircle className="w-3.5 h-3.5" />
                     </div>
-                    <span className="text-[11px] font-bold text-emerald-800">Hoàn thành 1 bài học SGK</span>
+                    <span className="text-[11px] font-bold text-teal-800">Hoàn thành 1 bài học SGK</span>
                   </div>
-                  <span className="text-emerald-600 font-black text-[10px]">1/1</span>
+                  <span className="text-teal-600 font-black text-[10px]">1/1</span>
                 </div>
 
                 {/* Task 2 */}
-                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm hover:bg-white hover:shadow-md flex items-center transition-colors justify-between group cursor-pointer hover:border-indigo-200 hover:shadow-md transition-all shadow-sm">
+                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 shadow-sm hover:bg-white hover:shadow-md flex items-center transition-colors justify-between group cursor-pointer hover:border-indigo-200 hover:shadow-md transition-all shadow-sm">
                   <div className="flex items-center gap-3">
                     <div className="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 border border-slate-200">
                       <span className="text-[9px] font-bold">2</span>
@@ -224,7 +224,7 @@ export default function RightPanel() {
                 </div>
 
                 {/* Task 3 */}
-                <div className="p-3 rounded-2xl bg-white border border-slate-200 space-y-2 shadow-sm hover:shadow-md transition-shadow cursor-pointer group hover:border-indigo-200">
+                <div className="p-3 rounded-xl bg-white border border-slate-200 space-y-2 shadow-sm hover:shadow-md transition-shadow cursor-pointer group hover:border-indigo-200">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 border border-slate-200">
@@ -234,7 +234,7 @@ export default function RightPanel() {
                     </div>
                     <span className="text-slate-400 font-black text-[10px]">80/100</span>
                   </div>
-                  <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+                  <div className="w-full h-1.5 bg-indigo-100 rounded-full overflow-hidden">
                     <div className="h-full bg-indigo-500 w-[80%] rounded-full shadow-inner" />
                   </div>
                 </div>
@@ -242,7 +242,7 @@ export default function RightPanel() {
             </div>
 
             {/* Section 3: AI Coach gợi ý */}
-            <div className="rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50 to-purple-50 p-4 space-y-3 shadow-sm group hover:shadow-md transition-shadow">
+            <div className="rounded-xl border border-indigo-100 bg-gradient-to-br from-indigo-50 to-indigo-50 p-4 space-y-3 shadow-sm group hover:shadow-md transition-shadow">
               <div className="flex items-center gap-2 text-indigo-600">
                 <Sparkles className="w-4 h-4 animate-pulse" />
                 <h4 className="text-[10px] font-black uppercase tracking-wider">AI Coach Gợi Ý</h4>
@@ -277,7 +277,7 @@ export default function RightPanel() {
                 <div className="flex items-center justify-between p-2 rounded-xl bg-indigo-50 border border-indigo-200 text-xs shadow-sm">
                   <div className="flex items-center gap-2">
                     <span className="text-[10px] font-bold text-indigo-500 w-4 text-center">-</span>
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center font-bold text-white text-[9px] shadow-sm">
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-indigo-500 to-indigo-500 flex items-center justify-center font-bold text-white text-[9px] shadow-sm">
                       {fullName.substring(0, 2).toUpperCase()}
                     </div>
                     <span className="text-[11px] font-black text-indigo-700">{fullName}</span>
@@ -288,7 +288,7 @@ export default function RightPanel() {
             </div>
           </>
         ) : (
-          <div className="flex flex-col items-center justify-center h-48 space-y-3 border border-slate-200 rounded-2xl bg-slate-50 shadow-inner">
+          <div className="flex flex-col items-center justify-center h-48 space-y-3 border border-slate-200 rounded-xl bg-slate-50 shadow-inner">
             <Lock className="w-8 h-8 text-slate-400" />
             <p className="text-[11px] text-slate-500 font-medium px-6 text-center leading-relaxed">
               Vui lòng đăng nhập để xem tiến trình học tập, nhận nhiệm vụ và xếp hạng.

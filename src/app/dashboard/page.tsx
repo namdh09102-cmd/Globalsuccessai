@@ -182,7 +182,7 @@ export default function DashboardPage() {
         
         <div className="flex items-center gap-3">
           <div className="px-4 py-2 rounded-xl bg-slate-100 border border-slate-200 flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
             <span className="text-[11px] font-semibold text-slate-700">Học sinh trực tuyến</span>
           </div>
         </div>
@@ -192,7 +192,7 @@ export default function DashboardPage() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
         
         {/* Card 1: Biểu đồ kỹ năng 4D (SVG Radar Chart) */}
-        <div className="md:col-span-7 rounded-3xl border border-slate-200 bg-white p-6 shadow-xl flex flex-col justify-between hover:border-indigo-500/30 transition-all duration-300 group">
+        <div className="md:col-span-7 rounded-xl border border-slate-200 bg-white p-6 shadow-xl flex flex-col justify-between hover:border-indigo-500/30 transition-all duration-300 group">
           <div>
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
@@ -322,11 +322,11 @@ export default function DashboardPage() {
           </div>
 
           <div className="grid grid-cols-2 gap-3 pt-4 border-t border-slate-200">
-            <div className="p-3 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-between">
+            <div className="p-3 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-between">
               <span className="text-[10px] font-semibold text-slate-500">Kỹ năng mạnh nhất:</span>
               <span className="text-xs font-black text-indigo-600">CHƯA CÓ DỮ LIỆU</span>
             </div>
-            <div className="p-3 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-between">
+            <div className="p-3 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-between">
               <span className="text-[10px] font-semibold text-slate-500">Cần cải thiện:</span>
               <span className="text-xs font-black text-pink-600">CHƯA CÓ DỮ LIỆU</span>
             </div>
@@ -337,7 +337,7 @@ export default function DashboardPage() {
         <div className="md:col-span-5 flex flex-col gap-6">
           
           {/* Card 2: Chuỗi Streak & XP */}
-          <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl hover:border-amber-500/30 transition-all duration-300 group flex-1 flex flex-col justify-between">
+          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xl hover:border-amber-500/30 transition-all duration-300 group flex-1 flex flex-col justify-between">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-300 flex items-center justify-center text-amber-500">
                 <Flame className="w-4 h-4" />
@@ -355,7 +355,7 @@ export default function DashboardPage() {
               <div className="relative">
                 {/* Glow Background */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-amber-500 to-orange-600 rounded-full blur-2xl opacity-20 group-hover:opacity-45 transition-all duration-500" />
-                <div className="relative w-20 h-20 rounded-3xl bg-gradient-to-tr from-amber-500/15 to-orange-600/5 border border-amber-500/25 flex items-center justify-center shadow-lg shadow-amber-500/10">
+                <div className="relative w-20 h-20 rounded-xl bg-gradient-to-tr from-amber-500/15 to-orange-600/5 border border-amber-500/25 flex items-center justify-center shadow-lg shadow-amber-500/10">
                   <Flame className="w-10 h-10 text-amber-500 animate-bounce" />
                 </div>
               </div>
@@ -365,8 +365,8 @@ export default function DashboardPage() {
                   {stats.streak.toString().padStart(2, "0")} NGÀY
                 </div>
                 <div className="text-[11px] font-semibold text-slate-700 mt-1 flex items-center gap-1.5">
-                  <Zap className="w-3.5 h-3.5 text-violet-600" />
-                  <span>Tổng tích lũy: <b className="text-violet-600">{stats.xp} XP</b></span>
+                  <Zap className="w-3.5 h-3.5 text-indigo-600" />
+                  <span>Tổng tích lũy: <b className="text-indigo-600">{stats.xp} XP</b></span>
                 </div>
                 <div className="text-[10px] text-slate-500 mt-0.5">
                   Hãy bắt đầu bài học đầu tiên ngay hôm nay!
@@ -374,7 +374,7 @@ export default function DashboardPage() {
               </div>
             </div>
 
-            <div className="p-3.5 rounded-2xl bg-amber-500/5 border border-amber-500/10 text-center">
+            <div className="p-3.5 rounded-xl bg-amber-500/5 border border-amber-500/10 text-center">
               <p className="text-[10px] font-medium text-amber-600 leading-relaxed">
                 Học liên tiếp 5 ngày để nhận Huy hiệu <span className="font-bold underline">"Chiến Binh Chuyên Cần"</span> phát sáng!
               </p>
@@ -382,13 +382,13 @@ export default function DashboardPage() {
           </div>
 
           {/* Card 3: Học tiếp bài gần nhất */}
-          <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl hover:border-emerald-500/30 transition-all duration-300 group flex-1 flex flex-col justify-between">
+          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xl hover:border-teal-500/30 transition-all duration-300 group flex-1 flex flex-col justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-300 flex items-center justify-center text-emerald-600">
+              <div className="w-8 h-8 rounded-lg bg-teal-500/10 border border-teal-300 flex items-center justify-center text-teal-600">
                 <BookOpen className="w-4 h-4" />
               </div>
               <div>
-                <h2 className="text-sm font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">
+                <h2 className="text-sm font-bold text-slate-800 group-hover:text-teal-600 transition-colors">
                   Tiến trình hiện tại
                 </h2>
                 <p className="text-[10px] text-slate-500">Học tiếp bài gần nhất</p>
@@ -398,7 +398,7 @@ export default function DashboardPage() {
             {/* Lesson Details */}
             {nextLesson ? (
               <div className="py-4 space-y-2">
-                <div className="text-[10px] font-bold text-emerald-600 uppercase tracking-wider">
+                <div className="text-[10px] font-bold text-teal-600 uppercase tracking-wider">
                   {nextLesson.unitTitle}
                 </div>
                 <div className="text-sm font-bold text-slate-800 truncate">
@@ -418,10 +418,7 @@ export default function DashboardPage() {
             )}
 
             {/* Action Button */}
-            <Link
-              href="/"
-              className="relative w-full py-3 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:from-emerald-400 hover:to-teal-500 text-white text-xs font-bold text-center shadow-lg shadow-emerald-500/20 hover:shadow-emerald-400/30 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group-hover:translate-y-[-2px]"
-            >
+            <Link href="/" className="relative w-full py-3 rounded-lg bg-gradient-to-r from-teal-500 via-teal-500 to-teal-600 hover:from-teal-400 hover:to-teal-500 text-white text-xs font-bold text-center shadow-lg shadow-teal-500/20 hover:shadow-teal-400/30 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group-hover:translate-y-[-2px]">
               <Play className="w-4 h-4 fill-white" />
               <span>HỌC TIẾP NGAY</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -434,8 +431,8 @@ export default function DashboardPage() {
 
       {/* Quick Stats Summary List (Bento Row) */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 flex items-center gap-4 hover:bg-slate-100 transition-all duration-300">
-          <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-300 flex items-center justify-center text-violet-600">
+        <div className="rounded-xl border border-slate-200 bg-white p-4 flex items-center gap-4 hover:bg-slate-100 transition-all duration-300">
+          <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-300 flex items-center justify-center text-indigo-600">
             <Award className="w-5 h-5" />
           </div>
           <div>
@@ -444,7 +441,7 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 flex items-center gap-4 hover:bg-slate-100 transition-all duration-300">
+        <div className="rounded-xl border border-slate-200 bg-white p-4 flex items-center gap-4 hover:bg-slate-100 transition-all duration-300">
           <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-300 flex items-center justify-center text-indigo-600">
             <Trophy className="w-5 h-5" />
           </div>
@@ -454,8 +451,8 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 flex items-center gap-4 hover:bg-slate-100 transition-all duration-300">
-          <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-300 flex items-center justify-center text-emerald-600">
+        <div className="rounded-xl border border-slate-200 bg-white p-4 flex items-center gap-4 hover:bg-slate-100 transition-all duration-300">
+          <div className="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-300 flex items-center justify-center text-teal-600">
             <CheckCircle className="w-5 h-5" />
           </div>
           <div>

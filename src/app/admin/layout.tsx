@@ -109,15 +109,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </nav>
         
         <div className="p-4 border-t border-slate-200 space-y-2">
-          <button
-            onClick={handleLogout}
-            className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-red-950/20 hover:bg-red-950/30 border border-red-500/20 hover:border-red-500/40 text-red-400 text-[10px] font-bold uppercase tracking-wider transition-all"
+          <button className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-red-950/20 hover:bg-red-950/30 border border-red-500/20 hover:border-red-500/40 text-red-400 text-[10px] font-bold uppercase tracking-wider transition-all"
           >
             <LogOut className="w-3.5 h-3.5" />
             Đăng Xuất
           </button>
           
-          <Link href="/learn" className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-700 text-slate-700 text-[10px] font-bold uppercase tracking-wider transition-all">
+          <Link href="/learn" className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-700 text-[10px] font-bold uppercase tracking-wider transition-all">
             ← Quay lại Hệ Thống K-12
           </Link>
         </div>

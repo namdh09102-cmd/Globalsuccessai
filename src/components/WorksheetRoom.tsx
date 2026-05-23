@@ -52,7 +52,7 @@ export default function WorksheetRoom({
       <div className="w-full flex-1 overflow-y-auto px-4 py-8 custom-scrollbar bg-slate-50">
         
         {mainAudio && (
-          <div className="w-full max-w-4xl mx-auto mb-8 p-4 bg-white rounded-2xl border border-slate-200 flex flex-col gap-3 shadow-lg">
+          <div className="w-full max-w-4xl mx-auto mb-8 p-4 bg-white rounded-xl border border-slate-200 flex flex-col gap-3 shadow-lg">
             <h2 className="text-lg font-bold text-white flex items-center gap-3">
               <Headphones className="w-6 h-6 text-blue-400" />
               File Nghe (Listening Section)

@@ -93,7 +93,7 @@ export default function CelebrationArena({
               transition: { type: "spring", damping: 15, stiffness: 100 }
             }}
             exit={{ y: -100, scale: 0.9, opacity: 0 }}
-            className="w-full max-w-md rounded-3xl border border-slate-800 bg-[#151B2B] p-8 text-center shadow-2xl relative overflow-hidden"
+            className="w-full max-w-md rounded-xl border border-slate-800 bg-[#151B2B] p-8 text-center shadow-2xl relative overflow-hidden"
           >
             {/* Ambient gold glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-amber-500/10 rounded-full blur-[80px] pointer-events-none" />
@@ -155,21 +155,21 @@ export default function CelebrationArena({
               <div className="grid grid-cols-2 gap-4 py-2">
                 
                 {/* XP Reward */}
-                <div className="p-4 rounded-2xl border border-violet-500/20 bg-violet-600/5 flex flex-col items-center justify-center gap-1">
-                  <div className="w-10 h-10 rounded-full bg-violet-500/10 flex items-center justify-center text-violet-400">
-                    <Zap className="w-5 h-5 fill-violet-400" />
+                <div className="p-4 rounded-xl border border-indigo-500/20 bg-indigo-600/5 flex flex-col items-center justify-center gap-1">
+                  <div className="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+                    <Zap className="w-5 h-5 fill-indigo-400" />
                   </div>
                   <span className="text-[10px] font-bold text-slate-500 uppercase">Kinh Nghiệm</span>
-                  <span className="text-lg font-black text-violet-400">+{xpReward} XP</span>
+                  <span className="text-lg font-black text-indigo-400">+{xpReward} XP</span>
                 </div>
 
                 {/* Diamond Reward */}
-                <div className="p-4 rounded-2xl border border-emerald-500/20 bg-emerald-600/5 flex flex-col items-center justify-center gap-1">
-                  <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400">
-                    <Flame className="w-5 h-5 fill-emerald-400" />
+                <div className="p-4 rounded-xl border border-teal-500/20 bg-teal-600/5 flex flex-col items-center justify-center gap-1">
+                  <div className="w-10 h-10 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-400">
+                    <Flame className="w-5 h-5 fill-teal-400" />
                   </div>
                   <span className="text-[10px] font-bold text-slate-500 uppercase">Kim Cương</span>
-                  <span className="text-lg font-black text-emerald-400">+{diamondReward} 💎</span>
+                  <span className="text-lg font-black text-teal-400">+{diamondReward} 💎</span>
                 </div>
 
               </div>
