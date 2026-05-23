@@ -25,17 +25,17 @@ const QUICK_PROMPTS = [
   {
     category: "Giao tiếp cơ bản",
     text: "Hello, I am a student. Nice to meet you.",
-    color: "from-blue-500/10 to-indigo-500/10 border-blue-500/20 text-blue-400"
+    color: "from-blue-500/10 to-indigo-500/10 border-blue-300 text-blue-600"
   },
   {
     category: "Thuyết trình",
     text: "Today, I would like to talk about the generation gap in modern families.",
-    color: "from-violet-500/10 to-fuchsia-500/10 border-violet-500/20 text-violet-400"
+    color: "from-violet-500/10 to-fuchsia-500/10 border-violet-300 text-violet-600"
   },
   {
     category: "IELTS Speaking",
     text: "In my opinion, technology has completely transformed the way young people learn nowadays.",
-    color: "from-emerald-500/10 to-teal-500/10 border-emerald-500/20 text-emerald-400"
+    color: "from-emerald-500/10 to-teal-500/10 border-emerald-300 text-emerald-600"
   }
 ];
 
@@ -227,7 +227,7 @@ export default function AIPracticePage() {
       {/* 1. Header Khơi Gợi */}
       <div className="border-b border-slate-200 pb-6 relative">
         <div className="absolute top-0 right-0 w-24 h-24 bg-violet-600/10 rounded-full blur-2xl pointer-events-none" />
-        <div className="flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-wider mb-1">
+        <div className="flex items-center gap-2 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-1">
           <Sparkles className="w-3.5 h-3.5 animate-pulse" />
           <span>Luyện nói tự do cùng AI Coach</span>
         </div>
@@ -338,7 +338,7 @@ export default function AIPracticePage() {
             
             {/* Audio player preview */}
             <div className="w-full p-3 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-between gap-3 shadow-inner">
-              <div className="flex items-center gap-2 text-violet-400">
+              <div className="flex items-center gap-2 text-violet-600">
                 <Volume2 className="w-4 h-4" />
                 <span className="text-[10px] font-bold uppercase tracking-wider">Nghe lại giọng nói của bạn</span>
               </div>
@@ -382,7 +382,7 @@ export default function AIPracticePage() {
           <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
           
           <div className="flex items-center gap-3 border-b border-slate-200 pb-4">
-            <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+            <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-300 flex items-center justify-center text-emerald-600">
               <CheckCircle className="w-4 h-4" />
             </div>
             <div>
@@ -395,7 +395,7 @@ export default function AIPracticePage() {
           {rewardClaimed && (
             <div className="rounded-2xl border border-emerald-500/15 bg-gradient-to-r from-emerald-500/10 to-teal-500/5 p-4 flex items-center justify-between shadow-md shadow-emerald-950/10 animate-bounce">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-emerald-500/15 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shadow-md">
+                <div className="w-9 h-9 rounded-xl bg-emerald-500/15 border border-emerald-300 flex items-center justify-center text-emerald-600 shadow-md">
                   <Award className="w-4 h-4" />
                 </div>
                 <div>
@@ -404,8 +404,8 @@ export default function AIPracticePage() {
                 </div>
               </div>
               <div className="flex items-center gap-2 bg-emerald-500/20 border border-emerald-500/30 px-3 py-1 rounded-xl">
-                <span className="text-[10px] font-black text-emerald-400">+50 XP</span>
-                <span className="text-[10px] font-black text-amber-400">+2 💎</span>
+                <span className="text-[10px] font-black text-emerald-600">+50 XP</span>
+                <span className="text-[10px] font-black text-amber-600">+2 💎</span>
               </div>
             </div>
           )}
@@ -446,9 +446,9 @@ export default function AIPracticePage() {
 
               <div className="text-[10px] font-black uppercase tracking-wider">
                 {evaluationResult.score >= 85 ? (
-                  <span className="text-emerald-400">Tuyệt Hảo (Excellent)</span>
+                  <span className="text-emerald-600">Tuyệt Hảo (Excellent)</span>
                 ) : evaluationResult.score >= 70 ? (
-                  <span className="text-indigo-400">Khá Tốt (Good)</span>
+                  <span className="text-indigo-600">Khá Tốt (Good)</span>
                 ) : (
                   <span className="text-amber-500">Cần Cố Gắng (Keep Trying)</span>
                 )}
@@ -462,7 +462,7 @@ export default function AIPracticePage() {
               <div className="space-y-1.5">
                 <div className="flex justify-between text-xs">
                   <span className="font-semibold text-slate-500">Ngữ điệu (Fluency)</span>
-                  <span className="font-bold text-violet-400">{evaluationResult.fluency}%</span>
+                  <span className="font-bold text-violet-600">{evaluationResult.fluency}%</span>
                 </div>
                 <div className="w-full h-2.5 rounded-full bg-slate-100 overflow-hidden border border-slate-900/40">
                   <div
@@ -476,7 +476,7 @@ export default function AIPracticePage() {
               <div className="space-y-1.5">
                 <div className="flex justify-between text-xs">
                   <span className="font-semibold text-slate-500">Độ chuẩn (Pronunciation)</span>
-                  <span className="font-bold text-emerald-400">{evaluationResult.pronunciation}%</span>
+                  <span className="font-bold text-emerald-600">{evaluationResult.pronunciation}%</span>
                 </div>
                 <div className="w-full h-2.5 rounded-full bg-slate-100 overflow-hidden border border-slate-900/40">
                   <div
@@ -490,7 +490,7 @@ export default function AIPracticePage() {
               <div className="space-y-1.5">
                 <div className="flex justify-between text-xs">
                   <span className="font-semibold text-slate-500">Trọng âm (Stress)</span>
-                  <span className="font-bold text-amber-400">{evaluationResult.accuracy}%</span>
+                  <span className="font-bold text-amber-600">{evaluationResult.accuracy}%</span>
                 </div>
                 <div className="w-full h-2.5 rounded-full bg-slate-100 overflow-hidden border border-slate-900/40">
                   <div
@@ -513,11 +513,11 @@ export default function AIPracticePage() {
                 let colorClass = "text-slate-400 bg-slate-100 border-slate-200";
                 
                 if (w.status === "correct") {
-                  colorClass = "text-emerald-400 bg-emerald-500/10 border-emerald-500/20";
+                  colorClass = "text-emerald-600 bg-emerald-500/10 border-emerald-300";
                 } else if (w.status === "mispronounced") {
-                  colorClass = "text-amber-400 bg-amber-500/10 border-amber-500/20";
+                  colorClass = "text-amber-600 bg-amber-500/10 border-amber-300";
                 } else if (w.status === "omitted") {
-                  colorClass = "text-rose-400 bg-rose-500/10 border-rose-500/20";
+                  colorClass = "text-rose-600 bg-rose-500/10 border-rose-500/20";
                 }
                 
                 return (
@@ -555,7 +555,7 @@ export default function AIPracticePage() {
               AI
             </div>
             <div className="space-y-1">
-              <div className="text-[10px] font-bold text-violet-400 uppercase tracking-widest">Nhận xét từ AI Coach</div>
+              <div className="text-[10px] font-bold text-violet-600 uppercase tracking-widest">Nhận xét từ AI Coach</div>
               <p className="text-xs md:text-sm text-slate-700 leading-relaxed font-medium">
                 &ldquo;{evaluationResult.feedback}&rdquo;
               </p>

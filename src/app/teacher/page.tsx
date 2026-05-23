@@ -162,11 +162,11 @@ export default function TeacherPortal() {
   // Xác định trạng thái của học sinh
   const getStudentStatus = (item: StudentTrackerItem) => {
     if (item.accuracy < 70 || item.streak <= 2) {
-      return { label: "Cần hỗ trợ", color: "bg-rose-500/10 text-rose-400 border-rose-500/20", icon: AlertTriangle };
+      return { label: "Cần hỗ trợ", color: "bg-rose-500/10 text-rose-600 border-rose-500/20", icon: AlertTriangle };
     } else if (item.accuracy >= 90) {
-      return { label: "Xuất sắc", color: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20", icon: Trophy };
+      return { label: "Xuất sắc", color: "bg-emerald-500/10 text-emerald-600 border-emerald-300", icon: Trophy };
     } else {
-      return { label: "Ổn định", color: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20", icon: UserCheck };
+      return { label: "Ổn định", color: "bg-indigo-500/10 text-indigo-600 border-indigo-300", icon: UserCheck };
     }
   };
 
@@ -293,7 +293,7 @@ export default function TeacherPortal() {
       {/* Header lớn */}
       <div className="border-b border-slate-200 pb-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 text-indigo-400 text-[10px] font-black uppercase tracking-widest mb-1 font-mono">
+          <div className="flex items-center gap-2 text-indigo-600 text-[10px] font-black uppercase tracking-widest mb-1 font-mono">
             <School className="w-3.5 h-3.5" />
             <span>Teacher Portal</span>
           </div>
@@ -339,7 +339,7 @@ export default function TeacherPortal() {
 
             <div className="flex items-center justify-between border-b border-slate-200 pb-4 mb-5">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                <div className="w-8 h-8 rounded-lg bg-indigo-500/10 border border-indigo-300 flex items-center justify-center text-indigo-600">
                   <School className="w-4.5 h-4.5" />
                 </div>
                 <div>
@@ -375,7 +375,7 @@ export default function TeacherPortal() {
                   >
                     <div className="flex items-start justify-between">
                       <div>
-                        <span className="text-[10px] font-black text-indigo-400 uppercase tracking-widest block font-mono mb-1">
+                        <span className="text-[10px] font-black text-indigo-600 uppercase tracking-widest block font-mono mb-1">
                           Global Success
                         </span>
                         <h4 className="text-base font-extrabold text-slate-800">{cls.name}</h4>
@@ -398,7 +398,7 @@ export default function TeacherPortal() {
                           handleCopyCode(cls.code, cls.id);
                         }}
                         className={`p-1 rounded-md transition-colors ${
-                          isCopied ? "bg-emerald-500/15 text-emerald-400" : "bg-slate-100 text-slate-500 hover:text-slate-800"
+                          isCopied ? "bg-emerald-500/15 text-emerald-600" : "bg-slate-100 text-slate-500 hover:text-slate-800"
                         }`}
                       >
                         {isCopied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
@@ -409,7 +409,7 @@ export default function TeacherPortal() {
                     <div className="mt-4 space-y-1">
                       <div className="flex justify-between text-[9px] font-bold">
                         <span className="text-slate-500">Tiến độ trung bình</span>
-                        <span className="text-indigo-400 font-black">{cls.progress}%</span>
+                        <span className="text-indigo-600 font-black">{cls.progress}%</span>
                       </div>
                       <div className="h-1.5 rounded-full bg-slate-950 overflow-hidden border border-slate-900/40 p-0.5">
                         <div
@@ -432,7 +432,7 @@ export default function TeacherPortal() {
           >
             <div className="flex items-center justify-between border-b border-slate-200 pb-4 mb-5">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-300 flex items-center justify-center text-emerald-600">
                   <Users className="w-4.5 h-4.5" />
                 </div>
                 <div>
@@ -443,7 +443,7 @@ export default function TeacherPortal() {
                 </div>
               </div>
               
-              <span className="px-2.5 py-0.5 rounded-full text-[9px] font-extrabold bg-emerald-600/10 text-emerald-400 border border-emerald-500/20 uppercase">
+              <span className="px-2.5 py-0.5 rounded-full text-[9px] font-extrabold bg-emerald-600/10 text-emerald-600 border border-emerald-300 uppercase">
                 Đồng bộ Offline
               </span>
             </div>
@@ -478,7 +478,7 @@ export default function TeacherPortal() {
                         <td className="py-3.5 pl-2 font-bold flex items-center gap-2">
                           <div className={`w-7 h-7 rounded-lg flex items-center justify-center text-[10px] font-black shadow-inner ${
                             student.isCurrentUser
-                              ? "bg-violet-500/20 border border-violet-500/30 text-violet-400"
+                              ? "bg-violet-500/20 border border-violet-500/30 text-violet-600"
                               : "bg-slate-100 border border-slate-200 text-slate-500"
                           }`}>
                             {student.name.substring(0, 2).toUpperCase()}
@@ -486,7 +486,7 @@ export default function TeacherPortal() {
                           <div>
                             <span>{student.name}</span>
                             {student.isCurrentUser && (
-                              <span className="ml-1.5 px-1.5 py-0.5 rounded text-[8px] font-extrabold uppercase bg-violet-600/25 text-violet-400 border border-violet-500/30 tracking-wider font-mono">
+                              <span className="ml-1.5 px-1.5 py-0.5 rounded text-[8px] font-extrabold uppercase bg-violet-600/25 text-violet-600 border border-violet-500/30 tracking-wider font-mono">
                                 Bạn
                               </span>
                             )}
@@ -499,7 +499,7 @@ export default function TeacherPortal() {
                         </td>
 
                         {/* Phát âm TB */}
-                        <td className="py-3.5 text-center font-mono font-bold text-violet-400">
+                        <td className="py-3.5 text-center font-mono font-bold text-violet-600">
                           {student.accuracy}%
                         </td>
 
@@ -617,8 +617,8 @@ export default function TeacherPortal() {
             className="rounded-3xl border border-slate-200 bg-gradient-to-b from-indigo-50 to-purple-50 p-5 shadow-xl relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-violet-650/5 rounded-full blur-2xl pointer-events-none" />
-            <div className="flex items-center gap-2 mb-2 text-violet-400">
-              <Sparkles className="w-4 h-4 text-violet-400" />
+            <div className="flex items-center gap-2 mb-2 text-violet-600">
+              <Sparkles className="w-4 h-4 text-violet-600" />
               <h4 className="text-xs font-black uppercase tracking-wider">Hỗ Trợ AI Giảng Dạy</h4>
             </div>
             <p className="text-[10px] text-slate-500 leading-relaxed">

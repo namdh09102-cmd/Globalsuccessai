@@ -178,7 +178,7 @@ export default function UpgradePage() {
           </Link>
 
           {isPro && (
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-400 text-[10px] font-black uppercase tracking-wider">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-600 text-[10px] font-black uppercase tracking-wider">
               <Crown className="w-3.5 h-3.5" />
               Bạn đang là thành viên PRO
             </span>
@@ -195,7 +195,7 @@ export default function UpgradePage() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-48 bg-violet-600/10 rounded-full blur-[80px] pointer-events-none" />
 
           <div className="relative">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/25 text-violet-400 text-[10px] font-black uppercase tracking-widest mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/25 text-violet-600 text-[10px] font-black uppercase tracking-widest mb-4">
               <Crown className="w-3.5 h-3.5 animate-pulse" />
               <span>Global Success PRO — Nền Tảng EdTech K-12 #1</span>
             </div>
@@ -213,17 +213,17 @@ export default function UpgradePage() {
             {/* Social proof bar */}
             <div className="flex items-center justify-center gap-6 mt-5 flex-wrap">
               <div className="flex items-center gap-2 text-[10px] text-slate-500 font-bold">
-                <Users className="w-3.5 h-3.5 text-indigo-400" />
+                <Users className="w-3.5 h-3.5 text-indigo-600" />
                 <span>15,200+ học sinh đang dùng PRO</span>
               </div>
               <div className="flex items-center gap-0.5">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />
+                  <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-600" />
                 ))}
                 <span className="text-[10px] text-slate-500 font-bold ml-1.5">4.9 / 5</span>
               </div>
               <div className="flex items-center gap-1.5 text-[10px] text-slate-500 font-bold">
-                <Flame className="w-3.5 h-3.5 text-rose-400" />
+                <Flame className="w-3.5 h-3.5 text-rose-600" />
                 <span>Hoàn tiền trong 7 ngày</span>
               </div>
             </div>
@@ -265,7 +265,7 @@ export default function UpgradePage() {
                   <span className="text-xl">{plan.emoji}</span>
                   <h3
                     className={`text-sm font-black ${
-                      plan.popular ? "text-amber-400" : "text-slate-800"
+                      plan.popular ? "text-amber-600" : "text-slate-800"
                     }`}
                   >
                     {plan.name}
@@ -277,7 +277,7 @@ export default function UpgradePage() {
                   <div className="flex items-baseline gap-1 flex-wrap">
                     <span
                       className={`text-2xl font-black tracking-tight ${
-                        plan.popular ? "text-amber-300" : "text-slate-800"
+                        plan.popular ? "text-amber-600" : "text-slate-800"
                       }`}
                     >
                       {plan.price}
@@ -286,7 +286,7 @@ export default function UpgradePage() {
                   </div>
                   <p className="text-[10px] text-slate-600 font-bold">{plan.priceNote}</p>
                   {plan.savings && (
-                    <span className="inline-block px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-[9px] font-black uppercase tracking-wider">
+                    <span className="inline-block px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-600 text-[9px] font-black uppercase tracking-wider">
                       {plan.savings}
                     </span>
                   )}
@@ -298,7 +298,7 @@ export default function UpgradePage() {
                     <li key={fi} className="flex items-start gap-2 text-[10px] text-slate-500 font-semibold">
                       <CheckCircle
                         className={`w-3.5 h-3.5 shrink-0 mt-0.5 ${
-                          plan.popular ? "text-amber-400" : "text-indigo-400"
+                          plan.popular ? "text-amber-600" : "text-indigo-600"
                         }`}
                       />
                       <span>{feat}</span>
@@ -331,7 +331,7 @@ export default function UpgradePage() {
             className="rounded-3xl border border-slate-200 bg-[#0F1520] p-6 space-y-5"
           >
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+              <div className="w-8 h-8 rounded-xl bg-indigo-500/10 border border-indigo-300 flex items-center justify-center text-indigo-600">
                 <QrCode className="w-4 h-4" />
               </div>
               <div>
@@ -383,7 +383,7 @@ export default function UpgradePage() {
 
               <p className="text-[9px] text-slate-500 text-center leading-relaxed max-w-xs">
                 Mở app ngân hàng → Quét mã QR → Nhập nội dung chuyển khoản:
-                {" "}<span className="text-indigo-400 font-black">GSA [Tên học sinh]</span>
+                {" "}<span className="text-indigo-600 font-black">GSA [Tên học sinh]</span>
               </p>
             </div>
           </motion.div>
@@ -396,7 +396,7 @@ export default function UpgradePage() {
             className="rounded-3xl border border-slate-200 bg-[#0F1520] p-6 space-y-5"
           >
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+              <div className="w-8 h-8 rounded-xl bg-emerald-500/10 border border-emerald-300 flex items-center justify-center text-emerald-600">
                 <Shield className="w-4 h-4" />
               </div>
               <div>
@@ -424,7 +424,7 @@ export default function UpgradePage() {
                         onClick={handleCopyBank}
                         className={`p-1.5 rounded-lg transition-all ${
                           copiedBank
-                            ? "bg-emerald-500/15 text-emerald-400"
+                            ? "bg-emerald-500/15 text-emerald-600"
                             : "bg-slate-100 text-slate-500 hover:text-slate-800"
                         }`}
                       >
@@ -437,9 +437,9 @@ export default function UpgradePage() {
             </div>
 
             <div className="p-3 rounded-xl bg-amber-500/5 border border-amber-500/15">
-              <p className="text-[9px] text-amber-400/80 font-bold leading-relaxed">
+              <p className="text-[9px] text-amber-600/80 font-bold leading-relaxed">
                 ⚡ Sau khi chuyển khoản, tài khoản được kích hoạt trong{" "}
-                <span className="text-amber-400">5–15 phút</span>. Hãy lưu ảnh chụp màn hình để xác nhận nếu cần.
+                <span className="text-amber-600">5–15 phút</span>. Hãy lưu ảnh chụp màn hình để xác nhận nếu cần.
               </p>
             </div>
           </motion.div>
@@ -461,14 +461,14 @@ export default function UpgradePage() {
             <div className="grid grid-cols-3 px-6 py-3 text-[10px] font-black uppercase tracking-wider text-slate-500">
               <span>Tính năng</span>
               <span className="text-center">Miễn phí</span>
-              <span className="text-center text-violet-400">PRO ✦</span>
+              <span className="text-center text-violet-600">PRO ✦</span>
             </div>
             {FEATURES_COMPARISON.map((feat) => (
               <div key={feat.name} className="grid grid-cols-3 px-6 py-3 hover:bg-slate-100 transition-colors">
                 <span className="text-[10px] text-slate-500 font-semibold">{feat.name}</span>
                 <div className="flex justify-center">
                   {feat.free === true ? (
-                    <CheckCircle className="w-4 h-4 text-emerald-400" />
+                    <CheckCircle className="w-4 h-4 text-emerald-600" />
                   ) : feat.free === false ? (
                     <Lock className="w-4 h-4 text-slate-700" />
                   ) : (
@@ -477,9 +477,9 @@ export default function UpgradePage() {
                 </div>
                 <div className="flex justify-center">
                   {feat.pro === true ? (
-                    <CheckCircle className="w-4 h-4 text-violet-400" />
+                    <CheckCircle className="w-4 h-4 text-violet-600" />
                   ) : typeof feat.pro === "string" ? (
-                    <span className="text-[9px] text-amber-400 font-black">{feat.pro}</span>
+                    <span className="text-[9px] text-amber-600 font-black">{feat.pro}</span>
                   ) : null}
                 </div>
               </div>
@@ -507,7 +507,7 @@ export default function UpgradePage() {
           <button
             onClick={handleActivateVIP}
             title="[ADMIN] Giả lập kích hoạt VIP"
-            className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-dashed border-slate-300/60 text-slate-600 hover:text-amber-400 hover:border-amber-500/40 hover:bg-amber-500/5 text-[9px] font-bold transition-all group"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-dashed border-slate-300/60 text-slate-600 hover:text-amber-600 hover:border-amber-500/40 hover:bg-amber-500/5 text-[9px] font-bold transition-all group"
           >
             <Gift className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
             <span>[Admin] Giả lập kích hoạt VIP</span>

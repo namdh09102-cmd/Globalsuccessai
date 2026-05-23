@@ -203,7 +203,7 @@ export default function AuthPage() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
-                className="flex items-center gap-2 text-rose-400 bg-rose-500/10 border border-rose-500/20 p-3 rounded-lg text-xs font-semibold"
+                className="flex items-center gap-2 text-rose-600 bg-rose-500/10 border border-rose-500/20 p-3 rounded-lg text-xs font-semibold"
               >
                 <AlertCircle className="w-4 h-4" />
                 <span>{error}</span>
@@ -236,7 +236,7 @@ export default function AuthPage() {
                 setIsLogin(!isLogin);
                 setError("");
               }}
-              className="text-indigo-400 font-bold hover:text-indigo-300 transition-colors ml-1"
+              className="text-indigo-600 font-bold hover:text-indigo-600 transition-colors ml-1"
             >
               {isLogin ? "Đăng ký ngay" : "Đăng nhập"}
             </button>

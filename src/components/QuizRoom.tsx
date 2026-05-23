@@ -218,11 +218,11 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
         {/* Room Header */}
         <div className="flex items-center justify-between border-b border-slate-200 pb-4 relative z-10">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 shadow">
+            <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-300 flex items-center justify-center text-violet-600 shadow">
               <HelpCircle className="w-5 h-5 animate-pulse" />
             </div>
             <div>
-              <span className="text-[10px] font-black text-violet-400 tracking-wider uppercase">
+              <span className="text-[10px] font-black text-violet-600 tracking-wider uppercase">
                 Quiz Room (Offline)
               </span>
               <h2 className="text-sm font-bold text-slate-800">{lessonTitle}</h2>
@@ -230,7 +230,7 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
           </div>
           
           <div className="flex items-center gap-2">
-            <span className="px-2.5 py-0.5 rounded-full text-[9px] font-extrabold bg-violet-600/10 text-violet-400 border border-violet-500/20 uppercase">
+            <span className="px-2.5 py-0.5 rounded-full text-[9px] font-extrabold bg-violet-600/10 text-violet-600 border border-violet-300 uppercase">
               Câu {currentIdx + 1}/{questions.length}
             </span>
           </div>
@@ -238,7 +238,7 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
 
         {/* Center Question Text */}
         <div className="text-center py-6 px-4 relative z-10">
-          <h3 className="text-base font-extrabold text-white leading-relaxed font-sans">
+          <h3 className="text-base font-extrabold text-slate-800 leading-relaxed font-sans">
             {activeQuestion.question}
           </h3>
         </div>
@@ -293,7 +293,7 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
               className={`px-8 py-2.5 rounded-xl text-xs font-black transition-colors flex items-center gap-1.5 shadow-lg ${
                 selectedOption
                   ? "bg-violet-600 hover:bg-violet-500 text-white shadow-violet-950/20"
-                  : "bg-slate-800 text-slate-500 cursor-not-allowed shadow-none"
+                  : "bg-slate-200 text-slate-700 cursor-not-allowed shadow-none"
               }`}
             >
               <span>Kiểm Tra</span>
@@ -315,13 +315,13 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
             exit={{ y: 100, opacity: 0 }}
             className={`fixed bottom-0 left-0 right-0 z-40 backdrop-blur border-t px-8 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-t-3xl shadow-2xl ${
               isCorrect
-                ? "bg-emerald-950/80 border-emerald-800 text-emerald-300"
-                : "bg-rose-950/80 border-rose-800 text-rose-300"
+                ? "bg-emerald-950/80 border-emerald-800 text-emerald-600"
+                : "bg-rose-950/80 border-rose-800 text-rose-600"
             }`}
           >
             <div className="flex items-center gap-4">
               <div className={`w-12 h-12 rounded-full flex items-center justify-center shrink-0 ${
-                isCorrect ? "bg-emerald-500/10 text-emerald-400" : "bg-rose-500/10 text-rose-400"
+                isCorrect ? "bg-emerald-500/10 text-emerald-600" : "bg-rose-500/10 text-rose-600"
               }`}>
                 {isCorrect ? (
                   <CheckCircle2 className="w-6 h-6 animate-bounce" />
@@ -346,7 +346,7 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
                 onClick={handleAskAI}
                 className="px-4 py-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 bg-white hover:bg-slate-100 border border-slate-600 text-slate-800"
               >
-                <Bot className="w-4 h-4 text-rose-400" />
+                <Bot className="w-4 h-4 text-rose-600" />
                 <span className="hidden sm:inline">Hỏi Cô giáo AI</span>
               </button>
 
@@ -385,12 +385,12 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
               
               <div className="flex items-center justify-between mb-6 relative z-10">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-rose-500/20 border border-rose-500/30 flex items-center justify-center text-rose-400">
+                  <div className="w-10 h-10 rounded-full bg-rose-500/20 border border-rose-500/30 flex items-center justify-center text-rose-600">
                     <Bot className="w-5 h-5" />
                   </div>
                   <div>
                     <h3 className="text-sm font-black text-white">Cô giáo AI</h3>
-                    <p className="text-[10px] text-rose-400 font-bold uppercase tracking-wider">Gemini Pro Tutor</p>
+                    <p className="text-[10px] text-rose-600 font-bold uppercase tracking-wider">Gemini Pro Tutor</p>
                   </div>
                 </div>
                 <button 

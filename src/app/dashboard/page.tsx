@@ -168,7 +168,7 @@ export default function DashboardPage() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-6">
         <div>
-          <div className="flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-wider mb-1">
+          <div className="flex items-center gap-2 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-1">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Hệ thống báo cáo AI</span>
           </div>
@@ -196,18 +196,18 @@ export default function DashboardPage() {
           <div>
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                <div className="w-8 h-8 rounded-lg bg-indigo-500/10 border border-indigo-300 flex items-center justify-center text-indigo-600">
                   <TrendingUp className="w-4 h-4" />
                 </div>
                 <div>
-                  <h2 className="text-sm font-bold text-slate-800 group-hover:text-indigo-400 transition-colors">
+                  <h2 className="text-sm font-bold text-slate-800 group-hover:text-indigo-600 transition-colors">
                     Biểu đồ kỹ năng 4D
                   </h2>
                   <p className="text-[10px] text-slate-500">Phân tích chuyên sâu từ AI Coach</p>
                 </div>
               </div>
               
-              <span className="text-[10px] font-semibold bg-indigo-500/10 text-indigo-400 px-2 py-0.5 rounded-full border border-indigo-500/20">
+              <span className="text-[10px] font-semibold bg-indigo-500/10 text-indigo-600 px-2 py-0.5 rounded-full border border-indigo-300">
                 Active
               </span>
             </div>
@@ -324,11 +324,11 @@ export default function DashboardPage() {
           <div className="grid grid-cols-2 gap-3 pt-4 border-t border-slate-200">
             <div className="p-3 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-between">
               <span className="text-[10px] font-semibold text-slate-500">Kỹ năng mạnh nhất:</span>
-              <span className="text-xs font-black text-indigo-400">CHƯA CÓ DỮ LIỆU</span>
+              <span className="text-xs font-black text-indigo-600">CHƯA CÓ DỮ LIỆU</span>
             </div>
             <div className="p-3 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-between">
               <span className="text-[10px] font-semibold text-slate-500">Cần cải thiện:</span>
-              <span className="text-xs font-black text-pink-400">CHƯA CÓ DỮ LIỆU</span>
+              <span className="text-xs font-black text-pink-600">CHƯA CÓ DỮ LIỆU</span>
             </div>
           </div>
         </div>
@@ -339,11 +339,11 @@ export default function DashboardPage() {
           {/* Card 2: Chuỗi Streak & XP */}
           <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl hover:border-amber-500/30 transition-all duration-300 group flex-1 flex flex-col justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500">
+              <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-300 flex items-center justify-center text-amber-500">
                 <Flame className="w-4 h-4" />
               </div>
               <div>
-                <h2 className="text-sm font-bold text-slate-800 group-hover:text-amber-400 transition-colors">
+                <h2 className="text-sm font-bold text-slate-800 group-hover:text-amber-600 transition-colors">
                   Ngọn lửa học tập
                 </h2>
                 <p className="text-[10px] text-slate-500">Thống kê tích lũy của bạn</p>
@@ -365,8 +365,8 @@ export default function DashboardPage() {
                   {stats.streak.toString().padStart(2, "0")} NGÀY
                 </div>
                 <div className="text-[11px] font-semibold text-slate-700 mt-1 flex items-center gap-1.5">
-                  <Zap className="w-3.5 h-3.5 text-violet-400" />
-                  <span>Tổng tích lũy: <b className="text-violet-400">{stats.xp} XP</b></span>
+                  <Zap className="w-3.5 h-3.5 text-violet-600" />
+                  <span>Tổng tích lũy: <b className="text-violet-600">{stats.xp} XP</b></span>
                 </div>
                 <div className="text-[10px] text-slate-500 mt-0.5">
                   Hãy bắt đầu bài học đầu tiên ngay hôm nay!
@@ -375,7 +375,7 @@ export default function DashboardPage() {
             </div>
 
             <div className="p-3.5 rounded-2xl bg-amber-500/5 border border-amber-500/10 text-center">
-              <p className="text-[10px] font-medium text-amber-400 leading-relaxed">
+              <p className="text-[10px] font-medium text-amber-600 leading-relaxed">
                 Học liên tiếp 5 ngày để nhận Huy hiệu <span className="font-bold underline">"Chiến Binh Chuyên Cần"</span> phát sáng!
               </p>
             </div>
@@ -384,11 +384,11 @@ export default function DashboardPage() {
           {/* Card 3: Học tiếp bài gần nhất */}
           <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl hover:border-emerald-500/30 transition-all duration-300 group flex-1 flex flex-col justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+              <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-300 flex items-center justify-center text-emerald-600">
                 <BookOpen className="w-4 h-4" />
               </div>
               <div>
-                <h2 className="text-sm font-bold text-slate-800 group-hover:text-emerald-400 transition-colors">
+                <h2 className="text-sm font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">
                   Tiến trình hiện tại
                 </h2>
                 <p className="text-[10px] text-slate-500">Học tiếp bài gần nhất</p>
@@ -398,7 +398,7 @@ export default function DashboardPage() {
             {/* Lesson Details */}
             {nextLesson ? (
               <div className="py-4 space-y-2">
-                <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">
+                <div className="text-[10px] font-bold text-emerald-600 uppercase tracking-wider">
                   {nextLesson.unitTitle}
                 </div>
                 <div className="text-sm font-bold text-slate-800 truncate">
@@ -420,7 +420,7 @@ export default function DashboardPage() {
             {/* Action Button */}
             <Link
               href="/"
-              className="relative w-full py-3 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:from-emerald-400 hover:to-teal-500 text-slate-800 text-xs font-bold text-center shadow-lg shadow-emerald-500/20 hover:shadow-emerald-400/30 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group-hover:translate-y-[-2px]"
+              className="relative w-full py-3 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:from-emerald-400 hover:to-teal-500 text-white text-xs font-bold text-center shadow-lg shadow-emerald-500/20 hover:shadow-emerald-400/30 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group-hover:translate-y-[-2px]"
             >
               <Play className="w-4 h-4 fill-white" />
               <span>HỌC TIẾP NGAY</span>
@@ -435,7 +435,7 @@ export default function DashboardPage() {
       {/* Quick Stats Summary List (Bento Row) */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="rounded-2xl border border-slate-200 bg-white p-4 flex items-center gap-4 hover:bg-slate-100 transition-all duration-300">
-          <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400">
+          <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-300 flex items-center justify-center text-violet-600">
             <Award className="w-5 h-5" />
           </div>
           <div>
@@ -445,7 +445,7 @@ export default function DashboardPage() {
         </div>
 
         <div className="rounded-2xl border border-slate-200 bg-white p-4 flex items-center gap-4 hover:bg-slate-100 transition-all duration-300">
-          <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+          <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-300 flex items-center justify-center text-indigo-600">
             <Trophy className="w-5 h-5" />
           </div>
           <div>
@@ -455,7 +455,7 @@ export default function DashboardPage() {
         </div>
 
         <div className="rounded-2xl border border-slate-200 bg-white p-4 flex items-center gap-4 hover:bg-slate-100 transition-all duration-300">
-          <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+          <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-300 flex items-center justify-center text-emerald-600">
             <CheckCircle className="w-5 h-5" />
           </div>
           <div>

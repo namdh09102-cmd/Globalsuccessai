@@ -39,7 +39,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </Link>
           <button
             onClick={handleLogout}
-            className="text-[10px] font-bold text-rose-400 bg-rose-950/20 border border-rose-500/20 px-2 py-1 rounded-lg"
+            className="text-[10px] font-bold text-rose-600 bg-rose-950/20 border border-rose-500/20 px-2 py-1 rounded-lg"
           >
             Đăng xuất
           </button>
@@ -57,7 +57,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               href={item.href}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-semibold text-[10px] whitespace-nowrap border shrink-0 transition-all ${
                 isActive
-                  ? "bg-rose-500/10 text-rose-400 border-rose-500/20"
+                  ? "bg-rose-500/10 text-rose-600 border-rose-500/20"
                   : "text-slate-500 hover:bg-slate-100 hover:text-slate-800 border-transparent"
               }`}
             >
@@ -78,7 +78,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <h1 className="font-black text-[12px] tracking-wide text-slate-800 uppercase flex items-center gap-1">
               <span>ADMIN PORTAL</span>
             </h1>
-            <span className="text-[9px] font-bold tracking-widest text-rose-400 uppercase">
+            <span className="text-[9px] font-bold tracking-widest text-rose-600 uppercase">
               Super Admin Mode
             </span>
           </div>
@@ -97,7 +97,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 href={item.href}
                 className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-semibold text-xs ${
                   isActive
-                    ? "bg-rose-500/10 text-rose-400 border border-rose-500/20 shadow-sm"
+                    ? "bg-rose-500/10 text-rose-600 border border-rose-500/20 shadow-sm"
                     : "text-slate-500 hover:bg-slate-100 hover:text-slate-800 border border-transparent"
                 }`}
               >

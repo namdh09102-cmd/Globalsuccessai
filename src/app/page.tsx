@@ -860,9 +860,9 @@ export default function Dashboard() {
 
   const getLessonColor = (type: string) => {
     switch (type) {
-      case "speaking": return "text-indigo-400 bg-indigo-500/10 border-indigo-500/25";
-      case "dictation": return "text-blue-400 bg-blue-500/10 border-blue-500/25";
-      case "quiz": return "text-violet-400 bg-violet-500/10 border-violet-500/25";
+      case "speaking": return "text-indigo-600 bg-indigo-500/10 border-indigo-500/25";
+      case "dictation": return "text-blue-600 bg-blue-500/10 border-blue-500/25";
+      case "quiz": return "text-violet-600 bg-violet-500/10 border-violet-500/25";
       default: return "text-slate-500 bg-slate-500/10 border-slate-500/25";
     }
   };
@@ -969,15 +969,15 @@ export default function Dashboard() {
             
             <div className="flex items-center justify-between border-b border-slate-200 pb-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 shadow">
+                <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-300 flex items-center justify-center text-indigo-600 shadow">
                   <Mic className="w-5 h-5 animate-pulse" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-black text-indigo-400 tracking-wider uppercase">Speaking Room (Offline)</span>
+                  <span className="text-[10px] font-black text-indigo-600 tracking-wider uppercase">Speaking Room (Offline)</span>
                   <h3 className="text-sm font-bold text-slate-800">{activeLesson.title}</h3>
                 </div>
               </div>
-              <span className="px-2.5 py-0.5 rounded-full text-[9px] font-extrabold bg-indigo-600/10 text-indigo-400 border border-indigo-500/20 uppercase">
+              <span className="px-2.5 py-0.5 rounded-full text-[9px] font-extrabold bg-indigo-600/10 text-indigo-600 border border-indigo-300 uppercase">
                 AI Chấm Điểm
               </span>
             </div>
@@ -1027,7 +1027,7 @@ export default function Dashboard() {
 
               <div className="p-4 rounded-xl border border-slate-200 bg-slate-50 flex flex-col justify-center min-h-[150px]">
                 {isEvaluating ? (
-                  <div className="flex flex-col items-center justify-center gap-2 text-indigo-400">
+                  <div className="flex flex-col items-center justify-center gap-2 text-indigo-600">
                     <Loader2 className="w-6 h-6 animate-spin" />
                     <span className="text-[9px] font-bold uppercase animate-pulse">AI Đang phân tích âm...</span>
                   </div>
@@ -1036,31 +1036,31 @@ export default function Dashboard() {
                     <div className="grid grid-cols-4 gap-1.5 pt-1 pb-2 border-b border-slate-200 text-center">
                       <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
                         <div className="text-[7px] font-bold text-slate-500 uppercase tracking-wider">Tổng điểm</div>
-                        <div className="text-xs font-black text-indigo-400">{evaluationResult.score}%</div>
+                        <div className="text-xs font-black text-indigo-600">{evaluationResult.score}%</div>
                       </div>
                       <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
                         <div className="text-[7px] font-bold text-slate-500 uppercase tracking-wider">Accuracy</div>
-                        <div className="text-xs font-black text-emerald-400">{evaluationResult.accuracy}%</div>
+                        <div className="text-xs font-black text-emerald-600">{evaluationResult.accuracy}%</div>
                       </div>
                       <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
                         <div className="text-[7px] font-bold text-slate-500 uppercase tracking-wider">Pronounce</div>
-                        <div className="text-xs font-black text-amber-400">{evaluationResult.pronunciation}%</div>
+                        <div className="text-xs font-black text-amber-600">{evaluationResult.pronunciation}%</div>
                       </div>
                       <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
                         <div className="text-[7px] font-bold text-slate-500 uppercase tracking-wider">Fluency</div>
-                        <div className="text-xs font-black text-blue-400">{evaluationResult.fluency}%</div>
+                        <div className="text-xs font-black text-blue-600">{evaluationResult.fluency}%</div>
                       </div>
                     </div>
 
                     <div className="flex flex-wrap gap-1 py-1">
                       {evaluationResult.words.map((w, i) => {
-                        let colorClass = "bg-rose-500/10 text-rose-400 border-rose-500/20";
+                        let colorClass = "bg-rose-500/10 text-rose-600 border-rose-500/20";
                         if (w.status === "correct") {
-                          colorClass = "bg-emerald-500/10 text-emerald-400 border-emerald-500/20";
+                          colorClass = "bg-emerald-500/10 text-emerald-600 border-emerald-300";
                         } else if (w.status === "mispronounced") {
-                          colorClass = "bg-amber-500/10 text-amber-400 border-amber-500/20";
+                          colorClass = "bg-amber-500/10 text-amber-600 border-amber-300";
                         } else if (w.status === "omitted") {
-                          colorClass = "bg-rose-500/10 text-rose-400 border-rose-500/20";
+                          colorClass = "bg-rose-500/10 text-rose-600 border-rose-500/20";
                         }
                         return (
                           <span 
@@ -1079,7 +1079,7 @@ export default function Dashboard() {
                     </p>
 
                     {evaluationResult.score >= 75 && (
-                      <div className="p-2 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center gap-1.5 text-[9px] animate-pulse text-amber-400 font-extrabold">
+                      <div className="p-2 rounded-xl bg-amber-500/10 border border-amber-300 flex items-center justify-center gap-1.5 text-[9px] animate-pulse text-amber-600 font-extrabold">
                         <span>🏆 AI Bonus (+50 XP & +2 💎) đã được cộng!</span>
                       </div>
                     )}
@@ -1191,7 +1191,7 @@ export default function Dashboard() {
             <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 pt-4 border-t border-slate-200">
               {/* Streak */}
               <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-white border-slate-200 shadow-md backdrop-blur-sm border border-slate-200">
-                <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500 shadow-inner">
+                <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-300 flex items-center justify-center text-amber-500 shadow-inner">
                   <Flame className="w-5 h-5 fill-amber-500 animate-pulse" />
                 </div>
                 <div>
@@ -1202,7 +1202,7 @@ export default function Dashboard() {
 
               {/* Lessons */}
               <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-white border-slate-200 shadow-md backdrop-blur-sm border border-slate-200">
-                <div className="w-9 h-9 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shadow-inner">
+                <div className="w-9 h-9 rounded-xl bg-blue-500/10 border border-blue-300 flex items-center justify-center text-blue-600 shadow-inner">
                   <BookOpen className="w-5 h-5" />
                 </div>
                 <div>
@@ -1213,7 +1213,7 @@ export default function Dashboard() {
 
               {/* Accuracy */}
               <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-white border-slate-200 shadow-md backdrop-blur-sm border border-slate-200">
-                <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shadow-inner">
+                <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-300 flex items-center justify-center text-emerald-600 shadow-inner">
                   <Award className="w-5 h-5" />
                 </div>
                 <div>
@@ -1224,7 +1224,7 @@ export default function Dashboard() {
 
               {/* XP */}
               <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-white border-slate-200 shadow-md backdrop-blur-sm border border-slate-200">
-                <div className="w-9 h-9 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 shadow-inner">
+                <div className="w-9 h-9 rounded-xl bg-violet-500/10 border border-violet-300 flex items-center justify-center text-violet-600 shadow-inner">
                   <Zap className="w-5 h-5" />
                 </div>
                 <div>
@@ -1350,7 +1350,7 @@ export default function Dashboard() {
                 onClick={() => {
                   document.getElementById("curriculum-section")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="text-xs font-black text-indigo-400 hover:text-indigo-300 transition-colors uppercase tracking-wider"
+                className="text-xs font-black text-indigo-600 hover:text-indigo-600 transition-colors uppercase tracking-wider"
               >
                 Xem tất cả
               </button>
@@ -1365,9 +1365,9 @@ export default function Dashboard() {
                 ];
                 
                 const difficultyTags = [
-                  { label: "Dễ", style: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20" },
-                  { label: "Dễ", style: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20" },
-                  { label: "Trung bình", style: "bg-amber-500/10 text-amber-400 border-amber-500/20" },
+                  { label: "Dễ", style: "bg-emerald-500/10 text-emerald-600 border-emerald-300" },
+                  { label: "Dễ", style: "bg-emerald-500/10 text-emerald-600 border-emerald-300" },
+                  { label: "Trung bình", style: "bg-amber-500/10 text-amber-600 border-amber-300" },
                 ];
 
                 const bgImg = bgImages[idx % bgImages.length];
@@ -1424,7 +1424,7 @@ export default function Dashboard() {
                     {/* Card Body */}
                     <div className="p-3 flex-1 flex flex-col justify-between space-y-2">
                       <div>
-                        <h4 className="text-[10px] font-black text-slate-800 group-hover:text-indigo-400 transition-colors leading-tight">
+                        <h4 className="text-[10px] font-black text-slate-800 group-hover:text-indigo-600 transition-colors leading-tight">
                           {unit.title}
                         </h4>
                         <p className="text-[8px] text-slate-500 mt-0.5 line-clamp-1">{subDesc}</p>
@@ -1444,7 +1444,7 @@ export default function Dashboard() {
                           <span className="text-[7px] text-slate-500 font-bold mt-0.5 block">{unit.progress}% • {unit.lessons.length} bài</span>
                         </div>
                         <div className={`w-6 h-6 rounded-full flex items-center justify-center transition-all ${
-                          isSelected ? "bg-indigo-600 text-white" : "bg-slate-800 text-slate-500 group-hover:bg-indigo-600/30 group-hover:text-indigo-400"
+                          isSelected ? "bg-indigo-600 text-white" : "bg-slate-200 text-slate-700 group-hover:bg-indigo-600/30 group-hover:text-indigo-600"
                         }`}>
                           {unit.status === "locked" ? <Lock className="w-3 h-3" /> : <ChevronRight className="w-3 h-3" />}
                         </div>
@@ -1461,14 +1461,14 @@ export default function Dashboard() {
             <div id="curriculum-section" className="space-y-4 pt-4 scroll-mt-6">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <div className="w-5 h-5 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                  <div className="w-5 h-5 rounded-lg bg-indigo-500/10 border border-indigo-300 flex items-center justify-center text-indigo-600">
                     <BookOpen className="w-3 h-3" />
                   </div>
                   <h3 className="text-xs font-black text-slate-500 uppercase tracking-widest">
                     Chi tiết bài học: Unit {selectedUnit.number} — {selectedUnit.title}
                   </h3>
                 </div>
-                <span className="px-2 py-0.5 rounded text-[9px] font-extrabold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 uppercase tracking-wide font-mono">
+                <span className="px-2 py-0.5 rounded text-[9px] font-extrabold bg-indigo-500/10 text-indigo-600 border border-indigo-300 uppercase tracking-wide font-mono">
                   {selectedUnit.grade}
                 </span>
               </div>
@@ -1523,7 +1523,7 @@ export default function Dashboard() {
 
                           <div className="flex items-center gap-2">
                             {lesson.completed && !locked ? (
-                              <span className="px-2.5 py-1 rounded-xl text-[9px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1">
+                              <span className="px-2.5 py-1 rounded-xl text-[9px] font-bold bg-emerald-500/10 text-emerald-600 border border-emerald-300 flex items-center gap-1">
                                 <Check className="w-3.5 h-3.5" /> Xong
                               </span>
                             ) : locked ? (
@@ -1564,8 +1564,8 @@ export default function Dashboard() {
                     <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl pointer-events-none" />
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
-                        <span className="text-[9px] font-black text-indigo-400 uppercase tracking-widest">Ngữ Pháp Trọng Tâm</span>
-                        <Award className="w-4.5 h-4.5 text-indigo-400" />
+                        <span className="text-[9px] font-black text-indigo-600 uppercase tracking-widest">Ngữ Pháp Trọng Tâm</span>
+                        <Award className="w-4.5 h-4.5 text-indigo-600" />
                       </div>
                       <div>
                         <h4 className="text-xs font-bold text-slate-800">
@@ -1590,8 +1590,8 @@ export default function Dashboard() {
                     <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl pointer-events-none" />
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
-                        <span className="text-[9px] font-black text-emerald-400 uppercase tracking-widest">Từ Vựng Nổi Bật</span>
-                        <BookMarked className="w-4.5 h-4.5 text-emerald-400" />
+                        <span className="text-[9px] font-black text-emerald-600 uppercase tracking-widest">Từ Vựng Nổi Bật</span>
+                        <BookMarked className="w-4.5 h-4.5 text-emerald-600" />
                       </div>
                       <div className="p-2.5 rounded-xl border border-slate-200 bg-slate-50 space-y-1">
                         <div className="flex justify-between items-center">
@@ -1602,14 +1602,14 @@ export default function Dashboard() {
                             {selectedUnit.number === 1 ? "/ˈfɪtnəs/" : selectedUnit.number === 2 ? "/ˌɪndɪˈpendənt/" : "/ˌfjuːtʃəˈrɪstɪk/"}
                           </span>
                         </div>
-                        <p className="text-[9px] text-indigo-400 font-bold">
+                        <p className="text-[9px] text-indigo-600 font-bold">
                           {selectedUnit.number === 1 ? "(n) sự sung sức, sự cân đối" : selectedUnit.number === 2 ? "(adj) độc lập, tự chủ" : "(adj) thuộc về tương lai"}
                         </p>
                       </div>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-[8px] text-slate-500 font-bold">Từ nổi bật của bài học</span>
-                      <button className="text-[9px] font-bold text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-0.5 group/btn">
+                      <button className="text-[9px] font-bold text-emerald-600 hover:text-emerald-600 transition-colors flex items-center gap-0.5 group/btn">
                         <span>Xem từ tiếp theo</span>
                         <ChevronRight className="w-3 h-3 transition-transform group-hover/btn:translate-x-0.5" />
                       </button>
