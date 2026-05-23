@@ -38,11 +38,11 @@ export default function WorksheetRoom({
       <div className="w-full bg-slate-50 backdrop-blur-xl border-b border-slate-200 p-4 flex items-center justify-between shadow-xl shrink-0">
         <button
           onClick={onBack}
-          className="px-4 py-2 rounded-xl bg-slate-800/50 hover:bg-slate-700/50 text-slate-700 text-sm font-semibold transition-colors flex items-center gap-2"
+          className="px-4 py-2 rounded-xl bg-white hover:bg-indigo-50 border border-slate-200 text-slate-600 hover:text-indigo-600 text-sm font-semibold transition-colors flex items-center gap-2 shadow-sm"
         >
           <ArrowLeft className="w-4 h-4" /> Thoát
         </button>
-        <h1 className="text-lg font-black text-white uppercase tracking-widest flex items-center gap-2">
+        <h1 className="text-lg font-black text-slate-800 uppercase tracking-widest flex items-center gap-2">
           <FileText className="w-5 h-5 text-indigo-400" />
           {title}
         </h1>
@@ -53,11 +53,11 @@ export default function WorksheetRoom({
         
         {mainAudio && (
           <div className="w-full max-w-4xl mx-auto mb-8 p-4 bg-white rounded-xl border border-slate-200 flex flex-col gap-3 shadow-lg">
-            <h2 className="text-lg font-bold text-white flex items-center gap-3">
+            <h2 className="text-lg font-bold text-slate-800 flex items-center gap-3">
               <Headphones className="w-6 h-6 text-blue-400" />
               File Nghe (Listening Section)
             </h2>
-            <audio controls className="w-full h-12 outline-none rounded-lg bg-slate-900" src={mainAudio}>
+            <audio controls className="w-full h-12 outline-none rounded-lg bg-slate-100" src={mainAudio}>
               Your browser does not support the audio element.
             </audio>
           </div>

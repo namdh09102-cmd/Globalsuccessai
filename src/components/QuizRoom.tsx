@@ -184,7 +184,7 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
     <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center p-6 bg-slate-50 text-slate-700 relative overflow-hidden">
       
       {/* Nút quay lại */}
-      <button className="self-start mb-6 px-4 py-2 rounded-lg bg-slate-900/60 border border-slate-200 hover:text-slate-100 hover:bg-slate-800/40 transition-all text-xs font-semibold flex items-center gap-1.5 z-10"
+      <button className="self-start mb-6 px-4 py-2 rounded-lg bg-white border border-slate-200 hover:text-indigo-600 hover:bg-indigo-50 transition-all text-xs font-semibold flex items-center gap-1.5 z-10 text-slate-600 shadow-sm"
       >
         <ArrowLeft className="w-4 h-4" /> Về Bảng Điều Khiển
       </button>
@@ -268,7 +268,7 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
                   <div className={`w-6 h-6 rounded-lg flex items-center justify-center text-xs font-black border transition-colors ${
                     isSelected
                       ? "bg-indigo-500 border-indigo-400 text-white"
-                      : "bg-slate-900 border-slate-200 text-slate-500"
+                      : "bg-slate-100 border-slate-200 text-slate-500"
                   }`}>
                     {letter}
                   </div>

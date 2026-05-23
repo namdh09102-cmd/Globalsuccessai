@@ -948,7 +948,7 @@ export default function Dashboard() {
           <div className="w-full max-w-2xl flex items-center justify-between mb-4">
             <button
               onClick={() => setActiveRoom("dashboard")}
-              className="px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-200 hover:text-slate-800 hover:bg-slate-100 transition-all text-xs font-semibold flex items-center gap-1.5"
+              className="px-4 py-2 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-indigo-600 hover:border-indigo-200 hover:bg-indigo-50 transition-all text-xs font-semibold flex items-center gap-1.5 shadow-sm"
             >
               <ArrowLeft className="w-4.5 h-4.5" /> Về Bảng Điều Khiển
             </button>
@@ -957,7 +957,7 @@ export default function Dashboard() {
                 <span className="text-[10px] text-slate-500 font-bold">{sessionIndex + 1}/{sessionLessons.length}</span>
                 <div className="flex gap-1">
                   {sessionLessons.map((_, i) => (
-                    <div key={i} className={`w-4 h-1.5 rounded-full transition-all ${i <= sessionIndex ? "bg-indigo-500" : "bg-slate-700"}`} />
+                    <div key={i} className={`w-4 h-1.5 rounded-full transition-all ${i <= sessionIndex ? "bg-indigo-500" : "bg-slate-200"}`} />
                   ))}
                 </div>
               </div>
@@ -1074,7 +1074,7 @@ export default function Dashboard() {
                       })}
                     </div>
 
-                    <p className="text-[10px] text-slate-700 italic bg-slate-900/50 p-2 rounded border border-slate-200">
+                    <p className="text-[10px] text-indigo-700 font-medium italic bg-indigo-50 p-2 rounded-lg border border-indigo-100 shadow-sm">
                       &ldquo;{evaluationResult.feedback}&rdquo;
                     </p>
 
@@ -1571,7 +1571,7 @@ export default function Dashboard() {
                         <h4 className="text-xs font-bold text-slate-800">
                           {selectedUnit.number === 1 ? "Past Simple vs. Present Perfect" : selectedUnit.number === 2 ? "Modal Verbs (Must vs. Should)" : "Stative Verbs in Continuous Form"}
                         </h4>
-                        <p className="text-[9px] text-indigo-350 font-mono mt-1 bg-slate-900/60 p-2 rounded border border-slate-200">
+                        <p className="text-[9px] text-indigo-700 font-bold font-mono mt-1 bg-indigo-50 p-2 rounded-lg border border-indigo-200 shadow-inner">
                           {selectedUnit.number === 1 ? "Formula: S + have/has + V3/V-ed" : selectedUnit.number === 2 ? "Formula: S + must/should + V-bare" : "Active / Stative Verbs"}
                         </p>
                       </div>
@@ -1602,7 +1602,7 @@ export default function Dashboard() {
                             {selectedUnit.number === 1 ? "/ˈfɪtnəs/" : selectedUnit.number === 2 ? "/ˌɪndɪˈpendənt/" : "/ˌfjuːtʃəˈrɪstɪk/"}
                           </span>
                         </div>
-                        <p className="text-[9px] text-indigo-600 font-bold">
+                        <p className="text-[9px] text-teal-600 font-bold">
                           {selectedUnit.number === 1 ? "(n) sự sung sức, sự cân đối" : selectedUnit.number === 2 ? "(adj) độc lập, tự chủ" : "(adj) thuộc về tương lai"}
                         </p>
                       </div>

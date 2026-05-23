@@ -48,7 +48,7 @@ export default function VisualRoom({
       <div className="w-full flex items-center justify-between mb-6">
         <button
           onClick={onBack}
-          className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold text-slate-700 hover:text-white bg-slate-800/50 hover:bg-slate-700/50 border border-slate-300/50 transition-all"
+          className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-indigo-600 bg-white hover:bg-indigo-50 border border-slate-200 transition-all shadow-sm"
         >
           <ArrowLeft className="w-4 h-4" />
           Về Bảng Điều Khiển
@@ -75,7 +75,7 @@ export default function VisualRoom({
             </div>
             
             {flashcards.length > 0 && (
-              <div className="flex bg-slate-800 p-1 rounded-lg">
+              <div className="flex bg-slate-100 p-1 rounded-lg border border-slate-200">
                 <button 
                   onClick={() => setViewMode("mindmap")}
                   className={`px-4 py-2 rounded-md text-sm font-bold transition-colors flex items-center gap-2 ${viewMode === "mindmap" ? "bg-indigo-600 text-white" : "text-slate-500 hover:text-white"}`}
@@ -92,10 +92,10 @@ export default function VisualRoom({
             )}
           </div>
 
-          <div className="w-full flex flex-col items-center justify-center p-4 bg-[#0a0d14] rounded-xl border border-slate-200 min-h-[400px]">
+          <div className="w-full flex flex-col items-center justify-center p-4 bg-slate-50 rounded-xl border border-slate-200 min-h-[400px]">
             {/* Audio Player Section */}
             {mainAudio && (
-              <div className="w-full mb-6 p-4 bg-slate-900/50 rounded-xl border border-slate-300/50 flex flex-col gap-3">
+              <div className="w-full mb-6 p-4 bg-indigo-50/50 rounded-xl border border-indigo-100 flex flex-col gap-3 shadow-sm">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-full bg-indigo-500/20 flex items-center justify-center">
                     <span className="text-indigo-400 text-xs font-bold">MP3</span>
