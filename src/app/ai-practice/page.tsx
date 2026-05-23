@@ -30,7 +30,7 @@ const QUICK_PROMPTS = [
   {
     category: "Thuyết trình",
     text: "Today, I would like to talk about the generation gap in modern families.",
-    color: "from-indigo-500/10 to-indigo-500/10 border-indigo-300 text-indigo-600"
+    color: "from-indigo-500/10 to-indigo-500/10 border-primary-dark text-primary"
   },
   {
     category: "IELTS Speaking",
@@ -225,25 +225,25 @@ export default function AIPracticePage() {
   return (
     <div className="p-6 md:p-8 max-w-4xl mx-auto space-y-8 select-none animate-fadeIn">
       {/* 1. Header Khơi Gợi */}
-      <div className="border-b border-slate-200 pb-6 relative">
-        <div className="absolute top-0 right-0 w-24 h-24 bg-indigo-600/10 rounded-full blur-2xl pointer-events-none" />
-        <div className="flex items-center gap-2 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-1">
+      <div className="border-b border-[rgba(0,0,0,0.1)] pb-6 relative">
+        <div className="absolute top-0 right-0 w-24 h-24 bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)]/10 rounded-full blur-2xl pointer-events-none" />
+        <div className="flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-wider mb-1">
           <Sparkles className="w-3.5 h-3.5 animate-pulse" />
           <span>Luyện nói tự do cùng AI Coach</span>
         </div>
         <h1 className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-slate-700 to-slate-500">
           Phòng Luyện Phát Âm Trực Tiếp
         </h1>
-        <p className="text-xs md:text-sm text-slate-500 mt-2 leading-relaxed">
+        <p className="text-xs md:text-sm text-text-muted mt-2 leading-relaxed">
           Gõ bất kỳ câu Tiếng Anh nào bạn muốn luyện tập, hoặc chọn nhanh từ kho gợi ý bên dưới.
         </p>
       </div>
 
       {/* 2. Khối Nhập Liệu (Input Section - Bento Card #1) */}
-      <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xl space-y-4 hover:border-slate-300/50 transition-all duration-300 relative overflow-hidden group">
-        <div className="absolute top-0 left-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl pointer-events-none" />
+      <div className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-6 shadow-xl space-y-4 hover:border-slate-300/50 transition-all duration-300 relative overflow-hidden group">
+        <div className="absolute top-0 left-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl pointer-events-none" />
         
-        <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest block">
+        <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest block">
           Nhập câu hoặc đoạn văn bản tiếng Anh
         </label>
         
@@ -256,13 +256,13 @@ export default function AIPracticePage() {
           rows={3}
           maxLength={300}
           placeholder="Ví dụ: 'Technology is playing a crucial role in modern education.'"
-          className="w-full rounded-xl border border-slate-300 bg-white p-4 text-slate-800 placeholder-slate-400 text-base md:text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 outline-none transition-all resize-none custom-scrollbar shadow-inner"
+          className="w-full rounded-[var(--radius-card)] border border-slate-300 bg-card p-4 text-text-head placeholder-slate-400 text-base md:text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 outline-none transition-all resize-none custom-scrollbar shadow-inner"
         />
         
         <div className="flex items-center justify-between">
           {/* Quick suggestions */}
           <div className="flex flex-wrap gap-2 items-center">
-            <span className="text-[9px] font-bold text-slate-500 uppercase tracking-wider">Gợi ý nhanh:</span>
+            <span className="text-[9px] font-bold text-text-muted uppercase tracking-wider">Gợi ý nhanh:</span>
             {QUICK_PROMPTS.map((prompt, idx) => (
               <button
                 key={idx}
@@ -270,28 +270,28 @@ export default function AIPracticePage() {
                   setTextInput(prompt.text);
                   resetPractice();
                 }}
-                className={`px-3 py-1.5 rounded-xl border bg-gradient-to-r ${prompt.color} text-[10px] font-bold hover:scale-[1.02] hover:border-indigo-500/40 active:scale-[0.98] transition-all`}
+                className={`px-3 py-1.5 rounded-[var(--radius-card)] border bg-gradient-to-r ${prompt.color} text-[10px] font-bold hover:scale-[1.02] hover:border-indigo-500/40 active:scale-[0.98] transition-all`}
               >
                 {prompt.category}
               </button>
             ))}
           </div>
           
-          <div className="text-[9px] font-bold text-slate-500">
+          <div className="text-[9px] font-bold text-text-muted">
             {textInput.length}/300 ký tự
           </div>
         </div>
       </div>
 
       {/* 3. Khối Ghi Âm & Chấm Điểm (Action Section - Bento Card #2) */}
-      <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xl space-y-6 hover:border-slate-300/50 transition-all duration-300 relative overflow-hidden flex flex-col items-center justify-center text-center">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl pointer-events-none" />
+      <div className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-6 shadow-xl space-y-6 hover:border-slate-300/50 transition-all duration-300 relative overflow-hidden flex flex-col items-center justify-center text-center">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl pointer-events-none" />
         
         <div className="space-y-1">
-          <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest block">
+          <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest block">
             Ghi âm & Đánh giá phát âm
           </label>
-          <p className="text-[11px] text-slate-500">
+          <p className="text-[11px] text-text-muted">
             {isRecording ? "Bấm nút vuông đỏ để kết thúc ghi âm" : "Nhấp Microphone khổng lồ bên dưới để bắt đầu thu âm giọng nói"}
           </p>
         </div>
@@ -320,7 +320,7 @@ export default function AIPracticePage() {
               className={`relative z-10 w-24 h-24 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 active:scale-95 ${
                 isRecording
                   ? "bg-gradient-to-tr from-rose-600 to-pink-500 hover:from-rose-500 hover:to-pink-400 text-white shadow-rose-500/25"
-                  : "bg-gradient-to-r from-indigo-600 to-indigo-600 hover:from-indigo-500 hover:to-indigo-500 text-slate-800 shadow-indigo-500/20 hover:shadow-indigo-500/30"
+                  : "bg-gradient-to-r from-indigo-600 to-indigo-600 hover:from-indigo-500 hover:to-indigo-500 text-text-head shadow-indigo-500/20 hover:shadow-indigo-500/30"
               }`}
             >
               {isRecording ? (
@@ -337,8 +337,8 @@ export default function AIPracticePage() {
           <div className="w-full max-w-md pt-4 flex flex-col items-center gap-4 animate-fadeIn">
             
             {/* Audio player preview */}
-            <div className="w-full p-3 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-between gap-3 shadow-inner">
-              <div className="flex items-center gap-2 text-indigo-600">
+            <div className="w-full p-3 rounded-[var(--radius-card)] bg-card border border-[rgba(0,0,0,0.1)] flex items-center justify-between gap-3 shadow-inner">
+              <div className="flex items-center gap-2 text-primary">
                 <Volume2 className="w-4 h-4" />
                 <span className="text-[10px] font-bold uppercase tracking-wider">Nghe lại giọng nói của bạn</span>
               </div>
@@ -346,7 +346,7 @@ export default function AIPracticePage() {
             </div>
 
             <div className="flex gap-3 w-full">
-              <button className="flex-1 py-3 rounded-lg border border-slate-200 bg-slate-100 hover:bg-slate-100 hover:text-slate-800 text-slate-500 text-xs font-bold transition-all active:scale-[0.98] flex items-center justify-center gap-2"
+              <button className="flex-1 py-3 rounded-[var(--radius-btn)] border border-[rgba(0,0,0,0.1)] bg-card hover:bg-card hover:text-text-head text-text-muted text-xs font-bold transition-all active:scale-[0.98] flex items-center justify-center gap-2"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 <span>Thu âm lại</span>
@@ -355,7 +355,7 @@ export default function AIPracticePage() {
               <button
                 onClick={() => handleEvaluation()}
                 disabled={isEvaluating}
-                className="flex-2 py-3 px-6 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg shadow-teal-950/20 disabled:opacity-50"
+                className="flex-2 py-3 px-6 rounded-[var(--radius-card)] bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg shadow-teal-950/20 disabled:opacity-50"
               >
                 {isEvaluating ? (
                   <>
@@ -376,32 +376,32 @@ export default function AIPracticePage() {
 
       {/* 4. Khối Phản Hồi AI (Feedback Section - Bento Card #3) */}
       {evaluationResult && !isRecording && (
-        <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xl space-y-6 animate-fadeIn relative overflow-hidden">
+        <div className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-6 shadow-xl space-y-6 animate-fadeIn relative overflow-hidden">
           <div className="absolute top-0 right-0 w-48 h-48 bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
           
-          <div className="flex items-center gap-3 border-b border-slate-200 pb-4">
-            <div className="w-8 h-8 rounded-lg bg-teal-500/10 border border-teal-300 flex items-center justify-center text-teal-600">
+          <div className="flex items-center gap-3 border-b border-[rgba(0,0,0,0.1)] pb-4">
+            <div className="w-8 h-8 rounded-[var(--radius-btn)] bg-teal-500/10 border border-teal-300 flex items-center justify-center text-teal-600">
               <CheckCircle className="w-4 h-4" />
             </div>
             <div>
-              <h2 className="text-sm font-bold text-slate-800">Báo cáo đánh giá phát âm AI</h2>
-              <p className="text-[10px] text-slate-500">Phân tích âm học chi tiết bằng Whisper & AI Coach</p>
+              <h2 className="text-sm font-bold text-text-head">Báo cáo đánh giá phát âm AI</h2>
+              <p className="text-[10px] text-text-muted">Phân tích âm học chi tiết bằng Whisper & AI Coach</p>
             </div>
           </div>
 
           {/* Reward Notification Banner */}
           {rewardClaimed && (
-            <div className="rounded-xl border border-teal-500/15 bg-gradient-to-r from-teal-500/10 to-teal-500/5 p-4 flex items-center justify-between shadow-md shadow-teal-950/10 animate-bounce">
+            <div className="rounded-[var(--radius-card)] border border-teal-500/15 bg-gradient-to-r from-teal-500/10 to-teal-500/5 p-4 flex items-center justify-between shadow-md shadow-teal-950/10 animate-bounce">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-teal-500/15 border border-teal-300 flex items-center justify-center text-teal-600 shadow-md">
+                <div className="w-9 h-9 rounded-[var(--radius-card)] bg-teal-500/15 border border-teal-300 flex items-center justify-center text-teal-600 shadow-md">
                   <Award className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-xs font-bold text-slate-800">Luyện tập xuất sắc!</h3>
-                  <p className="text-[9px] text-slate-500">Bạn đã hoàn thành phát âm tự do với kết quả ấn tượng.</p>
+                  <h3 className="text-xs font-bold text-text-head">Luyện tập xuất sắc!</h3>
+                  <p className="text-[9px] text-text-muted">Bạn đã hoàn thành phát âm tự do với kết quả ấn tượng.</p>
                 </div>
               </div>
-              <div className="flex items-center gap-2 bg-teal-500/20 border border-teal-500/30 px-3 py-1 rounded-xl">
+              <div className="flex items-center gap-2 bg-teal-500/20 border border-teal-500/30 px-3 py-1 rounded-[var(--radius-card)]">
                 <span className="text-[10px] font-black text-teal-600">+50 XP</span>
                 <span className="text-[10px] font-black text-amber-600">+2 💎</span>
               </div>
@@ -412,7 +412,7 @@ export default function AIPracticePage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
             
             {/* Accuracy Score Big Badge - Trái */}
-            <div className="md:col-span-4 flex flex-col items-center justify-center p-6 rounded-xl border border-slate-200 bg-slate-50 text-center space-y-3">
+            <div className="md:col-span-4 flex flex-col items-center justify-center p-6 rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-page text-center space-y-3">
               <div className="relative w-28 h-28 flex items-center justify-center">
                 <svg className="absolute w-full h-full transform -rotate-90" viewBox="0 0 100 100">
                   <circle
@@ -437,8 +437,8 @@ export default function AIPracticePage() {
                 </svg>
                 
                 <div className="flex flex-col items-center">
-                  <span className="text-3xl font-black text-slate-800">{evaluationResult.score}</span>
-                  <span className="text-[9px] font-semibold text-slate-500 uppercase tracking-widest">Điểm AI</span>
+                  <span className="text-3xl font-black text-text-head">{evaluationResult.score}</span>
+                  <span className="text-[9px] font-bold text-text-muted uppercase tracking-widest">Điểm AI</span>
                 </div>
               </div>
 
@@ -446,7 +446,7 @@ export default function AIPracticePage() {
                 {evaluationResult.score >= 85 ? (
                   <span className="text-teal-600">Tuyệt Hảo (Excellent)</span>
                 ) : evaluationResult.score >= 70 ? (
-                  <span className="text-indigo-600">Khá Tốt (Good)</span>
+                  <span className="text-primary">Khá Tốt (Good)</span>
                 ) : (
                   <span className="text-amber-500">Cần Cố Gắng (Keep Trying)</span>
                 )}
@@ -459,10 +459,10 @@ export default function AIPracticePage() {
               {/* Ngữ điệu (Fluency) */}
               <div className="space-y-1.5">
                 <div className="flex justify-between text-xs">
-                  <span className="font-semibold text-slate-500">Ngữ điệu (Fluency)</span>
-                  <span className="font-bold text-indigo-600">{evaluationResult.fluency}%</span>
+                  <span className="font-bold text-text-muted">Ngữ điệu (Fluency)</span>
+                  <span className="font-bold text-primary">{evaluationResult.fluency}%</span>
                 </div>
-                <div className="w-full h-2.5 rounded-full bg-slate-100 overflow-hidden border border-slate-900/40">
+                <div className="w-full h-2.5 rounded-full bg-card overflow-hidden border border-slate-900/40">
                   <div
                     style={{ width: `${evaluationResult.fluency}%` }}
                     className="h-full bg-gradient-to-r from-indigo-500 to-indigo-500 rounded-full transition-all duration-500"
@@ -473,10 +473,10 @@ export default function AIPracticePage() {
               {/* Độ chuẩn (Pronunciation) */}
               <div className="space-y-1.5">
                 <div className="flex justify-between text-xs">
-                  <span className="font-semibold text-slate-500">Độ chuẩn (Pronunciation)</span>
+                  <span className="font-bold text-text-muted">Độ chuẩn (Pronunciation)</span>
                   <span className="font-bold text-teal-600">{evaluationResult.pronunciation}%</span>
                 </div>
-                <div className="w-full h-2.5 rounded-full bg-slate-100 overflow-hidden border border-slate-900/40">
+                <div className="w-full h-2.5 rounded-full bg-card overflow-hidden border border-slate-900/40">
                   <div
                     style={{ width: `${evaluationResult.pronunciation}%` }}
                     className="h-full bg-gradient-to-r from-teal-500 to-teal-400 rounded-full transition-all duration-500"
@@ -487,10 +487,10 @@ export default function AIPracticePage() {
               {/* Trọng âm (Stress) */}
               <div className="space-y-1.5">
                 <div className="flex justify-between text-xs">
-                  <span className="font-semibold text-slate-500">Trọng âm (Stress)</span>
+                  <span className="font-bold text-text-muted">Trọng âm (Stress)</span>
                   <span className="font-bold text-amber-600">{evaluationResult.accuracy}%</span>
                 </div>
-                <div className="w-full h-2.5 rounded-full bg-slate-100 overflow-hidden border border-slate-900/40">
+                <div className="w-full h-2.5 rounded-full bg-card overflow-hidden border border-slate-900/40">
                   <div
                     style={{ width: `${evaluationResult.accuracy}%` }}
                     className="h-full bg-gradient-to-r from-amber-500 to-orange-500 rounded-full transition-all duration-500"
@@ -501,14 +501,14 @@ export default function AIPracticePage() {
           </div>
 
           {/* Word-by-word Match Highlight */}
-          <div className="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-3 shadow-inner">
-            <label className="text-[9px] font-bold text-slate-500 uppercase tracking-widest block">
+          <div className="p-4 rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-page space-y-3 shadow-inner">
+            <label className="text-[9px] font-bold text-text-muted uppercase tracking-widest block">
               Bôi màu chi tiết từng chữ phát âm
             </label>
             
             <div className="flex flex-wrap gap-x-2 gap-y-2 text-sm leading-relaxed p-1 select-all">
               {evaluationResult.words.map((w, idx) => {
-                let colorClass = "text-slate-400 bg-slate-100 border-slate-200";
+                let colorClass = "text-text-muted bg-card border-[rgba(0,0,0,0.1)]";
                 
                 if (w.status === "correct") {
                   colorClass = "text-teal-600 bg-teal-500/10 border-teal-300";
@@ -521,7 +521,7 @@ export default function AIPracticePage() {
                 return (
                   <span
                     key={idx}
-                    className={`px-2 py-0.5 rounded-md border text-xs md:text-sm font-semibold transition-all ${colorClass}`}
+                    className={`px-2 py-0.5 rounded-md border text-xs md:text-sm font-bold transition-all ${colorClass}`}
                     title={`Trạng thái: ${w.status === "correct" ? "Chính xác" : w.status === "mispronounced" ? "Phát âm lệch/sai âm" : "Đọc thiếu/bỏ sót"}`}
                   >
                     {w.word}
@@ -531,7 +531,7 @@ export default function AIPracticePage() {
             </div>
 
             {/* Explanatory Legend */}
-            <div className="flex items-center gap-4 pt-3 border-t border-slate-200 text-[9px] text-slate-500 font-bold uppercase tracking-wider">
+            <div className="flex items-center gap-4 pt-3 border-t border-[rgba(0,0,0,0.1)] text-[9px] text-text-muted font-bold uppercase tracking-wider">
               <div className="flex items-center gap-1">
                 <span className="w-2 h-2 rounded bg-teal-400/80 block" />
                 <span>Phát âm đúng</span>
@@ -548,13 +548,13 @@ export default function AIPracticePage() {
           </div>
 
           {/* AI Coach Feedback Panel */}
-          <div className="p-4 rounded-xl border border-indigo-500/15 bg-gradient-to-br from-indigo-50 to-blue-50 border-indigo-200 flex gap-4 items-start shadow-inner">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-indigo-600 to-indigo-600 flex items-center justify-center font-bold text-slate-800 text-xs shrink-0 shadow-md">
+          <div className="p-4 rounded-[var(--radius-card)] border border-indigo-500/15 bg-gradient-to-br from-indigo-50 to-blue-50 border-primary-dark flex gap-4 items-start shadow-inner">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-indigo-600 to-indigo-600 flex items-center justify-center font-bold text-text-head text-xs shrink-0 shadow-md">
               AI
             </div>
             <div className="space-y-1">
-              <div className="text-[10px] font-bold text-indigo-600 uppercase tracking-widest">Nhận xét từ AI Coach</div>
-              <p className="text-xs md:text-sm text-slate-700 leading-relaxed font-medium">
+              <div className="text-[10px] font-bold text-primary uppercase tracking-widest">Nhận xét từ AI Coach</div>
+              <p className="text-xs md:text-sm text-text-body leading-relaxed font-medium">
                 &ldquo;{evaluationResult.feedback}&rdquo;
               </p>
             </div>

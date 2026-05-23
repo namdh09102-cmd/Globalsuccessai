@@ -28,17 +28,17 @@ export default function AdminPortal() {
   };
 
   return (
-    <div className="min-h-full p-6 space-y-6 select-none bg-slate-100">
+    <div className="min-h-full p-6 space-y-6 select-none bg-card">
 
-      <div className="flex items-center gap-3 border-b border-slate-200 pb-4">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-rose-600 to-orange-500 flex items-center justify-center shadow-lg shadow-rose-500/20">
-          <Rocket className="w-6 h-6 text-slate-800" />
+      <div className="flex items-center gap-3 border-b border-[rgba(0,0,0,0.1)] pb-4">
+        <div className="w-12 h-12 rounded-[var(--radius-card)] bg-gradient-to-tr from-rose-600 to-orange-500 flex items-center justify-center shadow-lg shadow-rose-500/20">
+          <Rocket className="w-6 h-6 text-text-head" />
         </div>
         <div>
           <h1 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-500 tracking-tight">
             Admin Portal
           </h1>
-          <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mt-0.5">
+          <p className="text-xs text-text-muted font-bold uppercase tracking-widest mt-0.5">
             Quyền năng định đoạt toàn hệ thống
           </p>
         </div>
@@ -49,57 +49,57 @@ export default function AdminPortal() {
         {/* ========================================================
             BENTO CARD #1: KHỐI THỐNG KÊ TOÀN CỤC (System Matrix)
             ======================================================== */}
-        <div className="xl:col-span-1 rounded-xl bg-white border border-slate-200 p-6 flex flex-col space-y-6 relative overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-[60px] pointer-events-none" />
+        <div className="xl:col-span-1 rounded-[var(--radius-card)] bg-card border border-[rgba(0,0,0,0.1)] p-6 flex flex-col space-y-6 relative overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[60px] pointer-events-none" />
           
-          <div className="flex items-center gap-2 text-slate-700 border-b border-slate-200 pb-3">
+          <div className="flex items-center gap-2 text-text-body border-b border-[rgba(0,0,0,0.1)] pb-3">
             <Zap className="w-5 h-5 text-amber-600 fill-amber-400/20" />
             <h2 className="text-sm font-black uppercase tracking-wider">Trung Tâm Điều Hành Hệ Thống</h2>
           </div>
 
           <div className="grid grid-cols-2 gap-4 flex-1">
-            <div className="rounded-xl bg-slate-50 border border-slate-200 p-4 space-y-2 group hover:border-indigo-500/40 transition-colors">
-              <div className="flex items-center gap-2 text-indigo-600">
+            <div className="rounded-[var(--radius-card)] bg-page border border-[rgba(0,0,0,0.1)] p-4 space-y-2 group hover:border-indigo-500/40 transition-colors">
+              <div className="flex items-center gap-2 text-primary">
                 <Users className="w-4 h-4" />
                 <span className="text-[10px] font-bold uppercase">Tổng học viên</span>
               </div>
               <div>
-                <span className="text-xl font-black text-slate-800 group-hover:text-indigo-600 transition-colors">12,450</span>
+                <span className="text-xl font-black text-text-head group-hover:text-primary transition-colors">12,450</span>
                 <p className="text-[9px] text-teal-600 font-bold mt-1 flex items-center gap-0.5">
                   <TrendingUp className="w-3 h-3" /> Tăng 15% tuần này
                 </p>
               </div>
             </div>
 
-            <div className="rounded-xl bg-slate-50 border border-slate-200 p-4 space-y-2 group hover:border-rose-500/40 transition-colors">
+            <div className="rounded-[var(--radius-card)] bg-page border border-[rgba(0,0,0,0.1)] p-4 space-y-2 group hover:border-rose-500/40 transition-colors">
               <div className="flex items-center gap-2 text-rose-600">
                 <BookOpen className="w-4 h-4" />
                 <span className="text-[10px] font-bold uppercase">TK Giáo viên</span>
               </div>
               <div>
-                <span className="text-xl font-black text-slate-800 group-hover:text-rose-600 transition-colors">320</span>
-                <p className="text-[9px] text-slate-500 font-bold mt-1">Trường & Trung tâm</p>
+                <span className="text-xl font-black text-text-head group-hover:text-rose-600 transition-colors">320</span>
+                <p className="text-[9px] text-text-muted font-bold mt-1">Trường & Trung tâm</p>
               </div>
             </div>
 
-            <div className="rounded-xl bg-slate-50 border border-slate-200 p-4 space-y-2 group hover:border-teal-500/40 transition-colors">
+            <div className="rounded-[var(--radius-card)] bg-page border border-[rgba(0,0,0,0.1)] p-4 space-y-2 group hover:border-teal-500/40 transition-colors">
               <div className="flex items-center gap-2 text-teal-600">
                 <Wallet className="w-4 h-4" />
                 <span className="text-[10px] font-bold uppercase">Doanh thu PRO</span>
               </div>
               <div>
-                <span className="text-xl font-black text-slate-800 group-hover:text-teal-600 transition-colors">45.8M</span>
-                <p className="text-[9px] text-slate-500 font-bold mt-1">Đồng bộ VietQR</p>
+                <span className="text-xl font-black text-text-head group-hover:text-teal-600 transition-colors">45.8M</span>
+                <p className="text-[9px] text-text-muted font-bold mt-1">Đồng bộ VietQR</p>
               </div>
             </div>
 
-            <div className="rounded-xl bg-slate-50 border border-slate-200 p-4 space-y-2 group hover:border-indigo-500/40 transition-colors">
-              <div className="flex items-center gap-2 text-indigo-600">
+            <div className="rounded-[var(--radius-card)] bg-page border border-[rgba(0,0,0,0.1)] p-4 space-y-2 group hover:border-indigo-500/40 transition-colors">
+              <div className="flex items-center gap-2 text-primary">
                 <Activity className="w-4 h-4" />
                 <span className="text-[10px] font-bold uppercase">Tỷ lệ chuyển đổi</span>
               </div>
               <div>
-                <span className="text-xl font-black text-slate-800 group-hover:text-indigo-600 transition-colors">4.2%</span>
+                <span className="text-xl font-black text-text-head group-hover:text-primary transition-colors">4.2%</span>
                 <p className="text-[9px] text-teal-600 font-bold mt-1 flex items-center gap-0.5">
                   <CheckCircle className="w-3 h-3" /> Đạt mục tiêu
                 </p>
@@ -114,20 +114,20 @@ export default function AdminPortal() {
         {/* ========================================================
             BENTO CARD #2: TÍCH HỢP AI (Gia sư AI)
             ======================================================== */}
-        <div className="xl:col-span-1 rounded-xl bg-white border border-slate-200 p-6 flex flex-col space-y-6 relative overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+        <div className="xl:col-span-1 rounded-[var(--radius-card)] bg-card border border-[rgba(0,0,0,0.1)] p-6 flex flex-col space-y-6 relative overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
           <div className="absolute bottom-0 right-0 w-64 h-64 bg-rose-500/5 rounded-full blur-[60px] pointer-events-none" />
           
-          <div className="flex items-center gap-2 text-slate-700 border-b border-slate-200 pb-3">
+          <div className="flex items-center gap-2 text-text-body border-b border-[rgba(0,0,0,0.1)] pb-3">
             <BrainCircuit className="w-5 h-5 text-rose-600" />
             <h2 className="text-sm font-black uppercase tracking-wider">Cấu hình Gia Sư AI</h2>
           </div>
 
           <div className="flex-1 flex flex-col gap-4">
-            <p className="text-xs text-slate-500 leading-relaxed">
-              Nhập mã <span className="font-bold text-slate-800">Gemini API Key</span> để kích hoạt chức năng Hỏi AI giải bài tập trực tiếp cho học sinh trên màn hình làm bài.
+            <p className="text-xs text-text-muted leading-relaxed">
+              Nhập mã <span className="font-bold text-text-head">Gemini API Key</span> để kích hoạt chức năng Hỏi AI giải bài tập trực tiếp cho học sinh trên màn hình làm bài.
             </p>
             <div className="space-y-2">
-              <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1">
+              <label className="text-[10px] font-bold text-text-muted uppercase tracking-wider flex items-center gap-1">
                 <Key className="w-3 h-3" /> Gemini API Key
               </label>
               <input 
@@ -135,10 +135,10 @@ export default function AdminPortal() {
                 placeholder="AIzaSy..."
                 value={apiKey}
                 onChange={(e) => setApiKey(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-800 focus:outline-none focus:border-rose-500/50 transition-colors placeholder-slate-700 font-mono"
+                className="w-full bg-page border border-[rgba(0,0,0,0.1)] rounded-[var(--radius-card)] px-3 py-2 text-xs text-text-head focus:outline-none focus:border-rose-500/50 transition-colors placeholder-slate-700 font-mono"
               />
             </div>
-            <button className="mt-auto w-full py-2.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-slate-800 text-xs font-bold transition-all"
+            <button className="mt-auto w-full py-2.5 rounded-[var(--radius-btn)] bg-rose-600 hover:bg-rose-500 text-text-head text-xs font-bold transition-all"
             >
               Lưu cấu hình AI
             </button>

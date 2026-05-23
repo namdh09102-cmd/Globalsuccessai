@@ -67,7 +67,7 @@ export default function AdminUsers() {
             initial={{ opacity: 0, y: -40, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -40 }}
-            className="fixed top-6 left-1/2 -translate-x-1/2 z-[99] bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-black text-xs px-6 py-3 rounded-xl shadow-2xl shadow-amber-500/30 flex items-center gap-2 border border-amber-300/40"
+            className="fixed top-6 left-1/2 -translate-x-1/2 z-[99] bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-black text-xs px-6 py-3 rounded-[var(--radius-card)] shadow-2xl shadow-amber-500/30 flex items-center gap-2 border border-amber-300/40"
           >
             <CheckCircle className="w-4 h-4" />
             <span>{toastMsg}</span>
@@ -76,41 +76,41 @@ export default function AdminUsers() {
       </AnimatePresence>
 
       <div className="flex items-center gap-3 border-b border-slate-800/60 pb-4">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+        <div className="w-12 h-12 rounded-[var(--radius-card)] bg-gradient-to-tr from-indigo-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-indigo-500/20">
           <Users className="w-6 h-6 text-white" />
         </div>
         <div>
           <h1 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400 tracking-tight">
             Quản Lý Tài Khoản K-12
           </h1>
-          <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mt-0.5">
+          <p className="text-xs text-text-muted font-bold uppercase tracking-widest mt-0.5">
             Cấp quyền & Kiểm soát truy cập
           </p>
         </div>
       </div>
 
-      <div className="bg-[#111827] border border-slate-800 rounded-xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] space-y-4">
+      <div className="bg-[#111827] border border-slate-800 rounded-[var(--radius-card)] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] space-y-4">
         
         {/* Thanh công cụ */}
         <div className="flex items-center justify-between gap-4">
           <div className="flex-1 max-w-md relative">
-            <Search className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-text-muted absolute left-3 top-1/2 -translate-y-1/2" />
             <input 
               type="text" 
               placeholder="Tìm ID hoặc tên người dùng..." 
-              className="w-full bg-[#090D16] border border-slate-800 text-slate-300 text-xs rounded-xl pl-9 pr-4 py-2.5 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all placeholder:text-slate-600"
+              className="w-full bg-[#090D16] border border-slate-800 text-slate-300 text-xs rounded-[var(--radius-card)] pl-9 pr-4 py-2.5 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all placeholder:text-text-body"
             />
           </div>
-          <button className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-800 bg-[#090D16] text-slate-300 text-xs font-bold hover:bg-slate-800 transition-all">
+          <button className="flex items-center gap-2 px-4 py-2.5 rounded-[var(--radius-card)] border border-slate-800 bg-[#090D16] text-slate-300 text-xs font-bold hover:bg-slate-800 transition-all">
             <Filter className="w-4 h-4" /> Lọc danh sách
           </button>
         </div>
 
         {/* Data Table */}
-        <div className="overflow-x-auto rounded-xl border border-slate-800/80 bg-[#090D16]">
+        <div className="overflow-x-auto rounded-[var(--radius-card)] border border-slate-800/80 bg-[#090D16]">
           <table className="w-full text-left text-xs whitespace-nowrap">
             <thead>
-              <tr className="bg-[#111827] text-slate-400 uppercase tracking-widest text-[10px] font-black border-b border-slate-800/80">
+              <tr className="bg-[#111827] text-text-muted uppercase tracking-widest text-[10px] font-black border-b border-slate-800/80">
                 <th className="px-6 py-4">Mã ID</th>
                 <th className="px-6 py-4">Tên Người Dùng</th>
                 <th className="px-6 py-4">Vai Trò</th>
@@ -122,12 +122,12 @@ export default function AdminUsers() {
             <tbody className="divide-y divide-slate-800/60">
               {users.map((user) => (
                 <tr key={user.id} className="hover:bg-[#111827]/50 transition-colors group">
-                  <td className="px-6 py-4 font-mono text-slate-500">{user.id}</td>
+                  <td className="px-6 py-4 font-mono text-text-muted">{user.id}</td>
                   <td className="px-6 py-4 font-bold text-slate-200">{user.name}</td>
                   <td className="px-6 py-4">
                     {user.role === "student" && <span className="text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2 py-1 rounded text-[10px] font-black uppercase">Học Sinh</span>}
                     {user.role === "teacher" && <span className="text-teal-400 bg-teal-500/10 border border-teal-500/20 px-2 py-1 rounded text-[10px] font-black uppercase">Giáo Viên</span>}
-                    {user.role === "admin" && <span className="text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-2 py-1 rounded text-[10px] font-black uppercase flex items-center gap-1 w-max"><Shield className="w-3 h-3"/> Admin</span>}
+                    {user.role === "admin" && <span className="text-indigo-400 bg-primary-light border border-indigo-500/20 px-2 py-1 rounded text-[10px] font-black uppercase flex items-center gap-1 w-max"><Shield className="w-3 h-3"/> Admin</span>}
                   </td>
                   <td className="px-6 py-4">
                     {user.tier === "pro" ? (
@@ -135,12 +135,12 @@ export default function AdminUsers() {
                         <Crown className="w-3 h-3" /> PRO VIP
                       </span>
                     ) : (
-                      <span className="text-slate-400 bg-slate-800 border border-slate-700 px-2 py-1 rounded text-[10px] font-black uppercase">
+                      <span className="text-text-muted bg-slate-800 border border-slate-700 px-2 py-1 rounded text-[10px] font-black uppercase">
                         Gói Free
                       </span>
                     )}
                   </td>
-                  <td className="px-6 py-4 text-slate-500 font-medium">{user.joinDate}</td>
+                  <td className="px-6 py-4 text-text-muted font-medium">{user.joinDate}</td>
                   <td className="px-6 py-4 text-right">
                     {user.tier === "free" && user.role === "student" ? (
                       <button 
@@ -150,7 +150,7 @@ export default function AdminUsers() {
                         [ Kích Hoạt PRO ]
                       </button>
                     ) : (
-                      <span className="text-slate-600 text-[10px] font-bold uppercase tracking-wider">Đã Kích Hoạt</span>
+                      <span className="text-text-body text-[10px] font-bold uppercase tracking-wider">Đã Kích Hoạt</span>
                     )}
                   </td>
                 </tr>

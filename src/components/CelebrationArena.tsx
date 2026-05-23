@@ -93,7 +93,7 @@ export default function CelebrationArena({
               transition: { type: "spring", damping: 15, stiffness: 100 }
             }}
             exit={{ y: -100, scale: 0.9, opacity: 0 }}
-            className="w-full max-w-md rounded-xl border border-slate-800 bg-[#151B2B] p-8 text-center shadow-2xl relative overflow-hidden"
+            className="w-full max-w-md rounded-[var(--radius-card)] border border-slate-800 bg-[#151B2B] p-8 text-center shadow-2xl relative overflow-hidden"
           >
             {/* Ambient gold glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-amber-500/10 rounded-full blur-[80px] pointer-events-none" />
@@ -146,7 +146,7 @@ export default function CelebrationArena({
                 <h2 className="text-xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 uppercase">
                   XUẤT SẮC HOÀN THÀNH!
                 </h2>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-text-muted">
                   Bạn vừa hoàn thành xuất sắc thử thách học tập hôm nay!
                 </p>
               </div>
@@ -155,20 +155,20 @@ export default function CelebrationArena({
               <div className="grid grid-cols-2 gap-4 py-2">
                 
                 {/* XP Reward */}
-                <div className="p-4 rounded-xl border border-indigo-500/20 bg-indigo-600/5 flex flex-col items-center justify-center gap-1">
-                  <div className="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+                <div className="p-4 rounded-[var(--radius-card)] border border-indigo-500/20 bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)]/5 flex flex-col items-center justify-center gap-1">
+                  <div className="w-10 h-10 rounded-full bg-primary-light flex items-center justify-center text-indigo-400">
                     <Zap className="w-5 h-5 fill-indigo-400" />
                   </div>
-                  <span className="text-[10px] font-bold text-slate-500 uppercase">Kinh Nghiệm</span>
+                  <span className="text-[10px] font-bold text-text-muted uppercase">Kinh Nghiệm</span>
                   <span className="text-lg font-black text-indigo-400">+{xpReward} XP</span>
                 </div>
 
                 {/* Diamond Reward */}
-                <div className="p-4 rounded-xl border border-teal-500/20 bg-teal-600/5 flex flex-col items-center justify-center gap-1">
+                <div className="p-4 rounded-[var(--radius-card)] border border-teal-500/20 bg-teal-600/5 flex flex-col items-center justify-center gap-1">
                   <div className="w-10 h-10 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-400">
                     <Flame className="w-5 h-5 fill-teal-400" />
                   </div>
-                  <span className="text-[10px] font-bold text-slate-500 uppercase">Kim Cương</span>
+                  <span className="text-[10px] font-bold text-text-muted uppercase">Kim Cương</span>
                   <span className="text-lg font-black text-teal-400">+{diamondReward} 💎</span>
                 </div>
 
@@ -177,7 +177,7 @@ export default function CelebrationArena({
               {/* Action Button */}
               <button
                 onClick={onClose}
-                className="w-full py-3.5 rounded-xl font-black text-xs bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-[#0F1422] transition-colors flex items-center justify-center gap-2 shadow-lg shadow-amber-500/10"
+                className="w-full py-3.5 rounded-[var(--radius-card)] font-black text-xs bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-[#0F1422] transition-colors flex items-center justify-center gap-2 shadow-lg shadow-amber-500/10"
               >
                 <span>TIẾP TỤC HỌC TẬP</span>
               </button>

@@ -35,10 +35,10 @@ const PLANS = [
     tag: null,
     accentColor: "indigo",
     borderClass: "border-slate-300/50",
-    bgGlow: "bg-indigo-500/5",
+    bgGlow: "bg-primary/5",
     tagClass: "from-indigo-600 to-indigo-500",
     btnClass:
-      "bg-indigo-600 hover:bg-indigo-500 shadow-[0_4px_0_#312e81] active:translate-y-[4px] active:shadow-none",
+      "bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] hover:bg-primary shadow-[0_4px_0_#312e81] active:translate-y-[4px] active:shadow-none",
     features: [
       "Toàn bộ bài học Unit đang học",
       "AI Chấm phát âm không giới hạn",
@@ -58,10 +58,10 @@ const PLANS = [
     tag: null,
     accentColor: "violet",
     borderClass: "border-indigo-600/40",
-    bgGlow: "bg-indigo-500/5",
+    bgGlow: "bg-primary/5",
     tagClass: "from-indigo-600 to-indigo-500",
     btnClass:
-      "bg-indigo-600 hover:bg-indigo-500 shadow-[0_4px_0_#4c1d95] active:translate-y-[4px] active:shadow-none",
+      "bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] hover:bg-primary shadow-[0_4px_0_#4c1d95] active:translate-y-[4px] active:shadow-none",
     features: [
       "Toàn bộ giáo trình Lớp 6–12",
       "AI Chấm phát âm không giới hạn",
@@ -158,7 +158,7 @@ export default function UpgradePage() {
             initial={{ opacity: 0, y: -40, scale: 0.92 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -40 }}
-            className="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-black text-xs px-6 py-3 rounded-xl shadow-2xl shadow-amber-500/30 flex items-center gap-2 border border-amber-300/40 whitespace-nowrap"
+            className="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-black text-xs px-6 py-3 rounded-[var(--radius-card)] shadow-2xl shadow-amber-500/30 flex items-center gap-2 border border-amber-300/40 whitespace-nowrap"
           >
             <Crown className="w-4 h-4" />
             <span>🎉 Đã nâng cấp PRO thành công! Toàn bộ giáo trình Lớp 1 – 12 đã được mở khóa.</span>
@@ -171,7 +171,7 @@ export default function UpgradePage() {
         <div className="flex items-center justify-between">
           <Link
             href="/dashboard"
-            className="flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-slate-800 transition-colors group"
+            className="flex items-center gap-2 text-xs font-bold text-text-muted hover:text-text-head transition-colors group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
             Quay lại Bảng điều khiển
@@ -192,10 +192,10 @@ export default function UpgradePage() {
           className="text-center space-y-4 relative"
         >
           {/* Ambient glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-48 bg-indigo-600/10 rounded-full blur-[80px] pointer-events-none" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-48 bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)]/10 rounded-full blur-[80px] pointer-events-none" />
 
           <div className="relative">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-600 text-[10px] font-black uppercase tracking-widest mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-light border border-indigo-500/25 text-primary text-[10px] font-black uppercase tracking-widest mb-4">
               <Crown className="w-3.5 h-3.5 animate-pulse" />
               <span>Global Success PRO — Nền Tảng EdTech K-12 #1</span>
             </div>
@@ -206,23 +206,23 @@ export default function UpgradePage() {
               <span className="text-2xl md:text-3xl">Quyền Năng AI</span>
             </h1>
 
-            <p className="text-sm text-slate-500 max-w-lg mx-auto mt-3 leading-relaxed">
+            <p className="text-sm text-text-muted max-w-lg mx-auto mt-3 leading-relaxed">
               Tiếp cận toàn bộ giáo trình SGK Lớp 1–12, AI chấm phát âm không giới hạn, hàng trăm bài Dictation & Quiz chuyên sâu.
             </p>
 
             {/* Social proof bar */}
             <div className="flex items-center justify-center gap-6 mt-5 flex-wrap">
-              <div className="flex items-center gap-2 text-[10px] text-slate-500 font-bold">
-                <Users className="w-3.5 h-3.5 text-indigo-600" />
+              <div className="flex items-center gap-2 text-[10px] text-text-muted font-bold">
+                <Users className="w-3.5 h-3.5 text-primary" />
                 <span>15,200+ học sinh đang dùng PRO</span>
               </div>
               <div className="flex items-center gap-0.5">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-600" />
                 ))}
-                <span className="text-[10px] text-slate-500 font-bold ml-1.5">4.9 / 5</span>
+                <span className="text-[10px] text-text-muted font-bold ml-1.5">4.9 / 5</span>
               </div>
-              <div className="flex items-center gap-1.5 text-[10px] text-slate-500 font-bold">
+              <div className="flex items-center gap-1.5 text-[10px] text-text-muted font-bold">
                 <Flame className="w-3.5 h-3.5 text-rose-600" />
                 <span>Hoàn tiền trong 7 ngày</span>
               </div>
@@ -240,7 +240,7 @@ export default function UpgradePage() {
               initial="hidden"
               animate="show"
               onClick={() => setSelectedPlan(plan.id)}
-              className={`relative rounded-xl border bg-[#0F1520] p-6 cursor-pointer transition-all duration-200 overflow-hidden ${plan.borderClass} ${
+              className={`relative rounded-[var(--radius-card)] border bg-[#0F1520] p-6 cursor-pointer transition-all duration-200 overflow-hidden ${plan.borderClass} ${
                 selectedPlan === plan.id
                   ? "scale-[1.02] shadow-2xl"
                   : "hover:scale-[1.01] hover:shadow-xl opacity-90 hover:opacity-100"
@@ -265,7 +265,7 @@ export default function UpgradePage() {
                   <span className="text-xl">{plan.emoji}</span>
                   <h3
                     className={`text-sm font-black ${
-                      plan.popular ? "text-amber-600" : "text-slate-800"
+                      plan.popular ? "text-amber-600" : "text-text-head"
                     }`}
                   >
                     {plan.name}
@@ -277,14 +277,14 @@ export default function UpgradePage() {
                   <div className="flex items-baseline gap-1 flex-wrap">
                     <span
                       className={`text-2xl font-black tracking-tight ${
-                        plan.popular ? "text-amber-600" : "text-slate-800"
+                        plan.popular ? "text-amber-600" : "text-text-head"
                       }`}
                     >
                       {plan.price}
                     </span>
-                    <span className="text-xs text-slate-500 font-bold">{plan.period}</span>
+                    <span className="text-xs text-text-muted font-bold">{plan.period}</span>
                   </div>
-                  <p className="text-[10px] text-slate-600 font-bold">{plan.priceNote}</p>
+                  <p className="text-[10px] text-text-body font-bold">{plan.priceNote}</p>
                   {plan.savings && (
                     <span className="inline-block px-2 py-0.5 rounded-full bg-teal-500/10 border border-teal-500/25 text-teal-600 text-[9px] font-black uppercase tracking-wider">
                       {plan.savings}
@@ -295,10 +295,10 @@ export default function UpgradePage() {
                 {/* Features */}
                 <ul className="space-y-2">
                   {plan.features.map((feat, fi) => (
-                    <li key={fi} className="flex items-start gap-2 text-[10px] text-slate-500 font-semibold">
+                    <li key={fi} className="flex items-start gap-2 text-[10px] text-text-muted font-bold">
                       <CheckCircle
                         className={`w-3.5 h-3.5 shrink-0 mt-0.5 ${
-                          plan.popular ? "text-amber-600" : "text-indigo-600"
+                          plan.popular ? "text-amber-600" : "text-primary"
                         }`}
                       />
                       <span>{feat}</span>
@@ -312,7 +312,7 @@ export default function UpgradePage() {
                     e.stopPropagation();
                     setSelectedPlan(plan.id);
                   }}
-                  className={`w-full py-3 rounded-xl text-slate-800 text-xs font-bold transition-all duration-100 ${plan.btnClass}`}
+                  className={`w-full py-3 rounded-[var(--radius-card)] text-text-head text-xs font-bold transition-all duration-100 ${plan.btnClass}`}
                 >
                   {plan.popular ? "⚡ Nâng cấp ngay — Chỉ 2.700đ/ngày" : "Chọn gói này"}
                 </button>
@@ -328,22 +328,22 @@ export default function UpgradePage() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
-            className="rounded-xl border border-slate-200 bg-[#0F1520] p-6 space-y-5"
+            className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-[#0F1520] p-6 space-y-5"
           >
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-xl bg-indigo-500/10 border border-indigo-300 flex items-center justify-center text-indigo-600">
+              <div className="w-8 h-8 rounded-[var(--radius-card)] bg-primary-light border border-primary-dark flex items-center justify-center text-primary">
                 <QrCode className="w-4 h-4" />
               </div>
               <div>
-                <h3 className="text-sm font-black text-slate-800">Quét Mã QR VietQR</h3>
-                <p className="text-[10px] text-slate-500 font-bold">Thanh toán nhanh qua app ngân hàng</p>
+                <h3 className="text-sm font-black text-text-head">Quét Mã QR VietQR</h3>
+                <p className="text-[10px] text-text-muted font-bold">Thanh toán nhanh qua app ngân hàng</p>
               </div>
             </div>
 
             <div className="flex flex-col items-center gap-4">
               {/* QR Mockup */}
-              <div className="relative w-44 h-44 rounded-xl border-2 border-indigo-500/25 bg-white p-3 shadow-xl shadow-indigo-950/20">
-                <div className="w-full h-full rounded-xl overflow-hidden flex items-center justify-center bg-white">
+              <div className="relative w-44 h-44 rounded-[var(--radius-card)] border-2 border-indigo-500/25 bg-card p-3 shadow-xl shadow-indigo-950/20">
+                <div className="w-full h-full rounded-[var(--radius-card)] overflow-hidden flex items-center justify-center bg-card">
                   {/* QR Pattern grid mockup */}
                   <div className="grid grid-cols-9 gap-0.5">
                     {Array.from({ length: 81 }).map((_, i) => {
@@ -363,7 +363,7 @@ export default function UpgradePage() {
                       return (
                         <div
                           key={i}
-                          className={`w-3.5 h-3.5 rounded-sm ${filled ? "bg-slate-100" : "bg-transparent"}`}
+                          className={`w-3.5 h-3.5 rounded-sm ${filled ? "bg-card" : "bg-transparent"}`}
                         />
                       );
                     })}
@@ -371,19 +371,19 @@ export default function UpgradePage() {
                 </div>
                 {/* Center logo */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center shadow-lg">
-                    <Sparkles className="w-4 h-4 text-slate-800" />
+                  <div className="w-8 h-8 rounded-[var(--radius-btn)] bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] flex items-center justify-center shadow-lg">
+                    <Sparkles className="w-4 h-4 text-text-head" />
                   </div>
                 </div>
                 {/* VietQR badge */}
-                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-600 text-slate-800 text-[8px] font-black tracking-wider shadow-lg whitespace-nowrap">
+                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-600 text-text-head text-[8px] font-black tracking-wider shadow-lg whitespace-nowrap">
                   VietQR · Vietcombank
                 </div>
               </div>
 
-              <p className="text-[9px] text-slate-500 text-center leading-relaxed max-w-xs">
+              <p className="text-[9px] text-text-muted text-center leading-relaxed max-w-xs">
                 Mở app ngân hàng → Quét mã QR → Nhập nội dung chuyển khoản:
-                {" "}<span className="text-indigo-600 font-black">GSA [Tên học sinh]</span>
+                {" "}<span className="text-primary font-black">GSA [Tên học sinh]</span>
               </p>
             </div>
           </motion.div>
@@ -393,15 +393,15 @@ export default function UpgradePage() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}
-            className="rounded-xl border border-slate-200 bg-[#0F1520] p-6 space-y-5"
+            className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-[#0F1520] p-6 space-y-5"
           >
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-xl bg-teal-500/10 border border-teal-300 flex items-center justify-center text-teal-600">
+              <div className="w-8 h-8 rounded-[var(--radius-card)] bg-teal-500/10 border border-teal-300 flex items-center justify-center text-teal-600">
                 <Shield className="w-4 h-4" />
               </div>
               <div>
-                <h3 className="text-sm font-black text-slate-800">Chuyển Khoản Ngân Hàng</h3>
-                <p className="text-[10px] text-slate-500 font-bold">Kích hoạt trong 5–15 phút</p>
+                <h3 className="text-sm font-black text-text-head">Chuyển Khoản Ngân Hàng</h3>
+                <p className="text-[10px] text-text-muted font-bold">Kích hoạt trong 5–15 phút</p>
               </div>
             </div>
 
@@ -414,18 +414,18 @@ export default function UpgradePage() {
               ].map((item) => (
                 <div
                   key={item.label}
-                  className="flex items-center justify-between py-3 border-b border-slate-200 last:border-0"
+                  className="flex items-center justify-between py-3 border-b border-[rgba(0,0,0,0.1)] last:border-0"
                 >
-                  <span className="text-[10px] text-slate-500 font-bold">{item.label}</span>
+                  <span className="text-[10px] text-text-muted font-bold">{item.label}</span>
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] text-slate-800 font-bold font-mono">{item.value}</span>
+                    <span className="text-[10px] text-text-head font-bold font-mono">{item.value}</span>
                     {item.copyable && (
                       <button
                         onClick={handleCopyBank}
-                        className={`p-1.5 rounded-lg transition-all ${
+                        className={`p-1.5 rounded-[var(--radius-btn)] transition-all ${
                           copiedBank
                             ? "bg-teal-500/15 text-teal-600"
-                            : "bg-slate-100 text-slate-500 hover:text-slate-800"
+                            : "bg-card text-text-muted hover:text-text-head"
                         }`}
                       >
                         {copiedBank ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
@@ -436,7 +436,7 @@ export default function UpgradePage() {
               ))}
             </div>
 
-            <div className="p-3 rounded-xl bg-amber-500/5 border border-amber-500/15">
+            <div className="p-3 rounded-[var(--radius-card)] bg-amber-500/5 border border-amber-500/15">
               <p className="text-[9px] text-amber-600/80 font-bold leading-relaxed">
                 ⚡ Sau khi chuyển khoản, tài khoản được kích hoạt trong{" "}
                 <span className="text-amber-600">5–15 phút</span>. Hãy lưu ảnh chụp màn hình để xác nhận nếu cần.
@@ -450,34 +450,34 @@ export default function UpgradePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="rounded-xl border border-slate-200 bg-[#0F1520] overflow-hidden"
+          className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-[#0F1520] overflow-hidden"
         >
-          <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between">
-            <h3 className="text-sm font-black text-slate-800">So Sánh Tính Năng</h3>
-            <span className="text-[9px] text-slate-500 font-bold uppercase tracking-wider">Miễn phí vs PRO</span>
+          <div className="px-6 py-4 border-b border-[rgba(0,0,0,0.1)] flex items-center justify-between">
+            <h3 className="text-sm font-black text-text-head">So Sánh Tính Năng</h3>
+            <span className="text-[9px] text-text-muted font-bold uppercase tracking-wider">Miễn phí vs PRO</span>
           </div>
 
           <div className="divide-y divide-slate-800/40">
-            <div className="grid grid-cols-3 px-6 py-3 text-[10px] font-black uppercase tracking-wider text-slate-500">
+            <div className="grid grid-cols-3 px-6 py-3 text-[10px] font-black uppercase tracking-wider text-text-muted">
               <span>Tính năng</span>
               <span className="text-center">Miễn phí</span>
-              <span className="text-center text-indigo-600">PRO ✦</span>
+              <span className="text-center text-primary">PRO ✦</span>
             </div>
             {FEATURES_COMPARISON.map((feat) => (
-              <div key={feat.name} className="grid grid-cols-3 px-6 py-3 hover:bg-slate-100 transition-colors">
-                <span className="text-[10px] text-slate-500 font-semibold">{feat.name}</span>
+              <div key={feat.name} className="grid grid-cols-3 px-6 py-3 hover:bg-card transition-colors">
+                <span className="text-[10px] text-text-muted font-bold">{feat.name}</span>
                 <div className="flex justify-center">
                   {feat.free === true ? (
                     <CheckCircle className="w-4 h-4 text-teal-600" />
                   ) : feat.free === false ? (
-                    <Lock className="w-4 h-4 text-slate-700" />
+                    <Lock className="w-4 h-4 text-text-body" />
                   ) : (
                     <span className="text-[9px] text-amber-500/70 font-bold">{feat.free}</span>
                   )}
                 </div>
                 <div className="flex justify-center">
                   {feat.pro === true ? (
-                    <CheckCircle className="w-4 h-4 text-indigo-600" />
+                    <CheckCircle className="w-4 h-4 text-primary" />
                   ) : typeof feat.pro === "string" ? (
                     <span className="text-[9px] text-amber-600 font-black">{feat.pro}</span>
                   ) : null}
@@ -496,8 +496,8 @@ export default function UpgradePage() {
               { icon: Flame, text: "Hoàn tiền 7 ngày" },
               { icon: Zap, text: "Kích hoạt tức thì" },
             ].map(({ icon: Icon, text }) => (
-              <div key={text} className="flex items-center gap-1.5 text-[10px] text-slate-500 font-bold">
-                <Icon className="w-3.5 h-3.5 text-slate-600" />
+              <div key={text} className="flex items-center gap-1.5 text-[10px] text-text-muted font-bold">
+                <Icon className="w-3.5 h-3.5 text-text-body" />
                 <span>{text}</span>
               </div>
             ))}
@@ -506,7 +506,7 @@ export default function UpgradePage() {
           {/* Admin secret button */}
           <button 
             onClick={handleActivateVIP}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-dashed border-slate-300 text-slate-600 hover:text-amber-600 hover:border-amber-500/40 hover:bg-amber-500/5 text-[9px] font-bold transition-all group"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-[var(--radius-btn)] border border-dashed border-slate-300 text-text-body hover:text-amber-600 hover:border-amber-500/40 hover:bg-amber-500/5 text-[9px] font-bold transition-all group"
           >
             <Gift className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
             <span>[Admin] Giả lập kích hoạt VIP</span>

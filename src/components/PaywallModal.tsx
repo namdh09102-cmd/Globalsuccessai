@@ -38,7 +38,7 @@ const PLANS = [
     borderClass: "border-slate-700/60",
     bgClass: "bg-[#0F1520]",
     buttonClass:
-      "bg-indigo-600 hover:bg-indigo-500 shadow-[0_4px_0_#312e81] hover:shadow-[0_2px_0_#312e81] active:translate-y-[3px] active:shadow-none",
+      "bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] hover:bg-primary shadow-[0_4px_0_#312e81] hover:shadow-[0_2px_0_#312e81] active:translate-y-[3px] active:shadow-none",
     features: [
       "Toàn bộ bài học Unit đang học",
       "AI Chấm phát âm không giới hạn",
@@ -59,7 +59,7 @@ const PLANS = [
     borderClass: "border-indigo-600/40",
     bgClass: "bg-[#0F1520]",
     buttonClass:
-      "bg-indigo-600 hover:bg-indigo-500 shadow-[0_4px_0_#4c1d95] hover:shadow-[0_2px_0_#4c1d95] active:translate-y-[3px] active:shadow-none",
+      "bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] hover:bg-primary shadow-[0_4px_0_#4c1d95] hover:shadow-[0_2px_0_#4c1d95] active:translate-y-[3px] active:shadow-none",
     features: [
       "Toàn bộ giáo trình Lớp 6–12",
       "AI Chấm phát âm không giới hạn",
@@ -184,7 +184,7 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
                 initial={{ opacity: 0, y: -40, scale: 0.9 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -40 }}
-                className="fixed top-6 left-1/2 -translate-x-1/2 z-[99] bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-black text-xs px-6 py-3 rounded-xl shadow-2xl shadow-amber-500/30 flex items-center gap-2 border border-amber-300/40"
+                className="fixed top-6 left-1/2 -translate-x-1/2 z-[99] bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-black text-xs px-6 py-3 rounded-[var(--radius-card)] shadow-2xl shadow-amber-500/30 flex items-center gap-2 border border-amber-300/40"
               >
                 <Crown className="w-4 h-4" />
                 <span>{toastMsg}</span>
@@ -210,16 +210,16 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="pointer-events-auto w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-[#0B0F19] rounded-xl border border-slate-800/60 shadow-2xl shadow-black/50 relative"
+              className="pointer-events-auto w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-[#0B0F19] rounded-[var(--radius-card)] border border-slate-800/60 shadow-2xl shadow-black/50 relative"
             >
               {/* Ambient Glows */}
-              <div className="absolute top-0 left-1/4 w-96 h-48 bg-indigo-600/8 rounded-full blur-[80px] pointer-events-none" />
+              <div className="absolute top-0 left-1/4 w-96 h-48 bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)]/8 rounded-full blur-[80px] pointer-events-none" />
               <div className="absolute bottom-0 right-1/4 w-64 h-48 bg-amber-500/5 rounded-full blur-[60px] pointer-events-none" />
 
               {/* Close Button */}
               <button
                 onClick={onClose}
-                className="absolute top-5 right-5 z-10 w-8 h-8 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-all"
+                className="absolute top-5 right-5 z-10 w-8 h-8 rounded-[var(--radius-card)] bg-slate-900 border border-slate-800 flex items-center justify-center text-text-muted hover:text-slate-200 hover:bg-slate-800 transition-all"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -227,7 +227,7 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
               <div className="p-6 md:p-8 space-y-8">
                 {/* Header */}
                 <div className="text-center space-y-3 relative">
-                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-400 text-[10px] font-black uppercase tracking-widest">
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-light border border-indigo-500/25 text-indigo-400 text-[10px] font-black uppercase tracking-widest">
                     <Crown className="w-3.5 h-3.5" />
                     <span>Global Success PRO</span>
                   </div>
@@ -235,13 +235,13 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
                   <h2 className="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-200 to-amber-300 tracking-tight">
                     Mở Khóa Toàn Diện Quyền Năng AI
                   </h2>
-                  <p className="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">
+                  <p className="text-xs text-text-muted max-w-md mx-auto leading-relaxed">
                     Tiếp cận toàn bộ giáo trình SGK Lớp 1–12, AI chấm phát âm không giới hạn và hàng trăm bài Dictation chuyên sâu.
                   </p>
 
                   {/* Social Proof */}
                   <div className="flex items-center justify-center gap-4 pt-1">
-                    <div className="flex items-center gap-1.5 text-[10px] text-slate-500 font-bold">
+                    <div className="flex items-center gap-1.5 text-[10px] text-text-muted font-bold">
                       <Users className="w-3.5 h-3.5 text-indigo-400" />
                       <span>15,200+ học sinh đang dùng PRO</span>
                     </div>
@@ -249,7 +249,7 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />
                       ))}
-                      <span className="text-[10px] text-slate-500 font-bold ml-1">4.9/5</span>
+                      <span className="text-[10px] text-text-muted font-bold ml-1">4.9/5</span>
                     </div>
                   </div>
                 </div>
@@ -260,7 +260,7 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
                     <div
                       key={plan.id}
                       onClick={() => setSelectedPlan(plan.id)}
-                      className={`relative rounded-xl border p-5 cursor-pointer transition-all duration-200 ${plan.bgClass} ${plan.borderClass} ${
+                      className={`relative rounded-[var(--radius-card)] border p-5 cursor-pointer transition-all duration-200 ${plan.bgClass} ${plan.borderClass} ${
                         selectedPlan === plan.id ? "scale-[1.02]" : "hover:scale-[1.01] opacity-90 hover:opacity-100"
                       }`}
                     >
@@ -291,14 +291,14 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
                               {plan.price}
                             </span>
                           </div>
-                          <span className="text-[10px] text-slate-500 font-bold">{plan.period}</span>
-                          <p className="text-[9px] text-slate-600 font-bold mt-0.5">{plan.priceNote}</p>
+                          <span className="text-[10px] text-text-muted font-bold">{plan.period}</span>
+                          <p className="text-[9px] text-text-body font-bold mt-0.5">{plan.priceNote}</p>
                         </div>
 
                         {/* Features */}
                         <ul className="space-y-1.5">
                           {plan.features.map((feat, i) => (
-                            <li key={i} className="flex items-start gap-2 text-[10px] text-slate-400 font-semibold">
+                            <li key={i} className="flex items-start gap-2 text-[10px] text-text-muted font-bold">
                               <CheckCircle className={`w-3.5 h-3.5 shrink-0 mt-0.5 ${plan.popular ? "text-amber-400" : "text-indigo-400"}`} />
                               <span>{feat}</span>
                             </li>
@@ -311,7 +311,7 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
                             e.stopPropagation();
                             setSelectedPlan(plan.id);
                           }}
-                          className={`w-full py-2.5 rounded-xl text-white text-[11px] font-bold transition-all duration-100 ${plan.buttonClass}`}
+                          className={`w-full py-2.5 rounded-[var(--radius-card)] text-white text-[11px] font-bold transition-all duration-100 ${plan.buttonClass}`}
                         >
                           {plan.popular ? "⚡ Nâng cấp ngay" : "Chọn gói này"}
                         </button>
@@ -323,30 +323,30 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
                 {/* Payment Section */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   {/* VietQR Mock */}
-                  <div className="rounded-xl border border-slate-800 bg-[#0F1520] p-5 space-y-4">
-                    <div className="flex items-center gap-2 text-slate-400">
+                  <div className="rounded-[var(--radius-card)] border border-slate-800 bg-[#0F1520] p-5 space-y-4">
+                    <div className="flex items-center gap-2 text-text-muted">
                       <QrCode className="w-4 h-4 text-indigo-400" />
                       <h4 className="text-xs font-black uppercase tracking-wider">Quét Mã QR Thanh Toán</h4>
                     </div>
 
                     <div className="flex justify-center">
-                      <div className="relative w-36 h-36 rounded-xl border-2 border-indigo-500/30 bg-white p-2 shadow-lg shadow-indigo-950/20">
+                      <div className="relative w-36 h-36 rounded-[var(--radius-card)] border-2 border-indigo-500/30 bg-card p-2 shadow-lg shadow-indigo-950/20">
                         <img 
                           src={`https://img.vietqr.io/image/mb-${bankInfo.accountNumber}-compact.png?amount=999000&addInfo=VIP%20KHANH%20TRAN&accountName=${encodeURIComponent(bankInfo.ownerName)}`}
                           alt="VietQR" 
-                          className="w-full h-full object-contain rounded-xl shadow-lg border border-slate-800"
+                          className="w-full h-full object-contain rounded-[var(--radius-card)] shadow-lg border border-slate-800"
                         />
                       </div>
                     </div>
 
-                    <p className="text-[9px] text-slate-500 text-center leading-relaxed">
+                    <p className="text-[9px] text-text-muted text-center leading-relaxed">
                       Quét bằng app ngân hàng bất kỳ. Nội dung chuyển khoản: <span className="text-indigo-400 font-black">GSA + Tên học sinh</span>
                     </p>
                   </div>
 
                   {/* Bank Transfer Info */}
-                  <div className="rounded-xl border border-slate-800 bg-[#0F1520] p-5 space-y-4">
-                    <div className="flex items-center gap-2 text-slate-400">
+                  <div className="rounded-[var(--radius-card)] border border-slate-800 bg-[#0F1520] p-5 space-y-4">
+                    <div className="flex items-center gap-2 text-text-muted">
                       <Shield className="w-4 h-4 text-teal-400" />
                       <h4 className="text-xs font-black uppercase tracking-wider">Thông Tin Chuyển Khoản</h4>
                     </div>
@@ -359,13 +359,13 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
                         { label: "Chi nhánh", value: "Hà Nội – Hoàn Kiếm" },
                       ].map((item) => (
                         <div key={item.label} className="flex items-center justify-between py-2 border-b border-slate-800/50">
-                          <span className="text-[10px] text-slate-500 font-bold">{item.label}</span>
+                          <span className="text-[10px] text-text-muted font-bold">{item.label}</span>
                           <div className="flex items-center gap-2">
                             <span className="text-[10px] text-slate-200 font-bold font-mono">{item.value}</span>
                             {item.copyable && (
                               <button
                                 onClick={handleCopyBank}
-                                className={`p-1 rounded-lg transition-colors ${copiedBank ? "bg-teal-500/15 text-teal-400" : "bg-slate-800 text-slate-400 hover:text-slate-200"}`}
+                                className={`p-1 rounded-[var(--radius-btn)] transition-colors ${copiedBank ? "bg-teal-500/15 text-teal-400" : "bg-slate-800 text-text-muted hover:text-slate-200"}`}
                               >
                                 {copiedBank ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
                               </button>
@@ -375,7 +375,7 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
                       ))}
                     </div>
 
-                    <div className="pt-1 p-3 rounded-xl bg-amber-500/5 border border-amber-500/15">
+                    <div className="pt-1 p-3 rounded-[var(--radius-card)] bg-amber-500/5 border border-amber-500/15">
                       <p className="text-[9px] text-amber-400/80 font-bold leading-relaxed">
                         ⚡ Sau khi chuyển khoản, tài khoản sẽ được kích hoạt trong vòng <span className="text-amber-400">5-15 phút</span>. Lưu ảnh chụp màn hình để xác nhận.
                       </p>
@@ -392,8 +392,8 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
                       { icon: BookOpen, text: "Toàn bộ SGK Lớp 1–12" },
                       { icon: Flame, text: "Hoàn tiền trong 7 ngày" },
                     ].map(({ icon: Icon, text }) => (
-                      <div key={text} className="flex items-center gap-1.5 text-[9px] text-slate-500 font-bold">
-                        <Icon className="w-3.5 h-3.5 text-slate-600" />
+                      <div key={text} className="flex items-center gap-1.5 text-[9px] text-text-muted font-bold">
+                        <Icon className="w-3.5 h-3.5 text-text-body" />
                         <span>{text}</span>
                       </div>
                     ))}
@@ -403,7 +403,7 @@ export default function PaywallModal({ isOpen, onClose, onActivatePro }: Paywall
                   <button
                     onClick={handleActivateVIP}
                     title="Xác nhận đã chuyển khoản (Bản Test)"
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-dashed border-slate-700/60 text-slate-600 hover:text-amber-400 hover:border-amber-500/40 hover:bg-amber-500/5 text-[9px] font-bold transition-all group"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-[var(--radius-card)] border border-dashed border-slate-700/60 text-text-body hover:text-amber-400 hover:border-amber-500/40 hover:bg-amber-500/5 text-[9px] font-bold transition-all group"
                   >
                     <Gift className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
                     <span>Xác nhận đã chuyển khoản (Bản Test)</span>

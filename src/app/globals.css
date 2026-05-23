@@ -1,38 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Fredoka+One&display=swap');
 @import "tailwindcss";
 
+@theme {
+  --color-primary: var(--c-primary);
+  --color-primary-dark: var(--c-primary-dark);
+  --color-primary-light: var(--c-primary-light);
+  --color-primary-text: var(--c-primary-text);
+
+  --color-accent: var(--c-accent);
+  --color-accent-dark: var(--c-accent-dark);
+  --color-accent-light: var(--c-accent-light);
+  --color-accent-text: var(--c-accent-text);
+
+  --color-xp: var(--c-xp);
+  --color-xp-dark: var(--c-xp-dark);
+  --color-xp-light: var(--c-xp-light);
+  --color-xp-text: var(--c-xp-text);
+
+  --color-success: var(--c-success);
+  --color-success-dark: var(--c-success-dark);
+  --color-success-light: var(--c-success-light);
+  --color-success-text: var(--c-success-text);
+
+  --color-purple: var(--c-purple);
+  --color-purple-dark: var(--c-purple-dark);
+  --color-purple-light: var(--c-purple-light);
+  --color-purple-text: var(--c-purple-text);
+
+  --color-pink: var(--c-pink);
+  --color-pink-dark: var(--c-pink-dark);
+  --color-pink-light: var(--c-pink-light);
+  --color-pink-text: var(--c-pink-text);
+
+  --color-page: var(--c-bg-page);
+  --color-card: var(--c-bg-card);
+  --color-sidebar: var(--c-bg-sidebar);
+  --color-topbar: var(--c-bg-topbar);
+
+  --color-text-head: var(--c-text-head);
+  --color-text-body: var(--c-text-body);
+  --color-text-muted: var(--c-text-muted);
+  --color-text-on-color: var(--c-text-on-color);
+
+  --radius-card: var(--radius-card);
+  --radius-btn: var(--radius-btn);
+  --radius-chip: var(--radius-chip);
+
+  --font-nunito: 'Nunito', sans-serif;
+  --font-fredoka: 'Fredoka One', cursive;
+}
+
+:root {
+  /* Primary — Coral Red (energy, excitement) */
+  --c-primary:        #FF6B6B;
+  --c-primary-dark:   #E63946;
+  --c-primary-light:  #FFE8E8;
+  --c-primary-text:   #7D1128;
+
+  /* Accent — Mint Teal (fresh, learning) */
+  --c-accent:         #4ECDC4;
+  --c-accent-dark:    #1A9E96;
+  --c-accent-light:   #E0FAF8;
+  --c-accent-text:    #0A4F4C;
+
+  /* XP / Reward — Sunny Yellow */
+  --c-xp:             #FFD166;
+  --c-xp-dark:        #F0A500;
+  --c-xp-light:       #FFF8DC;
+  --c-xp-text:        #7A4F00;
+
+  /* Level-up / Success — Lime Green */
+  --c-success:        #6BCB77;
+  --c-success-dark:   #2D9E3A;
+  --c-success-light:  #EDFFF0;
+  --c-success-text:   #1B5E20;
+
+  /* Challenge / Boss — Electric Purple */
+  --c-purple:         #9B7FE8;
+  --c-purple-dark:    #6C4FBF;
+  --c-purple-light:   #F0EEFF;
+  --c-purple-text:    #2D1B69;
+
+  /* Pink — Social / Friends */
+  --c-pink:           #FF6B9D;
+  --c-pink-dark:      #C0286A;
+  --c-pink-light:     #FFE8F4;
+  --c-pink-text:      #7D0038;
+
+  /* Backgrounds */
+  --c-bg-page:        #FFF8F0;   /* warm off-white — NOT pure white */
+  --c-bg-card:        #FFFFFF;
+  --c-bg-sidebar:     #FF6B6B;   /* sidebar is PRIMARY color */
+  --c-bg-topbar:      #FF6B6B;
+
+  /* Text */
+  --c-text-head:      #1A1A2E;
+  --c-text-body:      #2C2C54;
+  --c-text-muted:     #7A7A9D;
+  --c-text-on-color:  #FFFFFF;
+
+  /* Border */
+  --c-border:         2px solid;  /* all cards use 2px borders, not 1px */
+  --radius-card:      18px;
+  --radius-btn:       14px;
+  --radius-chip:      999px;
+}
+
 body {
-  background-color: #E2E8F0; /* slate-200 */
-  color: #1E293B; /* slate-800 */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--c-bg-page);
+  color: var(--c-text-body);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
   margin: 0;
   padding: 0;
   min-height: 100vh;
 }
 
+h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 28px;
+  color: var(--c-primary-dark);
+}
+
+h2 {
+  font-weight: 900;
+  font-size: 20px;
+  color: var(--c-text-head);
+}
+
+h3 {
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--c-text-head);
+}
+
+.game-card {
+  background-color: var(--c-bg-card);
+  border: var(--c-border) var(--c-primary-dark); /* or another color based on context */
+  border-radius: var(--radius-card);
+  box-shadow: 0 4px 0 var(--c-primary-dark); /* Duolingo-style bottom shadow */
+}
+
+.game-btn {
+  border-radius: var(--radius-btn);
+  padding: 10px 20px;
+  font-weight: 800;
+  border: var(--c-border) rgba(0,0,0,0.1);
+  transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.game-btn:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+/* Micro animations requested */
+@keyframes bounceCustom { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
+@keyframes popCustom { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
+@keyframes wiggleCustom { 0%,100%{transform:rotate(-4deg)} 50%{transform:rotate(4deg)} }
+@keyframes floatCustom { 0%,100%{transform:translateY(0) rotate(-3deg)} 50%{transform:translateY(-8px) rotate(3deg)} }
+@keyframes shimmerCustom { 0%,100%{opacity:1} 50%{opacity:0.6} }
+@keyframes fadeInUpCustom { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+
+.animate-bounce-custom { animation: bounceCustom 2s ease-in-out infinite; }
+.animate-pop-custom { animation: popCustom 0.3s ease-out; }
+.animate-pop-custom:hover { animation: popCustom 0.3s ease-out infinite; }
+.animate-wiggle-custom:hover { animation: wiggleCustom 0.4s ease-in-out infinite; }
+.animate-float-custom { animation: floatCustom 3s ease-in-out infinite; }
+.animate-shimmer-custom { animation: shimmerCustom 2s infinite; }
+.animate-fade-in-up { animation: fadeInUpCustom 0.5s ease-out forwards; }
+
 /* ========================================================
-   PREMIUM CUSTOM SCROLLBAR (CINEMATIC STYLE)
-   Removes default bulky OS scrollbars that break the 3-column flow
+   PREMIUM CUSTOM SCROLLBAR (KIDS STYLE)
    ======================================================== */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--c-bg-page);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(99, 102, 241, 0.2); /* Semi-transparent Indigo */
+  background: var(--c-accent); 
   border-radius: 99px;
+  border: 2px solid var(--c-bg-page);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(99, 102, 241, 0.6); /* Glow on hover */
+  background: var(--c-accent-dark);
 }
 
-/* Firefox support */
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(99, 102, 241, 0.2) transparent;
+  scrollbar-color: var(--c-accent) var(--c-bg-page);
 }
+
+/* ========================================================
+   MICRO-INTERACTIONS & ACCESSIBILITY
+   ======================================================== */
+
+.btn-interactive-active {
+  transform: scale(0.94) !important;
+  filter: brightness(0.9);
+  transition: transform 0.1s ease-out, filter 0.1s ease-out !important;
+}
+
+button {
+  /* Default spring easing for buttons */
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out;
+}
+
+@keyframes drawCheckmark {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+
+.draw-checkmark {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: drawCheckmark 0.4s ease-out forwards;
+}
+
+@keyframes flashGreen {
+  0% { border-color: var(--c-success); box-shadow: 0 0 15px var(--c-success); }
+  50% { border-color: transparent; box-shadow: none; }
+  100% { border-color: var(--c-success); box-shadow: 0 0 15px var(--c-success); }
+}
+
+@keyframes flashYellow {
+  0% { background-color: var(--c-xp-light); }
+  50% { background-color: var(--c-xp); }
+  100% { background-color: var(--c-xp-light); }
+}
+
+@keyframes flashRed {
+  0%, 100% { background-color: transparent; }
+  50% { background-color: rgba(255, 107, 107, 0.2); }
+}
+
+@keyframes floatUpFade {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-30px); }
+}
+
+.flash-green { animation: flashGreen 1s ease-in-out; }
+.flash-yellow { animation: flashYellow 1s ease-in-out; }
+.flash-red { animation: flashRed 1s ease-in-out; }
+.float-up-fade { animation: floatUpFade 1s ease-out forwards; }
+
+.xp-glow {
+  animation: flashYellow 1s ease-in-out;
+}
+
+.streak-pop {
+  animation: popCustom 0.4s ease-out;
+}
+
+.slide-highlight {
+  position: relative;
+}
+.slide-highlight::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255,255,255,0.25);
+  border-radius: inherit;
+  z-index: -1;
+  transform-origin: left;
+  animation: slideIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideIn {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

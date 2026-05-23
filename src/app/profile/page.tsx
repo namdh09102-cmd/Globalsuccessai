@@ -18,6 +18,7 @@ import {
   Activity
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import BadgeGrid from "@/components/BadgeGrid";
 
 interface StudentStats {
   xp: number;
@@ -251,9 +252,9 @@ export default function ProfilePage() {
             initial={{ opacity: 0, y: -50, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -50, scale: 0.9 }}
-            className="fixed top-6 right-6 z-55 bg-teal-500 text-slate-800 font-extrabold text-xs px-4 py-3 rounded-xl shadow-[0_10px_30px_rgba(16,185,129,0.3)] flex items-center gap-2 border border-teal-400/35"
+            className="fixed top-6 right-6 z-55 bg-teal-500 text-text-head font-extrabold text-xs px-4 py-3 rounded-[var(--radius-card)] shadow-[0_10px_30px_rgba(16,185,129,0.3)] flex items-center gap-2 border border-teal-400/35"
           >
-            <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
+            <div className="w-5 h-5 rounded-full bg-card/20 flex items-center justify-center">
               <Check className="w-3 h-3" />
             </div>
             <span>Đã cập nhật hồ sơ thành công!</span>
@@ -262,15 +263,15 @@ export default function ProfilePage() {
       </AnimatePresence>
 
       {/* Header lớn */}
-      <div className="border-b border-slate-200 pb-5">
-        <div className="flex items-center gap-2 text-indigo-600 text-[10px] font-black uppercase tracking-widest mb-1 font-mono">
+      <div className="border-b border-[rgba(0,0,0,0.1)] pb-5">
+        <div className="flex items-center gap-2 text-primary text-[10px] font-black uppercase tracking-widest mb-1 font-mono">
           <Activity className="w-3.5 h-3.5" />
           <span>Học bạ điện tử K-12</span>
         </div>
         <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-slate-700 to-slate-500 tracking-tight">
           Hồ Sơ Học Viên & Phân Tích Kỹ Năng
         </h1>
-        <p className="text-xs text-slate-500 mt-1">
+        <p className="text-xs text-text-muted mt-1">
           Theo dõi điểm số kỹ năng AI, chỉ số cúp học tập và tinh chỉnh thông tin tài khoản của bạn.
         </p>
       </div>
@@ -289,42 +290,42 @@ export default function ProfilePage() {
           {/* PHÂN HỆ 1: THẺ DANH VỌNG HỌC VIÊN (Student Identity - Bento Card #1) */}
           <motion.div 
             variants={cardVariants}
-            className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6 group transition-all duration-300 hover:border-slate-300/80"
+            className="relative overflow-hidden rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-6 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6 group transition-all duration-300 hover:border-slate-300/80"
           >
             {/* Background Ambient Glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-[80px] pointer-events-none" />
-            <div className="absolute -left-12 -bottom-12 w-48 h-48 bg-indigo-600/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] pointer-events-none" />
+            <div className="absolute -left-12 -bottom-12 w-48 h-48 bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)]/5 rounded-full blur-3xl pointer-events-none" />
             
             {/* Bên trái: Avatar & Thông tin */}
             <div className="flex flex-col sm:flex-row items-center sm:items-start md:items-center text-center sm:text-left gap-5 relative z-10">
               {/* Avatar với viền phát sáng gradient lấp lánh */}
               <div className="relative">
                 <div className="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-indigo-600 via-indigo-600 to-blue-400 opacity-75 blur animate-pulse" />
-                <div className="w-18 h-18 rounded-full bg-slate-50 border-2 border-slate-900 flex items-center justify-center text-slate-800 relative z-10 shadow-lg">
+                <div className="w-18 h-18 rounded-full bg-page border-2 border-slate-900 flex items-center justify-center text-text-head relative z-10 shadow-lg">
                   <span className="text-2xl font-black bg-clip-text text-transparent bg-gradient-to-tr from-indigo-600 to-blue-600">
                     {profile.fullName ? profile.fullName.charAt(0).toUpperCase() : "K"}
                   </span>
                 </div>
                 {/* Đốm sáng neon nhỏ ở chân avatar */}
                 <div className="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-teal-500 border border-slate-900 flex items-center justify-center z-20">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-card animate-ping" />
                 </div>
               </div>
 
               <div className="space-y-1.5 flex flex-col items-center sm:items-start">
                 <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
-                  <h2 className="text-xl font-black text-slate-800 tracking-wide">
+                  <h2 className="text-xl font-black text-text-head tracking-wide">
                     {profile.fullName || "Khánh Tân"}
                   </h2>
-                  <span className="px-2 py-0.5 rounded-md text-[9px] font-black uppercase tracking-wider bg-indigo-500/10 text-indigo-600 border border-indigo-300 shadow-sm">
+                  <span className="px-2 py-0.5 rounded-md text-[9px] font-black uppercase tracking-wider bg-primary-light text-primary border border-primary-dark shadow-sm">
                     Lớp {profile.grade ? profile.grade.replace("Lớp ", "") : "11"}
                   </span>
                 </div>
-                <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
-                  <School className="w-3.5 h-3.5 text-slate-500" />
+                <div className="flex items-center gap-1.5 text-xs text-text-muted font-medium">
+                  <School className="w-3.5 h-3.5 text-text-muted" />
                   <span>{profile.school || "THPT Chuyên Nguyễn Huệ"}</span>
                 </div>
-                <div className="flex items-center gap-1 text-[10px] text-slate-500 font-extrabold uppercase tracking-wide">
+                <div className="flex items-center gap-1 text-[10px] text-text-muted font-extrabold uppercase tracking-wide">
                   <Award className="w-3.5 h-3.5 text-amber-500" />
                   <span>Danh hiệu: Chiến Binh Tiếng Anh</span>
                 </div>
@@ -333,8 +334,8 @@ export default function ProfilePage() {
 
             {/* Bên phải: Badge VIP vàng Gold */}
             <div className="relative z-10 shrink-0">
-              <div className="absolute inset-0 bg-amber-500/10 rounded-xl blur-lg pointer-events-none" />
-              <div className="px-4 py-3 rounded-xl bg-gradient-to-b from-amber-400/10 via-amber-500/5 to-transparent border border-amber-500/30 text-center shadow-lg relative z-10 hover:border-amber-400/50 transition-colors duration-300">
+              <div className="absolute inset-0 bg-amber-500/10 rounded-[var(--radius-card)] blur-lg pointer-events-none" />
+              <div className="px-4 py-3 rounded-[var(--radius-card)] bg-gradient-to-b from-amber-400/10 via-amber-500/5 to-transparent border border-amber-500/30 text-center shadow-lg relative z-10 hover:border-amber-400/50 transition-colors duration-300">
                 <div className="flex items-center justify-center gap-1.5 mb-1 text-amber-600 font-black text-xs uppercase tracking-widest">
                   <Star className="w-4 h-4 fill-amber-400 text-amber-600 animate-spin-slow" />
                   <span>Thành viên PRO</span>
@@ -350,22 +351,22 @@ export default function ProfilePage() {
           {/* PHÂN HỆ 3: BIỂU ĐỒ RADAR PHÂN TÍCH KỸ NĂNG (AI Skill Radar - Bento Card #3) */}
           <motion.div 
             variants={cardVariants}
-            className="rounded-xl border border-slate-200 bg-white p-6 shadow-xl relative overflow-hidden group hover:border-slate-300/80 transition-all duration-300"
+            className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-6 shadow-xl relative overflow-hidden group hover:border-slate-300/80 transition-all duration-300"
           >
             {/* Glow hiệu ứng nền */}
-            <div className="absolute top-0 left-0 w-80 h-80 bg-indigo-600/5 rounded-full blur-[80px] pointer-events-none" />
+            <div className="absolute top-0 left-0 w-80 h-80 bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)]/5 rounded-full blur-[80px] pointer-events-none" />
 
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-4 mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[rgba(0,0,0,0.1)] pb-4 mb-6">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-indigo-500/10 border border-indigo-300 flex items-center justify-center text-indigo-600">
+                <div className="w-8 h-8 rounded-[var(--radius-btn)] bg-primary-light border border-primary-dark flex items-center justify-center text-primary">
                   <Activity className="w-4.5 h-4.5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-800">Đánh Giá Kỹ Năng Chuyên Sâu</h3>
-                  <p className="text-[10px] text-slate-500 font-medium">Báo cáo năng lực học tập tự động tổng hợp bằng AI</p>
+                  <h3 className="text-sm font-bold text-text-head">Đánh Giá Kỹ Năng Chuyên Sâu</h3>
+                  <p className="text-[10px] text-text-muted font-medium">Báo cáo năng lực học tập tự động tổng hợp bằng AI</p>
                 </div>
               </div>
-              <span className="px-2 py-0.5 rounded-full text-[9px] font-black bg-indigo-500/10 text-indigo-600 border border-indigo-300 tracking-wider uppercase">
+              <span className="px-2 py-0.5 rounded-full text-[9px] font-black bg-primary-light text-primary border border-primary-dark tracking-wider uppercase">
                 AI Radar Chart
               </span>
             </div>
@@ -507,7 +508,7 @@ export default function ProfilePage() {
 
               {/* Danh sách điểm số chi tiết dạng Bar nhỏ bên phải (Cột phải trong grid) */}
               <div className="md:col-span-2 space-y-4 relative z-10">
-                <span className="text-[10px] font-black tracking-widest text-slate-500 uppercase font-mono block">
+                <span className="text-[10px] font-black tracking-widest text-text-muted uppercase font-mono block">
                   Chỉ số năng lực
                 </span>
                 
@@ -525,11 +526,11 @@ export default function ProfilePage() {
                     return (
                       <div key={idx} className="space-y-1">
                         <div className="flex items-center justify-between text-[11px] font-bold">
-                          <span className="text-slate-700">{skill.name}</span>
-                          <span className="text-indigo-600 font-mono">{skill.val}/100</span>
+                          <span className="text-text-body">{skill.name}</span>
+                          <span className="text-primary font-mono">{skill.val}/100</span>
                         </div>
                         {/* Progress Bar kính mờ */}
-                        <div className="h-2 rounded-full bg-slate-50 border border-slate-900 overflow-hidden p-0.5">
+                        <div className="h-2 rounded-full bg-page border border-slate-900 overflow-hidden p-0.5">
                           <motion.div
                             initial={{ width: 0 }}
                             animate={{ width: `${skill.val}%` }}
@@ -555,11 +556,11 @@ export default function ProfilePage() {
           {/* PHÂN HỆ 2: CHỈ SỐ KIM CƯƠNG & NĂNG LƯỢNG (Currency Matrix - Bento Card #2) */}
           <motion.div 
             variants={cardVariants}
-            className="rounded-xl border border-slate-200 bg-white p-5 shadow-xl space-y-4"
+            className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-5 shadow-xl space-y-4"
           >
-            <div className="flex items-center gap-2 border-b border-slate-200 pb-3">
+            <div className="flex items-center gap-2 border-b border-[rgba(0,0,0,0.1)] pb-3">
               <Trophy className="w-4.5 h-4.5 text-amber-600" />
-              <h3 className="text-xs font-black uppercase text-slate-500 tracking-wider">
+              <h3 className="text-xs font-black uppercase text-text-muted tracking-wider">
                 Kho báu & Sinh mệnh
               </h3>
             </div>
@@ -568,14 +569,14 @@ export default function ProfilePage() {
             <div className="grid grid-cols-1 gap-3">
               
               {/* Ô 1: Cúp Tuần */}
-              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-300/60 transition-all flex items-center justify-between group">
+              <div className="p-3.5 rounded-[var(--radius-card)] bg-page border border-[rgba(0,0,0,0.1)] hover:border-slate-300/60 transition-all flex items-center justify-between group">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-300 flex items-center justify-center text-amber-600 shadow-sm relative group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-10 h-10 rounded-[var(--radius-card)] bg-amber-500/10 border border-amber-300 flex items-center justify-center text-amber-600 shadow-sm relative group-hover:scale-105 transition-transform duration-300">
                     <Trophy className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-[10px] text-slate-500 font-bold block uppercase tracking-wider">Cúp Tuần</span>
-                    <span className="text-xs font-semibold text-slate-700">Bảng Xếp Hạng</span>
+                    <span className="text-[10px] text-text-muted font-bold block uppercase tracking-wider">Cúp Tuần</span>
+                    <span className="text-xs font-bold text-text-body">Bảng Xếp Hạng</span>
                   </div>
                 </div>
                 <span className="text-base font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-300 font-mono tracking-tight animate-pulse">
@@ -584,14 +585,14 @@ export default function ProfilePage() {
               </div>
 
               {/* Ô 2: Kim Cương */}
-              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-300/60 transition-all flex items-center justify-between group">
+              <div className="p-3.5 rounded-[var(--radius-card)] bg-page border border-[rgba(0,0,0,0.1)] hover:border-slate-300/60 transition-all flex items-center justify-between group">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-300 flex items-center justify-center text-blue-600 shadow-sm relative group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-10 h-10 rounded-[var(--radius-card)] bg-blue-500/10 border border-blue-300 flex items-center justify-center text-blue-600 shadow-sm relative group-hover:scale-105 transition-transform duration-300">
                     <Gem className="w-5 h-5 animate-pulse" />
                   </div>
                   <div>
-                    <span className="text-[10px] text-slate-500 font-bold block uppercase tracking-wider">Kim Cương</span>
-                    <span className="text-xs font-semibold text-slate-700">Quy đổi vật phẩm</span>
+                    <span className="text-[10px] text-text-muted font-bold block uppercase tracking-wider">Kim Cương</span>
+                    <span className="text-xs font-bold text-text-body">Quy đổi vật phẩm</span>
                   </div>
                 </div>
                 <span className="text-base font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300 font-mono tracking-tight">
@@ -600,14 +601,14 @@ export default function ProfilePage() {
               </div>
 
               {/* Ô 3: Sinh mệnh / Trái tim */}
-              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-300/60 transition-all flex items-center justify-between group">
+              <div className="p-3.5 rounded-[var(--radius-card)] bg-page border border-[rgba(0,0,0,0.1)] hover:border-slate-300/60 transition-all flex items-center justify-between group">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-600 shadow-sm relative group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-10 h-10 rounded-[var(--radius-card)] bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-600 shadow-sm relative group-hover:scale-105 transition-transform duration-300">
                     <Heart className="w-5 h-5 fill-rose-500" />
                   </div>
                   <div>
-                    <span className="text-[10px] text-slate-500 font-bold block uppercase tracking-wider">Sinh Mệnh</span>
-                    <span className="text-xs font-semibold text-slate-700">Phòng Luyện Lớp</span>
+                    <span className="text-[10px] text-text-muted font-bold block uppercase tracking-wider">Sinh Mệnh</span>
+                    <span className="text-xs font-bold text-text-body">Phòng Luyện Lớp</span>
                   </div>
                 </div>
                 {/* 5 Trái tim neon phát sáng */}
@@ -628,14 +629,14 @@ export default function ProfilePage() {
           {/* PHÂN HỆ 4: FORM THAY ĐỔI THÔNG TIN (Account Settings - Bento Card #4) */}
           <motion.div 
             variants={cardVariants}
-            className="rounded-xl border border-slate-200 bg-white p-5 shadow-xl relative overflow-hidden group hover:border-slate-300/80 transition-all duration-300"
+            className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-5 shadow-xl relative overflow-hidden group hover:border-slate-300/80 transition-all duration-300"
           >
             {/* Ambient Glow */}
-            <div className="absolute -right-16 -bottom-16 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute -right-16 -bottom-16 w-32 h-32 bg-primary/5 rounded-full blur-2xl pointer-events-none" />
 
-            <div className="flex items-center gap-2 border-b border-slate-200 pb-3 mb-4">
-              <Settings className="w-4.5 h-4.5 text-slate-500" />
-              <h3 className="text-xs font-black uppercase text-slate-500 tracking-wider">
+            <div className="flex items-center gap-2 border-b border-[rgba(0,0,0,0.1)] pb-3 mb-4">
+              <Settings className="w-4.5 h-4.5 text-text-muted" />
+              <h3 className="text-xs font-black uppercase text-text-muted tracking-wider">
                 Thiết Lập Tài Khoản
               </h3>
             </div>
@@ -645,8 +646,8 @@ export default function ProfilePage() {
               
               {/* Field 1: Họ và tên */}
               <div className="space-y-1">
-                <label className="text-[10px] text-slate-500 font-extrabold uppercase tracking-wide flex items-center gap-1">
-                  <User className="w-3 h-3 text-slate-500" />
+                <label className="text-[10px] text-text-muted font-extrabold uppercase tracking-wide flex items-center gap-1">
+                  <User className="w-3 h-3 text-text-muted" />
                   <span>Họ và tên</span>
                 </label>
                 <input
@@ -655,14 +656,14 @@ export default function ProfilePage() {
                   value={profile.fullName}
                   onChange={(e) => setProfile({ ...profile, fullName: e.target.value })}
                   placeholder="Ví dụ: Nguyễn Khánh Tân"
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 text-xs font-bold text-slate-800 border border-slate-200 focus:border-indigo-500/85 focus:ring-1 focus:ring-indigo-500/40 outline-none transition-all placeholder-slate-700"
+                  className="w-full px-3.5 py-2.5 rounded-[var(--radius-card)] bg-page text-xs font-bold text-text-head border border-[rgba(0,0,0,0.1)] focus:border-indigo-500/85 focus:ring-1 focus:ring-indigo-500/40 outline-none transition-all placeholder-slate-700"
                 />
               </div>
 
               {/* Field 2: Trường học */}
               <div className="space-y-1">
-                <label className="text-[10px] text-slate-500 font-extrabold uppercase tracking-wide flex items-center gap-1">
-                  <School className="w-3 h-3 text-slate-500" />
+                <label className="text-[10px] text-text-muted font-extrabold uppercase tracking-wide flex items-center gap-1">
+                  <School className="w-3 h-3 text-text-muted" />
                   <span>Trường học</span>
                 </label>
                 <input
@@ -671,25 +672,25 @@ export default function ProfilePage() {
                   value={profile.school}
                   onChange={(e) => setProfile({ ...profile, school: e.target.value })}
                   placeholder="Ví dụ: THPT Chuyên Nguyễn Huệ"
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 text-xs font-bold text-slate-800 border border-slate-200 focus:border-indigo-500/85 focus:ring-1 focus:ring-indigo-500/40 outline-none transition-all placeholder-slate-700"
+                  className="w-full px-3.5 py-2.5 rounded-[var(--radius-card)] bg-page text-xs font-bold text-text-head border border-[rgba(0,0,0,0.1)] focus:border-indigo-500/85 focus:ring-1 focus:ring-indigo-500/40 outline-none transition-all placeholder-slate-700"
                 />
               </div>
 
               {/* Field 3: Khối lớp hiện tại (Dropdown select Lớp 1 - Lớp 12) */}
               <div className="space-y-1">
-                <label className="text-[10px] text-slate-500 font-extrabold uppercase tracking-wide flex items-center gap-1">
-                  <GraduationCap className="w-3 h-3 text-slate-500" />
+                <label className="text-[10px] text-text-muted font-extrabold uppercase tracking-wide flex items-center gap-1">
+                  <GraduationCap className="w-3 h-3 text-text-muted" />
                   <span>Khối lớp hiện tại</span>
                 </label>
                 <select
                   value={profile.grade}
                   onChange={(e) => setProfile({ ...profile, grade: e.target.value })}
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 text-xs font-bold text-slate-800 border border-slate-200 focus:border-indigo-500/85 focus:ring-1 focus:ring-indigo-500/40 outline-none transition-all"
+                  className="w-full px-3.5 py-2.5 rounded-[var(--radius-card)] bg-page text-xs font-bold text-text-head border border-[rgba(0,0,0,0.1)] focus:border-indigo-500/85 focus:ring-1 focus:ring-indigo-500/40 outline-none transition-all"
                 >
                   {[...Array(12)].map((_, i) => {
                     const gradeStr = `Lớp ${i + 1}`;
                     return (
-                      <option key={i} value={gradeStr} className="bg-white">
+                      <option key={i} value={gradeStr} className="bg-card">
                         {gradeStr}
                       </option>
                     );
@@ -698,7 +699,7 @@ export default function ProfilePage() {
               </div>
 
               {/* Nút bấm 3D cơ học Nhấn lún sướng tay */}
-              <button className="w-full py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-black text-xs transition-all duration-100 flex items-center justify-center gap-1.5 shadow-[0_4px_0_#312e81] active:translate-y-[4px] active:shadow-none select-none relative overflow-hidden"
+              <button className="w-full py-2.5 rounded-[var(--radius-btn)] bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] hover:bg-primary text-white font-black text-xs transition-all duration-100 flex items-center justify-center gap-1.5 shadow-[0_4px_0_#312e81] active:translate-y-[4px] active:shadow-none select-none relative overflow-hidden"
               >
                 <Save className="w-3.5 h-3.5" />
                 <span>Cập Nhật Hồ Sơ</span>
@@ -707,6 +708,7 @@ export default function ProfilePage() {
             </form>
           </motion.div>
 
+          <BadgeGrid />
         </div>
 
       </motion.div>

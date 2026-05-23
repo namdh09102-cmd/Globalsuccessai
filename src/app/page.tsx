@@ -860,10 +860,10 @@ export default function Dashboard() {
 
   const getLessonColor = (type: string) => {
     switch (type) {
-      case "speaking": return "text-indigo-600 bg-indigo-500/10 border-indigo-500/25";
+      case "speaking": return "text-primary bg-primary-light border-indigo-500/25";
       case "dictation": return "text-blue-600 bg-blue-500/10 border-blue-500/25";
-      case "quiz": return "text-indigo-600 bg-indigo-500/10 border-indigo-500/25";
-      default: return "text-slate-500 bg-slate-500/10 border-slate-500/25";
+      case "quiz": return "text-primary bg-primary-light border-indigo-500/25";
+      default: return "text-text-muted bg-slate-500/10 border-slate-500/25";
     }
   };
 
@@ -944,52 +944,52 @@ export default function Dashboard() {
           RENDER PHÒNG SPEAKING CHI TIẾT (Focus Mode)
           ======================================================== */}
       {activeRoom === "speaking" && activeLesson && (
-        <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center p-6 bg-slate-50">
+        <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center p-6 bg-page">
           <div className="w-full max-w-2xl flex items-center justify-between mb-4">
             <button
               onClick={() => setActiveRoom("dashboard")}
-              className="px-4 py-2 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-indigo-600 hover:border-indigo-200 hover:bg-indigo-50 transition-all text-xs font-semibold flex items-center gap-1.5 shadow-sm"
+              className="px-4 py-2 rounded-[var(--radius-card)] bg-card border border-[rgba(0,0,0,0.1)] text-text-body hover:text-primary hover:border-primary-dark hover:bg-primary-light transition-all text-xs font-bold flex items-center gap-1.5 shadow-sm"
             >
               <ArrowLeft className="w-4.5 h-4.5" /> Về Bảng Điều Khiển
             </button>
             {sessionLessons.length > 1 && (
               <div className="flex items-center gap-2">
-                <span className="text-[10px] text-slate-500 font-bold">{sessionIndex + 1}/{sessionLessons.length}</span>
+                <span className="text-[10px] text-text-muted font-bold">{sessionIndex + 1}/{sessionLessons.length}</span>
                 <div className="flex gap-1">
                   {sessionLessons.map((_, i) => (
-                    <div key={i} className={`w-4 h-1.5 rounded-full transition-all ${i <= sessionIndex ? "bg-indigo-500" : "bg-slate-200"}`} />
+                    <div key={i} className={`w-4 h-1.5 rounded-full transition-all ${i <= sessionIndex ? "bg-primary" : "bg-page"}`} />
                   ))}
                 </div>
               </div>
             )}
           </div>
           
-          <div className="w-full max-w-2xl rounded-xl border border-slate-200 bg-white p-8 space-y-6 shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-80 h-80 bg-indigo-500/5 rounded-full blur-[80px] pointer-events-none" />
+          <div className="w-full max-w-2xl rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-8 space-y-6 shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-[80px] pointer-events-none" />
             
-            <div className="flex items-center justify-between border-b border-slate-200 pb-4">
+            <div className="flex items-center justify-between border-b border-[rgba(0,0,0,0.1)] pb-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-300 flex items-center justify-center text-indigo-600 shadow">
+                <div className="w-10 h-10 rounded-[var(--radius-card)] bg-primary-light border border-primary-dark flex items-center justify-center text-primary shadow">
                   <Mic className="w-5 h-5 animate-pulse" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-black text-indigo-600 tracking-wider uppercase">Speaking Room (Offline)</span>
-                  <h3 className="text-sm font-bold text-slate-800">{activeLesson.title}</h3>
+                  <span className="text-[10px] font-black text-primary tracking-wider uppercase">Speaking Room (Offline)</span>
+                  <h3 className="text-sm font-bold text-text-head">{activeLesson.title}</h3>
                 </div>
               </div>
-              <span className="px-2.5 py-0.5 rounded-full text-[9px] font-extrabold bg-indigo-600/10 text-indigo-600 border border-indigo-300 uppercase">
+              <span className="px-2.5 py-0.5 rounded-full text-[9px] font-extrabold bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)]/10 text-primary border border-primary-dark uppercase">
                 AI Chấm Điểm
               </span>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
-              <span className="text-[9px] font-black text-slate-500 uppercase tracking-widest">Đọc to câu tiếng Anh sau:</span>
-              <p className="text-sm font-semibold text-slate-800 leading-relaxed font-mono">&ldquo;{activeLesson.expectedText}&rdquo;</p>
+            <div className="p-4 rounded-[var(--radius-card)] bg-page border border-[rgba(0,0,0,0.1)] space-y-2">
+              <span className="text-[9px] font-black text-text-muted uppercase tracking-widest">Đọc to câu tiếng Anh sau:</span>
+              <p className="text-sm font-bold text-text-head leading-relaxed font-mono">&ldquo;{activeLesson.expectedText}&rdquo;</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-4 rounded-xl border border-slate-200 bg-slate-50 flex flex-col items-center justify-center gap-3">
-                <span className="text-[10px] font-bold text-slate-500 uppercase">Ghi âm</span>
+              <div className="p-4 rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-page flex flex-col items-center justify-center gap-3">
+                <span className="text-[10px] font-bold text-text-muted uppercase">Ghi âm</span>
                 {!isRecording ? (
                   <button
                     onClick={startRecording}
@@ -1007,17 +1007,17 @@ export default function Dashboard() {
                   </button>
                 )}
 
-                <p className="text-[10px] font-bold text-slate-500">
+                <p className="text-[10px] font-bold text-text-muted">
                   {isRecording ? `Đang ghi... ${recordingSeconds}s` : "Nhấn Micro để nói"}
                 </p>
 
                 {audioUrl && (
-                  <div className="w-full flex items-center justify-between gap-2 mt-2 pt-2 border-t border-slate-200">
+                  <div className="w-full flex items-center justify-between gap-2 mt-2 pt-2 border-t border-[rgba(0,0,0,0.1)]">
                     <audio src={audioUrl} controls className="h-6 w-full scale-90 opacity-70" />
                     <button
                       onClick={() => handleEvaluateSpeaking(activeLesson.expectedText || "", activeLesson.id)}
                       disabled={isEvaluating}
-                      className="px-3 py-1.5 rounded-lg text-[9px] font-bold bg-indigo-600 hover:bg-indigo-500 text-white flex items-center gap-1"
+                      className="px-3 py-1.5 rounded-[var(--radius-btn)] text-[9px] font-bold bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] hover:bg-primary text-white flex items-center gap-1"
                     >
                       {isEvaluating ? <Loader2 className="w-3 h-3 animate-spin" /> : "Chấm"}
                     </button>
@@ -1025,29 +1025,29 @@ export default function Dashboard() {
                 )}
               </div>
 
-              <div className="p-4 rounded-xl border border-slate-200 bg-slate-50 flex flex-col justify-center min-h-[150px]">
+              <div className="p-4 rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-page flex flex-col justify-center min-h-[150px]">
                 {isEvaluating ? (
-                  <div className="flex flex-col items-center justify-center gap-2 text-indigo-600">
+                  <div className="flex flex-col items-center justify-center gap-2 text-primary">
                     <Loader2 className="w-6 h-6 animate-spin" />
                     <span className="text-[9px] font-bold uppercase animate-pulse">AI Đang phân tích âm...</span>
                   </div>
                 ) : evaluationResult ? (
                   <div className="space-y-3">
-                    <div className="grid grid-cols-4 gap-1.5 pt-1 pb-2 border-b border-slate-200 text-center">
-                      <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
-                        <div className="text-[7px] font-bold text-slate-500 uppercase tracking-wider">Tổng điểm</div>
-                        <div className="text-xs font-black text-indigo-600">{evaluationResult.score}%</div>
+                    <div className="grid grid-cols-4 gap-1.5 pt-1 pb-2 border-b border-[rgba(0,0,0,0.1)] text-center">
+                      <div className="p-1.5 rounded-[var(--radius-btn)] bg-page border border-[rgba(0,0,0,0.1)]">
+                        <div className="text-[7px] font-bold text-text-muted uppercase tracking-wider">Tổng điểm</div>
+                        <div className="text-xs font-black text-primary">{evaluationResult.score}%</div>
                       </div>
-                      <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
-                        <div className="text-[7px] font-bold text-slate-500 uppercase tracking-wider">Accuracy</div>
+                      <div className="p-1.5 rounded-[var(--radius-btn)] bg-page border border-[rgba(0,0,0,0.1)]">
+                        <div className="text-[7px] font-bold text-text-muted uppercase tracking-wider">Accuracy</div>
                         <div className="text-xs font-black text-teal-600">{evaluationResult.accuracy}%</div>
                       </div>
-                      <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
-                        <div className="text-[7px] font-bold text-slate-500 uppercase tracking-wider">Pronounce</div>
+                      <div className="p-1.5 rounded-[var(--radius-btn)] bg-page border border-[rgba(0,0,0,0.1)]">
+                        <div className="text-[7px] font-bold text-text-muted uppercase tracking-wider">Pronounce</div>
                         <div className="text-xs font-black text-amber-600">{evaluationResult.pronunciation}%</div>
                       </div>
-                      <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
-                        <div className="text-[7px] font-bold text-slate-500 uppercase tracking-wider">Fluency</div>
+                      <div className="p-1.5 rounded-[var(--radius-btn)] bg-page border border-[rgba(0,0,0,0.1)]">
+                        <div className="text-[7px] font-bold text-text-muted uppercase tracking-wider">Fluency</div>
                         <div className="text-xs font-black text-blue-600">{evaluationResult.fluency}%</div>
                       </div>
                     </div>
@@ -1065,7 +1065,7 @@ export default function Dashboard() {
                         return (
                           <span 
                             key={i} 
-                            className={`text-[9px] px-1.5 py-0.5 rounded font-mono font-semibold border ${colorClass}`}
+                            className={`text-[9px] px-1.5 py-0.5 rounded font-mono font-bold border ${colorClass}`}
                             title={w.status === "correct" ? "Chính xác" : w.status === "mispronounced" ? "Phát âm lệch/sai âm" : "Bị bỏ sót"}
                           >
                             {w.word}
@@ -1074,18 +1074,18 @@ export default function Dashboard() {
                       })}
                     </div>
 
-                    <p className="text-[10px] text-indigo-700 font-medium italic bg-indigo-50 p-2 rounded-lg border border-indigo-100 shadow-sm">
+                    <p className="text-[10px] text-primary-dark font-medium italic bg-primary-light p-2 rounded-[var(--radius-btn)] border border-indigo-100 shadow-sm">
                       &ldquo;{evaluationResult.feedback}&rdquo;
                     </p>
 
                     {evaluationResult.score >= 75 && (
-                      <div className="p-2 rounded-xl bg-amber-500/10 border border-amber-300 flex items-center justify-center gap-1.5 text-[9px] animate-pulse text-amber-600 font-extrabold">
+                      <div className="p-2 rounded-[var(--radius-card)] bg-amber-500/10 border border-amber-300 flex items-center justify-center gap-1.5 text-[9px] animate-pulse text-amber-600 font-extrabold">
                         <span>🏆 AI Bonus (+50 XP & +2 💎) đã được cộng!</span>
                       </div>
                     )}
                   </div>
                 ) : (
-                  <div className="text-center text-slate-500 space-y-1">
+                  <div className="text-center text-text-muted space-y-1">
                     <Volume2 className="w-6 h-6 mx-auto opacity-30" />
                     <p className="text-[9px] font-bold uppercase">Chờ thu âm</p>
                   </div>
@@ -1099,21 +1099,21 @@ export default function Dashboard() {
       {activeRoom === "dashboard" && (
         <div className="p-6 md:p-8 space-y-8 max-w-6xl mx-auto pb-16">
           {/* Top Search & Navigation Bar */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-6">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[rgba(0,0,0,0.1)] pb-6">
             <div className="relative w-full max-w-md">
-              <span className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-500">
+              <span className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-text-muted">
                 <Search className="w-4 h-4" />
               </span>
               <input
                 type="text"
                 value={activeGrade === "SearchPlaceholder" ? "" : undefined}
                 placeholder="Tìm kiếm bài học, chủ đề..."
-                className="w-full pl-10 pr-4 py-2.5 text-xs rounded-xl bg-white border border-slate-200 text-slate-700 focus:outline-none focus:border-indigo-500/50 transition-all placeholder-slate-500 shadow-inner"
+                className="w-full pl-10 pr-4 py-2.5 text-xs rounded-[var(--radius-card)] bg-card border border-[rgba(0,0,0,0.1)] text-text-body focus:outline-none focus:border-indigo-500/50 transition-all placeholder-slate-500 shadow-inner"
               />
             </div>
             
             <div className="flex flex-wrap items-center gap-3">
-              <div className="flex overflow-x-auto hide-scrollbar space-x-2 p-1 rounded-xl bg-white border border-slate-200 w-full md:w-fit max-w-[calc(100vw-3rem)]">
+              <div className="flex overflow-x-auto hide-scrollbar space-x-2 p-1 rounded-[var(--radius-card)] bg-card border border-[rgba(0,0,0,0.1)] w-full md:w-fit max-w-[calc(100vw-3rem)]">
                 {[...Array(12)].map((_, i) => {
                   const grade = `Lớp ${i + 1}`;
                   return (
@@ -1126,10 +1126,10 @@ export default function Dashboard() {
                           setSelectedUnit(unit1);
                         }
                       }}
-                      className={`shrink-0 px-4 py-1.5 rounded-xl text-xs font-bold tracking-wide transition-all ${
+                      className={`shrink-0 px-4 py-1.5 rounded-[var(--radius-card)] text-xs font-bold tracking-wide transition-all ${
                         activeGrade === grade
-                          ? "bg-indigo-600 text-white shadow-md shadow-indigo-600/20"
-                          : "text-slate-600 hover:text-slate-800 hover:bg-slate-100"
+                          ? "bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] text-white shadow-md shadow-indigo-600/20"
+                          : "text-text-body hover:text-text-head hover:bg-card"
                       }`}
                     >
                       {grade}
@@ -1140,104 +1140,30 @@ export default function Dashboard() {
             </div>
           </div>
 
-          {/* Welcome Glass Banner */}
-          <div className="relative rounded-xl border border-slate-200 bg-white overflow-hidden min-h-[300px] flex flex-col justify-between p-6 md:p-8 shadow-xl shadow-slate-200/40 transition-all duration-300 hover:border-slate-300 group">
-            {/* Vibrant colorful gradient for EdTech Light Theme */}
-            <div 
-              className="absolute inset-0 bg-gradient-to-r from-teal-400 to-teal-500 transition-transform duration-700 group-hover:scale-[1.02] pointer-events-none"
-            />
-            {/* Background pattern overlay */}
-            <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)", backgroundSize: "20px 20px" }}></div>
-            {/* Ambient soft glow */}
-            <div className="absolute -top-24 -left-24 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none" />
-            
-            <div className="relative z-10 grid grid-cols-1 md:grid-cols-5 gap-6 h-full items-center">
-              {/* Left Column: Greeting */}
-              <div className="md:col-span-3 space-y-4">
-                <div className="space-y-1">
-                  <span className="text-xs font-bold text-teal-100 tracking-wide block">Chào mừng trở lại,</span>
-                  <h1 className="text-3xl md:text-4xl font-black text-white tracking-tight flex items-center gap-2">
-                    {fullName}! <span className="animate-bounce inline-block">👋</span>
-                  </h1>
-                  <p className="text-xs text-teal-50 max-w-sm mt-2 leading-relaxed">
-                    Bạn đã sẵn sàng để tiếp tục hành trình chinh phục tiếng Anh hôm nay chưa?
-                  </p>
-                </div>
-                
-                <button
-                  onClick={() => {
-                    document.getElementById("curriculum-section")?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className="px-5 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-teal-600 font-black text-xs flex items-center gap-2 transition-all shadow-lg shadow-teal-900/20 active:scale-95 group/btn"
-                >
-                  <Play className="w-3.5 h-3.5 fill-teal-600 group-hover/btn:scale-110 transition-transform" />
-                  <span>Tiếp tục học ngay</span>
-                </button>
-              </div>
-
-              {/* Right Column: Literary Quote on translucent card */}
-              <div className="md:col-span-2 flex flex-col justify-center items-end">
-                <div className="max-w-[280px] p-4 rounded-xl bg-white/20 backdrop-blur-md border border-white/30 text-white shadow-xl space-y-2 relative">
-                  <span className="absolute top-2 left-2 text-white opacity-20 text-3xl font-serif leading-none">&ldquo;</span>
-                  <p className="text-[10px] leading-relaxed italic text-white pl-2">
-                    "Language is the road map of a culture. It tells you where its people come from and where they are going."
-                  </p>
-                  <p className="text-[9px] font-bold text-teal-100 text-right">— Rita Mae Brown</p>
-                </div>
-              </div>
+          {/* Greeting Card */}
+          <div className="bg-white border-[2px] border-[#FFB347] rounded-[18px] p-4 flex items-center gap-4 animate-fade-in-up shadow-md">
+            {/* Mascot Avatar */}
+            <div className="w-[56px] h-[56px] rounded-full border-[3px] border-[#FFD166] bg-[#FF6B6B] flex items-center justify-center shrink-0 animate-bounce-custom">
+              <span className="text-3xl leading-none">🦖</span>
             </div>
 
-            {/* Banner Stats Bar */}
-            <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 pt-4 border-t border-slate-200">
-              {/* Streak */}
-              <div className="flex items-center gap-3 p-2.5 rounded-xl bg-white border-slate-200 shadow-md backdrop-blur-sm border border-slate-200">
-                <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-300 flex items-center justify-center text-amber-500 shadow-inner">
-                  <Flame className="w-5 h-5 fill-amber-500 animate-pulse" />
-                </div>
-                <div>
-                  <span className="text-xs font-black text-slate-800 block">{stats.streak.toString().padStart(2, "0")}</span>
-                  <span className="text-[8px] font-bold text-slate-500 uppercase tracking-wider">Ngày streak</span>
-                </div>
-              </div>
-
-              {/* Lessons */}
-              <div className="flex items-center gap-3 p-2.5 rounded-xl bg-white border-slate-200 shadow-md backdrop-blur-sm border border-slate-200">
-                <div className="w-9 h-9 rounded-xl bg-blue-500/10 border border-blue-300 flex items-center justify-center text-blue-600 shadow-inner">
-                  <BookOpen className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-xs font-black text-slate-800 block">28</span>
-                  <span className="text-[8px] font-bold text-slate-500 uppercase tracking-wider">Bài đã học</span>
-                </div>
-              </div>
-
-              {/* Accuracy */}
-              <div className="flex items-center gap-3 p-2.5 rounded-xl bg-white border-slate-200 shadow-md backdrop-blur-sm border border-slate-200">
-                <div className="w-9 h-9 rounded-xl bg-teal-500/10 border border-teal-300 flex items-center justify-center text-teal-600 shadow-inner">
-                  <Award className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-xs font-black text-slate-800 block">92%</span>
-                  <span className="text-[8px] font-bold text-slate-500 uppercase tracking-wider">Độ chính xác</span>
-                </div>
-              </div>
-
-              {/* XP */}
-              <div className="flex items-center gap-3 p-2.5 rounded-xl bg-white border-slate-200 shadow-md backdrop-blur-sm border border-slate-200">
-                <div className="w-9 h-9 rounded-xl bg-indigo-500/10 border border-indigo-300 flex items-center justify-center text-indigo-600 shadow-inner">
-                  <Zap className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-xs font-black text-slate-800 block">{(stats.xp).toLocaleString()}</span>
-                  <span className="text-[8px] font-bold text-slate-500 uppercase tracking-wider">XP tích lũy</span>
-                </div>
+            {/* Greeting Content */}
+            <div className="flex-1 flex flex-col items-start gap-1">
+              <h2 className="text-[#C0392B] font-fredoka text-[18px] leading-tight">
+                Chào {fullName}! 🎉
+              </h2>
+              <p className="text-[#E67E22] font-nunito font-bold text-[13px] leading-tight">
+                Hôm nay mình học gì nào?
+              </p>
+              <div className="mt-1 bg-[#FFD166] text-[#7A4F00] font-nunito font-extrabold text-[11px] px-3 py-1 rounded-full inline-flex items-center shadow-sm">
+                🔥 {stats.streak} ngày liên tiếp — Tuyệt vời!
               </div>
             </div>
           </div>
 
           {/* Learning Methods Bento Grid */}
           <div className="space-y-4">
-            <h3 className="text-xs font-black text-slate-500 uppercase tracking-widest">
+            <h3 className="text-xs font-black text-text-muted uppercase tracking-widest">
               Chọn cách học phù hợp với bạn
             </h3>
             
@@ -1247,11 +1173,11 @@ export default function Dashboard() {
                 onClick={() => {
                   document.getElementById("curriculum-section")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="group relative rounded-xl border-none bg-gradient-to-br from-blue-500 to-blue-600 p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/30"
+                className="group relative rounded-[var(--radius-card)] border-none bg-gradient-to-br from-blue-500 to-blue-600 p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/30"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl pointer-events-none" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl pointer-events-none" />
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-inner shrink-0">
+                  <div className="w-12 h-12 rounded-[var(--radius-card)] bg-card/20 border border-white/30 flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-inner shrink-0">
                     <BookOpen className="w-6 h-6" />
                   </div>
                   <div className="space-y-1">
@@ -1264,7 +1190,7 @@ export default function Dashboard() {
                 
                 <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/20 text-[9px] text-white/90 font-bold">
                   <span>12.4K học sinh đang học</span>
-                  <div className="w-6 h-6 rounded-full bg-white group-hover:bg-indigo-600 flex items-center justify-center text-slate-500 border border-slate-200 group-hover:border-indigo-600 shadow-sm group-hover:text-white transition-all">
+                  <div className="w-6 h-6 rounded-full bg-card group-hover:bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] flex items-center justify-center text-text-muted border border-[rgba(0,0,0,0.1)] group-hover:border-indigo-600 shadow-sm group-hover:text-white transition-all">
                     <ChevronRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
@@ -1282,11 +1208,11 @@ export default function Dashboard() {
                     alert("Hãy chọn bài học nghe chép (Dictation) trong phần Lộ trình học bên dưới nhé!");
                   }
                 }}
-                className="group relative rounded-xl border-none bg-gradient-to-br from-indigo-500 to-indigo-600 p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/30"
+                className="group relative rounded-[var(--radius-card)] border-none bg-gradient-to-br from-indigo-500 to-indigo-600 p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/30"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl pointer-events-none" />
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-inner shrink-0">
+                  <div className="w-12 h-12 rounded-[var(--radius-card)] bg-card/20 border border-white/30 flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-inner shrink-0">
                     <Headphones className="w-6 h-6" />
                   </div>
                   <div className="space-y-1">
@@ -1299,7 +1225,7 @@ export default function Dashboard() {
                 
                 <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/20 text-[9px] text-white/90 font-bold">
                   <span>8.3K học sinh đang học</span>
-                  <div className="w-6 h-6 rounded-full bg-white group-hover:bg-indigo-600 flex items-center justify-center text-slate-500 border border-slate-200 group-hover:border-indigo-600 shadow-sm group-hover:text-white transition-all">
+                  <div className="w-6 h-6 rounded-full bg-card group-hover:bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] flex items-center justify-center text-text-muted border border-[rgba(0,0,0,0.1)] group-hover:border-indigo-600 shadow-sm group-hover:text-white transition-all">
                     <ChevronRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
@@ -1315,11 +1241,11 @@ export default function Dashboard() {
                     handleStartLesson(speakingLesson);
                   }
                 }}
-                className="group relative rounded-xl border-none bg-gradient-to-br from-indigo-500 to-indigo-600 p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/30"
+                className="group relative rounded-[var(--radius-card)] border-none bg-gradient-to-br from-indigo-500 to-indigo-600 p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/30"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl pointer-events-none" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl pointer-events-none" />
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-inner shrink-0">
+                  <div className="w-12 h-12 rounded-[var(--radius-card)] bg-card/20 border border-white/30 flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-inner shrink-0">
                     <Mic className="w-6 h-6" />
                   </div>
                   <div className="space-y-1">
@@ -1332,7 +1258,7 @@ export default function Dashboard() {
                 
                 <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/20 text-[9px] text-white/90 font-bold">
                   <span>15K học sinh đang luyện</span>
-                  <div className="w-6 h-6 rounded-full bg-white group-hover:bg-indigo-600 flex items-center justify-center text-slate-500 border border-slate-200 group-hover:border-indigo-600 shadow-sm group-hover:text-white transition-all">
+                  <div className="w-6 h-6 rounded-full bg-card group-hover:bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] flex items-center justify-center text-text-muted border border-[rgba(0,0,0,0.1)] group-hover:border-indigo-600 shadow-sm group-hover:text-white transition-all">
                     <ChevronRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
@@ -1343,14 +1269,14 @@ export default function Dashboard() {
           {/* Unit Roadmap Section */}
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <h3 className="text-xs font-black text-slate-500 uppercase tracking-widest">
+              <h3 className="text-xs font-black text-text-muted uppercase tracking-widest">
                 Tiếp tục học
               </h3>
               <button 
                 onClick={() => {
                   document.getElementById("curriculum-section")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="text-xs font-black text-indigo-600 hover:text-indigo-600 transition-colors uppercase tracking-wider"
+                className="text-xs font-black text-primary hover:text-primary transition-colors uppercase tracking-wider"
               >
                 Xem tất cả
               </button>
@@ -1381,10 +1307,10 @@ export default function Dashboard() {
                 return (
                   <div
                     key={unit.id}
-                    className={`flex-none w-[220px] relative rounded-xl overflow-hidden border flex flex-col justify-between min-h-[180px] transition-all duration-300 shadow-sm group cursor-pointer ${
+                    className={`flex-none w-[220px] relative rounded-[var(--radius-card)] overflow-hidden border flex flex-col justify-between min-h-[180px] transition-all duration-300 shadow-sm group cursor-pointer ${
                       isSelected 
-                        ? "border-indigo-400 bg-indigo-50/30 shadow-md" 
-                        : "border-slate-200 bg-slate-50/50 hover:border-indigo-300 hover:bg-white hover:shadow-md"
+                        ? "border-indigo-400 bg-primary-light/30 shadow-md" 
+                        : "border-[rgba(0,0,0,0.1)] bg-page/50 hover:border-primary-dark hover:bg-card hover:shadow-md"
                     }`}
                     onClick={() => {
                       if (unit.status !== "locked") {
@@ -1406,16 +1332,16 @@ export default function Dashboard() {
                       <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
                       
                       {unit.status === "locked" && (
-                        <div className="absolute inset-0 bg-white/60 backdrop-blur-[2px] flex items-center justify-center z-20">
-                          <Lock className="w-6 h-6 text-slate-400" />
+                        <div className="absolute inset-0 bg-card/60 backdrop-blur-[2px] flex items-center justify-center z-20">
+                          <Lock className="w-6 h-6 text-text-muted" />
                         </div>
                       )}
                       
                       <div className="absolute top-2 inset-x-2 flex items-center justify-between z-10">
-                        <span className="px-1.5 py-0.5 rounded text-[7px] font-black bg-white/80 text-slate-800 border border-slate-200 uppercase tracking-widest font-mono">
+                        <span className="px-1.5 py-0.5 rounded text-[7px] font-black bg-card/80 text-text-head border border-[rgba(0,0,0,0.1)] uppercase tracking-widest font-mono">
                           UNIT {unit.number}
                         </span>
-                        <span className={`px-1.5 py-0.5 rounded text-[7px] font-black border ${diffTag.style} bg-white/90 uppercase tracking-wider`}>
+                        <span className={`px-1.5 py-0.5 rounded text-[7px] font-black border ${diffTag.style} bg-card/90 uppercase tracking-wider`}>
                           {diffTag.label}
                         </span>
                       </div>
@@ -1424,15 +1350,15 @@ export default function Dashboard() {
                     {/* Card Body */}
                     <div className="p-3 flex-1 flex flex-col justify-between space-y-2">
                       <div>
-                        <h4 className="text-[10px] font-black text-slate-800 group-hover:text-indigo-600 transition-colors leading-tight">
+                        <h4 className="text-[10px] font-black text-text-head group-hover:text-primary transition-colors leading-tight">
                           {unit.title}
                         </h4>
-                        <p className="text-[8px] text-slate-500 mt-0.5 line-clamp-1">{subDesc}</p>
+                        <p className="text-[8px] text-text-muted mt-0.5 line-clamp-1">{subDesc}</p>
                       </div>
 
                       <div className="flex items-center justify-between">
                         <div className="flex-1 mr-2">
-                          <div className="h-1.5 bg-slate-200 rounded-full overflow-hidden shadow-inner border border-slate-300/50">
+                          <div className="h-1.5 bg-page rounded-full overflow-hidden shadow-inner border border-slate-300/50">
                             <div 
                               className="h-full rounded-full transition-all duration-500"
                               style={{ 
@@ -1441,10 +1367,10 @@ export default function Dashboard() {
                               }}
                             />
                           </div>
-                          <span className="text-[7px] text-slate-500 font-bold mt-0.5 block">{unit.progress}% • {unit.lessons.length} bài</span>
+                          <span className="text-[7px] text-text-muted font-bold mt-0.5 block">{unit.progress}% • {unit.lessons.length} bài</span>
                         </div>
                         <div className={`w-6 h-6 rounded-full flex items-center justify-center transition-all ${
-                          isSelected ? "bg-indigo-600 text-white" : "bg-slate-200 text-slate-700 group-hover:bg-indigo-600/30 group-hover:text-indigo-600"
+                          isSelected ? "bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] text-white" : "bg-page text-text-body group-hover:bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)]/30 group-hover:text-primary"
                         }`}>
                           {unit.status === "locked" ? <Lock className="w-3 h-3" /> : <ChevronRight className="w-3 h-3" />}
                         </div>
@@ -1461,22 +1387,22 @@ export default function Dashboard() {
             <div id="curriculum-section" className="space-y-4 pt-4 scroll-mt-6">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <div className="w-5 h-5 rounded-lg bg-indigo-500/10 border border-indigo-300 flex items-center justify-center text-indigo-600">
+                  <div className="w-5 h-5 rounded-[var(--radius-btn)] bg-primary-light border border-primary-dark flex items-center justify-center text-primary">
                     <BookOpen className="w-3 h-3" />
                   </div>
-                  <h3 className="text-xs font-black text-slate-500 uppercase tracking-widest">
+                  <h3 className="text-xs font-black text-text-muted uppercase tracking-widest">
                     Chi tiết bài học: Unit {selectedUnit.number} — {selectedUnit.title}
                   </h3>
                 </div>
-                <span className="px-2 py-0.5 rounded text-[9px] font-extrabold bg-indigo-500/10 text-indigo-600 border border-indigo-300 uppercase tracking-wide font-mono">
+                <span className="px-2 py-0.5 rounded text-[9px] font-extrabold bg-primary-light text-primary border border-primary-dark uppercase tracking-wide font-mono">
                   {selectedUnit.grade}
                 </span>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {/* Left Column: Lesson items */}
-                <div className="rounded-xl border border-slate-200 bg-white p-5 space-y-4 shadow-xl">
-                  <span className="text-[9px] font-black text-slate-500 tracking-widest uppercase block">
+                <div className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-5 space-y-4 shadow-xl">
+                  <span className="text-[9px] font-black text-text-muted tracking-widest uppercase block">
                     Các phòng học offline
                   </span>
                   
@@ -1489,29 +1415,29 @@ export default function Dashboard() {
                       return (
                         <div
                           key={lesson.id}
-                          className={`flex items-center justify-between p-3.5 rounded-xl border transition-all group/item relative ${
+                          className={`flex items-center justify-between p-3.5 rounded-[var(--radius-card)] border transition-all group/item relative ${
                             locked
-                              ? "border-slate-200 bg-slate-100 opacity-60"
-                              : "border-slate-200 bg-slate-50 hover:border-slate-200 hover:bg-indigo-50"
+                              ? "border-[rgba(0,0,0,0.1)] bg-card opacity-60"
+                              : "border-[rgba(0,0,0,0.1)] bg-page hover:border-[rgba(0,0,0,0.1)] hover:bg-primary-light"
                           }`}
                         >
                           <div className="flex items-center gap-3 min-w-0">
-                            <div className={`w-9 h-9 rounded-xl flex items-center justify-center border shrink-0 relative ${
-                              locked ? "bg-slate-50 border-slate-200 shadow-sm border-slate-200 text-slate-400" : colorStyles
+                            <div className={`w-9 h-9 rounded-[var(--radius-card)] flex items-center justify-center border shrink-0 relative ${
+                              locked ? "bg-page border-[rgba(0,0,0,0.1)] shadow-sm border-[rgba(0,0,0,0.1)] text-text-muted" : colorStyles
                             }`}>
                               {locked ? (
-                                <Lock className="w-4 h-4 text-slate-400" />
+                                <Lock className="w-4 h-4 text-text-muted" />
                               ) : (
                                 <LessonIcon className="w-4.5 h-4.5" />
                               )}
                             </div>
                             <div className="min-w-0">
                               <h4 className={`text-xs font-bold truncate transition-colors ${
-                                locked ? "text-slate-500" : "text-slate-800 group-hover/item:text-indigo-700"
+                                locked ? "text-text-muted" : "text-text-head group-hover/item:text-primary-dark"
                               }`}>
                                 {lesson.title}
                               </h4>
-                              <p className="text-[8px] text-slate-500 font-bold uppercase tracking-wider mt-0.5">
+                              <p className="text-[8px] text-text-muted font-bold uppercase tracking-wider mt-0.5">
                                 {locked ? (
                                   <span className="text-amber-600/70">🔒 Yêu cầu PRO</span>
                                 ) : (
@@ -1523,13 +1449,13 @@ export default function Dashboard() {
 
                           <div className="flex items-center gap-2">
                             {lesson.completed && !locked ? (
-                              <span className="px-2.5 py-1 rounded-xl text-[9px] font-bold bg-teal-500/10 text-teal-600 border border-teal-300 flex items-center gap-1">
+                              <span className="px-2.5 py-1 rounded-[var(--radius-card)] text-[9px] font-bold bg-teal-500/10 text-teal-600 border border-teal-300 flex items-center gap-1">
                                 <Check className="w-3.5 h-3.5" /> Xong
                               </span>
                             ) : locked ? (
                               <button
                                 onClick={() => setPaywallOpen(true)}
-                                className="px-3 py-1.5 rounded-xl text-[9px] font-bold bg-amber-500/10 hover:bg-amber-500/20 text-amber-500 border border-amber-500/25 transition-all flex items-center gap-1"
+                                className="px-3 py-1.5 rounded-[var(--radius-card)] text-[9px] font-bold bg-amber-500/10 hover:bg-amber-500/20 text-amber-500 border border-amber-500/25 transition-all flex items-center gap-1"
                               >
                                 <Lock className="w-3 h-3" />
                                 <span>Mở khóa</span>
@@ -1537,7 +1463,7 @@ export default function Dashboard() {
                             ) : (
                               <button
                                 onClick={() => handleStartLesson(lesson)}
-                                className="px-3.5 py-1.5 rounded-xl text-[9px] font-bold bg-indigo-600 hover:bg-indigo-500 text-white transition-all flex items-center gap-0.5 group/btn"
+                                className="px-3.5 py-1.5 rounded-[var(--radius-card)] text-[9px] font-bold bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] hover:bg-primary text-white transition-all flex items-center gap-0.5 group/btn"
                               >
                                 <span>Vào học</span>
                                 <ChevronRight className="w-3 h-3 group-hover/btn:translate-x-0.5 transition-transform" />
@@ -1551,7 +1477,7 @@ export default function Dashboard() {
                       <div className="text-center py-8 text-slate-650">
                         <HelpCircle className="w-8 h-8 mx-auto opacity-35" />
                         <p className="text-[10px] uppercase font-bold mt-1 tracking-wider">Không có bài học nào</p>
-                        <p className="text-[9px] text-slate-700">Hãy thêm bài học từ Admin Builder!</p>
+                        <p className="text-[9px] text-text-body">Hãy thêm bài học từ Admin Builder!</p>
                       </div>
                     )}
                   </div>
@@ -1560,23 +1486,23 @@ export default function Dashboard() {
                 {/* Right Column: Focus Grammar & Vocabulary */}
                 <div className="grid grid-rows-2 gap-4">
                   {/* Focus Grammar */}
-                  <div className="rounded-xl border border-slate-200 bg-white p-5 flex flex-col justify-between shadow-xl relative overflow-hidden group">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl pointer-events-none" />
+                  <div className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-5 flex flex-col justify-between shadow-xl relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl pointer-events-none" />
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
-                        <span className="text-[9px] font-black text-indigo-600 uppercase tracking-widest">Ngữ Pháp Trọng Tâm</span>
-                        <Award className="w-4.5 h-4.5 text-indigo-600" />
+                        <span className="text-[9px] font-black text-primary uppercase tracking-widest">Ngữ Pháp Trọng Tâm</span>
+                        <Award className="w-4.5 h-4.5 text-primary" />
                       </div>
                       <div>
-                        <h4 className="text-xs font-bold text-slate-800">
+                        <h4 className="text-xs font-bold text-text-head">
                           {selectedUnit.number === 1 ? "Past Simple vs. Present Perfect" : selectedUnit.number === 2 ? "Modal Verbs (Must vs. Should)" : "Stative Verbs in Continuous Form"}
                         </h4>
-                        <p className="text-[9px] text-indigo-700 font-bold font-mono mt-1 bg-indigo-50 p-2 rounded-lg border border-indigo-200 shadow-inner">
+                        <p className="text-[9px] text-primary-dark font-bold font-mono mt-1 bg-primary-light p-2 rounded-[var(--radius-btn)] border border-primary-dark shadow-inner">
                           {selectedUnit.number === 1 ? "Formula: S + have/has + V3/V-ed" : selectedUnit.number === 2 ? "Formula: S + must/should + V-bare" : "Active / Stative Verbs"}
                         </p>
                       </div>
                     </div>
-                    <p className="text-[9px] text-slate-500 leading-relaxed">
+                    <p className="text-[9px] text-text-muted leading-relaxed">
                       {selectedUnit.number === 1 
                         ? "Dùng Present Perfect cho hành động đã diễn ra nhưng không rõ thời gian hoặc kéo dài đến hiện tại."
                         : selectedUnit.number === 2
@@ -1586,19 +1512,19 @@ export default function Dashboard() {
                   </div>
 
                   {/* Focus Vocabulary */}
-                  <div className="rounded-xl border border-slate-200 bg-white p-5 flex flex-col justify-between shadow-xl relative overflow-hidden group">
+                  <div className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-5 flex flex-col justify-between shadow-xl relative overflow-hidden group">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-teal-500/5 rounded-full blur-2xl pointer-events-none" />
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
                         <span className="text-[9px] font-black text-teal-600 uppercase tracking-widest">Từ Vựng Nổi Bật</span>
                         <BookMarked className="w-4.5 h-4.5 text-teal-600" />
                       </div>
-                      <div className="p-2.5 rounded-xl border border-slate-200 bg-slate-50 space-y-1">
+                      <div className="p-2.5 rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-page space-y-1">
                         <div className="flex justify-between items-center">
-                          <span className="text-xs font-extrabold text-slate-800 font-mono">
+                          <span className="text-xs font-extrabold text-text-head font-mono">
                             {selectedUnit.number === 1 ? "Fitness" : selectedUnit.number === 2 ? "Independent" : "Futuristic"}
                           </span>
-                          <span className="text-[9px] text-slate-500 font-bold font-mono">
+                          <span className="text-[9px] text-text-muted font-bold font-mono">
                             {selectedUnit.number === 1 ? "/ˈfɪtnəs/" : selectedUnit.number === 2 ? "/ˌɪndɪˈpendənt/" : "/ˌfjuːtʃəˈrɪstɪk/"}
                           </span>
                         </div>
@@ -1608,7 +1534,7 @@ export default function Dashboard() {
                       </div>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-[8px] text-slate-500 font-bold">Từ nổi bật của bài học</span>
+                      <span className="text-[8px] text-text-muted font-bold">Từ nổi bật của bài học</span>
                       <button className="text-[9px] font-bold text-teal-600 hover:text-teal-600 transition-colors flex items-center gap-0.5 group/btn">
                         <span>Xem từ tiếp theo</span>
                         <ChevronRight className="w-3 h-3 transition-transform group-hover/btn:translate-x-0.5" />

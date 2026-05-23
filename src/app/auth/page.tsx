@@ -112,25 +112,25 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-slate-50 flex flex-col items-center justify-center p-4 relative overflow-hidden select-none">
+    <div className="min-h-screen w-full bg-page flex flex-col items-center justify-center p-4 relative overflow-hidden select-none">
       
       {/* Background Effects */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-light rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary-light rounded-full blur-[100px] pointer-events-none" />
       
       {/* Auth Card */}
       <motion.div 
         layout
-        className="w-full max-w-md bg-slate-50 backdrop-blur-xl border border-slate-200 rounded-xl shadow-2xl p-8 relative z-10"
+        className="w-full max-w-md bg-page backdrop-blur-xl border border-[rgba(0,0,0,0.1)] rounded-[var(--radius-card)] shadow-2xl p-8 relative z-10"
       >
         <div className="flex flex-col items-center mb-8">
-          <div className="w-14 h-14 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-indigo-500/20 mb-4">
-            <ShieldCheck className="w-7 h-7 text-slate-800" />
+          <div className="w-14 h-14 rounded-[var(--radius-card)] bg-gradient-to-tr from-indigo-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-indigo-500/20 mb-4">
+            <ShieldCheck className="w-7 h-7 text-text-head" />
           </div>
           <h1 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-500">
             {isLogin ? "Đăng Nhập Hệ Thống" : "Tạo Tài Khoản Mới"}
           </h1>
-          <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mt-2">
+          <p className="text-xs text-text-muted font-bold uppercase tracking-widest mt-2">
             Global Success AI Platform
           </p>
         </div>
@@ -147,23 +147,23 @@ export default function AuthPage() {
                 className="space-y-4"
               >
                 <div className="relative">
-                  <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                  <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted" />
                   <input 
                     type="text" 
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Họ và Tên của bạn" 
-                    className="w-full bg-white border border-slate-200 text-slate-800 text-sm rounded-xl pl-12 pr-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all"
+                    className="w-full bg-card border border-[rgba(0,0,0,0.1)] text-text-head text-sm rounded-[var(--radius-card)] pl-12 pr-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all"
                   />
                 </div>
                 
                 <div className="relative">
-                  <Rocket className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                  <Rocket className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted" />
                   <select 
                     value={role}
                     onChange={(e) => setRole(e.target.value)}
-                    className="w-full bg-white border border-slate-200 text-slate-800 text-sm rounded-xl pl-12 pr-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all appearance-none cursor-pointer"
+                    className="w-full bg-card border border-[rgba(0,0,0,0.1)] text-text-head text-sm rounded-[var(--radius-card)] pl-12 pr-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all appearance-none cursor-pointer"
                   >
                     <option value="student">Học sinh K-12</option>
                     <option value="teacher">Giáo viên / Phụ huynh</option>
@@ -174,26 +174,26 @@ export default function AuthPage() {
           </AnimatePresence>
 
           <div className="relative">
-            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted" />
             <input 
               type="email" 
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email đăng nhập" 
-              className="w-full bg-white border border-slate-200 text-slate-800 text-sm rounded-xl pl-12 pr-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all font-mono"
+              className="w-full bg-card border border-[rgba(0,0,0,0.1)] text-text-head text-sm rounded-[var(--radius-card)] pl-12 pr-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all font-mono"
             />
           </div>
 
           <div className="relative">
-            <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+            <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted" />
             <input 
               type="password" 
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Mật khẩu" 
-              className="w-full bg-white border border-slate-200 text-slate-800 text-sm rounded-xl pl-12 pr-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all font-mono"
+              className="w-full bg-card border border-[rgba(0,0,0,0.1)] text-text-head text-sm rounded-[var(--radius-card)] pl-12 pr-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all font-mono"
             />
           </div>
 
@@ -203,7 +203,7 @@ export default function AuthPage() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
-                className="flex items-center gap-2 text-rose-600 bg-rose-500/10 border border-rose-500/20 p-3 rounded-lg text-xs font-semibold"
+                className="flex items-center gap-2 text-rose-600 bg-rose-500/10 border border-rose-500/20 p-3 rounded-[var(--radius-btn)] text-xs font-bold"
               >
                 <AlertCircle className="w-4 h-4" />
                 <span>{error}</span>
@@ -211,7 +211,7 @@ export default function AuthPage() {
             )}
           </AnimatePresence>
 
-          <button className="w-full py-4 mt-2 rounded-lg bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-slate-800 text-sm font-black uppercase tracking-wider shadow-[0_4px_0_#3730a3] hover:shadow-[0_2px_0_#3730a3] active:translate-y-[2px] active:shadow-none transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+          <button className="w-full py-4 mt-2 rounded-[var(--radius-btn)] bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-text-head text-sm font-black uppercase tracking-wider shadow-[0_4px_0_#3730a3] hover:shadow-[0_2px_0_#3730a3] active:translate-y-[2px] active:shadow-none transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
           >
             {isLoading ? (
               <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -225,7 +225,7 @@ export default function AuthPage() {
         </form>
 
         <div className="mt-6 text-center">
-          <p className="text-xs text-slate-500 font-medium">
+          <p className="text-xs text-text-muted font-medium">
             {isLogin ? "Chưa có tài khoản? " : "Đã có tài khoản? "}
             <button 
               type="button"
@@ -233,7 +233,7 @@ export default function AuthPage() {
                 setIsLogin(!isLogin);
                 setError("");
               }}
-              className="text-indigo-600 font-bold hover:text-indigo-600 transition-colors ml-1"
+              className="text-primary font-bold hover:text-primary transition-colors ml-1"
             >
               {isLogin ? "Đăng ký ngay" : "Đăng nhập"}
             </button>

@@ -288,7 +288,7 @@ export default function HistoryPage() {
       name: "Thần Sấm Phát Âm",
       description: "Phát âm chuẩn xác vượt trội dưới sự đánh giá của AI Coach.",
       icon: Mic,
-      glowColor: "text-indigo-600 bg-indigo-500/10 border-indigo-500/30",
+      glowColor: "text-primary bg-primary-light border-indigo-500/30",
       borderColor: "group-hover:border-indigo-400/40",
       neonShadow: "shadow-indigo-500/20",
       unlocked: avgSpeakingScore >= 90, // Mở khóa động nếu Độ chính xác phát âm TB >= 90%
@@ -368,16 +368,16 @@ export default function HistoryPage() {
     <div className="p-6 md:p-8 max-w-5xl mx-auto space-y-8 select-none">
       
       {/* Header */}
-      <div className="border-b border-slate-200 pb-6 relative">
-        <div className="absolute top-0 right-0 w-24 h-24 bg-indigo-600/10 rounded-full blur-2xl pointer-events-none" />
-        <div className="flex items-center gap-2 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-1">
+      <div className="border-b border-[rgba(0,0,0,0.1)] pb-6 relative">
+        <div className="absolute top-0 right-0 w-24 h-24 bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)]/10 rounded-full blur-2xl pointer-events-none" />
+        <div className="flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-wider mb-1">
           <Trophy className="w-3.5 h-3.5" />
           <span>Bảng Vàng Học Viên K-12</span>
         </div>
         <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-slate-700 to-slate-500">
           Thi Đua & Thành Tích
         </h1>
-        <p className="text-xs text-slate-500 mt-1">
+        <p className="text-xs text-text-muted mt-1">
           Thi đua giành vị trí dẫn đầu lớp học và mở khóa các huy hiệu vinh dự cao quý.
         </p>
       </div>
@@ -386,19 +386,19 @@ export default function HistoryPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
         {/* PHÂN HỆ 1: BẢNG VÀNG TIẾN BỘ (Leaderboard Grid - col-span-2) */}
-        <div className="lg:col-span-2 rounded-xl border border-slate-200 bg-white p-6 shadow-xl space-y-6 hover:border-slate-300/30 transition-all duration-300">
+        <div className="lg:col-span-2 rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-6 shadow-xl space-y-6 hover:border-slate-300/30 transition-all duration-300">
           
-          <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+          <div className="flex items-center justify-between border-b border-[rgba(0,0,0,0.1)] pb-3">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-indigo-500/10 border border-indigo-300 flex items-center justify-center text-indigo-600 shadow-md">
+              <div className="w-8 h-8 rounded-[var(--radius-btn)] bg-primary-light border border-primary-dark flex items-center justify-center text-primary shadow-md">
                 <Trophy className="w-4 h-4" />
               </div>
               <div>
-                <h2 className="text-sm font-bold text-slate-800">Bảng Thi Đua Học Tập Tuần Tuần 🏆</h2>
-                <p className="text-[10px] text-slate-500">Cập nhật vị trí xếp hạng học tập thời gian thực</p>
+                <h2 className="text-sm font-bold text-text-head">Bảng Thi Đua Học Tập Tuần Tuần 🏆</h2>
+                <p className="text-[10px] text-text-muted">Cập nhật vị trí xếp hạng học tập thời gian thực</p>
               </div>
             </div>
-            <span className="text-[9px] font-black bg-indigo-600/15 border border-indigo-500/30 text-indigo-600 px-2 py-0.5 rounded-lg uppercase tracking-wider shadow">
+            <span className="text-[9px] font-black bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)]/15 border border-indigo-500/30 text-primary px-2 py-0.5 rounded-[var(--radius-btn)] uppercase tracking-wider shadow">
               Tuần này
             </span>
           </div>
@@ -406,7 +406,7 @@ export default function HistoryPage() {
           {/* Bục Vinh Quang Top 3 */}
           {podiumOrder[0] && (
             <div className="grid grid-cols-3 gap-4 pt-4 pb-2 items-end max-w-md mx-auto relative">
-              <div className="absolute inset-0 bg-gradient-to-t from-indigo-500/5 via-transparent to-transparent blur-xl rounded-xl pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-indigo-500/5 via-transparent to-transparent blur-xl rounded-[var(--radius-card)] pointer-events-none" />
               
               {podiumOrder.map((student, idx) => {
                 if (!student) return null;
@@ -420,11 +420,11 @@ export default function HistoryPage() {
 
                 if (isTop1) {
                   rankBadge = "👑";
-                  borderColor = "bg-gradient-to-r from-indigo-50 to-white border-l-4 border-indigo-500 text-slate-800 shadow-md";
+                  borderColor = "bg-gradient-to-r from-indigo-50 to-white border-l-4 border-indigo-500 text-text-head shadow-md";
                   heightClass = "h-32";
                 } else if (isTop2) {
                   rankBadge = "🥈";
-                  borderColor = "border-slate-200 bg-slate-50 text-slate-500 border-x border-t";
+                  borderColor = "border-[rgba(0,0,0,0.1)] bg-page text-text-muted border-x border-t";
                   heightClass = "h-28";
                 }
 
@@ -441,7 +441,7 @@ export default function HistoryPage() {
                   >
                     {/* Avatar tròn với vương miện */}
                     <div className="relative mb-2">
-                      <div className={`w-14 h-14 rounded-full flex items-center justify-center font-black text-slate-800 text-sm shadow-lg shadow-black/40 border-2 relative z-10 transition-transform duration-300 group-hover:scale-105 ${
+                      <div className={`w-14 h-14 rounded-full flex items-center justify-center font-black text-text-head text-sm shadow-lg shadow-black/40 border-2 relative z-10 transition-transform duration-300 group-hover:scale-105 ${
                         isTop1 
                           ? "bg-gradient-to-tr from-yellow-500 to-amber-600 border-yellow-400 ring-2 ring-yellow-400/30"
                           : isTop2
@@ -462,15 +462,15 @@ export default function HistoryPage() {
                       isUserHighlight ? "ring-2 ring-indigo-500 bg-indigo-950/30 shadow-[0_0_20px_rgba(139,92,246,0.4)] border-indigo-500/50" : ""
                     }`}>
                       <div className="space-y-1">
-                        <span className={`text-[10px] md:text-xs font-black truncate block max-w-full ${isUserHighlight ? "text-indigo-600" : "text-slate-800"}`}>
+                        <span className={`text-[10px] md:text-xs font-black truncate block max-w-full ${isUserHighlight ? "text-primary" : "text-text-head"}`}>
                           {student.name}
                         </span>
-                        <span className="text-[8px] font-bold text-slate-500 block uppercase">Lớp {student.class}</span>
+                        <span className="text-[8px] font-bold text-text-muted block uppercase">Lớp {student.class}</span>
                       </div>
 
                       <div className="pt-2">
                         <span className="text-xs md:text-sm font-black block tracking-tight">{student.xp.toLocaleString()}</span>
-                        <span className="text-[7px] font-bold tracking-widest text-slate-500 uppercase">XP</span>
+                        <span className="text-[7px] font-bold tracking-widest text-text-muted uppercase">XP</span>
                       </div>
                     </div>
                   </motion.div>
@@ -495,23 +495,23 @@ export default function HistoryPage() {
                 <motion.div
                   key={student.name}
                   variants={itemVariants}
-                  className={`flex items-center justify-between p-3 rounded-xl border transition-all duration-300 group ${
+                  className={`flex items-center justify-between p-3 rounded-[var(--radius-card)] border transition-all duration-300 group ${
                     isUserHighlight
                       ? "ring-2 ring-indigo-500 bg-indigo-950/30 shadow-[0_0_20px_rgba(139,92,246,0.4)] border-indigo-500/50 translate-x-1"
-                      : "bg-slate-50 border-slate-200 hover:bg-slate-100 hover:border-slate-200"
+                      : "bg-page border-[rgba(0,0,0,0.1)] hover:bg-card hover:border-[rgba(0,0,0,0.1)]"
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     {/* Rank */}
-                    <span className="w-5 text-center text-xs font-black text-slate-500 group-hover:text-indigo-600 transition-colors">
+                    <span className="w-5 text-center text-xs font-black text-text-muted group-hover:text-primary transition-colors">
                       #{rank}
                     </span>
 
                     {/* Avatar */}
-                    <div className={`w-8 h-8 rounded-xl flex items-center justify-center text-xs font-black text-slate-800 shadow-inner relative transition-transform duration-300 group-hover:scale-105 ${
+                    <div className={`w-8 h-8 rounded-[var(--radius-card)] flex items-center justify-center text-xs font-black text-text-head shadow-inner relative transition-transform duration-300 group-hover:scale-105 ${
                       isUserHighlight 
                         ? "bg-gradient-to-tr from-indigo-500 to-indigo-600 border border-indigo-400/30"
-                        : "bg-slate-100 border border-slate-200"
+                        : "bg-card border border-[rgba(0,0,0,0.1)]"
                     }`}>
                       {student.name.split(" ").slice(-1)[0][0]}
                       {isUserHighlight && <div className="absolute bottom-[-1px] right-[-1px] w-2 h-2 bg-teal-500 rounded-full border border-[#151B2B]" />}
@@ -520,16 +520,16 @@ export default function HistoryPage() {
                     {/* Name & Class */}
                     <div className="min-w-0">
                       <div className="flex items-center gap-1.5">
-                        <span className={`text-xs font-black truncate ${isUserHighlight ? "text-indigo-600 font-extrabold" : "text-slate-800"}`}>
+                        <span className={`text-xs font-black truncate ${isUserHighlight ? "text-primary font-extrabold" : "text-text-head"}`}>
                           {student.name}
                         </span>
                         {isUserHighlight && (
-                          <span className="text-[7px] font-black bg-indigo-500/20 text-indigo-600 px-1 py-0.2 rounded border border-indigo-500/30 uppercase tracking-widest">
+                          <span className="text-[7px] font-black bg-primary/20 text-primary px-1 py-0.2 rounded border border-indigo-500/30 uppercase tracking-widest">
                             Bạn
                           </span>
                         )}
                       </div>
-                      <span className="text-[9px] text-slate-600 block">Lớp {student.class}</span>
+                      <span className="text-[9px] text-text-body block">Lớp {student.class}</span>
                     </div>
                   </div>
 
@@ -537,21 +537,21 @@ export default function HistoryPage() {
                   <div className="flex items-center gap-5 text-right">
                     <div className="hidden sm:flex items-center gap-3">
                       {/* Badges count */}
-                      <div className="flex items-center gap-0.5 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-lg text-[9px] text-slate-500 font-bold">
-                        <Award className="w-3 h-3 text-indigo-600" />
+                      <div className="flex items-center gap-0.5 bg-card border border-[rgba(0,0,0,0.1)] px-2 py-0.5 rounded-[var(--radius-btn)] text-[9px] text-text-muted font-bold">
+                        <Award className="w-3 h-3 text-primary" />
                         <span>{student.badgesCount} danh hiệu</span>
                       </div>
                       
                       {/* Streak */}
-                      <div className="flex items-center gap-0.5 bg-amber-500/5 border border-amber-500/10 px-2 py-0.5 rounded-lg text-[9px] text-amber-500 font-bold animate-pulse">
+                      <div className="flex items-center gap-0.5 bg-amber-500/5 border border-amber-500/10 px-2 py-0.5 rounded-[var(--radius-btn)] text-[9px] text-amber-500 font-bold animate-pulse">
                         <Flame className="w-3 h-3 fill-amber-500" />
                         <span>{student.streak} ngày</span>
                       </div>
                     </div>
 
                     <div className="min-w-[60px]">
-                      <span className="text-xs font-black text-slate-800 block">{student.xp.toLocaleString()}</span>
-                      <span className="text-[7px] font-bold tracking-widest text-slate-500 uppercase block">XP</span>
+                      <span className="text-xs font-black text-text-head block">{student.xp.toLocaleString()}</span>
+                      <span className="text-[7px] font-bold tracking-widest text-text-muted uppercase block">XP</span>
                     </div>
                   </div>
                 </motion.div>
@@ -560,13 +560,13 @@ export default function HistoryPage() {
           </motion.div>
 
           {/* Khích lệ người dùng */}
-          <div className="p-4 rounded-xl bg-indigo-500/5 border border-indigo-500/10 flex items-center justify-between gap-3 text-center sm:text-left">
-            <p className="text-[10px] md:text-xs font-bold text-indigo-600">
+          <div className="p-4 rounded-[var(--radius-card)] bg-primary/5 border border-indigo-500/10 flex items-center justify-between gap-3 text-center sm:text-left">
+            <p className="text-[10px] md:text-xs font-bold text-primary">
               ⚡ Hãy chăm chỉ tích lũy thêm XP để thăng hạng vượt qua các bạn học khác trên Bảng Vàng! Luyện tập ngay nào!
             </p>
             <button 
               onClick={() => window.location.href = "/learn"} 
-              className="text-[10px] font-black text-white bg-gradient-to-r from-indigo-600 to-indigo-600 px-3 py-1.5 rounded-xl hover:scale-102 active:scale-95 transition-all shadow-md shrink-0"
+              className="text-[10px] font-black text-white bg-gradient-to-r from-indigo-600 to-indigo-600 px-3 py-1.5 rounded-[var(--radius-card)] hover:scale-102 active:scale-95 transition-all shadow-md shrink-0"
             >
               Học ngay
             </button>
@@ -575,16 +575,16 @@ export default function HistoryPage() {
         </div>
 
         {/* PHÂN HỆ 2: BẢNG TÀNG HUY HIỆU (Badges Collection - col-span-1) */}
-        <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xl space-y-6 hover:border-slate-300/30 transition-all duration-300 flex flex-col justify-between">
+        <div className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-6 shadow-xl space-y-6 hover:border-slate-300/30 transition-all duration-300 flex flex-col justify-between">
           
           <div className="space-y-4 flex-1">
-            <div className="flex items-center gap-2.5 border-b border-slate-200 pb-3">
-              <div className="w-8 h-8 rounded-lg bg-teal-500/10 border border-teal-300 flex items-center justify-center text-teal-600 shadow-md">
+            <div className="flex items-center gap-2.5 border-b border-[rgba(0,0,0,0.1)] pb-3">
+              <div className="w-8 h-8 rounded-[var(--radius-btn)] bg-teal-500/10 border border-teal-300 flex items-center justify-center text-teal-600 shadow-md">
                 <Award className="w-4 h-4" />
               </div>
               <div>
-                <h2 className="text-sm font-bold text-slate-800">Bộ Sưu Tập Danh Hiệu 🎖️</h2>
-                <p className="text-[10px] text-slate-500">Bộ sưu tập huy hiệu cao quý của bạn</p>
+                <h2 className="text-sm font-bold text-text-head">Bộ Sưu Tập Danh Hiệu 🎖️</h2>
+                <p className="text-[10px] text-text-muted">Bộ sưu tập huy hiệu cao quý của bạn</p>
               </div>
             </div>
 
@@ -601,20 +601,20 @@ export default function HistoryPage() {
                   <motion.div
                     key={badge.id}
                     variants={badgeVariants}
-                    className={`relative rounded-xl p-3 flex flex-col justify-between min-h-[145px] transition-all duration-300 group shadow-md hover:scale-[1.02] ${
+                    className={`relative rounded-[var(--radius-card)] p-3 flex flex-col justify-between min-h-[145px] transition-all duration-300 group shadow-md hover:scale-[1.02] ${
                       badge.unlocked
                         ? `${badge.glowColor} ${badge.neonShadow} border border-indigo-400 cursor-pointer`
-                        : "border border-dashed border-slate-300 bg-slate-50 overflow-hidden"
+                        : "border border-dashed border-slate-300 bg-page overflow-hidden"
                     }`}
                   >
                     {/* Glassmorphism lock overlay cho các huy hiệu chưa đạt */}
                     {!badge.unlocked && (
-                      <div className="absolute inset-0 bg-slate-50/80 backdrop-blur-[2.5px] rounded-xl flex flex-col items-center justify-center p-3 text-center z-10 border border-slate-300 transition-all duration-300 group-hover:bg-slate-50/90">
-                        <div className="w-8 h-8 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-500 mb-1.5 shadow-md">
+                      <div className="absolute inset-0 bg-page/80 backdrop-blur-[2.5px] rounded-[var(--radius-card)] flex flex-col items-center justify-center p-3 text-center z-10 border border-slate-300 transition-all duration-300 group-hover:bg-page/90">
+                        <div className="w-8 h-8 rounded-[var(--radius-card)] bg-card border border-[rgba(0,0,0,0.1)] flex items-center justify-center text-text-muted mb-1.5 shadow-md">
                           <Lock className="w-3.5 h-3.5" />
                         </div>
-                        <span className="text-[8px] font-bold text-slate-500 uppercase tracking-widest block mb-0.5">Chưa đạt</span>
-                        <span className="text-[9px] font-black text-indigo-600 max-w-[95%] leading-tight text-center break-words">
+                        <span className="text-[8px] font-bold text-text-muted uppercase tracking-widest block mb-0.5">Chưa đạt</span>
+                        <span className="text-[9px] font-black text-primary max-w-[95%] leading-tight text-center break-words">
                           {badge.requirement}
                         </span>
                       </div>
@@ -624,10 +624,10 @@ export default function HistoryPage() {
                     <div className={`flex flex-col justify-between h-full ${!badge.unlocked ? "opacity-30 blur-[0.5px]" : ""}`}>
                       <div className="flex items-start justify-between gap-2">
                         {/* Icon Neon 3D phát sáng */}
-                        <div className={`w-9 h-9 rounded-xl flex items-center justify-center border transition-all duration-500 group-hover:rotate-[15deg] group-hover:scale-105 shadow-inner ${
+                        <div className={`w-9 h-9 rounded-[var(--radius-card)] flex items-center justify-center border transition-all duration-500 group-hover:rotate-[15deg] group-hover:scale-105 shadow-inner ${
                           badge.unlocked
                             ? `text-white bg-gradient-to-tr from-indigo-600 to-indigo-600 border-indigo-400/25`
-                            : "bg-slate-100 border-slate-200 text-slate-700"
+                            : "bg-card border-[rgba(0,0,0,0.1)] text-text-body"
                         }`}>
                           <Icon className="w-4 h-4" />
                         </div>
@@ -635,12 +635,12 @@ export default function HistoryPage() {
 
                       <div className="space-y-1 mt-3">
                         <h3 className={`text-[11px] font-black leading-tight truncate ${
-                          badge.unlocked ? "text-slate-800 group-hover:text-indigo-600 transition-colors" : "text-slate-700"
+                          badge.unlocked ? "text-text-head group-hover:text-primary transition-colors" : "text-text-body"
                         }`}>
                           {badge.name}
                         </h3>
                         
-                        <p className="text-[8px] text-slate-500 leading-normal line-clamp-2">
+                        <p className="text-[8px] text-text-muted leading-normal line-clamp-2">
                           {badge.description}
                         </p>
                       </div>
@@ -657,16 +657,16 @@ export default function HistoryPage() {
           </div>
 
           {/* Thống kê chung huy hiệu */}
-          <div className="grid grid-cols-2 gap-3 pt-4 border-t border-slate-200 mt-4 bg-slate-100 p-2.5 rounded-xl select-none">
+          <div className="grid grid-cols-2 gap-3 pt-4 border-t border-[rgba(0,0,0,0.1)] mt-4 bg-card p-2.5 rounded-[var(--radius-card)] select-none">
             <div className="text-center space-y-0.5">
-              <span className="text-[8px] text-slate-500 font-bold block uppercase tracking-wider">Đã mở khóa</span>
+              <span className="text-[8px] text-text-muted font-bold block uppercase tracking-wider">Đã mở khóa</span>
               <span className="text-xs font-black text-teal-600">
                 {unlockedBadgesCount} / 6 Danh hiệu
               </span>
             </div>
-            <div className="text-center space-y-0.5 border-l border-slate-200">
-              <span className="text-[8px] text-slate-500 font-bold block uppercase tracking-wider">Độ hoàn thành</span>
-              <span className="text-xs font-black text-indigo-600">
+            <div className="text-center space-y-0.5 border-l border-[rgba(0,0,0,0.1)]">
+              <span className="text-[8px] text-text-muted font-bold block uppercase tracking-wider">Độ hoàn thành</span>
+              <span className="text-xs font-black text-primary">
                 {Math.round((unlockedBadgesCount / 6) * 100)}%
               </span>
             </div>
@@ -677,15 +677,15 @@ export default function HistoryPage() {
       </div>
 
       {/* PHÂN HỆ 3: NHẬT KÝ LUYỆN TẬP CHUYÊN SÂU (Learning Log - Hàng ngang đáy trang) */}
-      <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xl space-y-4 hover:border-slate-300/30 transition-all duration-300">
+      <div className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-6 shadow-xl space-y-4 hover:border-slate-300/30 transition-all duration-300">
         
-        <div className="flex items-center gap-2.5 border-b border-slate-200 pb-3">
-          <div className="w-8 h-8 rounded-lg bg-indigo-500/10 border border-indigo-300 flex items-center justify-center text-indigo-600 shadow-md">
+        <div className="flex items-center gap-2.5 border-b border-[rgba(0,0,0,0.1)] pb-3">
+          <div className="w-8 h-8 rounded-[var(--radius-btn)] bg-primary-light border border-primary-dark flex items-center justify-center text-primary shadow-md">
             <History className="w-4 h-4" />
           </div>
           <div>
-            <h2 className="text-sm font-bold text-slate-800">Nhật Ký Luyện Tập Chuyên Sâu</h2>
-            <p className="text-[10px] text-slate-600">Lịch sử và tiến độ hoàn thành các kỹ năng học tập gần nhất</p>
+            <h2 className="text-sm font-bold text-text-head">Nhật Ký Luyện Tập Chuyên Sâu</h2>
+            <p className="text-[10px] text-text-body">Lịch sử và tiến độ hoàn thành các kỹ năng học tập gần nhất</p>
           </div>
         </div>
 
@@ -693,7 +693,7 @@ export default function HistoryPage() {
         <div className="overflow-x-auto custom-scrollbar">
           <table className="w-full text-left border-collapse min-w-[600px]">
             <thead>
-              <tr className="border-b border-slate-200 text-[9px] font-bold text-slate-500 uppercase tracking-widest">
+              <tr className="border-b border-[rgba(0,0,0,0.1)] text-[9px] font-bold text-text-muted uppercase tracking-widest">
                 <th className="py-3 px-4">Bài học</th>
                 <th className="py-3 px-4">Hình thức</th>
                 <th className="py-3 px-4 text-center">Kết quả</th>
@@ -710,15 +710,15 @@ export default function HistoryPage() {
                   variants={tableRowVariants}
                   initial="hidden"
                   animate="visible"
-                  className="hover:bg-slate-100 transition-colors duration-200 group"
+                  className="hover:bg-card transition-colors duration-200 group"
                 >
-                  <td className="py-3 px-4 font-bold text-slate-800 group-hover:text-indigo-600 transition-colors">
+                  <td className="py-3 px-4 font-bold text-text-head group-hover:text-primary transition-colors">
                     {log.lessonTitle}
                   </td>
-                  <td className="py-3 px-4 uppercase text-[10px] font-black tracking-wider text-slate-500">
-                    <span className={`px-2 py-0.5 rounded-lg border text-[9px] ${
+                  <td className="py-3 px-4 uppercase text-[10px] font-black tracking-wider text-text-muted">
+                    <span className={`px-2 py-0.5 rounded-[var(--radius-btn)] border text-[9px] ${
                       log.type === "speaking" 
-                        ? "bg-indigo-500/10 border-indigo-300 text-indigo-600"
+                        ? "bg-primary-light border-primary-dark text-primary"
                         : log.type === "dictation"
                         ? "bg-blue-500/10 border-blue-300 text-blue-600"
                         : log.type === "quiz"
@@ -728,7 +728,7 @@ export default function HistoryPage() {
                       {log.type}
                     </span>
                   </td>
-                  <td className="py-3 px-4 font-black text-center text-sm tracking-tight text-slate-800">
+                  <td className="py-3 px-4 font-black text-center text-sm tracking-tight text-text-head">
                     {log.score}
                   </td>
                   <td className="py-3 px-4 font-bold">
@@ -744,10 +744,10 @@ export default function HistoryPage() {
                       </span>
                     )}
                   </td>
-                  <td className="py-3 px-4 text-slate-500 font-medium">
+                  <td className="py-3 px-4 text-text-muted font-medium">
                     {log.timeAgo}
                   </td>
-                  <td className="py-3 px-4 text-right font-black text-indigo-600">
+                  <td className="py-3 px-4 text-right font-black text-primary">
                     +{log.xpEarned} XP
                   </td>
                 </motion.tr>

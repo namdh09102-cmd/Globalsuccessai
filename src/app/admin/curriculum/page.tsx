@@ -297,7 +297,7 @@ export default function AdminCurriculum() {
               toastType === "error"
                 ? "bg-gradient-to-r from-red-600 to-rose-500 text-white shadow-red-500/40 border-red-400/60"
                 : "bg-gradient-to-r from-teal-500 to-teal-400 text-white shadow-teal-500/30 border-teal-300/40"
-            } font-black text-xs px-6 py-3 rounded-xl shadow-2xl flex items-center gap-2 border`}
+            } font-black text-xs px-6 py-3 rounded-[var(--radius-card)] shadow-2xl flex items-center gap-2 border`}
           >
             {toastType === "error" ? <AlertCircle className="w-4 h-4" /> : <CheckCircle className="w-4 h-4" />}
             <span>{toastMessage}</span>
@@ -306,14 +306,14 @@ export default function AdminCurriculum() {
       </AnimatePresence>
 
       <div className="flex items-center gap-3 border-b border-slate-800/60 pb-4">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-teal-600 to-teal-500 flex items-center justify-center shadow-lg shadow-teal-500/20">
+        <div className="w-12 h-12 rounded-[var(--radius-card)] bg-gradient-to-tr from-teal-600 to-teal-500 flex items-center justify-center shadow-lg shadow-teal-500/20">
           <BookOpen className="w-6 h-6 text-white" />
         </div>
         <div>
           <h1 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400 tracking-tight">
             Quản Lý Giáo Trình
           </h1>
-          <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mt-0.5">
+          <p className="text-xs text-text-muted font-bold uppercase tracking-widest mt-0.5">
             Cấu trúc bài giảng & Seeding Dữ liệu
           </p>
         </div>
@@ -322,7 +322,7 @@ export default function AdminCurriculum() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         
         {/* BENTO CARD #2: KHỐI QUẢN LÝ GIÁO TRÌNH */}
-        <div className="rounded-xl bg-[#111827] border border-slate-800 p-6 flex flex-col space-y-6 relative overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+        <div className="rounded-[var(--radius-card)] bg-[#111827] border border-slate-800 p-6 flex flex-col space-y-6 relative overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-500/5 rounded-full blur-[60px] pointer-events-none" />
           
           <div className="flex items-center justify-between border-b border-slate-800/60 pb-3">
@@ -334,7 +334,7 @@ export default function AdminCurriculum() {
               <button
                 onClick={handleAutoSeedL1}
                 disabled={isIngesting}
-                className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-3 py-1.5 rounded-lg hover:bg-indigo-500/20 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
+                className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider bg-primary-light text-indigo-400 border border-indigo-500/20 px-3 py-1.5 rounded-[var(--radius-btn)] hover:bg-primary/20 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
               >
                 <Rocket className="w-3.5 h-3.5" />
                 Auto Lớp 1
@@ -342,7 +342,7 @@ export default function AdminCurriculum() {
               <button
                 onClick={handleAutoSeedL2}
                 disabled={isIngesting}
-                className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-3 py-1.5 rounded-lg hover:bg-indigo-500/20 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
+                className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider bg-primary-light text-indigo-400 border border-indigo-500/20 px-3 py-1.5 rounded-[var(--radius-btn)] hover:bg-primary/20 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
               >
                 <Rocket className="w-3.5 h-3.5" />
                 Auto Lớp 2
@@ -350,7 +350,7 @@ export default function AdminCurriculum() {
               <button
                 onClick={handleAutoSeedL3}
                 disabled={isIngesting}
-                className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider bg-teal-500/10 text-teal-400 border border-teal-500/20 px-3 py-1.5 rounded-lg hover:bg-teal-500/20 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
+                className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider bg-teal-500/10 text-teal-400 border border-teal-500/20 px-3 py-1.5 rounded-[var(--radius-btn)] hover:bg-teal-500/20 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
               >
                 <Rocket className="w-3.5 h-3.5" />
                 Auto Lớp 3
@@ -368,19 +368,19 @@ export default function AdminCurriculum() {
                 <div key={grade} className="flex flex-col gap-1">
                   <div 
                     onClick={() => setIngestGrade(grade.toString())}
-                    className={`flex items-center justify-between p-3 rounded-xl border transition-all group cursor-pointer ${
+                    className={`flex items-center justify-between p-3 rounded-[var(--radius-card)] border transition-all group cursor-pointer ${
                       isSelected 
-                        ? "border-indigo-500/50 bg-indigo-500/10 shadow-[0_0_15px_rgba(217,70,239,0.15)]" 
+                        ? "border-indigo-500/50 bg-primary-light shadow-[0_0_15px_rgba(217,70,239,0.15)]" 
                         : "border-slate-800/50 bg-[#090D16]/50 hover:bg-[#090D16] hover:border-slate-700/50"
                     }`}
                   >
                     <div className="flex items-center gap-3">
-                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-black text-xs transition-colors ${
+                      <div className={`w-8 h-8 rounded-[var(--radius-btn)] flex items-center justify-center font-black text-xs transition-colors ${
                         hasData 
                           ? 'bg-teal-500/10 text-teal-400' 
                           : isSelected
-                            ? 'bg-indigo-500/20 text-indigo-400'
-                            : 'bg-slate-800 text-slate-500'
+                            ? 'bg-primary/20 text-indigo-400'
+                            : 'bg-slate-800 text-text-muted'
                       }`}>
                         {grade}
                       </div>
@@ -391,7 +391,7 @@ export default function AdminCurriculum() {
                             Đã nạp Data thật
                           </span>
                         ) : (
-                          <span className="inline-block mt-0.5 text-[8px] font-black uppercase tracking-wider text-slate-500 bg-slate-800 px-1.5 py-0.5 rounded border border-slate-700">
+                          <span className="inline-block mt-0.5 text-[8px] font-black uppercase tracking-wider text-text-muted bg-slate-800 px-1.5 py-0.5 rounded border border-slate-700">
                             Bản thô / Chờ duyệt
                           </span>
                         )}
@@ -399,7 +399,7 @@ export default function AdminCurriculum() {
                     </div>
                     
                     <div className="flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <button className="p-1.5 rounded bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/20 text-indigo-400 transition-all shadow-[0_2px_0_rgba(99,102,241,0.2)] active:translate-y-[2px] active:shadow-none" title="Thêm bài học">
+                      <button className="p-1.5 rounded bg-primary-light hover:bg-primary/20 border border-indigo-500/20 text-indigo-400 transition-all shadow-[0_2px_0_rgba(99,102,241,0.2)] active:translate-y-[2px] active:shadow-none" title="Thêm bài học">
                         <Plus className="w-3.5 h-3.5" />
                       </button>
                       {hasData && (
@@ -418,14 +418,14 @@ export default function AdminCurriculum() {
                   {isSelected && hasData && curriculumData[`l${grade}`] && (
                     <div className="mt-1 ml-4 pl-4 border-l-2 border-slate-800/60 space-y-2 mb-2">
                       {curriculumData[`l${grade}`].flatMap((unit: any) => unit.lessons || []).map((lesson: any) => (
-                        <div key={lesson.id} className="flex items-center justify-between p-2.5 rounded-xl bg-[#090D16]/80 border border-slate-800/40 group/lesson transition-all hover:border-slate-700/50">
+                        <div key={lesson.id} className="flex items-center justify-between p-2.5 rounded-[var(--radius-card)] bg-[#090D16]/80 border border-slate-800/40 group/lesson transition-all hover:border-slate-700/50">
                           <div className="flex flex-col min-w-0 pr-2">
                             <span className="text-[11px] font-bold text-slate-300 truncate">{lesson.title}</span>
-                            <span className="text-[9px] text-slate-500 uppercase tracking-widest font-mono mt-0.5">{lesson.type}</span>
+                            <span className="text-[9px] text-text-muted uppercase tracking-widest font-mono mt-0.5">{lesson.type}</span>
                           </div>
                           <button 
                             onClick={(e) => handleDeleteLesson(grade, lesson.id, e)}
-                            className="p-1.5 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/20 text-rose-400 opacity-0 group-hover/lesson:opacity-100 transition-all active:scale-95"
+                            className="p-1.5 rounded-[var(--radius-btn)] bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/20 text-rose-400 opacity-0 group-hover/lesson:opacity-100 transition-all active:scale-95"
                             title="Xóa bài học này"
                           >
                             <Trash2 className="w-3.5 h-3.5" />
@@ -433,7 +433,7 @@ export default function AdminCurriculum() {
                         </div>
                       ))}
                       {curriculumData[`l${grade}`].flatMap((u: any) => u.lessons || []).length === 0 && (
-                        <div className="text-[10px] text-slate-500 italic p-2">Chưa có bài học nào.</div>
+                        <div className="text-[10px] text-text-muted italic p-2">Chưa có bài học nào.</div>
                       )}
                     </div>
                   )}
@@ -444,8 +444,8 @@ export default function AdminCurriculum() {
         </div>
 
         {/* BENTO CARD #3: CỬA SỔ NẠP DATA */}
-        <div className="rounded-xl bg-[#111827] border border-slate-800 p-6 flex flex-col space-y-6 relative overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-500/5 rounded-full blur-[80px] pointer-events-none" />
+        <div className="rounded-[var(--radius-card)] bg-[#111827] border border-slate-800 p-6 flex flex-col space-y-6 relative overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/5 rounded-full blur-[80px] pointer-events-none" />
           
           <div className="flex items-center gap-2 text-slate-300 border-b border-slate-800/60 pb-3">
             <Rocket className="w-5 h-5 text-indigo-400 fill-indigo-400/20" />
@@ -455,13 +455,13 @@ export default function AdminCurriculum() {
           <div className="flex-1 flex flex-col space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest pl-1">
+                <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest pl-1">
                   Khối Lớp
                 </label>
                 <select 
                   value={ingestGrade}
                   onChange={(e) => setIngestGrade(e.target.value)}
-                  className="w-full bg-[#090D16] border border-slate-700 text-slate-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all appearance-none cursor-pointer"
+                  className="w-full bg-[#090D16] border border-slate-700 text-slate-200 text-xs rounded-[var(--radius-card)] px-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all appearance-none cursor-pointer"
                 >
                   {[...Array(12)].map((_, i) => (
                     <option key={i + 1} value={(i + 1).toString()}>
@@ -472,13 +472,13 @@ export default function AdminCurriculum() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest pl-1">
+                <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest pl-1">
                   Loại dữ liệu nạp
                 </label>
                 <select 
                   value={ingestType}
                   onChange={(e) => setIngestType(e.target.value)}
-                  className="w-full bg-[#090D16] border border-slate-700 text-slate-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all appearance-none"
+                  className="w-full bg-[#090D16] border border-slate-700 text-slate-200 text-xs rounded-[var(--radius-card)] px-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all appearance-none"
                 >
                   <option value="speaking">Bài tập Speaking (Hội thoại)</option>
                   <option value="dictation">Bài tập Dictation (Điền từ)</option>
@@ -488,17 +488,17 @@ export default function AdminCurriculum() {
             </div>
 
             <div className="flex-1 flex flex-col space-y-2 relative min-h-[300px]">
-              <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest pl-1 flex items-center justify-between">
+              <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest pl-1 flex items-center justify-between">
                 <span>Nội dung thô (Raw Data)</span>
-                <span className="text-indigo-400 bg-indigo-500/10 px-1.5 py-0.5 rounded text-[8px]">Auto-Seeding</span>
+                <span className="text-indigo-400 bg-primary-light px-1.5 py-0.5 rounded text-[8px]">Auto-Seeding</span>
               </label>
               <textarea
                 value={ingestData}
                 onChange={(e) => setIngestData(e.target.value)}
                 placeholder="Dán cấu trúc JSON hoặc đoạn văn bản chứa ngoặc vuông [ ] vào đây để hệ thống tự động Seeding..."
-                className="flex-1 w-full bg-[#090D16] border border-slate-700 text-slate-300 text-xs rounded-xl p-4 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all resize-none custom-scrollbar font-mono leading-relaxed placeholder:text-slate-600"
+                className="flex-1 w-full bg-[#090D16] border border-slate-700 text-slate-300 text-xs rounded-[var(--radius-card)] p-4 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all resize-none custom-scrollbar font-mono leading-relaxed placeholder:text-text-body"
               />
-              <div className="absolute bottom-4 right-4 flex items-center gap-1.5 text-[9px] text-slate-500 bg-[#111827] px-2 py-1 rounded-md border border-slate-800">
+              <div className="absolute bottom-4 right-4 flex items-center gap-1.5 text-[9px] text-text-muted bg-[#111827] px-2 py-1 rounded-md border border-slate-800">
                 <AlertCircle className="w-3 h-3 text-amber-500" />
                 <span>Format: JSON / Plain Text</span>
               </div>
@@ -507,7 +507,7 @@ export default function AdminCurriculum() {
             <button
               onClick={handleBulkIngestion}
               disabled={isIngesting || !ingestData.trim()}
-              className="w-full py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-pink-500 hover:from-indigo-500 hover:to-pink-400 text-white text-xs font-black uppercase tracking-wider shadow-[0_6px_0_#831843] hover:shadow-[0_3px_0_#831843] active:translate-y-[3px] active:shadow-none transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-[0_6px_0_#831843] disabled:active:translate-y-0 mt-4"
+              className="w-full py-4 rounded-[var(--radius-card)] bg-gradient-to-r from-indigo-600 to-pink-500 hover:from-indigo-500 hover:to-pink-400 text-white text-xs font-black uppercase tracking-wider shadow-[0_6px_0_#831843] hover:shadow-[0_3px_0_#831843] active:translate-y-[3px] active:shadow-none transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-[0_6px_0_#831843] disabled:active:translate-y-0 mt-4"
             >
               {isIngesting ? "Đang xử lý đồng bộ..." : "Kích Hoạt Đồng Bộ Toàn Hệ Thống"}
             </button>
