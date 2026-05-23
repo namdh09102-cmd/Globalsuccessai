@@ -233,19 +233,19 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
       {/* Right group */}
       <div className="flex items-center gap-3">
         {/* Streak chip */}
-        <div id="streak-chip" className="bg-xp text-xp-text border border-xp-dark rounded-[999px] px-3 py-1 flex items-center gap-1 shadow-sm transition-transform" style={{ animation: 'shimmerCustom 2s infinite' }}>
+        <div id="streak-chip" className="streak-chip bg-xp text-xp-text border border-xp-dark rounded-[999px] px-3 py-1 flex items-center gap-1 shadow-sm transition-transform">
           <span className="text-[14px]">🔥</span>
           <span className="font-nunito font-extrabold text-[12px]">{stats.streak} ngày</span>
         </div>
         
         {/* XP chip */}
-        <div id="xp-chip" className="bg-white text-primary border border-[rgba(0,0,0,0.1)] rounded-[999px] px-3 py-1 flex items-center gap-1 shadow-sm transition-colors">
+        <div id="xp-chip" className="xp-chip bg-white text-primary border border-[rgba(0,0,0,0.1)] rounded-[999px] px-3 py-1 flex items-center gap-1 shadow-sm transition-colors">
           <span className="text-[14px]">⚡</span>
-          <span className="font-nunito font-extrabold text-[12px]">{(stats.xp).toLocaleString()} XP</span>
+          <span className="font-nunito font-extrabold text-[12px] xp-number">{(stats.xp).toLocaleString()} XP</span>
         </div>
 
         {/* Avatar circle */}
-        <div className="w-[36px] h-[36px] rounded-full border-[3px] border-xp bg-card flex items-center justify-center shadow-md animate-bounce-custom cursor-pointer hover:scale-105 transition-transform">
+        <div className="mascot-avatar w-[36px] h-[36px] rounded-full border-[3px] border-xp bg-card flex items-center justify-center shadow-md cursor-pointer hover:scale-105 transition-transform">
           <span className="text-[20px]">🦖</span>
         </div>
       </div>

@@ -226,7 +226,6 @@ export default function AIPracticePage() {
     <div className="p-6 md:p-8 max-w-4xl mx-auto space-y-8 select-none animate-fadeIn">
       {/* 1. Header Khơi Gợi */}
       <div className="border-b border-[rgba(0,0,0,0.1)] pb-6 relative">
-        <div className="absolute top-0 right-0 w-24 h-24 bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)]/10 rounded-full blur-2xl pointer-events-none" />
         <div className="flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-wider mb-1">
           <Sparkles className="w-3.5 h-3.5 animate-pulse" />
           <span>Luyện nói tự do cùng AI Coach</span>
@@ -317,10 +316,8 @@ export default function AIPracticePage() {
             )}
             <button
               onClick={isRecording ? stopRecording : startRecording}
-              className={`relative z-10 w-24 h-24 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 active:scale-95 ${
-                isRecording
-                  ? "bg-gradient-to-tr from-rose-600 to-pink-500 hover:from-rose-500 hover:to-pink-400 text-white shadow-rose-500/25"
-                  : "bg-gradient-to-r from-indigo-600 to-indigo-600 hover:from-indigo-500 hover:to-indigo-500 text-text-head shadow-indigo-500/20 hover:shadow-indigo-500/30"
+              className={`mic-button text-white flex items-center justify-center transition-all duration-300 active:scale-95 ${
+                isRecording ? "scale-110" : ""
               }`}
             >
               {isRecording ? (

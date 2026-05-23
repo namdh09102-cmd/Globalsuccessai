@@ -131,9 +131,9 @@ export default function RightPanel() {
                     }
                   }}
                   id="blue-task"
-                  className="relative rounded-[16px] border-[2.5px] border-[#4ECDC4] bg-[#EFF8FF] p-[12px_14px] flex flex-col gap-2 group cursor-pointer transition-transform shadow-sm active:scale-95"
+                  className="mission-card-study relative rounded-[16px] p-[12px_14px] flex flex-col gap-2 group cursor-pointer transition-transform shadow-sm active:scale-95"
                 >
-                  <div className="text-[32px] animate-float-custom" style={{ animationDelay: '0s' }}>📘</div>
+                  <div className="text-[32px] mission-icon" style={{ animationDelay: '0s' }}>📘</div>
                   <div className="space-y-1 mt-1">
                     <span className="text-[10px] font-nunito font-extrabold uppercase text-[#4ECDC4]">Bài học</span>
                     <p className="text-[13px] font-nunito font-bold text-[#333] leading-[1.3]">Hoàn thành 1 bài SGK</p>
@@ -153,8 +153,8 @@ export default function RightPanel() {
                 </div>
 
                 {/* Pink Task */}
-                <div className="relative rounded-[16px] border-[2.5px] border-[#FF6B9D] bg-[#FFE8F4] p-[12px_14px] flex flex-col gap-2 group hover:-translate-y-1 transition-transform shadow-sm">
-                  <div className="text-[32px] animate-float-custom" style={{ animationDelay: '0.4s' }}>🎙️</div>
+                <div className="mission-card-speak relative rounded-[16px] p-[12px_14px] flex flex-col gap-2 group hover:-translate-y-1 transition-transform shadow-sm">
+                  <div className="text-[32px] mission-icon" style={{ animationDelay: '0.4s' }}>🎙️</div>
                   <div className="space-y-1 mt-1">
                     <span className="text-[10px] font-nunito font-extrabold uppercase text-[#FF6B9D]">Luyện nói</span>
                     <p className="text-[13px] font-nunito font-bold text-[#333] leading-[1.3]">Luyện âm cùng AI</p>
@@ -165,8 +165,8 @@ export default function RightPanel() {
                 </div>
 
                 {/* Green Task */}
-                <div className="relative rounded-[16px] border-[2.5px] border-[#6BCB77] bg-[#EDFFF0] p-[12px_14px] flex flex-col gap-2 group hover:-translate-y-1 transition-transform shadow-sm">
-                  <div className="text-[32px] animate-float-custom" style={{ animationDelay: '0.8s' }}>🎧</div>
+                <div className="mission-card-listen relative rounded-[16px] p-[12px_14px] flex flex-col gap-2 group hover:-translate-y-1 transition-transform shadow-sm">
+                  <div className="text-[32px] mission-icon" style={{ animationDelay: '0.8s' }}>🎧</div>
                   <div className="space-y-1 mt-1">
                     <span className="text-[10px] font-nunito font-extrabold uppercase text-[#6BCB77]">Luyện nghe</span>
                     <p className="text-[13px] font-nunito font-bold text-[#333] leading-[1.3]">Nghe và chép chính tả</p>
@@ -177,8 +177,8 @@ export default function RightPanel() {
                 </div>
 
                 {/* Orange Task */}
-                <div className="relative rounded-[16px] border-[2.5px] border-[#FFD166] bg-[#FFF8E1] p-[12px_14px] flex flex-col gap-2 group hover:-translate-y-1 transition-transform shadow-sm">
-                  <div className="text-[32px] animate-float-custom" style={{ animationDelay: '1.2s' }}>⚡</div>
+                <div className="mission-card-challenge relative rounded-[16px] p-[12px_14px] flex flex-col gap-2 group hover:-translate-y-1 transition-transform shadow-sm">
+                  <div className="text-[32px] mission-icon" style={{ animationDelay: '1.2s' }}>⚡</div>
                   <div className="space-y-1 mt-1">
                     <span className="text-[10px] font-nunito font-extrabold uppercase text-[#F0A500]">Thử thách</span>
                     <p className="text-[13px] font-nunito font-bold text-[#333] leading-[1.3]">Tích lũy 100 XP hôm nay</p>
@@ -194,7 +194,7 @@ export default function RightPanel() {
             <div className="space-y-4 pb-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-[14px] font-black text-text-muted uppercase tracking-widest font-fredoka flex items-center gap-2">
-                  <Trophy className="w-5 h-5 text-xp-dark" />
+                  <Trophy className="w-5 h-5 text-xp-dark crown-icon" />
                   Bảng Xếp Hạng
                 </h3>
                 <Link href="/games/class-king" className="text-[11px] font-black text-primary hover:underline">

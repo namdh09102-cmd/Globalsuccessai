@@ -10,8 +10,7 @@ const GAME_MODES = [
     title: "Đấu Quick",
     desc: "1v1 tốc độ! Đọc thật nhanh và chuẩn để hạ gục đối thủ.",
     icon: Zap,
-    color: "bg-blue-500",
-    shadow: "shadow-blue-500",
+    customClass: "game-dau-quick",
     href: "/games/quick-battle"
   },
   {
@@ -19,8 +18,7 @@ const GAME_MODES = [
     title: "Xây Lâu Đài",
     desc: "Cùng cả lớp xây dựng lâu đài tri thức bằng cách trả lời đúng.",
     icon: Castle,
-    color: "bg-amber-500",
-    shadow: "shadow-amber-500",
+    customClass: "game-lau-dai",
     href: "/games/castle-builder"
   },
   {
@@ -28,8 +26,7 @@ const GAME_MODES = [
     title: "Vua Lớp Học",
     desc: "Bảng vàng danh dự hàng tuần. Thách đấu ngay để đoạt ngôi vương!",
     icon: Crown,
-    color: "bg-yellow-400",
-    shadow: "shadow-yellow-400",
+    customClass: "game-vua-lop",
     href: "/games/class-king"
   },
   {
@@ -37,8 +34,7 @@ const GAME_MODES = [
     title: "Đua Tên Lửa",
     desc: "Đua tốc độ giải bài tập. Tên lửa ai về đích trước sẽ thắng!",
     icon: Rocket,
-    color: "bg-rose-500",
-    shadow: "shadow-rose-500",
+    customClass: "game-ten-lua",
     href: "/games/rocket-race"
   },
   {
@@ -46,8 +42,7 @@ const GAME_MODES = [
     title: "Quay May Mắn",
     desc: "Dùng 100 XP để quay thưởng mỗi ngày. Rất nhiều skin hiếm!",
     icon: Ticket,
-    color: "bg-purple-500",
-    shadow: "shadow-purple-500",
+    customClass: "game-quay-vong",
     href: "/games/spin-wheel"
   },
   {
@@ -55,8 +50,7 @@ const GAME_MODES = [
     title: "Đội Đấu Đội",
     desc: "Chia 2 phe Xanh - Đỏ. Kéo co điểm số cực kỳ kịch tính.",
     icon: Users,
-    color: "bg-teal-500",
-    shadow: "shadow-teal-500",
+    customClass: "game-doi-dau",
     href: "/games/team-battle"
   }
 ];
@@ -82,27 +76,24 @@ export default function GamesHub() {
             <Link 
               key={game.id}
               href={game.href}
-              className="group relative bg-white border-[3px] border-[rgba(0,0,0,0.1)] rounded-[24px] p-6 hover:border-primary-dark transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_0_var(--c-primary-dark)] shadow-[0_4px_0_rgba(0,0,0,0.1)] cursor-pointer overflow-hidden flex flex-col items-center text-center"
+              className={`game-card ${game.customClass} group relative p-6 cursor-pointer overflow-hidden flex flex-col items-center text-center`}
               style={{ animationDelay: `${i * 0.1}s` }}
             >
-              {/* Background Glow */}
-              <div className={`absolute top-0 right-0 w-32 h-32 ${game.color} opacity-10 rounded-full blur-3xl pointer-events-none group-hover:opacity-20 transition-opacity`} />
-              
-              <div className={`w-16 h-16 rounded-[18px] ${game.color} text-white flex items-center justify-center mb-4 shadow-lg group-hover:animate-bounce-custom transition-transform`}>
+              <div className={`w-16 h-16 rounded-[18px] bg-white text-current bg-opacity-20 flex items-center justify-center mb-4 shadow-sm group-hover:animate-bounce-custom transition-transform`}>
                 <Icon className="w-8 h-8" />
               </div>
 
-              <h2 className="text-[20px] font-fredoka text-text-head mb-2 group-hover:text-primary-dark transition-colors">
+              <h2 className="text-[20px] font-fredoka mb-2">
                 {game.title}
               </h2>
               
-              <p className="text-[13px] font-nunito font-bold text-text-muted">
+              <p className="text-[13px] font-nunito font-bold opacity-80">
                 {game.desc}
               </p>
 
-              <div className="mt-6 w-full py-2.5 rounded-xl bg-page text-primary-dark font-black text-xs uppercase tracking-wider group-hover:bg-primary group-hover:text-white transition-colors border border-[rgba(0,0,0,0.05)]">
+              <button className="mt-6 w-full py-2.5 rounded-xl font-black text-xs uppercase tracking-wider transition-colors border border-[rgba(0,0,0,0.05)]">
                 Chơi Ngay
-              </div>
+              </button>
             </Link>
           );
         })}
