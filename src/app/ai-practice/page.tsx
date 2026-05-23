@@ -231,7 +231,7 @@ export default function AIPracticePage() {
           <Sparkles className="w-3.5 h-3.5 animate-pulse" />
           <span>Luyện nói tự do cùng AI Coach</span>
         </div>
-        <h1 className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-300">
+        <h1 className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-slate-700 to-slate-500">
           Phòng Luyện Phát Âm Trực Tiếp
         </h1>
         <p className="text-xs md:text-sm text-slate-500 mt-2 leading-relaxed">
@@ -256,7 +256,7 @@ export default function AIPracticePage() {
           rows={3}
           maxLength={300}
           placeholder="Ví dụ: 'Technology is playing a crucial role in modern education.'"
-          className="w-full rounded-2xl border border-slate-200 bg-slate-50 p-4 text-slate-800 text-base md:text-sm focus:border-violet-500 focus:ring-2 focus:ring-violet-550/20 outline-none transition-all resize-none custom-scrollbar shadow-inner"
+          className="w-full rounded-2xl border border-slate-300 bg-white p-4 text-slate-800 placeholder-slate-400 text-base md:text-sm focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 outline-none transition-all resize-none custom-scrollbar shadow-inner"
         />
         
         <div className="flex items-center justify-between">
@@ -319,7 +319,7 @@ export default function AIPracticePage() {
               onClick={isRecording ? stopRecording : startRecording}
               className={`relative z-10 w-24 h-24 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 active:scale-95 ${
                 isRecording
-                  ? "bg-gradient-to-tr from-rose-600 to-pink-500 hover:from-rose-500 hover:to-pink-400 text-slate-800 shadow-rose-500/25"
+                  ? "bg-gradient-to-tr from-rose-600 to-pink-500 hover:from-rose-500 hover:to-pink-400 text-white shadow-rose-500/25"
                   : "bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-slate-800 shadow-indigo-500/20 hover:shadow-indigo-500/30"
               }`}
             >
@@ -348,7 +348,7 @@ export default function AIPracticePage() {
             <div className="flex gap-3 w-full">
               <button
                 onClick={resetPractice}
-                className="flex-1 py-3 rounded-2xl border border-slate-200 bg-slate-100 hover:bg-slate-850 hover:text-slate-800 text-slate-500 text-xs font-bold transition-all active:scale-[0.98] flex items-center justify-center gap-2"
+                className="flex-1 py-3 rounded-2xl border border-slate-200 bg-slate-100 hover:bg-slate-100 hover:text-slate-800 text-slate-500 text-xs font-bold transition-all active:scale-[0.98] flex items-center justify-center gap-2"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 <span>Thu âm lại</span>
@@ -357,7 +357,7 @@ export default function AIPracticePage() {
               <button
                 onClick={() => handleEvaluation()}
                 disabled={isEvaluating}
-                className="flex-2 py-3 px-6 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-slate-800 text-xs font-bold transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/20 disabled:opacity-50"
+                className="flex-2 py-3 px-6 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/20 disabled:opacity-50"
               >
                 {isEvaluating ? (
                   <>
@@ -510,7 +510,7 @@ export default function AIPracticePage() {
             
             <div className="flex flex-wrap gap-x-2 gap-y-2 text-sm leading-relaxed p-1 select-all">
               {evaluationResult.words.map((w, idx) => {
-                let colorClass = "text-slate-350 bg-slate-100 border-slate-200";
+                let colorClass = "text-slate-400 bg-slate-100 border-slate-200";
                 
                 if (w.status === "correct") {
                   colorClass = "text-emerald-400 bg-emerald-500/10 border-emerald-500/20";
@@ -550,7 +550,7 @@ export default function AIPracticePage() {
           </div>
 
           {/* AI Coach Feedback Panel */}
-          <div className="p-4 rounded-2xl border border-violet-500/15 bg-gradient-to-br from-[#121626] to-[#151930] flex gap-4 items-start shadow-inner">
+          <div className="p-4 rounded-2xl border border-violet-500/15 bg-gradient-to-br from-indigo-50 to-blue-50 border-indigo-200 flex gap-4 items-start shadow-inner">
             <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-violet-600 to-indigo-600 flex items-center justify-center font-bold text-slate-800 text-xs shrink-0 shadow-md">
               AI
             </div>

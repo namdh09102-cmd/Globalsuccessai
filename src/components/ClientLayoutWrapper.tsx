@@ -139,7 +139,7 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
   // Chế độ bảo trì (Chặn mọi route học sinh và teacher, nhưng tha cho Admin)
   if (isMaintenance && !isAdminRoute) {
     return (
-      <div className="flex-1 w-full h-full flex flex-col items-center justify-center bg-[#070A13] text-center p-8 space-y-6 select-none">
+      <div className="flex-1 w-full h-full flex flex-col items-center justify-center bg-slate-50 text-center p-8 space-y-6 select-none">
         <div className="w-24 h-24 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center animate-pulse shadow-2xl shadow-amber-500/20">
           <Wrench className="w-12 h-12 text-amber-500" />
         </div>

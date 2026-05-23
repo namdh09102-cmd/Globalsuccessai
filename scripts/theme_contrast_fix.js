@@ -1,77 +1,80 @@
 const fs = require('fs');
 const path = require('path');
 
-const pageFile = path.join(__dirname, '../src/app/page.tsx');
-let content = fs.readFileSync(pageFile, 'utf8');
+const dirs = [
+  'dashboard',
+  'ai-practice',
+  'profile',
+  'history',
+  'teacher',
+  'upgrade',
+  'admin',
+  'auth',
+  'learn'
+];
 
-// 1. "Học SGK" card
-content = content.replace(
-  /<div \n                onClick=\{\(\) => \{\n                  document.getElementById\("curriculum-section"\)\?.scrollIntoView\(\{ behavior: "smooth" \}\);\n                \}\}\n                className="group relative rounded-3xl border border-slate-200 bg-white p-5 cursor-pointer flex flex-col justify-between min-h-\[160px\] transition-all duration-300 hover:border-indigo-500\/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-950\/20"/g,
-  `<div 
-                onClick={() => {
-                  document.getElementById("curriculum-section")?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="group relative rounded-3xl border border-blue-100 bg-blue-50/40 p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-blue-300 hover:bg-blue-50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-200"`
-);
+function processFile(filePath) {
+  if (!fs.existsSync(filePath)) return;
+  
+  let content = fs.readFileSync(filePath, 'utf8');
+  let originalContent = content;
 
-// 2. "Luyện nghe Dictation" card
-content = content.replace(
-  /className="group relative rounded-3xl border border-slate-200 bg-white p-5 cursor-pointer flex flex-col justify-between min-h-\[160px\] transition-all duration-300 hover:border-indigo-500\/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-950\/20"/g,
-  `className="group relative rounded-3xl border border-indigo-100 bg-indigo-50/40 p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-indigo-300 hover:bg-indigo-50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-200"`
-);
+  // 1. Fix Headers (Invisible white gradients)
+  content = content.replace(/from-white via-slate-100 to-slate-300/g, 'from-slate-800 via-slate-700 to-slate-500');
+  content = content.replace(/from-white to-slate-400/g, 'from-slate-800 to-slate-500');
+  content = content.replace(/from-white via-violet-200 to-amber-300/g, 'from-violet-800 via-violet-600 to-amber-600');
+  content = content.replace(/text-slate-100/g, 'text-slate-800');
 
-// We need to apply it specifically for each card because the original regex replaced all remaining matching classes. 
-// The second match will be dictation, third will be speaking. But since they had the exact same class string:
-// Actually, I can just replace all instances of that long class string with a generic colorful one, or just `border-slate-200 bg-slate-50/50 hover:bg-slate-50 hover:border-indigo-300 hover:shadow-indigo-200`.
-// Let's re-read and fix the script.
+  // 2. Fix Custom / Invalid Tailwind Colors
+  content = content.replace(/text-slate-350/g, 'text-slate-400');
+  content = content.replace(/text-slate-450/g, 'text-slate-500');
+  content = content.replace(/text-slate-550/g, 'text-slate-600');
+  content = content.replace(/text-slate-650/g, 'text-slate-700');
+  content = content.replace(/bg-slate-850/g, 'bg-slate-100');
+  content = content.replace(/border-slate-850/g, 'border-slate-300');
+  content = content.replace(/divide-slate-850\/30/g, 'divide-slate-200');
 
-content = fs.readFileSync(pageFile, 'utf8');
+  // 3. Fix dark boxes that were missed (AI Coach Feedback Panels, etc.)
+  content = content.replace(/bg-gradient-to-br from-\[\#121626\] to-\[\#151930\]/g, 'bg-gradient-to-br from-indigo-50 to-blue-50 border-indigo-200');
+  content = content.replace(/bg-\[\#1E293B\]/g, 'bg-white');
+  content = content.replace(/bg-\[\#070A13\]/g, 'bg-slate-50');
 
-// Replace Quick Action cards general class string:
-// class: group relative rounded-3xl border border-slate-200 bg-white p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-indigo-500/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-950/20
-const oldClass = 'group relative rounded-3xl border border-slate-200 bg-white p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-indigo-500/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-950/20';
+  // 4. Fix Dark text on Dark buttons (e.g. bg-indigo-600 text-slate-800 -> text-white)
+  // This is tricky with regex, so let's do common buttons:
+  content = content.replace(/bg-indigo-600 hover:bg-indigo-500 text-slate-800/g, 'bg-indigo-600 hover:bg-indigo-500 text-white');
+  content = content.replace(/bg-emerald-600 hover:bg-emerald-500 text-slate-800/g, 'bg-emerald-600 hover:bg-emerald-500 text-white');
+  content = content.replace(/bg-violet-600 hover:bg-violet-500 text-slate-800/g, 'bg-violet-600 hover:bg-violet-500 text-white');
+  content = content.replace(/bg-blue-600 hover:bg-blue-500 text-slate-800/g, 'bg-blue-600 hover:bg-blue-500 text-white');
+  content = content.replace(/from-violet-600 to-indigo-600 text-slate-800/g, 'from-violet-600 to-indigo-600 text-white');
+  content = content.replace(/from-emerald-600 to-teal-500 text-slate-800/g, 'from-emerald-600 to-teal-500 text-white');
+  content = content.replace(/from-rose-600 to-pink-500 hover:from-rose-500 hover:to-pink-400 text-slate-800/g, 'from-rose-600 to-pink-500 hover:from-rose-500 hover:to-pink-400 text-white');
 
-// We have 3 cards. I will replace them one by one if they exist.
-if (content.includes(oldClass)) {
-  content = content.replace(oldClass, 'group relative rounded-3xl border border-blue-100 bg-blue-50/40 p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-blue-300 hover:bg-blue-50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-200');
-  content = content.replace(oldClass, 'group relative rounded-3xl border border-purple-100 bg-purple-50/40 p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-purple-300 hover:bg-purple-50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-purple-200');
-  content = content.replace(oldClass, 'group relative rounded-3xl border border-indigo-100 bg-indigo-50/40 p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-indigo-300 hover:bg-indigo-50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-200');
+  // Profile avatar text:
+  content = content.replace(/text-transparent bg-gradient-to-tr from-violet-400 to-blue-400/g, 'text-transparent bg-gradient-to-tr from-violet-600 to-blue-600');
+
+  if (content !== originalContent) {
+    fs.writeFileSync(filePath, content, 'utf8');
+    console.log('Fixed contrast in', filePath);
+  }
 }
 
-// Chevron buttons in these cards:
-// from `bg-slate-900 group-hover:bg-indigo-600` to `bg-indigo-100 group-hover:bg-indigo-600 text-indigo-500 group-hover:text-white`
-content = content.replace(/bg-slate-900 group-hover:bg-indigo-600 flex items-center justify-center text-slate-500/g, 'bg-white group-hover:bg-indigo-600 flex items-center justify-center text-slate-500 border border-slate-200 group-hover:border-indigo-600 shadow-sm');
+// Process all subdirectories
+for (const dir of dirs) {
+  const pagePath = path.join(__dirname, '../src/app', dir, 'page.tsx');
+  processFile(pagePath);
+  
+  // Also check if there are nested components inside those dirs
+  const files = fs.readdirSync(path.join(__dirname, '../src/app', dir));
+  for (const f of files) {
+    if (f.endsWith('.tsx') && f !== 'page.tsx') {
+      processFile(path.join(__dirname, '../src/app', dir, f));
+    }
+  }
+}
 
-// Top Stats row (Bài đã học, Độ chính xác, XP):
-// from `bg-slate-50 border-slate-200` to `bg-white border-slate-200 shadow-md`
-content = content.replace(/bg-slate-50 border-slate-200 shadow-sm backdrop-blur-sm border/g, 'bg-white border-slate-200 shadow-md backdrop-blur-sm border');
+// Also process some components
+processFile(path.join(__dirname, '../src/components/RightPanel.tsx'));
+processFile(path.join(__dirname, '../src/components/Sidebar.tsx'));
+processFile(path.join(__dirname, '../src/components/ClientLayoutWrapper.tsx'));
 
-// Unit cards:
-// line 1383 `? "border-indigo-500/50 bg-white" : "border-slate-200 bg-white hover:border-slate-300"`
-content = content.replace(/\? "border-indigo-500\/50 bg-white"/g, '? "border-indigo-400 bg-indigo-50/30 shadow-md"');
-content = content.replace(/: "border-slate-200 bg-white hover:border-slate-300"/g, ': "border-slate-200 bg-slate-50/50 hover:border-indigo-300 hover:bg-white hover:shadow-md"');
-// Change Unit card shadow-xl to shadow-sm
-content = content.replace(/min-h-\[180px\] transition-all duration-300 shadow-xl group cursor-pointer/g, 'min-h-[180px] transition-all duration-300 shadow-sm group cursor-pointer');
-
-// Progress bar background `bg-slate-800` inside Unit card -> `bg-slate-200`
-content = content.replace(/<div className="h-1 bg-slate-800 rounded-full overflow-hidden">/g, '<div className="h-1.5 bg-slate-200 rounded-full overflow-hidden shadow-inner border border-slate-300/50">');
-
-// Unit details locked container opacity
-content = content.replace(/border-slate-200 bg-slate-50 opacity-70 hover:opacity-90/g, 'border-slate-200 bg-slate-100 opacity-60');
-
-fs.writeFileSync(pageFile, content, 'utf8');
-
-// RightPanel tweaks
-const rpFile = path.join(__dirname, '../src/components/RightPanel.tsx');
-let rpContent = fs.readFileSync(rpFile, 'utf8');
-
-// Change `bg-slate-50` to `bg-white` inside RightPanel for stats boxes so they pop against the white RightPanel (Wait! If RightPanel is white, white boxes don't pop. They need colored tints!)
-// Stats detailed list
-rpContent = rpContent.replace(/bg-slate-50 flex flex-col/g, 'bg-white border-slate-200 flex flex-col hover:border-indigo-300 hover:shadow-md transition-all');
-
-// Nhiệm vụ hôm nay cards
-rpContent = rpContent.replace(/bg-white border border-slate-200 flex items-center/g, 'bg-white border border-slate-200 shadow-sm hover:shadow-md flex items-center');
-
-fs.writeFileSync(rpFile, rpContent, 'utf8');
-
-console.log('Done tweaking colors for contrast!');
+console.log('Contrast fix complete!');

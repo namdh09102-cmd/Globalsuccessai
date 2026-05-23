@@ -362,7 +362,7 @@ export default function HistoryPage() {
           <Trophy className="w-3.5 h-3.5" />
           <span>Bảng Vàng Học Viên K-12</span>
         </div>
-        <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-300">
+        <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-slate-700 to-slate-500">
           Thi Đua & Thành Tích
         </h1>
         <p className="text-xs text-slate-500 mt-1">
@@ -412,7 +412,7 @@ export default function HistoryPage() {
                   heightClass = "h-32";
                 } else if (isTop2) {
                   rankBadge = "🥈";
-                  borderColor = "border-slate-400/30 bg-slate-850/30 text-slate-350";
+                  borderColor = "border-slate-400/30 bg-slate-100/30 text-slate-400";
                   heightClass = "h-28";
                 }
 
@@ -517,7 +517,7 @@ export default function HistoryPage() {
                           </span>
                         )}
                       </div>
-                      <span className="text-[9px] text-slate-550 block">Lớp {student.class}</span>
+                      <span className="text-[9px] text-slate-600 block">Lớp {student.class}</span>
                     </div>
                   </div>
 
@@ -525,7 +525,7 @@ export default function HistoryPage() {
                   <div className="flex items-center gap-5 text-right">
                     <div className="hidden sm:flex items-center gap-3">
                       {/* Badges count */}
-                      <div className="flex items-center gap-0.5 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-lg text-[9px] text-slate-450 font-bold">
+                      <div className="flex items-center gap-0.5 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-lg text-[9px] text-slate-500 font-bold">
                         <Award className="w-3 h-3 text-indigo-400" />
                         <span>{student.badgesCount} danh hiệu</span>
                       </div>
@@ -598,7 +598,7 @@ export default function HistoryPage() {
                     {/* Glassmorphism lock overlay cho các huy hiệu chưa đạt */}
                     {!badge.unlocked && (
                       <div className="absolute inset-0 bg-slate-50 backdrop-blur-[2.5px] rounded-2xl flex flex-col items-center justify-center p-3 text-center z-10 border border-slate-900/60 transition-all duration-300 group-hover:bg-slate-50">
-                        <div className="w-8 h-8 rounded-xl bg-slate-950/80 border border-slate-200 flex items-center justify-center text-slate-450 mb-1.5 shadow-md">
+                        <div className="w-8 h-8 rounded-xl bg-slate-950/80 border border-slate-200 flex items-center justify-center text-slate-500 mb-1.5 shadow-md">
                           <Lock className="w-3.5 h-3.5" />
                         </div>
                         <span className="text-[8px] font-bold text-slate-500 uppercase tracking-widest block mb-0.5">Chưa đạt</span>
@@ -615,7 +615,7 @@ export default function HistoryPage() {
                         <div className={`w-9 h-9 rounded-xl flex items-center justify-center border transition-all duration-500 group-hover:rotate-[15deg] group-hover:scale-105 shadow-inner ${
                           badge.unlocked
                             ? `text-white bg-gradient-to-tr from-violet-600 to-indigo-600 border-violet-400/25`
-                            : "bg-slate-100 border-slate-200 text-slate-650"
+                            : "bg-slate-100 border-slate-200 text-slate-700"
                         }`}>
                           <Icon className="w-4 h-4" />
                         </div>
@@ -623,7 +623,7 @@ export default function HistoryPage() {
 
                       <div className="space-y-1 mt-3">
                         <h3 className={`text-[11px] font-black leading-tight truncate ${
-                          badge.unlocked ? "text-slate-800 group-hover:text-indigo-400 transition-colors" : "text-slate-650"
+                          badge.unlocked ? "text-slate-800 group-hover:text-indigo-400 transition-colors" : "text-slate-700"
                         }`}>
                           {badge.name}
                         </h3>
@@ -673,7 +673,7 @@ export default function HistoryPage() {
           </div>
           <div>
             <h2 className="text-sm font-bold text-slate-800">Nhật Ký Luyện Tập Chuyên Sâu</h2>
-            <p className="text-[10px] text-slate-550">Lịch sử và tiến độ hoàn thành các kỹ năng học tập gần nhất</p>
+            <p className="text-[10px] text-slate-600">Lịch sử và tiến độ hoàn thành các kỹ năng học tập gần nhất</p>
           </div>
         </div>
 
@@ -690,7 +690,7 @@ export default function HistoryPage() {
                 <th className="py-3 px-4 text-right">Phần thưởng</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-850/30 text-xs">
+            <tbody className="divide-y divide-slate-200 text-xs">
               {learningLogs.map((log, idx) => (
                 <motion.tr 
                   key={idx} 
@@ -732,7 +732,7 @@ export default function HistoryPage() {
                       </span>
                     )}
                   </td>
-                  <td className="py-3 px-4 text-slate-450 font-medium">
+                  <td className="py-3 px-4 text-slate-500 font-medium">
                     {log.timeAgo}
                   </td>
                   <td className="py-3 px-4 text-right font-black text-indigo-400">

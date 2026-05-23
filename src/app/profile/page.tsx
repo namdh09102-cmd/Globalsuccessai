@@ -267,7 +267,7 @@ export default function ProfilePage() {
           <Activity className="w-3.5 h-3.5" />
           <span>Học bạ điện tử K-12</span>
         </div>
-        <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-300 tracking-tight">
+        <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-slate-700 to-slate-500 tracking-tight">
           Hồ Sơ Học Viên & Phân Tích Kỹ Năng
         </h1>
         <p className="text-xs text-slate-500 mt-1">
@@ -301,7 +301,7 @@ export default function ProfilePage() {
               <div className="relative">
                 <div className="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-violet-600 via-indigo-600 to-blue-400 opacity-75 blur animate-pulse" />
                 <div className="w-18 h-18 rounded-full bg-slate-50 border-2 border-slate-900 flex items-center justify-center text-slate-800 relative z-10 shadow-lg">
-                  <span className="text-2xl font-black bg-clip-text text-transparent bg-gradient-to-tr from-violet-400 to-blue-400">
+                  <span className="text-2xl font-black bg-clip-text text-transparent bg-gradient-to-tr from-violet-600 to-blue-600">
                     {profile.fullName ? profile.fullName.charAt(0).toUpperCase() : "K"}
                   </span>
                 </div>
@@ -700,7 +700,7 @@ export default function ProfilePage() {
               {/* Nút bấm 3D cơ học Nhấn lún sướng tay */}
               <button
                 type="submit"
-                className="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-slate-800 font-black text-xs transition-all duration-100 flex items-center justify-center gap-1.5 shadow-[0_4px_0_#312e81] active:translate-y-[4px] active:shadow-none select-none relative overflow-hidden"
+                className="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-black text-xs transition-all duration-100 flex items-center justify-center gap-1.5 shadow-[0_4px_0_#312e81] active:translate-y-[4px] active:shadow-none select-none relative overflow-hidden"
               >
                 <Save className="w-3.5 h-3.5" />
                 <span>Cập Nhật Hồ Sơ</span>

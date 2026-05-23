@@ -112,7 +112,7 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#070A13] flex flex-col items-center justify-center p-4 relative overflow-hidden select-none">
+    <div className="min-h-screen w-full bg-slate-50 flex flex-col items-center justify-center p-4 relative overflow-hidden select-none">
       
       {/* Background Effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
@@ -127,7 +127,7 @@ export default function AuthPage() {
           <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-500/20 mb-4">
             <ShieldCheck className="w-7 h-7 text-slate-800" />
           </div>
-          <h1 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
+          <h1 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-500">
             {isLogin ? "Đăng Nhập Hệ Thống" : "Tạo Tài Khoản Mới"}
           </h1>
           <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mt-2">

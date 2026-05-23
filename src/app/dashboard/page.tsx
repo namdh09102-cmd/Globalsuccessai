@@ -172,7 +172,7 @@ export default function DashboardPage() {
             <Sparkles className="w-3.5 h-3.5" />
             <span>Hệ thống báo cáo AI</span>
           </div>
-          <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-300">
+          <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-slate-700 to-slate-500">
             Tổng quan học tập
           </h1>
           <p className="text-xs text-slate-500 mt-1">

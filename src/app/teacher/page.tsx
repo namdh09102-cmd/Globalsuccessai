@@ -280,7 +280,7 @@ export default function TeacherPortal() {
             initial={{ opacity: 0, y: -50, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -50, scale: 0.9 }}
-            className="fixed top-6 right-6 z-55 bg-gradient-to-r from-emerald-600 to-teal-500 text-slate-800 font-extrabold text-xs px-4 py-3 rounded-2xl shadow-[0_10px_30px_rgba(16,185,129,0.3)] flex items-center gap-2 border border-emerald-400/35"
+            className="fixed top-6 right-6 z-55 bg-gradient-to-r from-emerald-600 to-teal-500 text-white font-extrabold text-xs px-4 py-3 rounded-2xl shadow-[0_10px_30px_rgba(16,185,129,0.3)] flex items-center gap-2 border border-emerald-400/35"
           >
             <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
               <CheckCircle className="w-3.5 h-3.5" />
@@ -297,7 +297,7 @@ export default function TeacherPortal() {
             <School className="w-3.5 h-3.5" />
             <span>Teacher Portal</span>
           </div>
-          <h1 className="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-300 tracking-tight">
+          <h1 className="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-slate-700 to-slate-500 tracking-tight">
             Bảng Quản Trị Giáo Viên
           </h1>
           <p className="text-xs text-slate-500 mt-1">
@@ -460,7 +460,7 @@ export default function TeacherPortal() {
                     <th className="pb-3 text-right pr-2">Trạng Thái</th>
                   </tr>
                 </thead>
-                <tbody className="text-xs font-semibold text-slate-350 divide-y divide-slate-850/30">
+                <tbody className="text-xs font-semibold text-slate-400 divide-y divide-slate-200">
                   {getStudentsList().map((student, idx) => {
                     const status = getStudentStatus(student);
                     const StatusIcon = status.icon;

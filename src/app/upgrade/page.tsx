@@ -200,7 +200,7 @@ export default function UpgradePage() {
               <span>Global Success PRO — Nền Tảng EdTech K-12 #1</span>
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-violet-200 to-amber-300 tracking-tight leading-tight">
+            <h1 className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-800 via-violet-600 to-amber-600 tracking-tight leading-tight">
               Mở Khóa Toàn Diện
               <br />
               <span className="text-2xl md:text-3xl">Quyền Năng AI</span>

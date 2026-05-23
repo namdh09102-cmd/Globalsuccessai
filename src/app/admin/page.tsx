@@ -35,7 +35,7 @@ export default function AdminPortal() {
           <Rocket className="w-6 h-6 text-slate-800" />
         </div>
         <div>
-          <h1 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400 tracking-tight">
+          <h1 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-500 tracking-tight">
             Admin Portal
           </h1>
           <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mt-0.5">
