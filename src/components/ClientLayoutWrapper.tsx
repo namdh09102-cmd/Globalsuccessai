@@ -214,6 +214,12 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
     return pathname.startsWith(href);
   };
 
+  const getMascot = () => {
+    if (currentUser?.gradeLevel === "high") return "🦉";
+    if (currentUser?.gradeLevel === "middle") return "🤖";
+    return "🦖";
+  };
+
   const TopNavbar = () => (
     <div className="h-[56px] bg-sidebar flex items-center justify-between px-6 shrink-0 z-20 border-b-2 border-primary-dark select-none w-full">
       {/* Left: Logo */}
@@ -246,14 +252,14 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
 
         {/* Avatar circle */}
         <div className="mascot-avatar w-[36px] h-[36px] rounded-full border-[3px] border-xp bg-card flex items-center justify-center shadow-md cursor-pointer hover:scale-105 transition-transform">
-          <span className="text-[20px]">🦖</span>
+          <span className="text-[20px]">{getMascot()}</span>
         </div>
       </div>
     </div>
   );
 
   return (
-    <div className="flex-1 flex flex-col h-full overflow-hidden bg-page">
+    <div data-theme={currentUser?.gradeLevel || "primary"} className="flex-1 flex flex-col h-full overflow-hidden bg-page theme-wrapper">
       <LevelUpModal />
       {/* Top Navbar */}
       <TopNavbar />

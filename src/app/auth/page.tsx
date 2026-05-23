@@ -14,6 +14,7 @@ export default function AuthPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("student"); // "student" or "teacher"
+  const [gradeLevel, setGradeLevel] = useState("primary"); // "primary", "middle", "high"
   
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -29,7 +30,7 @@ export default function AuthPage() {
     setTimeout(() => {
       // 1. ADMIN LOGIN HARDCODE
       if (isLogin && email === ADMIN_CREDS.email && password === ADMIN_CREDS.password) {
-        const adminUser = { id: "ADMIN-000", name: "Super Admin", email, role: "admin", tier: "pro" };
+        const adminUser = { id: "ADMIN-000", name: "Super Admin", email, role: "admin", tier: "pro", gradeLevel: "none" };
         localStorage.setItem("gsa-current-user", JSON.stringify(adminUser));
         window.dispatchEvent(new Event("auth-changed"));
         router.push("/admin");
@@ -38,9 +39,11 @@ export default function AuthPage() {
 
       const storedUsersStr = localStorage.getItem("gsa-users");
       let storedUsers = storedUsersStr ? JSON.parse(storedUsersStr) : [
-        { id: "ADMIN-000", name: "Super Admin", email: "admin@globalsuccess.ai", password: "admin123", role: "admin", tier: "pro", joinDate: "2026-01-01" },
-        { id: "TEACHER-001", name: "Đinh Hoàng Nam", email: "teacher@globalsuccess.ai", password: "teacher123", role: "teacher", tier: "pro", joinDate: "2026-05-01" },
-        { id: "STUDENT-001", name: "Khánh Tân", email: "student@globalsuccess.ai", password: "student123", role: "student", tier: "free", joinDate: "2026-05-20" }
+        { id: "ADMIN-000", name: "Super Admin", email: "admin@globalsuccess.ai", password: "admin123", role: "admin", tier: "pro", joinDate: "2026-01-01", gradeLevel: "none" },
+        { id: "TEACHER-001", name: "Đinh Hoàng Nam", email: "teacher@globalsuccess.ai", password: "teacher123", role: "teacher", tier: "pro", joinDate: "2026-05-01", gradeLevel: "none" },
+        { id: "STUDENT-001", name: "Khánh Tân (Cấp 1)", email: "student@globalsuccess.ai", password: "student123", role: "student", tier: "free", joinDate: "2026-05-20", gradeLevel: "primary" },
+        { id: "STUDENT-002", name: "Khánh Tân (Cấp 2)", email: "middle@globalsuccess.ai", password: "student123", role: "student", tier: "free", joinDate: "2026-05-20", gradeLevel: "middle" },
+        { id: "STUDENT-003", name: "Khánh Tân (Cấp 3)", email: "high@globalsuccess.ai", password: "student123", role: "student", tier: "free", joinDate: "2026-05-20", gradeLevel: "high" }
       ];
 
       // Save initial users back if it was empty to ensure they persist
@@ -57,7 +60,8 @@ export default function AuthPage() {
             name: foundUser.name,
             email: foundUser.email,
             role: foundUser.role,
-            tier: foundUser.tier
+            tier: foundUser.tier,
+            gradeLevel: foundUser.gradeLevel || "primary"
           }));
           window.dispatchEvent(new Event("auth-changed"));
           
@@ -86,6 +90,7 @@ export default function AuthPage() {
           password,
           role,
           tier: "free",
+          gradeLevel: role === "student" ? gradeLevel : "none",
           joinDate: new Date().toISOString().split("T")[0]
         };
 
@@ -98,7 +103,8 @@ export default function AuthPage() {
           name: newUser.name,
           email: newUser.email,
           role: newUser.role,
-          tier: newUser.tier
+          tier: newUser.tier,
+          gradeLevel: newUser.gradeLevel
         }));
         window.dispatchEvent(new Event("auth-changed"));
 
@@ -169,6 +175,29 @@ export default function AuthPage() {
                     <option value="teacher">Giáo viên / Phụ huynh</option>
                   </select>
                 </div>
+
+                <AnimatePresence>
+                  {role === "student" && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="relative overflow-hidden"
+                    >
+                      <div className="pt-2">
+                        <select 
+                          value={gradeLevel}
+                          onChange={(e) => setGradeLevel(e.target.value)}
+                          className="w-full bg-card border border-[rgba(0,0,0,0.1)] text-text-head text-sm rounded-[var(--radius-card)] px-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all appearance-none cursor-pointer"
+                        >
+                          <option value="primary">Cấp 1 (Lớp 1 - Lớp 5)</option>
+                          <option value="middle">Cấp 2 (Lớp 6 - Lớp 9)</option>
+                          <option value="high">Cấp 3 (Lớp 10 - Lớp 12)</option>
+                        </select>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
             )}
           </AnimatePresence>

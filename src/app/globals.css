@@ -50,7 +50,7 @@
   --font-fredoka: 'Fredoka One', cursive;
 }
 
-:root {
+:root, .theme-wrapper[data-theme='primary'] {
   /* Primary — Coral Red (energy, excitement) */
   --c-primary:        #FF6B6B;
   --c-primary-dark:   #E63946;
@@ -104,6 +104,111 @@
   --radius-card:      18px;
   --radius-btn:       14px;
   --radius-chip:      999px;
+  
+  --font-primary:     'Nunito', sans-serif;
+  --font-heading:     'Fredoka One', cursive;
+}
+
+.theme-wrapper[data-theme='middle'] {
+  /* Esports / Gaming / Tech / Neon for Middle School */
+  --c-primary:        #3B82F6;   /* Blue 500 */
+  --c-primary-dark:   #1D4ED8;   /* Blue 700 */
+  --c-primary-light:  #DBEAFE;   /* Blue 100 */
+  --c-primary-text:   #1E3A8A;   /* Blue 900 */
+
+  --c-accent:         #10B981;   /* Emerald 500 */
+  --c-accent-dark:    #047857;   /* Emerald 700 */
+  --c-accent-light:   #D1FAE5;   /* Emerald 100 */
+  --c-accent-text:    #064E3B;   /* Emerald 900 */
+
+  --c-xp:             #F59E0B;   /* Amber 500 */
+  --c-xp-dark:        #B45309;   /* Amber 700 */
+  --c-xp-light:       #FEF3C7;   /* Amber 100 */
+  --c-xp-text:        #78350F;   /* Amber 900 */
+
+  --c-success:        #10B981;   
+  --c-success-dark:   #047857;   
+  --c-success-light:  #D1FAE5;   
+  --c-success-text:   #064E3B;   
+
+  --c-purple:         #8B5CF6;   /* Violet 500 */
+  --c-purple-dark:    #6D28D9;   /* Violet 700 */
+  --c-purple-light:   #EDE9FE;   /* Violet 100 */
+  --c-purple-text:    #4C1D95;   /* Violet 900 */
+
+  --c-pink:           #EC4899;   /* Pink 500 */
+  --c-pink-dark:      #BE185D;   /* Pink 700 */
+  --c-pink-light:     #FCE7F3;   /* Pink 100 */
+  --c-pink-text:      #831843;   /* Pink 900 */
+
+  --c-bg-page:        #F1F5F9;   /* Slate 100 */
+  --c-bg-card:        #FFFFFF;
+  --c-bg-sidebar:     #0F172A;   /* Slate 900 */
+  --c-bg-topbar:      #0F172A;
+
+  --c-text-head:      #0F172A;
+  --c-text-body:      #334155;
+  --c-text-muted:     #64748B;
+  --c-text-on-color:  #FFFFFF;
+
+  --c-border:         1.5px solid;
+  --radius-card:      12px;
+  --radius-btn:       8px;
+  --radius-chip:      12px;
+  
+  --font-primary:     'Nunito', sans-serif;
+  --font-heading:     'Nunito', sans-serif; /* Drop Fredoka for Middle */
+}
+
+.theme-wrapper[data-theme='high'] {
+  /* Minimalist / Notion / Elegant for High School */
+  --c-primary:        #0F172A;   /* Slate 900 */
+  --c-primary-dark:   #020617;   /* Slate 950 */
+  --c-primary-light:  #E2E8F0;   /* Slate 200 */
+  --c-primary-text:   #0F172A;
+
+  --c-accent:         #64748B;   /* Slate 500 */
+  --c-accent-dark:    #475569;   /* Slate 600 */
+  --c-accent-light:   #F1F5F9;   /* Slate 100 */
+  --c-accent-text:    #1E293B;   /* Slate 800 */
+
+  --c-xp:             #D97706;   /* Amber 600 */
+  --c-xp-dark:        #92400E;   /* Amber 800 */
+  --c-xp-light:       #FEF3C7;   
+  --c-xp-text:        #78350F;   
+
+  --c-success:        #059669;   /* Emerald 600 */
+  --c-success-dark:   #047857;   
+  --c-success-light:  #ECFDF5;   
+  --c-success-text:   #064E3B;   
+
+  --c-purple:         #4F46E5;   /* Indigo 600 */
+  --c-purple-dark:    #3730A3;   /* Indigo 800 */
+  --c-purple-light:   #E0E7FF;   
+  --c-purple-text:    #312E81;   
+
+  --c-pink:           #E11D48;   /* Rose 600 */
+  --c-pink-dark:      #9F1239;   /* Rose 800 */
+  --c-pink-light:     #FFE4E6;   
+  --c-pink-text:      #881337;   
+
+  --c-bg-page:        #FFFFFF;   /* Pure white */
+  --c-bg-card:        #FFFFFF;
+  --c-bg-sidebar:     #F8FAFC;   /* Very light slate */
+  --c-bg-topbar:      #F8FAFC;
+
+  --c-text-head:      #0F172A;
+  --c-text-body:      #334155;
+  --c-text-muted:     #94A3B8;
+  --c-text-on-color:  #FFFFFF;
+
+  --c-border:         1px solid;
+  --radius-card:      8px;
+  --radius-btn:       6px;
+  --radius-chip:      8px;
+  
+  --font-primary:     'Inter', sans-serif;
+  --font-heading:     'Inter', sans-serif;
 }
 
 body {
@@ -287,8 +392,8 @@ button {
   }
 }
 
-* { font-family: 'Nunito', sans-serif; }
-h1, .xp-number, .score-big, .game-title { font-family: 'Fredoka One', cursive; }
+* { font-family: var(--font-primary, 'Nunito'), sans-serif; }
+h1, .xp-number, .score-big, .game-title { font-family: var(--font-heading, 'Fredoka One'), cursive; }
 
 @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
 @keyframes pop { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
