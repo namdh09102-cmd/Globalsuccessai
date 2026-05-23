@@ -156,7 +156,7 @@ export default function RightPanel() {
           {/* Stats detailed list */}
           <div className="grid grid-cols-2 gap-2 text-xs">
             {/* Stat 1 */}
-            <div className="p-2.5 rounded-xl border border-slate-200 bg-slate-50 flex flex-col justify-between h-[60px] shadow-sm">
+            <div className="p-2.5 rounded-xl border border-slate-200 bg-white border-slate-200 flex flex-col hover:border-indigo-300 hover:shadow-md transition-all justify-between h-[60px] shadow-sm">
               <div className="flex items-center gap-1.5 text-slate-500 font-medium">
                 <Clock className="w-3.5 h-3.5 text-blue-500" />
                 <span className="text-[9px]">Thời gian học</span>
@@ -165,7 +165,7 @@ export default function RightPanel() {
             </div>
 
             {/* Stat 2 */}
-            <div className="p-2.5 rounded-xl border border-slate-200 bg-slate-50 flex flex-col justify-between h-[60px] shadow-sm">
+            <div className="p-2.5 rounded-xl border border-slate-200 bg-white border-slate-200 flex flex-col hover:border-indigo-300 hover:shadow-md transition-all justify-between h-[60px] shadow-sm">
               <div className="flex items-center gap-1.5 text-slate-500 font-medium">
                 <Zap className="w-3.5 h-3.5 text-indigo-500" />
                 <span className="text-[9px]">Kinh nghiệm (XP)</span>
@@ -174,7 +174,7 @@ export default function RightPanel() {
             </div>
 
             {/* Stat 3 */}
-            <div className="p-2.5 rounded-xl border border-slate-200 bg-slate-50 flex flex-col justify-between h-[60px] shadow-sm">
+            <div className="p-2.5 rounded-xl border border-slate-200 bg-white border-slate-200 flex flex-col hover:border-indigo-300 hover:shadow-md transition-all justify-between h-[60px] shadow-sm">
               <div className="flex items-center gap-1.5 text-slate-500 font-medium">
                 <Sparkles className="w-3.5 h-3.5 text-emerald-500" />
                 <span className="text-[9px]">Kim cương</span>
@@ -183,7 +183,7 @@ export default function RightPanel() {
             </div>
 
             {/* Stat 4 */}
-            <div className="p-2.5 rounded-xl border border-slate-200 bg-slate-50 flex flex-col justify-between h-[60px] shadow-sm">
+            <div className="p-2.5 rounded-xl border border-slate-200 bg-white border-slate-200 flex flex-col hover:border-indigo-300 hover:shadow-md transition-all justify-between h-[60px] shadow-sm">
               <div className="flex items-center gap-1.5 text-slate-500 font-medium">
                 <Volume2 className="w-3.5 h-3.5 text-amber-500" />
                 <span className="text-[9px]">Phát âm TB</span>
@@ -213,7 +213,7 @@ export default function RightPanel() {
                 </div>
 
                 {/* Task 2 */}
-                <div className="p-3 rounded-2xl bg-white border border-slate-200 flex items-center justify-between group cursor-pointer hover:border-indigo-200 hover:shadow-md transition-all shadow-sm">
+                <div className="p-3 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md flex items-center justify-between group cursor-pointer hover:border-indigo-200 hover:shadow-md transition-all shadow-sm">
                   <div className="flex items-center gap-3">
                     <div className="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 border border-slate-200">
                       <span className="text-[9px] font-bold">2</span>

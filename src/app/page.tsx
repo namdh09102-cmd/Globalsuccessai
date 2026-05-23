@@ -1188,7 +1188,7 @@ export default function Dashboard() {
             {/* Banner Stats Bar */}
             <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 pt-4 border-t border-slate-200">
               {/* Streak */}
-              <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-slate-50 border-slate-200 shadow-sm backdrop-blur-sm border border-slate-200">
+              <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-white border-slate-200 shadow-md backdrop-blur-sm border border-slate-200">
                 <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500 shadow-inner">
                   <Flame className="w-5 h-5 fill-amber-500 animate-pulse" />
                 </div>
@@ -1199,7 +1199,7 @@ export default function Dashboard() {
               </div>
 
               {/* Lessons */}
-              <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-slate-50 border-slate-200 shadow-sm backdrop-blur-sm border border-slate-200">
+              <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-white border-slate-200 shadow-md backdrop-blur-sm border border-slate-200">
                 <div className="w-9 h-9 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shadow-inner">
                   <BookOpen className="w-5 h-5" />
                 </div>
@@ -1210,7 +1210,7 @@ export default function Dashboard() {
               </div>
 
               {/* Accuracy */}
-              <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-slate-50 border-slate-200 shadow-sm backdrop-blur-sm border border-slate-200">
+              <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-white border-slate-200 shadow-md backdrop-blur-sm border border-slate-200">
                 <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shadow-inner">
                   <Award className="w-5 h-5" />
                 </div>
@@ -1221,7 +1221,7 @@ export default function Dashboard() {
               </div>
 
               {/* XP */}
-              <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-slate-50 border-slate-200 shadow-sm backdrop-blur-sm border border-slate-200">
+              <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-white border-slate-200 shadow-md backdrop-blur-sm border border-slate-200">
                 <div className="w-9 h-9 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 shadow-inner">
                   <Zap className="w-5 h-5" />
                 </div>
@@ -1245,7 +1245,7 @@ export default function Dashboard() {
                 onClick={() => {
                   document.getElementById("curriculum-section")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="group relative rounded-3xl border border-slate-200 bg-white p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-indigo-500/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-950/20"
+                className="group relative rounded-3xl border border-blue-100 bg-blue-50/40 p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-blue-300 hover:bg-blue-50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-200"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl pointer-events-none" />
                 <div className="flex gap-4">
@@ -1262,7 +1262,7 @@ export default function Dashboard() {
                 
                 <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-200 text-[9px] text-slate-550 font-bold">
                   <span>12.4K học sinh đang học</span>
-                  <div className="w-6 h-6 rounded-full bg-slate-900 group-hover:bg-indigo-600 flex items-center justify-center text-slate-500 group-hover:text-white transition-all">
+                  <div className="w-6 h-6 rounded-full bg-white group-hover:bg-indigo-600 flex items-center justify-center text-slate-500 border border-slate-200 group-hover:border-indigo-600 shadow-sm group-hover:text-white transition-all">
                     <ChevronRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
@@ -1280,7 +1280,7 @@ export default function Dashboard() {
                     alert("Hãy chọn bài học nghe chép (Dictation) trong phần Lộ trình học bên dưới nhé!");
                   }
                 }}
-                className="group relative rounded-3xl border border-slate-200 bg-white p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-indigo-500/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-950/20"
+                className="group relative rounded-3xl border border-purple-100 bg-purple-50/40 p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-purple-300 hover:bg-purple-50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-purple-200"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl pointer-events-none" />
                 <div className="flex gap-4">
@@ -1297,7 +1297,7 @@ export default function Dashboard() {
                 
                 <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-200 text-[9px] text-slate-500 font-bold">
                   <span>8.3K học sinh đang học</span>
-                  <div className="w-6 h-6 rounded-full bg-slate-900 group-hover:bg-indigo-600 flex items-center justify-center text-slate-500 group-hover:text-white transition-all">
+                  <div className="w-6 h-6 rounded-full bg-white group-hover:bg-indigo-600 flex items-center justify-center text-slate-500 border border-slate-200 group-hover:border-indigo-600 shadow-sm group-hover:text-white transition-all">
                     <ChevronRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
@@ -1313,7 +1313,7 @@ export default function Dashboard() {
                     handleStartLesson(speakingLesson);
                   }
                 }}
-                className="group relative rounded-3xl border border-slate-200 bg-white p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-indigo-500/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-950/20"
+                className="group relative rounded-3xl border border-indigo-100 bg-indigo-50/40 p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-indigo-300 hover:bg-indigo-50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-200"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-violet-500/5 rounded-full blur-2xl pointer-events-none" />
                 <div className="flex gap-4">
@@ -1330,7 +1330,7 @@ export default function Dashboard() {
                 
                 <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-200 text-[9px] text-slate-550 font-bold">
                   <span>15K học sinh đang luyện</span>
-                  <div className="w-6 h-6 rounded-full bg-slate-900 group-hover:bg-indigo-600 flex items-center justify-center text-slate-500 group-hover:text-white transition-all">
+                  <div className="w-6 h-6 rounded-full bg-white group-hover:bg-indigo-600 flex items-center justify-center text-slate-500 border border-slate-200 group-hover:border-indigo-600 shadow-sm group-hover:text-white transition-all">
                     <ChevronRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
@@ -1379,10 +1379,10 @@ export default function Dashboard() {
                 return (
                   <div
                     key={unit.id}
-                    className={`flex-none w-[220px] relative rounded-2xl overflow-hidden border flex flex-col justify-between min-h-[180px] transition-all duration-300 shadow-xl group cursor-pointer ${
+                    className={`flex-none w-[220px] relative rounded-2xl overflow-hidden border flex flex-col justify-between min-h-[180px] transition-all duration-300 shadow-sm group cursor-pointer ${
                       isSelected 
-                        ? "border-indigo-500/50 bg-white" 
-                        : "border-slate-200 bg-white hover:border-slate-300"
+                        ? "border-indigo-400 bg-indigo-50/30 shadow-md" 
+                        : "border-slate-200 bg-slate-50/50 hover:border-indigo-300 hover:bg-white hover:shadow-md"
                     }`}
                     onClick={() => {
                       if (unit.status !== "locked") {
@@ -1430,7 +1430,7 @@ export default function Dashboard() {
 
                       <div className="flex items-center justify-between">
                         <div className="flex-1 mr-2">
-                          <div className="h-1 bg-slate-800 rounded-full overflow-hidden">
+                          <div className="h-1.5 bg-slate-200 rounded-full overflow-hidden shadow-inner border border-slate-300/50">
                             <div 
                               className="h-full rounded-full transition-all duration-500"
                               style={{ 
@@ -1489,7 +1489,7 @@ export default function Dashboard() {
                           key={lesson.id}
                           className={`flex items-center justify-between p-3.5 rounded-2xl border transition-all group/item relative ${
                             locked
-                              ? "border-slate-200 bg-slate-50 opacity-70 hover:opacity-90"
+                              ? "border-slate-200 bg-slate-100 opacity-60"
                               : "border-slate-200 bg-slate-50 hover:border-slate-200 hover:bg-indigo-50"
                           }`}
                         >
