@@ -1144,8 +1144,10 @@ export default function Dashboard() {
           <div className="relative rounded-3xl border border-slate-200 bg-white overflow-hidden min-h-[300px] flex flex-col justify-between p-6 md:p-8 shadow-xl shadow-slate-200/40 transition-all duration-300 hover:border-slate-300 group">
             {/* Vibrant colorful gradient for EdTech Light Theme */}
             <div 
-              className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50 transition-transform duration-700 group-hover:scale-[1.02] pointer-events-none"
+              className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-500 transition-transform duration-700 group-hover:scale-[1.02] pointer-events-none"
             />
+            {/* Background pattern overlay */}
+            <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)", backgroundSize: "20px 20px" }}></div>
             {/* Ambient soft glow */}
             <div className="absolute -top-24 -left-24 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none" />
             
@@ -1153,11 +1155,11 @@ export default function Dashboard() {
               {/* Left Column: Greeting */}
               <div className="md:col-span-3 space-y-4">
                 <div className="space-y-1">
-                  <span className="text-xs font-bold text-indigo-400 tracking-wide block">Chào mừng trở lại,</span>
-                  <h1 className="text-3xl md:text-4xl font-black text-slate-800 tracking-tight flex items-center gap-2">
+                  <span className="text-xs font-bold text-emerald-100 tracking-wide block">Chào mừng trở lại,</span>
+                  <h1 className="text-3xl md:text-4xl font-black text-white tracking-tight flex items-center gap-2">
                     {fullName}! <span className="animate-bounce inline-block">👋</span>
                   </h1>
-                  <p className="text-xs text-slate-500 max-w-sm mt-2 leading-relaxed">
+                  <p className="text-xs text-emerald-50 max-w-sm mt-2 leading-relaxed">
                     Bạn đã sẵn sàng để tiếp tục hành trình chinh phục tiếng Anh hôm nay chưa?
                   </p>
                 </div>
@@ -1166,21 +1168,21 @@ export default function Dashboard() {
                   onClick={() => {
                     document.getElementById("curriculum-section")?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="px-5 py-2.5 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-black text-xs flex items-center gap-2 transition-all shadow-lg shadow-indigo-200 hover:shadow-indigo-300 active:scale-95 group/btn"
+                  className="px-5 py-2.5 rounded-2xl bg-white hover:bg-slate-50 text-emerald-600 font-black text-xs flex items-center gap-2 transition-all shadow-lg shadow-emerald-900/20 active:scale-95 group/btn"
                 >
-                  <Play className="w-3.5 h-3.5 fill-white group-hover/btn:scale-110 transition-transform" />
+                  <Play className="w-3.5 h-3.5 fill-emerald-600 group-hover/btn:scale-110 transition-transform" />
                   <span>Tiếp tục học ngay</span>
                 </button>
               </div>
 
               {/* Right Column: Literary Quote on translucent card */}
               <div className="md:col-span-2 flex flex-col justify-center items-end">
-                <div className="max-w-[280px] p-4 rounded-2xl bg-slate-50 backdrop-blur-md border border-slate-200 text-slate-800 shadow-xl space-y-2 relative">
-                  <span className="absolute top-2 left-2 text-indigo-500 opacity-20 text-3xl font-serif leading-none">&ldquo;</span>
-                  <p className="text-[10px] leading-relaxed italic text-slate-800 pl-2">
+                <div className="max-w-[280px] p-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 text-white shadow-xl space-y-2 relative">
+                  <span className="absolute top-2 left-2 text-white opacity-20 text-3xl font-serif leading-none">&ldquo;</span>
+                  <p className="text-[10px] leading-relaxed italic text-white pl-2">
                     "Language is the road map of a culture. It tells you where its people come from and where they are going."
                   </p>
-                  <p className="text-[9px] font-bold text-slate-500 text-right">— Rita Mae Brown</p>
+                  <p className="text-[9px] font-bold text-emerald-100 text-right">— Rita Mae Brown</p>
                 </div>
               </div>
             </div>
@@ -1245,22 +1247,22 @@ export default function Dashboard() {
                 onClick={() => {
                   document.getElementById("curriculum-section")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="group relative rounded-3xl border border-blue-100 bg-blue-50/40 p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-blue-300 hover:bg-blue-50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-200"
+                className="group relative rounded-3xl border-none bg-gradient-to-br from-blue-500 to-blue-600 p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/30"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl pointer-events-none" />
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:scale-110 transition-transform shadow-inner shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-white/20 border border-white/30 flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-inner shrink-0">
                     <BookOpen className="w-6 h-6" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm font-black text-slate-800">Học SGK</h4>
-                    <p className="text-[10px] text-slate-500 leading-relaxed max-w-[200px]">
+                    <h4 className="text-sm font-black text-white">Học SGK</h4>
+                    <p className="text-[10px] text-blue-100 leading-relaxed max-w-[200px]">
                       Học theo chương trình sách giáo khoa từ lớp 6 đến lớp 12
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-200 text-[9px] text-slate-550 font-bold">
+                <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/20 text-[9px] text-white/90 font-bold">
                   <span>12.4K học sinh đang học</span>
                   <div className="w-6 h-6 rounded-full bg-white group-hover:bg-indigo-600 flex items-center justify-center text-slate-500 border border-slate-200 group-hover:border-indigo-600 shadow-sm group-hover:text-white transition-all">
                     <ChevronRight className="w-3.5 h-3.5" />
@@ -1280,22 +1282,22 @@ export default function Dashboard() {
                     alert("Hãy chọn bài học nghe chép (Dictation) trong phần Lộ trình học bên dưới nhé!");
                   }
                 }}
-                className="group relative rounded-3xl border border-purple-100 bg-purple-50/40 p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-purple-300 hover:bg-purple-50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-purple-200"
+                className="group relative rounded-3xl border-none bg-gradient-to-br from-violet-500 to-purple-600 p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/30"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl pointer-events-none" />
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform shadow-inner shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-white/20 border border-white/30 flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-inner shrink-0">
                     <Headphones className="w-6 h-6" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm font-black text-slate-800">Luyện nghe Dictation</h4>
-                    <p className="text-[10px] text-slate-500 leading-relaxed max-w-[200px]">
+                    <h4 className="text-sm font-black text-white">Luyện nghe Dictation</h4>
+                    <p className="text-[10px] text-purple-100 leading-relaxed max-w-[200px]">
                       Nghe viết chính tả các câu tiếng Anh theo sách giáo khoa
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-200 text-[9px] text-slate-500 font-bold">
+                <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/20 text-[9px] text-white/90 font-bold">
                   <span>8.3K học sinh đang học</span>
                   <div className="w-6 h-6 rounded-full bg-white group-hover:bg-indigo-600 flex items-center justify-center text-slate-500 border border-slate-200 group-hover:border-indigo-600 shadow-sm group-hover:text-white transition-all">
                     <ChevronRight className="w-3.5 h-3.5" />
@@ -1313,22 +1315,22 @@ export default function Dashboard() {
                     handleStartLesson(speakingLesson);
                   }
                 }}
-                className="group relative rounded-3xl border border-indigo-100 bg-indigo-50/40 p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-indigo-300 hover:bg-indigo-50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-200"
+                className="group relative rounded-3xl border-none bg-gradient-to-br from-indigo-500 to-indigo-600 p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/30"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-violet-500/5 rounded-full blur-2xl pointer-events-none" />
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 group-hover:scale-110 transition-transform shadow-inner shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-white/20 border border-white/30 flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-inner shrink-0">
                     <Mic className="w-6 h-6" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm font-black text-slate-800">Luyện nói AI</h4>
-                    <p className="text-[10px] text-slate-500 leading-relaxed max-w-[200px]">
+                    <h4 className="text-sm font-black text-white">Luyện nói AI</h4>
+                    <p className="text-[10px] text-indigo-100 leading-relaxed max-w-[200px]">
                       AI chấm phát âm và sửa lỗi chi tiết như giáo viên bản xứ
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-200 text-[9px] text-slate-550 font-bold">
+                <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/20 text-[9px] text-white/90 font-bold">
                   <span>15K học sinh đang luyện</span>
                   <div className="w-6 h-6 rounded-full bg-white group-hover:bg-indigo-600 flex items-center justify-center text-slate-500 border border-slate-200 group-hover:border-indigo-600 shadow-sm group-hover:text-white transition-all">
                     <ChevronRight className="w-3.5 h-3.5" />
