@@ -301,7 +301,7 @@ const defaultUnits: UnitData[] = [
 ];
 
 export default function Dashboard() {
-  const [activeGrade, setActiveGrade] = useState("Lớp 1");
+  const [activeGrade, setActiveGrade] = useState("Lớp 10");
   const [units, setUnits] = useState<UnitData[]>([]);
   const [selectedUnit, setSelectedUnit] = useState<UnitData | null>(null);
   
@@ -446,7 +446,7 @@ export default function Dashboard() {
       let storedData = localStorage.getItem(`gsa-curriculum-l${grade}`);
       
       // Tự động tải dữ liệu ngầm cho Lớp 1, 2, 3 nếu chưa có trong máy
-      if (!storedData && (grade === 1 || grade === 2 || grade === 3)) {
+      if (!storedData && (grade === 1 || grade === 2 || grade === 3 || grade === 10)) {
         try {
           const res = await fetch(`/seeds/grade${grade}.json`);
           if (res.ok) {
@@ -804,11 +804,11 @@ export default function Dashboard() {
       setAudioUrl(null);
       setAudioBase64(null);
     } else if (lesson.type === "speaking" && !lesson.expectedText) {
-      setActiveRoom("quiz");
+      alert("Bài học Speaking này chưa có dữ liệu âm thanh/văn bản. Vui lòng cập nhật!");
     } else if (lesson.type === "dictation" && lesson.expectedText) {
       setActiveRoom("dictation");
     } else if (lesson.type === "dictation" && !lesson.expectedText) {
-      setActiveRoom("quiz");
+      alert("Bài học Dictation này chưa có dữ liệu âm thanh/văn bản. Vui lòng cập nhật!");
     } else if (lesson.type === "quiz" || lesson.type === "vocabulary" || lesson.type === "grammar" || lesson.type === "reading") {
       setActiveRoom("quiz");
     } else if (lesson.type === "visual") {

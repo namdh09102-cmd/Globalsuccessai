@@ -1,0 +1,5292 @@
+[
+  {
+    "id": "l10-u1",
+    "number": 1,
+    "title": "Unit 1",
+    "grade": "Lớp 10",
+    "status": "unlocked",
+    "progress": 0,
+    "lessons": [
+      {
+        "id": "u1-l1",
+        "title": "Vocabulary & Grammar",
+        "type": "grammar",
+        "completed": false,
+        "score": 0,
+        "questions": [
+          {
+            "id": "q-1-1-gm31i",
+            "question": "Studies show that doing chores _______ is good for children.",
+            "options": {
+              "A": "regular",
+              "B": "regularly",
+              "C": "regularity",
+              "D": "regularities"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: regularly"
+          },
+          {
+            "id": "q-1-2-988bc",
+            "question": "Housework is work around the house such as _______ cleaning or washing clothes.",
+            "options": {
+              "A": "cook",
+              "B": "cooks",
+              "C": "cooker",
+              "D": "cooking"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: cooking"
+          },
+          {
+            "id": "q-1-3-jvaip",
+            "question": "They have to try to finish their tasks _______ they don’t enjoy doing them.",
+            "options": {
+              "A": "despite",
+              "B": "indeed",
+              "C": "although",
+              "D": "because"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: although"
+          },
+          {
+            "id": "q-1-4-a0smw",
+            "question": "Parents will be able to see the classes broadcast _______ on the internet.",
+            "options": {
+              "A": "live",
+              "B": "life",
+              "C": "living",
+              "D": "lives"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: live"
+          },
+          {
+            "id": "q-1-5-fcboh",
+            "question": "Children need to learn to take care _______ other family members.",
+            "options": {
+              "A": "of",
+              "B": "to",
+              "C": "for",
+              "D": "with"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: of"
+          },
+          {
+            "id": "q-1-6-mzhsa",
+            "question": "Jessica always quibbles about _______ affairs with her mother.",
+            "options": {
+              "A": "homework",
+              "B": "homemaker",
+              "C": "household",
+              "D": "housewife"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: household"
+          },
+          {
+            "id": "q-1-7-8825y",
+            "question": "Her dad usually _______ a bedtime story to her and her brother.",
+            "options": {
+              "A": "read",
+              "B": "is reading",
+              "C": "reads",
+              "D": "doesn’t read"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: reads"
+          },
+          {
+            "id": "q-1-8-kvvq2",
+            "question": "His parents always listen to him and _______ whenever he has problems.",
+            "options": {
+              "A": "cheer up he",
+              "B": "cheer up him",
+              "C": "cheer he up",
+              "D": "cheer him up"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: cheer him up"
+          },
+          {
+            "id": "q-1-10-04cd3",
+            "question": "Is it true that women more assertive in the past decade?",
+            "options": {
+              "A": "have become",
+              "B": "became",
+              "C": "become",
+              "D": "are becoming"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: have become"
+          },
+          {
+            "id": "q-1-12-b5odc",
+            "question": "The material has exceptionally high _______ for its weight.",
+            "options": {
+              "A": "strong",
+              "B": "strength",
+              "C": "strongly",
+              "D": "strengthen"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: strength"
+          },
+          {
+            "id": "q-1-13-c1hm9",
+            "question": "Your living is determined so much by the attitude you bring _______ life.",
+            "options": {
+              "A": "to",
+              "B": "from",
+              "C": "on",
+              "D": "in"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: to"
+          },
+          {
+            "id": "q-1-14-9guy4",
+            "question": "The point of the program is to empower young fathers with _______ skills.",
+            "options": {
+              "A": "parenting",
+              "B": "parented",
+              "C": "parents",
+              "D": "parent"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: parenting"
+          },
+          {
+            "id": "q-1-15-hs82w",
+            "question": "Family values define what is _______ to your family - the beliefs and ideas that bind your family together.",
+            "options": {
+              "A": "mean",
+              "B": "meaning",
+              "C": "meaningful",
+              "D": "meaningfully"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: meaningful"
+          },
+          {
+            "id": "q-1-17-qvjhz",
+            "question": "To_______ responsibility is to accept the duty of deciding for oneself what is right.",
+            "options": {
+              "A": "make",
+              "B": "take",
+              "C": "get",
+              "D": "have"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: take"
+          },
+          {
+            "id": "q-1-18-dxahe",
+            "question": "In this photo, my grandfather _______ beside a lake near my house.",
+            "options": {
+              "A": "is walking",
+              "B": "walks",
+              "C": "was walking",
+              "D": "walked"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: is walking"
+          },
+          {
+            "id": "q-1-19-4buhi",
+            "question": "I _______ tired now. I think I _______ at home and watch TV tonight.",
+            "options": {
+              "A": "am - will stay",
+              "B": "will be - will stay",
+              "C": "am - am staying",
+              "D": "am - stay"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: am - will stay"
+          },
+          {
+            "id": "q-1-20-8y8xa",
+            "question": "I _______ my grandparents in the countryside next week. I can’t wait!",
+            "options": {
+              "A": "visit",
+              "B": "will be visiting",
+              "C": "will visit",
+              "D": "am going to visit"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: am going to visit"
+          },
+          {
+            "id": "q-1-1-uls7a",
+            "question": "The custom of worshipping ancestors is prevalent among Vietnamese people.",
+            "options": {
+              "A": "popular",
+              "B": "rare",
+              "C": "regular",
+              "D": "communal"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: popular"
+          },
+          {
+            "id": "q-1-2-vugjm",
+            "question": "It is very difficult to define the concept of beauty.",
+            "options": {
+              "A": "context",
+              "B": "notion",
+              "C": "proof",
+              "D": "reality"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: notion"
+          },
+          {
+            "id": "q-1-3-wvhco",
+            "question": "The more successful we are at extending longevity, the more it will cost us.",
+            "options": {
+              "A": "endurance",
+              "B": "durability",
+              "C": "year",
+              "D": "life expectancy"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: life expectancy"
+          },
+          {
+            "id": "q-1-4-4ikvv",
+            "question": "They have very definite ideas on how to bring up children.",
+            "options": {
+              "A": "bear",
+              "B": "feed",
+              "C": "raise",
+              "D": "teach"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: raise"
+          },
+          {
+            "id": "q-1-5-7aqug",
+            "question": "The number of children and the family dynamics have changed over time.",
+            "options": {
+              "A": "extents",
+              "B": "norms",
+              "C": "standards",
+              "D": "motions"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: motions"
+          },
+          {
+            "id": "q-1-1-xweh2",
+            "question": "These problems demonstrate the importance of strategic targets.",
+            "options": {
+              "A": "critical",
+              "B": "vital",
+              "C": "key",
+              "D": "unplanned"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: unplanned"
+          },
+          {
+            "id": "q-1-2-owoas",
+            "question": "I’m sure that his parents won’t allow him to stay out late.",
+            "options": {
+              "A": "permit",
+              "B": "admit",
+              "C": "ban",
+              "D": "grant"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: ban"
+          },
+          {
+            "id": "q-1-3-hsk96",
+            "question": "Each school should evolve its own way of teaching during the pandemic.",
+            "options": {
+              "A": "decrease",
+              "B": "develop",
+              "C": "leave",
+              "D": "diminish"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: diminish"
+          },
+          {
+            "id": "q-1-4-n7xw7",
+            "question": "Individuals can enrol on self-study courses in the university’s institute.",
+            "options": {
+              "A": "group",
+              "B": "entity",
+              "C": "privacy",
+              "D": "persons"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: group"
+          },
+          {
+            "id": "q-1-5-an2uo",
+            "question": "Nowadays many women refuse to take on the traditional woman’s role.",
+            "options": {
+              "A": "classic",
+              "B": "modern",
+              "C": "ancient",
+              "D": "old"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: modern"
+          },
+          {
+            "id": "q-1-3-vmq7z",
+            "question": "When children don’t like a task, they also have the feeling of _______ in finishing it.",
+            "options": {
+              "A": "pleasure",
+              "B": "achievement",
+              "C": "desire",
+              "D": "acceptance"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: pleasure"
+          },
+          {
+            "id": "q-1-5-h8yg0",
+            "question": "The phrase ‘works for’ in paragraph 4 is closest in meaning to _______.",
+            "options": {
+              "A": "does",
+              "B": "suits",
+              "C": "succeeds in",
+              "D": "involves"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: suits"
+          },
+          {
+            "id": "q-1-5-p9uqv",
+            "question": "The word “blended” in paragraph 1 is closest in meaning to _______.",
+            "options": {
+              "A": "complex",
+              "B": "married",
+              "C": "mixed",
+              "D": "formed"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: mixed"
+          },
+          {
+            "id": "q-1-4-0tyv9",
+            "question": "The word “driven” in the second paragraph is closest in meaning to_______.",
+            "options": {
+              "A": "transported",
+              "B": "turned",
+              "C": "oriented",
+              "D": "controlled"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: oriented"
+          },
+          {
+            "id": "q-1-5-jsimc",
+            "question": "The word “codes” in the third paragraph can be best replaced with_______.",
+            "options": {
+              "A": "laws",
+              "B": "manners",
+              "C": "etiquettes",
+              "D": "habits"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: laws"
+          },
+          {
+            "id": "q-1-6-1zrnv",
+            "question": "Do you have to do _________?",
+            "options": {
+              "A": "the mess",
+              "B": "your bed",
+              "C": "the washing-up",
+              "D": "the cook"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: the washing-up"
+          },
+          {
+            "id": "q-1-7-l5fnu",
+            "question": "Do you have to _________ the rubbish out?",
+            "options": {
+              "A": "take",
+              "B": "make",
+              "C": "empty",
+              "D": "do"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: take"
+          },
+          {
+            "id": "q-1-8-g4kxm",
+            "question": "My mother _________ the responsibility for running the household.",
+            "options": {
+              "A": "holds",
+              "B": "takes",
+              "C": "runs",
+              "D": "hears"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: takes"
+          },
+          {
+            "id": "q-1-9-rvsa3",
+            "question": "We share the house with our grandparents and our uncle's family. It is a(n) _________ family.",
+            "options": {
+              "A": "nuclear",
+              "B": "extended",
+              "C": "crowded",
+              "D": "multi-generation"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: extended"
+          },
+          {
+            "id": "q-1-10-f0ih9",
+            "question": "Are you free on Sunday evening? I'd like to _________ to the cinema?",
+            "options": {
+              "A": "ask you",
+              "B": "ask out you",
+              "C": "ask you out",
+              "D": "ask you away"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: ask you out"
+          },
+          {
+            "id": "q-1-11-5ib2d",
+            "question": "My mother is very good at _________ her time between work and family.",
+            "options": {
+              "A": "leaving",
+              "B": "splitting",
+              "C": "sharing",
+              "D": "taking"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: splitting"
+          },
+          {
+            "id": "q-1-12-gcepj",
+            "question": "When a couple can _________ chores in a way that both spouses feel satisfied with the outcome, they are showing mutual respect for one another.",
+            "options": {
+              "A": "cut",
+              "B": "run",
+              "C": "take",
+              "D": "divide"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: divide"
+          },
+          {
+            "id": "q-1-13-6pwxi",
+            "question": "The children, all three, have done ___________, mopped, dusted, helped on the house and in the yard.",
+            "options": {
+              "A": "laundry",
+              "B": "clothes",
+              "C": "groceries",
+              "D": "rubbish"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: laundry"
+          },
+          {
+            "id": "q-1-14-3e44r",
+            "question": "Our parents _________ hands to provide for the family and make it happy.",
+            "options": {
+              "A": "were joining",
+              "B": "are always joining",
+              "C": "join",
+              "D": "joins"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: join"
+          },
+          {
+            "id": "q-1-36-vwvhi",
+            "question": "In Japan, extended families are still popular ________.",
+            "options": {
+              "A": "in big cities",
+              "B": "in the countryside",
+              "C": "everywhere",
+              "D": "in urban areas"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: in the countryside"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l10-u2",
+    "number": 2,
+    "title": "Unit 2",
+    "grade": "Lớp 10",
+    "status": "locked",
+    "progress": 0,
+    "lessons": [
+      {
+        "id": "u2-l1",
+        "title": "Vocabulary & Grammar",
+        "type": "grammar",
+        "completed": false,
+        "score": 0,
+        "questions": [
+          {
+            "id": "q-2-2-ftvhm",
+            "question": "This house ______ by my grandfather in 2007.",
+            "options": {
+              "A": "was built",
+              "B": "built",
+              "C": "is built",
+              "D": "has built"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: was built"
+          },
+          {
+            "id": "q-2-3-mbjr9",
+            "question": "Who do you think ______ the match?",
+            "options": {
+              "A": "is winning",
+              "B": "will win",
+              "C": "won",
+              "D": "win"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: will win"
+          },
+          {
+            "id": "q-2-4-b6uos",
+            "question": "______ on other planets? What do you think?",
+            "options": {
+              "A": "Will people live",
+              "B": "Do people live",
+              "C": "Are people living",
+              "D": "Did people live"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: Will people live"
+          },
+          {
+            "id": "q-2-5-8yqdj",
+            "question": "A new stadium ______ near the station now.",
+            "options": {
+              "A": "is building",
+              "B": "is being built",
+              "C": "builds",
+              "D": "is built"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: is being built"
+          },
+          {
+            "id": "q-2-7-ib1xj",
+            "question": "One of the most important ______ of energy is the sun.",
+            "options": {
+              "A": "resources",
+              "B": "sources",
+              "C": "means",
+              "D": "kinds"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: sources"
+          },
+          {
+            "id": "q-2-8-7ueye",
+            "question": "More people ______ a green lifestyle because it is good for the environment.",
+            "options": {
+              "A": "adopt",
+              "B": "conclude",
+              "C": "compose",
+              "D": "create"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: adopt"
+          },
+          {
+            "id": "q-2-10-jh6ta",
+            "question": "The river ______ by poisonous chemicals for a long time.",
+            "options": {
+              "A": "was polluted",
+              "B": "polluted",
+              "C": "pollutes",
+              "D": "has been polluted"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: has been polluted"
+          },
+          {
+            "id": "q-2-11-u60kb",
+            "question": "The ancient houses ______ by the fire. They are now under reconstruction.",
+            "options": {
+              "A": "were destroyed",
+              "B": "destroyed",
+              "C": "have destroyed",
+              "D": "were destroying"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: were destroyed"
+          },
+          {
+            "id": "q-2-12-djxd9",
+            "question": "In the ____ agriculture, farmers try to limit the use of chemicals and fertilizers.",
+            "options": {
+              "A": "sustainable",
+              "B": "conserving",
+              "C": "preserving",
+              "D": "supporting"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: sustainable"
+          },
+          {
+            "id": "q-2-13-341c3",
+            "question": "In Singapore, people try to ____ 80% of all waste.",
+            "options": {
+              "A": "reprocess",
+              "B": "reclaim",
+              "C": "recycle",
+              "D": "reuse"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: recycle"
+          },
+          {
+            "id": "q-2-14-x5x9p",
+            "question": "Listen! There's someone at the door. I ____ the door for you.",
+            "options": {
+              "A": "am going to open",
+              "B": "am opening",
+              "C": "open",
+              "D": "will open"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: will open"
+          },
+          {
+            "id": "q-2-15-vvj50",
+            "question": "“Look at those dark clouds! “- “Yes, it ____ in some minutes.”",
+            "options": {
+              "A": "will rain",
+              "B": "is going to rain",
+              "C": "are going to rain",
+              "D": "is raining"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: is going to rain"
+          },
+          {
+            "id": "q-2-16-com74",
+            "question": "I ___________ a lot of presents on my birthday last week.",
+            "options": {
+              "A": "give",
+              "B": "was given",
+              "C": "was giving",
+              "D": "have given"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: was given"
+          },
+          {
+            "id": "q-2-17-ghsex",
+            "question": "It‘s very hot. ____ the window. please?",
+            "options": {
+              "A": "Are you opening",
+              "B": "Are you going to open",
+              "C": "Will you open",
+              "D": "Won’t you open"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: Will you open"
+          },
+          {
+            "id": "q-2-18-0ar0y",
+            "question": "___________car models always attract great attention at exhibitions.",
+            "options": {
+              "A": "Eco – friendly",
+              "B": "Wealthy",
+              "C": "Passionate",
+              "D": "Portable"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: Eco – friendly"
+          },
+          {
+            "id": "q-2-19-ncoot",
+            "question": "The new road ______ in a few days.",
+            "options": {
+              "A": "finished",
+              "B": "finish",
+              "C": "is going to be finished",
+              "D": "is finishing"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: is going to be finished"
+          },
+          {
+            "id": "q-2-20-k0df8",
+            "question": "When I get older, I ______ rich and famous.",
+            "options": {
+              "A": "was",
+              "B": "am going to be",
+              "C": "am",
+              "D": "will be"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: will be"
+          },
+          {
+            "id": "q-2-1-wiz1t",
+            "question": "The global climate shifts have occurred for several decades.",
+            "options": {
+              "A": "dealt with",
+              "B": "hidden",
+              "C": "taken place",
+              "D": "checked in"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: taken place"
+          },
+          {
+            "id": "q-2-2-ym9w8",
+            "question": "Increased consumption of water leads to rapid depletion of groundwater reserves.",
+            "options": {
+              "A": "enlarge",
+              "B": "exhaustion",
+              "C": "increase",
+              "D": "expand"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: exhaustion"
+          },
+          {
+            "id": "q-2-3-qgdmn",
+            "question": "Volcanic rocks formed are drastically different from their oceanic counterparts.",
+            "options": {
+              "A": "extremely",
+              "B": "slightly",
+              "C": "moderately",
+              "D": "incompletely"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: extremely"
+          },
+          {
+            "id": "q-2-4-q2gmk",
+            "question": "Certain chemicals are easily absorbed into the bloodstream.",
+            "options": {
+              "A": "consumed",
+              "B": "taken in",
+              "C": "involved",
+              "D": "taken up"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: taken in"
+          },
+          {
+            "id": "q-2-5-xr86x",
+            "question": "Unlike acid rain or deforestation, global warming may not be visible.",
+            "options": {
+              "A": "cultivation",
+              "B": "afforestation",
+              "C": "forestry",
+              "D": "clear-cutting"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: clear-cutting"
+          },
+          {
+            "id": "q-2-1-4geej",
+            "question": "The cancer treatment has some unfortunate side effects.",
+            "options": {
+              "A": "deadly",
+              "B": "disastrous",
+              "C": "lucky",
+              "D": "bad"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: lucky"
+          },
+          {
+            "id": "q-2-2-iky6i",
+            "question": "These virus infections display obvious visual symptoms.",
+            "options": {
+              "A": "clear",
+              "B": "visible",
+              "C": "ambiguous",
+              "D": "apparent"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: ambiguous"
+          },
+          {
+            "id": "q-2-4-90ka7",
+            "question": "Climate change will severely affect many countries in coming decades.",
+            "options": {
+              "A": "heavily",
+              "B": "dangerously",
+              "C": "badly",
+              "D": "mildly"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: mildly"
+          },
+          {
+            "id": "q-2-5-4pwif",
+            "question": "They have made maximum use of the natural resources available.",
+            "options": {
+              "A": "high",
+              "B": "minimum",
+              "C": "average",
+              "D": "top"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: minimum"
+          },
+          {
+            "id": "q-2-3-v01fj",
+            "question": "The word “transmit” in the fifth paragraph is closest in meaning to",
+            "options": {
+              "A": "spread",
+              "B": "break",
+              "C": "conceal",
+              "D": "retain"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: spread"
+          },
+          {
+            "id": "q-2-4-gcp4w",
+            "question": "According to the third paragraph, how many people may possibly have diarrhea each year?",
+            "options": {
+              "A": "297,000",
+              "B": "829,000",
+              "C": "1,126,000",
+              "D": "more than 829,000"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: more than 829,000"
+          },
+          {
+            "id": "q-2-5-ki4dk",
+            "question": "Which of the following diseases is not mentioned in the passage?",
+            "options": {
+              "A": "cancer",
+              "B": "polio",
+              "C": "schistosomiasis",
+              "D": "dengue fever"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: cancer"
+          },
+          {
+            "id": "q-2-3-4hxhu",
+            "question": "The word \"backlash” in paragraph 2 is closest in meaning to _______.",
+            "options": {
+              "A": "agreement",
+              "B": "request",
+              "C": "reaction",
+              "D": "benefit"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: reaction"
+          },
+          {
+            "id": "q-2-4-wbcw2",
+            "question": "The phrase \"the lion's share\" in paragraph 4 is closest in meaning to _______.",
+            "options": {
+              "A": "the largest part",
+              "B": "the best choice",
+              "C": "the animal's food",
+              "D": "the royal dish"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: the largest part"
+          },
+          {
+            "id": "q-2-6-07g4i",
+            "question": "It _________ that half of your plate consists of vegetables and fruit.",
+            "options": {
+              "A": "suggests",
+              "B": "suggesting",
+              "C": "is suggested",
+              "D": "is suggesting"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: is suggested"
+          },
+          {
+            "id": "q-2-7-upnjg",
+            "question": "I _______ an interview for a scholarship tomorrow morning.",
+            "options": {
+              "A": "will have",
+              "B": "am going to have",
+              "C": "will be having",
+              "D": "will have had"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: am going to have"
+          },
+          {
+            "id": "q-2-8-fe8m3",
+            "question": "Not brushing your teeth regularly ________ plaque build up on your teeth.",
+            "options": {
+              "A": "is going to let",
+              "B": "is going to allow",
+              "C": "will let",
+              "D": "will get"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: will let"
+          },
+          {
+            "id": "q-2-9-4iqdz",
+            "question": "I ________ a good hot bath in ten minutes in order to take good care of my skin.",
+            "options": {
+              "A": "will have",
+              "B": "will have had",
+              "C": "will be having",
+              "D": "is going to have"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: is going to have"
+          },
+          {
+            "id": "q-2-10-64qab",
+            "question": "Switching to ____ eco light bulb is one way to protect the environment.",
+            "options": {
+              "A": "energy-wasting",
+              "B": "energy-expending",
+              "C": "energy-lacking",
+              "D": "energy-saving"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: energy-saving"
+          },
+          {
+            "id": "q-2-11-mkfxw",
+            "question": "I never leave any electrical appliances on standby and I think it is a good way to ____ energy in the home.",
+            "options": {
+              "A": "take care of",
+              "B": "use",
+              "C": "keep",
+              "D": "conserve"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: conserve"
+          },
+          {
+            "id": "q-2-12-3knnr",
+            "question": "Someone’s carbon ________ is a measurement of the amount of carbon dioxide that their activities produce.",
+            "options": {
+              "A": "effect",
+              "B": "amount",
+              "C": "footprint",
+              "D": "energy"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: footprint"
+          },
+          {
+            "id": "q-2-13-og5jd",
+            "question": "The injured ____ to the hospital in an ambulance.",
+            "options": {
+              "A": "have taken",
+              "B": "was taking",
+              "C": "were taken",
+              "D": "were taking"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: were taken"
+          },
+          {
+            "id": "q-2-14-jxnso",
+            "question": "I ____ my parents at the weekend. I already bought a train ticket.",
+            "options": {
+              "A": "visit",
+              "B": "am going to visit",
+              "C": "visited",
+              "D": "will visit"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: am going to visit"
+          },
+          {
+            "id": "q-2-15-moc1y",
+            "question": "The more carbon footprint we can ________, the more we can protect the environment.",
+            "options": {
+              "A": "reduce",
+              "B": "increase",
+              "C": "cut",
+              "D": "achieve"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: reduce"
+          },
+          {
+            "id": "q-2-17-0rfms",
+            "question": "A. ways         [ANS]B. routes[/ANS]         C. directions         D. approaches",
+            "options": {
+              "A": "on",
+              "B": "out",
+              "C": "up",
+              "D": "with"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: on"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l10-u3",
+    "number": 3,
+    "title": "Unit 3",
+    "grade": "Lớp 10",
+    "status": "locked",
+    "progress": 0,
+    "lessons": [
+      {
+        "id": "u3-l1",
+        "title": "Vocabulary & Grammar",
+        "type": "grammar",
+        "completed": false,
+        "score": 0,
+        "questions": [
+          {
+            "id": "q-3-2-0m9rp",
+            "question": "To celebrate 60 years of the Eurovision Song Contest, Australia has been given a place in the ______.",
+            "options": {
+              "A": "end",
+              "B": "stop",
+              "C": "final",
+              "D": "bottom"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: final"
+          },
+          {
+            "id": "q-3-3-vtf6v",
+            "question": "Indonesians really enjoy Dangdut, a kind of Indonesian popular music, because the ______ beat compels listeners to dance together in the Ghoomar style.",
+            "options": {
+              "A": "power",
+              "B": "powerful",
+              "C": "powerless",
+              "D": "powerfully"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: powerful"
+          },
+          {
+            "id": "q-3-4-9v5a9",
+            "question": "The first ever Junior Eurovision Song Contest (JESC) ______ in Denmark, in 2003.",
+            "options": {
+              "A": "took part",
+              "B": "took place",
+              "C": "took advantage",
+              "D": "took care"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: took place"
+          },
+          {
+            "id": "q-3-5-koh4n",
+            "question": "Vietnam Idol, a music reality show, is becoming popular among young ______ who love to watch their generation on TV.",
+            "options": {
+              "A": "spectators",
+              "B": "singers",
+              "C": "audiences",
+              "D": "teenage"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: audiences"
+          },
+          {
+            "id": "q-3-6-xsktc",
+            "question": "Some contestants manage ______ the fame from the TV game shows.",
+            "options": {
+              "A": "gain",
+              "B": "gaining",
+              "C": "to be gained",
+              "D": "to gain"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: to gain"
+          },
+          {
+            "id": "q-3-7-u53iu",
+            "question": "The local authorities will cooperate with the Department of Education and Training ______ the traditional music in the schools next year.",
+            "options": {
+              "A": "to teach",
+              "B": "teach",
+              "C": "teaching",
+              "D": "taught"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: to teach"
+          },
+          {
+            "id": "q-3-8-hpbb9",
+            "question": "My Tam made her fans ______ surprised when she was given the title of “Asia’s Music Legend” in 2014.",
+            "options": {
+              "A": "feel",
+              "B": "felt",
+              "C": "feeling",
+              "D": "to feel"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: feel"
+          },
+          {
+            "id": "q-3-9-s56yh",
+            "question": "The clown in a Cheo play seems to be a supporting role, ______ actually he or she is very important to the performance.",
+            "options": {
+              "A": "and",
+              "B": "but",
+              "C": "so",
+              "D": "or"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: but"
+          },
+          {
+            "id": "q-3-10-e92yr",
+            "question": "The main sponsors of “American Idol” including Coca-Cola and AT&T have left, ______ finance becomes a big problem.",
+            "options": {
+              "A": "and",
+              "B": "but",
+              "C": "or",
+              "D": "so"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: so"
+          },
+          {
+            "id": "q-3-11-2pypj",
+            "question": "Nguyen Thuc Thuy Tien left a positive impression on both judges and ______ because of her friendliness and natural beauty.",
+            "options": {
+              "A": "spectators",
+              "B": "viewers",
+              "C": "audience",
+              "D": "passer-by"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: audience"
+          },
+          {
+            "id": "q-3-12-22153",
+            "question": "When he was a teenager, he ______ at the local theatre in his home town during the tourist season.",
+            "options": {
+              "A": "performed",
+              "B": "attracted",
+              "C": "decided",
+              "D": "relaxed"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: performed"
+          },
+          {
+            "id": "q-3-13-topbi",
+            "question": "She has joined the panel of ______ the popular TV talent show.",
+            "options": {
+              "A": "audience",
+              "B": "judges",
+              "C": "viewers",
+              "D": "watchers"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: judges"
+          },
+          {
+            "id": "q-3-14-xvs70",
+            "question": "I didn't enjoy the performance because I couldn't ______ with any of the main characters.",
+            "options": {
+              "A": "identify",
+              "B": "deal",
+              "C": "cope",
+              "D": "cooperate"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: identify"
+          },
+          {
+            "id": "q-3-15-f11tq",
+            "question": "Judges travel all round America ______ search of the best singers and bring them to Hollywood.",
+            "options": {
+              "A": "on",
+              "B": "in",
+              "C": "at",
+              "D": "for"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: in"
+          },
+          {
+            "id": "q-3-16-qvyxj",
+            "question": "Can you play any ______? - Yes. I can play the flute and the guitar.",
+            "options": {
+              "A": "musical tools",
+              "B": "pieces of music",
+              "C": "musical instruments",
+              "D": "musical devices"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: musical instruments"
+          },
+          {
+            "id": "q-3-17-p3ied",
+            "question": "Two of the four contestants will be ______ after tonight's show.",
+            "options": {
+              "A": "composed",
+              "B": "removed",
+              "C": "eliminated",
+              "D": "terminated"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: eliminated"
+          },
+          {
+            "id": "q-3-18-vg8l6",
+            "question": "Our music teacher has been invited to be a ______ in many music competitions and talent shows.",
+            "options": {
+              "A": "singer",
+              "B": "competitor",
+              "C": "contestant",
+              "D": "judge"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: judge"
+          },
+          {
+            "id": "q-3-19-lky2v",
+            "question": "American singer Michael Jackson made a record when he had got 13 Billboard Hot 100 number-one ______.",
+            "options": {
+              "A": "singles",
+              "B": "single",
+              "C": "singer",
+              "D": "singers"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: singles"
+          },
+          {
+            "id": "q-3-20-huo72",
+            "question": "The judges ______ an important role in the competition.",
+            "options": {
+              "A": "work",
+              "B": "play",
+              "C": "rest",
+              "D": "put"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: play"
+          },
+          {
+            "id": "q-3-21-eav83",
+            "question": "It is raining outside. ______ I will take my umbrella.",
+            "options": {
+              "A": "or",
+              "B": "but",
+              "C": "and",
+              "D": "so"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: so"
+          },
+          {
+            "id": "q-3-22-wv64n",
+            "question": "I will not eat that beefsteak, ______ I am a vegetarian.",
+            "options": {
+              "A": "but",
+              "B": "nor",
+              "C": "for",
+              "D": "yet"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: for"
+          },
+          {
+            "id": "q-3-23-1ciwf",
+            "question": "Christina violated a major rule of her contract; ______, she was sued.",
+            "options": {
+              "A": "so",
+              "B": "therefore",
+              "C": "and",
+              "D": "moreover"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: therefore"
+          },
+          {
+            "id": "q-3-24-qc28v",
+            "question": "Did someone knock at the door, ______ am I imagining things?",
+            "options": {
+              "A": "or",
+              "B": "nor",
+              "C": "yet",
+              "D": "for"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: or"
+          },
+          {
+            "id": "q-3-25-20dwr",
+            "question": "That car needs many repairs; ______, I will not even consider buying it.",
+            "options": {
+              "A": "but",
+              "B": "moreover",
+              "C": "so",
+              "D": "and"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: moreover"
+          },
+          {
+            "id": "q-3-26-7l8vw",
+            "question": "I have queued for hours, ______ I didn’t get to see the concert.",
+            "options": {
+              "A": "so",
+              "B": "for",
+              "C": "or",
+              "D": "yet"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: yet"
+          },
+          {
+            "id": "q-3-27-p1x32",
+            "question": "I was born in France; ______, I’ve lived in Viet Nam for so long that it feels like home now.",
+            "options": {
+              "A": "and",
+              "B": "but",
+              "C": "however",
+              "D": "besides"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: however"
+          },
+          {
+            "id": "q-3-28-p6eqd",
+            "question": "It’s lucky that he jumped away; ______, he would have been badly hurt.",
+            "options": {
+              "A": "otherwise",
+              "B": "however",
+              "C": "but",
+              "D": "so"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: otherwise"
+          },
+          {
+            "id": "q-3-29-zmurk",
+            "question": "I’m going to buy a new tablet computer, new mobile phone, ______ might buy a new mobile phone.",
+            "options": {
+              "A": "nor",
+              "B": "or",
+              "C": "besides",
+              "D": "yet"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: or"
+          },
+          {
+            "id": "q-3-30-yd33m",
+            "question": "Our club is free to residents, ______ you can enjoy discos or live bands.",
+            "options": {
+              "A": "or",
+              "B": "and",
+              "C": "therefore",
+              "D": "yet"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: and"
+          },
+          {
+            "id": "q-3-1-wm09n",
+            "question": "Everyone gathered around to hear the song.",
+            "options": {
+              "A": "broke up",
+              "B": "came together",
+              "C": "separated",
+              "D": "went along with"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: came together"
+          },
+          {
+            "id": "q-3-2-hqi2l",
+            "question": "Her wedding dress was absolutely exquisite.",
+            "options": {
+              "A": "charming",
+              "B": "lovely",
+              "C": "elegant",
+              "D": "finely detailed"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: finely detailed"
+          },
+          {
+            "id": "q-3-3-pijla",
+            "question": "Then latest disc is a worthy successor to their popular debut album.",
+            "options": {
+              "A": "conclusion",
+              "B": "introduction",
+              "C": "ending",
+              "D": "completion"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: introduction"
+          },
+          {
+            "id": "q-3-4-wlnyt",
+            "question": "His writings were deeply subjected to the classical style.",
+            "options": {
+              "A": "affected by",
+              "B": "resulted in",
+              "C": "contrary to",
+              "D": "responsible for"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: affected by"
+          },
+          {
+            "id": "q-3-5-zhq50",
+            "question": "His latest album release is a compilation of his jazz works over the past decade.",
+            "options": {
+              "A": "news",
+              "B": "collection",
+              "C": "publication",
+              "D": "notice"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: publication"
+          },
+          {
+            "id": "q-3-1-3rbcz",
+            "question": "He was an amateur singer until the age of 39.",
+            "options": {
+              "A": "young",
+              "B": "skilled",
+              "C": "special",
+              "D": "professional"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: professional"
+          },
+          {
+            "id": "q-3-2-4vve1",
+            "question": "You may apply for tickets in person or by letter.",
+            "options": {
+              "A": "secretly",
+              "B": "formally",
+              "C": "indirectly",
+              "D": "face-to-face"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: indirectly"
+          },
+          {
+            "id": "q-3-3-zfuti",
+            "question": "It was a remarkable achievement for such a young player.",
+            "options": {
+              "A": "failure",
+              "B": "defeat",
+              "C": "effort",
+              "D": "misfortune"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: failure"
+          },
+          {
+            "id": "q-3-4-2c4ex",
+            "question": "She adored her parents and would do anything to please them.",
+            "options": {
+              "A": "idolized",
+              "B": "hated",
+              "C": "liked",
+              "D": "criticize"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: hated"
+          },
+          {
+            "id": "q-3-5-989a0",
+            "question": "The cancellation of the tour was a great disappointment for many fans of the band.",
+            "options": {
+              "A": "sadness",
+              "B": "discouragement",
+              "C": "pleasure",
+              "D": "appointment"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: pleasure"
+          },
+          {
+            "id": "q-3-2-pl8yc",
+            "question": "When was the album Thriller released?",
+            "options": {
+              "A": "1964",
+              "B": "1971",
+              "C": "1982",
+              "D": "2000"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: 1982"
+          },
+          {
+            "id": "q-3-3-bsp3r",
+            "question": "Which of the following song is included in the album Thriller?",
+            "options": {
+              "A": "Billie Jean",
+              "B": "Black or White",
+              "C": "Heal the World",
+              "D": "Earth Song"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: Billie Jean"
+          },
+          {
+            "id": "q-3-3-0uxtc",
+            "question": "What does the word “instructor” in paragraph 2 mean?",
+            "options": {
+              "A": "DJ",
+              "B": "classmate",
+              "C": "member",
+              "D": "teacher"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: teacher"
+          },
+          {
+            "id": "q-3-8-bnmwz",
+            "question": "In the clause “It belongs here” in the last paragraph, the word “it” refers to___.",
+            "options": {
+              "A": "rap",
+              "B": "hardship",
+              "C": "American culture",
+              "D": "pain"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: rap"
+          },
+          {
+            "id": "q-3-6-v4vdr",
+            "question": "The tragic end of “Swan Lake” shows that magic is ___________ over love.",
+            "options": {
+              "A": "power",
+              "B": "powerful",
+              "C": "powerless",
+              "D": "powerfully"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: powerless"
+          },
+          {
+            "id": "q-3-7-ey5ef",
+            "question": "Van Cao’ s Tien Quan Ca was made into the national ___________ of the Socialist Republic of Viet Nam.",
+            "options": {
+              "A": "song",
+              "B": "music",
+              "C": "melody",
+              "D": "anthem"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: anthem"
+          },
+          {
+            "id": "q-3-8-isc9n",
+            "question": "Chopin is the one of the greatest romantic piano composers whose works are often technically ___________.",
+            "options": {
+              "A": "demand",
+              "B": "demanding",
+              "C": "undemanding",
+              "D": "demanded"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: demanding"
+          },
+          {
+            "id": "q-3-9-q5z0r",
+            "question": "Fantasia Barrino, the winner of American Idol’s season 3 in 2004, released her first ___________ Free Yourself , which earned three Grammy Award nominations.",
+            "options": {
+              "A": "album",
+              "B": "live performance",
+              "C": "local version",
+              "D": "live programme"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: album"
+          },
+          {
+            "id": "q-3-10-j5nuu",
+            "question": "That teen idol was ___________ to win second place in the Idol Contest in 2010.",
+            "options": {
+              "A": "talent",
+              "B": "being talented",
+              "C": "talented",
+              "D": "talentless"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: talented"
+          },
+          {
+            "id": "q-3-11-t84xx",
+            "question": "Her teachers and schoolmates noticed her ___________ a deep love of music during her childhood.",
+            "options": {
+              "A": "develop",
+              "B": "to develop",
+              "C": "developing",
+              "D": "developed"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: develop"
+          },
+          {
+            "id": "q-3-12-prp0f",
+            "question": "A playoff is an extra game in a competition played between two teams of competitors who both have the same scores ___________ the winners.",
+            "options": {
+              "A": "decide",
+              "B": "to decide",
+              "C": "deciding",
+              "D": "to deciding"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: to decide"
+          },
+          {
+            "id": "q-3-13-ym518",
+            "question": "Hat Boi involves singing with distinctive vocal production techniques, symbolic gestures, ___________ it is extremely difficult to perform ___________ requires special training in the art form.",
+            "options": {
+              "A": "and-but",
+              "B": "so -but",
+              "C": "so-and",
+              "D": "but-and"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: so-and"
+          },
+          {
+            "id": "q-3-14-wfm62",
+            "question": "Scenes in Cai Luong are elaborate ___________ they are changed frequently throughout the play.",
+            "options": {
+              "A": "and",
+              "B": "or",
+              "C": "but",
+              "D": "so"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: and"
+          },
+          {
+            "id": "q-3-15-0eq2c",
+            "question": "Many “American Idol” contestants went on to become huge stars, ___________ the popularity of “American Idol” began to decrease.",
+            "options": {
+              "A": "and",
+              "B": "but",
+              "C": "so",
+              "D": "or"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: but"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l10-u4",
+    "number": 4,
+    "title": "Unit 4",
+    "grade": "Lớp 10",
+    "status": "locked",
+    "progress": 0,
+    "lessons": [
+      {
+        "id": "u4-l1",
+        "title": "Vocabulary & Grammar",
+        "type": "grammar",
+        "completed": false,
+        "score": 0,
+        "questions": [
+          {
+            "id": "q-4-1-zyw3l",
+            "question": "I particularly have a(n) _______ in working with children.",
+            "options": {
+              "A": "luck",
+              "B": "opportunity",
+              "C": "chance",
+              "D": "interest"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: interest"
+          },
+          {
+            "id": "q-4-2-023am",
+            "question": "The win _______ the confidence of the football team.",
+            "options": {
+              "A": "rose",
+              "B": "helped",
+              "C": "grew",
+              "D": "boosted"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: boosted"
+          },
+          {
+            "id": "q-4-3-aeidz",
+            "question": "They had to sit through _______ meetings, and they felt very tired.",
+            "options": {
+              "A": "finishing",
+              "B": "ending",
+              "C": "endless",
+              "D": "ends"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: endless"
+          },
+          {
+            "id": "q-4-4-km8hp",
+            "question": "The elderly people in our neighbourhood appreciated the _______ of the place.",
+            "options": {
+              "A": "cleaning out",
+              "B": "cleaning away",
+              "C": "cleaning up",
+              "D": "cleaning on"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: cleaning up"
+          },
+          {
+            "id": "q-4-5-ap4ph",
+            "question": "Many teenagers _______ their applications to become volunteers in that summer campaign.",
+            "options": {
+              "A": "give out",
+              "B": "give in",
+              "C": "send in",
+              "D": "send away"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: send in"
+          },
+          {
+            "id": "q-4-7-2dtgn",
+            "question": "I would like to continue to lend my helping hands to achieve the goal of giving all children an equal chance of having _______ futures.",
+            "options": {
+              "A": "succeed",
+              "B": "successive",
+              "C": "successful",
+              "D": "succeeding"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: successful"
+          },
+          {
+            "id": "q-4-10-xmt1z",
+            "question": "_______ also helped to set up and arrange two retail stalls, selling the products to visitors.",
+            "options": {
+              "A": "Volunteer",
+              "B": "Volunteers",
+              "C": "Volunteering",
+              "D": "Voluntary"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: Volunteers"
+          },
+          {
+            "id": "q-4-11-zy0qq",
+            "question": "If you don't have time to volunteer, you can__________ money and food.",
+            "options": {
+              "A": "participate",
+              "B": "boost",
+              "C": "donate",
+              "D": "deliver"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: donate"
+          },
+          {
+            "id": "q-4-12-z0dpp",
+            "question": "This clean water project will ______________the people in the village.",
+            "options": {
+              "A": "benefit",
+              "B": "donate",
+              "C": "raise",
+              "D": "volunteer"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: benefit"
+          },
+          {
+            "id": "q-4-13-hspuu",
+            "question": "Our club needs more_____________ to clean up the park at the weekend.",
+            "options": {
+              "A": "spectators",
+              "B": "assistants",
+              "C": "volunteers",
+              "D": "electrician"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: volunteers"
+          },
+          {
+            "id": "q-4-14-t71y0",
+            "question": "I am ___________________ in community development activities.",
+            "options": {
+              "A": "interested",
+              "B": "interesting",
+              "C": "excited",
+              "D": "exciting"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: interested"
+          },
+          {
+            "id": "q-4-15-5g9cs",
+            "question": "There are ________________ volunteering opportunities in our community.",
+            "options": {
+              "A": "excite",
+              "B": "excitedly",
+              "C": "excited",
+              "D": "exciting"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: exciting"
+          },
+          {
+            "id": "q-4-16-s0h95",
+            "question": "They visit a retirement home and ____ time doing fun activities with the elderly who lack immediate family.",
+            "options": {
+              "A": "spend",
+              "B": "lose",
+              "C": "waste",
+              "D": "consume"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: spend"
+          },
+          {
+            "id": "q-4-17-v11rg",
+            "question": "Fundraising for charity is a ____ thing for everyone to do to help the community.",
+            "options": {
+              "A": "meant",
+              "B": "meaningful",
+              "C": "meaningless",
+              "D": "meaning"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: meaningful"
+          },
+          {
+            "id": "q-4-18-m8we7",
+            "question": "Both community ____ and volunteerism are an investment in our community and the people who live in it.",
+            "options": {
+              "A": "life",
+              "B": "language",
+              "C": "performance",
+              "D": "service"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: service"
+          },
+          {
+            "id": "q-4-19-f49as",
+            "question": "We hope that students themselves will enjoy taking part ______ the projects.",
+            "options": {
+              "A": "in",
+              "B": "on",
+              "C": "at",
+              "D": "for"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: in"
+          },
+          {
+            "id": "q-4-20-1hijk",
+            "question": "Many international volunteer organizations are trying to find a ____ to the problem of world hunger.",
+            "options": {
+              "A": "way",
+              "B": "method",
+              "C": "suggestion",
+              "D": "solution"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: solution"
+          },
+          {
+            "id": "q-4-1-aqba8",
+            "question": "We have made some minor changes to the program.",
+            "options": {
+              "A": "small",
+              "B": "super",
+              "C": "large",
+              "D": "low"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: small"
+          },
+          {
+            "id": "q-4-2-6eh1d",
+            "question": "Through play children act out and learn how to master situations.",
+            "options": {
+              "A": "adapt",
+              "B": "become proficient",
+              "C": "exchange",
+              "D": "deal with"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: become proficient"
+          },
+          {
+            "id": "q-4-3-djnj7",
+            "question": "Agriculture used to be the economic backbone of this country.",
+            "options": {
+              "A": "aspect",
+              "B": "field",
+              "C": "foundation",
+              "D": "weakness"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: foundation"
+          },
+          {
+            "id": "q-4-4-75x0p",
+            "question": "We've had to make some adjustments to original calculations.",
+            "options": {
+              "A": "derivative",
+              "B": "premier",
+              "C": "modified",
+              "D": "first"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: first"
+          },
+          {
+            "id": "q-4-5-6pkj0",
+            "question": "His research has contributed enormously to our understanding of the disease.",
+            "options": {
+              "A": "kept",
+              "B": "added",
+              "C": "deducted",
+              "D": "divided"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: added"
+          },
+          {
+            "id": "q-4-1-0z8ab",
+            "question": "The community is appealing to everyone to save water.",
+            "options": {
+              "A": "rescue",
+              "B": "waste",
+              "C": "use",
+              "D": "store"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: waste"
+          },
+          {
+            "id": "q-4-2-01anq",
+            "question": "You can't be dependent on your parents all your life.",
+            "options": {
+              "A": "related",
+              "B": "reliant",
+              "C": "helpless",
+              "D": "independent"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: independent"
+          },
+          {
+            "id": "q-4-3-i4zqe",
+            "question": "Cheap goods are available, but not in sufficient quantities to satisfy demand.",
+            "options": {
+              "A": "enough",
+              "B": "adequate",
+              "C": "poor",
+              "D": "abundant"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: poor"
+          },
+          {
+            "id": "q-4-4-ep86k",
+            "question": "He closed his business voluntarily and signed his assets over to someone else.",
+            "options": {
+              "A": "unwillingly",
+              "B": "freely",
+              "C": "readily",
+              "D": "intentionally"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: unwillingly"
+          },
+          {
+            "id": "q-4-5-xo5og",
+            "question": "There have been some fundamental structural changes in society.",
+            "options": {
+              "A": "nonessential",
+              "B": "basic",
+              "C": "important",
+              "D": "foundational"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: nonessential"
+          },
+          {
+            "id": "q-4-6-o11eq",
+            "question": "Don’t forget to _______ your information about your interests and skills in your CV.",
+            "options": {
+              "A": "finish",
+              "B": "add",
+              "C": "fill in",
+              "D": "compare"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: fill in"
+          },
+          {
+            "id": "q-4-7-qgd36",
+            "question": "Our school organize a pop concert to _______ money for the charity.",
+            "options": {
+              "A": "raise",
+              "B": "rise",
+              "C": "give",
+              "D": "bring"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: raise"
+          },
+          {
+            "id": "q-4-8-2opus",
+            "question": "You can donate the clothes you don’t use any more- there’s no point in having them _______ in the wardrobe.",
+            "options": {
+              "A": "unusual",
+              "B": "reused",
+              "C": "used",
+              "D": "unused"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: unused"
+          },
+          {
+            "id": "q-4-9-z8j7x",
+            "question": "How can I stop _______ emails or junk emails every day.",
+            "options": {
+              "A": "wanted",
+              "B": "unwanted",
+              "C": "unwilling",
+              "D": "uncertain"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: unwanted"
+          },
+          {
+            "id": "q-4-10-co5pp",
+            "question": "Becoming a foreign volunteer had given her a new _______ of purpose in life.",
+            "options": {
+              "A": "direction",
+              "B": "sense",
+              "C": "taste",
+              "D": "feeling"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: sense"
+          },
+          {
+            "id": "q-4-11-2xzk9",
+            "question": "In our volunteer programme, the possibilities are _______, and all you need is determination and a little creativity.",
+            "options": {
+              "A": "end",
+              "B": "ending",
+              "C": "endless",
+              "D": "everlasting"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: endless"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l10-u5",
+    "number": 5,
+    "title": "Unit 5",
+    "grade": "Lớp 10",
+    "status": "locked",
+    "progress": 0,
+    "lessons": [
+      {
+        "id": "u5-l1",
+        "title": "Vocabulary & Grammar",
+        "type": "grammar",
+        "completed": false,
+        "score": 0,
+        "questions": [
+          {
+            "id": "q-5-5-voyge",
+            "question": "[ANS]A. transmission[/ANS][ANS] [/ANS]        B. [ANS]century [/ANS]        C. [ANS]chemical [/ANS]        D. [ANS]holiday[/ANS]",
+            "options": {
+              "A": "passenger",
+              "B": "instruction",
+              "C": "document",
+              "D": "customer"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: instruction"
+          },
+          {
+            "id": "q-5-2-1bq77",
+            "question": "[ANS]A. intell[/ANS][ANS]i[/ANS][ANS]gent[/ANS]        B. profile        C. science        D. versatile",
+            "options": {
+              "A": "webs",
+              "B": "trips",
+              "C": "chefs",
+              "D": "disks"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: webs"
+          },
+          {
+            "id": "q-5-4-dpdav",
+            "question": "A. benefit        B. generous        C. inventor        [ANS]D. vid[/ANS][ANS]e[/ANS][ANS]o[/ANS]",
+            "options": {
+              "A": "weigh",
+              "B": "rough",
+              "C": "cough",
+              "D": "laugh"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: weigh"
+          },
+          {
+            "id": "q-5-7-18hg7",
+            "question": "A. costly        [ANS]B. ma[/ANS][ANS]t[/ANS][ANS]ure[/ANS]        C. portable        D. smartphone",
+            "options": {
+              "A": "changed",
+              "B": "discovered",
+              "C": "started",
+              "D": "performed"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: started"
+          },
+          {
+            "id": "q-5-9-9okri",
+            "question": "[ANS]A. c[/ANS][ANS]o[/ANS][ANS]mpany[/ANS]        B. compose        C. comprise        D. computer",
+            "options": {
+              "A": "alert",
+              "B": "apple",
+              "C": "against",
+              "D": "around"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: apple"
+          },
+          {
+            "id": "q-5-1-ohad8",
+            "question": "It is thought that Google ________ cars may transform the way we move around cities in the future.",
+            "options": {
+              "A": "driving",
+              "B": "driver",
+              "C": "motionless",
+              "D": "driverless"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: driverless"
+          },
+          {
+            "id": "q-5-2-qmo0k",
+            "question": "Retinal implants are meant to partially restore vision to people who have lost their ________.",
+            "options": {
+              "A": "view",
+              "B": "scene",
+              "C": "scenery",
+              "D": "sight"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: sight"
+          },
+          {
+            "id": "q-5-3-zv60i",
+            "question": "Biotech drugs, which are ________ from living cells, provide some of the best efforts at curing diseases such as diabetes, Alzheimer's, Parkinson's, and HIV.",
+            "options": {
+              "A": "done",
+              "B": "made",
+              "C": "caused",
+              "D": "formed"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: made"
+          },
+          {
+            "id": "q-5-4-3uwba",
+            "question": "The cocoons of silkworms were first used ________ silk by the Chinese.",
+            "options": {
+              "A": "to make",
+              "B": "for make",
+              "C": "to making",
+              "D": "to be made"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: to make"
+          },
+          {
+            "id": "q-5-5-o8sw9",
+            "question": "Paper was first ________ to make paper money, playing cards or the world's oldest book the Diamond Sutra - in the 2nd century by the Chinese.",
+            "options": {
+              "A": "to invent",
+              "B": "inventing",
+              "C": "being invented",
+              "D": "invented"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: invented"
+          },
+          {
+            "id": "q-5-6-mhqt9",
+            "question": "The magnetic compass was first used to determine the correct ________ by the Chinese.",
+            "options": {
+              "A": "way",
+              "B": "road",
+              "C": "path",
+              "D": "direction"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: direction"
+          },
+          {
+            "id": "q-5-7-n5ahy",
+            "question": "Gunpowder was first used to make beautiful displays of ________ for celebrations in the 9th century by the Chinese.",
+            "options": {
+              "A": "firing",
+              "B": "fires",
+              "C": "fireworks",
+              "D": "firework"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: fireworks"
+          },
+          {
+            "id": "q-5-8-4w7vl",
+            "question": "IBM Watson is an artificially intelligent computer system ________ of answering questions posed in natural language.",
+            "options": {
+              "A": "capable",
+              "B": "aware",
+              "C": "able",
+              "D": "fond"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: capable"
+          },
+          {
+            "id": "q-5-9-ekzhd",
+            "question": "YouTube ________ to become the world's most popular video-sharing website since 2005.",
+            "options": {
+              "A": "grows",
+              "B": "grew",
+              "C": "has grown",
+              "D": "have grown"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: has grown"
+          },
+          {
+            "id": "q-5-10-6dsos",
+            "question": "Apple iPad ________ the single most popular tablet PC ever since 2010.",
+            "options": {
+              "A": "has existed",
+              "B": "has stayed",
+              "C": "has remained",
+              "D": "has continued"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: has remained"
+          },
+          {
+            "id": "q-5-11-nenpb",
+            "question": "The screen will ________ the username in the top right-hand corner.",
+            "options": {
+              "A": "store",
+              "B": "display",
+              "C": "install",
+              "D": "promote"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: display"
+          },
+          {
+            "id": "q-5-12-vfolo",
+            "question": "The laptop is not working because you haven't ________ it yet.",
+            "options": {
+              "A": "changed",
+              "B": "charged",
+              "C": "pressed",
+              "D": "put"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: charged"
+          },
+          {
+            "id": "q-5-13-p10jz",
+            "question": "The scientists ________ important research in the laboratory.",
+            "options": {
+              "A": "put out",
+              "B": "go out",
+              "C": "hand out",
+              "D": "carry out"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: carry out"
+          },
+          {
+            "id": "q-5-14-kwlp3",
+            "question": "You can send and receive e-mails from a ________.",
+            "options": {
+              "A": "charger",
+              "B": "printer",
+              "C": "smartphone",
+              "D": "USB"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: smartphone"
+          },
+          {
+            "id": "q-5-15-3p8x7",
+            "question": "Many young people carry a pair of earbuds as they are small, light, and ________.",
+            "options": {
+              "A": "chargeable",
+              "B": "economical",
+              "C": "portable",
+              "D": "transferable"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: portable"
+          },
+          {
+            "id": "q-5-16-b82kz",
+            "question": "Modern smartphones nowadays do not have many ________ to look better.",
+            "options": {
+              "A": "buttons",
+              "B": "keyboards",
+              "C": "screens",
+              "D": "pens"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: buttons"
+          },
+          {
+            "id": "q-5-17-25jjt",
+            "question": "Be careful when using electrical ________.",
+            "options": {
+              "A": "equipment",
+              "B": "experiment",
+              "C": "experience",
+              "D": "exception"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: equipment"
+          },
+          {
+            "id": "q-5-18-003p0",
+            "question": "Andy should install this ___________ on her smartphone. It helps to make her photos more beautiful.",
+            "options": {
+              "A": "hardware",
+              "B": "software",
+              "C": "device",
+              "D": "equipment"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: software"
+          },
+          {
+            "id": "q-5-19-60v5f",
+            "question": "If you have an ____________, you don't have to bring all those heavy books in your bag.",
+            "options": {
+              "A": "correction pen",
+              "B": "e-book reader",
+              "C": "digital camera",
+              "D": "earbuds"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: e-book reader"
+          },
+          {
+            "id": "q-5-20-1b5bj",
+            "question": "I think this is a _____________ problem. The computer screen is broken.",
+            "options": {
+              "A": "hardware",
+              "B": "software",
+              "C": "device",
+              "D": "equipment"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: hardware"
+          },
+          {
+            "id": "q-5-21-tp4uz",
+            "question": "Washing machine or vacuum cleaner can help you to ________ time while doing housework.",
+            "options": {
+              "A": "kill",
+              "B": "save",
+              "C": "spend",
+              "D": "waste"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: save"
+          },
+          {
+            "id": "q-5-22-csig1",
+            "question": "A robot vacuum cleaner is a _____________ device in your home. It makes housework less tiring.",
+            "options": {
+              "A": "help",
+              "B": "helpless",
+              "C": "helpful",
+              "D": "helpfully"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: helpful"
+          },
+          {
+            "id": "q-5-23-9jikh",
+            "question": "It is convenient for you to read ________ when you travel.",
+            "options": {
+              "A": "e-books",
+              "B": "laptops",
+              "C": "online game",
+              "D": "smartphones"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: e-books"
+          },
+          {
+            "id": "q-5-24-lvldc",
+            "question": "3-D is used to produce complex tools and components.",
+            "options": {
+              "A": "print",
+              "B": "printing",
+              "C": "printer",
+              "D": "blueprint"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: printer"
+          },
+          {
+            "id": "q-5-25-z5qvs",
+            "question": "I ________ to school every day for the last two weeks.",
+            "options": {
+              "A": "walked",
+              "B": "have walked",
+              "C": "walk",
+              "D": "was walking"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: have walked"
+          },
+          {
+            "id": "q-5-26-hm6nt",
+            "question": "It is very difficult ________ because it smells horrible.        A. for breathe         B. to me for breathing        C. for me breathing         [ANS]D. for me to breathe[/ANS]27. The manager decided ________ in their personal discussions.        A. to not participating         B. not participating        [ANS]C. not to participate[/ANS]         D. to not participate28. Jacky ________ in Seoul for five years, but he ________ in 2021.        [ANS]A. lived – left[/ANS]        B. has lived – left        C. lived - has left        D. has lived - has left29. My friend promised ________ the time to help me ________.",
+            "options": {
+              "A": "to find – moving",
+              "B": "finding – move",
+              "C": "finding - to move",
+              "D": "to find - move30. This rule is ___________ the usage of infinitives."
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: to find - move30. This rule is ___________ the usage of infinitives."
+          },
+          {
+            "id": "q-5-32-7ghg6",
+            "question": "Making friends ________ more difficult since I ________ a new city.",
+            "options": {
+              "A": "become – moved",
+              "B": "has become",
+              "C": "became - have moved",
+              "D": "became moved33. Facebook is used ________ among the young."
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: has become"
+          },
+          {
+            "id": "q-5-34-vrz5w",
+            "question": "It's no good ________ him the truth now.",
+            "options": {
+              "A": "not to tell",
+              "B": "tell",
+              "C": "telling",
+              "D": "to tell"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: telling"
+          },
+          {
+            "id": "q-5-35-b2wzm",
+            "question": "Most of my friends enjoy ________ football on television.",
+            "options": {
+              "A": "watch",
+              "B": "to watch",
+              "C": "watching",
+              "D": "watched"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: watching"
+          },
+          {
+            "id": "q-5-36-w5aa3",
+            "question": "He reminded me ________ to give the book back to John",
+            "options": {
+              "A": "not forget",
+              "B": "not to forget",
+              "C": "forgot",
+              "D": "forgetting"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: not to forget"
+          },
+          {
+            "id": "q-5-37-zs3hp",
+            "question": "It's important ________ too much about your failure.",
+            "options": {
+              "A": "not to worry",
+              "B": "not worry",
+              "C": "not worrying to",
+              "D": "don’t worry"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: not to worry"
+          },
+          {
+            "id": "q-5-38-c5f2n",
+            "question": "Mary often watches YouTube videos to study how ________ a dish or make a cake.",
+            "options": {
+              "A": "cook",
+              "B": "cooking",
+              "C": "to cook",
+              "D": "to cooking"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: to cook"
+          },
+          {
+            "id": "q-5-39-4ipec",
+            "question": "________ is better than ________, so keep your hands busy.",
+            "options": {
+              "A": "Do – say",
+              "B": "To do – saying",
+              "C": "Doing - to say",
+              "D": "Doing saying40. They ________ reporting the results of the competition until they were sure."
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: Doing saying40. They ________ reporting the results of the competition until they were sure."
+          },
+          {
+            "id": "q-5-42-ziw4i",
+            "question": "We think they ________ all that is necessary.",
+            "options": {
+              "A": "have done",
+              "B": "doing",
+              "C": "has gone",
+              "D": "had gone"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: have done"
+          },
+          {
+            "id": "q-5-43-c3igb",
+            "question": "I'd like to see that football match because I ________ one this year.",
+            "options": {
+              "A": "don't see",
+              "B": "can't see",
+              "C": "hardly see",
+              "D": "haven't seen"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: haven't seen"
+          },
+          {
+            "id": "q-5-44-3gkuu",
+            "question": "I can't believe that you ________ all the three exercises. You just started five minutes ago.",
+            "options": {
+              "A": "have finished",
+              "B": "have been finishing",
+              "C": "finished",
+              "D": "are finishing"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: have finished"
+          },
+          {
+            "id": "q-5-45-8su3m",
+            "question": "Up to now, the discount ________ to children under ten years old.",
+            "options": {
+              "A": "has only applied",
+              "B": "only applies",
+              "C": "was only applied",
+              "D": "only applied"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: has only applied"
+          },
+          {
+            "id": "q-5-46-sojzi",
+            "question": "Tom often watches TV after his parents ________ to bed.",
+            "options": {
+              "A": "had gone",
+              "B": "have gone",
+              "C": "go",
+              "D": "went"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: have gone"
+          },
+          {
+            "id": "q-5-48-51hku",
+            "question": "Jane is a wonderful singer. Her mother tells me that she ________ professionally since she was four.",
+            "options": {
+              "A": "has been sung",
+              "B": "was singing",
+              "C": "is singing",
+              "D": "has been singing"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: has been singing"
+          },
+          {
+            "id": "q-5-50-t2u20",
+            "question": "None of the students ________ to class yet.",
+            "options": {
+              "A": "are coming",
+              "B": "hadn't come",
+              "C": "haven't come",
+              "D": "have come"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: have come"
+          },
+          {
+            "id": "q-5-1-5mdj3",
+            "question": "Thomas Edison was born in__________.",
+            "options": {
+              "A": "Ohio",
+              "B": "Michigan",
+              "C": "New Jersey",
+              "D": "Washington"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: Ohio"
+          },
+          {
+            "id": "q-5-3-uoe9j",
+            "question": "His first patent was granted in__________.",
+            "options": {
+              "A": "1867",
+              "B": "1869",
+              "C": "1876",
+              "D": "1899"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: 1869"
+          },
+          {
+            "id": "q-5-5-61u2z",
+            "question": "He had __________ children.",
+            "options": {
+              "A": "3",
+              "B": "4",
+              "C": "5",
+              "D": "6"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: 6"
+          },
+          {
+            "id": "q-5-10-g31hg",
+            "question": "A: Why do you choose it?         B:         [ANS]a/ It's easy to use and not expensive.[/ANS] b/ It was made in Japan ten years ago.",
+            "options": {
+              "A": "They're not signs. They're Braille patterns.",
+              "B": "Hope you enjoy it.",
+              "C": "Yes, they are for blind people.",
+              "D": "That's a good question.2. - A: Who invented compass?   - B: _______________________________________________________________________"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: They're not signs. They're Braille patterns."
+          },
+          {
+            "id": "q-5-3-yhaae",
+            "question": "A Wi-Fi connection offers ______.",
+            "options": {
+              "A": "better large files",
+              "B": "faster smartphones",
+              "C": "no need for hurry",
+              "D": "better speeds"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: better speeds"
+          },
+          {
+            "id": "q-5-5-d998h",
+            "question": "The word “drains” in the last paragraph is closest in meaning to ______.",
+            "options": {
+              "A": "improves",
+              "B": "saves",
+              "C": "increases",
+              "D": "reduces"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: reduces"
+          },
+          {
+            "id": "q-5-1-r4m4e",
+            "question": "The word “substitute” in the passage is closest in meaning to ____.",
+            "options": {
+              "A": "addition",
+              "B": "alternative",
+              "C": "imitation",
+              "D": "solution"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: alternative"
+          },
+          {
+            "id": "q-5-3-3q2hi",
+            "question": "The word “it” in the passage refers to ____.",
+            "options": {
+              "A": "enzyme",
+              "B": "molybdenum",
+              "C": "petrol",
+              "D": "water"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: molybdenum"
+          },
+          {
+            "id": "q-5-4-c6swf",
+            "question": "The word “vanished” in the passage is opposite in meaning to ____.",
+            "options": {
+              "A": "appeared",
+              "B": "produced",
+              "C": "introduced",
+              "D": "invented"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: appeared"
+          },
+          {
+            "id": "q-5-5-2eke0",
+            "question": "It is stated in the passage that water-fuelled cars may contribute to ____.",
+            "options": {
+              "A": "save energy",
+              "B": "save environment",
+              "C": "save money",
+              "D": "save time"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: save environment"
+          },
+          {
+            "id": "q-5-1-zpuup",
+            "question": "What is the best title of the passage?",
+            "options": {
+              "A": "being recognized by teachers and peers",
+              "B": "uniqueness in personalities",
+              "C": "maintaining unusual routines",
+              "D": "ability to see what others can't see"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: being recognized by teachers and peers"
+          },
+          {
+            "id": "q-5-6-1j1g0",
+            "question": "Smartphone technology is so successful that we have trouble imagining a day _________ them.",
+            "options": {
+              "A": "with",
+              "B": "without",
+              "C": "off",
+              "D": "about"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: without"
+          },
+          {
+            "id": "q-5-7-en2rq",
+            "question": "While smartphones can get your message across, they allow many ways of _________ with other people.",
+            "options": {
+              "A": "passing",
+              "B": "sharing",
+              "C": "communicating",
+              "D": "exchanging"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: communicating"
+          },
+          {
+            "id": "q-5-8-1aetx",
+            "question": "With smartphones, you can also remain connected with others through social networking sites like Twitter or Facebook.",
+            "options": {
+              "A": "work",
+              "B": "worker",
+              "C": "working",
+              "D": "networking"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: networking"
+          },
+          {
+            "id": "q-5-9-dtnln",
+            "question": "Samsung Galaxy Tab _________ flash player as well as voice and video calls.",
+            "options": {
+              "A": "supports",
+              "B": "offers",
+              "C": "displays",
+              "D": "provides"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: supports"
+          },
+          {
+            "id": "q-5-10-s5v9b",
+            "question": "Blu-ray was first commercially _________ in 2006 and it uses a blue laser to read or write data to a disc.",
+            "options": {
+              "A": "performed",
+              "B": "allowed",
+              "C": "introduced",
+              "D": "supplied"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: introduced"
+          },
+          {
+            "id": "q-5-11-2i7uf",
+            "question": "The Tower Infinity in South Korea is supposed to be the world's first skyscraper that, for a few hours a day, _________ an unobstructed view of the sky behind it.",
+            "options": {
+              "A": "provides",
+              "B": "shows",
+              "C": "allows",
+              "D": "prevents"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: provides"
+          },
+          {
+            "id": "q-5-12-wmzky",
+            "question": "3-D ________ is used to produce complex tools and components.",
+            "options": {
+              "A": "print",
+              "B": "printing",
+              "C": "printer",
+              "D": "blueprint"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: printing"
+          },
+          {
+            "id": "q-5-13-k5g53",
+            "question": "Engineers ________the finished bionic contact lenses on rabbits for up to twenty minutes.",
+            "options": {
+              "A": "have yet tested",
+              "B": "have already tested",
+              "C": "have performed",
+              "D": "have done"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: have already tested"
+          },
+          {
+            "id": "q-5-14-mrm47",
+            "question": "Eastman Kodak Company, __________ many OLED equipped products since 1987.",
+            "options": {
+              "A": "produces",
+              "B": "produced",
+              "C": "is produced",
+              "D": "has produced"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: has produced"
+          },
+          {
+            "id": "q-5-15-j9mtm",
+            "question": "Wearable sensors, such as the Fitbit, Nike Fuel Band and Jawbone UP, _______ the most important part of the fitness world for the last few years.",
+            "options": {
+              "A": "become",
+              "B": "becomes",
+              "C": "have become",
+              "D": "has become"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: have become"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l10-u6",
+    "number": 6,
+    "title": "Unit 6",
+    "grade": "Lớp 10",
+    "status": "locked",
+    "progress": 0,
+    "lessons": [
+      {
+        "id": "u6-l1",
+        "title": "Vocabulary & Grammar",
+        "type": "grammar",
+        "completed": false,
+        "score": 0,
+        "questions": [
+          {
+            "id": "q-6-1-xeks1",
+            "question": "The company promotes equal ________ for women in the same pay and promotion.",
+            "options": {
+              "A": "opportunities",
+              "B": "cases",
+              "C": "positions",
+              "D": "careers"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: opportunities"
+          },
+          {
+            "id": "q-6-2-1tna1",
+            "question": "The principle of equal pay is that men and women doing ________ work should get paid the same amount.",
+            "options": {
+              "A": "same",
+              "B": "alike",
+              "C": "similar",
+              "D": "identical"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: similar"
+          },
+          {
+            "id": "q-6-3-bil9k",
+            "question": "Children often benefit from the________ upbringing and parents.",
+            "options": {
+              "A": "education",
+              "B": "educational",
+              "C": "uneducated",
+              "D": "educated"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: educated"
+          },
+          {
+            "id": "q-6-4-5a89r",
+            "question": "In developing countries, housewives are more likely to be victims of ________ violence.",
+            "options": {
+              "A": "domestic",
+              "B": "household",
+              "C": "home",
+              "D": "family"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: domestic"
+          },
+          {
+            "id": "q-6-5-53bnf",
+            "question": "International Women’s Day is an occasion to make more ________ towards achieving gender equality.",
+            "options": {
+              "A": "movement",
+              "B": "progress",
+              "C": "improvement",
+              "D": "development"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: progress"
+          },
+          {
+            "id": "q-6-6-sxgvw",
+            "question": "Reducing gender ________ improves productivity and economic growth of a nation.",
+            "options": {
+              "A": "equality",
+              "B": "inequality",
+              "C": "possibility",
+              "D": "rights"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: inequality"
+          },
+          {
+            "id": "q-6-7-wrwxi",
+            "question": "Women with high qualifications________ to managers.",
+            "options": {
+              "A": "must promote",
+              "B": "must be promoted",
+              "C": "must move",
+              "D": "must be moved"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: must be promoted"
+          },
+          {
+            "id": "q-6-8-aj31l",
+            "question": "A common reason that someone ________ more for similar work is because of his or her experience or “length of service”.",
+            "options": {
+              "A": "may be paid",
+              "B": "should not be paid",
+              "C": "can be paid",
+              "D": "must be paid"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: may be paid"
+          },
+          {
+            "id": "q-6-9-ikclr",
+            "question": "All forms of discrimination against all women and girls ________ immediately everywhere.",
+            "options": {
+              "A": "must be taken away",
+              "B": "must be ended",
+              "C": "must be allowed",
+              "D": "must be followed"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: must be ended"
+          },
+          {
+            "id": "q-6-10-0jjfb",
+            "question": "True gender equality ________ when both men and women reach a balance between work and family.",
+            "options": {
+              "A": "can achieve",
+              "B": "should be achieved",
+              "C": "can be achieved",
+              "D": "should achieve"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: can be achieved"
+          },
+          {
+            "id": "q-6-11-1fwks",
+            "question": "________ some time for the issue to be resolved.",
+            "options": {
+              "A": "It may be taken",
+              "B": "May it take",
+              "C": "It may take",
+              "D": "It may took"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: It may take"
+          },
+          {
+            "id": "q-6-13-0gw4f",
+            "question": "It is doubtful that the future ________ astrologers.",
+            "options": {
+              "A": "can tell",
+              "B": "can be told by",
+              "C": "can be told",
+              "D": "can be tell"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: can be told by"
+          },
+          {
+            "id": "q-6-14-7fnyr",
+            "question": "This project ________ by the end of this week.",
+            "options": {
+              "A": "has to be finished",
+              "B": "has to finish",
+              "C": "have to be finished",
+              "D": "has to finished"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: has to be finished"
+          },
+          {
+            "id": "q-6-15-khhnj",
+            "question": "That coach ________ four languages: Portugese, Spanish, English, and French.",
+            "options": {
+              "A": "can speak",
+              "B": "is can be speak",
+              "C": "can be speak",
+              "D": "can be spoken"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: can speak"
+          },
+          {
+            "id": "q-6-17-znlmx",
+            "question": "________ health, happiness and outstanding success in all your ventures.",
+            "options": {
+              "A": "You may have",
+              "B": "Have you may",
+              "C": "May you have",
+              "D": "May you be had"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: May you have"
+          },
+          {
+            "id": "q-6-1-t47ed",
+            "question": "My children are hopelessly addicted to television.",
+            "options": {
+              "A": "desperately",
+              "B": "impossibly",
+              "C": "expectedly",
+              "D": "dramatically"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: desperately"
+          },
+          {
+            "id": "q-6-2-mqzgo",
+            "question": "Female students tend to get better grades than male students.",
+            "options": {
+              "A": "follow",
+              "B": "plan",
+              "C": "look forward",
+              "D": "be likely"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: be likely"
+          },
+          {
+            "id": "q-6-3-2wdcu",
+            "question": "The negotiation have been conducted in a positive manner.",
+            "options": {
+              "A": "discussed",
+              "B": "held",
+              "C": "regarded",
+              "D": "signed"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: held"
+          },
+          {
+            "id": "q-6-4-o8b9a",
+            "question": "The head-hunter seeks to match up jobless professionals with small companies.",
+            "options": {
+              "A": "freelance",
+              "B": "intern",
+              "C": "part-time",
+              "D": "unemployed"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: unemployed"
+          },
+          {
+            "id": "q-6-5-6yt5q",
+            "question": "She examines the interplay between changing gender divisions and urban change.",
+            "options": {
+              "A": "oversee",
+              "B": "overlook",
+              "C": "analyze",
+              "D": "criticize"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: analyze"
+          },
+          {
+            "id": "q-6-1-1308j",
+            "question": "Many couples makes themselves miserable by not communicating.",
+            "options": {
+              "A": "cheerful",
+              "B": "sad",
+              "C": "gloomy",
+              "D": "unhappy"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: cheerful"
+          },
+          {
+            "id": "q-6-2-ot0xv",
+            "question": "He’s not matured enough to be given too much responsibility.",
+            "options": {
+              "A": "adult",
+              "B": "unsuitable",
+              "C": "immature",
+              "D": "unready"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: immature"
+          },
+          {
+            "id": "q-6-3-tn6zf",
+            "question": "The paper has been in trouble for printing untruths about people’s private lives.",
+            "options": {
+              "A": "personal",
+              "B": "confidential",
+              "C": "secret",
+              "D": "public"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: public"
+          },
+          {
+            "id": "q-6-4-e0eyb",
+            "question": "Discrimination on the basis of race, gender, age or disability is not allowed.",
+            "options": {
+              "A": "fairness",
+              "B": "bias",
+              "C": "hatred",
+              "D": "injustice"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: fairness"
+          },
+          {
+            "id": "q-6-5-3iqze",
+            "question": "Gender differences are becoming more blurred as both sexes become more liberated.",
+            "options": {
+              "A": "dim",
+              "B": "clear",
+              "C": "dull",
+              "D": "colorful"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: clear"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l10-u7",
+    "number": 7,
+    "title": "Unit 7",
+    "grade": "Lớp 10",
+    "status": "locked",
+    "progress": 0,
+    "lessons": [
+      {
+        "id": "u7-l1",
+        "title": "Vocabulary & Grammar",
+        "type": "grammar",
+        "completed": false,
+        "score": 0,
+        "questions": [
+          {
+            "id": "q-7-1-puier",
+            "question": "WHO has called developing countries to _______ themselves to decade programmes.",
+            "options": {
+              "A": "say",
+              "B": "tell",
+              "C": "commit",
+              "D": "state"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: commit"
+          },
+          {
+            "id": "q-7-2-cvz8k",
+            "question": "The organization _______ applications from people of all races to participate in its programmes.",
+            "options": {
+              "A": "makes",
+              "B": "fills",
+              "C": "takes",
+              "D": "welcomes"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: welcomes"
+          },
+          {
+            "id": "q-7-3-s0uyp",
+            "question": "They offer opportunities for _______ in decision-making.",
+            "options": {
+              "A": "economy",
+              "B": "participation",
+              "C": "aim",
+              "D": "goal"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: participation"
+          },
+          {
+            "id": "q-7-4-9zdf2",
+            "question": "After carrying out economic renovations, Viet Nam achieved remarkable economic _______.",
+            "options": {
+              "A": "trade",
+              "B": "agreement",
+              "C": "growth",
+              "D": "attention"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: growth"
+          },
+          {
+            "id": "q-7-5-bufrw",
+            "question": "Foreign _______ have shown considerable interest in the project.",
+            "options": {
+              "A": "harms",
+              "B": "investors",
+              "C": "vaccinations",
+              "D": "facilities"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: investors"
+          },
+          {
+            "id": "q-7-6-ydyqj",
+            "question": "They want to _______ their own import-export business.",
+            "options": {
+              "A": "set off",
+              "B": "set out",
+              "C": "set up",
+              "D": "set off"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: set up"
+          },
+          {
+            "id": "q-7-7-5z86b",
+            "question": "The international organisation plans to _______ more jobs for social workers.",
+            "options": {
+              "A": "create",
+              "B": "take",
+              "C": "get",
+              "D": "do"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: create"
+          },
+          {
+            "id": "q-7-8-d4sfz",
+            "question": "Everyone in the class is expected to participate actively _______ these discussions.",
+            "options": {
+              "A": "on",
+              "B": "at",
+              "C": "of",
+              "D": "in"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: in"
+          },
+          {
+            "id": "q-7-9-q38vh",
+            "question": "The winner of the contest got the _______ of a lifetime -the chance to work with a top fashion designer.",
+            "options": {
+              "A": "poverty",
+              "B": "opportunity",
+              "C": "economy",
+              "D": "quality"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: opportunity"
+          },
+          {
+            "id": "q-7-10-xxioq",
+            "question": "The company is funding research _______ into the causes of addiction.",
+            "options": {
+              "A": "participation",
+              "B": "donation",
+              "C": "investor",
+              "D": "project"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: project"
+          },
+          {
+            "id": "q-7-11-yfcpz",
+            "question": "Chocolates and flowers are by far _______ presents for mothers on Mother's Day in the UK.",
+            "options": {
+              "A": "more popular",
+              "B": "the more popular",
+              "C": "less popular",
+              "D": "the most popular"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: the most popular"
+          },
+          {
+            "id": "q-7-12-w07hs",
+            "question": "Chuseok is one of _______ celebrations in the Korean calendar when Koreans give thanks to nature.",
+            "options": {
+              "A": "the most important",
+              "B": "the more important",
+              "C": "the less important",
+              "D": "more important"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: the most important"
+          },
+          {
+            "id": "q-7-13-durac",
+            "question": "The more polite you appear to be, _______ your partner will be.",
+            "options": {
+              "A": "the happiest",
+              "B": "the happier",
+              "C": "the most happily",
+              "D": "the more happily"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: the happier"
+          },
+          {
+            "id": "q-7-15-02sw4",
+            "question": "The Korean are _______ than the American in addressing their bosses.",
+            "options": {
+              "A": "more formal",
+              "B": "formal",
+              "C": "most formal",
+              "D": "the most formal"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: more formal"
+          },
+          {
+            "id": "q-7-16-e7d1w",
+            "question": "There are _______ occasions for giving gifts in modern societies than before.",
+            "options": {
+              "A": "less",
+              "B": "more",
+              "C": "the least",
+              "D": "the most"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: more"
+          },
+          {
+            "id": "q-7-17-hmslp",
+            "question": "June has become _______ month for weddings in many countries when the symbolic flowers, roses, usually bloom.",
+            "options": {
+              "A": "more popular",
+              "B": "less popular",
+              "C": "the most popular",
+              "D": "the least popular"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: the most popular"
+          },
+          {
+            "id": "q-7-18-uyq16",
+            "question": "Before doing something important, Vietnamese people always try to choose _______ time for it.",
+            "options": {
+              "A": "better",
+              "B": "less good",
+              "C": "the least good",
+              "D": "the best"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: the best"
+          },
+          {
+            "id": "q-7-19-gzvp6",
+            "question": "My grandmother feels much _______ whenever I give her a homemade cake on Mother’s Day.",
+            "options": {
+              "A": "happier",
+              "B": "more happily",
+              "C": "the happiest",
+              "D": "the most happily"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: happier"
+          },
+          {
+            "id": "q-7-20-h8f4g",
+            "question": "Ivy is tall, and Kate is _______ but Isabel is _______.",
+            "options": {
+              "A": "the tallest - taller",
+              "B": "taller - the taller",
+              "C": "taller - tallest",
+              "D": "taller - the tallest"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: taller - the tallest"
+          },
+          {
+            "id": "q-7-1-h5tvs",
+            "question": "The peace conference would have to be held in a neutral country.",
+            "options": {
+              "A": "involved",
+              "B": "interested",
+              "C": "active",
+              "D": "indifferent"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: indifferent"
+          },
+          {
+            "id": "q-7-2-cpwd7",
+            "question": "The WTO organizes trade negotiations and settles trade disputes.",
+            "options": {
+              "A": "debate",
+              "B": "agreement",
+              "C": "compliance",
+              "D": "peace"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: debate"
+          },
+          {
+            "id": "q-7-3-81tnn",
+            "question": "Expertise in this field is very thinly spread across the country.",
+            "options": {
+              "A": "ignorance",
+              "B": "savvy",
+              "C": "incompetence",
+              "D": "inability"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: savvy"
+          },
+          {
+            "id": "q-7-4-hrndm",
+            "question": "The system is based on administrative convenience rather than public benefit.",
+            "options": {
+              "A": "advantage",
+              "B": "loss",
+              "C": "cost",
+              "D": "harm"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: advantage"
+          },
+          {
+            "id": "q-7-5-2hbkf",
+            "question": "They should be publicly accountable to the communities they serve.",
+            "options": {
+              "A": "unreliable",
+              "B": "innocent",
+              "C": "responsible",
+              "D": "blameless"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: responsible"
+          },
+          {
+            "id": "q-7-1-tfcsu",
+            "question": "We will run out of money part way through the financial year.",
+            "options": {
+              "A": "exhaust",
+              "B": "fill",
+              "C": "desolate",
+              "D": "vacuum"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: fill"
+          },
+          {
+            "id": "q-7-2-h576x",
+            "question": "The city had to cope with the problems of homelessness.",
+            "options": {
+              "A": "reallocation",
+              "B": "displacement",
+              "C": "movement",
+              "D": "settlement"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: settlement"
+          },
+          {
+            "id": "q-7-3-kctl8",
+            "question": "The islands' economy is largely dependent on tourism.",
+            "options": {
+              "A": "weak",
+              "B": "helpless",
+              "C": "free",
+              "D": "reliant"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: free"
+          },
+          {
+            "id": "q-7-4-gbgfm",
+            "question": "The health risk from drinking unclean water is considerable.",
+            "options": {
+              "A": "major",
+              "B": "plentiful",
+              "C": "insignificant",
+              "D": "abundant"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: insignificant"
+          },
+          {
+            "id": "q-7-5-gm1bo",
+            "question": "The two heads of state issued a joint statement.",
+            "options": {
+              "A": "separated",
+              "B": "connected",
+              "C": "combined",
+              "D": "cooperative"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: separated"
+          },
+          {
+            "id": "q-7-2-ave2m",
+            "question": "Children are at risk of the problems such as",
+            "options": {
+              "A": "illiteracy",
+              "B": "HIV infection",
+              "C": "poor health",
+              "D": "All are correct"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: All are correct"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l10-u8",
+    "number": 8,
+    "title": "Unit 8",
+    "grade": "Lớp 10",
+    "status": "locked",
+    "progress": 0,
+    "lessons": [
+      {
+        "id": "u8-l1",
+        "title": "Vocabulary & Grammar",
+        "type": "grammar",
+        "completed": false,
+        "score": 0,
+        "questions": [
+          {
+            "id": "q-8-1-26lof",
+            "question": "He downloaded a(n) _______ to help him with graphics.",
+            "options": {
+              "A": "website",
+              "B": "application",
+              "C": "preparation",
+              "D": "hardware"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: application"
+          },
+          {
+            "id": "q-8-2-zrtsy",
+            "question": "We can _______ the game from the Internet for free.",
+            "options": {
+              "A": "download",
+              "B": "surf",
+              "C": "upload",
+              "D": "install"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: download"
+          },
+          {
+            "id": "q-8-3-jpd1s",
+            "question": "Make sure that you have installed anti –virus _______.",
+            "options": {
+              "A": "software",
+              "B": "equipment",
+              "C": "system",
+              "D": "engine"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: software"
+          },
+          {
+            "id": "q-8-4-rtl97",
+            "question": "I think the _______ of the computer is not compatible with the new app.",
+            "options": {
+              "A": "mechanic",
+              "B": "machinery",
+              "C": "hardware",
+              "D": "website"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: hardware"
+          },
+          {
+            "id": "q-8-5-y5t0z",
+            "question": "The use of credit cards is very popular in the _______ age.",
+            "options": {
+              "A": "new",
+              "B": "digital",
+              "C": "chance",
+              "D": "information"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: digital"
+          },
+          {
+            "id": "q-8-6-n19co",
+            "question": "Testing yourself with information in your computer is a useful _______ for learning.",
+            "options": {
+              "A": "appliance",
+              "B": "equipment",
+              "C": "device",
+              "D": "control"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: device"
+          },
+          {
+            "id": "q-8-7-d9nz8",
+            "question": "You are able to find an appliance on the Internet to _______ your needs.",
+            "options": {
+              "A": "suit",
+              "B": "benefit",
+              "C": "adapt",
+              "D": "adjust"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: suit"
+          },
+          {
+            "id": "q-8-8-hgdof",
+            "question": "Advance software devices can help you have several _______ over ordinary learning methods.",
+            "options": {
+              "A": "disadvantages",
+              "B": "connection",
+              "C": "advantages",
+              "D": "drawbacks"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: advantages"
+          },
+          {
+            "id": "q-8-9-ihbq1",
+            "question": "In a modern class, teacher and students use computer to _______ digital learning resources.",
+            "options": {
+              "A": "organise",
+              "B": "contact",
+              "C": "access",
+              "D": "focus"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: access"
+          },
+          {
+            "id": "q-8-10-60frx",
+            "question": "By allowing our students to use digital _______ in class, we are creating an opportunity to teach them to think critically about technology use in their education and life.",
+            "options": {
+              "A": "equipment",
+              "B": "devices",
+              "C": "appliances",
+              "D": "controls"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: devices"
+          },
+          {
+            "id": "q-8-11-pxoxm",
+            "question": "A zoo is a place _______ live animals are kept in a captivity for the public to see.",
+            "options": {
+              "A": "why",
+              "B": "when",
+              "C": "where",
+              "D": "whose"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: where"
+          },
+          {
+            "id": "q-8-12-vu0in",
+            "question": "The bank, _______ opened over a hundred years ago, is still a thriving business.",
+            "options": {
+              "A": "where",
+              "B": "that",
+              "C": "when",
+              "D": "which"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: which"
+          },
+          {
+            "id": "q-8-13-aqea8",
+            "question": "In the town _______ I was born lived a man who sat in the same seat day after day.",
+            "options": {
+              "A": "whose",
+              "B": "where",
+              "C": "who",
+              "D": "which"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: where"
+          },
+          {
+            "id": "q-8-14-r2glo",
+            "question": "The participants _______ the company interviewed met the manager at her office.",
+            "options": {
+              "A": "who",
+              "B": "which",
+              "C": "where",
+              "D": "when"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: who"
+          },
+          {
+            "id": "q-8-15-8vw6x",
+            "question": "The café, most of _______ customers had complained about its services, had to close.",
+            "options": {
+              "A": "which",
+              "B": "whose",
+              "C": "that",
+              "D": "where"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: whose"
+          },
+          {
+            "id": "q-8-16-vcms6",
+            "question": "Those universities help to prepare a generation of scientists _______ skills will be increasingly in demand.",
+            "options": {
+              "A": "that",
+              "B": "who",
+              "C": "whose",
+              "D": "which"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: whose"
+          },
+          {
+            "id": "q-8-17-8edcj",
+            "question": "There are several ways to go from Ha Noi to Da Nang, the fastest of _______ is the course by plane.",
+            "options": {
+              "A": "whose",
+              "B": "who",
+              "C": "which",
+              "D": "that"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: which"
+          },
+          {
+            "id": "q-8-18-v7txs",
+            "question": "An Olympic gold medal is the only thing _______ has evaded her in her remarkable career.",
+            "options": {
+              "A": "that",
+              "B": "which",
+              "C": "where",
+              "D": "when"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: that"
+          },
+          {
+            "id": "q-8-19-zvitv",
+            "question": "The people _______ courage you praised are now citizens.",
+            "options": {
+              "A": "whose",
+              "B": "which",
+              "C": "whom",
+              "D": "that"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: whose"
+          },
+          {
+            "id": "q-8-20-10gkb",
+            "question": "Your folks _______ live in farmhouses do not like the life of the city.",
+            "options": {
+              "A": "whose",
+              "B": "who",
+              "C": "they",
+              "D": "which"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: who"
+          },
+          {
+            "id": "q-8-21-j42to",
+            "question": "Those towns _______ you were looking at in Gaul are small.",
+            "options": {
+              "A": "who",
+              "B": "where",
+              "C": "which",
+              "D": "whom"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: which"
+          },
+          {
+            "id": "q-8-22-uasn4",
+            "question": "Tom, _______ is not my friend is my enemy.",
+            "options": {
+              "A": "who",
+              "B": "which",
+              "C": "whom",
+              "D": "A&B"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: who"
+          },
+          {
+            "id": "q-8-23-pmdb1",
+            "question": "I sent my friend the books _______ I had written.",
+            "options": {
+              "A": "who",
+              "B": "which",
+              "C": "whom",
+              "D": "what"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: which"
+          },
+          {
+            "id": "q-8-24-c8abt",
+            "question": "Did you see the men _______ I gave the money?",
+            "options": {
+              "A": "to whom",
+              "B": "which",
+              "C": "from whom",
+              "D": "to that"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: to whom"
+          },
+          {
+            "id": "q-8-25-q2ji3",
+            "question": "She sends me the book _______ she _______ two years ago.",
+            "options": {
+              "A": "whom / writes",
+              "B": "whose /wrote",
+              "C": "which/ writes",
+              "D": "which / wrote"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: which / wrote"
+          },
+          {
+            "id": "q-8-26-jv2pn",
+            "question": "The man _______ spoke to John is my brother.",
+            "options": {
+              "A": "whom",
+              "B": "who",
+              "C": "whose",
+              "D": "which"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: who"
+          },
+          {
+            "id": "q-8-27-i9bfy",
+            "question": "A teacher can create a classroom blog _______ they post notes and assignments for students.",
+            "options": {
+              "A": "where",
+              "B": "that",
+              "C": "who",
+              "D": "whose"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: where"
+          },
+          {
+            "id": "q-8-28-w9wwz",
+            "question": "Students _______ seem to be taking notes on their laptop are sometimes surfing the Internet in class.",
+            "options": {
+              "A": "who",
+              "B": "which",
+              "C": "whose",
+              "D": "they"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: who"
+          },
+          {
+            "id": "q-8-29-911rk",
+            "question": "Notebooks, tablets and cell phones are all technology _______ students are accustomed to and can use as learning aids.",
+            "options": {
+              "A": "when",
+              "B": "whose",
+              "C": "that",
+              "D": "where"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: that"
+          },
+          {
+            "id": "q-8-30-xjig4",
+            "question": "All smartphones _______ storage hardware is big can store downloaded audio books.",
+            "options": {
+              "A": "which",
+              "B": "who",
+              "C": "whose",
+              "D": "that"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: whose"
+          },
+          {
+            "id": "q-8-1-o2tq9",
+            "question": "I took some really good shots of the harbour at sunset.",
+            "options": {
+              "A": "photos",
+              "B": "kicks",
+              "C": "ships",
+              "D": "fires"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: photos"
+          },
+          {
+            "id": "q-8-2-fvk3i",
+            "question": "She was a gifted teacher who never talked down to her students.",
+            "options": {
+              "A": "busy",
+              "B": "talented",
+              "C": "active",
+              "D": "lazy"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: talented"
+          },
+          {
+            "id": "q-8-3-jig18",
+            "question": "Books are the ever-burning lamps of accumulated wisdom.",
+            "options": {
+              "A": "silliness",
+              "B": "illiteracy",
+              "C": "stupidity",
+              "D": "intelligence"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: intelligence"
+          },
+          {
+            "id": "q-8-4-ojjxk",
+            "question": "Her performance was technically brilliant but lacked feeling.",
+            "options": {
+              "A": "typical",
+              "B": "dulled",
+              "C": "bright",
+              "D": "slow"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: bright"
+          },
+          {
+            "id": "q-8-5-4pvqb",
+            "question": "Success always smiles upon people who are diligent.",
+            "options": {
+              "A": "patient",
+              "B": "hard-working",
+              "C": "eager",
+              "D": "careful"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: hard-working"
+          },
+          {
+            "id": "q-8-1-q2jgj",
+            "question": "There's only one way to become proficient at anything - practice!",
+            "options": {
+              "A": "qualified",
+              "B": "experienced",
+              "C": "ignorant",
+              "D": "skilful"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: ignorant"
+          },
+          {
+            "id": "q-8-2-slu40",
+            "question": "She got great satisfaction from helping people to learn.",
+            "options": {
+              "A": "comfort",
+              "B": "happiness",
+              "C": "enjoyment",
+              "D": "displeasure"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: displeasure"
+          },
+          {
+            "id": "q-8-3-dwwd6",
+            "question": "He had a terrific sense of humour and could be very amusing.",
+            "options": {
+              "A": "bad",
+              "B": "good",
+              "C": "great",
+              "D": "amazing"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: bad"
+          },
+          {
+            "id": "q-8-4-ke8ao",
+            "question": "Honeybees use one of the most sophisticated communication systems of any insect.",
+            "options": {
+              "A": "complicated",
+              "B": "simple",
+              "C": "complex",
+              "D": "advanced"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: simple"
+          },
+          {
+            "id": "q-8-5-669z2",
+            "question": "We can now communicate instantly with people on the other side of the world.",
+            "options": {
+              "A": "sooner",
+              "B": "immediately",
+              "C": "later",
+              "D": "now"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: later"
+          },
+          {
+            "id": "q-8-10-8f34w",
+            "question": "\"I don't support the use of smartphones and tablets in the classrooms.” – “____”",
+            "options": {
+              "A": "Me, too.",
+              "B": "I don't, either.",
+              "C": "Me, neither.",
+              "D": "B and C are correct."
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: B and C are correct."
+          },
+          {
+            "id": "q-8-4-ukw4z",
+            "question": "A. increase        B. increased        C. increasing        [ANS]D. increasingly[/ANS]",
+            "options": {
+              "A": "for",
+              "B": "above",
+              "C": "toward",
+              "D": "against"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: for"
+          },
+          {
+            "id": "q-8-2-btgn0",
+            "question": "What does the word \"it\" in paragraph 1 refer to?",
+            "options": {
+              "A": "the lecture",
+              "B": "the new word",
+              "C": "the note",
+              "D": "the written word"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: the new word"
+          },
+          {
+            "id": "q-8-3-ctdu9",
+            "question": "The word “visual” in paragraph 1 is closest in meaning to _______.",
+            "options": {
+              "A": "picturesque",
+              "B": "written",
+              "C": "illustrative",
+              "D": "seeable"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: seeable"
+          },
+          {
+            "id": "q-8-5-fdvh2",
+            "question": "The word \"auditory” in paragraph 2 can be best replaced by _______.",
+            "options": {
+              "A": "discursive",
+              "B": "noisy",
+              "C": "audible",
+              "D": "recordable"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: audible"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l10-u9",
+    "number": 9,
+    "title": "Unit 9",
+    "grade": "Lớp 10",
+    "status": "locked",
+    "progress": 0,
+    "lessons": [
+      {
+        "id": "u9-l1",
+        "title": "Vocabulary & Grammar",
+        "type": "grammar",
+        "completed": false,
+        "score": 0,
+        "questions": [
+          {
+            "id": "q-9-1-o9cun",
+            "question": "There’s been a ______in Germany and a village was completely destroyed.",
+            "options": {
+              "A": "flood",
+              "B": "drizzle",
+              "C": "shower",
+              "D": "smog"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: flood"
+          },
+          {
+            "id": "q-9-2-iha0g",
+            "question": "During the last hundred years we have done great ______to the environment.",
+            "options": {
+              "A": "injury",
+              "B": "pollution",
+              "C": "damage",
+              "D": "hurt"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: damage"
+          },
+          {
+            "id": "q-9-3-n45ia",
+            "question": "There are lots of things we can all do to ______the environment.",
+            "options": {
+              "A": "enhance",
+              "B": "protect",
+              "C": "make",
+              "D": "build"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: protect"
+          },
+          {
+            "id": "q-9-4-97uyy",
+            "question": "Environmentalists are furious with the American Government for delaying measures which will reduce greenhouse gas ______.",
+            "options": {
+              "A": "exhaust fumes",
+              "B": "smokes",
+              "C": "wastes",
+              "D": "emissions"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: emissions"
+          },
+          {
+            "id": "q-9-5-5q2ay",
+            "question": "The government is introducing strict new rules on the dumping of ______by industry.",
+            "options": {
+              "A": "pesticides",
+              "B": "exhaust fumes.",
+              "C": "toxic waste",
+              "D": "emissions"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: toxic waste"
+          },
+          {
+            "id": "q-9-6-b2v1g",
+            "question": "Thousands of acres of forest are being cut down every year and the ______of many animals are being destroyed.",
+            "options": {
+              "A": "natural resources",
+              "B": "natural habitats",
+              "C": "ways of life",
+              "D": "living surroundings"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: natural habitats"
+          },
+          {
+            "id": "q-9-7-jq139",
+            "question": "Make sure your car runs on unleaded petrol and your home uses sources of ______energy.",
+            "options": {
+              "A": "recycling",
+              "B": "reused",
+              "C": "renewable",
+              "D": "recyclable"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: renewable"
+          },
+          {
+            "id": "q-9-8-pmb0n",
+            "question": "Scientists have found holes in the ______, particularly over Antarctica.",
+            "options": {
+              "A": "ice caps",
+              "B": "polar ice",
+              "C": "ozone layer",
+              "D": "greenhouse"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: ozone layer"
+          },
+          {
+            "id": "q-9-9-39ia7",
+            "question": "If government don't ______global warming, more natural disasters will occur.",
+            "options": {
+              "A": "achieve",
+              "B": "promote",
+              "C": "discourage",
+              "D": "prevent"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: prevent"
+          },
+          {
+            "id": "q-9-10-v65sl",
+            "question": "Consumption of fossil fuels at an alarming rate can ______to global warming which can further result inmelting of polar ice caps and increase in sea levels.",
+            "options": {
+              "A": "lead",
+              "B": "drive",
+              "C": "attach",
+              "D": "run"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: lead"
+          },
+          {
+            "id": "q-9-12-5clua",
+            "question": "The ozone layer is an invisible layer of protection around the planet that protects us ______the sun's harmful rays.",
+            "options": {
+              "A": "away with",
+              "B": "from",
+              "C": "under",
+              "D": "out of"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: from"
+          },
+          {
+            "id": "q-9-13-gf8tp",
+            "question": "Deforestation simply means clearing of the green cover and making that land available ______residential, industrial or commercial purpose.",
+            "options": {
+              "A": "on",
+              "B": "by",
+              "C": "for",
+              "D": "to"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: for"
+          },
+          {
+            "id": "q-9-14-2nhj6",
+            "question": "Air pollution can have serious impacts ______breathing.",
+            "options": {
+              "A": "in",
+              "B": "at",
+              "C": "about",
+              "D": "on"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: on"
+          },
+          {
+            "id": "q-9-16-h2k35",
+            "question": "Most of the air pollution results ______the burning of fossil fuels, motor vehicles, factories, aircraft and rockets.",
+            "options": {
+              "A": "in",
+              "B": "to",
+              "C": "on",
+              "D": "from"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: from"
+          },
+          {
+            "id": "q-9-17-uuucr",
+            "question": "When I rang Tessa sometime last week, she said she was busy ______day.",
+            "options": {
+              "A": "that",
+              "B": "the",
+              "C": "then",
+              "D": "this"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: that"
+          },
+          {
+            "id": "q-9-18-r1we1",
+            "question": "Hello, Jim. I didn't expect to see you today. Sophie said you ______ill.",
+            "options": {
+              "A": "are",
+              "B": "were",
+              "C": "was",
+              "D": "should be"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: were"
+          },
+          {
+            "id": "q-9-19-n4se9",
+            "question": "He ______we could buy or make reusable bags and leave some bags in our bike for shopping.",
+            "options": {
+              "A": "said us",
+              "B": "says to us",
+              "C": "told us",
+              "D": "told to us"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: told us"
+          },
+          {
+            "id": "q-9-21-hldps",
+            "question": "She asked me ______ I liked pop music.",
+            "options": {
+              "A": "when",
+              "B": "what",
+              "C": "if",
+              "D": "x"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: if"
+          },
+          {
+            "id": "q-9-22-l28z5",
+            "question": "I wanted to know ______return home.",
+            "options": {
+              "A": "when would she",
+              "B": "when will she",
+              "C": "when she will",
+              "D": "when she would"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: when she would"
+          },
+          {
+            "id": "q-9-23-ogvg9",
+            "question": "Claire told me that her father ______a race horse.",
+            "options": {
+              "A": "owns",
+              "B": "owned",
+              "C": "owning",
+              "D": "A and B"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: owned"
+          },
+          {
+            "id": "q-9-24-pl1r8",
+            "question": "I rang my friend in Australia yesterday, and she said it ______raining there.",
+            "options": {
+              "A": "is",
+              "B": "were",
+              "C": "has been",
+              "D": "was"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: was"
+          },
+          {
+            "id": "q-9-25-8nb8o",
+            "question": "The last time I saw Linda, she looked very relaxed. She explained she'd been on holiday the ______week.",
+            "options": {
+              "A": "ago",
+              "B": "following",
+              "C": "next",
+              "D": "previous"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: previous"
+          },
+          {
+            "id": "q-9-26-jpy3y",
+            "question": "They asked me how many students ______in the school.",
+            "options": {
+              "A": "there were",
+              "B": "were there",
+              "C": "there are",
+              "D": "are there"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: there were"
+          },
+          {
+            "id": "q-9-27-hb53m",
+            "question": "\"I'm a big fan of U23.” Derek said. Derek said he ______a big fan of U23.",
+            "options": {
+              "A": "was",
+              "B": "has been",
+              "C": "were",
+              "D": "had been"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: has been"
+          },
+          {
+            "id": "q-9-28-egnld",
+            "question": "\"We're watching TV,\" said the twins. The twins said they ______TV.",
+            "options": {
+              "A": "watched",
+              "B": "were watching",
+              "C": "have been watching",
+              "D": "had watched"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: were watching"
+          },
+          {
+            "id": "q-9-29-1rltl",
+            "question": "“You've been annoying me all day!\" my mum said. My mum said I ______her all day.",
+            "options": {
+              "A": "annoyed",
+              "B": "was annoying",
+              "C": "have been annoying",
+              "D": "had been annoying"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: had been annoying"
+          },
+          {
+            "id": "q-9-30-z13mp",
+            "question": "\"At one o'clock, I was having lunch,\" said Molly. Molly said she ______lunch at one o'clock.",
+            "options": {
+              "A": "had been having",
+              "B": "has had",
+              "C": "is having",
+              "D": "has been having"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: had been having"
+          },
+          {
+            "id": "q-9-1-tw9x8",
+            "question": "Some of the waste materials can be reworked for reuse.",
+            "options": {
+              "A": "redone",
+              "B": "recalled",
+              "C": "renewed",
+              "D": "preserved"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: redone"
+          },
+          {
+            "id": "q-9-2-ns17z",
+            "question": "The need to recycle water and other materials is obvious.",
+            "options": {
+              "A": "doubtful",
+              "B": "hidden",
+              "C": "apparent",
+              "D": "ambiguous"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: apparent"
+          },
+          {
+            "id": "q-9-3-joaxq",
+            "question": "Unless the oil spill is contained, irreparable damage will be done to the sea.",
+            "options": {
+              "A": "rechargeable",
+              "B": "curable",
+              "C": "unfixable",
+              "D": "repairable"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: unfixable"
+          },
+          {
+            "id": "q-9-4-dmolp",
+            "question": "Helping to alleviate poverty also helps to reduce environmental destruction.",
+            "options": {
+              "A": "enlarge",
+              "B": "enrich",
+              "C": "strengthen",
+              "D": "lessen"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: lessen"
+          },
+          {
+            "id": "q-9-5-5lyh6",
+            "question": "Increased consumption of water has led to rapid depletion of groundwater reserves.",
+            "options": {
+              "A": "made up",
+              "B": "caused",
+              "C": "produce",
+              "D": "begin"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: caused"
+          },
+          {
+            "id": "q-9-6-3i532",
+            "question": "We are facing severe environmental pollution despite the fact that many world organizations are working hard to reduce it.",
+            "options": {
+              "A": "heavy",
+              "B": "destructive",
+              "C": "harmful",
+              "D": "serious"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: serious"
+          },
+          {
+            "id": "q-9-7-060zg",
+            "question": "Water pollution is a result of dumping pollutants such as detergents, pesticides, oil, and other chemicals in rivers, which makes the water unclean.",
+            "options": {
+              "A": "substances",
+              "B": "stuffs",
+              "C": "contaminants",
+              "D": "wastes"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: contaminants"
+          },
+          {
+            "id": "q-9-8-1jbev",
+            "question": "WWF was set up in 1961 and had its operations in areas such as the preservation of biological diversity.",
+            "options": {
+              "A": "difference",
+              "B": "abundance",
+              "C": "variety",
+              "D": "plenty"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: variety"
+          },
+          {
+            "id": "q-9-9-7pj14",
+            "question": "Air pollution is a consequence of fossil fuel burning by motor vehicles, factories, aircraft and rockets.",
+            "options": {
+              "A": "product",
+              "B": "example",
+              "C": "harm",
+              "D": "result"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: result"
+          },
+          {
+            "id": "q-9-10-kqle1",
+            "question": "In 1986, the organization changed its name to World Wide Fund for Nature. However, it has operated under the original name in the US and Canada.",
+            "options": {
+              "A": "old",
+              "B": "former",
+              "C": "first",
+              "D": "ancient"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: first"
+          },
+          {
+            "id": "q-9-1-n284y",
+            "question": "Polluted water sources are a hazard to wildlife.",
+            "options": {
+              "A": "security",
+              "B": "danger",
+              "C": "harmlessness",
+              "D": "safety"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: security"
+          },
+          {
+            "id": "q-9-2-9pqiw",
+            "question": "The case for better public transport is unanswerable.",
+            "options": {
+              "A": "reliable",
+              "B": "believable",
+              "C": "answerable",
+              "D": "questionable"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: answerable"
+          },
+          {
+            "id": "q-9-3-1dyg7",
+            "question": "People should keep away from the radioactive waste.",
+            "options": {
+              "A": "get along with",
+              "B": "keep in touch with",
+              "C": "put up with",
+              "D": "stay close to"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: stay close to"
+          },
+          {
+            "id": "q-9-4-22en7",
+            "question": "Several outbreaks of infection have been traced to contaminated food.",
+            "options": {
+              "A": "clean",
+              "B": "dirty",
+              "C": "polluted",
+              "D": "poisonous"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: clean"
+          },
+          {
+            "id": "q-9-5-tfru9",
+            "question": "Eat as many fresh products as possible rather than relying on tinned and packed foods.",
+            "options": {
+              "A": "learning",
+              "B": "counting",
+              "C": "liberating",
+              "D": "depending"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: liberating"
+          },
+          {
+            "id": "q-9-6-0u12v",
+            "question": "Fresh water is very important to life because no one can live without it. Yet it is one of the limited and most endangered natural resources on our planet.",
+            "options": {
+              "A": "Clean",
+              "B": "Drinkable",
+              "C": "Polluted",
+              "D": "Running"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: Polluted"
+          },
+          {
+            "id": "q-9-3-p97i6",
+            "question": "“______to go to the football match tomorrow afternoon?”",
+            "options": {
+              "A": "Let’s",
+              "B": "Can you",
+              "C": "Are you free",
+              "D": "How about"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: Are you free"
+          },
+          {
+            "id": "q-9-5-mehw2",
+            "question": "\"Are you going to join the green city campaign?\" “______.”",
+            "options": {
+              "A": "Surely, I am",
+              "B": "No, not mine",
+              "C": "None of that",
+              "D": "Just kidding"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: Surely, I am"
+          },
+          {
+            "id": "q-9-7-7du7l",
+            "question": "\"Why don't we have a look at some websites for more information about the environment?\" – “______”",
+            "options": {
+              "A": "Yes, thanks.",
+              "B": "Yes, why not?",
+              "C": "It's my pleasure.",
+              "D": "Do we?"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: Yes, why not?"
+          },
+          {
+            "id": "q-9-3-10aje",
+            "question": "The word “disposable\" in paragraph 3 is closest in meaning to ____.",
+            "options": {
+              "A": "convenient",
+              "B": "inexpensive",
+              "C": "throwaway",
+              "D": "single-use"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: single-use"
+          },
+          {
+            "id": "q-9-5-0o5fx",
+            "question": "The word “appetite” in the last paragraph can be best replaced by ____.",
+            "options": {
+              "A": "need",
+              "B": "demand",
+              "C": "desire",
+              "D": "taste"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: desire"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l10-u10",
+    "number": 10,
+    "title": "Unit 10",
+    "grade": "Lớp 10",
+    "status": "locked",
+    "progress": 0,
+    "lessons": [
+      {
+        "id": "u10-l1",
+        "title": "Vocabulary & Grammar",
+        "type": "grammar",
+        "completed": false,
+        "score": 0,
+        "questions": [
+          {
+            "id": "q-10-1-5653x",
+            "question": "All tourists have a window seat on the _______ bus so that they can watch wildlife.",
+            "options": {
+              "A": "safari",
+              "B": "craftsmen",
+              "C": "destination",
+              "D": "ecology"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: safari"
+          },
+          {
+            "id": "q-10-2-cu0k3",
+            "question": "The building of the dam over the river can cause _______ disaster.",
+            "options": {
+              "A": "sustainable",
+              "B": "exotic",
+              "C": "ecological",
+              "D": "local"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: ecological"
+          },
+          {
+            "id": "q-10-3-ijt9c",
+            "question": "That region tries to launch many campaigns to promote _______ tourism.",
+            "options": {
+              "A": "upset",
+              "B": "eco-friendly",
+              "C": "sustainable",
+              "D": "essential"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: sustainable"
+          },
+          {
+            "id": "q-10-4-ahbc8",
+            "question": "Hunting wildlife may _______ the balance between hunters and prey in their habitats.",
+            "options": {
+              "A": "upset",
+              "B": "environmental",
+              "C": "exotic",
+              "D": "ecological"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: upset"
+          },
+          {
+            "id": "q-10-5-56mck",
+            "question": "Do you think our planet can _______ 10 billion people?",
+            "options": {
+              "A": "entertain",
+              "B": "display",
+              "C": "sustain",
+              "D": "discharge"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: sustain"
+          },
+          {
+            "id": "q-10-6-g5dxu",
+            "question": "The attraction of ______ relies on the excitement of wildlife sightings.",
+            "options": {
+              "A": "scenery",
+              "B": "ecotourism",
+              "C": "reserve",
+              "D": "expedition"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: ecotourism"
+          },
+          {
+            "id": "q-10-7-zapid",
+            "question": "We can ______ wildlife by watching them from a distance so that they are not scared to go away.",
+            "options": {
+              "A": "stalactite",
+              "B": "safari",
+              "C": "excursion",
+              "D": "respect"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: respect"
+          },
+          {
+            "id": "q-10-8-p4opn",
+            "question": "We should take care in order not to harm the environment in the _______.",
+            "options": {
+              "A": "biosphere reserve",
+              "B": "hospitality",
+              "C": "wildlife reserve",
+              "D": "expedition"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: wildlife reserve"
+          },
+          {
+            "id": "q-10-9-b17st",
+            "question": "In Mu Gang Chai, tourists now have more chances to know the daily life of villagers, no matter if they stay in a hotel, resort, or at a(n) ______.",
+            "options": {
+              "A": "tour guide",
+              "B": "homestay",
+              "C": "profit",
+              "D": "wildlife"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: homestay"
+          },
+          {
+            "id": "q-10-10-5o1j7",
+            "question": "Coming to Van Long Nature Reserve in Ninh Binh Province, you can enjoy the deep ______ in a beautiful paradise.",
+            "options": {
+              "A": "relaxation",
+              "B": "ecosystem",
+              "C": "respect",
+              "D": "impact"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: relaxation"
+          },
+          {
+            "id": "q-10-11-1ju33",
+            "question": "If I ______ her, I would wear the red dress instead of skirt and T-Shirt.",
+            "options": {
+              "A": "am",
+              "B": "were",
+              "C": "is",
+              "D": "could be"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: were"
+          },
+          {
+            "id": "q-10-12-vug25",
+            "question": "If you ______ your best, you will be successful.",
+            "options": {
+              "A": "try",
+              "B": "tried",
+              "C": "will try",
+              "D": "would try"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: try"
+          },
+          {
+            "id": "q-10-13-c0apg",
+            "question": "If modern technology ______ exist, we would never have such precious information on the life in the deep ocean",
+            "options": {
+              "A": "didn’t",
+              "B": "don’t",
+              "C": "won’t",
+              "D": "doesn’t"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: didn’t"
+          },
+          {
+            "id": "q-10-14-zgg22",
+            "question": "You will become ill ______ you don’t stop working so hard",
+            "options": {
+              "A": "when",
+              "B": "until",
+              "C": "If",
+              "D": "unless"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: If"
+          },
+          {
+            "id": "q-10-15-sjhd6",
+            "question": "If I were you, ______ phone and tell her you’re going to be late",
+            "options": {
+              "A": "I’d have",
+              "B": "I’d",
+              "C": "I",
+              "D": "I’ll"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: I’d"
+          },
+          {
+            "id": "q-10-16-ijor4",
+            "question": "If there ______ more than 24 hours a day, I would have more time to sleep.",
+            "options": {
+              "A": "is",
+              "B": "was",
+              "C": "were",
+              "D": "are"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: were"
+          },
+          {
+            "id": "q-10-17-1a12x",
+            "question": "If it is sunny tomorrow, we ______ on an ecotour.",
+            "options": {
+              "A": "go",
+              "B": "would go",
+              "C": "went",
+              "D": "will go"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: will go"
+          },
+          {
+            "id": "q-10-18-898b7",
+            "question": "The show Captain Bob’s Adventure Children is available now. If children of all ages ______ it, they will take part in an airboat ride and an interactive reptile show.",
+            "options": {
+              "A": "enjoy",
+              "B": "didn’t enjoy",
+              "C": "enjoyed",
+              "D": "would enjoy"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: enjoy"
+          },
+          {
+            "id": "q-10-19-qat02",
+            "question": "If you go to Pak Ou Caves in Laos, you ______ thousands of Buddha images and statues which have been deposited here over centuries.",
+            "options": {
+              "A": "see",
+              "B": "will see",
+              "C": "saw",
+              "D": "doesn’t see"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: will see"
+          },
+          {
+            "id": "q-10-20-vsia1",
+            "question": "Local people can’t see the benefits of ecotourism in their region. If ecotourism ______ their lives by creating new job opportunities, they would play a more active role in the conservation.",
+            "options": {
+              "A": "improves",
+              "B": "will improves",
+              "C": "improved",
+              "D": "would improve"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: improved"
+          },
+          {
+            "id": "q-10-21-adrlr",
+            "question": "If visitors spend their holiday in Hawaii, they ______ in typical ecotourism activities, such as whale watching, kayaking, surfing, snorkelling, scuba diving, and boating.",
+            "options": {
+              "A": "participate",
+              "B": "will participate",
+              "C": "participated",
+              "D": "would participate"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: will participate"
+          },
+          {
+            "id": "q-10-22-xpumk",
+            "question": "If the weather ______ good, I’ll have lunch outside.",
+            "options": {
+              "A": "was",
+              "B": "were",
+              "C": "is",
+              "D": "are"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: is"
+          },
+          {
+            "id": "q-10-24-0e9lz",
+            "question": "If you finish work before 5:00, I _______ and pick you up.",
+            "options": {
+              "A": "would come",
+              "B": "will come",
+              "C": "come",
+              "D": "would have come"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: will come"
+          },
+          {
+            "id": "q-10-25-rfhvs",
+            "question": "If I had time, I __________ to the beach with you this weekend.",
+            "options": {
+              "A": "go",
+              "B": "will go",
+              "C": "would go",
+              "D": "had gone"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: would go"
+          },
+          {
+            "id": "q-10-26-sb594",
+            "question": "If you ________ up too late, you’ll be very tired tomorrow.",
+            "options": {
+              "A": "stay",
+              "B": "had stayed",
+              "C": "would stay",
+              "D": "stayed"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: stay"
+          },
+          {
+            "id": "q-10-27-zhh34",
+            "question": "The doctor said that if the patient _________ smoking, he would be seriously ill.",
+            "options": {
+              "A": "didn’t stop",
+              "B": "hadn’t stopped",
+              "C": "stopped",
+              "D": "stops"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: didn’t stop"
+          },
+          {
+            "id": "q-10-28-g68zy",
+            "question": "Daisy said that if she ________ me she would not buy that dress because it was too expensive.",
+            "options": {
+              "A": "was",
+              "B": "were",
+              "C": "had been",
+              "D": "is"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: were"
+          },
+          {
+            "id": "q-10-29-lclow",
+            "question": "If you call me this time tomorrow, I ________ walking in the park.",
+            "options": {
+              "A": "was",
+              "B": "am",
+              "C": "will be",
+              "D": "were"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: will be"
+          },
+          {
+            "id": "q-10-30-wpl7x",
+            "question": "Marcus _______ to a restaurant if Anna went with us.",
+            "options": {
+              "A": "would go",
+              "B": "went",
+              "C": "goes",
+              "D": "will go"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: would go"
+          },
+          {
+            "id": "q-10-1-m0pgp",
+            "question": "We booked two tables at our favorite restaurant.",
+            "options": {
+              "A": "cancel",
+              "B": "register",
+              "C": "reject",
+              "D": "dismiss"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: register"
+          },
+          {
+            "id": "q-10-2-vtz07",
+            "question": "The pop festival passed off peacefully, despite the fears of local residents.",
+            "options": {
+              "A": "immigrants",
+              "B": "foreigners",
+              "C": "aliens",
+              "D": "citizens"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: citizens"
+          },
+          {
+            "id": "q-10-3-q8der",
+            "question": "Spain was cited as the most popular holiday destination.",
+            "options": {
+              "A": "voted",
+              "B": "trusted",
+              "C": "said",
+              "D": "believed"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: said"
+          },
+          {
+            "id": "q-10-4-jpbjs",
+            "question": "The tour was abandoned because of adverse weather conditions.",
+            "options": {
+              "A": "postponed",
+              "B": "dropped",
+              "C": "changed",
+              "D": "delayed"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: dropped"
+          },
+          {
+            "id": "q-10-5-tqmry",
+            "question": "Economists predict that house prices will remain static for a long period.",
+            "options": {
+              "A": "unchanged",
+              "B": "unstable",
+              "C": "flexible",
+              "D": "active"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: unchanged"
+          },
+          {
+            "id": "q-10-1-p7rzb",
+            "question": "Hotels usually raise their prices in high season.",
+            "options": {
+              "A": "bump",
+              "B": "increase",
+              "C": "boost",
+              "D": "decrease"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: decrease"
+          },
+          {
+            "id": "q-10-2-9mcb3",
+            "question": "He decided to postpone the trip until the following day.",
+            "options": {
+              "A": "cancel",
+              "B": "suspend",
+              "C": "continue",
+              "D": "delay"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: continue"
+          },
+          {
+            "id": "q-10-3-xz08w",
+            "question": "Hotel prices in the major cities are high but not prohibitive.",
+            "options": {
+              "A": "reasonable",
+              "B": "cheap",
+              "C": "expensive",
+              "D": "high"
+            },
+            "correctAnswer": "B",
+            "explanation": "Đáp án đúng là B: cheap"
+          },
+          {
+            "id": "q-10-4-foopl",
+            "question": "It was fascinating to see the elephants in their natural environment.",
+            "options": {
+              "A": "manmade",
+              "B": "normal",
+              "C": "native",
+              "D": "scientific"
+            },
+            "correctAnswer": "A",
+            "explanation": "Đáp án đúng là A: manmade"
+          },
+          {
+            "id": "q-10-5-y3456",
+            "question": "They encountered serious problems when two members of the expedition were injured.",
+            "options": {
+              "A": "severe",
+              "B": "difficult",
+              "C": "dangerous",
+              "D": "unimportant"
+            },
+            "correctAnswer": "D",
+            "explanation": "Đáp án đúng là D: unimportant"
+          },
+          {
+            "id": "q-10-2-jla3n",
+            "question": "In paragraph 1, the word \"it\" refers to ____.",
+            "options": {
+              "A": "tourism",
+              "B": "environment",
+              "C": "impact",
+              "D": "damage"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: impact"
+          },
+          {
+            "id": "q-10-5-c8dj9",
+            "question": "In paragraph 4, the word \"avoid\" is closest in meaning to ____.",
+            "options": {
+              "A": "present",
+              "B": "pretend",
+              "C": "prevent",
+              "D": "protest"
+            },
+            "correctAnswer": "C",
+            "explanation": "Đáp án đúng là C: prevent"
+          }
+        ]
+      }
+    ]
+  }
+]
