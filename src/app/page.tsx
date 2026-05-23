@@ -1126,10 +1126,10 @@ export default function Dashboard() {
                           setSelectedUnit(unit1);
                         }
                       }}
-                      className={`shrink-0 px-4 py-1.5 rounded-xl text-xs font-semibold tracking-wide transition-all ${
+                      className={`shrink-0 px-4 py-1.5 rounded-xl text-xs font-bold tracking-wide transition-all ${
                         activeGrade === grade
-                          ? "bg-violet-600 text-white shadow-lg shadow-violet-600/20"
-                          : "text-slate-500/60 hover:text-slate-700"
+                          ? "bg-violet-600 text-white shadow-md shadow-violet-600/20"
+                          : "text-slate-600 hover:text-slate-800 hover:bg-slate-100"
                       }`}
                     >
                       {grade}
@@ -1141,13 +1141,10 @@ export default function Dashboard() {
           </div>
 
           {/* Welcome Glass Banner */}
-          <div className="relative rounded-3xl border border-slate-200 bg-white overflow-hidden min-h-[300px] flex flex-col justify-between p-6 md:p-8 shadow-2xl transition-all duration-300 hover:border-slate-200 group">
-            {/* Background City Skyline with deep dark gradient overlay */}
+          <div className="relative rounded-3xl border border-slate-200 bg-white overflow-hidden min-h-[300px] flex flex-col justify-between p-6 md:p-8 shadow-xl shadow-slate-200/40 transition-all duration-300 hover:border-slate-300 group">
+            {/* Vibrant colorful gradient for EdTech Light Theme */}
             <div 
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-[1.02] pointer-events-none"
-              style={{
-                backgroundImage: `linear-gradient(to right, rgba(255, 255, 255, 0.95) 30%, rgba(255, 255, 255, 0.4) 60%, rgba(255, 255, 255, 0.8) 100%), url('https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=1200&auto=format&fit=crop')`,
-              }}
+              className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50 transition-transform duration-700 group-hover:scale-[1.02] pointer-events-none"
             />
             {/* Ambient soft glow */}
             <div className="absolute -top-24 -left-24 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none" />
@@ -1169,7 +1166,7 @@ export default function Dashboard() {
                   onClick={() => {
                     document.getElementById("curriculum-section")?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="px-5 py-2.5 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-slate-800 font-black text-xs flex items-center gap-2 transition-all shadow-lg hover:shadow-indigo-650/20 active:scale-95 group/btn"
+                  className="px-5 py-2.5 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-black text-xs flex items-center gap-2 transition-all shadow-lg shadow-indigo-200 hover:shadow-indigo-300 active:scale-95 group/btn"
                 >
                   <Play className="w-3.5 h-3.5 fill-white group-hover/btn:scale-110 transition-transform" />
                   <span>Tiếp tục học ngay</span>
@@ -1404,19 +1401,19 @@ export default function Dashboard() {
                         className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                         style={{ backgroundImage: `url('${bgImg}')` }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#151B2B] via-[#151B2B]/20 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
                       
                       {unit.status === "locked" && (
-                        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] flex items-center justify-center z-20">
-                          <Lock className="w-6 h-6 text-slate-500" />
+                        <div className="absolute inset-0 bg-white/60 backdrop-blur-[2px] flex items-center justify-center z-20">
+                          <Lock className="w-6 h-6 text-slate-400" />
                         </div>
                       )}
                       
                       <div className="absolute top-2 inset-x-2 flex items-center justify-between z-10">
-                        <span className="px-1.5 py-0.5 rounded text-[7px] font-black bg-black/60 text-slate-800 border border-slate-300/50 uppercase tracking-widest font-mono">
+                        <span className="px-1.5 py-0.5 rounded text-[7px] font-black bg-white/80 text-slate-800 border border-slate-200 uppercase tracking-widest font-mono">
                           UNIT {unit.number}
                         </span>
-                        <span className={`px-1.5 py-0.5 rounded text-[7px] font-black border ${diffTag.style} uppercase tracking-wider`}>
+                        <span className={`px-1.5 py-0.5 rounded text-[7px] font-black border ${diffTag.style} bg-white/90 uppercase tracking-wider`}>
                           {diffTag.label}
                         </span>
                       </div>
