@@ -34,7 +34,7 @@ const PLANS = [
     popular: false,
     tag: null,
     accentColor: "indigo",
-    borderClass: "border-slate-700/50",
+    borderClass: "border-slate-300/50",
     bgGlow: "bg-indigo-500/5",
     tagClass: "from-indigo-600 to-indigo-500",
     btnClass:
@@ -171,7 +171,7 @@ export default function UpgradePage() {
         <div className="flex items-center justify-between">
           <Link
             href="/dashboard"
-            className="flex items-center gap-2 text-xs font-bold text-slate-400 hover:text-slate-200 transition-colors group"
+            className="flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-slate-800 transition-colors group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
             Quay lại Bảng điều khiển
@@ -206,7 +206,7 @@ export default function UpgradePage() {
               <span className="text-2xl md:text-3xl">Quyền Năng AI</span>
             </h1>
 
-            <p className="text-sm text-slate-400 max-w-lg mx-auto mt-3 leading-relaxed">
+            <p className="text-sm text-slate-500 max-w-lg mx-auto mt-3 leading-relaxed">
               Tiếp cận toàn bộ giáo trình SGK Lớp 1–12, AI chấm phát âm không giới hạn, hàng trăm bài Dictation & Quiz chuyên sâu.
             </p>
 
@@ -265,7 +265,7 @@ export default function UpgradePage() {
                   <span className="text-xl">{plan.emoji}</span>
                   <h3
                     className={`text-sm font-black ${
-                      plan.popular ? "text-amber-400" : "text-slate-200"
+                      plan.popular ? "text-amber-400" : "text-slate-800"
                     }`}
                   >
                     {plan.name}
@@ -277,7 +277,7 @@ export default function UpgradePage() {
                   <div className="flex items-baseline gap-1 flex-wrap">
                     <span
                       className={`text-2xl font-black tracking-tight ${
-                        plan.popular ? "text-amber-300" : "text-white"
+                        plan.popular ? "text-amber-300" : "text-slate-800"
                       }`}
                     >
                       {plan.price}
@@ -295,7 +295,7 @@ export default function UpgradePage() {
                 {/* Features */}
                 <ul className="space-y-2">
                   {plan.features.map((feat, fi) => (
-                    <li key={fi} className="flex items-start gap-2 text-[10px] text-slate-400 font-semibold">
+                    <li key={fi} className="flex items-start gap-2 text-[10px] text-slate-500 font-semibold">
                       <CheckCircle
                         className={`w-3.5 h-3.5 shrink-0 mt-0.5 ${
                           plan.popular ? "text-amber-400" : "text-indigo-400"
@@ -312,7 +312,7 @@ export default function UpgradePage() {
                     e.stopPropagation();
                     setSelectedPlan(plan.id);
                   }}
-                  className={`w-full py-3 rounded-xl text-white text-xs font-bold transition-all duration-100 ${plan.btnClass}`}
+                  className={`w-full py-3 rounded-xl text-slate-800 text-xs font-bold transition-all duration-100 ${plan.btnClass}`}
                 >
                   {plan.popular ? "⚡ Nâng cấp ngay — Chỉ 2.700đ/ngày" : "Chọn gói này"}
                 </button>
@@ -328,14 +328,14 @@ export default function UpgradePage() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
-            className="rounded-3xl border border-slate-800 bg-[#0F1520] p-6 space-y-5"
+            className="rounded-3xl border border-slate-200 bg-[#0F1520] p-6 space-y-5"
           >
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
                 <QrCode className="w-4 h-4" />
               </div>
               <div>
-                <h3 className="text-sm font-black text-slate-200">Quét Mã QR VietQR</h3>
+                <h3 className="text-sm font-black text-slate-800">Quét Mã QR VietQR</h3>
                 <p className="text-[10px] text-slate-500 font-bold">Thanh toán nhanh qua app ngân hàng</p>
               </div>
             </div>
@@ -363,7 +363,7 @@ export default function UpgradePage() {
                       return (
                         <div
                           key={i}
-                          className={`w-3.5 h-3.5 rounded-sm ${filled ? "bg-slate-900" : "bg-transparent"}`}
+                          className={`w-3.5 h-3.5 rounded-sm ${filled ? "bg-slate-100" : "bg-transparent"}`}
                         />
                       );
                     })}
@@ -372,11 +372,11 @@ export default function UpgradePage() {
                 {/* Center logo */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center shadow-lg">
-                    <Sparkles className="w-4 h-4 text-white" />
+                    <Sparkles className="w-4 h-4 text-slate-800" />
                   </div>
                 </div>
                 {/* VietQR badge */}
-                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[8px] font-black tracking-wider shadow-lg whitespace-nowrap">
+                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 text-slate-800 text-[8px] font-black tracking-wider shadow-lg whitespace-nowrap">
                   VietQR · Vietcombank
                 </div>
               </div>
@@ -393,14 +393,14 @@ export default function UpgradePage() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}
-            className="rounded-3xl border border-slate-800 bg-[#0F1520] p-6 space-y-5"
+            className="rounded-3xl border border-slate-200 bg-[#0F1520] p-6 space-y-5"
           >
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
                 <Shield className="w-4 h-4" />
               </div>
               <div>
-                <h3 className="text-sm font-black text-slate-200">Chuyển Khoản Ngân Hàng</h3>
+                <h3 className="text-sm font-black text-slate-800">Chuyển Khoản Ngân Hàng</h3>
                 <p className="text-[10px] text-slate-500 font-bold">Kích hoạt trong 5–15 phút</p>
               </div>
             </div>
@@ -414,18 +414,18 @@ export default function UpgradePage() {
               ].map((item) => (
                 <div
                   key={item.label}
-                  className="flex items-center justify-between py-3 border-b border-slate-800/50 last:border-0"
+                  className="flex items-center justify-between py-3 border-b border-slate-200 last:border-0"
                 >
                   <span className="text-[10px] text-slate-500 font-bold">{item.label}</span>
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] text-slate-200 font-bold font-mono">{item.value}</span>
+                    <span className="text-[10px] text-slate-800 font-bold font-mono">{item.value}</span>
                     {item.copyable && (
                       <button
                         onClick={handleCopyBank}
                         className={`p-1.5 rounded-lg transition-all ${
                           copiedBank
                             ? "bg-emerald-500/15 text-emerald-400"
-                            : "bg-slate-800 text-slate-400 hover:text-slate-200"
+                            : "bg-slate-100 text-slate-500 hover:text-slate-800"
                         }`}
                       >
                         {copiedBank ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
@@ -450,10 +450,10 @@ export default function UpgradePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="rounded-3xl border border-slate-800 bg-[#0F1520] overflow-hidden"
+          className="rounded-3xl border border-slate-200 bg-[#0F1520] overflow-hidden"
         >
-          <div className="px-6 py-4 border-b border-slate-800/60 flex items-center justify-between">
-            <h3 className="text-sm font-black text-slate-200">So Sánh Tính Năng</h3>
+          <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between">
+            <h3 className="text-sm font-black text-slate-800">So Sánh Tính Năng</h3>
             <span className="text-[9px] text-slate-500 font-bold uppercase tracking-wider">Miễn phí vs PRO</span>
           </div>
 
@@ -464,8 +464,8 @@ export default function UpgradePage() {
               <span className="text-center text-violet-400">PRO ✦</span>
             </div>
             {FEATURES_COMPARISON.map((feat) => (
-              <div key={feat.name} className="grid grid-cols-3 px-6 py-3 hover:bg-slate-900/20 transition-colors">
-                <span className="text-[10px] text-slate-400 font-semibold">{feat.name}</span>
+              <div key={feat.name} className="grid grid-cols-3 px-6 py-3 hover:bg-slate-100 transition-colors">
+                <span className="text-[10px] text-slate-500 font-semibold">{feat.name}</span>
                 <div className="flex justify-center">
                   {feat.free === true ? (
                     <CheckCircle className="w-4 h-4 text-emerald-400" />
@@ -507,7 +507,7 @@ export default function UpgradePage() {
           <button
             onClick={handleActivateVIP}
             title="[ADMIN] Giả lập kích hoạt VIP"
-            className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-dashed border-slate-700/60 text-slate-600 hover:text-amber-400 hover:border-amber-500/40 hover:bg-amber-500/5 text-[9px] font-bold transition-all group"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-dashed border-slate-300/60 text-slate-600 hover:text-amber-400 hover:border-amber-500/40 hover:bg-amber-500/5 text-[9px] font-bold transition-all group"
           >
             <Gift className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
             <span>[Admin] Giả lập kích hoạt VIP</span>

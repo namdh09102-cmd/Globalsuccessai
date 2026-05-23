@@ -356,7 +356,7 @@ export default function HistoryPage() {
     <div className="p-6 md:p-8 max-w-5xl mx-auto space-y-8 select-none">
       
       {/* Header */}
-      <div className="border-b border-slate-800/40 pb-6 relative">
+      <div className="border-b border-slate-200 pb-6 relative">
         <div className="absolute top-0 right-0 w-24 h-24 bg-violet-600/10 rounded-full blur-2xl pointer-events-none" />
         <div className="flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-wider mb-1">
           <Trophy className="w-3.5 h-3.5" />
@@ -365,7 +365,7 @@ export default function HistoryPage() {
         <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-300">
           Thi Đua & Thành Tích
         </h1>
-        <p className="text-xs text-slate-400 mt-1">
+        <p className="text-xs text-slate-500 mt-1">
           Thi đua giành vị trí dẫn đầu lớp học và mở khóa các huy hiệu vinh dự cao quý.
         </p>
       </div>
@@ -374,15 +374,15 @@ export default function HistoryPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
         {/* PHÂN HỆ 1: BẢNG VÀNG TIẾN BỘ (Leaderboard Grid - col-span-2) */}
-        <div className="lg:col-span-2 rounded-3xl border border-slate-800/80 bg-[#151B2B] p-6 shadow-xl space-y-6 hover:border-slate-700/30 transition-all duration-300">
+        <div className="lg:col-span-2 rounded-3xl border border-slate-200 bg-white p-6 shadow-xl space-y-6 hover:border-slate-300/30 transition-all duration-300">
           
-          <div className="flex items-center justify-between border-b border-slate-800/40 pb-3">
+          <div className="flex items-center justify-between border-b border-slate-200 pb-3">
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 shadow-md">
                 <Trophy className="w-4 h-4" />
               </div>
               <div>
-                <h2 className="text-sm font-bold text-slate-100">Bảng Thi Đua Học Tập Tuần Tuần 🏆</h2>
+                <h2 className="text-sm font-bold text-slate-800">Bảng Thi Đua Học Tập Tuần Tuần 🏆</h2>
                 <p className="text-[10px] text-slate-500">Cập nhật vị trí xếp hạng học tập thời gian thực</p>
               </div>
             </div>
@@ -429,7 +429,7 @@ export default function HistoryPage() {
                   >
                     {/* Avatar tròn với vương miện */}
                     <div className="relative mb-2">
-                      <div className={`w-14 h-14 rounded-full flex items-center justify-center font-black text-white text-sm shadow-lg shadow-black/40 border-2 relative z-10 transition-transform duration-300 group-hover:scale-105 ${
+                      <div className={`w-14 h-14 rounded-full flex items-center justify-center font-black text-slate-800 text-sm shadow-lg shadow-black/40 border-2 relative z-10 transition-transform duration-300 group-hover:scale-105 ${
                         isTop1 
                           ? "bg-gradient-to-tr from-yellow-500 to-amber-600 border-yellow-400 ring-2 ring-yellow-400/30"
                           : isTop2
@@ -450,7 +450,7 @@ export default function HistoryPage() {
                       isUserHighlight ? "ring-2 ring-violet-500 bg-violet-950/30 shadow-[0_0_20px_rgba(139,92,246,0.4)] border-violet-500/50" : ""
                     }`}>
                       <div className="space-y-1">
-                        <span className={`text-[10px] md:text-xs font-black truncate block max-w-full ${isUserHighlight ? "text-violet-400" : "text-slate-200"}`}>
+                        <span className={`text-[10px] md:text-xs font-black truncate block max-w-full ${isUserHighlight ? "text-violet-400" : "text-slate-800"}`}>
                           {student.name}
                         </span>
                         <span className="text-[8px] font-bold text-slate-500 block uppercase">Lớp {student.class}</span>
@@ -486,7 +486,7 @@ export default function HistoryPage() {
                   className={`flex items-center justify-between p-3 rounded-2xl border transition-all duration-300 group ${
                     isUserHighlight
                       ? "ring-2 ring-violet-500 bg-violet-950/30 shadow-[0_0_20px_rgba(139,92,246,0.4)] border-violet-500/50 translate-x-1"
-                      : "bg-[#0B0F19]/40 border-slate-850 hover:bg-slate-800/10 hover:border-slate-800"
+                      : "bg-slate-50 border-slate-200 hover:bg-slate-100 hover:border-slate-200"
                   }`}
                 >
                   <div className="flex items-center gap-3">
@@ -496,10 +496,10 @@ export default function HistoryPage() {
                     </span>
 
                     {/* Avatar */}
-                    <div className={`w-8 h-8 rounded-xl flex items-center justify-center text-xs font-black text-white shadow-inner relative transition-transform duration-300 group-hover:scale-105 ${
+                    <div className={`w-8 h-8 rounded-xl flex items-center justify-center text-xs font-black text-slate-800 shadow-inner relative transition-transform duration-300 group-hover:scale-105 ${
                       isUserHighlight 
                         ? "bg-gradient-to-tr from-violet-500 to-indigo-600 border border-violet-400/30"
-                        : "bg-slate-800 border border-slate-850"
+                        : "bg-slate-100 border border-slate-200"
                     }`}>
                       {student.name.split(" ").slice(-1)[0][0]}
                       {isUserHighlight && <div className="absolute bottom-[-1px] right-[-1px] w-2 h-2 bg-emerald-500 rounded-full border border-[#151B2B]" />}
@@ -508,7 +508,7 @@ export default function HistoryPage() {
                     {/* Name & Class */}
                     <div className="min-w-0">
                       <div className="flex items-center gap-1.5">
-                        <span className={`text-xs font-black truncate ${isUserHighlight ? "text-violet-400 font-extrabold" : "text-slate-200"}`}>
+                        <span className={`text-xs font-black truncate ${isUserHighlight ? "text-violet-400 font-extrabold" : "text-slate-800"}`}>
                           {student.name}
                         </span>
                         {isUserHighlight && (
@@ -525,7 +525,7 @@ export default function HistoryPage() {
                   <div className="flex items-center gap-5 text-right">
                     <div className="hidden sm:flex items-center gap-3">
                       {/* Badges count */}
-                      <div className="flex items-center gap-0.5 bg-slate-900/60 border border-slate-850 px-2 py-0.5 rounded-lg text-[9px] text-slate-450 font-bold">
+                      <div className="flex items-center gap-0.5 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-lg text-[9px] text-slate-450 font-bold">
                         <Award className="w-3 h-3 text-indigo-400" />
                         <span>{student.badgesCount} danh hiệu</span>
                       </div>
@@ -538,7 +538,7 @@ export default function HistoryPage() {
                     </div>
 
                     <div className="min-w-[60px]">
-                      <span className="text-xs font-black text-slate-100 block">{student.xp.toLocaleString()}</span>
+                      <span className="text-xs font-black text-slate-800 block">{student.xp.toLocaleString()}</span>
                       <span className="text-[7px] font-bold tracking-widest text-slate-500 uppercase block">XP</span>
                     </div>
                   </div>
@@ -563,15 +563,15 @@ export default function HistoryPage() {
         </div>
 
         {/* PHÂN HỆ 2: BẢNG TÀNG HUY HIỆU (Badges Collection - col-span-1) */}
-        <div className="rounded-3xl border border-slate-800/80 bg-[#151B2B] p-6 shadow-xl space-y-6 hover:border-slate-700/30 transition-all duration-300 flex flex-col justify-between">
+        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl space-y-6 hover:border-slate-300/30 transition-all duration-300 flex flex-col justify-between">
           
           <div className="space-y-4 flex-1">
-            <div className="flex items-center gap-2.5 border-b border-slate-800/40 pb-3">
+            <div className="flex items-center gap-2.5 border-b border-slate-200 pb-3">
               <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shadow-md">
                 <Award className="w-4 h-4" />
               </div>
               <div>
-                <h2 className="text-sm font-bold text-slate-100">Bộ Sưu Tập Danh Hiệu 🎖️</h2>
+                <h2 className="text-sm font-bold text-slate-800">Bộ Sưu Tập Danh Hiệu 🎖️</h2>
                 <p className="text-[10px] text-slate-500">Bộ sưu tập huy hiệu cao quý của bạn</p>
               </div>
             </div>
@@ -592,13 +592,13 @@ export default function HistoryPage() {
                     className={`relative rounded-2xl border p-3 flex flex-col justify-between min-h-[145px] transition-all duration-300 group shadow-md hover:scale-[1.02] ${
                       badge.unlocked
                         ? `${badge.glowColor} ${badge.neonShadow} cursor-pointer`
-                        : "border-slate-900 bg-slate-900/30 overflow-hidden"
+                        : "border-slate-900 bg-slate-100 overflow-hidden"
                     }`}
                   >
                     {/* Glassmorphism lock overlay cho các huy hiệu chưa đạt */}
                     {!badge.unlocked && (
-                      <div className="absolute inset-0 bg-[#0B0F19]/65 backdrop-blur-[2.5px] rounded-2xl flex flex-col items-center justify-center p-3 text-center z-10 border border-slate-900/60 transition-all duration-300 group-hover:bg-[#0B0F19]/50">
-                        <div className="w-8 h-8 rounded-xl bg-slate-950/80 border border-slate-800/60 flex items-center justify-center text-slate-450 mb-1.5 shadow-md">
+                      <div className="absolute inset-0 bg-slate-50 backdrop-blur-[2.5px] rounded-2xl flex flex-col items-center justify-center p-3 text-center z-10 border border-slate-900/60 transition-all duration-300 group-hover:bg-slate-50">
+                        <div className="w-8 h-8 rounded-xl bg-slate-950/80 border border-slate-200 flex items-center justify-center text-slate-450 mb-1.5 shadow-md">
                           <Lock className="w-3.5 h-3.5" />
                         </div>
                         <span className="text-[8px] font-bold text-slate-500 uppercase tracking-widest block mb-0.5">Chưa đạt</span>
@@ -615,7 +615,7 @@ export default function HistoryPage() {
                         <div className={`w-9 h-9 rounded-xl flex items-center justify-center border transition-all duration-500 group-hover:rotate-[15deg] group-hover:scale-105 shadow-inner ${
                           badge.unlocked
                             ? `text-white bg-gradient-to-tr from-violet-600 to-indigo-600 border-violet-400/25`
-                            : "bg-slate-800 border-slate-850 text-slate-650"
+                            : "bg-slate-100 border-slate-200 text-slate-650"
                         }`}>
                           <Icon className="w-4 h-4" />
                         </div>
@@ -623,12 +623,12 @@ export default function HistoryPage() {
 
                       <div className="space-y-1 mt-3">
                         <h3 className={`text-[11px] font-black leading-tight truncate ${
-                          badge.unlocked ? "text-slate-100 group-hover:text-indigo-400 transition-colors" : "text-slate-650"
+                          badge.unlocked ? "text-slate-800 group-hover:text-indigo-400 transition-colors" : "text-slate-650"
                         }`}>
                           {badge.name}
                         </h3>
                         
-                        <p className="text-[8px] text-slate-400 leading-normal line-clamp-2">
+                        <p className="text-[8px] text-slate-500 leading-normal line-clamp-2">
                           {badge.description}
                         </p>
                       </div>
@@ -645,14 +645,14 @@ export default function HistoryPage() {
           </div>
 
           {/* Thống kê chung huy hiệu */}
-          <div className="grid grid-cols-2 gap-3 pt-4 border-t border-slate-800/40 mt-4 bg-slate-900/10 p-2.5 rounded-2xl select-none">
+          <div className="grid grid-cols-2 gap-3 pt-4 border-t border-slate-200 mt-4 bg-slate-100 p-2.5 rounded-2xl select-none">
             <div className="text-center space-y-0.5">
               <span className="text-[8px] text-slate-500 font-bold block uppercase tracking-wider">Đã mở khóa</span>
               <span className="text-xs font-black text-emerald-400">
                 {unlockedBadgesCount} / 6 Danh hiệu
               </span>
             </div>
-            <div className="text-center space-y-0.5 border-l border-slate-800/60">
+            <div className="text-center space-y-0.5 border-l border-slate-200">
               <span className="text-[8px] text-slate-500 font-bold block uppercase tracking-wider">Độ hoàn thành</span>
               <span className="text-xs font-black text-indigo-400">
                 {Math.round((unlockedBadgesCount / 6) * 100)}%
@@ -665,14 +665,14 @@ export default function HistoryPage() {
       </div>
 
       {/* PHÂN HỆ 3: NHẬT KÝ LUYỆN TẬP CHUYÊN SÂU (Learning Log - Hàng ngang đáy trang) */}
-      <div className="rounded-3xl border border-slate-800/80 bg-[#151B2B] p-6 shadow-xl space-y-4 hover:border-slate-700/30 transition-all duration-300">
+      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl space-y-4 hover:border-slate-300/30 transition-all duration-300">
         
-        <div className="flex items-center gap-2.5 border-b border-slate-800/40 pb-3">
+        <div className="flex items-center gap-2.5 border-b border-slate-200 pb-3">
           <div className="w-8 h-8 rounded-lg bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 shadow-md">
             <History className="w-4 h-4" />
           </div>
           <div>
-            <h2 className="text-sm font-bold text-slate-100">Nhật Ký Luyện Tập Chuyên Sâu</h2>
+            <h2 className="text-sm font-bold text-slate-800">Nhật Ký Luyện Tập Chuyên Sâu</h2>
             <p className="text-[10px] text-slate-550">Lịch sử và tiến độ hoàn thành các kỹ năng học tập gần nhất</p>
           </div>
         </div>
@@ -681,7 +681,7 @@ export default function HistoryPage() {
         <div className="overflow-x-auto custom-scrollbar">
           <table className="w-full text-left border-collapse min-w-[600px]">
             <thead>
-              <tr className="border-b border-slate-850/60 text-[9px] font-bold text-slate-500 uppercase tracking-widest">
+              <tr className="border-b border-slate-200 text-[9px] font-bold text-slate-500 uppercase tracking-widest">
                 <th className="py-3 px-4">Bài học</th>
                 <th className="py-3 px-4">Hình thức</th>
                 <th className="py-3 px-4 text-center">Kết quả</th>
@@ -698,12 +698,12 @@ export default function HistoryPage() {
                   variants={tableRowVariants}
                   initial="hidden"
                   animate="visible"
-                  className="hover:bg-slate-800/10 transition-colors duration-200 group"
+                  className="hover:bg-slate-100 transition-colors duration-200 group"
                 >
-                  <td className="py-3 px-4 font-bold text-slate-200 group-hover:text-indigo-400 transition-colors">
+                  <td className="py-3 px-4 font-bold text-slate-800 group-hover:text-indigo-400 transition-colors">
                     {log.lessonTitle}
                   </td>
-                  <td className="py-3 px-4 uppercase text-[10px] font-black tracking-wider text-slate-400">
+                  <td className="py-3 px-4 uppercase text-[10px] font-black tracking-wider text-slate-500">
                     <span className={`px-2 py-0.5 rounded-lg border text-[9px] ${
                       log.type === "speaking" 
                         ? "bg-violet-500/10 border-violet-500/20 text-violet-400"
@@ -716,7 +716,7 @@ export default function HistoryPage() {
                       {log.type}
                     </span>
                   </td>
-                  <td className="py-3 px-4 font-black text-center text-sm tracking-tight text-slate-200">
+                  <td className="py-3 px-4 font-black text-center text-sm tracking-tight text-slate-800">
                     {log.score}
                   </td>
                   <td className="py-3 px-4 font-bold">

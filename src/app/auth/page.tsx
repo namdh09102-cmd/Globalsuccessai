@@ -121,11 +121,11 @@ export default function AuthPage() {
       {/* Auth Card */}
       <motion.div 
         layout
-        className="w-full max-w-md bg-[#0B0F19]/80 backdrop-blur-xl border border-slate-800 rounded-3xl shadow-2xl p-8 relative z-10"
+        className="w-full max-w-md bg-slate-50 backdrop-blur-xl border border-slate-200 rounded-3xl shadow-2xl p-8 relative z-10"
       >
         <div className="flex flex-col items-center mb-8">
           <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-500/20 mb-4">
-            <ShieldCheck className="w-7 h-7 text-white" />
+            <ShieldCheck className="w-7 h-7 text-slate-800" />
           </div>
           <h1 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
             {isLogin ? "Đăng Nhập Hệ Thống" : "Tạo Tài Khoản Mới"}
@@ -154,7 +154,7 @@ export default function AuthPage() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Họ và Tên của bạn" 
-                    className="w-full bg-[#151B2B] border border-slate-800 text-slate-200 text-sm rounded-xl pl-12 pr-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all"
+                    className="w-full bg-white border border-slate-200 text-slate-800 text-sm rounded-xl pl-12 pr-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all"
                   />
                 </div>
                 
@@ -163,7 +163,7 @@ export default function AuthPage() {
                   <select 
                     value={role}
                     onChange={(e) => setRole(e.target.value)}
-                    className="w-full bg-[#151B2B] border border-slate-800 text-slate-200 text-sm rounded-xl pl-12 pr-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all appearance-none cursor-pointer"
+                    className="w-full bg-white border border-slate-200 text-slate-800 text-sm rounded-xl pl-12 pr-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all appearance-none cursor-pointer"
                   >
                     <option value="student">Học sinh K-12</option>
                     <option value="teacher">Giáo viên / Phụ huynh</option>
@@ -181,7 +181,7 @@ export default function AuthPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email đăng nhập" 
-              className="w-full bg-[#151B2B] border border-slate-800 text-slate-200 text-sm rounded-xl pl-12 pr-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all font-mono"
+              className="w-full bg-white border border-slate-200 text-slate-800 text-sm rounded-xl pl-12 pr-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all font-mono"
             />
           </div>
 
@@ -193,7 +193,7 @@ export default function AuthPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Mật khẩu" 
-              className="w-full bg-[#151B2B] border border-slate-800 text-slate-200 text-sm rounded-xl pl-12 pr-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all font-mono"
+              className="w-full bg-white border border-slate-200 text-slate-800 text-sm rounded-xl pl-12 pr-4 py-3 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-all font-mono"
             />
           </div>
 
@@ -214,7 +214,7 @@ export default function AuthPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-4 mt-2 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-500 hover:from-indigo-500 hover:to-violet-400 text-white text-sm font-black uppercase tracking-wider shadow-[0_4px_0_#3730a3] hover:shadow-[0_2px_0_#3730a3] active:translate-y-[2px] active:shadow-none transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+            className="w-full py-4 mt-2 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-500 hover:from-indigo-500 hover:to-violet-400 text-slate-800 text-sm font-black uppercase tracking-wider shadow-[0_4px_0_#3730a3] hover:shadow-[0_2px_0_#3730a3] active:translate-y-[2px] active:shadow-none transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
           >
             {isLoading ? (
               <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -228,7 +228,7 @@ export default function AuthPage() {
         </form>
 
         <div className="mt-6 text-center">
-          <p className="text-xs text-slate-400 font-medium">
+          <p className="text-xs text-slate-500 font-medium">
             {isLogin ? "Chưa có tài khoản? " : "Đã có tài khoản? "}
             <button 
               type="button"

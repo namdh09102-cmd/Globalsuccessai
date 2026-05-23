@@ -280,7 +280,7 @@ export default function TeacherPortal() {
             initial={{ opacity: 0, y: -50, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -50, scale: 0.9 }}
-            className="fixed top-6 right-6 z-55 bg-gradient-to-r from-emerald-600 to-teal-500 text-white font-extrabold text-xs px-4 py-3 rounded-2xl shadow-[0_10px_30px_rgba(16,185,129,0.3)] flex items-center gap-2 border border-emerald-400/35"
+            className="fixed top-6 right-6 z-55 bg-gradient-to-r from-emerald-600 to-teal-500 text-slate-800 font-extrabold text-xs px-4 py-3 rounded-2xl shadow-[0_10px_30px_rgba(16,185,129,0.3)] flex items-center gap-2 border border-emerald-400/35"
           >
             <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
               <CheckCircle className="w-3.5 h-3.5" />
@@ -291,7 +291,7 @@ export default function TeacherPortal() {
       </AnimatePresence>
  
       {/* Header lớn */}
-      <div className="border-b border-slate-800/40 pb-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="border-b border-slate-200 pb-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 text-indigo-400 text-[10px] font-black uppercase tracking-widest mb-1 font-mono">
             <School className="w-3.5 h-3.5" />
@@ -300,7 +300,7 @@ export default function TeacherPortal() {
           <h1 className="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-300 tracking-tight">
             Bảng Quản Trị Giáo Viên
           </h1>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-500 mt-1">
             Giao nhiệm vụ SGK nhanh, giám sát điểm số phát âm AI và theo dõi streak chuyên chuyên cần của học sinh.
           </p>
         </div>
@@ -312,7 +312,7 @@ export default function TeacherPortal() {
             setShowToast(true);
             setTimeout(() => setShowToast(false), 2000);
           }}
-          className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-slate-200 transition-colors"
+          className="p-2 rounded-xl bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-800 transition-colors"
         >
           <RefreshCw className="w-4 h-4" />
         </button>
@@ -332,18 +332,18 @@ export default function TeacherPortal() {
           {/* PHÂN HỆ 1: QUẢN LÝ LỚP HỌC (Classroom Center - Bento Card #1) */}
           <motion.div 
             variants={cardVariants}
-            className="rounded-3xl border border-slate-800 bg-[#151B2B] p-6 shadow-xl relative overflow-hidden group hover:border-slate-700/80 transition-all duration-300"
+            className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl relative overflow-hidden group hover:border-slate-300/80 transition-all duration-300"
           >
             {/* Ambient Glow */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-[80px] pointer-events-none" />
 
-            <div className="flex items-center justify-between border-b border-slate-800/40 pb-4 mb-5">
+            <div className="flex items-center justify-between border-b border-slate-200 pb-4 mb-5">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
                   <School className="w-4.5 h-4.5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-200">Danh Sách Lớp Học Quản Lý</h3>
+                  <h3 className="text-sm font-bold text-slate-800">Danh Sách Lớp Học Quản Lý</h3>
                   <p className="text-[10px] text-slate-500 font-medium">Bấm vào lớp để theo dõi chi tiết học sinh</p>
                 </div>
               </div>
@@ -351,7 +351,7 @@ export default function TeacherPortal() {
               {/* Nút Tạo lớp học mới 3D */}
               <button 
                 onClick={() => setIsCreateClassModalOpen(true)}
-                className="px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-550 text-white font-black text-[10px] uppercase tracking-wider transition-all duration-100 shadow-[0_3px_0_#312e81] active:translate-y-[3px] active:shadow-none"
+                className="px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-550 text-slate-800 font-black text-[10px] uppercase tracking-wider transition-all duration-100 shadow-[0_3px_0_#312e81] active:translate-y-[3px] active:shadow-none"
               >
                 [+] Tạo Lớp Mới
               </button>
@@ -370,7 +370,7 @@ export default function TeacherPortal() {
                     className={`p-5 rounded-2xl border transition-all duration-300 cursor-pointer relative overflow-hidden select-none ${
                       isSelected
                         ? "bg-gradient-to-b from-indigo-950/20 to-indigo-900/10 border-indigo-500/75 shadow-[0_8px_24px_rgba(99,102,241,0.15)] scale-[1.01]"
-                        : "bg-[#0b0f19]/40 border-slate-850 hover:border-slate-700/60 hover:bg-slate-900/10"
+                        : "bg-[#0b0f19]/40 border-slate-200 hover:border-slate-300/60 hover:bg-slate-100"
                     }`}
                   >
                     <div className="flex items-start justify-between">
@@ -378,18 +378,18 @@ export default function TeacherPortal() {
                         <span className="text-[10px] font-black text-indigo-400 uppercase tracking-widest block font-mono mb-1">
                           Global Success
                         </span>
-                        <h4 className="text-base font-extrabold text-slate-100">{cls.name}</h4>
+                        <h4 className="text-base font-extrabold text-slate-800">{cls.name}</h4>
                       </div>
                       
                       {/* Badge sĩ số */}
-                      <span className="px-2.5 py-0.5 rounded-lg text-[9px] font-black bg-slate-900 border border-slate-850 text-slate-400">
+                      <span className="px-2.5 py-0.5 rounded-lg text-[9px] font-black bg-slate-100 border border-slate-200 text-slate-500">
                         {cls.studentsCount} Học sinh
                       </span>
                     </div>
 
                     {/* Class Code & Copy Button */}
                     <div className="mt-4 flex items-center justify-between py-1.5 px-3 rounded-xl bg-[#0b0f19]/80 border border-slate-900 z-10 relative">
-                      <span className="text-[10px] font-bold text-slate-400 font-mono">
+                      <span className="text-[10px] font-bold text-slate-500 font-mono">
                         Code: {cls.code}
                       </span>
                       <button
@@ -398,7 +398,7 @@ export default function TeacherPortal() {
                           handleCopyCode(cls.code, cls.id);
                         }}
                         className={`p-1 rounded-md transition-colors ${
-                          isCopied ? "bg-emerald-500/15 text-emerald-400" : "bg-slate-800 text-slate-400 hover:text-slate-200"
+                          isCopied ? "bg-emerald-500/15 text-emerald-400" : "bg-slate-100 text-slate-500 hover:text-slate-800"
                         }`}
                       >
                         {isCopied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
@@ -428,15 +428,15 @@ export default function TeacherPortal() {
           {/* PHÂN HỆ 2: BẢNG THEO DÕI HỌC SINH CHI TIẾT (Student Tracker Table - Bento Card #2) */}
           <motion.div 
             variants={cardVariants}
-            className="rounded-3xl border border-slate-800 bg-[#151B2B] p-6 shadow-xl relative overflow-hidden group hover:border-slate-700/80 transition-all duration-300"
+            className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl relative overflow-hidden group hover:border-slate-300/80 transition-all duration-300"
           >
-            <div className="flex items-center justify-between border-b border-slate-800/40 pb-4 mb-5">
+            <div className="flex items-center justify-between border-b border-slate-200 pb-4 mb-5">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
                   <Users className="w-4.5 h-4.5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-200">
+                  <h3 className="text-sm font-bold text-slate-800">
                     Bảng Học Học Viên Lớp: {classes.find(c => c.id === selectedClassId)?.name}
                   </h3>
                   <p className="text-[10px] text-slate-500 font-medium">Giám sát chất lượng học và chỉ số thực tế</p>
@@ -452,7 +452,7 @@ export default function TeacherPortal() {
             <div className="overflow-x-auto w-full">
               <table className="w-full text-left border-collapse select-none">
                 <thead>
-                  <tr className="border-b border-slate-800/50 text-[10px] font-black uppercase text-slate-500 tracking-wider">
+                  <tr className="border-b border-slate-200 text-[10px] font-black uppercase text-slate-500 tracking-wider">
                     <th className="pb-3 pl-2">Học Sinh</th>
                     <th className="pb-3 text-center">Streak</th>
                     <th className="pb-3 text-center">Phát Âm TB</th>
@@ -468,9 +468,9 @@ export default function TeacherPortal() {
                     return (
                       <tr 
                         key={idx}
-                        className={`hover:bg-slate-900/10 transition-colors ${
+                        className={`hover:bg-slate-100 transition-colors ${
                           student.isCurrentUser 
-                            ? "bg-violet-950/20 text-slate-200 border-l-2 border-violet-500" 
+                            ? "bg-violet-950/20 text-slate-800 border-l-2 border-violet-500" 
                             : ""
                         }`}
                       >
@@ -479,7 +479,7 @@ export default function TeacherPortal() {
                           <div className={`w-7 h-7 rounded-lg flex items-center justify-center text-[10px] font-black shadow-inner ${
                             student.isCurrentUser
                               ? "bg-violet-500/20 border border-violet-500/30 text-violet-400"
-                              : "bg-slate-800 border border-slate-800 text-slate-400"
+                              : "bg-slate-100 border border-slate-200 text-slate-500"
                           }`}>
                             {student.name.substring(0, 2).toUpperCase()}
                           </div>
@@ -504,7 +504,7 @@ export default function TeacherPortal() {
                         </td>
 
                         {/* Bài học gần nhất */}
-                        <td className="py-3.5 text-slate-400 font-medium max-w-[180px] truncate">
+                        <td className="py-3.5 text-slate-500 font-medium max-w-[180px] truncate">
                           {student.lastLesson}
                         </td>
 
@@ -532,14 +532,14 @@ export default function TeacherPortal() {
           {/* PHÂN HỆ 3: TRUNG TÂM GIAO BÀI TẬP (Assignment Builder - Bento Card #3) */}
           <motion.div 
             variants={cardVariants}
-            className="rounded-3xl border border-slate-800 bg-[#151B2B] p-5 shadow-xl relative overflow-hidden group hover:border-slate-700/80 transition-all duration-300"
+            className="rounded-3xl border border-slate-200 bg-white p-5 shadow-xl relative overflow-hidden group hover:border-slate-300/80 transition-all duration-300"
           >
             {/* Ambient Glow */}
             <div className="absolute -right-16 -bottom-16 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl pointer-events-none" />
 
-            <div className="flex items-center gap-2 border-b border-slate-800/40 pb-3 mb-4">
-              <ClipboardList className="w-4.5 h-4.5 text-slate-400" />
-              <h3 className="text-xs font-black uppercase text-slate-400 tracking-wider">
+            <div className="flex items-center gap-2 border-b border-slate-200 pb-3 mb-4">
+              <ClipboardList className="w-4.5 h-4.5 text-slate-500" />
+              <h3 className="text-xs font-black uppercase text-slate-500 tracking-wider">
                 Trung Tâm Giao Bài Tập
               </h3>
             </div>
@@ -555,10 +555,10 @@ export default function TeacherPortal() {
                 <select
                   value={assignForm.classId}
                   onChange={(e) => setAssignForm({ ...assignForm, classId: e.target.value })}
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-[#0B0F19] text-xs font-bold text-slate-200 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/30 outline-none transition-all"
+                  className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 text-xs font-bold text-slate-800 border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/30 outline-none transition-all"
                 >
                   {classes.map(cls => (
-                    <option key={cls.id} value={cls.id} className="bg-[#151B2B]">
+                    <option key={cls.id} value={cls.id} className="bg-white">
                       {cls.name} ({cls.studentsCount} HS)
                     </option>
                   ))}
@@ -573,10 +573,10 @@ export default function TeacherPortal() {
                 <select
                   value={assignForm.lesson}
                   onChange={(e) => setAssignForm({ ...assignForm, lesson: e.target.value })}
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-[#0B0F19] text-xs font-bold text-slate-200 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/30 outline-none transition-all"
+                  className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 text-xs font-bold text-slate-800 border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/30 outline-none transition-all"
                 >
                   {getLessonsList().map((les, idx) => (
-                    <option key={idx} value={les} className="bg-[#151B2B]">
+                    <option key={idx} value={les} className="bg-white">
                       {les}
                     </option>
                   ))}
@@ -591,18 +591,18 @@ export default function TeacherPortal() {
                 <select
                   value={assignForm.deadline}
                   onChange={(e) => setAssignForm({ ...assignForm, deadline: e.target.value })}
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-[#0B0F19] text-xs font-bold text-slate-200 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/30 outline-none transition-all"
+                  className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 text-xs font-bold text-slate-800 border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/30 outline-none transition-all"
                 >
-                  <option value="Ngày mai (23:59)" className="bg-[#151B2B]">Ngày mai (23:59)</option>
-                  <option value="Cuối tuần này (Chủ Nhật)" className="bg-[#151B2B]">Cuối tuần này (Chủ Nhật)</option>
-                  <option value="Tuần sau (7 ngày nữa)" className="bg-[#151B2B]">Tuần sau (7 ngày nữa)</option>
+                  <option value="Ngày mai (23:59)" className="bg-white">Ngày mai (23:59)</option>
+                  <option value="Cuối tuần này (Chủ Nhật)" className="bg-white">Cuối tuần này (Chủ Nhật)</option>
+                  <option value="Tuần sau (7 ngày nữa)" className="bg-white">Tuần sau (7 ngày nữa)</option>
                 </select>
               </div>
 
               {/* Nút bấm Phát động nhiệm vụ màu Xanh Emerald */}
               <button
                 type="submit"
-                className="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-555 text-white font-black text-xs transition-all duration-100 flex items-center justify-center gap-1.5 shadow-[0_4px_0_#064e3b] active:translate-y-[4px] active:shadow-none select-none"
+                className="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-555 text-slate-800 font-black text-xs transition-all duration-100 flex items-center justify-center gap-1.5 shadow-[0_4px_0_#064e3b] active:translate-y-[4px] active:shadow-none select-none"
               >
                 <Send className="w-3.5 h-3.5 fill-white/10" />
                 <span>Phát Động Nhiệm Vụ</span>
@@ -614,14 +614,14 @@ export default function TeacherPortal() {
           {/* Quick Helper Tips Card dành cho GV */}
           <motion.div
             variants={cardVariants}
-            className="rounded-3xl border border-slate-800 bg-gradient-to-b from-[#111625] to-[#0A0D18] p-5 shadow-xl relative overflow-hidden"
+            className="rounded-3xl border border-slate-200 bg-gradient-to-b from-indigo-50 to-purple-50 p-5 shadow-xl relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-violet-650/5 rounded-full blur-2xl pointer-events-none" />
             <div className="flex items-center gap-2 mb-2 text-violet-400">
               <Sparkles className="w-4 h-4 text-violet-400" />
               <h4 className="text-xs font-black uppercase tracking-wider">Hỗ Trợ AI Giảng Dạy</h4>
             </div>
-            <p className="text-[10px] text-slate-400 leading-relaxed">
+            <p className="text-[10px] text-slate-500 leading-relaxed">
               Bạn có thể dễ dàng kiểm soát các học sinh có cảnh báo ⚠️ **"Cần hỗ trợ"**. Hệ thống AI tự động đề xuất bài học bổ trợ phù hợp cho từng học sinh dựa trên lỗi sai ngữ điệu trong bài luyện phát âm offline của các em.
             </p>
           </motion.div>
@@ -648,16 +648,16 @@ export default function TeacherPortal() {
                 initial={{ opacity: 0, scale: 0.93, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.93, y: 20 }}
-                className="pointer-events-auto w-full max-w-md bg-[#0B0F19] rounded-3xl border border-slate-800/60 shadow-2xl overflow-hidden relative"
+                className="pointer-events-auto w-full max-w-md bg-slate-50 rounded-3xl border border-slate-200 shadow-2xl overflow-hidden relative"
               >
                 <div className="absolute top-0 right-0 w-48 h-48 bg-violet-600/10 rounded-full blur-[60px] pointer-events-none" />
                 
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-6 relative z-10">
-                    <h2 className="text-lg font-black text-slate-100">Khởi Tạo Lớp Học Mới</h2>
+                    <h2 className="text-lg font-black text-slate-800">Khởi Tạo Lớp Học Mới</h2>
                     <button
                       onClick={() => setIsCreateClassModalOpen(false)}
-                      className="w-8 h-8 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-slate-200 transition-colors"
+                      className="w-8 h-8 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-800 transition-colors"
                     >
                       <X className="w-4 h-4" />
                     </button>
@@ -673,7 +673,7 @@ export default function TeacherPortal() {
                         placeholder="Ví dụ: Lớp 12 Cận Chuyên"
                         value={newClassName}
                         onChange={(e) => setNewClassName(e.target.value)}
-                        className="w-full px-4 py-3 rounded-xl bg-[#151B2B] text-sm font-bold text-slate-200 border border-slate-800 focus:border-violet-500 focus:ring-1 focus:ring-violet-500/30 outline-none transition-all placeholder:text-slate-600"
+                        className="w-full px-4 py-3 rounded-xl bg-white text-sm font-bold text-slate-800 border border-slate-200 focus:border-violet-500 focus:ring-1 focus:ring-violet-500/30 outline-none transition-all placeholder:text-slate-600"
                         required
                       />
                     </div>
@@ -685,17 +685,17 @@ export default function TeacherPortal() {
                       <select
                         value={newClassGrade}
                         onChange={(e) => setNewClassGrade(e.target.value)}
-                        className="w-full px-4 py-3 rounded-xl bg-[#151B2B] text-sm font-bold text-slate-200 border border-slate-800 focus:border-violet-500 focus:ring-1 focus:ring-violet-500/30 outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-xl bg-white text-sm font-bold text-slate-800 border border-slate-200 focus:border-violet-500 focus:ring-1 focus:ring-violet-500/30 outline-none transition-all"
                       >
                         {[...Array(12)].map((_, i) => (
-                          <option key={i+1} value={i+1} className="bg-[#151B2B]">Lớp {i+1}</option>
+                          <option key={i+1} value={i+1} className="bg-white">Lớp {i+1}</option>
                         ))}
                       </select>
                     </div>
                     
                     <button
                       type="submit"
-                      className="w-full mt-4 py-3.5 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white font-black text-sm transition-all shadow-[0_4px_0_#4c1d95] active:translate-y-[4px] active:shadow-none"
+                      className="w-full mt-4 py-3.5 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-slate-800 font-black text-sm transition-all shadow-[0_4px_0_#4c1d95] active:translate-y-[4px] active:shadow-none"
                     >
                       Khởi tạo lớp học
                     </button>
