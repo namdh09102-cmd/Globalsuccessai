@@ -73,10 +73,10 @@ export default function ExamRoom({
   return (
     <div className="w-full max-w-4xl mx-auto flex flex-col items-center pb-20">
       {/* Sticky Header */}
-      <div className="sticky top-0 z-50 w-full bg-[#0B0F19]/90 backdrop-blur-xl border-b border-slate-800 p-4 flex items-center justify-between shadow-xl mb-8">
+      <div className="sticky top-0 z-50 w-full bg-slate-50 backdrop-blur-xl border-b border-slate-200 p-4 flex items-center justify-between shadow-xl mb-8">
         <button
           onClick={onBack}
-          className="px-4 py-2 rounded-xl bg-slate-800/50 hover:bg-slate-700/50 text-slate-300 text-sm font-semibold transition-colors flex items-center gap-2"
+          className="px-4 py-2 rounded-xl bg-slate-800/50 hover:bg-slate-700/50 text-slate-700 text-sm font-semibold transition-colors flex items-center gap-2"
         >
           <ArrowLeft className="w-4 h-4" /> Thoát
         </button>
@@ -90,7 +90,7 @@ export default function ExamRoom({
       <div className="w-full space-y-12 px-4">
         {/* SECTION: LISTENING */}
         {listeningQuestions.length > 0 && (
-          <div className="bg-[#151B2B] rounded-3xl border border-slate-800 p-8 shadow-2xl relative overflow-hidden">
+          <div className="bg-white rounded-3xl border border-slate-200 p-8 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 left-0 w-2 h-full bg-blue-500" />
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
               <Headphones className="w-8 h-8 text-blue-400" />
@@ -98,8 +98,8 @@ export default function ExamRoom({
             </h2>
             
             {audioUrl && (
-              <div className="w-full mb-8 p-4 bg-[#0a0d14] rounded-2xl border border-slate-800 flex flex-col gap-3">
-                <span className="text-sm font-semibold text-slate-400">File Nghe Bài Thi</span>
+              <div className="w-full mb-8 p-4 bg-[#0a0d14] rounded-2xl border border-slate-200 flex flex-col gap-3">
+                <span className="text-sm font-semibold text-slate-500">File Nghe Bài Thi</span>
                 <audio controls className="w-full h-12 outline-none rounded-lg" src={audioUrl}>
                   Your browser does not support the audio element.
                 </audio>
@@ -116,7 +116,7 @@ export default function ExamRoom({
 
         {/* SECTION: READING */}
         {readingQuestions.length > 0 && (
-          <div className="bg-[#151B2B] rounded-3xl border border-slate-800 p-8 shadow-2xl relative overflow-hidden">
+          <div className="bg-white rounded-3xl border border-slate-200 p-8 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 left-0 w-2 h-full bg-emerald-500" />
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
               <BookOpen className="w-8 h-8 text-emerald-400" />
@@ -132,7 +132,7 @@ export default function ExamRoom({
 
         {/* SECTION: WRITING */}
         {writingQuestions.length > 0 && (
-          <div className="bg-[#151B2B] rounded-3xl border border-slate-800 p-8 shadow-2xl relative overflow-hidden">
+          <div className="bg-white rounded-3xl border border-slate-200 p-8 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 left-0 w-2 h-full bg-amber-500" />
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
               <span className="text-3xl">✍️</span>
@@ -180,8 +180,8 @@ function QuestionItem({ question, index, selected, onSelect, isSubmitted }: any)
   const isWrong = isSubmitted && selected && selected.charAt(0) !== question.correctAnswer;
 
   return (
-    <div className={`p-6 rounded-2xl border ${isCorrect ? 'bg-emerald-500/10 border-emerald-500/50' : isWrong ? 'bg-rose-500/10 border-rose-500/50' : 'bg-[#0a0d14] border-slate-800'}`}>
-      <p className="text-lg font-semibold text-slate-200 mb-4">
+    <div className={`p-6 rounded-2xl border ${isCorrect ? 'bg-emerald-500/10 border-emerald-500/50' : isWrong ? 'bg-rose-500/10 border-rose-500/50' : 'bg-[#0a0d14] border-slate-200'}`}>
+      <p className="text-lg font-semibold text-slate-800 mb-4">
         <span className="text-indigo-400 mr-2">Câu {index}:</span>
         {question.text}
       </p>
@@ -199,7 +199,7 @@ function QuestionItem({ question, index, selected, onSelect, isSubmitted }: any)
                 showAsCorrect ? 'bg-emerald-500 border-emerald-400 text-white shadow-[0_0_15px_rgba(16,185,129,0.5)]' :
                 isChosen && isWrong ? 'bg-rose-500 border-rose-400 text-white' :
                 isChosen ? 'bg-indigo-600 border-indigo-400 text-white' :
-                'bg-slate-800/50 border-slate-700 text-slate-300 hover:bg-slate-800 hover:border-slate-500'
+                'bg-slate-800/50 border-slate-300 text-slate-700 hover:bg-slate-800 hover:border-slate-500'
               }`}
             >
               {opt}

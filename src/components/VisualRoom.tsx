@@ -48,7 +48,7 @@ export default function VisualRoom({
       <div className="w-full flex items-center justify-between mb-6">
         <button
           onClick={onBack}
-          className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold text-slate-300 hover:text-white bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700/50 transition-all"
+          className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold text-slate-700 hover:text-white bg-slate-800/50 hover:bg-slate-700/50 border border-slate-300/50 transition-all"
         >
           <ArrowLeft className="w-4 h-4" />
           Về Bảng Điều Khiển
@@ -56,7 +56,7 @@ export default function VisualRoom({
       </div>
 
       {/* Main Content */}
-      <div className="w-full bg-[#111625] border border-slate-800 rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
+      <div className="w-full bg-white border border-slate-200 rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
         {/* Glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -78,13 +78,13 @@ export default function VisualRoom({
               <div className="flex bg-slate-800 p-1 rounded-lg">
                 <button 
                   onClick={() => setViewMode("mindmap")}
-                  className={`px-4 py-2 rounded-md text-sm font-bold transition-colors flex items-center gap-2 ${viewMode === "mindmap" ? "bg-indigo-600 text-white" : "text-slate-400 hover:text-white"}`}
+                  className={`px-4 py-2 rounded-md text-sm font-bold transition-colors flex items-center gap-2 ${viewMode === "mindmap" ? "bg-indigo-600 text-white" : "text-slate-500 hover:text-white"}`}
                 >
                   <Grid className="w-4 h-4" /> Mindmap
                 </button>
                 <button 
                   onClick={() => setViewMode("flashcards")}
-                  className={`px-4 py-2 rounded-md text-sm font-bold transition-colors flex items-center gap-2 ${viewMode === "flashcards" ? "bg-indigo-600 text-white" : "text-slate-400 hover:text-white"}`}
+                  className={`px-4 py-2 rounded-md text-sm font-bold transition-colors flex items-center gap-2 ${viewMode === "flashcards" ? "bg-indigo-600 text-white" : "text-slate-500 hover:text-white"}`}
                 >
                   <BookOpen className="w-4 h-4" /> Flashcards
                 </button>
@@ -92,15 +92,15 @@ export default function VisualRoom({
             )}
           </div>
 
-          <div className="w-full flex flex-col items-center justify-center p-4 bg-[#0a0d14] rounded-2xl border border-slate-800 min-h-[400px]">
+          <div className="w-full flex flex-col items-center justify-center p-4 bg-[#0a0d14] rounded-2xl border border-slate-200 min-h-[400px]">
             {/* Audio Player Section */}
             {mainAudio && (
-              <div className="w-full mb-6 p-4 bg-slate-900/50 rounded-xl border border-slate-700/50 flex flex-col gap-3">
+              <div className="w-full mb-6 p-4 bg-slate-900/50 rounded-xl border border-slate-300/50 flex flex-col gap-3">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-full bg-indigo-500/20 flex items-center justify-center">
                     <span className="text-indigo-400 text-xs font-bold">MP3</span>
                   </div>
-                  <span className="text-sm font-semibold text-slate-300">File Nghe Gốc (Native Speaker)</span>
+                  <span className="text-sm font-semibold text-slate-700">File Nghe Gốc (Native Speaker)</span>
                 </div>
                 <audio controls className="w-full h-10 outline-none rounded-lg" key={mainAudio}>
                   <source src={mainAudio} type="audio/mpeg" />

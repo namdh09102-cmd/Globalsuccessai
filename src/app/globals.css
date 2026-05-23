@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 body {
-  background-color: #0B0F19;
-  color: #cbd5e1; /* slate-300 */
+  background-color: #F8FAFC; /* slate-50 */
+  color: #1E293B; /* slate-800 */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
@@ -23,78 +23,16 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(99, 102, 241, 0.12); /* Semi-transparent Indigo */
+  background: rgba(99, 102, 241, 0.2); /* Semi-transparent Indigo */
   border-radius: 99px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(99, 102, 241, 0.5); /* Glow on hover */
+  background: rgba(99, 102, 241, 0.6); /* Glow on hover */
 }
 
 /* Firefox support */
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(99, 102, 241, 0.12) transparent;
+  scrollbar-color: rgba(99, 102, 241, 0.2) transparent;
 }
-
-/* ========================================================
-   LIGHT MODE CSS OVERRIDES (Global Toggle)
-   ======================================================== */
-.light-mode body {
-  background-color: #F8FAFC !important;
-  color: #1E293B !important;
-}
-
-.light-mode [class*="bg-[#0B0F19]"], 
-.light-mode [class*="bg-[#04060d]"],
-.light-mode [class*="bg-[#070A13]"],
-.light-mode [class*="from-[#111625]"],
-.light-mode [class*="from-[#0A0D18]"],
-.light-mode [class*="from-[#161032]"] {
-  background-color: #F8FAFC !important;
-  background-image: none !important;
-}
-
-.light-mode [class*="bg-[#151B2B]"], 
-.light-mode [class*="bg-[#111625]"], 
-.light-mode [class*="bg-[#0F1520]"],
-.light-mode [class*="to-[#0A0D18]"] {
-  background-color: #FFFFFF !important;
-  background-image: none !important;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
-}
-
-.light-mode [class*="border-slate-8"],
-.light-mode [class*="border-slate-7"],
-.light-mode [class*="border-slate-9"] {
-  border-color: #DDE6ED !important;
-}
-
-.light-mode [class*="text-slate-1"], 
-.light-mode [class*="text-slate-2"], 
-.light-mode [class*="text-slate-3"] {
-  color: #1E293B !important;
-}
-
-.light-mode [class*="text-slate-4"], 
-.light-mode [class*="text-slate-5"] {
-  color: #475569 !important;
-}
-
-.light-mode [class*="placeholder-slate-500"]::placeholder,
-.light-mode [class*="placeholder-slate-400"]::placeholder {
-  color: #94a3b8 !important;
-}
-
-/* Bottom Nav Override */
-.light-mode [class*="bg-[#111827]"] {
-  background-color: rgba(255, 255, 255, 0.95) !important;
-  border-color: #DDE6ED !important;
-}
-
-/* Neon Violet Accent for Light Mode */
-.light-mode [class*="text-violet-400"],
-.light-mode [class*="text-indigo-400"] {
-  color: #7c3aed !important; /* text-violet-600 */
-}
-

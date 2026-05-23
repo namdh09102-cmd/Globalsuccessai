@@ -15,7 +15,6 @@ import {
   PlayCircle,
   School,
   Sun,
-  Moon,
   LogOut
 } from "lucide-react";
 import Link from "next/link";
@@ -35,7 +34,6 @@ export default function Sidebar() {
   const [isPro, setIsPro] = useState(false);
   const [fullName, setFullName] = useState("Học viên");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isLightMode, setIsLightMode] = useState(false);
 
   const [userRole, setUserRole] = useState<string>("student");
   const [userEmail, setUserEmail] = useState<string>("");
@@ -110,18 +108,6 @@ export default function Sidebar() {
     window.addEventListener("profile-updated", loadProfile);
     window.addEventListener("auth-changed", loadProfile);
 
-    // Đọc Theme
-    const loadTheme = () => {
-      const isLight = localStorage.getItem("gsa-theme") === "light";
-      setIsLightMode(isLight);
-      if (isLight) {
-        document.documentElement.classList.add("light-mode");
-      } else {
-        document.documentElement.classList.remove("light-mode");
-      }
-    };
-    loadTheme();
-
     return () => {
       window.removeEventListener("stats-updated", loadSidebarStats);
       window.removeEventListener("tier-updated", loadTier);
@@ -129,17 +115,6 @@ export default function Sidebar() {
       window.removeEventListener("auth-changed", loadProfile);
     };
   }, []);
-
-  const toggleTheme = () => {
-    const newTheme = !isLightMode;
-    setIsLightMode(newTheme);
-    localStorage.setItem("gsa-theme", newTheme ? "light" : "dark");
-    if (newTheme) {
-      document.documentElement.classList.add("light-mode");
-    } else {
-      document.documentElement.classList.remove("light-mode");
-    }
-  };
 
   const navigation: NavigationItem[] = [
     { name: "Bảng điều khiển", href: "/dashboard", icon: Home },
@@ -150,18 +125,18 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="w-[250px] shrink-0 border-r border-slate-800/60 bg-[#070A13] hidden md:flex flex-col h-full overflow-hidden select-none">
+    <aside className="w-[250px] shrink-0 border-r border-slate-200 bg-white hidden md:flex flex-col h-full overflow-hidden select-none shadow-[4px_0_24px_rgba(0,0,0,0.02)]">
       {/* Brand Header */}
-      <div className="p-6 border-b border-slate-850/40 flex items-center gap-3">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-violet-600 to-fuchsia-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
-          <PlayCircle className="w-6 h-6 text-white fill-white/10" />
+      <div className="p-6 border-b border-slate-100 flex items-center gap-3 bg-slate-50/50">
+        <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+          <PlayCircle className="w-6 h-6 text-white" />
         </div>
         <div>
-          <h1 className="font-black text-[11px] tracking-wide text-white uppercase flex items-center gap-1">
+          <h1 className="font-black text-[11px] tracking-wide text-slate-800 uppercase flex items-center gap-1">
             <span>Global Success AI</span>
           </h1>
           <div className="flex items-center gap-1">
-            <span className="text-[9px] font-bold tracking-widest text-indigo-400 uppercase">
+            <span className="text-[9px] font-bold tracking-widest text-indigo-600 uppercase">
               K-12 EDTECH PLATFORM
             </span>
           </div>
@@ -183,23 +158,23 @@ export default function Sidebar() {
             <Link
               key={item.name}
               href={item.href}
-              className={`flex items-center justify-between px-4 py-2.5 rounded-xl text-xs font-semibold transition-all duration-300 group ${
+              className={`flex items-center justify-between px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 group ${
                 isActive
-                  ? "bg-gradient-to-r from-indigo-600/20 to-violet-600/10 text-indigo-400 border-l-2 border-indigo-500 shadow-md shadow-indigo-950/15"
-                  : "text-slate-400 hover:bg-slate-800/20 hover:text-slate-200"
+                  ? "bg-indigo-50 text-indigo-700 shadow-sm"
+                  : "text-slate-500 hover:bg-slate-50 hover:text-indigo-600"
               }`}
             >
               <div className="flex items-center gap-3">
                 <Icon
                   className={`w-4 h-4 transition-transform duration-300 group-hover:scale-110 ${
-                    isActive ? "text-indigo-400" : "text-slate-400 group-hover:text-slate-300"
+                    isActive ? "text-indigo-600" : "text-slate-400 group-hover:text-indigo-500"
                   }`}
                 />
                 <span>{item.name}</span>
               </div>
               
               {isActive && (
-                <div className="w-1.5 h-1.5 rounded-full bg-indigo-400 shadow-lg shadow-indigo-400" />
+                <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 shadow-[0_0_4px_rgba(99,102,241,0.5)]" />
               )}
             </Link>
           );
@@ -207,11 +182,11 @@ export default function Sidebar() {
       </nav>
 
       {/* Role Switcher */}
-      <div className="px-4 py-2 border-t border-slate-850/20 pt-3">
+      <div className="px-4 py-2 border-t border-slate-100 pt-3">
         {isTeacherRoute ? (
           <Link
             href="/dashboard"
-            className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white text-[11px] font-black text-center flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/20 active:scale-[0.98] transition-all border border-emerald-500/25 group/btn"
+            className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-white text-[11px] font-black text-center flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 active:scale-[0.98] transition-all group/btn"
           >
             <User className="w-3.5 h-3.5 transition-transform group-hover/btn:scale-110" />
             <span>Giao diện Học Sinh</span>
@@ -219,7 +194,7 @@ export default function Sidebar() {
         ) : (
           <Link
             href="/teacher"
-            className="w-full py-2.5 px-4 rounded-xl bg-[#151B2B] hover:bg-slate-900 border border-indigo-500/35 hover:border-indigo-400/60 text-indigo-300 hover:text-indigo-200 text-[11px] font-black text-center flex items-center justify-center gap-2 shadow-lg shadow-indigo-950/25 active:scale-[0.98] transition-all group/btn"
+            className="w-full py-2.5 px-4 rounded-xl bg-indigo-50 hover:bg-indigo-100 border border-indigo-100 text-indigo-600 text-[11px] font-black text-center flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all group/btn"
           >
             <School className="w-3.5 h-3.5 transition-transform group-hover/btn:scale-110" />
             <span>Giao diện Giáo Viên</span>
@@ -231,18 +206,17 @@ export default function Sidebar() {
       <div className="px-4 py-2">
         {isPro ? (
           /* PRO Active Badge */
-          <div className="relative overflow-hidden rounded-2xl border border-amber-500/30 bg-gradient-to-b from-[#1a1408] to-[#0d0f18] p-4 space-y-2 shadow-lg shadow-amber-950/20">
-            <div className="absolute inset-0 bg-gradient-to-tr from-amber-600/5 to-yellow-600/5" />
+          <div className="relative overflow-hidden rounded-2xl border border-amber-200 bg-gradient-to-b from-amber-50 to-white p-4 space-y-2 shadow-sm">
             <div className="relative flex items-center gap-3">
-              <div className="w-7 h-7 rounded-lg bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400 shadow-md">
+              <div className="w-7 h-7 rounded-lg bg-amber-100 border border-amber-200 flex items-center justify-center text-amber-600 shadow-sm">
                 <Crown className="w-4 h-4" />
               </div>
               <div>
-                <h4 className="text-xs font-black text-amber-400 flex items-center gap-1">
+                <h4 className="text-xs font-black text-amber-600 flex items-center gap-1">
                   Thành viên PRO
                   <span className="text-[9px]">✦</span>
                 </h4>
-                <p className="text-[9px] text-amber-600/70 mt-0.5">
+                <p className="text-[9px] text-amber-700/70 mt-0.5 font-medium">
                   Toàn bộ giáo trình đã mở khóa
                 </p>
               </div>
@@ -250,20 +224,17 @@ export default function Sidebar() {
           </div>
         ) : (
           /* Upgrade Card */
-          <div className="relative overflow-hidden rounded-2xl border border-indigo-500/20 bg-gradient-to-b from-[#111625] to-[#0A0D18] p-4 space-y-3 shadow-lg shadow-indigo-950/30 group">
-            {/* Glow backdrop */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600/5 to-violet-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-            
+          <div className="relative overflow-hidden rounded-2xl border border-indigo-100 bg-gradient-to-b from-indigo-50 to-white p-4 space-y-3 shadow-sm group hover:shadow-md transition-shadow">
             <div className="relative z-10 flex items-start gap-3">
-              <div className="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500 shadow-md animate-pulse">
+              <div className="w-7 h-7 rounded-lg bg-amber-100 border border-amber-200 flex items-center justify-center text-amber-500 shadow-sm animate-pulse">
                 <Crown className="w-4 h-4" />
               </div>
               <div>
-                <h4 className="text-xs font-black text-slate-100 flex items-center gap-1">
+                <h4 className="text-xs font-black text-slate-800 flex items-center gap-1">
                   <span>Nâng cấp PRO</span>
-                  <span className="w-2.5 h-2.5 rounded-full bg-amber-500/20 flex items-center justify-center text-[6px] text-amber-400 font-bold border border-amber-500/30">👑</span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-amber-100 flex items-center justify-center text-[6px] text-amber-500 font-bold border border-amber-200">👑</span>
                 </h4>
-                <p className="text-[9px] text-slate-400 mt-0.5 leading-relaxed">
+                <p className="text-[9px] text-slate-500 mt-0.5 leading-relaxed font-medium">
                   Mở khóa toàn bộ giáo trình và AI
                 </p>
               </div>
@@ -271,7 +242,7 @@ export default function Sidebar() {
             
             <Link
               href="/upgrade"
-              className="relative z-10 block w-full py-2 rounded-xl bg-gradient-to-r from-indigo-600 via-violet-600 to-indigo-600 hover:from-indigo-500 hover:to-violet-500 text-white text-[10px] font-bold text-center active:scale-[0.98] transition-all shadow-md shadow-indigo-600/15"
+              className="relative z-10 block w-full py-2 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white text-[10px] font-bold text-center active:scale-[0.98] transition-all shadow-md shadow-indigo-500/20"
             >
               Xem bảng giá →
             </Link>
@@ -280,28 +251,28 @@ export default function Sidebar() {
       </div>
 
       {/* User Profile Footer Card */}
-      <div className="p-4 border-t border-slate-850/40 bg-[#04060d]/60">
+      <div className="p-4 border-t border-slate-100 bg-slate-50/50 mt-auto">
         {isLoggedIn ? (
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-violet-600 flex items-center justify-center font-black text-white text-xs shadow-md uppercase">
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-violet-500 flex items-center justify-center font-black text-white text-xs shadow-md uppercase">
                   {fullName.substring(0, 2)}
                 </div>
-                <div className="absolute bottom-[-1px] right-[-1px] w-3 h-3 bg-emerald-500 rounded-full border-2 border-[#070A13]" />
+                <div className="absolute bottom-[-2px] right-[-2px] w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-white" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-1.5">
-                  <h2 className="text-xs font-bold text-slate-200 truncate" title={fullName}>
+                  <h2 className="text-xs font-bold text-slate-800 truncate" title={fullName}>
                     {fullName}
                   </h2>
                   {isPro && (
-                    <span className="shrink-0 px-1.5 py-0.5 rounded-md bg-amber-500/15 border border-amber-500/25 text-amber-400 text-[7px] font-black uppercase tracking-wider">
+                    <span className="shrink-0 px-1.5 py-0.5 rounded-md bg-amber-100 border border-amber-200 text-amber-600 text-[7px] font-black uppercase tracking-wider">
                       PRO
                     </span>
                   )}
                 </div>
-                <p className="text-[10px] text-slate-500 truncate">
+                <p className="text-[10px] text-slate-500 truncate font-medium">
                   {userRole === "teacher" || isTeacherRoute ? "Giáo viên giảng dạy" : "Học sinh - Lớp 11A3"}
                 </p>
               </div>
@@ -310,70 +281,53 @@ export default function Sidebar() {
             {/* Level Progress Slider */}
             <div className="space-y-1">
               <div className="flex justify-between text-[9px] font-bold">
-                <span className="text-slate-400">Cấp độ 12</span>
-                <span className="text-indigo-400 font-black">{xp} / 1000 XP</span>
+                <span className="text-slate-500">Cấp độ 12</span>
+                <span className="text-indigo-600 font-black">{xp} / 1000 XP</span>
               </div>
-              <div className="w-full h-1.5 rounded-full bg-slate-800/80 overflow-hidden border border-slate-900/40">
+              <div className="w-full h-1.5 rounded-full bg-slate-200 overflow-hidden">
                 <div 
                   style={{ width: `${Math.min(100, (xp / 1000) * 100)}%` }} 
-                  className="h-full bg-gradient-to-r from-indigo-500 to-violet-500 rounded-full transition-all duration-500 shadow-md shadow-indigo-500/20"
+                  className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full transition-all duration-500"
                 />
               </div>
             </div>
           </div>
         ) : (
           <div className="flex flex-col items-center mb-3">
-            <p className="text-[10px] text-slate-400 mb-2 text-center">Bạn đang dùng thử với tư cách Khách</p>
-            <Link href="/auth" className="w-full py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-xs font-bold text-center transition-all">
+            <p className="text-[10px] text-slate-500 mb-2 text-center font-medium">Bạn đang dùng thử với tư cách Khách</p>
+            <Link href="/auth" className="w-full py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-xs font-bold text-center transition-all shadow-md shadow-indigo-500/20">
               Đăng nhập / Đăng ký
             </Link>
           </div>
         )}
           
         {/* Admin System Link (Subtle) & Bottom controls */}
-          {(userRole.toUpperCase() === "ADMIN" || userEmail.toLowerCase() === "admin@globalsuccess.ai") && (
-            <div className="pt-1.5">
-              <Link
-                href="/admin"
-                className="w-full flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-slate-800/40 hover:bg-slate-850 border border-slate-700/30 hover:border-indigo-500/35 text-indigo-300 hover:text-indigo-200 text-[10px] font-extrabold uppercase tracking-wider transition-all duration-300"
-              >
-                <span>🛠️ Quản trị hệ thống</span>
-              </Link>
-            </div>
-          )}
-
-          {/* Light/Dark Mode Toggle & Logout Button */}
-          <div className="flex items-center justify-between p-3 px-4 bg-[#020308] border-t border-slate-800/80 mt-auto">
-        {isLoggedIn ? (
-          <button
-            onClick={handleLogout}
-            className="flex items-center gap-1.5 text-[9px] font-bold text-rose-500/70 hover:text-rose-400 transition-colors"
-          >
-            <LogOut className="w-3.5 h-3.5" />
-            ĐĂNG XUẤT
-          </button>
-        ) : (
-          <span className="text-[9px] font-bold text-slate-500">GUEST MODE</span>
+        {(userRole.toUpperCase() === "ADMIN" || userEmail.toLowerCase() === "admin@globalsuccess.ai") && (
+          <div className="pt-2">
+            <Link
+              href="/admin"
+              className="w-full flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 hover:border-indigo-200 text-slate-600 hover:text-indigo-600 text-[10px] font-extrabold uppercase tracking-wider transition-all duration-300"
+            >
+              <span>🛠️ Quản trị hệ thống</span>
+            </Link>
+          </div>
         )}
 
+        {/* Logout Button */}
+        <div className="flex items-center justify-center pt-3 mt-3 border-t border-slate-200">
+          {isLoggedIn ? (
             <button
-              onClick={toggleTheme}
-              className="flex items-center gap-1.5 px-2 py-1.5 rounded-lg border border-slate-700/50 hover:bg-slate-800/50 transition-colors group"
+              onClick={handleLogout}
+              className="flex items-center gap-1.5 text-[10px] font-bold text-rose-500 hover:text-rose-600 transition-colors w-full justify-center py-1 rounded-lg hover:bg-rose-50"
             >
-              {isLightMode ? (
-                <>
-                  <Moon className="w-3.5 h-3.5 text-slate-400 group-hover:text-indigo-400" />
-                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider group-hover:text-slate-300">Nền Tối</span>
-                </>
-              ) : (
-                <>
-                  <Sun className="w-3.5 h-3.5 text-slate-400 group-hover:text-amber-400" />
-                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider group-hover:text-slate-300">Nền Sáng</span>
-                </>
-              )}
+              <LogOut className="w-3.5 h-3.5" />
+              ĐĂNG XUẤT
             </button>
-          </div>
+          ) : (
+            <span className="text-[9px] font-bold text-slate-400">GUEST MODE</span>
+          )}
         </div>
+      </div>
     </aside>
   );
 }

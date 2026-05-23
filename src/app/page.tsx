@@ -863,7 +863,7 @@ export default function Dashboard() {
       case "speaking": return "text-indigo-400 bg-indigo-500/10 border-indigo-500/25";
       case "dictation": return "text-blue-400 bg-blue-500/10 border-blue-500/25";
       case "quiz": return "text-violet-400 bg-violet-500/10 border-violet-500/25";
-      default: return "text-slate-400 bg-slate-500/10 border-slate-500/25";
+      default: return "text-slate-500 bg-slate-500/10 border-slate-500/25";
     }
   };
 
@@ -944,17 +944,17 @@ export default function Dashboard() {
           RENDER PHÒNG SPEAKING CHI TIẾT (Focus Mode)
           ======================================================== */}
       {activeRoom === "speaking" && activeLesson && (
-        <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center p-6 bg-[#0B0F19]">
+        <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center p-6 bg-slate-50">
           <div className="w-full max-w-2xl flex items-center justify-between mb-4">
             <button
               onClick={() => setActiveRoom("dashboard")}
-              className="px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:text-slate-100 hover:bg-slate-800/40 transition-all text-xs font-semibold flex items-center gap-1.5"
+              className="px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-200 hover:text-slate-800 hover:bg-slate-100 transition-all text-xs font-semibold flex items-center gap-1.5"
             >
               <ArrowLeft className="w-4.5 h-4.5" /> Về Bảng Điều Khiển
             </button>
             {sessionLessons.length > 1 && (
               <div className="flex items-center gap-2">
-                <span className="text-[10px] text-slate-400 font-bold">{sessionIndex + 1}/{sessionLessons.length}</span>
+                <span className="text-[10px] text-slate-500 font-bold">{sessionIndex + 1}/{sessionLessons.length}</span>
                 <div className="flex gap-1">
                   {sessionLessons.map((_, i) => (
                     <div key={i} className={`w-4 h-1.5 rounded-full transition-all ${i <= sessionIndex ? "bg-indigo-500" : "bg-slate-700"}`} />
@@ -964,17 +964,17 @@ export default function Dashboard() {
             )}
           </div>
           
-          <div className="w-full max-w-2xl rounded-3xl border border-slate-800 bg-[#151B2B] p-8 space-y-6 shadow-2xl relative overflow-hidden">
+          <div className="w-full max-w-2xl rounded-3xl border border-slate-200 bg-white p-8 space-y-6 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-80 h-80 bg-indigo-500/5 rounded-full blur-[80px] pointer-events-none" />
             
-            <div className="flex items-center justify-between border-b border-slate-800/40 pb-4">
+            <div className="flex items-center justify-between border-b border-slate-200 pb-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 shadow">
                   <Mic className="w-5 h-5 animate-pulse" />
                 </div>
                 <div>
                   <span className="text-[10px] font-black text-indigo-400 tracking-wider uppercase">Speaking Room (Offline)</span>
-                  <h3 className="text-sm font-bold text-slate-200">{activeLesson.title}</h3>
+                  <h3 className="text-sm font-bold text-slate-800">{activeLesson.title}</h3>
                 </div>
               </div>
               <span className="px-2.5 py-0.5 rounded-full text-[9px] font-extrabold bg-indigo-600/10 text-indigo-400 border border-indigo-500/20 uppercase">
@@ -982,13 +982,13 @@ export default function Dashboard() {
               </span>
             </div>
 
-            <div className="p-4 rounded-2xl bg-[#0B0F19]/60 border border-slate-800/60 space-y-2">
+            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
               <span className="text-[9px] font-black text-slate-500 uppercase tracking-widest">Đọc to câu tiếng Anh sau:</span>
-              <p className="text-sm font-semibold text-slate-200 leading-relaxed font-mono">&ldquo;{activeLesson.expectedText}&rdquo;</p>
+              <p className="text-sm font-semibold text-slate-800 leading-relaxed font-mono">&ldquo;{activeLesson.expectedText}&rdquo;</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-4 rounded-xl border border-slate-800/40 bg-[#0B0F19]/20 flex flex-col items-center justify-center gap-3">
+              <div className="p-4 rounded-xl border border-slate-200 bg-slate-50 flex flex-col items-center justify-center gap-3">
                 <span className="text-[10px] font-bold text-slate-500 uppercase">Ghi âm</span>
                 {!isRecording ? (
                   <button
@@ -1001,18 +1001,18 @@ export default function Dashboard() {
                 ) : (
                   <button
                     onClick={stopRecording}
-                    className="w-14 h-14 rounded-full bg-slate-800 flex items-center justify-center text-rose-500 border border-slate-700 animate-pulse"
+                    className="w-14 h-14 rounded-full bg-slate-800 flex items-center justify-center text-rose-500 border border-slate-300 animate-pulse"
                   >
                     <Square className="w-5 h-5 fill-rose-500" />
                   </button>
                 )}
 
-                <p className="text-[10px] font-bold text-slate-400">
+                <p className="text-[10px] font-bold text-slate-500">
                   {isRecording ? `Đang ghi... ${recordingSeconds}s` : "Nhấn Micro để nói"}
                 </p>
 
                 {audioUrl && (
-                  <div className="w-full flex items-center justify-between gap-2 mt-2 pt-2 border-t border-slate-800/20">
+                  <div className="w-full flex items-center justify-between gap-2 mt-2 pt-2 border-t border-slate-200">
                     <audio src={audioUrl} controls className="h-6 w-full scale-90 opacity-70" />
                     <button
                       onClick={() => handleEvaluateSpeaking(activeLesson.expectedText || "", activeLesson.id)}
@@ -1025,7 +1025,7 @@ export default function Dashboard() {
                 )}
               </div>
 
-              <div className="p-4 rounded-xl border border-slate-800/40 bg-[#0B0F19]/20 flex flex-col justify-center min-h-[150px]">
+              <div className="p-4 rounded-xl border border-slate-200 bg-slate-50 flex flex-col justify-center min-h-[150px]">
                 {isEvaluating ? (
                   <div className="flex flex-col items-center justify-center gap-2 text-indigo-400">
                     <Loader2 className="w-6 h-6 animate-spin" />
@@ -1033,20 +1033,20 @@ export default function Dashboard() {
                   </div>
                 ) : evaluationResult ? (
                   <div className="space-y-3">
-                    <div className="grid grid-cols-4 gap-1.5 pt-1 pb-2 border-b border-slate-800/40 text-center">
-                      <div className="p-1.5 rounded-lg bg-[#0B0F19]/80 border border-slate-800/60">
+                    <div className="grid grid-cols-4 gap-1.5 pt-1 pb-2 border-b border-slate-200 text-center">
+                      <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
                         <div className="text-[7px] font-bold text-slate-500 uppercase tracking-wider">Tổng điểm</div>
                         <div className="text-xs font-black text-indigo-400">{evaluationResult.score}%</div>
                       </div>
-                      <div className="p-1.5 rounded-lg bg-[#0B0F19]/80 border border-slate-800/60">
+                      <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
                         <div className="text-[7px] font-bold text-slate-500 uppercase tracking-wider">Accuracy</div>
                         <div className="text-xs font-black text-emerald-400">{evaluationResult.accuracy}%</div>
                       </div>
-                      <div className="p-1.5 rounded-lg bg-[#0B0F19]/80 border border-slate-800/60">
+                      <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
                         <div className="text-[7px] font-bold text-slate-500 uppercase tracking-wider">Pronounce</div>
                         <div className="text-xs font-black text-amber-400">{evaluationResult.pronunciation}%</div>
                       </div>
-                      <div className="p-1.5 rounded-lg bg-[#0B0F19]/80 border border-slate-800/60">
+                      <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
                         <div className="text-[7px] font-bold text-slate-500 uppercase tracking-wider">Fluency</div>
                         <div className="text-xs font-black text-blue-400">{evaluationResult.fluency}%</div>
                       </div>
@@ -1074,7 +1074,7 @@ export default function Dashboard() {
                       })}
                     </div>
 
-                    <p className="text-[10px] text-slate-300 italic bg-slate-900/50 p-2 rounded border border-slate-800/40">
+                    <p className="text-[10px] text-slate-700 italic bg-slate-900/50 p-2 rounded border border-slate-200">
                       &ldquo;{evaluationResult.feedback}&rdquo;
                     </p>
 
@@ -1099,7 +1099,7 @@ export default function Dashboard() {
       {activeRoom === "dashboard" && (
         <div className="p-6 md:p-8 space-y-8 max-w-6xl mx-auto pb-16">
           {/* Top Search & Navigation Bar */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800/40 pb-6">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-6">
             <div className="relative w-full max-w-md">
               <span className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-500">
                 <Search className="w-4 h-4" />
@@ -1108,12 +1108,12 @@ export default function Dashboard() {
                 type="text"
                 value={activeGrade === "SearchPlaceholder" ? "" : undefined}
                 placeholder="Tìm kiếm bài học, chủ đề..."
-                className="w-full pl-10 pr-4 py-2.5 text-xs rounded-2xl bg-[#111625] border border-slate-850 text-slate-300 focus:outline-none focus:border-indigo-500/50 transition-all placeholder-slate-500 shadow-inner"
+                className="w-full pl-10 pr-4 py-2.5 text-xs rounded-2xl bg-white border border-slate-200 text-slate-700 focus:outline-none focus:border-indigo-500/50 transition-all placeholder-slate-500 shadow-inner"
               />
             </div>
             
             <div className="flex flex-wrap items-center gap-3">
-              <div className="flex overflow-x-auto hide-scrollbar space-x-2 p-1 rounded-2xl bg-[#111625] border border-slate-850 w-full md:w-fit max-w-[calc(100vw-3rem)]">
+              <div className="flex overflow-x-auto hide-scrollbar space-x-2 p-1 rounded-2xl bg-white border border-slate-200 w-full md:w-fit max-w-[calc(100vw-3rem)]">
                 {[...Array(12)].map((_, i) => {
                   const grade = `Lớp ${i + 1}`;
                   return (
@@ -1129,7 +1129,7 @@ export default function Dashboard() {
                       className={`shrink-0 px-4 py-1.5 rounded-xl text-xs font-semibold tracking-wide transition-all ${
                         activeGrade === grade
                           ? "bg-violet-600 text-white shadow-lg shadow-violet-600/20"
-                          : "text-slate-500/60 hover:text-slate-300"
+                          : "text-slate-500/60 hover:text-slate-700"
                       }`}
                     >
                       {grade}
@@ -1141,12 +1141,12 @@ export default function Dashboard() {
           </div>
 
           {/* Welcome Glass Banner */}
-          <div className="relative rounded-3xl border border-slate-800 bg-[#151B2B] overflow-hidden min-h-[300px] flex flex-col justify-between p-6 md:p-8 shadow-2xl transition-all duration-300 hover:border-slate-800/80 group">
+          <div className="relative rounded-3xl border border-slate-200 bg-white overflow-hidden min-h-[300px] flex flex-col justify-between p-6 md:p-8 shadow-2xl transition-all duration-300 hover:border-slate-200 group">
             {/* Background City Skyline with deep dark gradient overlay */}
             <div 
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-[1.02] pointer-events-none"
               style={{
-                backgroundImage: `linear-gradient(to right, rgba(11, 15, 25, 0.95) 30%, rgba(11, 15, 25, 0.5) 60%, rgba(11, 15, 25, 0.8) 100%), url('https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=1200&auto=format&fit=crop')`,
+                backgroundImage: `linear-gradient(to right, rgba(255, 255, 255, 0.95) 30%, rgba(255, 255, 255, 0.4) 60%, rgba(255, 255, 255, 0.8) 100%), url('https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=1200&auto=format&fit=crop')`,
               }}
             />
             {/* Ambient soft glow */}
@@ -1157,10 +1157,10 @@ export default function Dashboard() {
               <div className="md:col-span-3 space-y-4">
                 <div className="space-y-1">
                   <span className="text-xs font-bold text-indigo-400 tracking-wide block">Chào mừng trở lại,</span>
-                  <h1 className="text-3xl md:text-4xl font-black text-white tracking-tight flex items-center gap-2">
+                  <h1 className="text-3xl md:text-4xl font-black text-slate-800 tracking-tight flex items-center gap-2">
                     {fullName}! <span className="animate-bounce inline-block">👋</span>
                   </h1>
-                  <p className="text-xs text-slate-350 max-w-sm mt-2 leading-relaxed">
+                  <p className="text-xs text-slate-500 max-w-sm mt-2 leading-relaxed">
                     Bạn đã sẵn sàng để tiếp tục hành trình chinh phục tiếng Anh hôm nay chưa?
                   </p>
                 </div>
@@ -1169,7 +1169,7 @@ export default function Dashboard() {
                   onClick={() => {
                     document.getElementById("curriculum-section")?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="px-5 py-2.5 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-black text-xs flex items-center gap-2 transition-all shadow-lg hover:shadow-indigo-650/20 active:scale-95 group/btn"
+                  className="px-5 py-2.5 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-slate-800 font-black text-xs flex items-center gap-2 transition-all shadow-lg hover:shadow-indigo-650/20 active:scale-95 group/btn"
                 >
                   <Play className="w-3.5 h-3.5 fill-white group-hover/btn:scale-110 transition-transform" />
                   <span>Tiếp tục học ngay</span>
@@ -1178,58 +1178,58 @@ export default function Dashboard() {
 
               {/* Right Column: Literary Quote on translucent card */}
               <div className="md:col-span-2 flex flex-col justify-center items-end">
-                <div className="max-w-[280px] p-4 rounded-2xl bg-[#0B0F19]/45 backdrop-blur-md border border-slate-800/40 text-slate-200 shadow-xl space-y-2 relative">
+                <div className="max-w-[280px] p-4 rounded-2xl bg-slate-50 backdrop-blur-md border border-slate-200 text-slate-800 shadow-xl space-y-2 relative">
                   <span className="absolute top-2 left-2 text-indigo-500 opacity-20 text-3xl font-serif leading-none">&ldquo;</span>
-                  <p className="text-[10px] leading-relaxed italic text-slate-200 pl-2">
+                  <p className="text-[10px] leading-relaxed italic text-slate-800 pl-2">
                     "Language is the road map of a culture. It tells you where its people come from and where they are going."
                   </p>
-                  <p className="text-[9px] font-bold text-slate-400 text-right">— Rita Mae Brown</p>
+                  <p className="text-[9px] font-bold text-slate-500 text-right">— Rita Mae Brown</p>
                 </div>
               </div>
             </div>
 
             {/* Banner Stats Bar */}
-            <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 pt-4 border-t border-slate-800/40">
+            <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 pt-4 border-t border-slate-200">
               {/* Streak */}
-              <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-slate-900/40 backdrop-blur-sm border border-slate-800/30">
+              <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-slate-50 border-slate-200 shadow-sm backdrop-blur-sm border border-slate-200">
                 <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500 shadow-inner">
                   <Flame className="w-5 h-5 fill-amber-500 animate-pulse" />
                 </div>
                 <div>
-                  <span className="text-xs font-black text-slate-100 block">{stats.streak.toString().padStart(2, "0")}</span>
+                  <span className="text-xs font-black text-slate-800 block">{stats.streak.toString().padStart(2, "0")}</span>
                   <span className="text-[8px] font-bold text-slate-500 uppercase tracking-wider">Ngày streak</span>
                 </div>
               </div>
 
               {/* Lessons */}
-              <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-slate-900/40 backdrop-blur-sm border border-slate-800/30">
+              <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-slate-50 border-slate-200 shadow-sm backdrop-blur-sm border border-slate-200">
                 <div className="w-9 h-9 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shadow-inner">
                   <BookOpen className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs font-black text-slate-100 block">28</span>
+                  <span className="text-xs font-black text-slate-800 block">28</span>
                   <span className="text-[8px] font-bold text-slate-500 uppercase tracking-wider">Bài đã học</span>
                 </div>
               </div>
 
               {/* Accuracy */}
-              <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-slate-900/40 backdrop-blur-sm border border-slate-800/30">
+              <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-slate-50 border-slate-200 shadow-sm backdrop-blur-sm border border-slate-200">
                 <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shadow-inner">
                   <Award className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs font-black text-slate-100 block">92%</span>
+                  <span className="text-xs font-black text-slate-800 block">92%</span>
                   <span className="text-[8px] font-bold text-slate-500 uppercase tracking-wider">Độ chính xác</span>
                 </div>
               </div>
 
               {/* XP */}
-              <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-slate-900/40 backdrop-blur-sm border border-slate-800/30">
+              <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-slate-50 border-slate-200 shadow-sm backdrop-blur-sm border border-slate-200">
                 <div className="w-9 h-9 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 shadow-inner">
                   <Zap className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs font-black text-slate-100 block">{(stats.xp).toLocaleString()}</span>
+                  <span className="text-xs font-black text-slate-800 block">{(stats.xp).toLocaleString()}</span>
                   <span className="text-[8px] font-bold text-slate-500 uppercase tracking-wider">XP tích lũy</span>
                 </div>
               </div>
@@ -1238,7 +1238,7 @@ export default function Dashboard() {
 
           {/* Learning Methods Bento Grid */}
           <div className="space-y-4">
-            <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest">
+            <h3 className="text-xs font-black text-slate-500 uppercase tracking-widest">
               Chọn cách học phù hợp với bạn
             </h3>
             
@@ -1248,7 +1248,7 @@ export default function Dashboard() {
                 onClick={() => {
                   document.getElementById("curriculum-section")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="group relative rounded-3xl border border-slate-800/80 bg-[#151B2B] p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-indigo-500/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-950/20"
+                className="group relative rounded-3xl border border-slate-200 bg-white p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-indigo-500/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-950/20"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl pointer-events-none" />
                 <div className="flex gap-4">
@@ -1256,16 +1256,16 @@ export default function Dashboard() {
                     <BookOpen className="w-6 h-6" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm font-black text-slate-100">Học SGK</h4>
-                    <p className="text-[10px] text-slate-400 leading-relaxed max-w-[200px]">
+                    <h4 className="text-sm font-black text-slate-800">Học SGK</h4>
+                    <p className="text-[10px] text-slate-500 leading-relaxed max-w-[200px]">
                       Học theo chương trình sách giáo khoa từ lớp 6 đến lớp 12
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-800/40 text-[9px] text-slate-550 font-bold">
+                <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-200 text-[9px] text-slate-550 font-bold">
                   <span>12.4K học sinh đang học</span>
-                  <div className="w-6 h-6 rounded-full bg-slate-900 group-hover:bg-indigo-600 flex items-center justify-center text-slate-400 group-hover:text-white transition-all">
+                  <div className="w-6 h-6 rounded-full bg-slate-900 group-hover:bg-indigo-600 flex items-center justify-center text-slate-500 group-hover:text-white transition-all">
                     <ChevronRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
@@ -1283,7 +1283,7 @@ export default function Dashboard() {
                     alert("Hãy chọn bài học nghe chép (Dictation) trong phần Lộ trình học bên dưới nhé!");
                   }
                 }}
-                className="group relative rounded-3xl border border-slate-800/80 bg-[#151B2B] p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-indigo-500/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-950/20"
+                className="group relative rounded-3xl border border-slate-200 bg-white p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-indigo-500/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-950/20"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl pointer-events-none" />
                 <div className="flex gap-4">
@@ -1291,16 +1291,16 @@ export default function Dashboard() {
                     <Headphones className="w-6 h-6" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm font-black text-slate-100">Luyện nghe Dictation</h4>
-                    <p className="text-[10px] text-slate-400 leading-relaxed max-w-[200px]">
+                    <h4 className="text-sm font-black text-slate-800">Luyện nghe Dictation</h4>
+                    <p className="text-[10px] text-slate-500 leading-relaxed max-w-[200px]">
                       Nghe viết chính tả các câu tiếng Anh theo sách giáo khoa
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-800/40 text-[9px] text-slate-500 font-bold">
+                <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-200 text-[9px] text-slate-500 font-bold">
                   <span>8.3K học sinh đang học</span>
-                  <div className="w-6 h-6 rounded-full bg-slate-900 group-hover:bg-indigo-600 flex items-center justify-center text-slate-400 group-hover:text-white transition-all">
+                  <div className="w-6 h-6 rounded-full bg-slate-900 group-hover:bg-indigo-600 flex items-center justify-center text-slate-500 group-hover:text-white transition-all">
                     <ChevronRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
@@ -1316,7 +1316,7 @@ export default function Dashboard() {
                     handleStartLesson(speakingLesson);
                   }
                 }}
-                className="group relative rounded-3xl border border-slate-800/80 bg-[#151B2B] p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-indigo-500/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-950/20"
+                className="group relative rounded-3xl border border-slate-200 bg-white p-5 cursor-pointer flex flex-col justify-between min-h-[160px] transition-all duration-300 hover:border-indigo-500/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-950/20"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-violet-500/5 rounded-full blur-2xl pointer-events-none" />
                 <div className="flex gap-4">
@@ -1324,16 +1324,16 @@ export default function Dashboard() {
                     <Mic className="w-6 h-6" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm font-black text-slate-100">Luyện nói AI</h4>
-                    <p className="text-[10px] text-slate-400 leading-relaxed max-w-[200px]">
+                    <h4 className="text-sm font-black text-slate-800">Luyện nói AI</h4>
+                    <p className="text-[10px] text-slate-500 leading-relaxed max-w-[200px]">
                       AI chấm phát âm và sửa lỗi chi tiết như giáo viên bản xứ
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-800/40 text-[9px] text-slate-550 font-bold">
+                <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-200 text-[9px] text-slate-550 font-bold">
                   <span>15K học sinh đang luyện</span>
-                  <div className="w-6 h-6 rounded-full bg-slate-900 group-hover:bg-indigo-600 flex items-center justify-center text-slate-400 group-hover:text-white transition-all">
+                  <div className="w-6 h-6 rounded-full bg-slate-900 group-hover:bg-indigo-600 flex items-center justify-center text-slate-500 group-hover:text-white transition-all">
                     <ChevronRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
@@ -1344,7 +1344,7 @@ export default function Dashboard() {
           {/* Unit Roadmap Section */}
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest">
+              <h3 className="text-xs font-black text-slate-500 uppercase tracking-widest">
                 Tiếp tục học
               </h3>
               <button 
@@ -1384,8 +1384,8 @@ export default function Dashboard() {
                     key={unit.id}
                     className={`flex-none w-[220px] relative rounded-2xl overflow-hidden border flex flex-col justify-between min-h-[180px] transition-all duration-300 shadow-xl group cursor-pointer ${
                       isSelected 
-                        ? "border-indigo-500/50 bg-[#151B2B]" 
-                        : "border-slate-800/80 bg-[#111625] hover:border-slate-700"
+                        ? "border-indigo-500/50 bg-white" 
+                        : "border-slate-200 bg-white hover:border-slate-300"
                     }`}
                     onClick={() => {
                       if (unit.status !== "locked") {
@@ -1408,12 +1408,12 @@ export default function Dashboard() {
                       
                       {unit.status === "locked" && (
                         <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] flex items-center justify-center z-20">
-                          <Lock className="w-6 h-6 text-slate-400" />
+                          <Lock className="w-6 h-6 text-slate-500" />
                         </div>
                       )}
                       
                       <div className="absolute top-2 inset-x-2 flex items-center justify-between z-10">
-                        <span className="px-1.5 py-0.5 rounded text-[7px] font-black bg-black/60 text-slate-200 border border-slate-700/50 uppercase tracking-widest font-mono">
+                        <span className="px-1.5 py-0.5 rounded text-[7px] font-black bg-black/60 text-slate-800 border border-slate-300/50 uppercase tracking-widest font-mono">
                           UNIT {unit.number}
                         </span>
                         <span className={`px-1.5 py-0.5 rounded text-[7px] font-black border ${diffTag.style} uppercase tracking-wider`}>
@@ -1425,10 +1425,10 @@ export default function Dashboard() {
                     {/* Card Body */}
                     <div className="p-3 flex-1 flex flex-col justify-between space-y-2">
                       <div>
-                        <h4 className="text-[10px] font-black text-slate-100 group-hover:text-indigo-400 transition-colors leading-tight">
+                        <h4 className="text-[10px] font-black text-slate-800 group-hover:text-indigo-400 transition-colors leading-tight">
                           {unit.title}
                         </h4>
-                        <p className="text-[8px] text-slate-400 mt-0.5 line-clamp-1">{subDesc}</p>
+                        <p className="text-[8px] text-slate-500 mt-0.5 line-clamp-1">{subDesc}</p>
                       </div>
 
                       <div className="flex items-center justify-between">
@@ -1445,7 +1445,7 @@ export default function Dashboard() {
                           <span className="text-[7px] text-slate-500 font-bold mt-0.5 block">{unit.progress}% • {unit.lessons.length} bài</span>
                         </div>
                         <div className={`w-6 h-6 rounded-full flex items-center justify-center transition-all ${
-                          isSelected ? "bg-indigo-600 text-white" : "bg-slate-800 text-slate-400 group-hover:bg-indigo-600/30 group-hover:text-indigo-400"
+                          isSelected ? "bg-indigo-600 text-white" : "bg-slate-800 text-slate-500 group-hover:bg-indigo-600/30 group-hover:text-indigo-400"
                         }`}>
                           {unit.status === "locked" ? <Lock className="w-3 h-3" /> : <ChevronRight className="w-3 h-3" />}
                         </div>
@@ -1465,7 +1465,7 @@ export default function Dashboard() {
                   <div className="w-5 h-5 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
                     <BookOpen className="w-3 h-3" />
                   </div>
-                  <h3 className="text-xs font-black text-slate-350 uppercase tracking-widest">
+                  <h3 className="text-xs font-black text-slate-500 uppercase tracking-widest">
                     Chi tiết bài học: Unit {selectedUnit.number} — {selectedUnit.title}
                   </h3>
                 </div>
@@ -1476,7 +1476,7 @@ export default function Dashboard() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {/* Left Column: Lesson items */}
-                <div className="rounded-3xl border border-slate-800 bg-[#151B2B] p-5 space-y-4 shadow-xl">
+                <div className="rounded-3xl border border-slate-200 bg-white p-5 space-y-4 shadow-xl">
                   <span className="text-[9px] font-black text-slate-500 tracking-widest uppercase block">
                     Các phòng học offline
                   </span>
@@ -1492,23 +1492,23 @@ export default function Dashboard() {
                           key={lesson.id}
                           className={`flex items-center justify-between p-3.5 rounded-2xl border transition-all group/item relative ${
                             locked
-                              ? "border-slate-800/40 bg-[#0B0F19]/15 opacity-70 hover:opacity-90"
-                              : "border-slate-850 bg-[#0B0F19]/25 hover:border-slate-800 hover:bg-slate-900/10"
+                              ? "border-slate-200 bg-slate-50 opacity-70 hover:opacity-90"
+                              : "border-slate-200 bg-slate-50 hover:border-slate-200 hover:bg-indigo-50"
                           }`}
                         >
                           <div className="flex items-center gap-3 min-w-0">
                             <div className={`w-9 h-9 rounded-xl flex items-center justify-center border shrink-0 relative ${
-                              locked ? "bg-slate-900/40 border-slate-800/40 text-slate-600" : colorStyles
+                              locked ? "bg-slate-50 border-slate-200 shadow-sm border-slate-200 text-slate-400" : colorStyles
                             }`}>
                               {locked ? (
-                                <Lock className="w-4 h-4 text-slate-600" />
+                                <Lock className="w-4 h-4 text-slate-400" />
                               ) : (
                                 <LessonIcon className="w-4.5 h-4.5" />
                               )}
                             </div>
                             <div className="min-w-0">
                               <h4 className={`text-xs font-bold truncate transition-colors ${
-                                locked ? "text-slate-500" : "text-slate-200 group-hover/item:text-white"
+                                locked ? "text-slate-500" : "text-slate-800 group-hover/item:text-indigo-700"
                               }`}>
                                 {lesson.title}
                               </h4>
@@ -1561,7 +1561,7 @@ export default function Dashboard() {
                 {/* Right Column: Focus Grammar & Vocabulary */}
                 <div className="grid grid-rows-2 gap-4">
                   {/* Focus Grammar */}
-                  <div className="rounded-3xl border border-slate-800 bg-[#151B2B] p-5 flex flex-col justify-between shadow-xl relative overflow-hidden group">
+                  <div className="rounded-3xl border border-slate-200 bg-white p-5 flex flex-col justify-between shadow-xl relative overflow-hidden group">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl pointer-events-none" />
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
@@ -1569,15 +1569,15 @@ export default function Dashboard() {
                         <Award className="w-4.5 h-4.5 text-indigo-400" />
                       </div>
                       <div>
-                        <h4 className="text-xs font-bold text-slate-200">
+                        <h4 className="text-xs font-bold text-slate-800">
                           {selectedUnit.number === 1 ? "Past Simple vs. Present Perfect" : selectedUnit.number === 2 ? "Modal Verbs (Must vs. Should)" : "Stative Verbs in Continuous Form"}
                         </h4>
-                        <p className="text-[9px] text-indigo-350 font-mono mt-1 bg-slate-900/60 p-2 rounded border border-slate-800/40">
+                        <p className="text-[9px] text-indigo-350 font-mono mt-1 bg-slate-900/60 p-2 rounded border border-slate-200">
                           {selectedUnit.number === 1 ? "Formula: S + have/has + V3/V-ed" : selectedUnit.number === 2 ? "Formula: S + must/should + V-bare" : "Active / Stative Verbs"}
                         </p>
                       </div>
                     </div>
-                    <p className="text-[9px] text-slate-400 leading-relaxed">
+                    <p className="text-[9px] text-slate-500 leading-relaxed">
                       {selectedUnit.number === 1 
                         ? "Dùng Present Perfect cho hành động đã diễn ra nhưng không rõ thời gian hoặc kéo dài đến hiện tại."
                         : selectedUnit.number === 2
@@ -1587,16 +1587,16 @@ export default function Dashboard() {
                   </div>
 
                   {/* Focus Vocabulary */}
-                  <div className="rounded-3xl border border-slate-800 bg-[#151B2B] p-5 flex flex-col justify-between shadow-xl relative overflow-hidden group">
+                  <div className="rounded-3xl border border-slate-200 bg-white p-5 flex flex-col justify-between shadow-xl relative overflow-hidden group">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl pointer-events-none" />
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
                         <span className="text-[9px] font-black text-emerald-400 uppercase tracking-widest">Từ Vựng Nổi Bật</span>
                         <BookMarked className="w-4.5 h-4.5 text-emerald-400" />
                       </div>
-                      <div className="p-2.5 rounded-xl border border-slate-800/65 bg-[#0B0F19]/40 space-y-1">
+                      <div className="p-2.5 rounded-xl border border-slate-200 bg-slate-50 space-y-1">
                         <div className="flex justify-between items-center">
-                          <span className="text-xs font-extrabold text-slate-200 font-mono">
+                          <span className="text-xs font-extrabold text-slate-800 font-mono">
                             {selectedUnit.number === 1 ? "Fitness" : selectedUnit.number === 2 ? "Independent" : "Futuristic"}
                           </span>
                           <span className="text-[9px] text-slate-500 font-bold font-mono">

@@ -181,12 +181,12 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
   };
 
   return (
-    <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center p-6 bg-[#0B0F19] text-slate-300 relative overflow-hidden">
+    <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center p-6 bg-slate-50 text-slate-700 relative overflow-hidden">
       
       {/* Nút quay lại */}
       <button
         onClick={onBack}
-        className="self-start mb-6 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:text-slate-100 hover:bg-slate-800/40 transition-all text-xs font-semibold flex items-center gap-1.5 z-10"
+        className="self-start mb-6 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-200 hover:text-slate-100 hover:bg-slate-800/40 transition-all text-xs font-semibold flex items-center gap-1.5 z-10"
       >
         <ArrowLeft className="w-4 h-4" /> Về Bảng Điều Khiển
       </button>
@@ -211,12 +211,12 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
       </div>
 
       {/* Question Card */}
-      <div className="w-full max-w-2xl rounded-3xl border border-slate-800 bg-[#151B2B] p-8 space-y-8 shadow-2xl relative overflow-hidden z-10 pb-12">
+      <div className="w-full max-w-2xl rounded-3xl border border-slate-200 bg-white p-8 space-y-8 shadow-2xl relative overflow-hidden z-10 pb-12">
         {/* Ambient glow */}
         <div className="absolute top-0 right-0 w-80 h-80 bg-violet-500/5 rounded-full blur-[80px] pointer-events-none" />
 
         {/* Room Header */}
-        <div className="flex items-center justify-between border-b border-slate-800/40 pb-4 relative z-10">
+        <div className="flex items-center justify-between border-b border-slate-200 pb-4 relative z-10">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 shadow">
               <HelpCircle className="w-5 h-5 animate-pulse" />
@@ -225,7 +225,7 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
               <span className="text-[10px] font-black text-violet-400 tracking-wider uppercase">
                 Quiz Room (Offline)
               </span>
-              <h2 className="text-sm font-bold text-slate-200">{lessonTitle}</h2>
+              <h2 className="text-sm font-bold text-slate-800">{lessonTitle}</h2>
             </div>
           </div>
           
@@ -262,19 +262,19 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
                 onClick={() => handleSelectOption(opt)}
                 className={`p-4 rounded-2xl border transition-all duration-100 cursor-pointer select-none relative ${
                   isSelected
-                    ? "bg-[#1d1b33] border-violet-500 translate-y-[4px] shadow-[0_0px_0_#0a0f19]"
-                    : "bg-[#151B2B] border-slate-800 hover:border-slate-700 hover:bg-[#182033] shadow-[0_4px_0_#0a0f19] active:translate-y-[4px] active:shadow-[0_0px_0_#0a0f19]"
+                    ? "bg-indigo-50 border-violet-500 translate-y-[4px] shadow-[0_0px_0_#e2e8f0]"
+                    : "bg-white border-slate-200 hover:border-slate-300 hover:bg-slate-50 shadow-[0_4px_0_#e2e8f0] active:translate-y-[4px] active:shadow-[0_0px_0_#e2e8f0]"
                 }`}
               >
                 <div className="flex items-center gap-3">
                   <div className={`w-6 h-6 rounded-lg flex items-center justify-center text-xs font-black border transition-colors ${
                     isSelected
                       ? "bg-violet-500 border-violet-400 text-white"
-                      : "bg-slate-900 border-slate-800 text-slate-400"
+                      : "bg-slate-900 border-slate-200 text-slate-500"
                   }`}>
                     {letter}
                   </div>
-                  <span className="text-xs font-semibold text-slate-200">
+                  <span className="text-xs font-semibold text-slate-800">
                     {opt.substring(2).trim()}
                   </span>
                 </div>
@@ -333,7 +333,7 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
                 <h4 className="text-sm font-black tracking-wide uppercase">
                   {isCorrect ? "Câu Trả Lời Chính Xác!" : "Ồ! Chưa Chính Xác Rồi"}
                 </h4>
-                <p className="text-xs text-slate-300 mt-0.5">
+                <p className="text-xs text-slate-700 mt-0.5">
                   {isCorrect
                     ? "Bạn đã xuất sắc làm đúng câu hỏi này! Hãy tiếp tục phát huy."
                     : `Đáp án đúng là ${activeQuestion.correctAnswer}`}
@@ -344,7 +344,7 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
             <div className="flex items-center gap-3 self-end sm:self-auto">
               <button
                 onClick={handleAskAI}
-                className="px-4 py-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 bg-[#1E293B] hover:bg-[#334155] border border-slate-600 text-slate-200"
+                className="px-4 py-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 bg-white hover:bg-slate-100 border border-slate-600 text-slate-800"
               >
                 <Bot className="w-4 h-4 text-rose-400" />
                 <span className="hidden sm:inline">Hỏi Cô giáo AI</span>
@@ -373,13 +373,13 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#090D16]/80 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm"
           >
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="w-full max-w-lg bg-[#151B2B] border border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden"
+              className="w-full max-w-lg bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-rose-500/10 rounded-full blur-[80px] pointer-events-none" />
               
@@ -403,12 +403,12 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
 
               <div className="min-h-[150px] max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar relative z-10">
                 {isAiLoading ? (
-                  <div className="h-full flex flex-col items-center justify-center gap-3 text-slate-400 pt-10">
+                  <div className="h-full flex flex-col items-center justify-center gap-3 text-slate-500 pt-10">
                     <Loader2 className="w-8 h-8 animate-spin text-rose-500" />
                     <p className="text-xs font-bold animate-pulse">Cô giáo đang suy nghĩ...</p>
                   </div>
                 ) : (
-                  <div className="text-sm text-slate-300 leading-relaxed whitespace-pre-wrap">
+                  <div className="text-sm text-slate-700 leading-relaxed whitespace-pre-wrap">
                     {aiResponse}
                   </div>
                 )}

@@ -183,8 +183,8 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
   return (
     <div className="flex-1 flex flex-col h-full overflow-hidden">
       {/* Mobile Top Bar */}
-      <div className="md:hidden flex justify-between items-center px-4 py-3 bg-[#0B0F19]/90 backdrop-blur-md border-b border-slate-800 shrink-0 select-none">
-        <span className="font-black text-xs text-white uppercase tracking-wider">
+      <div className="md:hidden flex justify-between items-center px-4 py-3 bg-white/90 backdrop-blur-md border-b border-slate-200 shrink-0 select-none shadow-sm">
+        <span className="font-black text-xs text-indigo-600 uppercase tracking-wider">
           Global Success AI
         </span>
         <div className="flex items-center gap-2">
@@ -209,7 +209,7 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
       </div>
 
       {/* Bottom Navigation for Mobile */}
-      <div className="fixed bottom-0 left-0 right-0 h-16 bg-[#111827]/90 backdrop-blur-md border-t border-slate-800 flex justify-around items-center z-50 md:hidden select-none">
+      <div className="fixed bottom-0 left-0 right-0 h-16 bg-white/90 backdrop-blur-md border-t border-slate-200 flex justify-around items-center z-50 md:hidden select-none shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
         {bottomNavItems.map((item) => {
           const Icon = item.icon;
           const active = isTabActive(item.href);
@@ -219,14 +219,14 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
               href={item.href}
               className={`flex flex-col items-center justify-center gap-1 flex-1 h-full transition-all relative ${
                 active
-                  ? "text-purple-400 drop-shadow-[0_0_8px_rgba(168,85,247,0.7)]"
-                  : "text-slate-400 hover:text-slate-200"
+                  ? "text-indigo-600 drop-shadow-sm"
+                  : "text-slate-400 hover:text-slate-600"
               }`}
             >
               <Icon className={`w-5 h-5 transition-transform ${active ? "scale-110" : ""}`} />
               <span className="text-[9px] font-extrabold tracking-wide">{item.name}</span>
               {active && (
-                <div className="absolute bottom-1 w-5 h-0.5 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,1)]" />
+                <div className="absolute bottom-1 w-5 h-0.5 rounded-full bg-indigo-500" />
               )}
             </Link>
           );

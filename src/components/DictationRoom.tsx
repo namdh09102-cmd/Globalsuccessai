@@ -158,23 +158,23 @@ export default function DictationRoom({
   };
 
   return (
-    <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center p-6 bg-[#0B0F19] text-slate-300">
+    <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center p-6 bg-slate-50 text-slate-700">
       
       {/* Nút quay lại */}
       <button
         onClick={onBack}
-        className="self-start mb-6 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:text-slate-100 hover:bg-slate-800/40 transition-all text-xs font-semibold flex items-center gap-1.5"
+        className="self-start mb-6 px-4 py-2 rounded-xl bg-slate-900/60 border border-slate-200 hover:text-slate-100 hover:bg-slate-800/40 transition-all text-xs font-semibold flex items-center gap-1.5"
       >
         <ArrowLeft className="w-4 h-4" /> Về Bảng Điều Khiển
       </button>
 
       {/* Thẻ luyện nghe trung tâm */}
-      <div className="w-full max-w-2xl rounded-3xl border border-slate-800 bg-[#151B2B] p-8 space-y-8 shadow-2xl relative overflow-hidden">
+      <div className="w-full max-w-2xl rounded-3xl border border-slate-200 bg-white p-8 space-y-8 shadow-2xl relative overflow-hidden">
         {/* Glow */}
         <div className="absolute top-0 right-0 w-80 h-80 bg-indigo-500/5 rounded-full blur-[80px] pointer-events-none" />
 
         {/* Room Header */}
-        <div className="flex items-center justify-between border-b border-slate-800/40 pb-4 z-10 relative">
+        <div className="flex items-center justify-between border-b border-slate-200 pb-4 z-10 relative">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shadow">
               <Volume2 className="w-5 h-5 animate-pulse" />
@@ -183,7 +183,7 @@ export default function DictationRoom({
               <span className="text-[10px] font-black text-blue-400 tracking-wider uppercase">
                 Dictation Room (Offline)
               </span>
-              <h2 className="text-sm font-bold text-slate-200">{lessonTitle}</h2>
+              <h2 className="text-sm font-bold text-slate-800">{lessonTitle}</h2>
             </div>
           </div>
           
@@ -221,13 +221,13 @@ export default function DictationRoom({
         </div>
 
         {/* Interactive Text Display */}
-        <div className="p-6 rounded-2xl bg-[#0B0F19]/60 border border-slate-800/80 leading-loose text-sm font-medium z-10 relative">
+        <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 leading-loose text-sm font-medium z-10 relative">
           <div className="flex flex-wrap items-center gap-x-2 gap-y-4">
             {parts.map((part, idx) => {
               if (idx % 2 === 0) {
                 // Plain Text
                 return (
-                  <span key={idx} className="text-slate-300 font-sans leading-relaxed">
+                  <span key={idx} className="text-slate-700 font-sans leading-relaxed">
                     {part}
                   </span>
                 );
@@ -245,7 +245,7 @@ export default function DictationRoom({
                     onChange={(e) => handleInputChange(idx, e.target.value)}
                     placeholder={`[ô trống (${part.length} ký tự)]`}
                     style={isMobile ? { width: "100%" } : { width: `${Math.max(80, part.length * 11)}px` }}
-                    className={`px-3 py-2 md:py-1 text-base md:text-xs font-bold font-mono text-center rounded-lg bg-[#0B0F19] text-slate-100 placeholder-slate-600 outline-none transition-all border-b-2 w-full md:w-auto ${
+                    className={`px-3 py-2 md:py-1 text-base md:text-xs font-bold font-mono text-center rounded-lg bg-slate-50 text-slate-100 placeholder-slate-600 outline-none transition-all border-b-2 w-full md:w-auto ${
                       isCorrect
                         ? "border-b-emerald-500 shadow-[0_4px_12px_rgba(16,185,129,0.2)]"
                         : isIncorrect
@@ -260,11 +260,11 @@ export default function DictationRoom({
         </div>
 
         {/* Controls and Feedback Panel */}
-        <div className="flex items-center justify-between gap-4 pt-4 border-t border-slate-800/40 z-10 relative">
+        <div className="flex items-center justify-between gap-4 pt-4 border-t border-slate-200 z-10 relative">
           
           <button
             onClick={handleReset}
-            className="px-4 py-2.5 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors flex items-center gap-1.5 border border-slate-800/80"
+            className="px-4 py-2.5 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-slate-500 hover:text-slate-800 transition-colors flex items-center gap-1.5 border border-slate-200"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             <span>Làm lại</span>
