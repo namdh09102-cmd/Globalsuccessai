@@ -125,6 +125,8 @@ function generateGradeData() {
             });
         }
 
+        const expectedSpeakingText = `Look! I see a ${unitData.words[0]} and a ${unitData.words[1]}.`;
+
         units.push({
             id: `l2-u${unitData.number}`,
             number: unitData.number,
@@ -134,8 +136,8 @@ function generateGradeData() {
             progress: 0,
             lessons: [
                 { id: `u${unitData.number}-l1`, title: "Lesson 1: Vocabulary", type: "vocabulary", completed: false, score: 0, questions: questions.slice(0, 10) },
-                { id: `u${unitData.number}-l2`, title: "Lesson 2: Speaking", type: "speaking", completed: false, score: 0, questions: questions.slice(10, 15) },
-                { id: `u${unitData.number}-l3`, title: "Lesson 3: Grammar", type: "dictation", completed: false, score: 0, questions: questions.slice(15, 25) }
+                { id: `u${unitData.number}-l2`, title: "Lesson 2: Speaking", type: "speaking", completed: false, score: 0, expectedText: expectedSpeakingText },
+                { id: `u${unitData.number}-l3`, title: "Lesson 3: Grammar", type: "grammar", completed: false, score: 0, questions: questions.slice(10, 25) }
             ]
         });
     });
