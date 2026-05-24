@@ -266,17 +266,17 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
       {/* Left: Logo */}
       <div className="flex items-center">
         {currentUser?.gradeLevel === "high" ? (
-          <h1 className="text-[18px] tracking-wide flex items-center text-white font-inter">
+          <h1 className="text-[18px] tracking-wide flex items-center !text-white font-inter">
             <span className="font-black">GlobalSuccess AI</span>
             <span className="ml-2 text-[10px] bg-white/20 px-2 py-1 rounded font-bold tracking-widest">ADVANCED</span>
           </h1>
         ) : currentUser?.gradeLevel === "middle" ? (
-          <h1 className="text-[18px] tracking-wide flex items-center text-white font-nunito">
+          <h1 className="text-[18px] tracking-wide flex items-center !text-white font-nunito">
             <span className="font-black">GlobalAI</span>
             <span className="ml-2 text-[11px] bg-white/20 px-2 py-1 rounded font-black tracking-widest">MID</span>
           </h1>
         ) : (
-          <h1 className="text-[18px] tracking-wide flex items-center">
+          <h1 className="text-[18px] tracking-wide flex items-center !text-white">
             <span className="font-nunito font-black text-white">Global</span>
             <span className="font-fredoka text-xp mx-1">KIDS</span>
             <span className="font-nunito font-black text-white">AI</span>
