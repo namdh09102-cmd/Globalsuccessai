@@ -304,6 +304,15 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
 
       {/* Right group */}
       <div className="flex items-center gap-3">
+        {/* Upgrade button */}
+        <Link
+          href="/upgrade"
+          className="hidden md:flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-amber-500 to-amber-400 rounded-full border border-amber-300 text-black shadow-[0_2px_0_#b45309] hover:scale-105 active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+        >
+          <span className="text-[12px]">👑</span>
+          <span className="font-black text-[9px] uppercase tracking-wider">Nâng cấp</span>
+        </Link>
+
         {/* Streak chip */}
         <div id="streak-chip" className="streak-chip bg-xp text-xp-text border border-xp-dark rounded-[999px] px-3 py-1 flex items-center gap-1 shadow-sm transition-transform">
           <span className="text-[14px]">🔥</span>
