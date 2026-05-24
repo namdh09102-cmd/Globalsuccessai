@@ -216,10 +216,13 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <div className="bg-white border border-[rgba(0,0,0,0.1)] rounded-[12px] p-6 shadow-sm flex flex-col justify-between">
-          <div className="flex items-center gap-2 mb-4">
-            <Target className="w-4 h-4 text-red-500" />
-            <span className="text-xs font-bold text-text-muted uppercase tracking-wider">Mục tiêu</span>
+        <Link href="/learn/ielts" className="bg-white border border-[rgba(0,0,0,0.1)] rounded-[12px] p-6 shadow-sm flex flex-col justify-between hover:border-indigo-500 hover:shadow-md transition-all group">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <Target className="w-4 h-4 text-red-500" />
+              <span className="text-xs font-bold text-text-muted uppercase tracking-wider">Mục tiêu</span>
+            </div>
+            <span className="text-xs font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full group-hover:bg-indigo-100 transition-colors">Xem Roadmap &rarr;</span>
           </div>
           <div>
             <div className="text-2xl font-black text-text-head">IELTS 6.5</div>
@@ -228,7 +231,7 @@ export default function DashboardPage() {
               <div className="h-full bg-indigo-600 w-[65%]" />
             </div>
           </div>
-        </div>
+        </Link>
       </div>
 
       <div className="bg-white border border-[rgba(0,0,0,0.1)] rounded-[12px] p-6 shadow-sm">
