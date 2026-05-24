@@ -33,6 +33,8 @@ interface UserProfile {
 }
 
 export default function ProfilePage() {
+  const router = require("next/navigation").useRouter();
+
   // 1. Quản lý thông tin hồ sơ
   const [profile, setProfile] = useState<UserProfile>({
     fullName: "Khánh Tân",
@@ -157,11 +159,34 @@ export default function ProfilePage() {
     e.preventDefault();
     localStorage.setItem("gsa-user-profile", JSON.stringify(profile));
     
+    // Update theme (gradeLevel) based on grade selected
+    let newGradeLevel = "primary";
+    const gradeNum = parseInt(profile.grade.replace("Lớp ", ""), 10);
+    if (gradeNum >= 6 && gradeNum <= 9) newGradeLevel = "middle";
+    if (gradeNum >= 10 && gradeNum <= 12) newGradeLevel = "high";
+
+    const storedUserStr = localStorage.getItem("gsa-current-user");
+    if (storedUserStr) {
+      try {
+        const u = JSON.parse(storedUserStr);
+        u.gradeLevel = newGradeLevel;
+        if (profile.fullName) u.name = profile.fullName;
+        localStorage.setItem("gsa-current-user", JSON.stringify(u));
+        window.dispatchEvent(new Event("auth-changed")); // triggers theme update
+      } catch(e){}
+    }
+
     // Phát sự kiện cập nhật để RightPanel / Sidebar nhận biết thay đổi nếu cần
     window.dispatchEvent(new Event("profile-updated"));
 
     setIsSavedNotification(true);
     setTimeout(() => setIsSavedNotification(false), 3000);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("gsa-current-user");
+    window.dispatchEvent(new Event("auth-changed"));
+    router.push("/auth");
   };
 
   // SVG Radar Chart Math
@@ -547,6 +572,7 @@ export default function ProfilePage() {
             </div>
 
           </motion.div>
+          <BadgeGrid />
 
         </div>
 
@@ -699,16 +725,26 @@ export default function ProfilePage() {
               </div>
 
               {/* Nút bấm 3D cơ học Nhấn lún sướng tay */}
-              <button className="w-full py-2.5 rounded-[var(--radius-btn)] bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] hover:bg-primary text-white font-black text-xs transition-all duration-100 flex items-center justify-center gap-1.5 shadow-[0_4px_0_#312e81] active:translate-y-[4px] active:shadow-none select-none relative overflow-hidden"
-              >
-                <Save className="w-3.5 h-3.5" />
-                <span>Cập Nhật Hồ Sơ</span>
-              </button>
+              <div className="flex gap-3">
+                <button 
+                  type="submit"
+                  className="flex-1 py-2.5 rounded-[var(--radius-btn)] bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] hover:bg-primary-dark text-white font-black text-xs transition-all duration-100 flex items-center justify-center gap-1.5 active:translate-y-[4px] active:shadow-none select-none relative overflow-hidden"
+                >
+                  <Save className="w-3.5 h-3.5" />
+                  <span>Cập Nhật</span>
+                </button>
+
+                <button 
+                  type="button"
+                  onClick={handleLogout}
+                  className="px-4 py-2.5 rounded-[var(--radius-btn)] bg-page text-rose-500 border-[var(--c-border)] border-rose-200 shadow-[0_4px_0_var(--c-pink-light)] hover:bg-rose-50 font-black text-xs transition-all duration-100 flex items-center justify-center gap-1.5 active:translate-y-[4px] active:shadow-none select-none"
+                >
+                  <span>Đăng xuất</span>
+                </button>
+              </div>
 
             </form>
           </motion.div>
-
-          <BadgeGrid />
         </div>
 
       </motion.div>
