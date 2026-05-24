@@ -17,6 +17,7 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
   const isAuthRoute = pathname === "/auth";
   const isAdminRoute = pathname.startsWith("/admin");
   const isTeacherRoute = pathname.startsWith("/teacher");
+  const isPitchRoute = pathname.startsWith("/pitch");
 
   const [stats, setStats] = useState({ xp: 0, streak: 5, diamonds: 20 });
   const [isMaintenance, setIsMaintenance] = useState(false);
@@ -177,6 +178,10 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
   if (!mounted) return null;
 
   if (isAuthRoute) {
+    return <>{children}</>;
+  }
+
+  if (isPitchRoute) {
     return <>{children}</>;
   }
 
