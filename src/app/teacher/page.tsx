@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { supabase } from "@/lib/supabase";
+import { RealtimeChannel } from "@supabase/supabase-js";
 import { 
   LayoutDashboard, Sparkles, Gamepad2, Users, BarChart3, Award, Calendar, 
   BookOpen, Tv, Clock, ArrowUp, ArrowDown, Send, FileOutput, Settings,
@@ -45,7 +47,12 @@ export default function TeacherPortalPort() {
 
   // Race Game State
   const [isRacing, setIsRacing] = useState(false);
-  const [positions, setPositions] = useState([10, 10, 10]);
+  const [positions, setPositions] = useState([10, 10, 10]); // Team 1, 2, 3
+  
+  // Realtime State
+  const [roomPin, setRoomPin] = useState<string>("");
+  const [gameChannel, setGameChannel] = useState<RealtimeChannel | null>(null);
+  const [studentCount, setStudentCount] = useState(0);
 
   const toggleActivity = (act: string) => {
     setActivities(prev => prev.includes(act) ? prev.filter(a => a !== act) : [...prev, act]);
@@ -78,25 +85,69 @@ export default function TeacherPortalPort() {
     }
   };
 
-  useEffect(() => {
-    let tick: NodeJS.Timeout;
-    if (isRacing) {
-      let frame = 0;
-      tick = setInterval(() => {
-        frame++;
+  // -------------------------
+  // REALTIME ROCKET RACE LOGIC
+  // -------------------------
+
+  const createRoom = () => {
+    const pin = Math.floor(100000 + Math.random() * 900000).toString();
+    setRoomPin(pin);
+    
+    if (gameChannel) supabase.removeChannel(gameChannel);
+
+    const channel = supabase.channel(`room_${pin}`, {
+      config: { broadcast: { ack: false } },
+    });
+
+    channel
+      .on("broadcast", { event: "student_join" }, (payload) => {
+        setStudentCount(c => c + 1);
+      })
+      .on("broadcast", { event: "answer_correct" }, (payload) => {
+        const data = payload.payload;
+        // Tăng thanh tiến độ của Team (1, 2, 3)
         setPositions(prev => {
-          const finalPos = [78, 62, 55];
-          return prev.map((p, i) => Math.min(p + Math.random() * 3, finalPos[i]));
+          const newPos = [...prev];
+          const teamIdx = data.team - 1;
+          if (teamIdx >= 0 && teamIdx <= 2) {
+            newPos[teamIdx] = Math.min(newPos[teamIdx] + data.points, 100);
+          }
+          return newPos;
         });
-        if (frame >= 30) setIsRacing(false);
-      }, 80);
-    }
-    return () => clearInterval(tick);
-  }, [isRacing]);
+      })
+      .subscribe((status) => {
+        if (status === "SUBSCRIBED") {
+          setGameChannel(channel);
+        }
+      });
+  };
+
+  useEffect(() => {
+    return () => {
+      if (gameChannel) supabase.removeChannel(gameChannel);
+    };
+  }, [gameChannel]);
+
+  const startGame = () => {
+    if (!gameChannel) return;
+    setIsRacing(true);
+    setPositions([10, 10, 10]);
+    // Báo cho học sinh bắt đầu
+    gameChannel.send({
+      type: "broadcast",
+      event: "game_start",
+    });
+  };
 
   const resetRace = () => {
     setPositions([10, 10, 10]);
-    setIsRacing(true);
+    setIsRacing(false);
+    if (gameChannel) {
+      gameChannel.send({
+        type: "broadcast",
+        event: "game_reset",
+      });
+    }
   };
 
   return (
@@ -449,23 +500,31 @@ export default function TeacherPortalPort() {
                         </div>
 
                         <button 
-                          onClick={isRacing ? resetRace : resetRace}
+                          onClick={isRacing ? resetRace : startGame}
                           className="mt-4 w-full bg-[#E63946] hover:bg-[#c62b37] text-white py-2.5 rounded-lg text-[13px] font-bold transition-colors flex items-center justify-center gap-1.5"
                         >
-                          {isRacing ? <><RotateCcw className="w-4 h-4" /> Chơi lại</> : <><Play className="w-4 h-4" /> Bắt đầu game</>}
+                          {isRacing ? <><RotateCcw className="w-4 h-4" /> Kết thúc game</> : <><Play className="w-4 h-4" /> Bắt đầu game</>}
                         </button>
                       </div>
                     </div>
 
-                    <div className="mt-4 bg-[#E1F5EE] border border-[#9FE1CB] rounded-xl p-3 px-4 flex items-center justify-between shadow-sm">
-                      <div className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-[#1D9E75] animate-pulse"></span>
-                        <span className="text-[13px] font-bold text-[#0F6E56]">28 học sinh đã sẵn sàng</span>
-                      </div>
-                      <div className="flex gap-2">
-                        <button className="bg-white border border-[#9FE1CB] text-[#0F6E56] px-3 py-1.5 rounded-lg text-[12px] font-bold flex items-center gap-1.5"><QrCode className="w-3.5 h-3.5" /> QR</button>
-                        <button className="bg-[#0F6E56] text-white px-3 py-1.5 rounded-lg text-[12px] font-bold flex items-center gap-1.5 shadow-sm"><Tv className="w-3.5 h-3.5" /> Chiếu lên bảng</button>
-                      </div>
+                    <div className="mt-4 bg-[#E1F5EE] border border-[#9FE1CB] rounded-xl p-3 px-4 shadow-sm flex flex-col gap-3">
+                      {roomPin ? (
+                        <>
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-2">
+                              <span className="w-2 h-2 rounded-full bg-[#1D9E75] animate-pulse"></span>
+                              <span className="text-[13px] font-bold text-[#0F6E56]">PIN: {roomPin} ({studentCount} HS đã vào phòng)</span>
+                            </div>
+                            <div className="text-[11px] font-bold text-gray-500">Truy cập <span className="text-[#E63946]">globalsuccess.vn/play</span></div>
+                          </div>
+                        </>
+                      ) : (
+                        <div className="flex items-center justify-between">
+                          <span className="text-[13px] font-bold text-gray-500">Chưa tạo phòng game</span>
+                          <button onClick={createRoom} className="bg-[#0F6E56] text-white px-4 py-1.5 rounded-lg text-[12px] font-bold shadow-sm">Tạo Phòng Chơi</button>
+                        </div>
+                      )}
                     </div>
                   </>
                 )}

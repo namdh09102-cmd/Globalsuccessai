@@ -185,6 +185,10 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
     return <>{children}</>;
   }
 
+  if (pathname.startsWith("/play")) {
+    return <>{children}</>;
+  }
+
   if (isTeacherRoute) {
     return <>{children}</>;
   }
