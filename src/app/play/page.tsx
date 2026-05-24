@@ -92,7 +92,7 @@ export default function PlayGame() {
 
   if (step === "login") {
     return (
-      <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4">
+      <div className="w-full flex-1 min-h-screen bg-slate-900 flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl w-full max-w-sm p-6 shadow-xl text-center space-y-5">
           <div className="w-16 h-16 bg-[#FAECE7] text-[#E63946] rounded-2xl flex items-center justify-center mx-auto mb-2">
             <Rocket className="w-8 h-8" />
@@ -133,7 +133,7 @@ export default function PlayGame() {
 
   if (step === "lobby") {
     return (
-      <div className="min-h-screen bg-slate-900 flex flex-col items-center justify-center p-6 text-center text-white">
+      <div className="w-full flex-1 min-h-screen bg-slate-900 flex flex-col items-center justify-center p-6 text-center text-white">
         <div className="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center mb-6 animate-pulse">
           <PlayCircle className="w-10 h-10 text-[#4ECDC4]" />
         </div>
@@ -151,7 +151,7 @@ export default function PlayGame() {
   if (step === "playing") {
     const q = QUESTIONS[qIndex];
     return (
-      <div className="min-h-screen bg-slate-50 flex flex-col">
+      <div className="w-full flex-1 min-h-screen bg-slate-50 flex flex-col">
         <div className="bg-white p-4 shadow-sm flex items-center justify-between border-b border-slate-200">
           <div className="font-bold text-slate-500">Đội {team}</div>
           <div className="font-black text-lg text-slate-800">Câu {qIndex + 1}/{QUESTIONS.length}</div>
@@ -188,7 +188,7 @@ export default function PlayGame() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-900 flex flex-col items-center justify-center p-6 text-center text-white">
+    <div className="w-full flex-1 min-h-screen bg-slate-900 flex flex-col items-center justify-center p-6 text-center text-white">
       <CheckCircle2 className="w-24 h-24 text-green-400 mb-6" />
       <h2 className="text-4xl font-black mb-2">Hoàn Thành!</h2>
       <p className="text-xl text-slate-400 mb-8">Bạn đã xuất sắc mang về <span className="font-bold text-white">{score} XP</span> cho Đội {team}</p>

@@ -226,10 +226,39 @@ export async function evaluateSpeaking(
     const score = Math.round((accuracy + pronunciation + fluency) / 3);
 
     let feedback = "Tuyệt vời! Bạn phát âm vô cùng tự nhiên và chuẩn xác.";
-    if (score < 60) {
-      feedback = "Cố gắng lên! Hãy nghe kỹ giọng mẫu và luyện tập phát âm rõ từng từ một nhé.";
+
+    // Llama 3: Sinh nhận xét cá nhân hóa dựa trên lỗi sai
+    if (activeGroq && (mispronouncedCount > 0 || omittedCount > 0 || score < 90)) {
+      try {
+        const errorWords = wordAnalysis
+          .filter(w => w.status !== "correct")
+          .map(w => w.word)
+          .join(", ");
+          
+        const prompt = `Học sinh đang luyện phát âm tiếng Anh câu: "${expectedText}".
+Họ đọc được số điểm ${score}/100.
+Các từ đọc sai hoặc thiếu: ${errorWords || "Không có, nhưng giọng chưa tự nhiên"}.
+Hãy viết 1 câu nhận xét (bằng tiếng Việt) cực kỳ ngắn gọn (dưới 15 chữ), đóng vai là giáo viên vui vẻ, khích lệ học sinh và chỉ ra từ cần chú ý. 
+Ví dụ: "Làm tốt lắm! Chú ý đọc rõ chữ 'technology' nhé!"`;
+
+        const completion = await activeGroq.chat.completions.create({
+          messages: [{ role: "user", content: prompt }],
+          model: "llama3-8b-8192",
+          temperature: 0.7,
+        });
+
+        if (completion.choices[0]?.message?.content) {
+          feedback = completion.choices[0].message.content.replace(/"/g, '').trim();
+        }
+      } catch (err) {
+        console.warn("Llama 3 feedback generation failed, using fallback.");
+        if (score < 60) feedback = "Cố gắng lên! Hãy nghe kỹ giọng mẫu và luyện tập phát âm rõ từng từ nhé.";
+        else if (score < 80) feedback = "Rất tốt! Phát âm khá rõ, chú ý giữ nhịp điệu trôi chảy hơn.";
+      }
+    } else if (score < 60) {
+      feedback = "Cố gắng lên! Hãy nghe kỹ giọng mẫu và luyện tập phát âm rõ từng từ nhé.";
     } else if (score < 80) {
-      feedback = "Rất tốt! Bạn phát âm khá rõ ràng, hãy chú ý giữ nhịp điệu trôi chảy hơn.";
+      feedback = "Rất tốt! Phát âm khá rõ, chú ý giữ nhịp điệu trôi chảy hơn.";
     }
 
     return {
