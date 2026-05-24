@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-type TabType = "overview" | "lesson" | "game" | "students" | "reports" | "rewards";
+type TabType = "overview" | "lesson" | "game" | "students" | "reports" | "rewards" | "schedule";
 type GameType = "race" | "quick" | "king" | "castle" | "team" | "spin";
 
 const MOCK_STUDENTS = [
@@ -57,6 +57,17 @@ export default function TeacherPortalPort() {
   const [searchStudent, setSearchStudent] = useState("");
   const [showToast, setShowToast] = useState("");
 
+  // Schedule State
+  const [scheduleSessions, setScheduleSessions] = useState<any[]>([]);
+  const [scheduleView, setScheduleView] = useState<"week"|"month">("week");
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const [schedClass, setSchedClass] = useState("7A3");
+  const [schedUnit, setSchedUnit] = useState("Unit 1: Hobbies");
+  const [schedDate, setSchedDate] = useState(new Date().toISOString().split('T')[0]);
+  const [schedStartTime, setSchedStartTime] = useState("08:00");
+  const [schedEndTime, setSchedEndTime] = useState("08:45");
+  const [schedNotes, setSchedNotes] = useState("");
+
   useEffect(() => {
     const saved = localStorage.getItem("gsa-teacher-students");
     if (saved) {
@@ -65,6 +76,10 @@ export default function TeacherPortalPort() {
     const hist = localStorage.getItem("gsa-rewards-history");
     if (hist) {
       try { setRewardHistory(JSON.parse(hist)); } catch(e){}
+    }
+    const sched = localStorage.getItem("gsa-teaching-sessions");
+    if (sched) {
+      try { setScheduleSessions(JSON.parse(sched)); } catch(e){}
     }
   }, []);
 
@@ -114,6 +129,28 @@ export default function TeacherPortalPort() {
     setSelectedStudents([]);
     setRewardAmount("");
     setRewardReason("");
+  };
+
+  const handleSaveSchedule = () => {
+    if (!schedClass || !schedUnit || !schedDate || !schedStartTime || !schedEndTime) {
+      alert("Vui lòng điền đủ thông tin.");
+      return;
+    }
+    const newSession = {
+      id: Date.now().toString(),
+      class_id: schedClass,
+      unit_id: schedUnit,
+      date: schedDate,
+      start_time: schedStartTime,
+      end_time: schedEndTime,
+      notes: schedNotes
+    };
+    const newSessions = [...scheduleSessions, newSession];
+    setScheduleSessions(newSessions);
+    localStorage.setItem("gsa-teaching-sessions", JSON.stringify(newSessions));
+    setShowToast("Đã thêm buổi dạy thành công!");
+    setTimeout(() => setShowToast(""), 3000);
+    setSchedNotes("");
   };
 
   // Race Game State
@@ -400,7 +437,7 @@ export default function TeacherPortalPort() {
             </div>
 
             <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-2 py-2 mt-2">Cài đặt</div>
-            <div className="flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer text-gray-600 hover:bg-gray-50 mb-0.5">
+            <div onClick={() => setActiveTab('schedule')} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer mb-0.5 transition-colors ${activeTab === 'schedule' ? 'bg-[#FAECE7] text-[#E63946]' : 'text-gray-600 hover:bg-gray-50'}`}>
               <Calendar className="w-4 h-4" /> Lịch dạy
             </div>
             <Link href="/dashboard" className="flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer text-blue-600 bg-blue-50 hover:bg-blue-100 font-medium mt-2">
@@ -1099,6 +1136,209 @@ export default function TeacherPortalPort() {
                           ))}
                         </div>
                       )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            
+            {/* SCHEDULE TAB */}
+            {activeTab === 'schedule' && (
+              <div className="animate-fade-in-up grid grid-cols-1 lg:grid-cols-3 gap-6 relative">
+                {/* Toast Notification */}
+                {showToast && (
+                  <div className="absolute top-0 right-0 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg font-bold flex items-center gap-2 animate-bounce z-50">
+                    <CheckCircle2 className="w-5 h-5" /> {showToast}
+                  </div>
+                )}
+                
+                {/* Cột Trái - Lịch (chiếm 2 cột) */}
+                <div className="lg:col-span-2 flex flex-col gap-4">
+                  {/* Toolbar */}
+                  <div className="flex items-center justify-between bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
+                    <div className="flex items-center gap-2">
+                      <button onClick={() => {
+                        const newDate = new Date(currentDate);
+                        newDate.setDate(currentDate.getDate() - 7);
+                        setCurrentDate(newDate);
+                      }} className="p-2 hover:bg-gray-100 rounded-lg text-gray-600 transition-colors">
+                        <ArrowLeft className="w-5 h-5" />
+                      </button>
+                      <span className="text-[14px] font-bold text-gray-800 w-32 text-center">
+                        Tuần này
+                      </span>
+                      <button onClick={() => {
+                        const newDate = new Date(currentDate);
+                        newDate.setDate(currentDate.getDate() + 7);
+                        setCurrentDate(newDate);
+                      }} className="p-2 hover:bg-gray-100 rounded-lg text-gray-600 transition-colors">
+                        <ArrowLeft className="w-5 h-5 rotate-180" />
+                      </button>
+                    </div>
+                    <div className="flex bg-gray-100 p-1 rounded-lg">
+                      <button onClick={() => setScheduleView('week')} className={`px-4 py-1.5 text-[12px] font-bold rounded-md transition-colors ${scheduleView === 'week' ? 'bg-white shadow-sm text-blue-600' : 'text-gray-500 hover:text-gray-700'}`}>
+                        Tuần
+                      </button>
+                      <button onClick={() => setScheduleView('month')} className={`px-4 py-1.5 text-[12px] font-bold rounded-md transition-colors ${scheduleView === 'month' ? 'bg-white shadow-sm text-blue-600' : 'text-gray-500 hover:text-gray-700'}`}>
+                        Tháng
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Calendar Grid */}
+                  <div className="bg-white rounded-xl border border-gray-200 p-1 shadow-sm flex-1 min-h-[500px]">
+                    {scheduleView === 'week' ? (
+                      <div className="grid grid-cols-7 h-full divide-x divide-gray-100">
+                        {["T2", "T3", "T4", "T5", "T6", "T7", "CN"].map((day, i) => (
+                          <div key={day} className="flex flex-col h-full min-h-[400px]">
+                            <div className="text-center py-2 border-b border-gray-100 bg-gray-50">
+                              <div className="text-[11px] font-bold text-gray-500 uppercase">{day}</div>
+                            </div>
+                            <div className="flex-1 p-1 space-y-2 relative bg-white">
+                              {scheduleSessions.map((sess, idx) => {
+                                const sDate = new Date(sess.date);
+                                const jsDay = sDate.getDay();
+                                const colIndex = jsDay === 0 ? 6 : jsDay - 1;
+                                
+                                if (colIndex === i) {
+                                  return (
+                                    <div key={sess.id} className={`p-2 rounded-lg border ${sess.class_id === '7A3' ? 'bg-blue-50 border-blue-200' : sess.class_id === '6A1' ? 'bg-amber-50 border-amber-200' : 'bg-purple-50 border-purple-200'} shadow-sm relative group animate-fade-in`}>
+                                      <div className="text-[10px] font-bold text-gray-500 mb-0.5 flex items-center gap-1">
+                                        <Clock className="w-3 h-3" /> {sess.start_time} - {sess.end_time}
+                                      </div>
+                                      <div className={`text-[12px] font-bold ${sess.class_id === '7A3' ? 'text-blue-700' : sess.class_id === '6A1' ? 'text-amber-700' : 'text-purple-700'} line-clamp-1`}>{sess.class_id}</div>
+                                      <div className="text-[10px] text-gray-600 line-clamp-1">{sess.unit_id}</div>
+                                    </div>
+                                  );
+                                }
+                                return null;
+                              })}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="flex flex-col items-center justify-center h-[500px] text-gray-400 text-[13px]">
+                        <Calendar className="w-12 h-12 text-gray-200 mb-4" />
+                        Chế độ xem tháng đang được hoàn thiện...
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Cột Phải - Form Thêm buổi dạy */}
+                <div className="flex flex-col gap-6">
+                  <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
+                    <h3 className="text-[15px] font-bold text-gray-800 mb-4 flex items-center gap-2">
+                      <Calendar className="w-5 h-5 text-blue-600" /> Thêm buổi dạy
+                    </h3>
+                    
+                    <div className="space-y-4">
+                      <div>
+                        <label className="block text-[12px] font-bold text-gray-700 mb-1">Chọn Lớp</label>
+                        <select 
+                          value={schedClass}
+                          onChange={(e) => setSchedClass(e.target.value)}
+                          className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-[13px] focus:outline-none focus:border-blue-500"
+                        >
+                          <option value="7A3">Lớp 7A3</option>
+                          <option value="6A1">Lớp 6A1</option>
+                          <option value="8B2">Lớp 8B2</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="block text-[12px] font-bold text-gray-700 mb-1">Chọn Unit (Nội dung)</label>
+                        <select 
+                          value={schedUnit}
+                          onChange={(e) => setSchedUnit(e.target.value)}
+                          className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-[13px] focus:outline-none focus:border-blue-500"
+                        >
+                          <option value="Unit 1: Hobbies">Unit 1: Hobbies</option>
+                          <option value="Unit 2: Healthy Living">Unit 2: Healthy Living</option>
+                          <option value="Unit 3: Community Service">Unit 3: Community Service</option>
+                          <option value="Review 1">Review 1</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="block text-[12px] font-bold text-gray-700 mb-1">Ngày dạy</label>
+                        <input 
+                          type="date"
+                          value={schedDate}
+                          onChange={(e) => setSchedDate(e.target.value)}
+                          className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-[13px] focus:outline-none focus:border-blue-500"
+                        />
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-[12px] font-bold text-gray-700 mb-1">Bắt đầu</label>
+                          <input 
+                            type="time"
+                            value={schedStartTime}
+                            onChange={(e) => setSchedStartTime(e.target.value)}
+                            className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-[13px] focus:outline-none focus:border-blue-500"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-[12px] font-bold text-gray-700 mb-1">Kết thúc</label>
+                          <input 
+                            type="time"
+                            value={schedEndTime}
+                            onChange={(e) => setSchedEndTime(e.target.value)}
+                            className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-[13px] focus:outline-none focus:border-blue-500"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-[12px] font-bold text-gray-700 mb-1">Ghi chú (Tùy chọn)</label>
+                        <textarea 
+                          value={schedNotes}
+                          onChange={(e) => setSchedNotes(e.target.value)}
+                          placeholder="Vd: Kiểm tra 15 phút đầu giờ..."
+                          className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-[13px] focus:outline-none focus:border-gray-400 resize-none h-[70px]"
+                        ></textarea>
+                      </div>
+
+                      <button 
+                        onClick={handleSaveSchedule}
+                        className="w-full bg-[#185FA5] hover:bg-[#134D86] text-white font-bold py-3 rounded-lg flex items-center justify-center gap-2 shadow-sm transition-colors"
+                      >
+                        <CheckCircle2 className="w-4 h-4" /> Lưu Lịch Dạy
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Thống kê */}
+                  <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
+                    <h3 className="text-[14px] font-bold text-gray-800 mb-4 flex items-center gap-2">
+                      <BarChart3 className="w-4 h-4 text-purple-600" /> Thống kê hoạt động
+                    </h3>
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-center pb-2 border-b border-gray-100">
+                        <span className="text-[12px] text-gray-600">Tuần này</span>
+                        <span className="text-[13px] font-bold text-gray-800">{scheduleSessions.filter(s => {
+                          const sd = new Date(s.date);
+                          const cd = new Date();
+                          return Math.abs(sd.getTime() - cd.getTime()) < 7 * 24 * 60 * 60 * 1000;
+                        }).length} buổi</span>
+                      </div>
+                      <div className="flex justify-between items-center pb-2 border-b border-gray-100">
+                        <span className="text-[12px] text-gray-600">Tháng này</span>
+                        <span className="text-[13px] font-bold text-gray-800">{scheduleSessions.filter(s => {
+                          const sd = new Date(s.date);
+                          const cd = new Date();
+                          return sd.getMonth() === cd.getMonth() && sd.getFullYear() === cd.getFullYear();
+                        }).length} buổi</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-[12px] text-gray-600">Unit dạy nhiều nhất</span>
+                        <span className="text-[12px] font-bold text-teal-600 max-w-[120px] truncate" title="Unit 1: Hobbies">
+                          {scheduleSessions.length > 0 ? "Unit 1: Hobbies" : "Chưa có"}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
