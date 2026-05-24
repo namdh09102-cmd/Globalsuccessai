@@ -106,8 +106,6 @@ export default function RightPanel() {
         
         {isLoggedIn ? (
           <>
-        {isLoggedIn ? (
-          <>
             {/* --- PRIMARY RIGHT PANEL --- */}
             {gradeLevel === "primary" && (
               <div className="space-y-4">
