@@ -292,8 +292,8 @@ export default function TeacherPortalPort() {
   }
 
   return (
-    <div className="h-[90vh] bg-[#F5F5F2] font-sans p-6 overflow-hidden flex items-center justify-center">
-      <div className="flex w-full max-w-[1200px] h-[750px] bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+    <div className="h-screen w-full bg-[#F5F5F2] font-sans overflow-hidden flex">
+      <div className="flex w-full h-full bg-white shadow-sm">
         
         {/* Sidebar */}
         <div className="w-[220px] bg-white border-r border-gray-200 flex flex-col shrink-0">
