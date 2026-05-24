@@ -141,7 +141,6 @@ export default function TeacherPortalPort() {
 
   const resetRace = () => {
     setPositions([10, 10, 10]);
-    setIsRacing(false);
     if (gameChannel) {
       gameChannel.send({
         type: "broadcast",
@@ -149,6 +148,146 @@ export default function TeacherPortalPort() {
       });
     }
   };
+
+  const [isTvMode, setIsTvMode] = useState(false);
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isTvMode) setIsTvMode(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isTvMode]);
+
+  if (isTvMode) {
+    return (
+      <div className="fixed inset-0 z-[100] bg-slate-950 flex flex-col overflow-hidden text-white font-sans select-none animate-fade-in-up">
+        {/* TV Header */}
+        <div className="flex items-center justify-between p-8 border-b border-slate-800 bg-slate-900/50">
+          <div className="flex items-center gap-4">
+            <div className="w-16 h-16 rounded-2xl bg-teal-500/20 flex items-center justify-center border border-teal-500/30">
+              <Tv className="w-8 h-8 text-teal-400" />
+            </div>
+            <div>
+              <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-indigo-400 uppercase tracking-widest">
+                GlobalSuccess AI
+              </h1>
+              <p className="text-slate-400 font-bold mt-1 text-lg">Chế độ Trình chiếu (Classroom Mode) · Lớp 7A3</p>
+            </div>
+          </div>
+          <button 
+            onClick={() => setIsTvMode(false)}
+            className="flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold transition-colors border border-slate-700"
+          >
+            Đóng [ESC]
+          </button>
+        </div>
+
+        {/* TV Content */}
+        <div className="flex-1 flex p-8 gap-8 relative">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-teal-500/5 rounded-full blur-[150px] pointer-events-none" />
+          
+          {/* Left Column: QR & Info */}
+          <div className="w-[450px] flex flex-col gap-8 shrink-0 z-10">
+            <div className="bg-slate-900/80 backdrop-blur-md rounded-3xl border border-slate-800 p-10 flex flex-col items-center justify-center text-center shadow-2xl h-[450px]">
+              <div className="w-64 h-64 bg-white rounded-3xl p-4 mb-8 shadow-lg shadow-teal-500/20 relative">
+                {/* Fake QR */}
+                <div className="w-full h-full bg-slate-100 rounded-xl flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 grid grid-cols-8 grid-rows-8 gap-1 p-3 opacity-80">
+                    {Array.from({length: 64}).map((_, i) => (
+                      <div key={i} className={`rounded-sm ${Math.random() > 0.4 ? 'bg-slate-900' : 'bg-transparent'}`} />
+                    ))}
+                  </div>
+                  <div className="relative w-16 h-16 bg-teal-500 rounded-2xl flex items-center justify-center shadow-xl border-4 border-white">
+                    <QrCode className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+              </div>
+              <h2 className="text-xl font-bold text-slate-400 uppercase tracking-widest mb-2">Mã Phòng / PIN</h2>
+              <div className="text-7xl font-black text-white tracking-[0.2em] font-mono drop-shadow-lg">
+                {roomPin || "----"}
+              </div>
+            </div>
+
+            <div className="flex-1 bg-slate-900/80 backdrop-blur-md rounded-3xl border border-slate-800 p-8 flex flex-col justify-center shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-2 h-full bg-indigo-500" />
+              <h3 className="text-slate-400 font-bold uppercase tracking-widest mb-4">Trạng Thái</h3>
+              <div className="flex items-end gap-4">
+                <span className="text-8xl font-black text-indigo-400 leading-none">{studentCount}</span>
+                <span className="text-2xl text-slate-500 font-bold mb-2">Học sinh đã vào</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Live Feed / Game Render */}
+          <div className="flex-1 bg-slate-900/80 backdrop-blur-md rounded-3xl border border-slate-800 p-8 shadow-2xl flex flex-col relative z-10 overflow-hidden">
+            <div className="flex items-center justify-between mb-8 pb-6 border-b border-slate-800">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-rose-500/20 rounded-xl flex items-center justify-center border border-rose-500/30">
+                  <Play className="w-6 h-6 text-rose-400" />
+                </div>
+                <h2 className="text-3xl font-black text-white">Live: {activeGame === 'race' ? "Đua Tên Lửa" : activeGame === 'quick' ? "Đấu Quick" : "Vua Lớp Học"}</h2>
+              </div>
+              
+              {!isRacing ? (
+                <button 
+                  onClick={startGame}
+                  disabled={!roomPin}
+                  className="px-8 py-4 rounded-2xl bg-teal-500 hover:bg-teal-400 disabled:bg-slate-800 disabled:text-slate-500 text-slate-950 font-black text-xl uppercase tracking-widest active:scale-95 transition-all shadow-lg shadow-teal-500/20"
+                >
+                  Bắt Đầu Trận
+                </button>
+              ) : (
+                <button 
+                  onClick={resetRace}
+                  className="px-8 py-4 rounded-2xl bg-rose-500 hover:bg-rose-400 text-white font-black text-xl uppercase tracking-widest active:scale-95 transition-all shadow-lg shadow-rose-500/20"
+                >
+                  Kết Thúc
+                </button>
+              )}
+            </div>
+
+            {/* Game Screen Replica inside TV */}
+            <div className="flex-1 rounded-2xl border-4 border-slate-800 bg-slate-950 p-12 flex flex-col justify-center relative">
+              {activeGame === 'race' ? (
+                <>
+                  {/* Race Track XL */}
+                  <div className="relative h-[300px] w-full">
+                    <div className="absolute left-0 right-0 top-[75px] h-2 bg-slate-800 rounded-full border border-slate-700"></div>
+                    <div className="absolute left-0 right-0 top-[150px] h-2 bg-slate-800 rounded-full border border-slate-700"></div>
+                    <div className="absolute left-0 right-0 top-[225px] h-2 bg-slate-800 rounded-full border border-slate-700"></div>
+                    <div className="absolute right-12 top-0 bottom-0 w-4 border-l-4 border-dashed border-white/20"></div>
+                    
+                    <div className="absolute text-7xl transition-all ease-linear duration-500" style={{ top: '35px', left: `${positions[0]}%`, transform: 'translateX(-50%)' }}>🚀</div>
+                    <div className="absolute text-7xl transition-all ease-linear duration-500" style={{ top: '110px', left: `${positions[1]}%`, transform: 'translateX(-50%)' }}>🛸</div>
+                    <div className="absolute text-7xl transition-all ease-linear duration-500" style={{ top: '185px', left: `${positions[2]}%`, transform: 'translateX(-50%)' }}>🚁</div>
+                  </div>
+
+                  <div className="flex justify-between gap-8 mt-12">
+                    <div className="flex-1 bg-slate-900 rounded-3xl p-8 text-center border-2 border-slate-800">
+                      <div className="text-xl text-slate-400 font-bold uppercase tracking-widest mb-4">Đội Tên Lửa</div>
+                      <div className="text-6xl font-black text-[#E63946]">{Math.round(positions[0])}%</div>
+                    </div>
+                    <div className="flex-1 bg-slate-900 rounded-3xl p-8 text-center border-2 border-slate-800">
+                      <div className="text-xl text-slate-400 font-bold uppercase tracking-widest mb-4">Đội Đĩa Bay</div>
+                      <div className="text-6xl font-black text-[#0F6E56]">{Math.round(positions[1])}%</div>
+                    </div>
+                    <div className="flex-1 bg-slate-900 rounded-3xl p-8 text-center border-2 border-slate-800">
+                      <div className="text-xl text-slate-400 font-bold uppercase tracking-widest mb-4">Đội Trực Thăng</div>
+                      <div className="text-6xl font-black text-[#534AB7]">{Math.round(positions[2])}%</div>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <div className="text-center text-slate-500 text-3xl font-bold">
+                  Tính năng TV cho game này đang được cấu hình...
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="h-[90vh] bg-[#F5F5F2] font-sans p-6 overflow-hidden flex items-center justify-center">
@@ -225,8 +364,11 @@ export default function TeacherPortalPort() {
               <div className="text-[12px] text-gray-500 flex items-center gap-1.5 bg-gray-100 px-3 py-1.5 rounded-full">
                 <Users className="w-3.5 h-3.5" /> Lớp 7A3 · 32 HS
               </div>
-              <button className="flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-gray-200 bg-white hover:bg-gray-50 text-[12px] font-bold text-gray-700 transition-colors">
-                <Tv className="w-4 h-4" /> Chiếu bảng
+              <button 
+                onClick={() => setIsTvMode(true)}
+                className="flex items-center gap-1.5 px-4 py-1.5 rounded-full border-2 border-teal-500 bg-teal-50 hover:bg-teal-100 text-[12px] font-bold text-teal-700 transition-colors shadow-sm"
+              >
+                <Tv className="w-4 h-4" /> Chiếu TV
               </button>
             </div>
           </div>
@@ -472,7 +614,7 @@ export default function TeacherPortalPort() {
 
                     <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
                       <div className="p-3 px-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
-                        <div className="text-[12px] font-bold text-gray-800 flex items-center gap-1.5"><Eye className="w-4 h-4" /> Xem trước trên TV</div>
+                        <div className="text-[12px] font-bold text-gray-800 flex items-center gap-1.5"><Eye className="w-4 h-4" /> Xem trước (Bấm 'Chiếu TV' để phóng to)</div>
                       </div>
                       <div className="p-4 bg-slate-900 relative">
                         {/* Race Track */}
