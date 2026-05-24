@@ -6,8 +6,9 @@ import { RealtimeChannel } from "@supabase/supabase-js";
 import { 
   LayoutDashboard, Sparkles, Gamepad2, Users, BarChart3, Award, Calendar, 
   BookOpen, Tv, Clock, ArrowUp, ArrowDown, Send, FileOutput, Settings,
-  Rocket, Zap, Crown, Landmark, RotateCcw, Play, Pause, Eye, QrCode, ArrowLeft
+  Rocket, Zap, Crown, Landmark, RotateCcw, Play, Pause, Eye, QrCode, ArrowLeft, PlayCircle
 } from "lucide-react";
+import Link from "next/link";
 
 type TabType = "overview" | "lesson" | "game" | "students" | "reports";
 type GameType = "race" | "quick" | "king" | "castle" | "team" | "spin";
@@ -332,6 +333,9 @@ export default function TeacherPortalPort() {
             <div className="flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer text-gray-600 hover:bg-gray-50 mb-0.5">
               <Calendar className="w-4 h-4" /> Lịch dạy
             </div>
+            <Link href="/dashboard" className="flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer text-blue-600 bg-blue-50 hover:bg-blue-100 font-medium mt-2">
+              <PlayCircle className="w-4 h-4" /> Trải nghiệm Học sinh
+            </Link>
           </div>
 
           <div className="p-3 border-t border-gray-200 flex items-center gap-2 bg-gray-50">
