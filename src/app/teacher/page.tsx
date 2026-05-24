@@ -6,11 +6,11 @@ import { RealtimeChannel } from "@supabase/supabase-js";
 import { 
   LayoutDashboard, Sparkles, Gamepad2, Users, BarChart3, Award, Calendar, 
   BookOpen, Tv, Clock, ArrowUp, ArrowDown, Send, FileOutput, Settings,
-  Rocket, Zap, Crown, Landmark, RotateCcw, Play, Pause, Eye, QrCode, ArrowLeft, PlayCircle
+  Rocket, Zap, Crown, Landmark, RotateCcw, Play, Pause, Eye, QrCode, ArrowLeft, PlayCircle, Search, CheckCircle2
 } from "lucide-react";
 import Link from "next/link";
 
-type TabType = "overview" | "lesson" | "game" | "students" | "reports";
+type TabType = "overview" | "lesson" | "game" | "students" | "reports" | "rewards";
 type GameType = "race" | "quick" | "king" | "castle" | "team" | "spin";
 
 const MOCK_STUDENTS = [
@@ -45,6 +45,76 @@ export default function TeacherPortalPort() {
   const [activities, setActivities] = useState<string[]>(["Từ vựng", "Nói", "Mini-game"]);
   const [isGenerating, setIsGenerating] = useState(false);
   const [aiOutput, setAiOutput] = useState<any>(null);
+
+  // Rewards State
+  const [students, setStudents] = useState(MOCK_STUDENTS);
+  const [rewardHistory, setRewardHistory] = useState<any[]>([]);
+  const [selectedStudents, setSelectedStudents] = useState<string[]>([]);
+  const [rewardType, setRewardType] = useState<"xp"|"diamond"|"badge">("xp");
+  const [rewardAmount, setRewardAmount] = useState<string>("");
+  const [rewardBadge, setRewardBadge] = useState<string>("Chiến thần Giao tiếp");
+  const [rewardReason, setRewardReason] = useState<string>("");
+  const [searchStudent, setSearchStudent] = useState("");
+  const [showToast, setShowToast] = useState("");
+
+  useEffect(() => {
+    const saved = localStorage.getItem("gsa-teacher-students");
+    if (saved) {
+      try { setStudents(JSON.parse(saved)); } catch(e){}
+    }
+    const hist = localStorage.getItem("gsa-rewards-history");
+    if (hist) {
+      try { setRewardHistory(JSON.parse(hist)); } catch(e){}
+    }
+  }, []);
+
+  const handleGiveReward = () => {
+    if (selectedStudents.length === 0) {
+      alert("Vui lòng chọn ít nhất 1 học sinh.");
+      return;
+    }
+    if (rewardType === "xp" || rewardType === "diamond") {
+      if (!rewardAmount || isNaN(Number(rewardAmount))) {
+        alert("Vui lòng nhập số lượng hợp lệ.");
+        return;
+      }
+    }
+
+    const amount = Number(rewardAmount);
+    
+    // Update students
+    const updated = students.map(s => {
+      if (selectedStudents.includes(s.id)) {
+        if (rewardType === "xp") return { ...s, xp: s.xp + amount };
+      }
+      return s;
+    });
+    setStudents(updated);
+    localStorage.setItem("gsa-teacher-students", JSON.stringify(updated));
+
+    // Update History
+    const selectedNames = updated.filter(s => selectedStudents.includes(s.id)).map(s => s.name).join(", ");
+    const newRecord = {
+      id: Date.now().toString(),
+      date: new Date().toLocaleDateString("vi-VN") + " " + new Date().toLocaleTimeString("vi-VN", { hour: '2-digit', minute: '2-digit' }),
+      studentNames: selectedNames,
+      type: rewardType,
+      amount: rewardType === "badge" ? rewardBadge : amount,
+      reason: rewardReason || "Không có lý do"
+    };
+
+    const newHistory = [newRecord, ...rewardHistory].slice(0, 20);
+    setRewardHistory(newHistory);
+    localStorage.setItem("gsa-rewards-history", JSON.stringify(newHistory));
+
+    setShowToast(`Đã trao thưởng cho ${selectedStudents.length} học sinh!`);
+    setTimeout(() => setShowToast(""), 3000);
+
+    // Reset form
+    setSelectedStudents([]);
+    setRewardAmount("");
+    setRewardReason("");
+  };
 
   // Race Game State
   const [isRacing, setIsRacing] = useState(false);
@@ -325,7 +395,7 @@ export default function TeacherPortalPort() {
             <div onClick={() => setActiveTab('reports')} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer mb-0.5 transition-colors ${activeTab === 'reports' ? 'bg-[#FAECE7] text-[#E63946]' : 'text-gray-600 hover:bg-gray-50'}`}>
               <BarChart3 className="w-4 h-4" /> Báo cáo Zalo
             </div>
-            <div className="flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer text-gray-600 hover:bg-gray-50 mb-0.5">
+            <div onClick={() => setActiveTab('rewards')} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer mb-0.5 transition-colors ${activeTab === 'rewards' ? 'bg-[#FAECE7] text-[#E63946]' : 'text-gray-600 hover:bg-gray-50'}`}>
               <Award className="w-4 h-4" /> Trao thưởng
             </div>
 
@@ -821,6 +891,214 @@ export default function TeacherPortalPort() {
                           </button>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            
+            {/* REWARDS TAB */}
+            {activeTab === 'rewards' && (
+              <div className="animate-fade-in-up grid grid-cols-1 md:grid-cols-2 gap-6 relative">
+                {/* Toast Notification */}
+                {showToast && (
+                  <div className="absolute top-0 right-0 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg font-bold flex items-center gap-2 animate-bounce z-50">
+                    <CheckCircle2 className="w-5 h-5" /> {showToast}
+                  </div>
+                )}
+                
+                {/* Cột Trái - Danh sách học sinh */}
+                <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm flex flex-col max-h-[700px]">
+                  <h3 className="text-[15px] font-bold text-gray-800 mb-4 flex items-center gap-2">
+                    <Users className="w-5 h-5 text-teal-600" /> Chọn học sinh
+                  </h3>
+                  <div className="relative mb-4">
+                    <Search className="w-4 h-4 absolute left-3 top-2.5 text-gray-400" />
+                    <input 
+                      type="text" 
+                      placeholder="Tìm kiếm học sinh..." 
+                      className="w-full pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-[13px] focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
+                      value={searchStudent}
+                      onChange={(e) => setSearchStudent(e.target.value)}
+                    />
+                  </div>
+                  
+                  <div className="flex items-center justify-between mb-2 px-1">
+                    <label className="flex items-center gap-2 text-[12px] font-bold text-gray-600 cursor-pointer">
+                      <input 
+                        type="checkbox" 
+                        className="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 cursor-pointer"
+                        checked={selectedStudents.length === students.length && students.length > 0}
+                        onChange={(e) => {
+                          if (e.target.checked) setSelectedStudents(students.map(s => s.id));
+                          else setSelectedStudents([]);
+                        }}
+                      />
+                      Chọn tất cả
+                    </label>
+                    <div className="text-[12px] text-gray-500">Đã chọn: <span className="font-bold text-teal-600">{selectedStudents.length}</span></div>
+                  </div>
+
+                  <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar space-y-2">
+                    {students.filter(s => s.name.toLowerCase().includes(searchStudent.toLowerCase())).map((student) => (
+                      <div 
+                        key={student.id} 
+                        onClick={() => {
+                          if (selectedStudents.includes(student.id)) setSelectedStudents(prev => prev.filter(id => id !== student.id));
+                          else setSelectedStudents(prev => [...prev, student.id]);
+                        }}
+                        className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-all ${selectedStudents.includes(student.id) ? 'border-teal-500 bg-teal-50 shadow-sm' : 'border-gray-100 hover:border-teal-300 hover:bg-gray-50'}`}
+                      >
+                        <input 
+                          type="checkbox" 
+                          className="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 pointer-events-none"
+                          checked={selectedStudents.includes(student.id)}
+                          readOnly
+                        />
+                        <div className={`w-9 h-9 rounded-full flex items-center justify-center text-[12px] font-bold shrink-0 ${
+                          student.status === 'green' ? 'bg-[#E1F5EE] text-[#0F6E56]' : 
+                          student.status === 'amber' ? 'bg-[#FAEEDA] text-[#BA7517]' : 
+                          'bg-[#FCEBEB] text-[#A32D2D]'
+                        }`}>
+                          {student.init}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="text-[13px] font-bold text-gray-800 truncate">{student.name}</div>
+                          <div className="text-[11px] text-gray-500">
+                            Level {Math.floor(student.xp / 1000) + 1}
+                          </div>
+                        </div>
+                        <div className="text-right shrink-0">
+                          <div className="text-[13px] font-bold text-[#BA7517] flex items-center gap-1 justify-end"><Zap className="w-3 h-3" /> {student.xp}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Cột Phải - Form trao thưởng */}
+                <div className="flex flex-col gap-6 max-h-[700px]">
+                  <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm shrink-0">
+                    <h3 className="text-[15px] font-bold text-gray-800 mb-4 flex items-center gap-2">
+                      <Award className="w-5 h-5 text-amber-500" /> Thông tin Phần thưởng
+                    </h3>
+                    
+                    <div className="flex bg-gray-100 p-1 rounded-lg mb-5">
+                      <button onClick={() => setRewardType('xp')} className={`flex-1 py-2 text-[12px] font-bold rounded-md transition-colors ${rewardType === 'xp' ? 'bg-white shadow-sm text-amber-600' : 'text-gray-500 hover:text-gray-700'}`}>
+                        + Điểm XP
+                      </button>
+                      <button onClick={() => setRewardType('diamond')} className={`flex-1 py-2 text-[12px] font-bold rounded-md transition-colors ${rewardType === 'diamond' ? 'bg-white shadow-sm text-blue-600' : 'text-gray-500 hover:text-gray-700'}`}>
+                        + Kim cương
+                      </button>
+                      <button onClick={() => setRewardType('badge')} className={`flex-1 py-2 text-[12px] font-bold rounded-md transition-colors ${rewardType === 'badge' ? 'bg-white shadow-sm text-purple-600' : 'text-gray-500 hover:text-gray-700'}`}>
+                        Tặng Huy hiệu
+                      </button>
+                    </div>
+
+                    {rewardType === 'xp' && (
+                      <div className="mb-4 animate-fade-in-up">
+                        <label className="block text-[12px] font-bold text-gray-700 mb-2">Số lượng XP</label>
+                        <input 
+                          type="number" 
+                          value={rewardAmount}
+                          onChange={(e) => setRewardAmount(e.target.value)}
+                          placeholder="Nhập số XP..." 
+                          className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-[14px] font-bold text-amber-600 focus:outline-none focus:border-amber-500"
+                        />
+                        <div className="flex gap-2 mt-2">
+                          {[50, 100, 200, 500].map(val => (
+                            <button key={val} onClick={() => setRewardAmount(val.toString())} className="px-3 py-1 bg-amber-50 text-amber-700 border border-amber-200 rounded text-[11px] font-bold hover:bg-amber-100">
+                              +{val}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {rewardType === 'diamond' && (
+                      <div className="mb-4 animate-fade-in-up">
+                        <label className="block text-[12px] font-bold text-gray-700 mb-2">Số Kim cương</label>
+                        <input 
+                          type="number" 
+                          value={rewardAmount}
+                          onChange={(e) => setRewardAmount(e.target.value)}
+                          placeholder="Nhập số kim cương..." 
+                          className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-[14px] font-bold text-blue-600 focus:outline-none focus:border-blue-500"
+                        />
+                        <div className="flex gap-2 mt-2">
+                          {[5, 10, 20, 50].map(val => (
+                            <button key={val} onClick={() => setRewardAmount(val.toString())} className="px-3 py-1 bg-blue-50 text-blue-700 border border-blue-200 rounded text-[11px] font-bold hover:bg-blue-100">
+                              +{val}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {rewardType === 'badge' && (
+                      <div className="mb-4 animate-fade-in-up">
+                        <label className="block text-[12px] font-bold text-gray-700 mb-2">Chọn Huy hiệu</label>
+                        <select 
+                          value={rewardBadge}
+                          onChange={(e) => setRewardBadge(e.target.value)}
+                          className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-[13px] font-bold text-purple-700 focus:outline-none focus:border-purple-500"
+                        >
+                          {["Chiến thần Giao tiếp", "Vua Từ vựng", "Chuyên gia Ngữ pháp", "Cao thủ Nghe", "Thợ săn Điểm số", "Thần đồng Phát âm", "Ngôi sao Chăm chỉ", "Kỷ luật Thép", "Bậc thầy Tốc độ"].map(b => (
+                            <option key={b} value={b}>{b}</option>
+                          ))}
+                        </select>
+                      </div>
+                    )}
+
+                    <div className="mb-5">
+                      <label className="block text-[12px] font-bold text-gray-700 mb-2">Lý do trao thưởng</label>
+                      <textarea 
+                        value={rewardReason}
+                        onChange={(e) => setRewardReason(e.target.value)}
+                        placeholder="Vd: Phát âm xuất sắc tuần này..."
+                        className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-[13px] focus:outline-none focus:border-gray-400 resize-none h-[80px]"
+                      ></textarea>
+                    </div>
+
+                    <button 
+                      onClick={handleGiveReward}
+                      className="w-full bg-[#E63946] hover:bg-[#D92B38] text-white font-bold py-3 rounded-lg flex items-center justify-center gap-2 shadow-sm transition-colors"
+                    >
+                      <Send className="w-4 h-4" /> Trao thưởng
+                    </button>
+                  </div>
+
+                  {/* Lịch sử Trao thưởng */}
+                  <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm flex-1 flex flex-col min-h-0">
+                    <h3 className="text-[14px] font-bold text-gray-800 mb-3 flex items-center justify-between">
+                      Lịch sử gần đây
+                      <span className="text-[11px] font-normal text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">{rewardHistory.length} bản ghi</span>
+                    </h3>
+                    <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
+                      {rewardHistory.length === 0 ? (
+                        <div className="text-center py-8 text-gray-400 text-[12px] italic">Chưa có dữ liệu trao thưởng.</div>
+                      ) : (
+                        <div className="space-y-3">
+                          {rewardHistory.map(record => (
+                            <div key={record.id} className="border-l-2 border-amber-400 pl-3 py-1">
+                              <div className="flex justify-between items-start mb-1">
+                                <div className="text-[12px] font-bold text-gray-800 line-clamp-1">{record.studentNames}</div>
+                                <div className="text-[10px] text-gray-400 shrink-0 ml-2">{record.date}</div>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${
+                                  record.type === 'xp' ? 'bg-amber-100 text-amber-700' :
+                                  record.type === 'diamond' ? 'bg-blue-100 text-blue-700' :
+                                  'bg-purple-100 text-purple-700'
+                                }`}>
+                                  {record.type === 'xp' ? `+${record.amount} XP` : record.type === 'diamond' ? `+${record.amount} Kim cương` : `Huy hiệu: ${record.amount}`}
+                                </span>
+                                <span className="text-[11px] text-gray-600 truncate">{record.reason}</span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
