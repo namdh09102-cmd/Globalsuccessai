@@ -1141,25 +1141,72 @@ export default function Dashboard() {
           </div>
 
           {/* Greeting Card */}
-          <div className="bg-white border-[2px] border-[#FFB347] rounded-[18px] p-4 flex items-center gap-4 animate-fade-in-up shadow-md">
-            {/* Mascot Avatar */}
-            <div className="w-[56px] h-[56px] rounded-full border-[3px] border-[#FFD166] bg-[#FF6B6B] flex items-center justify-center shrink-0 animate-bounce-custom">
-              <span className="text-3xl leading-none">🦖</span>
-            </div>
+          {(() => {
+            const isHigh = ["Lớp 10", "Lớp 11", "Lớp 12"].includes(activeGrade);
+            const isMiddle = ["Lớp 6", "Lớp 7", "Lớp 8", "Lớp 9"].includes(activeGrade);
+            
+            if (isHigh) {
+              return (
+                <div className="bg-white border border-[rgba(0,0,0,0.1)] rounded-[12px] p-5 flex items-center gap-4 shadow-sm animate-fade-in-up">
+                  <div className="w-[50px] h-[50px] rounded-[10px] bg-primary/10 flex items-center justify-center shrink-0">
+                    <span className="text-2xl leading-none">🎯</span>
+                  </div>
+                  <div className="flex-1 flex flex-col items-start gap-1">
+                    <h2 className="text-text-head font-inter font-black text-[18px] leading-tight tracking-tight">
+                      Chào {fullName}!
+                    </h2>
+                    <p className="text-text-muted font-inter font-medium text-[13px] leading-tight">
+                      Tiếp tục lộ trình luyện thi nhé?
+                    </p>
+                    <div className="mt-1 bg-primary/10 text-primary-dark font-inter font-bold text-[11px] px-2.5 py-1 rounded-[6px] inline-flex items-center">
+                      <Flame className="w-3.5 h-3.5 mr-1" /> {stats.streak} ngày liên tiếp
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+            
+            if (isMiddle) {
+              return (
+                <div className="bg-white border-[1.5px] border-primary/20 rounded-[16px] p-4 flex items-center gap-4 shadow-sm animate-fade-in-up">
+                  <div className="w-[50px] h-[50px] rounded-full bg-gradient-to-tr from-primary to-primary-light flex items-center justify-center shrink-0">
+                    <span className="text-2xl leading-none text-white font-black">KT</span>
+                  </div>
+                  <div className="flex-1 flex flex-col items-start gap-1">
+                    <h2 className="text-primary-dark font-nunito font-black text-[18px] leading-tight">
+                      Hi {fullName}! 👋
+                    </h2>
+                    <p className="text-text-body font-nunito font-bold text-[13px] leading-tight">
+                      Sẵn sàng chinh phục bảng xếp hạng chưa?
+                    </p>
+                    <div className="mt-1 bg-xp-light border border-xp text-xp-text font-nunito font-bold text-[11px] px-3 py-1 rounded-[8px] inline-flex items-center">
+                      🔥 {stats.streak} day streak
+                    </div>
+                  </div>
+                </div>
+              );
+            }
 
-            {/* Greeting Content */}
-            <div className="flex-1 flex flex-col items-start gap-1">
-              <h2 className="text-[#C0392B] font-fredoka text-[18px] leading-tight">
-                Chào {fullName}! 🎉
-              </h2>
-              <p className="text-[#E67E22] font-nunito font-bold text-[13px] leading-tight">
-                Hôm nay mình học gì nào?
-              </p>
-              <div className="mt-1 bg-[#FFD166] text-[#7A4F00] font-nunito font-extrabold text-[11px] px-3 py-1 rounded-full inline-flex items-center shadow-sm">
-                🔥 {stats.streak} ngày liên tiếp — Tuyệt vời!
+            // Primary
+            return (
+              <div className="bg-white border-[2px] border-[#FFB347] rounded-[18px] p-4 flex items-center gap-4 animate-fade-in-up shadow-md">
+                <div className="w-[56px] h-[56px] rounded-full border-[3px] border-[#FFD166] bg-[#FF6B6B] flex items-center justify-center shrink-0 animate-bounce-custom">
+                  <span className="text-3xl leading-none">🦖</span>
+                </div>
+                <div className="flex-1 flex flex-col items-start gap-1">
+                  <h2 className="text-[#C0392B] font-fredoka text-[18px] leading-tight">
+                    Chào {fullName}! 🎉
+                  </h2>
+                  <p className="text-[#E67E22] font-nunito font-bold text-[13px] leading-tight">
+                    Hôm nay mình học gì nào?
+                  </p>
+                  <div className="mt-1 bg-[#FFD166] text-[#7A4F00] font-nunito font-extrabold text-[11px] px-3 py-1 rounded-full inline-flex items-center shadow-sm">
+                    🔥 {stats.streak} ngày liên tiếp — Tuyệt vời!
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+            );
+          })()}
 
           {/* Learning Methods Bento Grid */}
           <div className="space-y-4">
@@ -1358,7 +1405,7 @@ export default function Dashboard() {
 
                       <div className="flex items-center justify-between">
                         <div className="flex-1 mr-2">
-                          <div className="h-1.5 bg-page rounded-full overflow-hidden shadow-inner border border-slate-300/50">
+                          <div className="h-1.5 bg-gray-200 rounded-full overflow-hidden shadow-inner border border-gray-300">
                             <div 
                               className="h-full rounded-full transition-all duration-500"
                               style={{ 
@@ -1367,13 +1414,19 @@ export default function Dashboard() {
                               }}
                             />
                           </div>
-                          <span className="text-[7px] text-text-muted font-bold mt-0.5 block">{unit.progress}% • {unit.lessons.length} bài</span>
+                          <span className="text-[9px] text-text-muted font-bold mt-1 block">{unit.progress}% • {unit.lessons.length} bài</span>
                         </div>
-                        <div className={`w-6 h-6 rounded-full flex items-center justify-center transition-all ${
-                          isSelected ? "bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] text-white" : "bg-page text-text-body group-hover:bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)]/30 group-hover:text-primary"
-                        }`}>
-                          {unit.status === "locked" ? <Lock className="w-3 h-3" /> : <ChevronRight className="w-3 h-3" />}
-                        </div>
+                        {unit.status === "locked" ? (
+                          <div className="w-6 h-6 rounded-full bg-gray-200 text-gray-400 flex items-center justify-center shrink-0 border border-gray-300 shadow-sm">
+                            <Lock className="w-3 h-3" />
+                          </div>
+                        ) : (
+                          <div className={`w-6 h-6 rounded-full flex items-center justify-center transition-all shrink-0 ${
+                            isSelected ? "bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)]" : "bg-page text-text-body group-hover:bg-primary border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)]/30 group-hover:text-white"
+                          }`}>
+                            <ChevronRight className="w-3 h-3" />
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
