@@ -2,18 +2,46 @@
 
 import React, { useState, useEffect } from "react";
 import { 
-  Home,
-  BookOpen, 
-  Mic, 
-  Trophy,
-  Medal,
-  UserCircle,
-  Gamepad2
+  Home, BookOpen, Mic, Gamepad2, Star, Trophy, User, LayoutDashboard, Target, Activity
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function Sidebar() {
+// Export this so other components (like mobile bottom nav) can use the same logic
+export const getUnifiedNavigation = (gradeLevel: string) => {
+  if (gradeLevel === "high") {
+    return [
+      { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
+      { name: "Học", href: "/learn", icon: BookOpen },
+      { name: "Speaking", href: "/ai-practice", icon: Mic },
+      { name: "IELTS", href: "/learn/ielts", icon: Target },
+      { name: "Kỹ năng", href: "/skills", icon: Activity },
+      { name: "Tài khoản", href: "/profile", icon: User },
+    ];
+  }
+  
+  if (gradeLevel === "middle") {
+    return [
+      { name: "Home", href: "/dashboard", icon: Home },
+      { name: "Học bài", href: "/learn", icon: BookOpen },
+      { name: "Luyện nói", href: "/ai-practice", icon: Mic },
+      { name: "Trò đấu", href: "/games", icon: Gamepad2 },
+      { name: "Rank", href: "/history", icon: Trophy },
+      { name: "Hồ sơ", href: "/profile", icon: User },
+    ];
+  }
+
+  // Default: primary (KIDS)
+  return [
+    { name: "Nhà", href: "/dashboard", icon: Home },
+    { name: "Học", href: "/learn", icon: BookOpen },
+    { name: "Nói", href: "/ai-practice", icon: Mic },
+    { name: "Games", href: "/games", icon: Gamepad2 },
+    { name: "Sao", href: "/profile", icon: Star },
+  ];
+};
+
+export default function UnifiedSidebar() {
   const pathname = usePathname() || "/";
   const [gradeLevel, setGradeLevel] = useState("primary");
 
@@ -36,51 +64,19 @@ export default function Sidebar() {
     };
   }, []);
 
-  const getNavigation = () => {
-    if (gradeLevel === "high") {
-      return [
-        { name: "Dashboard", href: "/dashboard", icon: require("lucide-react").LayoutDashboard },
-        { name: "Học", href: "/learn", icon: BookOpen },
-        { name: "Speaking", href: "/ai-practice", icon: Mic },
-        { name: "Kỹ năng", href: "/skills", icon: require("lucide-react").Activity },
-        { name: "Tài khoản", href: "/profile", icon: require("lucide-react").User },
-      ];
-    }
-    
-    if (gradeLevel === "middle") {
-      return [
-        { name: "Home", href: "/dashboard", icon: Home },
-        { name: "Học bài", href: "/learn", icon: BookOpen },
-        { name: "Luyện nói", href: "/ai-practice", icon: Mic },
-        { name: "Thi đua", href: "/games", icon: require("lucide-react").Gamepad2 },
-        { name: "Rank", href: "/history", icon: Trophy },
-        { name: "Hồ sơ", href: "/profile", icon: require("lucide-react").User },
-      ];
-    }
-
-    return [
-      { name: "Nhà", href: "/dashboard", icon: Home },
-      { name: "Học", href: "/learn", icon: BookOpen },
-      { name: "Nói", href: "/ai-practice", icon: Mic },
-      { name: "Chơi", href: "/games", icon: require("lucide-react").Gamepad2 },
-      { name: "Sao", href: "/profile", icon: require("lucide-react").Star },
-    ];
-  };
-
-  const navigation = getNavigation();
+  const navigation = getUnifiedNavigation(gradeLevel);
 
   return (
     <aside className={`shrink-0 bg-sidebar flex flex-col h-full overflow-hidden select-none z-10 hidden md:flex border-r-2 border-primary-dark ${gradeLevel === "high" ? "w-[90px]" : gradeLevel === "middle" ? "w-[80px]" : "w-[72px]"}`}>
       <nav className="flex-1 px-1 py-4 space-y-2 overflow-y-auto custom-scrollbar flex flex-col items-center">
         {navigation.map((item) => {
           const Icon = item.icon;
-          const isActive = item.href.startsWith("#")
-            ? false
-            : item.href === "/"
-            ? pathname === "/"
+          // Exact match for root-like paths, startsWith for others
+          const isActive = item.href === "/dashboard" 
+            ? pathname === "/dashboard"
             : pathname.startsWith(item.href);
 
-          // Dynamic styling based on grade
+          // Dynamic styling based on grade theme
           const activeBg = gradeLevel === "high" ? "bg-white/10" : "bg-white/25 slide-highlight";
           const hoverBg = gradeLevel === "high" ? "hover:bg-white/5" : "hover:bg-white/15";
           const widthClass = gradeLevel === "high" ? "w-[75px]" : gradeLevel === "middle" ? "w-[68px]" : "w-[60px]";

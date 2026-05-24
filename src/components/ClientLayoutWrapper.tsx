@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import Sidebar from "@/components/Sidebar";
+import UnifiedSidebar, { getUnifiedNavigation } from "@/components/UnifiedSidebar";
 import RightPanel from "@/components/RightPanel";
 import LevelUpModal from "@/components/LevelUpModal";
 import { AlertTriangle, Wrench, Home, BookOpen, Mic, Trophy, User } from "lucide-react";
@@ -217,35 +217,7 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
 
   const getBottomNavItems = () => {
     const level = currentUser?.gradeLevel || "primary";
-    
-    if (level === "high") {
-      return [
-        { name: "Dashboard", href: "/dashboard", icon: require("lucide-react").LayoutDashboard },
-        { name: "Học", href: "/learn", icon: BookOpen },
-        { name: "Speaking", href: "/ai-practice", icon: Mic },
-        { name: "Kỹ năng", href: "/skills", icon: require("lucide-react").BarChart },
-        { name: "Tài khoản", href: "/profile", icon: require("lucide-react").User },
-      ];
-    }
-    
-    if (level === "middle") {
-      return [
-        { name: "Home", href: "/dashboard", icon: Home },
-        { name: "Học bài", href: "/learn", icon: BookOpen },
-        { name: "Luyện nói", href: "/ai-practice", icon: Mic },
-        { name: "Rank", href: "/history", icon: Trophy },
-        { name: "Hồ sơ", href: "/profile", icon: require("lucide-react").User },
-      ];
-    }
-
-    // Default primary
-    return [
-      { name: "Nhà", href: "/dashboard", icon: Home },
-      { name: "Học", href: "/learn", icon: BookOpen },
-      { name: "Nói", href: "/ai-practice", icon: Mic },
-      { name: "Chơi", href: "/games", icon: require("lucide-react").Gamepad2 },
-      { name: "Sao", href: "/profile", icon: require("lucide-react").Star },
-    ];
+    return getUnifiedNavigation(level);
   };
 
   const bottomNavItems = getBottomNavItems();
@@ -340,7 +312,7 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
       <TopNavbar />
 
       <div className="flex-1 flex overflow-hidden relative w-full">
-        <Sidebar />
+        <UnifiedSidebar />
         
         <main className="flex-1 min-w-0 h-full overflow-y-auto custom-scrollbar bg-page" style={{ padding: "20px", paddingBottom: "100px" }}>
           {children}
