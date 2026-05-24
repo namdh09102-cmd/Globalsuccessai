@@ -381,24 +381,7 @@ export default function TeacherPortalPort() {
             </div>
           </div>
 
-          {/* Tab Headers */}
-          <div className="flex px-6 bg-white border-b border-gray-200 shrink-0">
-            <div onClick={() => setActiveTab('overview')} className={`flex items-center gap-1.5 px-4 py-2.5 text-[13px] font-medium cursor-pointer border-b-2 transition-colors ${activeTab === 'overview' ? 'border-[#E63946] text-[#E63946]' : 'border-transparent text-gray-500 hover:text-gray-800'}`}>
-              <LayoutDashboard className="w-4 h-4" /> Tổng quan
-            </div>
-            <div onClick={() => setActiveTab('lesson')} className={`flex items-center gap-1.5 px-4 py-2.5 text-[13px] font-medium cursor-pointer border-b-2 transition-colors ${activeTab === 'lesson' ? 'border-[#E63946] text-[#E63946]' : 'border-transparent text-gray-500 hover:text-gray-800'}`}>
-              <Sparkles className="w-4 h-4" /> Soạn giáo án
-            </div>
-            <div onClick={() => setActiveTab('game')} className={`flex items-center gap-1.5 px-4 py-2.5 text-[13px] font-medium cursor-pointer border-b-2 transition-colors ${activeTab === 'game' ? 'border-[#E63946] text-[#E63946]' : 'border-transparent text-gray-500 hover:text-gray-800'}`}>
-              <Gamepad2 className="w-4 h-4" /> Tạo game
-            </div>
-            <div onClick={() => setActiveTab('students')} className={`flex items-center gap-1.5 px-4 py-2.5 text-[13px] font-medium cursor-pointer border-b-2 transition-colors ${activeTab === 'students' ? 'border-[#E63946] text-[#E63946]' : 'border-transparent text-gray-500 hover:text-gray-800'}`}>
-              <Users className="w-4 h-4" /> Học sinh
-            </div>
-            <div onClick={() => setActiveTab('reports')} className={`flex items-center gap-1.5 px-4 py-2.5 text-[13px] font-medium cursor-pointer border-b-2 transition-colors ${activeTab === 'reports' ? 'border-[#E63946] text-[#E63946]' : 'border-transparent text-gray-500 hover:text-gray-800'}`}>
-              <BarChart3 className="w-4 h-4" /> Báo cáo
-            </div>
-          </div>
+
 
           {/* Scrollable Content */}
           <div className="flex-1 overflow-y-auto p-6">
