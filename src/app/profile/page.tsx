@@ -37,9 +37,9 @@ export default function ProfilePage() {
 
   // 1. Quản lý thông tin hồ sơ
   const [profile, setProfile] = useState<UserProfile>({
-    fullName: "Khánh Tân",
-    school: "THPT Chuyên Nguyễn Huệ",
-    grade: "Lớp 11"
+    fullName: "Học viên",
+    school: "Chưa cập nhật",
+    grade: "Lớp 1"
   });
 
   // 2. Quản lý chỉ số stats học sinh
@@ -86,6 +86,18 @@ export default function ProfilePage() {
       try {
         setProfile(JSON.parse(storedProfile));
       } catch (e) {}
+    } else {
+      const storedUser = localStorage.getItem("gsa-current-user");
+      if (storedUser) {
+        try {
+          const u = JSON.parse(storedUser);
+          setProfile({
+            fullName: u.name || "Học viên",
+            school: "Chưa cập nhật",
+            grade: u.gradeLevel === "high" ? "Lớp 10" : u.gradeLevel === "middle" ? "Lớp 6" : "Lớp 1"
+          });
+        } catch(e){}
+      }
     }
 
     // C. Tính toán/Đồng bộ điểm số kỹ năng từ kết quả thực tế
@@ -166,15 +178,11 @@ export default function ProfilePage() {
     if (gradeNum >= 10 && gradeNum <= 12) newGradeLevel = "high";
 
     const storedUserStr = localStorage.getItem("gsa-current-user");
-    if (storedUserStr) {
-      try {
-        const u = JSON.parse(storedUserStr);
-        u.gradeLevel = newGradeLevel;
-        if (profile.fullName) u.name = profile.fullName;
-        localStorage.setItem("gsa-current-user", JSON.stringify(u));
-        window.dispatchEvent(new Event("auth-changed")); // triggers theme update
-      } catch(e){}
-    }
+    let u = storedUserStr ? JSON.parse(storedUserStr) : { id: "GUEST", role: "student", tier: "free" };
+    u.gradeLevel = newGradeLevel;
+    if (profile.fullName) u.name = profile.fullName;
+    localStorage.setItem("gsa-current-user", JSON.stringify(u));
+    window.dispatchEvent(new Event("auth-changed")); // triggers theme update
 
     // Phát sự kiện cập nhật để RightPanel / Sidebar nhận biết thay đổi nếu cần
     window.dispatchEvent(new Event("profile-updated"));
