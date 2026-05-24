@@ -1310,6 +1310,7 @@ export default function Dashboard() {
                     <ChevronRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
+                </div>
               </div>
             </div>
           )}
