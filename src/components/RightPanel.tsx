@@ -28,6 +28,7 @@ interface StudentStats {
 export default function RightPanel() {
   const [stats, setStats] = useState<StudentStats>({ xp: 0, diamonds: 0, streak: 0 });
   const [fullName, setFullName] = useState("Học viên");
+  const [gradeLevel, setGradeLevel] = useState("primary");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const loadStats = () => {
@@ -57,6 +58,7 @@ export default function RightPanel() {
       if (currentUserStr) {
         try {
           const parsed = JSON.parse(currentUserStr);
+          if (parsed.gradeLevel) setGradeLevel(parsed.gradeLevel);
           if (parsed.name) {
             setFullName(parsed.name);
             setIsLoggedIn(true);
@@ -104,150 +106,188 @@ export default function RightPanel() {
         
         {isLoggedIn ? (
           <>
-            {/* Section 1: Nhiệm vụ */}
-            <div className="space-y-4">
-              <h3 className="text-[14px] font-black text-text-muted uppercase tracking-widest font-fredoka flex items-center gap-2">
-                <Medal className="w-5 h-5 text-success" />
-                Nhiệm Vụ Hôm Nay
-              </h3>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-[10px]">
-                {/* Blue Task (Simulate interaction) */}
-                <div 
-                  onClick={() => {
-                    if (typeof window !== "undefined") {
-                      (window as any).audioManager?.play('correctAnswer');
-                      (window as any).audioManager?.play('xpEarned');
-                      const e = document.getElementById('blue-task');
-                      e?.classList.remove('flash-green');
-                      void e?.offsetWidth; // trigger reflow
-                      e?.classList.add('flash-green');
-                      
-                      const xp = document.getElementById('blue-xp-float');
-                      xp?.classList.remove('hidden', 'float-up-fade');
-                      void xp?.offsetWidth;
-                      xp?.classList.add('float-up-fade');
-                      setTimeout(() => xp?.classList.add('hidden'), 1000);
-                    }
-                  }}
-                  id="blue-task"
-                  className="mission-card-study relative rounded-[16px] p-[12px_14px] flex flex-col gap-2 group cursor-pointer transition-transform shadow-sm active:scale-95"
-                >
-                  <div className="text-[32px] mission-icon" style={{ animationDelay: '0s' }}>📘</div>
-                  <div className="space-y-1 mt-1">
-                    <span className="text-[10px] font-nunito font-extrabold uppercase text-[#4ECDC4]">Bài học</span>
-                    <p className="text-[13px] font-nunito font-bold text-[#333] leading-[1.3]">Hoàn thành 1 bài SGK</p>
+        {isLoggedIn ? (
+          <>
+            {/* --- PRIMARY RIGHT PANEL --- */}
+            {gradeLevel === "primary" && (
+              <div className="space-y-4">
+                {/* Bảng Vàng (Leaderboard) */}
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2">
+                    <Trophy className="w-5 h-5 text-xp-dark" />
+                    <h3 className="text-[14px] font-black text-text-muted uppercase tracking-widest font-fredoka">
+                      Bảng Vàng
+                    </h3>
                   </div>
-                  <div className="mt-auto pt-2 w-full h-[7px] bg-[#E0E0E0] rounded-[999px] overflow-hidden">
-                    <div className="h-full bg-[#4ECDC4] w-full transition-all duration-1000" />
-                  </div>
-                  {/* Floating XP */}
-                  <div id="blue-xp-float" className="absolute top-0 right-4 text-emerald-500 font-fredoka text-lg hidden pointer-events-none z-10">+20 XP</div>
-                  {/* Badge Done */}
-                  <div className="absolute top-2 right-2 bg-[#6BCB77] text-white text-[9px] font-nunito font-extrabold px-1.5 py-0.5 rounded-[10px] shadow-sm flex items-center gap-1">
-                    <svg className="w-2.5 h-2.5 draw-checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    Xong!
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between bg-white border-2 border-[#FFE4B5] rounded-[16px] p-2.5 shadow-sm">
+                      <div className="flex items-center gap-2">
+                        <div className="w-6 h-6 rounded-full bg-[#FF6B6B] text-white flex items-center justify-center font-black text-[10px]">1</div>
+                        <span className="text-[12px] font-nunito font-bold text-[#555]">Minh Anh</span>
+                      </div>
+                      <span className="text-[12px] font-nunito font-extrabold text-[#E67E22]">3,660</span>
+                    </div>
+                    <div className="flex items-center justify-between bg-white border-2 border-[#FFE4B5] rounded-[16px] p-2.5 shadow-sm">
+                      <div className="flex items-center gap-2">
+                        <div className="w-6 h-6 rounded-full bg-[#4ECDC4] text-white flex items-center justify-center font-black text-[10px]">2</div>
+                        <span className="text-[12px] font-nunito font-bold text-[#555]">Bảo Trâm</span>
+                      </div>
+                      <span className="text-[12px] font-nunito font-extrabold text-[#E67E22]">2,460</span>
+                    </div>
+                    <div className="flex items-center justify-between bg-[#FFD166] border-2 border-[#FFB347] rounded-[16px] p-2.5 shadow-sm">
+                      <div className="flex items-center gap-2">
+                        <div className="w-6 h-6 rounded-full bg-[#C0392B] text-white flex items-center justify-center font-black text-[10px]">6</div>
+                        <span className="text-[12px] font-nunito font-bold text-[#555]">Mình</span>
+                      </div>
+                      <span className="text-[12px] font-nunito font-extrabold text-[#E67E22]">{stats.xp.toLocaleString()}</span>
+                    </div>
                   </div>
                 </div>
 
-                {/* Pink Task */}
-                <div className="mission-card-speak relative rounded-[16px] p-[12px_14px] flex flex-col gap-2 group hover:-translate-y-1 transition-transform shadow-sm">
-                  <div className="text-[32px] mission-icon" style={{ animationDelay: '0.4s' }}>🎙️</div>
-                  <div className="space-y-1 mt-1">
-                    <span className="text-[10px] font-nunito font-extrabold uppercase text-[#FF6B9D]">Luyện nói</span>
-                    <p className="text-[13px] font-nunito font-bold text-[#333] leading-[1.3]">Luyện âm cùng AI</p>
+                {/* Nhạc Học */}
+                <div className="bg-[#FFF8DC] border-2 border-[#FFE4B5] rounded-[16px] p-4 shadow-sm mt-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Volume2 className="w-4 h-4 text-[#F0A500]" />
+                    <h3 className="text-[12px] font-black text-text-muted uppercase font-fredoka">
+                      Nhạc học
+                    </h3>
                   </div>
-                  <div className="mt-auto pt-2 w-full h-[7px] bg-[#E0E0E0] rounded-[999px] overflow-hidden">
-                    <div className="h-full bg-[#FF6B9D] w-[60%]" />
-                  </div>
-                </div>
-
-                {/* Green Task */}
-                <div className="mission-card-listen relative rounded-[16px] p-[12px_14px] flex flex-col gap-2 group hover:-translate-y-1 transition-transform shadow-sm">
-                  <div className="text-[32px] mission-icon" style={{ animationDelay: '0.8s' }}>🎧</div>
-                  <div className="space-y-1 mt-1">
-                    <span className="text-[10px] font-nunito font-extrabold uppercase text-[#6BCB77]">Luyện nghe</span>
-                    <p className="text-[13px] font-nunito font-bold text-[#333] leading-[1.3]">Nghe và chép chính tả</p>
-                  </div>
-                  <div className="mt-auto pt-2 w-full h-[7px] bg-[#E0E0E0] rounded-[999px] overflow-hidden">
-                    <div className="h-full bg-[#6BCB77] w-[0%]" />
-                  </div>
-                </div>
-
-                {/* Orange Task */}
-                <div className="mission-card-challenge relative rounded-[16px] p-[12px_14px] flex flex-col gap-2 group hover:-translate-y-1 transition-transform shadow-sm">
-                  <div className="text-[32px] mission-icon" style={{ animationDelay: '1.2s' }}>⚡</div>
-                  <div className="space-y-1 mt-1">
-                    <span className="text-[10px] font-nunito font-extrabold uppercase text-[#F0A500]">Thử thách</span>
-                    <p className="text-[13px] font-nunito font-bold text-[#333] leading-[1.3]">Tích lũy 100 XP hôm nay</p>
-                  </div>
-                  <div className="mt-auto pt-2 w-full h-[7px] bg-[#E0E0E0] rounded-[999px] overflow-hidden">
-                    <div className="h-full bg-[#FFD166] w-[80%]" />
+                  <p className="text-[11px] font-nunito font-bold text-[#555] mb-3">Kids Focus</p>
+                  <div className="flex items-center justify-center gap-3">
+                    <button className="w-8 h-8 rounded-full bg-white border-2 border-[#FFE4B5] flex items-center justify-center text-text-muted hover:scale-105 active:scale-95 transition-transform">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="19" x2="5" y2="5"></line></svg>
+                    </button>
+                    <button className="w-10 h-10 rounded-full bg-[#FF6B6B] border-2 border-[#E63946] flex items-center justify-center text-white shadow-sm hover:scale-105 active:scale-95 transition-transform">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+                    </button>
+                    <button className="w-8 h-8 rounded-full bg-white border-2 border-[#FFE4B5] flex items-center justify-center text-text-muted hover:scale-105 active:scale-95 transition-transform">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19"></line></svg>
+                    </button>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
 
-            {/* Section 2: Bảng xếp hạng mini */}
-            <div className="space-y-4 pb-4">
-              <div className="flex items-center justify-between">
-                <h3 className="text-[14px] font-black text-text-muted uppercase tracking-widest font-fredoka flex items-center gap-2">
-                  <Trophy className="w-5 h-5 text-xp-dark crown-icon" />
-                  Bảng Xếp Hạng
-                </h3>
-                <Link href="/games/class-king" className="text-[11px] font-black text-primary hover:underline">
-                  Xem tất cả
-                </Link>
-              </div>
-
-              <div className="space-y-2.5 relative">
-                {/* Rank 1 */}
-                <div className="flex items-center justify-between bg-white border-[1.5px] border-[#FFE4B5] rounded-[12px] p-[8px_10px] shadow-sm hover:scale-[1.02] transition-transform slide-highlight">
-                  <div className="flex items-center gap-3">
-                    <div className="w-[24px] h-[24px] rounded-full bg-[#FF6B6B] text-white flex items-center justify-center font-black text-[10px] shadow-sm">
-                      1
-                    </div>
-                    <span className="text-[11px] font-nunito font-bold text-[#555]">Minh Anh</span>
+            {/* --- MIDDLE RIGHT PANEL --- */}
+            {gradeLevel === "middle" && (
+              <div className="space-y-6">
+                {/* Leaderboard */}
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2">
+                    <Trophy className="w-4 h-4 text-primary" />
+                    <h3 className="text-[12px] font-black text-text-muted uppercase tracking-widest">
+                      LEADERBOARD
+                    </h3>
                   </div>
-                  <span className="text-[11px] font-nunito font-extrabold text-[#E67E22]">{(stats.xp + 2400).toLocaleString()} XP</span>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between bg-card border-[1.5px] border-[rgba(0,0,0,0.08)] rounded-[12px] p-2.5 shadow-sm">
+                      <div className="flex items-center gap-2">
+                        <div className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center font-black text-[10px]">1</div>
+                        <span className="text-[12px] font-nunito font-bold text-text-body">Minh Anh</span>
+                      </div>
+                      <span className="text-[12px] font-nunito font-black text-primary">3,660</span>
+                    </div>
+                    <div className="flex items-center justify-between bg-card border-[1.5px] border-[rgba(0,0,0,0.08)] rounded-[12px] p-2.5 shadow-sm">
+                      <div className="flex items-center gap-2">
+                        <div className="w-6 h-6 rounded-full bg-xp text-white flex items-center justify-center font-black text-[10px]">2</div>
+                        <span className="text-[12px] font-nunito font-bold text-text-body">Bảo Trâm</span>
+                      </div>
+                      <span className="text-[12px] font-nunito font-black text-primary">2,460</span>
+                    </div>
+                    <div className="flex items-center justify-between bg-primary-light border-[1.5px] border-primary-dark rounded-[12px] p-2.5 shadow-sm">
+                      <div className="flex items-center gap-2">
+                        <div className="w-6 h-6 rounded-full bg-primary-dark text-white flex items-center justify-center font-black text-[10px]">6</div>
+                        <span className="text-[12px] font-nunito font-bold text-primary-dark">Tôi</span>
+                      </div>
+                      <span className="text-[12px] font-nunito font-black text-primary-dark">{stats.xp.toLocaleString()}</span>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Rank 2 */}
-                <div className="flex items-center justify-between bg-white border-[1.5px] border-[#FFE4B5] rounded-[12px] p-[8px_10px] shadow-sm hover:scale-[1.02] transition-transform">
-                  <div className="flex items-center gap-3">
-                    <div className="w-[24px] h-[24px] rounded-full bg-[#4ECDC4] text-white flex items-center justify-center font-black text-[10px] shadow-sm">
-                      2
-                    </div>
-                    <span className="text-[11px] font-nunito font-bold text-[#555]">Bảo Trâm</span>
+                {/* Kỹ năng yếu */}
+                <div className="bg-card border-[1.5px] border-[rgba(0,0,0,0.08)] rounded-[12px] p-4 shadow-sm">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Zap className="w-4 h-4 text-amber-500" />
+                    <h3 className="text-[12px] font-black text-text-muted uppercase">
+                      Kỹ năng yếu
+                    </h3>
                   </div>
-                  <span className="text-[11px] font-nunito font-extrabold text-[#E67E22]">{(stats.xp + 1200).toLocaleString()} XP</span>
-                </div>
-
-                {/* Rank 3 */}
-                <div className="flex items-center justify-between bg-white border-[1.5px] border-[#FFE4B5] rounded-[12px] p-[8px_10px] shadow-sm hover:scale-[1.02] transition-transform">
-                  <div className="flex items-center gap-3">
-                    <div className="w-[24px] h-[24px] rounded-full bg-[#FFB347] text-white flex items-center justify-center font-black text-[10px] shadow-sm">
-                      3
-                    </div>
-                    <span className="text-[11px] font-nunito font-bold text-[#555]">Tuấn Kiệt</span>
-                  </div>
-                  <span className="text-[11px] font-nunito font-extrabold text-[#E67E22]">{(stats.xp + 450).toLocaleString()} XP</span>
-                </div>
-
-                {/* Current User */}
-                <div className="flex items-center justify-between bg-[#FFD166] border-[1.5px] border-[#FFB347] rounded-[12px] p-[8px_10px] shadow-md animate-bounce-custom">
-                  <div className="flex items-center gap-3">
-                    <div className="w-[24px] h-[24px] rounded-full bg-[#C0392B] text-white flex items-center justify-center font-black text-[10px] shadow-sm">
-                      Me
-                    </div>
-                    <span className="text-[11px] font-nunito font-bold text-[#555]">{fullName}</span>
-                  </div>
-                  <span className="text-[11px] font-nunito font-extrabold text-[#E67E22]">{stats.xp.toLocaleString()} XP</span>
+                  <p className="text-[13px] font-nunito font-bold text-text-body mb-3">Pronunciation: <span className="text-red-500">67%</span></p>
+                  <button className="w-full py-2 bg-primary hover:bg-primary-dark text-white rounded-[8px] text-[12px] font-bold transition-colors">
+                    Luyện thêm →
+                  </button>
                 </div>
               </div>
-            </div>
+            )}
+
+            {/* --- HIGH RIGHT PANEL --- */}
+            {gradeLevel === "high" && (
+              <div className="space-y-6">
+                {/* Kỹ Năng */}
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2">
+                    <Target className="w-4 h-4 text-primary" />
+                    <h3 className="text-[12px] font-black text-text-muted uppercase tracking-widest font-inter">
+                      KỸ NĂNG
+                    </h3>
+                  </div>
+                  <div className="space-y-3 font-inter">
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-[11px] font-bold text-text-body">
+                        <span>Speaking</span>
+                        <span>83%</span>
+                      </div>
+                      <div className="w-full h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                        <div className="h-full bg-indigo-600 w-[83%]" />
+                      </div>
+                    </div>
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-[11px] font-bold text-text-body">
+                        <span>Listening</span>
+                        <span>71%</span>
+                      </div>
+                      <div className="w-full h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                        <div className="h-full bg-indigo-500 w-[71%]" />
+                      </div>
+                    </div>
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-[11px] font-bold text-text-body">
+                        <span>Reading</span>
+                        <span>58%</span>
+                      </div>
+                      <div className="w-full h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                        <div className="h-full bg-teal-500 w-[58%]" />
+                      </div>
+                    </div>
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-[11px] font-bold text-text-body">
+                        <span>Writing</span>
+                        <span>42%</span>
+                      </div>
+                      <div className="w-full h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                        <div className="h-full bg-pink-500 w-[42%]" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* AI Coach */}
+                <div className="bg-primary-light border border-primary-dark rounded-[8px] p-4 shadow-sm font-inter">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">🤖</span>
+                    <h3 className="text-[12px] font-black text-primary-dark uppercase">
+                      AI Coach gợi ý
+                    </h3>
+                  </div>
+                  <p className="text-[11px] font-medium text-primary-text mb-4 leading-relaxed">
+                    "Tập trung Writing tuần này — kỹ năng yếu nhất của bạn."
+                  </p>
+                  <button className="w-full py-2 bg-primary hover:bg-primary-dark text-white rounded-[6px] text-[11px] font-bold transition-colors">
+                    Lên kế hoạch →
+                  </button>
+                </div>
+              </div>
+            )}
           </>
         ) : (
           <div className="flex flex-col items-center justify-center p-6 space-y-4 border-[var(--c-border)] border-[rgba(0,0,0,0.1)] rounded-[var(--radius-card)] bg-card shadow-[0_4px_0_rgba(0,0,0,0.05)] mt-4 text-center">

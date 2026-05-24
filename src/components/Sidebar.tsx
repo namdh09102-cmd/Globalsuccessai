@@ -15,18 +15,61 @@ import { usePathname } from "next/navigation";
 
 export default function Sidebar() {
   const pathname = usePathname() || "/";
+  const [gradeLevel, setGradeLevel] = useState("primary");
 
-  const navigation = [
-    { name: "Trang chủ", href: "/dashboard", icon: Home },
-    { name: "Học bài", href: "/learn", icon: BookOpen },
-    { name: "Luyện nói", href: "/ai-practice", icon: Mic },
-    { name: "Trò chơi", href: "/games", icon: Gamepad2 },
-    { name: "Thi đua", href: "/history", icon: Trophy },
-    { name: "Hồ sơ", href: "/profile", icon: UserCircle },
-  ];
+  useEffect(() => {
+    const loadLevel = () => {
+      const storedUser = localStorage.getItem("gsa-current-user");
+      if (storedUser) {
+        try {
+          const u = JSON.parse(storedUser);
+          if (u.gradeLevel) setGradeLevel(u.gradeLevel);
+        } catch (e) {}
+      }
+    };
+    loadLevel();
+    window.addEventListener("auth-changed", loadLevel);
+    window.addEventListener("profile-updated", loadLevel);
+    return () => {
+      window.removeEventListener("auth-changed", loadLevel);
+      window.removeEventListener("profile-updated", loadLevel);
+    };
+  }, []);
+
+  const getNavigation = () => {
+    if (gradeLevel === "high") {
+      return [
+        { name: "Dashboard", href: "/dashboard", icon: require("lucide-react").LayoutDashboard },
+        { name: "Học", href: "/learn", icon: BookOpen },
+        { name: "Speaking", href: "/ai-practice", icon: Mic },
+        { name: "Kỹ năng", href: "/skills", icon: require("lucide-react").Activity },
+        { name: "Lộ trình", href: "/roadmap", icon: require("lucide-react").Map },
+      ];
+    }
+    
+    if (gradeLevel === "middle") {
+      return [
+        { name: "Home", href: "/dashboard", icon: Home },
+        { name: "Học bài", href: "/learn", icon: BookOpen },
+        { name: "Luyện nói", href: "/ai-practice", icon: Mic },
+        { name: "Thi đua", href: "/games", icon: require("lucide-react").Gamepad2 },
+        { name: "Rank", href: "/history", icon: Trophy },
+      ];
+    }
+
+    return [
+      { name: "Nhà", href: "/dashboard", icon: Home },
+      { name: "Học", href: "/learn", icon: BookOpen },
+      { name: "Nói", href: "/ai-practice", icon: Mic },
+      { name: "Chơi", href: "/games", icon: require("lucide-react").Gamepad2 },
+      { name: "Sao", href: "/profile", icon: require("lucide-react").Star },
+    ];
+  };
+
+  const navigation = getNavigation();
 
   return (
-    <aside className="w-[72px] shrink-0 bg-sidebar flex flex-col h-full overflow-hidden select-none z-10 hidden md:flex border-r-2 border-primary-dark">
+    <aside className={`shrink-0 bg-sidebar flex flex-col h-full overflow-hidden select-none z-10 hidden md:flex border-r-2 border-primary-dark ${gradeLevel === "high" ? "w-[90px]" : gradeLevel === "middle" ? "w-[80px]" : "w-[72px]"}`}>
       <nav className="flex-1 px-1 py-4 space-y-2 overflow-y-auto custom-scrollbar flex flex-col items-center">
         {navigation.map((item) => {
           const Icon = item.icon;
@@ -36,26 +79,31 @@ export default function Sidebar() {
             ? pathname === "/"
             : pathname.startsWith(item.href);
 
+          // Dynamic styling based on grade
+          const activeBg = gradeLevel === "high" ? "bg-white/10" : "bg-white/25 slide-highlight";
+          const hoverBg = gradeLevel === "high" ? "hover:bg-white/5" : "hover:bg-white/15";
+          const widthClass = gradeLevel === "high" ? "w-[75px]" : gradeLevel === "middle" ? "w-[68px]" : "w-[60px]";
+          const fontClass = gradeLevel === "high" ? "font-inter" : gradeLevel === "middle" ? "font-nunito" : "font-nunito";
+          const textActiveColor = gradeLevel === "high" ? "text-primary-light" : "text-xp";
+
           return (
             <Link
               key={item.name}
               href={item.href}
-              className={`flex flex-col items-center justify-center w-[60px] h-[60px] rounded-[12px] transition-all duration-300 group relative ${
-                isActive
-                  ? "bg-white/25 slide-highlight"
-                  : "hover:bg-white/15"
+              className={`flex flex-col items-center justify-center ${widthClass} h-[60px] rounded-[12px] transition-all duration-300 group relative ${
+                isActive ? activeBg : hoverBg
               }`}
               aria-label={item.name}
               style={{ margin: "4px auto" }}
             >
               <Icon
                 className={`w-6 h-6 transition-transform duration-300 group-hover:scale-105 ${
-                  isActive ? "text-xp" : "text-white"
+                  isActive ? textActiveColor : "text-white"
                 }`}
                 strokeWidth={isActive ? 2.5 : 2}
               />
-              <span className={`text-[9px] font-nunito font-bold mt-1 text-center leading-tight ${
-                isActive ? "text-xp" : "text-white"
+              <span className={`text-[9px] ${fontClass} font-bold mt-1 text-center leading-tight ${
+                isActive ? textActiveColor : "text-white"
               }`}>
                 {item.name}
               </span>

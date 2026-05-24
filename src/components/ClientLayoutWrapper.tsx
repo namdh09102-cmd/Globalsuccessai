@@ -202,13 +202,40 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
     return <>{children}</>;
   }
 
-  const bottomNavItems = [
-    { name: "Trang chủ", href: "/dashboard", icon: Home },
-    { name: "Học bài", href: "/learn", icon: BookOpen },
-    { name: "Luyện nói", href: "/ai-practice", icon: Mic },
-    { name: "Thi đua", href: "/history", icon: Trophy },
-    { name: "Hồ sơ", href: "/profile", icon: User },
-  ];
+  const getBottomNavItems = () => {
+    const level = currentUser?.gradeLevel || "primary";
+    
+    if (level === "high") {
+      return [
+        { name: "Dashboard", href: "/dashboard", icon: require("lucide-react").LayoutDashboard },
+        { name: "Học", href: "/learn", icon: BookOpen },
+        { name: "Speaking", href: "/ai-practice", icon: Mic },
+        { name: "Kỹ năng", href: "/skills", icon: require("lucide-react").BarChart },
+        { name: "Lộ trình", href: "/roadmap", icon: require("lucide-react").Route },
+      ];
+    }
+    
+    if (level === "middle") {
+      return [
+        { name: "Home", href: "/dashboard", icon: Home },
+        { name: "Học bài", href: "/learn", icon: BookOpen },
+        { name: "Luyện nói", href: "/ai-practice", icon: Mic },
+        { name: "Thi đua", href: "/games", icon: require("lucide-react").Gamepad2 },
+        { name: "Rank", href: "/history", icon: Trophy },
+      ];
+    }
+
+    // Default primary
+    return [
+      { name: "Nhà", href: "/dashboard", icon: Home },
+      { name: "Học", href: "/learn", icon: BookOpen },
+      { name: "Nói", href: "/ai-practice", icon: Mic },
+      { name: "Chơi", href: "/games", icon: require("lucide-react").Gamepad2 },
+      { name: "Sao", href: "/profile", icon: require("lucide-react").Star },
+    ];
+  };
+
+  const bottomNavItems = getBottomNavItems();
 
   const isTabActive = (href: string) => {
     if (href === "/learn") {

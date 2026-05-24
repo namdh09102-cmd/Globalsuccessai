@@ -2,17 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import {
-  Flame,
-  Zap,
-  Sparkles,
-  BookOpen,
-  ArrowRight,
-  Award,
-  Trophy,
-  Play,
-  CheckCircle,
-  TrendingUp,
-  ChevronRight
+  Flame, Zap, Sparkles, BookOpen, ArrowRight, Play, Trophy, CheckCircle, TrendingUp, Mic, Gamepad2, Clock, Target
 } from "lucide-react";
 import Link from "next/link";
 
@@ -22,442 +12,254 @@ interface StudentStats {
   streak: number;
 }
 
-interface QuizQuestion {
-  question: string;
-  options: string[];
-  correctAnswer: string;
-}
-
-interface Lesson {
-  id: string;
-  title: string;
-  type: string;
-  completed: boolean;
-  expectedText?: string;
-  quizQuestions?: QuizQuestion[];
-}
-
-interface UnitData {
-  id: string;
-  number: number;
-  title: string;
-  status: "completed" | "in_progress" | "locked";
-  progress: number;
-  grade: string;
-  lessons: Lesson[];
-}
-
 export default function DashboardPage() {
   const [stats, setStats] = useState<StudentStats>({ xp: 0, diamonds: 0, streak: 0 });
-  const [nextLesson, setNextLesson] = useState<{ unitTitle: string; lessonTitle: string; type: string } | null>(null);
+  const [gradeLevel, setGradeLevel] = useState("primary");
+  const [fullName, setFullName] = useState("Nam");
 
   useEffect(() => {
-    // 1. Đọc stats từ localStorage
-    const storedStats = localStorage.getItem("gsa-student-stats");
-    if (storedStats) {
-      try {
-        setStats(JSON.parse(storedStats));
-      } catch (e) {
-        console.error(e);
+    const loadState = () => {
+      const storedStats = localStorage.getItem("gsa-student-stats");
+      if (storedStats) {
+        try { setStats(JSON.parse(storedStats)); } catch (e) {}
       }
-    }
-
-    // 2. Tìm bài học chưa hoàn thành gần nhất
-    const storedCurriculum = localStorage.getItem("gsa-curriculum");
-    if (storedCurriculum) {
-      try {
-        const units: UnitData[] = JSON.parse(storedCurriculum);
-        // Tìm Unit đầu tiên đang "in_progress" hoặc "completed" nhưng chưa hoàn thành toàn bộ bài học
-        let foundLesson: { unitTitle: string; lessonTitle: string; type: string } | null = null;
-        
-        for (const unit of units) {
-          if (unit.status !== "locked") {
-            const incompleteLesson = unit.lessons.find((l) => !l.completed);
-            if (incompleteLesson) {
-              foundLesson = {
-                unitTitle: `Unit ${unit.number}: ${unit.title}`,
-                lessonTitle: incompleteLesson.title,
-                type: incompleteLesson.type,
-              };
-              break;
-            }
-          }
-        }
-
-        // Fallback nếu đã hoàn thành tất cả
-        if (!foundLesson && units.length > 0) {
-          const lastUnit = units[units.length - 1];
-          const lastLesson = lastUnit.lessons[lastUnit.lessons.length - 1];
-          foundLesson = {
-            unitTitle: `Unit ${lastUnit.number}: ${lastUnit.title}`,
-            lessonTitle: lastLesson.title,
-            type: lastLesson.type,
-          };
-        }
-
-        setNextLesson(foundLesson);
-      } catch (e) {
-        console.error(e);
-      }
-    } else {
-      // Dữ liệu mẫu nếu chưa có curriculum
-      setNextLesson({
-        unitTitle: "Unit 2: The Generation Gap",
-        lessonTitle: "Speaking: Expressing opinion on rules",
-        type: "speaking",
-      });
-    }
-
-    // Lắng nghe stats thay đổi
-    const handleStatsUpdated = () => {
-      const updated = localStorage.getItem("gsa-student-stats");
-      if (updated) {
-        try {
-          setStats(JSON.parse(updated));
-        } catch (e) {
-          console.error(e);
-        }
+      const storedUser = localStorage.getItem("gsa-current-user");
+      if (storedUser) {
+        try { 
+          const u = JSON.parse(storedUser); 
+          if (u.gradeLevel) setGradeLevel(u.gradeLevel);
+          if (u.name) setFullName(u.name.split(" ")[0] || "Bạn");
+        } catch (e) {}
       }
     };
-
-    window.addEventListener("stats-updated", handleStatsUpdated);
+    loadState();
+    window.addEventListener("stats-updated", loadState);
+    window.addEventListener("auth-changed", loadState);
     return () => {
-      window.removeEventListener("stats-updated", handleStatsUpdated);
+      window.removeEventListener("stats-updated", loadState);
+      window.removeEventListener("auth-changed", loadState);
     };
   }, []);
 
-  // Tính toán tọa độ cho Radar Chart SVG
-  // 4 kỹ năng: Listening, Speaking, Reading, Writing
-  // Các thang điểm từ tâm (0,0) đến đỉnh (100)
-  // Góc quay tương ứng: Listening (0 độ - Top), Speaking (90 độ - Right), Reading (180 độ - Bottom), Writing (270 độ - Left)
-  // Bán kính r = 100. Tâm biểu đồ ở (150, 150)
-  const skills = [
-    { name: "Listening (Nghe)", value: 0, angle: 0 },
-    { name: "Speaking (Nói)", value: 0, angle: 90 },
-    { name: "Reading (Đọc)", value: 0, angle: 180 },
-    { name: "Writing (Viết)", value: 0, angle: 270 },
-  ];
-
-  const getCoordinates = (value: number, angle: number) => {
-    const radius = (value / 100) * 90; // Giới hạn bán kính max là 90px
-    const angleRad = (angle - 90) * (Math.PI / 180); // Trừ 90 độ để góc 0 tương ứng hướng 12 giờ
-    const x = 150 + radius * Math.cos(angleRad);
-    const y = 150 + radius * Math.sin(angleRad);
-    return { x, y };
-  };
-
-  // Tạo chuỗi tọa độ cho đa giác kỹ năng của học sinh
-  const studentPoints = skills.map((s) => {
-    const { x, y } = getCoordinates(s.value, s.angle);
-    return `${x},${y}`;
-  }).join(" ");
-
-  // Tạo chuỗi tọa độ cho đa giác chuẩn 100%
-  const maxPoints = skills.map((s) => {
-    const { x, y } = getCoordinates(100, s.angle);
-    return `${x},${y}`;
-  }).join(" ");
-
-  const midPoints50 = skills.map((s) => {
-    const { x, y } = getCoordinates(50, s.angle);
-    return `${x},${y}`;
-  }).join(" ");
-
-  return (
-    <div className="p-8 max-w-5xl mx-auto space-y-8 select-none">
-      {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[rgba(0,0,0,0.1)] pb-6">
-        <div>
-          <div className="flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-wider mb-1">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Hệ thống báo cáo AI</span>
-          </div>
-          <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-slate-700 to-slate-500">
-            Tổng quan học tập
-          </h1>
-          <p className="text-xs text-text-muted mt-1">
-            Theo dõi tiến độ, phân tích kỹ năng toàn diện và tiếp tục hành trình học tiếng Anh.
-          </p>
-        </div>
-        
-        <div className="flex items-center gap-3">
-          <div className="px-4 py-2 rounded-[var(--radius-card)] bg-card border border-[rgba(0,0,0,0.1)] flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
-            <span className="text-[11px] font-bold text-text-body">Học sinh trực tuyến</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Bento Grid Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-        
-        {/* Card 1: Biểu đồ kỹ năng 4D (SVG Radar Chart) */}
-        <div className="md:col-span-7 rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-6 shadow-xl flex flex-col justify-between hover:border-indigo-500/30 transition-all duration-300 group">
-          <div>
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-[var(--radius-btn)] bg-primary-light border border-primary-dark flex items-center justify-center text-primary">
-                  <TrendingUp className="w-4 h-4" />
-                </div>
-                <div>
-                  <h2 className="text-sm font-bold text-text-head group-hover:text-primary transition-colors">
-                    Biểu đồ kỹ năng 4D
-                  </h2>
-                  <p className="text-[10px] text-text-muted">Phân tích chuyên sâu từ AI Coach</p>
-                </div>
-              </div>
-              
-              <span className="text-[10px] font-bold bg-primary-light text-primary px-2 py-0.5 rounded-full border border-primary-dark">
-                Active
-              </span>
+  // --- PRIMARY DASHBOARD ---
+  if (gradeLevel === "primary") {
+    return (
+      <div className="p-4 md:p-8 max-w-5xl mx-auto space-y-6 select-none font-nunito">
+        <div className="bg-[#FFF8DC] border-[3px] border-[#FFE4B5] rounded-[24px] p-6 shadow-sm flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <div className="w-16 h-16 bg-white rounded-full border-[3px] border-[#FFE4B5] flex items-center justify-center text-3xl shadow-inner">
+              🐱
             </div>
-            
-            {/* Radar Chart SVG */}
-            <div className="flex items-center justify-center py-2 relative">
-              <svg className="w-[300px] h-[300px]" viewBox="0 0 300 300">
-                {/* Lưới mạng nhện mốc 100% */}
-                <polygon
-                  points={maxPoints}
-                  fill="none"
-                  stroke="#1E293B"
-                  strokeWidth="1"
-                  strokeDasharray="4,4"
-                />
-                
-                {/* Lưới mạng nhện mốc 50% */}
-                <polygon
-                  points={midPoints50}
-                  fill="none"
-                  stroke="#1E293B"
-                  strokeWidth="1"
-                  strokeDasharray="2,2"
-                />
-
-                {/* Các trục tọa độ */}
-                {skills.map((s, idx) => {
-                  const end = getCoordinates(100, s.angle);
-                  return (
-                    <line
-                      key={idx}
-                      x1="150"
-                      y1="150"
-                      x2={end.x}
-                      y2={end.y}
-                      stroke="#1E293B"
-                      strokeWidth="1"
-                    />
-                  );
-                })}
-
-                {/* Đa giác chỉ số học sinh */}
-                <polygon
-                  points={studentPoints}
-                  fill="url(#radarGradient)"
-                  stroke="#6366F1"
-                  strokeWidth="2"
-                  className="animate-pulse"
-                />
-
-                {/* Các điểm neo (Data Points) */}
-                {skills.map((s, idx) => {
-                  const pt = getCoordinates(s.value, s.angle);
-                  return (
-                    <g key={idx} className="group/node cursor-pointer">
-                      <circle
-                        cx={pt.x}
-                        cy={pt.y}
-                        r="5"
-                        fill="#818CF8"
-                        stroke="#0B0F19"
-                        strokeWidth="1.5"
-                        className="transition-all duration-300 hover:r-7 hover:fill-white"
-                      />
-                      <circle
-                        cx={pt.x}
-                        cy={pt.y}
-                        r="10"
-                        fill="#818CF8"
-                        fillOpacity="0.15"
-                        className="animate-ping"
-                      />
-                    </g>
-                  );
-                })}
-
-                {/* Định nghĩa Gradient đổ bóng */}
-                <defs>
-                  <radialGradient id="radarGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-                    <stop offset="0%" stopColor="#4F46E5" stopOpacity="0.1" />
-                    <stop offset="100%" stopColor="#818CF8" stopOpacity="0.35" />
-                  </radialGradient>
-                </defs>
-
-                {/* Tên và Điểm số các nhãn */}
-                {skills.map((s, idx) => {
-                  // Đẩy nhãn ra ngoài một chút
-                  const labelPt = getCoordinates(115, s.angle);
-                  let textAnchor: "end" | "inherit" | "middle" | "start" = "middle";
-                  let dy = "0.33em";
-                  
-                  if (s.angle === 90) textAnchor = "start";
-                  else if (s.angle === 270) textAnchor = "end";
-                  if (s.angle === 180) dy = "1em";
-                  if (s.angle === 0) dy = "-0.5em";
-
-                  return (
-                    <text
-                      key={idx}
-                      x={labelPt.x}
-                      y={labelPt.y}
-                      textAnchor={textAnchor}
-                      dy={dy}
-                      className="fill-slate-400 font-bold text-[10px] transition-colors hover:fill-slate-200"
-                    >
-                      {s.name.split(" ")[0]} ({s.value}%)
-                    </text>
-                  );
-                })}
-              </svg>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-3 pt-4 border-t border-[rgba(0,0,0,0.1)]">
-            <div className="p-3 rounded-[var(--radius-card)] bg-card border border-[rgba(0,0,0,0.1)] flex items-center justify-between">
-              <span className="text-[10px] font-bold text-text-muted">Kỹ năng mạnh nhất:</span>
-              <span className="text-xs font-black text-primary">CHƯA CÓ DỮ LIỆU</span>
-            </div>
-            <div className="p-3 rounded-[var(--radius-card)] bg-card border border-[rgba(0,0,0,0.1)] flex items-center justify-between">
-              <span className="text-[10px] font-bold text-text-muted">Cần cải thiện:</span>
-              <span className="text-xs font-black text-pink-600">CHƯA CÓ DỮ LIỆU</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Cột phải chứa Card 2 và Card 3 */}
-        <div className="md:col-span-5 flex flex-col gap-6">
-          
-          {/* Card 2: Chuỗi Streak & XP */}
-          <div className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-6 shadow-xl hover:border-amber-500/30 transition-all duration-300 group flex-1 flex flex-col justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-[var(--radius-btn)] bg-amber-500/10 border border-amber-300 flex items-center justify-center text-amber-500">
-                <Flame className="w-4 h-4" />
-              </div>
-              <div>
-                <h2 className="text-sm font-bold text-text-head group-hover:text-amber-600 transition-colors">
-                  Ngọn lửa học tập
-                </h2>
-                <p className="text-[10px] text-text-muted">Thống kê tích lũy của bạn</p>
-              </div>
-            </div>
-
-            {/* Flame Display */}
-            <div className="py-6 flex items-center justify-center gap-6">
-              <div className="relative">
-                {/* Glow Background */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-amber-500 to-orange-600 rounded-full blur-2xl opacity-20 group-hover:opacity-45 transition-all duration-500" />
-                <div className="relative w-20 h-20 rounded-[var(--radius-card)] bg-gradient-to-tr from-amber-500/15 to-orange-600/5 border border-amber-500/25 flex items-center justify-center shadow-lg shadow-amber-500/10">
-                  <Flame className="w-10 h-10 text-amber-500 animate-bounce" />
-                </div>
-              </div>
-              
-              <div>
-                <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 tracking-tight">
-                  {stats.streak.toString().padStart(2, "0")} NGÀY
-                </div>
-                <div className="text-[11px] font-bold text-text-body mt-1 flex items-center gap-1.5">
-                  <Zap className="w-3.5 h-3.5 text-primary" />
-                  <span>Tổng tích lũy: <b className="text-primary">{stats.xp} XP</b></span>
-                </div>
-                <div className="text-[10px] text-text-muted mt-0.5">
-                  Hãy bắt đầu bài học đầu tiên ngay hôm nay!
-                </div>
-              </div>
-            </div>
-
-            <div className="p-3.5 rounded-[var(--radius-card)] bg-amber-500/5 border border-amber-500/10 text-center">
-              <p className="text-[10px] font-medium text-amber-600 leading-relaxed">
-                Học liên tiếp 5 ngày để nhận Huy hiệu <span className="font-bold underline">"Chiến Binh Chuyên Cần"</span> phát sáng!
+            <div>
+              <h1 className="text-2xl font-black text-primary font-fredoka tracking-wide">
+                Chào {fullName} ơi! 🚀
+              </h1>
+              <p className="text-[#E67E22] font-extrabold text-sm mt-1">
+                Hôm nay mình học gì nào?
               </p>
-            </div>
-          </div>
-
-          {/* Card 3: Học tiếp bài gần nhất */}
-          <div className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-6 shadow-xl hover:border-teal-500/30 transition-all duration-300 group flex-1 flex flex-col justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-[var(--radius-btn)] bg-teal-500/10 border border-teal-300 flex items-center justify-center text-teal-600">
-                <BookOpen className="w-4 h-4" />
-              </div>
-              <div>
-                <h2 className="text-sm font-bold text-text-head group-hover:text-teal-600 transition-colors">
-                  Tiến trình hiện tại
-                </h2>
-                <p className="text-[10px] text-text-muted">Học tiếp bài gần nhất</p>
+              <div className="inline-flex items-center gap-1.5 mt-2 bg-[#FFD166] text-[#A04000] px-3 py-1 rounded-full text-xs font-black shadow-sm">
+                <Flame className="w-4 h-4 text-[#E67E22]" />
+                {stats.streak} ngày — Giỏi lắm!
               </div>
             </div>
-
-            {/* Lesson Details */}
-            {nextLesson ? (
-              <div className="py-4 space-y-2">
-                <div className="text-[10px] font-bold text-teal-600 uppercase tracking-wider">
-                  {nextLesson.unitTitle}
-                </div>
-                <div className="text-sm font-bold text-text-head truncate">
-                  {nextLesson.lessonTitle}
-                </div>
-                <div className="flex items-center gap-2 mt-1">
-                  <span className="text-[9px] font-bold bg-card text-text-muted px-2 py-0.5 rounded-md uppercase">
-                    {nextLesson.type}
-                  </span>
-                  <span className="text-[10px] text-text-muted">Còn dang dở</span>
-                </div>
-              </div>
-            ) : (
-              <div className="py-4">
-                <div className="text-xs text-text-muted">Đang đồng bộ lộ trình học...</div>
-              </div>
-            )}
-
-            {/* Action Button */}
-            <Link href="/" className="relative w-full py-3 rounded-[var(--radius-btn)] bg-gradient-to-r from-teal-500 via-teal-500 to-teal-600 hover:from-teal-400 hover:to-teal-500 text-white text-xs font-bold text-center shadow-lg shadow-teal-500/20 hover:shadow-teal-400/30 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group-hover:translate-y-[-2px]">
-              <Play className="w-4 h-4 fill-white" />
-              <span>HỌC TIẾP NGAY</span>
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
           </div>
-
         </div>
 
+        <div className="space-y-4">
+          <h2 className="text-[16px] font-black text-text-muted flex items-center gap-2 uppercase tracking-wide">
+            <Trophy className="w-5 h-5 text-xp-dark" />
+            Nhiệm vụ hôm nay
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* Học Bài */}
+            <div className="bg-[#E0FAF8] border-[3px] border-[#4ECDC4] rounded-[20px] p-5 shadow-sm hover:-translate-y-1 transition-transform group cursor-pointer">
+              <div className="text-4xl mb-3 group-hover:scale-110 transition-transform origin-bottom-left">📚</div>
+              <h3 className="font-fredoka text-lg text-[#0A4F4C]">HỌC BÀI</h3>
+              <p className="font-bold text-[#1A9E96] text-sm">Con mèo nhà em</p>
+              <div className="mt-4 h-2.5 bg-white rounded-full overflow-hidden border border-[#4ECDC4]/50">
+                <div className="h-full bg-[#4ECDC4] w-[40%]" />
+              </div>
+            </div>
+
+            {/* Nói */}
+            <div className="bg-[#FFE8F4] border-[3px] border-[#FF6B9D] rounded-[20px] p-5 shadow-sm hover:-translate-y-1 transition-transform group cursor-pointer">
+              <div className="text-4xl mb-3 group-hover:scale-110 transition-transform origin-bottom-left">🎤</div>
+              <h3 className="font-fredoka text-lg text-[#7D0038]">NÓI</h3>
+              <p className="font-bold text-[#C0286A] text-sm">Phát âm A-B-C</p>
+              <div className="mt-4 h-2.5 bg-white rounded-full overflow-hidden border border-[#FF6B9D]/50">
+                <div className="h-full bg-[#FF6B9D] w-[60%]" />
+              </div>
+            </div>
+
+            {/* Kiếm XP */}
+            <div className="bg-[#EDFFF0] border-[3px] border-[#6BCB77] rounded-[20px] p-5 shadow-sm hover:-translate-y-1 transition-transform group cursor-pointer relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-[#6BCB77] text-white text-[10px] font-black px-3 py-1 rounded-bl-xl uppercase">New</div>
+              <div className="text-4xl mb-3 group-hover:scale-110 transition-transform origin-bottom-left">⚡</div>
+              <h3 className="font-fredoka text-lg text-[#1B5E20]">XP</h3>
+              <p className="font-bold text-[#2D9E3A] text-sm">Kiếm 100 XP</p>
+              <div className="mt-4 h-2.5 bg-white rounded-full overflow-hidden border border-[#6BCB77]/50">
+                <div className="h-full bg-[#6BCB77] w-[20%]" />
+              </div>
+            </div>
+
+            {/* May Mắn */}
+            <div className="bg-[#FFF8DC] border-[3px] border-[#FFD166] rounded-[20px] p-5 shadow-sm hover:-translate-y-1 transition-transform group cursor-pointer relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-[#FFD166] text-[#A04000] text-[10px] font-black px-3 py-1 rounded-bl-xl uppercase">New</div>
+              <div className="text-4xl mb-3 group-hover:scale-110 transition-transform origin-bottom-left">🎡</div>
+              <h3 className="font-fredoka text-lg text-[#7A4F00]">MAY MẮN</h3>
+              <p className="font-bold text-[#F0A500] text-sm">Quay vòng quay</p>
+              <div className="mt-4 h-2.5 bg-white rounded-full overflow-hidden border border-[#FFD166]/50">
+                <div className="h-full bg-[#FFD166] w-[0%]" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // --- MIDDLE DASHBOARD ---
+  if (gradeLevel === "middle") {
+    return (
+      <div className="p-4 md:p-8 max-w-5xl mx-auto space-y-6 select-none font-nunito">
+        <div className="bg-white border-[1.5px] border-[rgba(0,0,0,0.08)] rounded-[20px] p-6 shadow-sm flex items-center gap-5">
+          <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-black shadow-md">
+            KT
+          </div>
+          <div>
+            <h1 className="text-2xl font-black text-text-head flex items-center gap-2">
+              Hey {fullName}! <Flame className="text-xp w-6 h-6 animate-pulse" />
+            </h1>
+            <p className="text-text-muted font-bold text-sm mt-1">
+              Tiếp tục chinh phục Unit 3 nào
+            </p>
+            <div className="inline-flex items-center gap-1.5 mt-2 bg-xp-light text-xp-text px-3 py-1 rounded-[8px] text-xs font-bold border border-xp">
+              <Flame className="w-4 h-4 text-xp" />
+              {stats.streak}-day streak
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="bg-[#F0FDFA] border-[1.5px] border-[#14B8A6] rounded-[20px] p-5 shadow-sm flex flex-col justify-between">
+            <div>
+              <div className="text-[10px] font-black text-[#0F766E] uppercase tracking-wider mb-1">Đang học</div>
+              <h3 className="font-bold text-lg text-[#042F2E]">Unit 3: My future</h3>
+              <p className="text-[#0F766E] text-xs font-bold mt-1">Speaking — Còn 2 bài</p>
+            </div>
+            <button className="mt-4 w-full py-2.5 bg-[#14B8A6] hover:bg-[#0F766E] text-white rounded-[10px] text-sm font-black transition-colors">
+              Học tiếp →
+            </button>
+          </div>
+
+          <div className="bg-[#FEF3C7] border-[1.5px] border-[#F59E0B] rounded-[20px] p-5 shadow-sm flex flex-col justify-between">
+            <div>
+              <div className="text-[10px] font-black text-[#B45309] uppercase tracking-wider mb-1">Rank Tuần</div>
+              <h3 className="font-black text-3xl text-[#78350F] mt-1">#6</h3>
+              <p className="text-[#B45309] text-xs font-bold mt-1">Cần +200 XP lên #5</p>
+            </div>
+            <div className="mt-4 w-full h-2.5 bg-white rounded-full overflow-hidden border border-[#F59E0B]/50">
+              <div className="h-full bg-[#F59E0B] w-[80%]" />
+            </div>
+          </div>
+
+          <div className="bg-white border-[1.5px] border-[#3B82F6] rounded-[20px] p-5 shadow-sm flex flex-col justify-between">
+            <div>
+              <div className="text-[10px] font-black text-[#1D4ED8] uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                <Mic className="w-3.5 h-3.5" /> Listening
+              </div>
+              <h3 className="font-bold text-sm text-[#1E3A8A] mt-1">Nghe chép chính tả</h3>
+            </div>
+            <div className="mt-4 w-full h-2.5 bg-[#EFF6FF] rounded-full overflow-hidden border border-[#BFDBFE]">
+              <div className="h-full bg-[#3B82F6] w-[20%]" />
+            </div>
+          </div>
+
+          <div className="bg-[#FAF5FF] border-[1.5px] border-[#A855F7] rounded-[20px] p-5 shadow-sm flex flex-col justify-between">
+            <div>
+              <div className="text-[10px] font-black text-[#7E22CE] uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                <Zap className="w-3.5 h-3.5" /> Challenge
+              </div>
+              <h3 className="font-bold text-sm text-[#4C1D95] mt-1">Tích 100 XP hôm nay</h3>
+            </div>
+            <div className="mt-4 w-full h-2.5 bg-white rounded-full overflow-hidden border border-[#E9D5FF]">
+              <div className="h-full bg-[#A855F7] w-[60%]" />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // --- HIGH DASHBOARD ---
+  return (
+    <div className="p-4 md:p-8 max-w-5xl mx-auto space-y-6 select-none font-inter">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-white border border-[rgba(0,0,0,0.1)] rounded-[12px] p-6 shadow-sm flex flex-col justify-between">
+          <div className="flex items-center gap-2 mb-4">
+            <TrendingUp className="w-4 h-4 text-primary" />
+            <span className="text-xs font-bold text-text-muted uppercase tracking-wider">Tiến độ tuần này</span>
+          </div>
+          <div className="flex items-end gap-6 mb-2">
+            <div>
+              <div className="text-3xl font-black text-primary">83%</div>
+              <div className="text-xs font-medium text-text-muted">Phát âm</div>
+            </div>
+            <div>
+              <div className="text-3xl font-black text-text-head">4.5h</div>
+              <div className="text-xs font-medium text-text-muted">Học tập</div>
+            </div>
+            <div>
+              <div className="text-3xl font-black text-xp">#6</div>
+              <div className="text-xs font-medium text-text-muted">Rank</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white border border-[rgba(0,0,0,0.1)] rounded-[12px] p-6 shadow-sm flex flex-col justify-between">
+          <div className="flex items-center gap-2 mb-4">
+            <Target className="w-4 h-4 text-red-500" />
+            <span className="text-xs font-bold text-text-muted uppercase tracking-wider">Mục tiêu</span>
+          </div>
+          <div>
+            <div className="text-2xl font-black text-text-head">IELTS 6.5</div>
+            <div className="text-sm font-medium text-text-muted mb-4">Dự kiến: T8/2025</div>
+            <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+              <div className="h-full bg-indigo-600 w-[65%]" />
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Quick Stats Summary List (Bento Row) */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-4 flex items-center gap-4 hover:bg-card transition-all duration-300">
-          <div className="w-10 h-10 rounded-[var(--radius-card)] bg-primary-light border border-primary-dark flex items-center justify-center text-primary">
-            <Award className="w-5 h-5" />
-          </div>
-          <div>
-            <div className="text-[10px] text-text-muted font-bold uppercase">Danh hiệu đạt được</div>
-            <div className="text-base font-black text-text-head">0 / 12 Huy hiệu</div>
-          </div>
+      <div className="bg-white border border-[rgba(0,0,0,0.1)] rounded-[12px] p-6 shadow-sm">
+        <div className="flex items-center gap-2 mb-6">
+          <Clock className="w-4 h-4 text-text-muted" />
+          <h2 className="text-sm font-bold text-text-head uppercase tracking-wider">Lịch học hôm nay</h2>
         </div>
+        
+        <div className="space-y-4">
+          <div className="flex items-center justify-between p-4 bg-gray-50 rounded-[8px] border border-gray-100 hover:border-primary/30 transition-colors cursor-pointer">
+            <div className="flex items-center gap-3">
+              <div className="w-2 h-2 rounded-full bg-green-500" />
+              <span className="text-sm font-medium text-text-head">IELTS Writing Task 2</span>
+            </div>
+            <span className="text-sm font-bold text-primary">30 phút</span>
+          </div>
 
-        <div className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-4 flex items-center gap-4 hover:bg-card transition-all duration-300">
-          <div className="w-10 h-10 rounded-[var(--radius-card)] bg-primary-light border border-primary-dark flex items-center justify-center text-primary">
-            <Trophy className="w-5 h-5" />
+          <div className="flex items-center justify-between p-4 bg-gray-50 rounded-[8px] border border-gray-100 hover:border-primary/30 transition-colors cursor-pointer">
+            <div className="flex items-center gap-3">
+              <div className="w-2 h-2 rounded-full bg-yellow-500" />
+              <span className="text-sm font-medium text-text-head">Pronunciation: /θ/ /ð/</span>
+            </div>
+            <span className="text-sm font-bold text-primary">15 phút</span>
           </div>
-          <div>
-            <div className="text-[10px] text-text-muted font-bold uppercase">Xếp hạng tuần</div>
-            <div className="text-base font-black text-text-head">Chưa xếp hạng</div>
-          </div>
-        </div>
 
-        <div className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-4 flex items-center gap-4 hover:bg-card transition-all duration-300">
-          <div className="w-10 h-10 rounded-[var(--radius-card)] bg-teal-500/10 border border-teal-300 flex items-center justify-center text-teal-600">
-            <CheckCircle className="w-5 h-5" />
-          </div>
-          <div>
-            <div className="text-[10px] text-text-muted font-bold uppercase">Tỷ lệ chính xác</div>
-            <div className="text-base font-black text-text-head">0% Bài Luyện</div>
+          <div className="flex items-center justify-between p-4 bg-gray-50 rounded-[8px] border border-gray-100 hover:border-primary/30 transition-colors cursor-pointer">
+            <div className="flex items-center gap-3">
+              <div className="w-2 h-2 rounded-full bg-red-500" />
+              <span className="text-sm font-medium text-text-head">Mock Speaking Test</span>
+            </div>
+            <span className="text-sm font-bold text-primary">20 phút</span>
           </div>
         </div>
       </div>
