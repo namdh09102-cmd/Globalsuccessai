@@ -50,7 +50,7 @@
   --font-fredoka: 'Fredoka One', cursive;
 }
 
-:root, .theme-wrapper[data-theme='primary'] {
+:root, :root[data-theme='primary'] {
   /* Primary — Coral Red (energy, excitement) */
   --c-primary:        #FF6B6B;
   --c-primary-dark:   #E63946;
@@ -109,7 +109,7 @@
   --font-heading:     'Fredoka One', cursive;
 }
 
-.theme-wrapper[data-theme='middle'] {
+:root[data-theme='middle'] {
   /* Teal + Navy for Middle School */
   --c-primary:        #14B8A6;   /* Teal 500 */
   --c-primary-dark:   #0F766E;   /* Teal 700 */
@@ -160,7 +160,7 @@
   --font-heading:     'Nunito', sans-serif; /* Drop Fredoka for Middle */
 }
 
-.theme-wrapper[data-theme='high'] {
+:root[data-theme='high'] {
   /* Minimalist / Notion / Elegant for High School */
   --c-primary:        #4C1D95;   /* Deep Purple 900 */
   --c-primary-dark:   #3B0764;   /* Purple 950 */

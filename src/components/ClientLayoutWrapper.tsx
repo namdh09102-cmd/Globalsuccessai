@@ -100,11 +100,14 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
       setIsMaintenance(maintenanceStr === "true");
 
       const storedUser = localStorage.getItem("gsa-current-user");
-      let user = null;
+      let u = null;
       if (storedUser) {
-        try { user = JSON.parse(storedUser); } catch(e){}
+        try { u = JSON.parse(storedUser); } catch(e){}
       }
-      setCurrentUser(user);
+      setCurrentUser(u);
+      
+      const theme = u?.gradeLevel || "primary";
+      document.documentElement.setAttribute("data-theme", theme);
 
       let trialStart = localStorage.getItem("gsa-trial-start");
       if (!trialStart) {
