@@ -110,16 +110,16 @@
 }
 
 .theme-wrapper[data-theme='middle'] {
-  /* Esports / Gaming / Tech / Neon for Middle School */
-  --c-primary:        #3B82F6;   /* Blue 500 */
-  --c-primary-dark:   #1D4ED8;   /* Blue 700 */
-  --c-primary-light:  #DBEAFE;   /* Blue 100 */
-  --c-primary-text:   #1E3A8A;   /* Blue 900 */
+  /* Teal + Navy for Middle School */
+  --c-primary:        #14B8A6;   /* Teal 500 */
+  --c-primary-dark:   #0F766E;   /* Teal 700 */
+  --c-primary-light:  #CCFBF1;   /* Teal 100 */
+  --c-primary-text:   #042F2E;   /* Teal 900 */
 
-  --c-accent:         #10B981;   /* Emerald 500 */
-  --c-accent-dark:    #047857;   /* Emerald 700 */
-  --c-accent-light:   #D1FAE5;   /* Emerald 100 */
-  --c-accent-text:    #064E3B;   /* Emerald 900 */
+  --c-accent:         #1E3A8A;   /* Navy (Blue 900) */
+  --c-accent-dark:    #172554;   /* Navy Dark (Blue 950) */
+  --c-accent-light:   #DBEAFE;   /* Blue 100 */
+  --c-accent-text:    #1E3A8A;   
 
   --c-xp:             #F59E0B;   /* Amber 500 */
   --c-xp-dark:        #B45309;   /* Amber 700 */
@@ -141,10 +141,10 @@
   --c-pink-light:     #FCE7F3;   /* Pink 100 */
   --c-pink-text:      #831843;   /* Pink 900 */
 
-  --c-bg-page:        #F1F5F9;   /* Slate 100 */
+  --c-bg-page:        #F0FDFA;   /* Very light mint/teal */
   --c-bg-card:        #FFFFFF;
-  --c-bg-sidebar:     #0F172A;   /* Slate 900 */
-  --c-bg-topbar:      #0F172A;
+  --c-bg-sidebar:     #14B8A6;   /* Teal sidebar */
+  --c-bg-topbar:      #14B8A6;
 
   --c-text-head:      #0F172A;
   --c-text-body:      #334155;
@@ -162,15 +162,15 @@
 
 .theme-wrapper[data-theme='high'] {
   /* Minimalist / Notion / Elegant for High School */
-  --c-primary:        #0F172A;   /* Slate 900 */
-  --c-primary-dark:   #020617;   /* Slate 950 */
-  --c-primary-light:  #E2E8F0;   /* Slate 200 */
-  --c-primary-text:   #0F172A;
+  --c-primary:        #4C1D95;   /* Deep Purple 900 */
+  --c-primary-dark:   #3B0764;   /* Purple 950 */
+  --c-primary-light:  #EDE9FE;   /* Violet 100 */
+  --c-primary-text:   #2E1065;   /* Violet 950 */
 
-  --c-accent:         #64748B;   /* Slate 500 */
-  --c-accent-dark:    #475569;   /* Slate 600 */
-  --c-accent-light:   #F1F5F9;   /* Slate 100 */
-  --c-accent-text:    #1E293B;   /* Slate 800 */
+  --c-accent:         #6366F1;   /* Indigo 500 */
+  --c-accent-dark:    #4338CA;   /* Indigo 700 */
+  --c-accent-light:   #E0E7FF;   /* Indigo 100 */
+  --c-accent-text:    #312E81;   /* Indigo 900 */
 
   --c-xp:             #D97706;   /* Amber 600 */
   --c-xp-dark:        #92400E;   /* Amber 800 */
@@ -192,10 +192,10 @@
   --c-pink-light:     #FFE4E6;   
   --c-pink-text:      #881337;   
 
-  --c-bg-page:        #FFFFFF;   /* Pure white */
+  --c-bg-page:        #F8FAFC;   /* Very light purple/slate */
   --c-bg-card:        #FFFFFF;
-  --c-bg-sidebar:     #F8FAFC;   /* Very light slate */
-  --c-bg-topbar:      #F8FAFC;
+  --c-bg-sidebar:     #312E81;   /* Deep Indigo */
+  --c-bg-topbar:      #312E81;
 
   --c-text-head:      #0F172A;
   --c-text-body:      #334155;

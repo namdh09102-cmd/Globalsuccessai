@@ -214,21 +214,44 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
     return pathname.startsWith(href);
   };
 
+  const getInitials = (name: string) => {
+    if (!name) return "KT";
+    const parts = name.split(" ");
+    if (parts.length >= 2) {
+      return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+    }
+    return name.substring(0, 2).toUpperCase();
+  };
+
   const getMascot = () => {
-    if (currentUser?.gradeLevel === "high") return "🦉";
-    if (currentUser?.gradeLevel === "middle") return "🤖";
-    return "🦖";
+    if (currentUser?.gradeLevel === "primary" || !currentUser?.gradeLevel) {
+      return <span className="text-[20px]">🦖</span>;
+    }
+    // Middle and High use initials
+    return <span className="text-[14px] font-black text-primary-dark">{getInitials(currentUser?.name)}</span>;
   };
 
   const TopNavbar = () => (
     <div className="h-[56px] bg-sidebar flex items-center justify-between px-6 shrink-0 z-20 border-b-2 border-primary-dark select-none w-full">
       {/* Left: Logo */}
       <div className="flex items-center">
-        <h1 className="text-[18px] tracking-wide flex items-center">
-          <span className="font-nunito font-black text-white">Global</span>
-          <span className="font-fredoka text-xp mx-1">KIDS</span>
-          <span className="font-nunito font-black text-white">AI</span>
-        </h1>
+        {currentUser?.gradeLevel === "high" ? (
+          <h1 className="text-[18px] tracking-wide flex items-center text-white font-inter">
+            <span className="font-black">GlobalSuccess AI</span>
+            <span className="ml-2 text-[10px] bg-white/20 px-2 py-1 rounded font-bold tracking-widest">ADVANCED</span>
+          </h1>
+        ) : currentUser?.gradeLevel === "middle" ? (
+          <h1 className="text-[18px] tracking-wide flex items-center text-white font-nunito">
+            <span className="font-black">GlobalAI</span>
+            <span className="ml-2 text-[11px] bg-white/20 px-2 py-1 rounded font-black tracking-widest">MID</span>
+          </h1>
+        ) : (
+          <h1 className="text-[18px] tracking-wide flex items-center">
+            <span className="font-nunito font-black text-white">Global</span>
+            <span className="font-fredoka text-xp mx-1">KIDS</span>
+            <span className="font-nunito font-black text-white">AI</span>
+          </h1>
+        )}
       </div>
 
       {/* Center: Greeting */}
@@ -241,18 +264,18 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
         {/* Streak chip */}
         <div id="streak-chip" className="streak-chip bg-xp text-xp-text border border-xp-dark rounded-[999px] px-3 py-1 flex items-center gap-1 shadow-sm transition-transform">
           <span className="text-[14px]">🔥</span>
-          <span className="font-nunito font-extrabold text-[12px]">{stats.streak} ngày</span>
+          <span className="font-bold text-[12px]">{stats.streak} ngày</span>
         </div>
         
         {/* XP chip */}
         <div id="xp-chip" className="xp-chip bg-white text-primary border border-[rgba(0,0,0,0.1)] rounded-[999px] px-3 py-1 flex items-center gap-1 shadow-sm transition-colors">
           <span className="text-[14px]">⚡</span>
-          <span className="font-nunito font-extrabold text-[12px] xp-number">{(stats.xp).toLocaleString()} XP</span>
+          <span className="font-bold text-[12px] xp-number">{(stats.xp).toLocaleString()} XP</span>
         </div>
 
         {/* Avatar circle */}
         <div className="mascot-avatar w-[36px] h-[36px] rounded-full border-[3px] border-xp bg-card flex items-center justify-center shadow-md cursor-pointer hover:scale-105 transition-transform">
-          <span className="text-[20px]">{getMascot()}</span>
+          {getMascot()}
         </div>
       </div>
     </div>
