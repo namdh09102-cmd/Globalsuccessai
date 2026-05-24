@@ -6,10 +6,10 @@ import { RealtimeChannel } from "@supabase/supabase-js";
 import { 
   LayoutDashboard, Sparkles, Gamepad2, Users, BarChart3, Award, Calendar, 
   BookOpen, Tv, Clock, ArrowUp, ArrowDown, Send, FileOutput, Settings,
-  Rocket, Zap, Crown, Landmark, RotateCcw, Play, Pause, Eye, QrCode
+  Rocket, Zap, Crown, Landmark, RotateCcw, Play, Pause, Eye, QrCode, ArrowLeft
 } from "lucide-react";
 
-type TabType = "overview" | "lesson" | "game" | "students";
+type TabType = "overview" | "lesson" | "game" | "students" | "reports";
 type GameType = "race" | "quick" | "king" | "castle" | "team" | "spin";
 
 const MOCK_STUDENTS = [
@@ -74,11 +74,13 @@ export default function TeacherPortalPort() {
     } catch (e) {
       // Fallback if API fails
       setAiOutput({
-        objective: `HS hiểu và giao tiếp được về chủ đề ${topic}.`,
+        objective: `Học sinh ghi nhớ và sử dụng được từ vựng/cấu trúc liên quan đến chủ đề ${topic}.`,
         vocab: ["doctor", "engineer", "teacher", "artist", "pilot"],
-        warmup: "Game Đấu Quick khởi động.",
-        practice: "Nghe mẫu câu, luyện nói theo cặp.",
-        game: "Đua Tên Lửa — Củng cố từ vựng."
+        warmup: "Giáo viên mở bài hát chủ đề nghề nghiệp. Học sinh nhẩm theo. Sau đó chơi game Đấu Quick khởi động.",
+        presentation: "Giới thiệu từ mới qua Flashcard trên màn hình. Cho HS nghe audio mẫu và lặp lại. Giới thiệu cấu trúc: What do you want to be in the future?",
+        practice: "Học sinh luyện tập theo cặp (Pair work). Hỏi đáp sử dụng mẫu câu. Giáo viên đi vòng quanh sửa lỗi phát âm trực tiếp.",
+        production: "Cho học sinh vẽ ước mơ của mình lên giấy và thuyết trình trước lớp trong 1 phút.",
+        game: "Đua Tên Lửa — Củng cố từ vựng trên TV Mode."
       });
     } finally {
       setIsGenerating(false);
@@ -319,8 +321,8 @@ export default function TeacherPortalPort() {
             <div onClick={() => setActiveTab('students')} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer mb-0.5 transition-colors ${activeTab === 'students' ? 'bg-[#FAECE7] text-[#E63946]' : 'text-gray-600 hover:bg-gray-50'}`}>
               <Users className="w-4 h-4" /> Danh sách lớp
             </div>
-            <div className="flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer text-gray-600 hover:bg-gray-50 mb-0.5">
-              <BarChart3 className="w-4 h-4" /> Báo cáo
+            <div onClick={() => setActiveTab('reports')} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer mb-0.5 transition-colors ${activeTab === 'reports' ? 'bg-[#FAECE7] text-[#E63946]' : 'text-gray-600 hover:bg-gray-50'}`}>
+              <BarChart3 className="w-4 h-4" /> Báo cáo Zalo
             </div>
             <div className="flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer text-gray-600 hover:bg-gray-50 mb-0.5">
               <Award className="w-4 h-4" /> Trao thưởng
@@ -352,12 +354,14 @@ export default function TeacherPortalPort() {
                 {activeTab === 'lesson' && "Soạn giáo án AI"}
                 {activeTab === 'game' && "Tạo game cho lớp"}
                 {activeTab === 'students' && "Danh sách học sinh"}
+                {activeTab === 'reports' && "Báo cáo Tự động (Zalo)"}
               </h2>
               <p className="text-[12px] text-gray-500 mt-0.5">
                 {activeTab === 'overview' && "Lớp 7A3 hôm nay — 28/32 học sinh online"}
                 {activeTab === 'lesson' && "Nhập chủ đề — AI tạo giáo án hoàn chỉnh trong 10 giây"}
                 {activeTab === 'game' && "Chọn game, cấu hình và chiếu thẳng lên bảng TV"}
                 {activeTab === 'students' && "Theo dõi tiến độ từng em, giao bài và gửi báo cáo"}
+                {activeTab === 'reports' && "Gửi báo cáo tiến độ học tập hàng tuần tới phụ huynh qua Zalo ZNS"}
               </p>
             </div>
             <div className="flex items-center gap-3">
@@ -386,6 +390,9 @@ export default function TeacherPortalPort() {
             </div>
             <div onClick={() => setActiveTab('students')} className={`flex items-center gap-1.5 px-4 py-2.5 text-[13px] font-medium cursor-pointer border-b-2 transition-colors ${activeTab === 'students' ? 'border-[#E63946] text-[#E63946]' : 'border-transparent text-gray-500 hover:text-gray-800'}`}>
               <Users className="w-4 h-4" /> Học sinh
+            </div>
+            <div onClick={() => setActiveTab('reports')} className={`flex items-center gap-1.5 px-4 py-2.5 text-[13px] font-medium cursor-pointer border-b-2 transition-colors ${activeTab === 'reports' ? 'border-[#E63946] text-[#E63946]' : 'border-transparent text-gray-500 hover:text-gray-800'}`}>
+              <BarChart3 className="w-4 h-4" /> Báo cáo
             </div>
           </div>
 
@@ -537,12 +544,20 @@ export default function TeacherPortalPort() {
                           </div>
                         </div>
                         <div className="p-4 border-b border-gray-100">
-                          <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Khởi động</div>
+                          <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">1. Khởi động (Warm-up)</div>
                           <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.warmup}</div>
                         </div>
                         <div className="p-4 border-b border-gray-100">
-                          <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Thực hành</div>
+                          <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">2. Bài Mới (Presentation)</div>
+                          <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.presentation}</div>
+                        </div>
+                        <div className="p-4 border-b border-gray-100">
+                          <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">3. Thực hành (Practice)</div>
                           <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.practice}</div>
+                        </div>
+                        <div className="p-4 border-b border-gray-100">
+                          <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">4. Vận dụng (Production)</div>
+                          <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.production}</div>
                         </div>
                         <div className="p-4">
                           <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Game củng cố</div>
@@ -730,6 +745,97 @@ export default function TeacherPortalPort() {
                       })}
                     </tbody>
                   </table>
+                </div>
+              </div>
+            )}
+
+            {/* REPORTS TAB */}
+            {activeTab === 'reports' && (
+              <div className="grid grid-cols-2 gap-6 animate-fade-in-up">
+                <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col h-[600px]">
+                  <div className="p-4 border-b border-gray-100 flex items-center justify-between bg-gray-50/50">
+                    <div className="text-[14px] font-bold text-gray-800 flex items-center gap-1.5"><BarChart3 className="w-4 h-4 text-gray-500" /> Báo cáo Tuần 3 (Lớp 7A3)</div>
+                    <button className="text-[12px] text-[#E63946] font-bold px-3 py-1 bg-[#FAECE7] rounded-lg">28/32 Phụ huynh đã LK</button>
+                  </div>
+                  
+                  <div className="flex-1 overflow-y-auto p-4 space-y-4">
+                    <div className="bg-blue-50 border border-blue-100 p-3 rounded-lg flex items-start gap-3">
+                      <Sparkles className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                      <div className="text-[12px] text-gray-700 leading-relaxed">
+                        Hệ thống đã tổng hợp điểm số, số câu hoàn thành và điểm yếu của từng học sinh. Vui lòng kiểm tra lại trước khi gửi hàng loạt qua Zalo.
+                      </div>
+                    </div>
+
+                    {MOCK_STUDENTS.map(s => (
+                      <div key={s.id} className="border border-gray-200 rounded-lg p-3 hover:border-gray-300 transition-colors bg-white">
+                        <div className="flex items-center justify-between mb-2">
+                          <div className="flex items-center gap-2">
+                            <input type="checkbox" defaultChecked className="w-3.5 h-3.5 rounded border-gray-300 text-[#0F6E56] focus:ring-[#0F6E56]" />
+                            <span className="text-[13px] font-bold text-gray-800">{s.name}</span>
+                          </div>
+                          <span className="text-[11px] text-gray-500">PH: 098****123</span>
+                        </div>
+                        <div className="text-[12px] text-gray-600 bg-gray-50 p-2 rounded">
+                          XP Tuần: +450 | Điểm: {((s.speak + s.listen)/2).toFixed(1)}/100 | Nhận xét: Cần cải thiện phát âm âm /th/
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="p-4 border-t border-gray-200 bg-white">
+                    <button className="w-full bg-[#0068FF] hover:bg-[#0054cc] text-white py-3 rounded-lg text-[13px] font-bold transition-colors flex items-center justify-center gap-2 shadow-md">
+                      <Send className="w-4 h-4" /> Gửi hàng loạt qua Zalo ZNS (28)
+                    </button>
+                  </div>
+                </div>
+
+                {/* Zalo Preview */}
+                <div className="flex items-center justify-center p-4">
+                  <div className="w-[320px] h-[640px] bg-slate-900 rounded-[40px] border-[8px] border-slate-800 shadow-2xl relative overflow-hidden flex flex-col">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-800 rounded-b-2xl z-10"></div>
+                    
+                    {/* Zalo Header */}
+                    <div className="bg-[#0068FF] pt-12 pb-3 px-4 flex items-center gap-3 text-white">
+                      <ArrowLeft className="w-5 h-5" />
+                      <div className="flex-1">
+                        <div className="text-[15px] font-bold">GlobalSuccess AI</div>
+                        <div className="text-[11px] opacity-80">Official Account</div>
+                      </div>
+                    </div>
+
+                    {/* Chat Body */}
+                    <div className="flex-1 bg-[#E2E8F0] p-4 overflow-y-auto">
+                      <div className="text-center text-[10px] text-gray-500 mb-4">14:20 Hôm nay</div>
+                      
+                      <div className="bg-white rounded-xl overflow-hidden shadow-sm">
+                        <div className="h-24 bg-gradient-to-r from-blue-500 to-teal-400 relative">
+                          <div className="absolute bottom-3 left-3 text-white">
+                            <div className="text-[10px] font-bold opacity-90">BÁO CÁO HỌC TẬP TUẦN 3</div>
+                            <div className="text-[16px] font-black">Học sinh: Minh Anh</div>
+                          </div>
+                        </div>
+                        <div className="p-4 space-y-3">
+                          <div className="flex justify-between items-center border-b border-gray-100 pb-2">
+                            <span className="text-[12px] text-gray-500">Điểm số Tuần</span>
+                            <span className="text-[14px] font-bold text-[#0F6E56]">9.0/10</span>
+                          </div>
+                          <div className="flex justify-between items-center border-b border-gray-100 pb-2">
+                            <span className="text-[12px] text-gray-500">Kinh nghiệm (XP)</span>
+                            <span className="text-[13px] font-bold text-[#E63946]">+450 XP (Hạng 2)</span>
+                          </div>
+                          <div>
+                            <span className="text-[12px] text-gray-500 block mb-1">Đánh giá từ AI:</span>
+                            <div className="text-[12px] text-gray-800 bg-gray-50 p-2 rounded-lg leading-relaxed">
+                              Minh Anh học rất chăm chỉ. Tuy nhiên con cần chú ý luyện tập thêm phần Speaking (phát âm ending sounds).
+                            </div>
+                          </div>
+                          <button className="w-full bg-[#E1F5EE] text-[#0F6E56] font-bold text-[13px] py-2.5 rounded-lg mt-2">
+                            Xem chi tiết & Khen thưởng
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
