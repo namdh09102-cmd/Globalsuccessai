@@ -60,24 +60,35 @@ export default function TeacherPortal() {
     return "bg-red-500";
   };
 
-  const handleGenerateAI = () => {
+  const handleGenerateAI = async () => {
     if (!lessonTopic) {
       triggerToast("Vui lòng nhập chủ đề bài học!");
       return;
     }
     setIsGenerating(true);
     setAiOutput(null);
-    setTimeout(() => {
-      setIsGenerating(false);
-      setAiOutput({
-        objective: "Học sinh nắm vững 10 từ vựng chủ đề " + lessonTopic + " và có thể giao tiếp cơ bản.",
-        vocab: ["Environment", "Pollution", "Protect", "Save", "Energy"],
-        warmup: "Chơi mini-game Vòng quay từ vựng (5 phút).",
-        practice: "Luyện nghe chép chính tả đoạn hội thoại ngắn, sau đó thực hành nói theo cặp.",
-        game: "Game Xây Lâu Đài (Tổng hợp từ vựng và ngữ pháp)."
+    try {
+      const res = await fetch("/api/teacher/generate-lesson", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          topic: lessonTopic,
+          grade: lessonGrade,
+          duration: lessonDuration,
+          activities: lessonActivities
+        })
       });
+
+      if (!res.ok) throw new Error("API failed");
+      const data = await res.json();
+      setAiOutput(data);
       triggerToast("Đã tạo giáo án thành công!");
-    }, 2000);
+    } catch (err) {
+      console.error(err);
+      triggerToast("Lỗi khi tạo giáo án! Vui lòng thử lại.");
+    } finally {
+      setIsGenerating(false);
+    }
   };
 
   // --- Broadcast Mode (TV Overlay) ---
@@ -495,8 +506,11 @@ export default function TeacherPortal() {
                       >
                         Giao cho lớp
                       </button>
-                      <button className="px-3 py-2 bg-white border border-slate-200 text-slate-600 rounded-lg font-bold text-xs hover:bg-slate-50 transition-colors">
-                        Xuất PDF
+                      <button 
+                        onClick={() => window.print()}
+                        className="px-3 py-2 bg-white border border-slate-200 text-slate-600 rounded-lg font-bold text-xs hover:bg-slate-50 transition-colors"
+                      >
+                        Xuất PDF / In
                       </button>
                     </div>
                   </div>
