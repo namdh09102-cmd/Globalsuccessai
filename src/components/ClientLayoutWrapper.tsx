@@ -185,6 +185,10 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
     return <>{children}</>;
   }
 
+  if (isTeacherRoute) {
+    return <>{children}</>;
+  }
+
   if (isMaintenance && !isAdminRoute) {
     return (
       <div className="flex-1 w-full h-full flex flex-col items-center justify-center bg-page text-center p-8 space-y-6 select-none">

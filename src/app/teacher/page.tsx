@@ -2,562 +2,540 @@
 
 import React, { useState, useEffect } from "react";
 import { 
-  Bell, User, ChevronDown, CheckCircle, AlertTriangle, 
-  Users, BookOpen, Star, Sparkles, Send, Gift, 
-  Tv, X, Search, FileText, ChevronRight
+  LayoutDashboard, Sparkles, Gamepad2, Users, BarChart3, Award, Calendar, 
+  BookOpen, Tv, Clock, ArrowUp, ArrowDown, Send, FileOutput, Settings,
+  Rocket, Zap, Crown, Landmark, RotateCcw, Play, Pause, Eye, QrCode
 } from "lucide-react";
 
-// Types
-interface Student {
-  id: string;
-  name: string;
-  avatar: string;
-  score: number;
-  reading: number;
-  listening: number;
-  speaking: number;
-  lastActive: string;
-  attendance: string;
-}
+type TabType = "overview" | "lesson" | "game" | "students";
+type GameType = "race" | "quick" | "king" | "castle" | "team" | "spin";
 
-const MOCK_STUDENTS: Student[] = [
-  { id: "1", name: "Nguyễn Minh Anh", avatar: "👩‍🎓", score: 92, reading: 95, listening: 88, speaking: 93, lastActive: "15 phút trước", attendance: "100%" },
-  { id: "2", name: "Trần Tuấn Kiệt", avatar: "👦", score: 85, reading: 80, listening: 90, speaking: 85, lastActive: "2 giờ trước", attendance: "95%" },
-  { id: "3", name: "Lê Bảo Trâm", avatar: "👧", score: 78, reading: 75, listening: 82, speaking: 77, lastActive: "Hôm qua", attendance: "88%" },
-  { id: "4", name: "Phạm Hải Đăng", avatar: "🧑", score: 55, reading: 60, listening: 50, speaking: 55, lastActive: "3 ngày trước", attendance: "70%" },
-  { id: "5", name: "Hoàng Phương Linh", avatar: "👱‍♀️", score: 98, reading: 100, listening: 95, speaking: 99, lastActive: "Vừa xong", attendance: "100%" },
+const MOCK_STUDENTS = [
+  {id: '1', name: 'Minh Anh', init: 'MA', xp: 3660, speak: 92, listen: 88, read: 85, active: '2 giờ trước', status: 'green'},
+  {id: '2', name: 'Bảo Trâm', init: 'BT', xp: 2460, speak: 78, listen: 82, read: 76, active: '3 giờ trước', status: 'green'},
+  {id: '3', name: 'Tuấn Kiệt', init: 'TK', xp: 1710, speak: 65, listen: 60, read: 70, active: '1 ngày trước', status: 'amber'},
+  {id: '4', name: 'Khánh Tân', init: 'KT', xp: 1260, speak: 58, listen: 55, read: 62, active: '5 giờ trước', status: 'amber'},
+  {id: '5', name: 'Diệu Linh', init: 'DL', xp: 980, speak: 45, listen: 48, read: 50, active: '2 ngày trước', status: 'red'},
+  {id: '6', name: 'Hoàng Bách', init: 'HB', xp: 750, speak: 40, listen: 42, read: 44, active: '3 ngày trước', status: 'red'},
 ];
 
-export default function TeacherPortal() {
-  const [selectedClass, setSelectedClass] = useState("Lớp 11A1");
-  const [isBroadcastMode, setIsBroadcastMode] = useState(false);
-  const [showToast, setShowToast] = useState(false);
-  const [toastMsg, setToastMsg] = useState("");
+const COLORS = {
+  primary: '#E63946', primaryLight: '#FAECE7', primaryBorder: '#F5C4B3',
+  teal: '#0F6E56', tealLight: '#E1F5EE', tealBorder: '#9FE1CB', tealMid: '#1D9E75',
+  amber: '#BA7517', amberLight: '#FAEEDA', amberBorder: '#FAC775',
+  purple: '#534AB7', purpleLight: '#EEEDFE', purpleBorder: '#CECBF6',
+  blue: '#185FA5', blueLight: '#E6F1FB', blueBorder: '#B5D4F4',
+  green: '#3B6D11', greenLight: '#EAF3DE', greenBorder: '#C0DD97',
+  bgPrimary: '#fff', bgSecondary: '#f9f9f9', bgTertiary: '#F5F5F2',
+  borderSecondary: '#eaeaea', borderTertiary: '#f0f0f0',
+  textPrimary: '#333', textSecondary: '#666', textTertiary: '#999'
+};
 
-  // AI Lesson Planner State
-  const [lessonTopic, setLessonTopic] = useState("");
-  const [lessonGrade, setLessonGrade] = useState("11");
-  const [lessonDuration, setLessonDuration] = useState("45");
-  const [lessonActivities, setLessonActivities] = useState<string[]>(["Từ vựng", "Nghe"]);
+export default function TeacherPortalPort() {
+  const [activeTab, setActiveTab] = useState<TabType>("lesson");
+  const [activeGame, setActiveGame] = useState<GameType>("race");
+  
+  // Lesson Planner State
+  const [topic, setTopic] = useState("My future job and dreams");
+  const [grade, setGrade] = useState("Lớp 7");
+  const [duration, setDuration] = useState("45 phút");
+  const [activities, setActivities] = useState<string[]>(["Từ vựng", "Nói", "Mini-game"]);
   const [isGenerating, setIsGenerating] = useState(false);
   const [aiOutput, setAiOutput] = useState<any>(null);
 
-  const triggerToast = (msg: string) => {
-    setToastMsg(msg);
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 3000);
-  };
+  // Race Game State
+  const [isRacing, setIsRacing] = useState(false);
+  const [positions, setPositions] = useState([10, 10, 10]);
 
-  const getScoreColor = (score: number) => {
-    if (score >= 80) return "text-emerald-600 bg-emerald-100 border-emerald-300";
-    if (score >= 60) return "text-amber-600 bg-amber-100 border-amber-300";
-    return "text-red-600 bg-red-100 border-red-300";
-  };
-
-  const getProgressColor = (score: number) => {
-    if (score >= 80) return "bg-emerald-500";
-    if (score >= 60) return "bg-amber-500";
-    return "bg-red-500";
+  const toggleActivity = (act: string) => {
+    setActivities(prev => prev.includes(act) ? prev.filter(a => a !== act) : [...prev, act]);
   };
 
   const handleGenerateAI = async () => {
-    if (!lessonTopic) {
-      triggerToast("Vui lòng nhập chủ đề bài học!");
-      return;
-    }
+    if (!topic) return;
     setIsGenerating(true);
     setAiOutput(null);
     try {
       const res = await fetch("/api/teacher/generate-lesson", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          topic: lessonTopic,
-          grade: lessonGrade,
-          duration: lessonDuration,
-          activities: lessonActivities
-        })
+        body: JSON.stringify({ topic, grade, duration, activities })
       });
-
-      if (!res.ok) throw new Error("API failed");
+      if (!res.ok) throw new Error("API fail");
       const data = await res.json();
       setAiOutput(data);
-      triggerToast("Đã tạo giáo án thành công!");
-    } catch (err) {
-      console.error(err);
-      triggerToast("Lỗi khi tạo giáo án! Vui lòng thử lại.");
+    } catch (e) {
+      // Fallback if API fails
+      setAiOutput({
+        objective: `HS hiểu và giao tiếp được về chủ đề ${topic}.`,
+        vocab: ["doctor", "engineer", "teacher", "artist", "pilot"],
+        warmup: "Game Đấu Quick khởi động.",
+        practice: "Nghe mẫu câu, luyện nói theo cặp.",
+        game: "Đua Tên Lửa — Củng cố từ vựng."
+      });
     } finally {
       setIsGenerating(false);
     }
   };
 
-  // --- Broadcast Mode (TV Overlay) ---
-  if (isBroadcastMode) {
-    return (
-      <div className="fixed inset-0 bg-slate-900 z-50 flex flex-col text-white font-nunito overflow-hidden">
-        {/* Header */}
-        <div className="flex items-center justify-between p-6 bg-slate-800/80 border-b border-slate-700">
-          <div className="flex items-center gap-4">
-            <h1 className="text-3xl font-fredoka uppercase text-primary tracking-wide">{selectedClass}</h1>
-            <span className="px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/50 flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-              28/30 học sinh đang tham gia
+  useEffect(() => {
+    let tick: NodeJS.Timeout;
+    if (isRacing) {
+      let frame = 0;
+      tick = setInterval(() => {
+        frame++;
+        setPositions(prev => {
+          const finalPos = [78, 62, 55];
+          return prev.map((p, i) => Math.min(p + Math.random() * 3, finalPos[i]));
+        });
+        if (frame >= 30) setIsRacing(false);
+      }, 80);
+    }
+    return () => clearInterval(tick);
+  }, [isRacing]);
+
+  const resetRace = () => {
+    setPositions([10, 10, 10]);
+    setIsRacing(true);
+  };
+
+  return (
+    <div className="h-[90vh] bg-[#F5F5F2] font-sans p-6 overflow-hidden flex items-center justify-center">
+      <div className="flex w-full max-w-[1200px] h-[750px] bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+        
+        {/* Sidebar */}
+        <div className="w-[220px] bg-white border-r border-gray-200 flex flex-col shrink-0">
+          <div className="p-4 border-b border-gray-200">
+            <div className="text-[15px] font-bold text-gray-800">GlobalSuccess AI</div>
+            <div className="text-[11px] text-gray-500 mt-0.5">K-12 Edtech Platform</div>
+            <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded bg-[#E1F5EE] text-[#0F6E56] font-medium mt-2">
+              <BookOpen className="w-3 h-3" /> Giáo viên
             </span>
           </div>
-          <button 
-            onClick={() => setIsBroadcastMode(false)}
-            className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-700 hover:bg-slate-600 transition-colors"
-          >
-            <X className="w-6 h-6" />
-          </button>
-        </div>
-
-        {/* Center Content: Mock Game / Leaderboard */}
-        <div className="flex-1 flex flex-col items-center justify-center relative bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-800 to-slate-900">
-          <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(white 2px, transparent 2px)', backgroundSize: '40px 40px' }} />
           
-          <div className="z-10 text-center">
-            <div className="text-8xl mb-6 animate-bounce-custom">🏆</div>
-            <h2 className="text-5xl font-fredoka uppercase mb-4 text-amber-400 drop-shadow-lg">Bảng Phong Thần</h2>
-            <div className="w-[600px] bg-slate-800/80 border-4 border-slate-700 rounded-3xl p-6 shadow-2xl backdrop-blur-sm">
-              {[MOCK_STUDENTS[4], MOCK_STUDENTS[0], MOCK_STUDENTS[1]].map((s, i) => (
-                <div key={s.id} className="flex items-center justify-between p-4 mb-3 last:mb-0 bg-slate-700/50 rounded-2xl border-2 border-slate-600">
-                  <div className="flex items-center gap-4">
-                    <span className="text-3xl font-black text-slate-400">#{i+1}</span>
-                    <span className="text-4xl">{s.avatar}</span>
-                    <span className="text-2xl font-bold">{s.name}</span>
-                  </div>
-                  <span className="text-2xl font-black text-amber-400">{s.score * 100} XP</span>
-                </div>
-              ))}
+          <div className="p-2 flex-1 overflow-y-auto">
+            <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-2 py-2 mt-2">Giảng dạy</div>
+            <div onClick={() => setActiveTab('overview')} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer mb-0.5 transition-colors ${activeTab === 'overview' ? 'bg-[#FAECE7] text-[#E63946]' : 'text-gray-600 hover:bg-gray-50'}`}>
+              <LayoutDashboard className="w-4 h-4" /> Tổng quan lớp
+            </div>
+            <div onClick={() => setActiveTab('lesson')} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer mb-0.5 transition-colors ${activeTab === 'lesson' ? 'bg-[#FAECE7] text-[#E63946]' : 'text-gray-600 hover:bg-gray-50'}`}>
+              <Sparkles className="w-4 h-4" /> Soạn giáo án AI
+            </div>
+            <div onClick={() => setActiveTab('game')} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer mb-0.5 transition-colors ${activeTab === 'game' ? 'bg-[#FAECE7] text-[#E63946]' : 'text-gray-600 hover:bg-gray-50'}`}>
+              <Gamepad2 className="w-4 h-4" /> Tạo game lớp
+            </div>
+
+            <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-2 py-2 mt-2">Học sinh</div>
+            <div onClick={() => setActiveTab('students')} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer mb-0.5 transition-colors ${activeTab === 'students' ? 'bg-[#FAECE7] text-[#E63946]' : 'text-gray-600 hover:bg-gray-50'}`}>
+              <Users className="w-4 h-4" /> Danh sách lớp
+            </div>
+            <div className="flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer text-gray-600 hover:bg-gray-50 mb-0.5">
+              <BarChart3 className="w-4 h-4" /> Báo cáo
+            </div>
+            <div className="flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer text-gray-600 hover:bg-gray-50 mb-0.5">
+              <Award className="w-4 h-4" /> Trao thưởng
+            </div>
+
+            <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-2 py-2 mt-2">Cài đặt</div>
+            <div className="flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer text-gray-600 hover:bg-gray-50 mb-0.5">
+              <Calendar className="w-4 h-4" /> Lịch dạy
             </div>
           </div>
 
-          {/* QR Code */}
-          <div className="absolute bottom-8 right-8 bg-white p-3 rounded-2xl flex flex-col items-center shadow-2xl animate-fade-in-up">
-            <div className="w-32 h-32 bg-slate-200 rounded-lg flex items-center justify-center border-4 border-dashed border-slate-300">
-              <span className="text-slate-400 font-bold text-center leading-tight">MOCK<br/>QR CODE</span>
+          <div className="p-3 border-t border-gray-200 flex items-center gap-2 bg-gray-50">
+            <div className="w-8 h-8 rounded-full bg-[#E1F5EE] text-[#0F6E56] flex items-center justify-center text-[12px] font-bold shrink-0">NT</div>
+            <div className="min-w-0">
+              <div className="text-[12px] font-bold text-gray-800 truncate">Cô Ngọc Thảo</div>
+              <div className="text-[11px] text-gray-500 truncate">Tiếng Anh · Lớp 6–9</div>
             </div>
-            <span className="mt-2 text-slate-800 font-bold text-sm">Quét để tham gia</span>
           </div>
         </div>
 
-        {/* Bottom Ticker */}
-        <div className="h-14 bg-primary flex items-center px-6 overflow-hidden border-t-4 border-primary-dark shrink-0">
-          <div className="whitespace-nowrap animate-[marquee_15s_linear_infinite] font-bold text-xl flex gap-12">
-            <span>🎉 Minh Tuấn vừa đạt 100 điểm!</span>
-            <span>🔥 Hải Đăng đang có chuỗi thắng 5 câu liên tiếp!</span>
-            <span>⭐ Lớp 11A1 đã hoàn thành 80% mục tiêu bài học!</span>
+        {/* Main Content */}
+        <div className="flex-1 flex flex-col min-w-0 bg-[#fbfbfb]">
+          
+          {/* Topbar */}
+          <div className="p-4 px-6 border-b border-gray-200 bg-white flex items-center justify-between shrink-0">
+            <div>
+              <h2 className="text-[16px] font-bold text-gray-800">
+                {activeTab === 'overview' && "Tổng quan lớp"}
+                {activeTab === 'lesson' && "Soạn giáo án AI"}
+                {activeTab === 'game' && "Tạo game cho lớp"}
+                {activeTab === 'students' && "Danh sách học sinh"}
+              </h2>
+              <p className="text-[12px] text-gray-500 mt-0.5">
+                {activeTab === 'overview' && "Lớp 7A3 hôm nay — 28/32 học sinh online"}
+                {activeTab === 'lesson' && "Nhập chủ đề — AI tạo giáo án hoàn chỉnh trong 10 giây"}
+                {activeTab === 'game' && "Chọn game, cấu hình và chiếu thẳng lên bảng TV"}
+                {activeTab === 'students' && "Theo dõi tiến độ từng em, giao bài và gửi báo cáo"}
+              </p>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="text-[12px] text-gray-500 flex items-center gap-1.5 bg-gray-100 px-3 py-1.5 rounded-full">
+                <Users className="w-3.5 h-3.5" /> Lớp 7A3 · 32 HS
+              </div>
+              <button className="flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-gray-200 bg-white hover:bg-gray-50 text-[12px] font-bold text-gray-700 transition-colors">
+                <Tv className="w-4 h-4" /> Chiếu bảng
+              </button>
+            </div>
+          </div>
+
+          {/* Tab Headers */}
+          <div className="flex px-6 bg-white border-b border-gray-200 shrink-0">
+            <div onClick={() => setActiveTab('overview')} className={`flex items-center gap-1.5 px-4 py-2.5 text-[13px] font-medium cursor-pointer border-b-2 transition-colors ${activeTab === 'overview' ? 'border-[#E63946] text-[#E63946]' : 'border-transparent text-gray-500 hover:text-gray-800'}`}>
+              <LayoutDashboard className="w-4 h-4" /> Tổng quan
+            </div>
+            <div onClick={() => setActiveTab('lesson')} className={`flex items-center gap-1.5 px-4 py-2.5 text-[13px] font-medium cursor-pointer border-b-2 transition-colors ${activeTab === 'lesson' ? 'border-[#E63946] text-[#E63946]' : 'border-transparent text-gray-500 hover:text-gray-800'}`}>
+              <Sparkles className="w-4 h-4" /> Soạn giáo án
+            </div>
+            <div onClick={() => setActiveTab('game')} className={`flex items-center gap-1.5 px-4 py-2.5 text-[13px] font-medium cursor-pointer border-b-2 transition-colors ${activeTab === 'game' ? 'border-[#E63946] text-[#E63946]' : 'border-transparent text-gray-500 hover:text-gray-800'}`}>
+              <Gamepad2 className="w-4 h-4" /> Tạo game
+            </div>
+            <div onClick={() => setActiveTab('students')} className={`flex items-center gap-1.5 px-4 py-2.5 text-[13px] font-medium cursor-pointer border-b-2 transition-colors ${activeTab === 'students' ? 'border-[#E63946] text-[#E63946]' : 'border-transparent text-gray-500 hover:text-gray-800'}`}>
+              <Users className="w-4 h-4" /> Học sinh
+            </div>
+          </div>
+
+          {/* Scrollable Content */}
+          <div className="flex-1 overflow-y-auto p-6">
+            
+            {/* OVERVIEW TAB */}
+            {activeTab === 'overview' && (
+              <div className="animate-fade-in-up">
+                <div className="grid grid-cols-4 gap-4 mb-6">
+                  <div className="bg-white rounded-xl border border-gray-100 p-4 shadow-sm">
+                    <div className="text-[11px] text-gray-500 mb-1">Online hôm nay</div>
+                    <div className="text-[24px] font-bold text-gray-800">28<span className="text-[14px] text-gray-400 font-normal">/32</span></div>
+                    <div className="text-[11px] text-[#3B6D11] mt-1 flex items-center gap-1"><ArrowUp className="w-3 h-3" /> 4 hơn hôm qua</div>
+                  </div>
+                  <div className="bg-white rounded-xl border border-gray-100 p-4 shadow-sm">
+                    <div className="text-[11px] text-gray-500 mb-1">Bài hoàn thành</div>
+                    <div className="text-[24px] font-bold text-gray-800">74<span className="text-[14px] text-gray-400 font-normal">%</span></div>
+                    <div className="text-[11px] text-[#3B6D11] mt-1 flex items-center gap-1"><ArrowUp className="w-3 h-3" /> +8% tuần trước</div>
+                  </div>
+                  <div className="bg-white rounded-xl border border-gray-100 p-4 shadow-sm">
+                    <div className="text-[11px] text-gray-500 mb-1">Điểm trung bình</div>
+                    <div className="text-[24px] font-bold text-gray-800">7.8</div>
+                    <div className="text-[11px] text-gray-400 mt-1">Ổn định</div>
+                  </div>
+                  <div className="bg-white rounded-xl border border-gray-100 p-4 shadow-sm">
+                    <div className="text-[11px] text-gray-500 mb-1">Cần hỗ trợ</div>
+                    <div className="text-[24px] font-bold text-[#A32D2D]">5</div>
+                    <div className="text-[11px] text-[#A32D2D] mt-1 flex items-center gap-1"><ArrowDown className="w-3 h-3" /> Dưới 60% tuần này</div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-white rounded-xl border border-gray-200 p-4">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="text-[13px] font-bold text-gray-800 flex items-center gap-1.5"><Clock className="w-4 h-4 text-gray-500" /> Hoạt động gần đây</div>
+                      <div className="text-[11px] text-[#E63946] cursor-pointer hover:underline">Xem tất cả</div>
+                    </div>
+                    <div className="flex items-center gap-3 py-2 border-b border-gray-100 last:border-0">
+                      <div className="w-8 h-8 rounded-full bg-[#E1F5EE] text-[#0F6E56] flex items-center justify-center text-[11px] font-bold shrink-0">MA</div>
+                      <div className="flex-1"><div className="text-[12px] font-bold text-gray-800">Minh Anh</div><div className="text-[11px] text-gray-500">Hoàn thành Unit 3 Speaking</div></div>
+                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#EAF3DE] text-[#3B6D11] font-bold">+50 XP</span>
+                    </div>
+                    <div className="flex items-center gap-3 py-2 border-b border-gray-100 last:border-0">
+                      <div className="w-8 h-8 rounded-full bg-[#EEEDFE] text-[#534AB7] flex items-center justify-center text-[11px] font-bold shrink-0">BT</div>
+                      <div className="flex-1"><div className="text-[12px] font-bold text-gray-800">Bảo Trâm</div><div className="text-[11px] text-gray-500">Luyện phát âm /th/ — 83%</div></div>
+                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#FAEEDA] text-[#BA7517] font-bold">+20 XP</span>
+                    </div>
+                    <div className="flex items-center gap-3 py-2 border-b border-gray-100 last:border-0">
+                      <div className="w-8 h-8 rounded-full bg-[#FCEBEB] text-[#A32D2D] flex items-center justify-center text-[11px] font-bold shrink-0">TK</div>
+                      <div className="flex-1"><div className="text-[12px] font-bold text-gray-800">Tuấn Kiệt</div><div className="text-[11px] text-gray-500">Chưa nộp bài Unit 3</div></div>
+                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#FCEBEB] text-[#A32D2D] font-bold">Nhắc nhở</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-white rounded-xl border border-gray-200 p-4 flex flex-col">
+                    <div className="text-[13px] font-bold text-gray-800 flex items-center gap-1.5 mb-3"><Sparkles className="w-4 h-4 text-[#E63946]" /> Gợi ý từ AI</div>
+                    <div className="text-[13px] text-gray-600 leading-relaxed mb-4 flex-1">
+                      Lớp 7A3 đang yếu kỹ năng <strong className="text-[#E63946]">Pronunciation</strong>. Đề xuất tổ chức game <em>Đấu Quick</em> đầu tiết hôm nay để luyện tập nhóm.
+                    </div>
+                    <button onClick={() => setActiveTab('game')} className="w-full bg-[#0F6E56] hover:bg-[#1D9E75] text-white py-2.5 rounded-lg text-[13px] font-bold transition-colors flex items-center justify-center gap-2 shadow-sm">
+                      <Gamepad2 className="w-4 h-4" /> Tạo game ngay
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* LESSON TAB */}
+            {activeTab === 'lesson' && (
+              <div className="grid grid-cols-2 gap-6 animate-fade-in-up">
+                <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm h-fit">
+                  <div className="text-[14px] font-bold text-gray-800 flex items-center gap-1.5 mb-5 border-b border-gray-100 pb-3">
+                    <Sparkles className="w-4 h-4 text-gray-500" /> Thông tin bài học
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="space-y-1.5">
+                      <label className="text-[12px] font-bold text-gray-500">Chủ đề bài học</label>
+                      <input 
+                        type="text" value={topic} onChange={(e) => setTopic(e.target.value)}
+                        className="w-full text-[13px] px-3 py-2 rounded-lg border border-gray-200 focus:border-[#E63946] outline-none"
+                      />
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="space-y-1.5">
+                        <label className="text-[12px] font-bold text-gray-500">Khối lớp</label>
+                        <select value={grade} onChange={e => setGrade(e.target.value)} className="w-full text-[13px] px-3 py-2 rounded-lg border border-gray-200 focus:border-[#E63946] outline-none bg-white">
+                          <option>Lớp 7</option><option>Lớp 8</option><option>Lớp 9</option>
+                        </select>
+                      </div>
+                      <div className="space-y-1.5">
+                        <label className="text-[12px] font-bold text-gray-500">Thời lượng</label>
+                        <select value={duration} onChange={e => setDuration(e.target.value)} className="w-full text-[13px] px-3 py-2 rounded-lg border border-gray-200 focus:border-[#E63946] outline-none bg-white">
+                          <option>45 phút</option><option>30 phút</option><option>15 phút</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <label className="text-[12px] font-bold text-gray-500">Loại hoạt động</label>
+                      <div className="flex flex-wrap gap-2">
+                        {["Từ vựng", "Nói", "Nghe", "Mini-game", "Viết", "Ngữ pháp"].map(act => (
+                          <div 
+                            key={act} onClick={() => toggleActivity(act)}
+                            className={`px-3 py-1.5 rounded-full text-[12px] font-medium cursor-pointer transition-colors border ${
+                              activities.includes(act) ? 'bg-[#FAECE7] text-[#E63946] border-[#F5C4B3]' : 'bg-white text-gray-500 border-gray-200 hover:bg-gray-50'
+                            }`}
+                          >
+                            {act}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <label className="text-[12px] font-bold text-gray-500">Ghi chú thêm</label>
+                      <textarea rows={2} placeholder="VD: Tập trung pronunciation..." className="w-full text-[13px] px-3 py-2 rounded-lg border border-gray-200 focus:border-[#E63946] outline-none resize-none"></textarea>
+                    </div>
+
+                    <button 
+                      onClick={handleGenerateAI} disabled={isGenerating}
+                      className="w-full bg-[#E63946] hover:bg-[#c62b37] disabled:opacity-70 text-white py-2.5 rounded-lg text-[13px] font-bold transition-colors flex items-center justify-center gap-2 shadow-sm mt-2"
+                    >
+                      {isGenerating ? <Sparkles className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4" />}
+                      {isGenerating ? "AI đang soạn..." : "Tạo giáo án với AI"}
+                    </button>
+                  </div>
+                </div>
+
+                <div>
+                  {aiOutput ? (
+                    <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col h-full animate-fade-in-up">
+                      <div className="p-3.5 px-4 border-b border-gray-200 flex items-center justify-between bg-gray-50/50 shrink-0">
+                        <div className="text-[13px] font-bold text-gray-800 flex items-center gap-1.5"><FileOutput className="w-4 h-4 text-[#0F6E56]" /> Giáo án: {topic}</div>
+                        <span className="text-[11px] text-gray-500 bg-white px-2 py-0.5 rounded border border-gray-200">{grade} · {duration}</span>
+                      </div>
+                      
+                      <div className="flex-1 overflow-y-auto">
+                        <div className="p-4 border-b border-gray-100">
+                          <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Mục tiêu bài học</div>
+                          <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.objective}</div>
+                        </div>
+                        <div className="p-4 border-b border-gray-100">
+                          <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Từ vựng chính</div>
+                          <div className="flex flex-wrap gap-1.5">
+                            {aiOutput.vocab.map((v:string) => <span key={v} className="text-[11px] px-2 py-0.5 rounded bg-[#E1F5EE] text-[#0F6E56] font-medium">{v}</span>)}
+                          </div>
+                        </div>
+                        <div className="p-4 border-b border-gray-100">
+                          <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Khởi động</div>
+                          <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.warmup}</div>
+                        </div>
+                        <div className="p-4 border-b border-gray-100">
+                          <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Thực hành</div>
+                          <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.practice}</div>
+                        </div>
+                        <div className="p-4">
+                          <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Game củng cố</div>
+                          <div className="text-[13px] text-gray-800 leading-relaxed bg-[#EEEDFE] text-[#534AB7] p-2 rounded-lg inline-block font-medium">🎮 {aiOutput.game}</div>
+                        </div>
+                      </div>
+
+                      <div className="p-3 px-4 bg-gray-50 border-t border-gray-200 flex gap-2 shrink-0">
+                        <button className="flex-1 bg-[#E63946] hover:bg-[#c62b37] text-white py-2 rounded-lg text-[12px] font-bold transition-colors flex items-center justify-center gap-1.5">
+                          <Send className="w-3.5 h-3.5" /> Giao cho lớp
+                        </button>
+                        <button onClick={() => window.print()} className="px-4 bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 py-2 rounded-lg text-[12px] font-bold transition-colors flex items-center justify-center gap-1.5">
+                          <FileOutput className="w-3.5 h-3.5" /> Xuất PDF
+                        </button>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="bg-gray-50 rounded-xl border border-dashed border-gray-300 h-full flex flex-col items-center justify-center text-gray-400">
+                      <Sparkles className="w-8 h-8 mb-2 opacity-50" />
+                      <div className="text-[13px] font-medium">Nhập thông tin bên trái để AI tạo giáo án</div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* GAME TAB */}
+            {activeTab === 'game' && (
+              <div className="animate-fade-in-up">
+                <div className="grid grid-cols-3 gap-3 mb-5">
+                  <div onClick={() => setActiveGame('race')} className={`p-3 rounded-xl border-2 cursor-pointer transition-all text-center bg-white ${activeGame === 'race' ? 'border-[#E63946] bg-[#FAECE7]' : 'border-gray-100 hover:border-[#F5C4B3]'}`}>
+                    <Rocket className={`w-6 h-6 mx-auto mb-1.5 ${activeGame === 'race' ? 'text-[#E63946]' : 'text-gray-400'}`} />
+                    <div className="text-[12px] font-bold text-gray-800 mb-0.5">Đua Tên Lửa</div>
+                    <div className="text-[10px] text-gray-500 leading-tight">Trả lời nhanh — tên lửa bay</div>
+                  </div>
+                  <div onClick={() => setActiveGame('quick')} className={`p-3 rounded-xl border-2 cursor-pointer transition-all text-center bg-white ${activeGame === 'quick' ? 'border-[#E63946] bg-[#FAECE7]' : 'border-gray-100 hover:border-[#F5C4B3]'}`}>
+                    <Zap className={`w-6 h-6 mx-auto mb-1.5 ${activeGame === 'quick' ? 'text-[#E63946]' : 'text-gray-400'}`} />
+                    <div className="text-[12px] font-bold text-gray-800 mb-0.5">Đấu Quick</div>
+                    <div className="text-[10px] text-gray-500 leading-tight">1v1 phát âm real-time</div>
+                  </div>
+                  <div onClick={() => setActiveGame('king')} className={`p-3 rounded-xl border-2 cursor-pointer transition-all text-center bg-white ${activeGame === 'king' ? 'border-[#E63946] bg-[#FAECE7]' : 'border-gray-100 hover:border-[#F5C4B3]'}`}>
+                    <Crown className={`w-6 h-6 mx-auto mb-1.5 ${activeGame === 'king' ? 'text-[#E63946]' : 'text-gray-400'}`} />
+                    <div className="text-[12px] font-bold text-gray-800 mb-0.5">Vua Lớp Học</div>
+                    <div className="text-[10px] text-gray-500 leading-tight">Bảng xếp hạng tuần</div>
+                  </div>
+                </div>
+
+                {activeGame === 'race' && (
+                  <>
+                    <div className="bg-white rounded-xl border border-gray-200 p-4 mb-4 shadow-sm">
+                      <div className="text-[13px] font-bold text-gray-800 flex items-center gap-1.5 mb-3 border-b border-gray-100 pb-2">
+                        <Settings className="w-4 h-4 text-gray-400" /> Cấu hình: Đua Tên Lửa
+                      </div>
+                      <div className="grid grid-cols-3 gap-3 mb-3">
+                        <div className="space-y-1">
+                          <label className="text-[11px] font-bold text-gray-500">Số câu hỏi</label>
+                          <select className="w-full text-[12px] px-2 py-1.5 rounded-lg border border-gray-200 outline-none bg-gray-50"><option>10 câu</option><option>15 câu</option></select>
+                        </div>
+                        <div className="space-y-1">
+                          <label className="text-[11px] font-bold text-gray-500">Thời gian/câu</label>
+                          <select className="w-full text-[12px] px-2 py-1.5 rounded-lg border border-gray-200 outline-none bg-gray-50"><option>15 giây</option><option>30 giây</option></select>
+                        </div>
+                        <div className="space-y-1">
+                          <label className="text-[11px] font-bold text-gray-500">Nội dung</label>
+                          <select className="w-full text-[12px] px-2 py-1.5 rounded-lg border border-gray-200 outline-none bg-gray-50"><option>Giáo án hiện tại</option><option>Tự chọn</option></select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+                      <div className="p-3 px-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                        <div className="text-[12px] font-bold text-gray-800 flex items-center gap-1.5"><Eye className="w-4 h-4" /> Xem trước trên TV</div>
+                      </div>
+                      <div className="p-4 bg-slate-900 relative">
+                        {/* Race Track */}
+                        <div className="relative h-[100px] bg-slate-800 rounded-xl overflow-hidden border border-slate-700">
+                          <div className="absolute left-0 right-0 top-[25px] h-px bg-slate-700"></div>
+                          <div className="absolute left-0 right-0 top-[50px] h-px bg-slate-700"></div>
+                          <div className="absolute left-0 right-0 top-[75px] h-px bg-slate-700"></div>
+                          <div className="absolute right-4 top-0 bottom-0 w-2 border-l-2 border-dashed border-white/30"></div>
+                          
+                          <div className="absolute text-[24px] drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all ease-linear" style={{ top: '8px', left: `${positions[0]}%` }}>🚀</div>
+                          <div className="absolute text-[24px] drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all ease-linear" style={{ top: '33px', left: `${positions[1]}%` }}>🚀</div>
+                          <div className="absolute text-[24px] drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all ease-linear" style={{ top: '58px', left: `${positions[2]}%` }}>🚀</div>
+                        </div>
+
+                        <div className="flex gap-2 mt-3">
+                          <div className="flex-1 bg-slate-800 rounded-lg p-2 text-center border border-slate-700">
+                            <div className="text-[10px] text-slate-400">Đội 1</div><div className="text-[14px] font-bold text-[#E63946]">{Math.round(positions[0])}%</div>
+                          </div>
+                          <div className="flex-1 bg-slate-800 rounded-lg p-2 text-center border border-slate-700">
+                            <div className="text-[10px] text-slate-400">Đội 2</div><div className="text-[14px] font-bold text-[#0F6E56]">{Math.round(positions[1])}%</div>
+                          </div>
+                          <div className="flex-1 bg-slate-800 rounded-lg p-2 text-center border border-slate-700">
+                            <div className="text-[10px] text-slate-400">Đội 3</div><div className="text-[14px] font-bold text-[#534AB7]">{Math.round(positions[2])}%</div>
+                          </div>
+                        </div>
+
+                        <button 
+                          onClick={isRacing ? resetRace : resetRace}
+                          className="mt-4 w-full bg-[#E63946] hover:bg-[#c62b37] text-white py-2.5 rounded-lg text-[13px] font-bold transition-colors flex items-center justify-center gap-1.5"
+                        >
+                          {isRacing ? <><RotateCcw className="w-4 h-4" /> Chơi lại</> : <><Play className="w-4 h-4" /> Bắt đầu game</>}
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="mt-4 bg-[#E1F5EE] border border-[#9FE1CB] rounded-xl p-3 px-4 flex items-center justify-between shadow-sm">
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-[#1D9E75] animate-pulse"></span>
+                        <span className="text-[13px] font-bold text-[#0F6E56]">28 học sinh đã sẵn sàng</span>
+                      </div>
+                      <div className="flex gap-2">
+                        <button className="bg-white border border-[#9FE1CB] text-[#0F6E56] px-3 py-1.5 rounded-lg text-[12px] font-bold flex items-center gap-1.5"><QrCode className="w-3.5 h-3.5" /> QR</button>
+                        <button className="bg-[#0F6E56] text-white px-3 py-1.5 rounded-lg text-[12px] font-bold flex items-center gap-1.5 shadow-sm"><Tv className="w-3.5 h-3.5" /> Chiếu lên bảng</button>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+            )}
+
+            {/* STUDENTS TAB */}
+            {activeTab === 'students' && (
+              <div className="animate-fade-in-up bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+                <div className="p-4 border-b border-gray-100 flex items-center justify-between bg-gray-50/50">
+                  <div className="text-[14px] font-bold text-gray-800 flex items-center gap-1.5"><Users className="w-4 h-4 text-gray-500" /> Danh sách Lớp 7A3</div>
+                  <div className="flex gap-2">
+                    <input type="text" placeholder="Tìm kiếm..." className="text-[12px] px-3 py-1.5 rounded-lg border border-gray-200 outline-none w-48" />
+                  </div>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="border-b border-gray-200 text-[11px] font-bold text-gray-500 uppercase tracking-wider bg-white">
+                        <th className="p-3 pl-4">Học sinh</th>
+                        <th className="p-3 text-center">XP Tích luỹ</th>
+                        <th className="p-3 text-center">Nói</th>
+                        <th className="p-3 text-center">Nghe</th>
+                        <th className="p-3 text-center">Trạng thái</th>
+                        <th className="p-3"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {MOCK_STUDENTS.map(s => {
+                        const bg = s.status === 'green' ? '#E1F5EE' : s.status === 'amber' ? '#FAEEDA' : '#FCEBEB';
+                        const text = s.status === 'green' ? '#0F6E56' : s.status === 'amber' ? '#BA7517' : '#A32D2D';
+                        return (
+                          <tr key={s.id} className="border-b border-gray-100 hover:bg-gray-50/50 transition-colors">
+                            <td className="p-3 pl-4">
+                              <div className="flex items-center gap-2.5">
+                                <div className="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold shrink-0" style={{background: bg, color: text}}>{s.init}</div>
+                                <div>
+                                  <div className="text-[13px] font-bold text-gray-800">{s.name}</div>
+                                  <div className="text-[11px] text-gray-500">{s.active}</div>
+                                </div>
+                              </div>
+                            </td>
+                            <td className="p-3 text-center">
+                              <div className="text-[13px] font-bold text-gray-800 mb-1">{s.xp.toLocaleString()}</div>
+                              <div className="w-16 h-1 bg-gray-100 rounded-full mx-auto overflow-hidden"><div className="h-full bg-[#E63946]" style={{width: `${s.xp/4000*100}%`}}></div></div>
+                            </td>
+                            <td className="p-3 text-center text-[12px] font-bold" style={{color: s.speak >= 80 ? '#3B6D11' : s.speak >= 60 ? '#BA7517' : '#A32D2D'}}>{s.speak}%</td>
+                            <td className="p-3 text-center text-[12px] font-bold" style={{color: s.listen >= 80 ? '#3B6D11' : s.listen >= 60 ? '#BA7517' : '#A32D2D'}}>{s.listen}%</td>
+                            <td className="p-3 text-center">
+                              <span className="text-[10px] px-2 py-0.5 rounded-full font-bold" style={{background: bg, color: text}}>
+                                {s.status === 'green' ? 'Tích cực' : s.status === 'amber' ? 'Bình thường' : 'Cần hỗ trợ'}
+                              </span>
+                            </td>
+                            <td className="p-3 pr-4 text-right">
+                              <button className="text-[11px] font-bold text-gray-600 bg-white border border-gray-200 hover:bg-gray-50 px-3 py-1.5 rounded-lg transition-colors shadow-sm">
+                                Giao bài
+                              </button>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+            
           </div>
         </div>
       </div>
-    );
-  }
-
-  // --- Normal Dashboard Mode ---
-  return (
-    <div className="min-h-screen bg-[#F8FAFC] font-nunito text-slate-800 pb-20">
-      
-      {/* Toast */}
-      {showToast && (
-        <div className="fixed top-20 right-6 z-50 bg-slate-800 text-white px-6 py-4 rounded-2xl shadow-xl flex items-center gap-3 animate-fade-in-up">
-          <CheckCircle className="w-6 h-6 text-emerald-400" />
-          <span className="font-bold">{toastMsg}</span>
-        </div>
-      )}
-
-      {/* Top Navbar */}
-      <nav className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 sticky top-0 z-40 shadow-sm">
-        <div className="flex items-center gap-4">
-          <h1 className="text-xl tracking-wide flex items-center">
-            <span className="font-black text-slate-800">Global</span>
-            <span className="font-fredoka text-primary mx-1">KIDS</span>
-            <span className="font-black text-slate-800">AI</span>
-          </h1>
-          <span className="bg-[#4ECDC4] text-white px-2 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider">
-            Giáo viên
-          </span>
-        </div>
-
-        <div className="flex items-center gap-6">
-          {/* Class Dropdown */}
-          <div className="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-full cursor-pointer transition-colors border border-slate-200">
-            <span className="font-bold text-sm text-slate-700">{selectedClass}</span>
-            <ChevronDown className="w-4 h-4 text-slate-500" />
-          </div>
-          
-          <button 
-            onClick={() => setIsBroadcastMode(true)}
-            className="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-full font-bold text-sm transition-colors shadow-md"
-          >
-            <Tv className="w-4 h-4" />
-            Chiếu lên bảng
-          </button>
-
-          <div className="w-px h-6 bg-slate-200" />
-          
-          <button className="relative text-slate-500 hover:text-slate-800 transition-colors">
-            <Bell className="w-5 h-5" />
-            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white" />
-          </button>
-          
-          <div className="w-9 h-9 rounded-full bg-emerald-100 border-2 border-emerald-500 flex items-center justify-center text-emerald-700 shadow-sm">
-            <User className="w-5 h-5" />
-          </div>
-        </div>
-      </nav>
-
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto p-6 space-y-8">
-        
-        {/* 1. Class Overview Dashboard */}
-        <section>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="bg-white p-5 rounded-[14px] shadow-sm flex flex-col justify-between">
-              <div className="flex items-center justify-between mb-4 text-slate-500">
-                <span className="font-bold text-sm">Học sinh online</span>
-                <Users className="w-4 h-4" />
-              </div>
-              <div className="flex items-end justify-between">
-                <span className="text-3xl font-fredoka text-slate-800">28<span className="text-lg text-slate-400">/30</span></span>
-                <svg width="60" height="20" viewBox="0 0 60 20" className="stroke-emerald-500 fill-none stroke-2">
-                  <path d="M0 15 Q 10 5, 20 10 T 40 5 T 60 0" />
-                </svg>
-              </div>
-            </div>
-
-            <div className="bg-white p-5 rounded-[14px] shadow-sm flex flex-col justify-between">
-              <div className="flex items-center justify-between mb-4 text-slate-500">
-                <span className="font-bold text-sm">Hoàn thành bài tập</span>
-                <BookOpen className="w-4 h-4" />
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full border-4 border-slate-100 relative flex items-center justify-center">
-                  <svg className="absolute inset-0 w-full h-full -rotate-90">
-                    <circle cx="24" cy="24" r="22" stroke="#4ECDC4" strokeWidth="4" fill="none" strokeDasharray="138" strokeDashoffset="27.6" strokeLinecap="round"/>
-                  </svg>
-                  <span className="font-bold text-sm text-slate-800">80%</span>
-                </div>
-                <span className="text-sm font-bold text-emerald-600">+5% so với tuần trước</span>
-              </div>
-            </div>
-
-            <div className="bg-white p-5 rounded-[14px] shadow-sm flex flex-col justify-between">
-              <div className="flex items-center justify-between mb-4 text-slate-500">
-                <span className="font-bold text-sm">Điểm TB Lớp</span>
-                <Star className="w-4 h-4" />
-              </div>
-              <div className="flex items-end gap-2">
-                <span className="text-3xl font-fredoka text-slate-800">8.2</span>
-                <span className="text-sm font-bold text-emerald-600 flex items-center">
-                  <ChevronDown className="w-4 h-4 rotate-180" /> 0.4
-                </span>
-              </div>
-            </div>
-
-            <div className="bg-white p-5 rounded-[14px] shadow-sm flex flex-col justify-between border-2 border-transparent hover:border-red-200 transition-colors cursor-pointer group">
-              <div className="flex items-center justify-between mb-4 text-red-500">
-                <span className="font-bold text-sm group-hover:text-red-600">Cần hỗ trợ</span>
-                <AlertTriangle className="w-4 h-4" />
-              </div>
-              <div className="flex items-end gap-2 text-red-600">
-                <span className="text-3xl font-fredoka">1</span>
-                <span className="text-sm font-bold pb-1">học sinh &lt; 60%</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          
-          {/* Left Column: Student List & Reports */}
-          <div className="lg:col-span-2 space-y-8">
-            
-            {/* 2. Student List with Quick Insights */}
-            <section className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
-              <div className="p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
-                <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-                  <Users className="w-5 h-5 text-primary" /> Danh Sách Học Sinh
-                </h2>
-                <div className="relative">
-                  <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-                  <input 
-                    type="text" 
-                    placeholder="Tìm học sinh..." 
-                    className="pl-9 pr-4 py-2 rounded-full border border-slate-200 text-sm font-bold outline-none focus:border-primary w-64 bg-white"
-                  />
-                </div>
-              </div>
-              
-              <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr className="bg-slate-50 text-[11px] uppercase tracking-wider text-slate-500 font-black border-b border-slate-200">
-                      <th className="py-4 px-6">Học Sinh</th>
-                      <th className="py-4 px-6">Trạng Thái</th>
-                      <th className="py-4 px-6">Kỹ Năng (Đ / N / N)</th>
-                      <th className="py-4 px-6 text-right">Thao Tác</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-100">
-                    {MOCK_STUDENTS.map(student => (
-                      <tr key={student.id} className="hover:bg-slate-50/50 transition-colors">
-                        <td className="py-4 px-6">
-                          <div className="flex items-center gap-4">
-                            <div className={`w-10 h-10 rounded-full border-2 flex items-center justify-center text-lg bg-white ${getScoreColor(student.score)}`}>
-                              {student.avatar}
-                            </div>
-                            <div>
-                              <div className="font-bold text-slate-800">{student.name}</div>
-                              <div className="text-xs text-slate-500 font-semibold">{student.lastActive}</div>
-                            </div>
-                          </div>
-                        </td>
-                        <td className="py-4 px-6">
-                          <div className="w-24">
-                            <div className="flex justify-between text-[10px] font-bold mb-1">
-                              <span className="text-slate-600">Học lực</span>
-                              <span className={getScoreColor(student.score).split(' ')[0]}>{student.score}%</span>
-                            </div>
-                            <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                              <div className={`h-full rounded-full ${getProgressColor(student.score)}`} style={{ width: `${student.score}%` }} />
-                            </div>
-                          </div>
-                        </td>
-                        <td className="py-4 px-6">
-                          <div className="flex items-center gap-1.5">
-                            <span className={`px-2 py-0.5 rounded text-[10px] font-black border ${getScoreColor(student.reading)}`} title="Đọc">Đ {student.reading}</span>
-                            <span className={`px-2 py-0.5 rounded text-[10px] font-black border ${getScoreColor(student.listening)}`} title="Nghe">N {student.listening}</span>
-                            <span className={`px-2 py-0.5 rounded text-[10px] font-black border ${getScoreColor(student.speaking)}`} title="Nói">N {student.speaking}</span>
-                          </div>
-                        </td>
-                        <td className="py-4 px-6 text-right space-x-2">
-                          {student.score < 60 ? (
-                            <button 
-                              onClick={() => triggerToast(`Đã giao bài tập bổ trợ cho ${student.name}`)}
-                              className="px-3 py-1.5 rounded-lg bg-orange-100 text-orange-600 border border-orange-200 font-bold text-xs hover:bg-orange-200 transition-colors"
-                            >
-                              Giao bài thêm
-                            </button>
-                          ) : (
-                            <button 
-                              onClick={() => triggerToast(`Đã gửi lời khen đến ${student.name}`)}
-                              className="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-600 border border-amber-200 font-bold text-xs hover:bg-amber-200 transition-colors"
-                            >
-                              Khen ngợi ⭐
-                            </button>
-                          )}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </section>
-
-            {/* 6. Weekly Report */}
-            <section className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden p-6">
-              <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2 mb-6">
-                <FileText className="w-5 h-5 text-indigo-500" /> Báo Cáo Hàng Tuần (Gửi Phụ Huynh)
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {MOCK_STUDENTS.slice(0,2).map(student => (
-                  <div key={student.id} className="border border-slate-200 rounded-2xl p-4 bg-slate-50 flex flex-col">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="text-2xl bg-white w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center">{student.avatar}</div>
-                      <div>
-                        <div className="font-bold text-slate-800">{student.name}</div>
-                        <div className="text-xs text-slate-500 font-semibold">Chuyên cần: {student.attendance}</div>
-                      </div>
-                    </div>
-                    <div className="text-sm space-y-2 mb-4 flex-1">
-                      <div className="flex justify-between font-semibold"><span className="text-slate-500">XP đạt được:</span> <span className="text-amber-500 font-black">+1,250 XP</span></div>
-                      <div className="flex justify-between font-semibold"><span className="text-slate-500">Kỹ năng tốt nhất:</span> <span className="text-emerald-600">Đọc ({student.reading}%)</span></div>
-                      {student.score < 80 && (
-                        <div className="flex justify-between font-semibold"><span className="text-slate-500">Cần cải thiện:</span> <span className="text-red-500">Nói ({student.speaking}%)</span></div>
-                      )}
-                    </div>
-                    <div className="flex gap-2">
-                      <button 
-                        onClick={() => triggerToast(`Đã gửi báo cáo của ${student.name} qua Zalo!`)}
-                        className="flex-1 py-2 bg-blue-500 text-white rounded-xl font-bold text-xs hover:bg-blue-600 transition-colors shadow-sm"
-                      >
-                        Gửi Zalo
-                      </button>
-                      <button 
-                        onClick={() => triggerToast(`Đã gửi báo cáo của ${student.name} qua Email!`)}
-                        className="flex-1 py-2 bg-slate-200 text-slate-700 rounded-xl font-bold text-xs hover:bg-slate-300 transition-colors"
-                      >
-                        Email
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          </div>
-
-          {/* Right Column: AI Planner & Rewards */}
-          <div className="space-y-8">
-            
-            {/* 3. Lesson Planner — AI-powered */}
-            <section className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
-              <div className="p-6 border-b border-slate-100 bg-gradient-to-r from-red-50 to-orange-50">
-                <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-[#FF6B6B]" /> Tạo Giáo Án AI
-                </h2>
-              </div>
-              <div className="p-6 space-y-5">
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-slate-500">Chủ đề bài học:</label>
-                  <input 
-                    type="text" 
-                    value={lessonTopic}
-                    onChange={(e) => setLessonTopic(e.target.value)}
-                    placeholder="VD: Animals, School life..." 
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm font-bold outline-none focus:border-[#FF6B6B] bg-slate-50"
-                  />
-                </div>
-                
-                <div className="flex gap-4">
-                  <div className="space-y-1.5 flex-1">
-                    <label className="text-xs font-bold text-slate-500">Lớp:</label>
-                    <select 
-                      value={lessonGrade} onChange={(e) => setLessonGrade(e.target.value)}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm font-bold outline-none bg-slate-50"
-                    >
-                      {[10,11,12].map(g => <option key={g} value={g}>Lớp {g}</option>)}
-                    </select>
-                  </div>
-                  <div className="space-y-1.5 flex-1">
-                    <label className="text-xs font-bold text-slate-500">Thời lượng:</label>
-                    <div className="flex bg-slate-100 rounded-xl p-1">
-                      {["15", "30", "45"].map(d => (
-                        <button 
-                          key={d}
-                          onClick={() => setLessonDuration(d)}
-                          className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition-colors ${lessonDuration === d ? 'bg-white shadow-sm text-slate-800' : 'text-slate-500 hover:text-slate-700'}`}
-                        >
-                          {d}p
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-slate-500">Hoạt động (chọn nhiều):</label>
-                  <div className="flex flex-wrap gap-2">
-                    {["Từ vựng", "Phát âm", "Nghe", "Nói", "Mini-game"].map(act => (
-                      <button 
-                        key={act}
-                        onClick={() => setLessonActivities(prev => prev.includes(act) ? prev.filter(a => a !== act) : [...prev, act])}
-                        className={`px-3 py-1.5 rounded-lg text-xs font-bold border transition-colors ${
-                          lessonActivities.includes(act) 
-                            ? 'bg-[#FF6B6B]/10 text-[#FF6B6B] border-[#FF6B6B]/30' 
-                            : 'bg-white text-slate-500 border-slate-200 hover:bg-slate-50'
-                        }`}
-                      >
-                        {act}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                <button 
-                  onClick={handleGenerateAI}
-                  disabled={isGenerating}
-                  className="w-full py-3.5 rounded-xl bg-[#FF6B6B] hover:bg-[#ff5252] disabled:opacity-70 text-white font-nunito font-extrabold text-sm shadow-[0_4px_0_#d32f2f] active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2"
-                >
-                  {isGenerating ? <Sparkles className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4" />}
-                  {isGenerating ? "AI đang biên soạn..." : "Tạo giáo án với AI"}
-                </button>
-
-                {/* AI Output Card */}
-                {aiOutput && (
-                  <div className="mt-6 border-l-4 border-[#4ECDC4] bg-slate-50 rounded-r-xl p-4 animate-fade-in-up">
-                    <div className="space-y-3 text-sm">
-                      <div>
-                        <h4 className="font-bold text-slate-800 flex items-center justify-between cursor-pointer">
-                          Mục tiêu <ChevronRight className="w-4 h-4 text-slate-400 rotate-90" />
-                        </h4>
-                        <p className="text-slate-600 mt-1">{aiOutput.objective}</p>
-                      </div>
-                      <div className="border-t border-slate-200 pt-3">
-                        <h4 className="font-bold text-slate-800 flex items-center justify-between cursor-pointer">
-                          Từ vựng chính <ChevronRight className="w-4 h-4 text-slate-400 rotate-90" />
-                        </h4>
-                        <div className="flex gap-2 flex-wrap mt-2">
-                          {aiOutput.vocab.map((v: string) => <span key={v} className="bg-white border border-slate-200 px-2 py-1 rounded text-xs font-bold text-slate-600">{v}</span>)}
-                        </div>
-                      </div>
-                      <div className="border-t border-slate-200 pt-3">
-                        <h4 className="font-bold text-slate-800 flex items-center justify-between cursor-pointer">
-                          Game đề xuất <ChevronRight className="w-4 h-4 text-slate-400 rotate-90" />
-                        </h4>
-                        <p className="text-[#FF6B6B] font-bold mt-1">🎮 {aiOutput.game}</p>
-                      </div>
-                    </div>
-                    
-                    <div className="mt-5 flex gap-2">
-                      <button 
-                        onClick={() => triggerToast("Đã giao bài cho lớp!")}
-                        className="flex-1 py-2 bg-[#4ECDC4] text-white rounded-lg font-bold text-xs shadow-sm hover:bg-[#3dbdb4] transition-colors"
-                      >
-                        Giao cho lớp
-                      </button>
-                      <button 
-                        onClick={() => window.print()}
-                        className="px-3 py-2 bg-white border border-slate-200 text-slate-600 rounded-lg font-bold text-xs hover:bg-slate-50 transition-colors"
-                      >
-                        Xuất PDF / In
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </section>
-
-            {/* 5. Reward Controls Panel */}
-            <section className="bg-white rounded-3xl shadow-sm border border-slate-200 p-6">
-              <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2 mb-4">
-                <Gift className="w-5 h-5 text-amber-500" /> Bảng Điều Khiển Quà Tặng
-              </h2>
-              <div className="grid grid-cols-2 gap-3">
-                <button 
-                  onClick={() => triggerToast("Mở panel tặng XP...")}
-                  className="p-4 rounded-2xl bg-amber-50 border border-amber-200 flex flex-col items-center justify-center gap-2 hover:bg-amber-100 transition-colors group"
-                >
-                  <div className="w-10 h-10 rounded-full bg-amber-100 text-amber-500 flex items-center justify-center group-hover:scale-110 transition-transform">⭐</div>
-                  <span className="font-bold text-xs text-amber-700 text-center">Tặng XP đặc biệt</span>
-                </button>
-                <button 
-                  onClick={() => triggerToast("Mở tạo thử thách...")}
-                  className="p-4 rounded-2xl bg-blue-50 border border-blue-200 flex flex-col items-center justify-center gap-2 hover:bg-blue-100 transition-colors group"
-                >
-                  <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-500 flex items-center justify-center group-hover:scale-110 transition-transform">🎯</div>
-                  <span className="font-bold text-xs text-blue-700 text-center">Tạo thử thách riêng</span>
-                </button>
-                <button 
-                  onClick={() => triggerToast("Mở kho skin độc quyền...")}
-                  className="p-4 rounded-2xl bg-purple-50 border border-purple-200 flex flex-col items-center justify-center gap-2 hover:bg-purple-100 transition-colors group"
-                >
-                  <div className="w-10 h-10 rounded-full bg-purple-100 text-purple-500 flex items-center justify-center group-hover:scale-110 transition-transform">👕</div>
-                  <span className="font-bold text-xs text-purple-700 text-center">Mở khóa skin</span>
-                </button>
-                <button 
-                  onClick={() => triggerToast("Mở mẫu lời khen...")}
-                  className="p-4 rounded-2xl bg-rose-50 border border-rose-200 flex flex-col items-center justify-center gap-2 hover:bg-rose-100 transition-colors group"
-                >
-                  <div className="w-10 h-10 rounded-full bg-rose-100 text-rose-500 flex items-center justify-center group-hover:scale-110 transition-transform">👏</div>
-                  <span className="font-bold text-xs text-rose-700 text-center">Gửi lời khen</span>
-                </button>
-              </div>
-            </section>
-
-          </div>
-        </div>
-      </main>
     </div>
   );
 }
