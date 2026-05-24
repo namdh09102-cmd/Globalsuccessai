@@ -43,7 +43,7 @@ export default function Sidebar() {
         { name: "Học", href: "/learn", icon: BookOpen },
         { name: "Speaking", href: "/ai-practice", icon: Mic },
         { name: "Kỹ năng", href: "/skills", icon: require("lucide-react").Activity },
-        { name: "Lộ trình", href: "/roadmap", icon: require("lucide-react").Map },
+        { name: "Tài khoản", href: "/profile", icon: require("lucide-react").User },
       ];
     }
     
@@ -54,6 +54,7 @@ export default function Sidebar() {
         { name: "Luyện nói", href: "/ai-practice", icon: Mic },
         { name: "Thi đua", href: "/games", icon: require("lucide-react").Gamepad2 },
         { name: "Rank", href: "/history", icon: Trophy },
+        { name: "Hồ sơ", href: "/profile", icon: require("lucide-react").User },
       ];
     }
 

@@ -1209,7 +1209,8 @@ export default function Dashboard() {
           })()}
 
           {/* Learning Methods Bento Grid */}
-          <div className="space-y-4">
+          {!["Lớp 10", "Lớp 11", "Lớp 12"].includes(activeGrade) && (
+            <div className="space-y-4">
             <h3 className="text-xs font-black text-text-muted uppercase tracking-widest">
               Chọn cách học phù hợp với bạn
             </h3>
@@ -1311,7 +1312,7 @@ export default function Dashboard() {
                 </div>
               </div>
             </div>
-          </div>
+          )}
 
           {/* Unit Roadmap Section */}
           <div className="space-y-4">

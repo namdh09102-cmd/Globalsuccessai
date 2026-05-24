@@ -211,7 +211,7 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
         { name: "Học", href: "/learn", icon: BookOpen },
         { name: "Speaking", href: "/ai-practice", icon: Mic },
         { name: "Kỹ năng", href: "/skills", icon: require("lucide-react").BarChart },
-        { name: "Lộ trình", href: "/roadmap", icon: require("lucide-react").Route },
+        { name: "Tài khoản", href: "/profile", icon: require("lucide-react").User },
       ];
     }
     
@@ -220,8 +220,8 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
         { name: "Home", href: "/dashboard", icon: Home },
         { name: "Học bài", href: "/learn", icon: BookOpen },
         { name: "Luyện nói", href: "/ai-practice", icon: Mic },
-        { name: "Thi đua", href: "/games", icon: require("lucide-react").Gamepad2 },
         { name: "Rank", href: "/history", icon: Trophy },
+        { name: "Hồ sơ", href: "/profile", icon: require("lucide-react").User },
       ];
     }
 
