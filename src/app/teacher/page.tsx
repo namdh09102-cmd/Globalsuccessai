@@ -755,29 +755,41 @@ export default function TeacherPortalPort() {
                         <div className="p-4 border-b border-gray-100">
                           <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Mục tiêu bài học</div>
                           {isEditingLesson ? (
-                            <textarea className="w-full text-[13px] text-gray-800 p-2 border rounded outline-none focus:border-[#0F6E56] min-h-[60px]" value={aiOutput.objective} onChange={e => setAiOutput({...aiOutput, objective: e.target.value})} />
+                            <textarea className="w-full text-[13px] text-gray-800 p-3 border rounded-lg outline-none focus:border-[#0F6E56] min-h-[100px] resize-y leading-relaxed" value={aiOutput.objective} onChange={e => setAiOutput({...aiOutput, objective: e.target.value})} />
                           ) : (
                             <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.objective}</div>
                           )}
                         </div>
                         <div className="p-4 border-b border-gray-100">
                           <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Từ vựng chính</div>
-                          <div className="flex flex-wrap gap-1.5">
+                          <div className="flex flex-wrap gap-2 items-center">
                             {aiOutput.vocab.map((v:string, i:number) => (
                               isEditingLesson ? 
-                                <input key={i} value={v} onChange={e => {
-                                  const newVocab = [...aiOutput.vocab];
-                                  newVocab[i] = e.target.value;
-                                  setAiOutput({...aiOutput, vocab: newVocab});
-                                }} className="text-[11px] px-2 py-0.5 rounded border border-gray-300 w-20 outline-none" />
-                                : <span key={v} className="text-[11px] px-2 py-0.5 rounded bg-[#E1F5EE] text-[#0F6E56] font-medium">{v}</span>
+                                <div key={i} className="flex items-center gap-1 bg-white border border-gray-300 rounded px-2 py-1">
+                                  <input value={v} onChange={e => {
+                                    const newVocab = [...aiOutput.vocab];
+                                    newVocab[i] = e.target.value;
+                                    setAiOutput({...aiOutput, vocab: newVocab});
+                                  }} className="text-[12px] w-24 outline-none bg-transparent" />
+                                  <button onClick={() => {
+                                    const newVocab = [...aiOutput.vocab];
+                                    newVocab.splice(i, 1);
+                                    setAiOutput({...aiOutput, vocab: newVocab});
+                                  }} className="text-gray-400 hover:text-red-500"><X className="w-3 h-3"/></button>
+                                </div>
+                                : <span key={i} className="text-[12px] px-2.5 py-1 rounded bg-[#E1F5EE] text-[#0F6E56] font-medium shadow-sm">{v}</span>
                             ))}
+                            {isEditingLesson && (
+                              <button onClick={() => setAiOutput({...aiOutput, vocab: [...aiOutput.vocab, "Từ mới"]})} className="text-[11px] font-bold text-teal-600 bg-teal-50 px-2 py-1 rounded border border-teal-200 hover:bg-teal-100 flex items-center gap-1">
+                                + Thêm từ
+                              </button>
+                            )}
                           </div>
                         </div>
                         <div className="p-4 border-b border-gray-100">
                           <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">1. Khởi động (Warm-up)</div>
                           {isEditingLesson ? (
-                            <textarea className="w-full text-[13px] text-gray-800 p-2 border rounded outline-none focus:border-[#0F6E56] min-h-[80px]" value={aiOutput.warmup} onChange={e => setAiOutput({...aiOutput, warmup: e.target.value})} />
+                            <textarea className="w-full text-[13px] text-gray-800 p-3 border rounded-lg outline-none focus:border-[#0F6E56] min-h-[120px] resize-y leading-relaxed" value={aiOutput.warmup} onChange={e => setAiOutput({...aiOutput, warmup: e.target.value})} />
                           ) : (
                             <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.warmup}</div>
                           )}
@@ -785,7 +797,7 @@ export default function TeacherPortalPort() {
                         <div className="p-4 border-b border-gray-100">
                           <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">2. Bài Mới (Presentation)</div>
                           {isEditingLesson ? (
-                            <textarea className="w-full text-[13px] text-gray-800 p-2 border rounded outline-none focus:border-[#0F6E56] min-h-[100px]" value={aiOutput.presentation} onChange={e => setAiOutput({...aiOutput, presentation: e.target.value})} />
+                            <textarea className="w-full text-[13px] text-gray-800 p-3 border rounded-lg outline-none focus:border-[#0F6E56] min-h-[150px] resize-y leading-relaxed" value={aiOutput.presentation} onChange={e => setAiOutput({...aiOutput, presentation: e.target.value})} />
                           ) : (
                             <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.presentation}</div>
                           )}
@@ -793,7 +805,7 @@ export default function TeacherPortalPort() {
                         <div className="p-4 border-b border-gray-100">
                           <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">3. Thực hành (Practice)</div>
                           {isEditingLesson ? (
-                            <textarea className="w-full text-[13px] text-gray-800 p-2 border rounded outline-none focus:border-[#0F6E56] min-h-[80px]" value={aiOutput.practice} onChange={e => setAiOutput({...aiOutput, practice: e.target.value})} />
+                            <textarea className="w-full text-[13px] text-gray-800 p-3 border rounded-lg outline-none focus:border-[#0F6E56] min-h-[150px] resize-y leading-relaxed" value={aiOutput.practice} onChange={e => setAiOutput({...aiOutput, practice: e.target.value})} />
                           ) : (
                             <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.practice}</div>
                           )}
@@ -801,7 +813,7 @@ export default function TeacherPortalPort() {
                         <div className="p-4 border-b border-gray-100">
                           <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">4. Vận dụng (Production)</div>
                           {isEditingLesson ? (
-                            <textarea className="w-full text-[13px] text-gray-800 p-2 border rounded outline-none focus:border-[#0F6E56] min-h-[80px]" value={aiOutput.production} onChange={e => setAiOutput({...aiOutput, production: e.target.value})} />
+                            <textarea className="w-full text-[13px] text-gray-800 p-3 border rounded-lg outline-none focus:border-[#0F6E56] min-h-[120px] resize-y leading-relaxed" value={aiOutput.production} onChange={e => setAiOutput({...aiOutput, production: e.target.value})} />
                           ) : (
                             <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.production}</div>
                           )}
@@ -809,7 +821,7 @@ export default function TeacherPortalPort() {
                         <div className="p-4 border-b border-gray-100">
                           <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Game củng cố</div>
                           {isEditingLesson ? (
-                            <textarea className="w-full text-[13px] text-gray-800 p-2 border rounded outline-none focus:border-[#0F6E56] min-h-[60px]" value={aiOutput.game} onChange={e => setAiOutput({...aiOutput, game: e.target.value})} />
+                            <textarea className="w-full text-[13px] text-gray-800 p-3 border rounded-lg outline-none focus:border-[#0F6E56] min-h-[100px] resize-y leading-relaxed" value={aiOutput.game} onChange={e => setAiOutput({...aiOutput, game: e.target.value})} />
                           ) : (
                             <div className="text-[13px] text-gray-800 leading-relaxed bg-[#EEEDFE] text-[#534AB7] p-2 rounded-lg inline-block font-medium">🎮 {aiOutput.game}</div>
                           )}
