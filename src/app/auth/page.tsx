@@ -16,8 +16,8 @@ export default function AuthPage() {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("student"); // "student" or "teacher"
   const [gradeLevel, setGradeLevel] = useState("primary"); // "primary", "middle", "high"
-  
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   // MOCK ADMIN ACCOUNT
@@ -26,6 +26,7 @@ export default function AuthPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+    setSuccess("");
     setIsLoading(true);
 
     try {
@@ -116,6 +117,12 @@ export default function AuthPage() {
 
           if (profileError) {
             setError("Lỗi tạo hồ sơ: " + profileError.message);
+            setIsLoading(false);
+            return;
+          }
+
+          if (!data.session) {
+            setSuccess("Đăng ký thành công! Vui lòng kiểm tra hộp thư email của bạn để xác thực tài khoản.");
             setIsLoading(false);
             return;
           }
@@ -258,6 +265,17 @@ export default function AuthPage() {
               >
                 <AlertCircle className="w-4 h-4" />
                 <span>{error}</span>
+              </motion.div>
+            )}
+            {success && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                className="flex items-center gap-2 text-teal-600 bg-teal-500/10 border border-teal-500/20 p-3 rounded-[var(--radius-btn)] text-xs font-bold"
+              >
+                <CheckCircle className="w-4 h-4 min-w-4" />
+                <span>{success}</span>
               </motion.div>
             )}
           </AnimatePresence>
