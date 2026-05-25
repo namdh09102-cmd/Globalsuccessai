@@ -328,12 +328,12 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
             {getMascot()}
           </div>
         ) : (
-          <Link 
-            href="/auth" 
+          <button 
+            onClick={() => window.location.href = '/auth'}
             className="px-4 py-1.5 bg-white text-primary font-bold rounded-full text-[13px] hover:bg-gray-100 transition-colors shadow-sm cursor-pointer border border-transparent hover:border-gray-200"
           >
             Đăng nhập
-          </Link>
+          </button>
         )}
       </div>
     </div>

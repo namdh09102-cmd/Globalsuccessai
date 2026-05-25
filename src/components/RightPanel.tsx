@@ -295,9 +295,9 @@ export default function RightPanel() {
             <p className="text-[13px] text-text-body font-bold leading-relaxed">
               Bạn cần đăng nhập để mở khóa nhiệm vụ và bảng xếp hạng! 🏰
             </p>
-            <Link href="/auth" className="px-5 py-3 w-full bg-primary hover:bg-primary-dark text-white rounded-[var(--radius-btn)] text-[12px] font-black transition-all border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] active:translate-y-1 active:shadow-none uppercase tracking-wide">
+            <button onClick={() => window.location.href = '/auth'} className="px-5 py-3 w-full bg-primary hover:bg-primary-dark text-white rounded-[var(--radius-btn)] text-[12px] font-black transition-all border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] active:translate-y-1 active:shadow-none uppercase tracking-wide">
               Đăng nhập / Đăng ký
-            </Link>
+            </button>
           </div>
         )}
 
