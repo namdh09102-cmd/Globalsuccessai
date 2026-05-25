@@ -982,13 +982,13 @@ export default function Dashboard() {
               </span>
             </div>
 
-            <div className="p-4 rounded-[var(--radius-card)] bg-page border border-[rgba(0,0,0,0.1)] space-y-2">
+            <div className="p-4 rounded-[var(--radius-card)] bg-card border border-[rgba(0,0,0,0.15)] shadow-sm space-y-2">
               <span className="text-[9px] font-black text-text-muted uppercase tracking-widest">Đọc to câu tiếng Anh sau:</span>
               <p className="text-sm font-bold text-text-head leading-relaxed font-mono">&ldquo;{activeLesson.expectedText}&rdquo;</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-4 rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-page flex flex-col items-center justify-center gap-3">
+              <div className="p-4 rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.15)] bg-card flex flex-col items-center justify-center gap-3 shadow-sm">
                 <span className="text-[10px] font-bold text-text-muted uppercase">Ghi âm</span>
                 {!isRecording ? (
                   <button
@@ -1025,7 +1025,7 @@ export default function Dashboard() {
                 )}
               </div>
 
-              <div className="p-4 rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-page flex flex-col justify-center min-h-[150px]">
+              <div className="p-4 rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.15)] bg-card shadow-sm flex flex-col h-[200px]">
                 {isEvaluating ? (
                   <div className="flex flex-col items-center justify-center gap-2 text-primary">
                     <Loader2 className="w-6 h-6 animate-spin" />
@@ -1358,8 +1358,8 @@ export default function Dashboard() {
                     key={unit.id}
                     className={`flex-none w-[220px] relative rounded-[var(--radius-card)] overflow-hidden border flex flex-col justify-between min-h-[180px] transition-all duration-300 shadow-sm group cursor-pointer ${
                       isSelected 
-                        ? "border-indigo-400 bg-primary-light/30 shadow-md" 
-                        : "border-[rgba(0,0,0,0.1)] bg-page/50 hover:border-primary-dark hover:bg-card hover:shadow-md"
+                        ? "border-primary bg-primary-light/30 shadow-md" 
+                        : "border-[rgba(0,0,0,0.15)] bg-card hover:border-primary hover:shadow-md"
                     }`}
                     onClick={() => {
                       if (unit.status !== "locked") {
@@ -1574,7 +1574,7 @@ export default function Dashboard() {
                         <span className="text-[9px] font-black text-teal-600 uppercase tracking-widest">Từ Vựng Nổi Bật</span>
                         <BookMarked className="w-4.5 h-4.5 text-teal-600" />
                       </div>
-                      <div className="p-2.5 rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-page space-y-1">
+                      <div className={`p-4 rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.15)] bg-card hover:shadow-md transition-all`}>
                         <div className="flex justify-between items-center">
                           <span className="text-xs font-extrabold text-text-head font-mono">
                             {selectedUnit.number === 1 ? "Fitness" : selectedUnit.number === 2 ? "Independent" : "Futuristic"}
