@@ -31,6 +31,7 @@ interface UserProfile {
   fullName: string;
   school: string;
   grade: string;
+  avatarUrl?: string;
 }
 
 export default function ProfilePage() {
@@ -187,6 +188,7 @@ export default function ProfilePage() {
     let u = storedUserStr ? JSON.parse(storedUserStr) : { id: "GUEST", role: "student", tier: "free" };
     u.gradeLevel = newGradeLevel;
     if (profile.fullName) u.name = profile.fullName;
+    if (profile.avatarUrl) u.avatarUrl = profile.avatarUrl;
     localStorage.setItem("gsa-current-user", JSON.stringify(u));
     window.dispatchEvent(new Event("auth-changed")); // triggers theme update
 
@@ -377,10 +379,14 @@ export default function ProfilePage() {
               {/* Avatar với viền phát sáng gradient lấp lánh */}
               <div className="relative">
                 <div className="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-indigo-600 via-indigo-600 to-blue-400 opacity-75 blur animate-pulse" />
-                <div className="w-18 h-18 rounded-full bg-page border-2 border-slate-900 flex items-center justify-center text-text-head relative z-10 shadow-lg">
-                  <span className="text-2xl font-black bg-clip-text text-transparent bg-gradient-to-tr from-indigo-600 to-blue-600">
-                    {profile.fullName ? profile.fullName.charAt(0).toUpperCase() : "K"}
-                  </span>
+                <div className="w-18 h-18 rounded-full bg-page border-2 border-slate-900 flex items-center justify-center text-text-head relative z-10 shadow-lg overflow-hidden">
+                  {profile.avatarUrl ? (
+                    <img src={profile.avatarUrl} alt="Avatar" className="w-full h-full object-cover" />
+                  ) : (
+                    <span className="text-2xl font-black bg-clip-text text-transparent bg-gradient-to-tr from-indigo-600 to-blue-600">
+                      {profile.fullName ? profile.fullName.charAt(0).toUpperCase() : "H"}
+                    </span>
+                  )}
                 </div>
                 {/* Đốm sáng neon nhỏ ở chân avatar */}
                 <div className="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-teal-500 border border-slate-900 flex items-center justify-center z-20">
@@ -720,6 +726,21 @@ export default function ProfilePage() {
 
             {/* Form cập nhật thông tin */}
             <form onSubmit={handleSaveProfile} className="space-y-4 relative z-10">
+              
+              {/* Field 0: Link Avatar */}
+              <div className="space-y-1">
+                <label className="text-[10px] text-text-muted font-extrabold uppercase tracking-wide flex items-center gap-1">
+                  <User className="w-3 h-3 text-text-muted" />
+                  <span>Link Avatar (Tùy chọn)</span>
+                </label>
+                <input
+                  type="text"
+                  value={profile.avatarUrl || ""}
+                  onChange={(e) => setProfile({ ...profile, avatarUrl: e.target.value })}
+                  placeholder="https://example.com/avatar.png"
+                  className="w-full px-3.5 py-2.5 rounded-[var(--radius-card)] bg-page text-xs font-bold text-text-head border border-[rgba(0,0,0,0.1)] focus:border-indigo-500/85 focus:ring-1 focus:ring-indigo-500/40 outline-none transition-all placeholder-slate-700"
+                />
+              </div>
               
               {/* Field 1: Họ và tên */}
               <div className="space-y-1">

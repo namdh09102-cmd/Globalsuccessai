@@ -239,6 +239,9 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
   };
 
   const getMascot = () => {
+    if (currentUser?.avatarUrl) {
+      return <img src={currentUser.avatarUrl} alt="Avatar" className="w-full h-full object-cover rounded-full" />;
+    }
     if (currentUser?.gradeLevel === "primary" || !currentUser?.gradeLevel) {
       return <span className="text-[20px]">🦖</span>;
     }
