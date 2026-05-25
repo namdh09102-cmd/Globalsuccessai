@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import ClientLayoutWrapper from "@/components/ClientLayoutWrapper";
+import RoleSwitcher from "@/components/RoleSwitcher";
 
 export const metadata: Metadata = {
   title: "Global Success AI - K-12 English Learning",
@@ -27,6 +28,7 @@ export default function RootLayout({
         <div className="flex h-screen w-screen overflow-hidden">
           <ClientLayoutWrapper>
             {children}
+            <RoleSwitcher />
           </ClientLayoutWrapper>
         </div>
       </body>
