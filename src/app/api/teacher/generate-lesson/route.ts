@@ -1,15 +1,20 @@
 import { NextResponse } from "next/server";
 import Groq from "groq-sdk";
 
-const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
-
 export async function POST(req: Request) {
   try {
-    const { topic, grade, duration, activities } = await req.json();
+    const { topic, grade, duration, activities, customKey } = await req.json();
 
     if (!topic) {
       return NextResponse.json({ error: "Missing topic" }, { status: 400 });
     }
+
+    const apiKeyToUse = customKey || process.env.GROQ_API_KEY;
+    if (!apiKeyToUse) {
+      return NextResponse.json({ error: "API Key not configured" }, { status: 401 });
+    }
+
+    const groq = new Groq({ apiKey: apiKeyToUse });
 
     const prompt = `Bạn là một chuyên gia giáo dục thiết kế bài giảng tiếng Anh theo chuẩn sách giáo khoa Global Success của Bộ GD&ĐT Việt Nam.
 Hãy thiết kế một bài giảng tóm tắt với các thông tin sau:

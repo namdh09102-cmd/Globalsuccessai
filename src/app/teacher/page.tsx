@@ -231,10 +231,19 @@ export default function TeacherPortalPort() {
     setIsGenerating(true);
     setAiOutput(null);
     try {
+      let customKey = "";
+      const storedKeys = localStorage.getItem("gsa-admin-api-keys");
+      if (storedKeys) {
+        try {
+          const parsed = JSON.parse(storedKeys);
+          customKey = parsed.groq || "";
+        } catch (e) {}
+      }
+
       const res = await fetch("/api/teacher/generate-lesson", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ topic, grade, duration, activities })
+        body: JSON.stringify({ topic, grade, duration, activities, customKey })
       });
       if (!res.ok) throw new Error("API fail");
       const data = await res.json();
