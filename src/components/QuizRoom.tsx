@@ -184,7 +184,9 @@ Hãy giải thích ngắn gọn, dễ hiểu tại sao đáp án ${activeQuestio
     <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center p-6 bg-page text-text-body relative overflow-hidden">
       
       {/* Nút quay lại */}
-      <button className="self-start mb-6 px-4 py-2 rounded-[var(--radius-btn)] bg-card border border-[rgba(0,0,0,0.1)] hover:text-primary hover:bg-primary-light transition-all text-xs font-bold flex items-center gap-1.5 z-10 text-text-body shadow-sm"
+      <button 
+        onClick={onBack}
+        className="self-start mb-6 px-4 py-2 rounded-[var(--radius-btn)] bg-card border border-[rgba(0,0,0,0.1)] hover:text-primary hover:bg-primary-light transition-all text-xs font-bold flex items-center gap-1.5 z-10 text-text-body shadow-sm"
       >
         <ArrowLeft className="w-4 h-4" /> Về Bảng Điều Khiển
       </button>
