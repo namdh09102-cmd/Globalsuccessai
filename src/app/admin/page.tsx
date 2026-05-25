@@ -14,12 +14,29 @@ import {
   Key
 } from "lucide-react";
 
+import { supabase } from "@/lib/supabase";
+
 export default function AdminPortal() {
   const [apiKey, setApiKey] = React.useState("");
+  const [stats, setStats] = React.useState({ students: 0, teachers: 0 });
 
   React.useEffect(() => {
     const saved = localStorage.getItem("gemini_api_key");
     if (saved) setApiKey(saved);
+
+    const fetchStats = async () => {
+      try {
+        const { count: studentCount } = await supabase.from('profiles').select('*', { count: 'exact', head: true }).eq('role', 'student');
+        const { count: teacherCount } = await supabase.from('profiles').select('*', { count: 'exact', head: true }).eq('role', 'teacher');
+        setStats({
+          students: studentCount || 0,
+          teachers: teacherCount || 0
+        });
+      } catch (err) {
+        console.error("Error fetching stats", err);
+      }
+    };
+    fetchStats();
   }, []);
 
   const handleSaveApi = () => {
@@ -64,9 +81,9 @@ export default function AdminPortal() {
                 <span className="text-[10px] font-bold uppercase text-slate-400">Tổng học viên</span>
               </div>
               <div>
-                <span className="text-xl font-black text-white group-hover:text-primary transition-colors">12,450</span>
+                <span className="text-xl font-black text-white group-hover:text-primary transition-colors">{stats.students.toLocaleString()}</span>
                 <p className="text-[9px] text-teal-400 font-bold mt-1 flex items-center gap-0.5">
-                  <TrendingUp className="w-3 h-3" /> Tăng 15% tuần này
+                  <TrendingUp className="w-3 h-3" /> Real-time
                 </p>
               </div>
             </div>
@@ -77,7 +94,7 @@ export default function AdminPortal() {
                 <span className="text-[10px] font-bold uppercase text-slate-400">TK Giáo viên</span>
               </div>
               <div>
-                <span className="text-xl font-black text-white group-hover:text-rose-500 transition-colors">320</span>
+                <span className="text-xl font-black text-white group-hover:text-rose-500 transition-colors">{stats.teachers.toLocaleString()}</span>
                 <p className="text-[9px] text-slate-500 font-bold mt-1">Trường & Trung tâm</p>
               </div>
             </div>
@@ -138,7 +155,9 @@ export default function AdminPortal() {
                 className="w-full bg-[#090D16] border border-slate-800 rounded-[var(--radius-card)] px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500/50 transition-colors placeholder-slate-600 font-mono"
               />
             </div>
-            <button className="mt-auto w-full py-2.5 rounded-[var(--radius-btn)] bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold transition-all"
+            <button 
+              onClick={handleSaveApi}
+              className="mt-auto w-full py-2.5 rounded-[var(--radius-btn)] bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold transition-all"
             >
               Lưu cấu hình AI
             </button>
