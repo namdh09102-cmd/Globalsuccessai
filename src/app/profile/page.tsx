@@ -327,7 +327,7 @@ export default function ProfilePage() {
           >
             {/* Background Ambient Glow */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] pointer-events-none" />
-            <div className="absolute -left-12 -bottom-12 w-48 h-48 bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)]/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -left-12 -bottom-12 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
             
             {/* Bên trái: Avatar & Thông tin */}
             <div className="flex flex-col sm:flex-row items-center sm:items-start md:items-center text-center sm:text-left gap-5 relative z-10">
@@ -387,7 +387,7 @@ export default function ProfilePage() {
             className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-6 shadow-xl relative overflow-hidden group hover:border-slate-300/80 transition-all duration-300"
           >
             {/* Glow hiệu ứng nền */}
-            <div className="absolute top-0 left-0 w-80 h-80 bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)]/5 rounded-full blur-[80px] pointer-events-none" />
+            <div className="absolute top-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-[80px] pointer-events-none" />
 
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[rgba(0,0,0,0.1)] pb-4 mb-6">
               <div className="flex items-center gap-2.5">
