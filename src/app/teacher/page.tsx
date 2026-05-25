@@ -203,7 +203,7 @@ export default function TeacherPortalPort() {
     fetchData();
   }, []);
 
-  const handleGiveReward = () => {
+  const handleGiveReward = async () => {
     if (selectedStudents.length === 0) {
       alert("Vui lòng chọn ít nhất 1 học sinh.");
       return;
@@ -217,15 +217,29 @@ export default function TeacherPortalPort() {
 
     const amount = Number(rewardAmount);
     
-    // Update students
+    // Update students in state
     const updated = students.map(s => {
       if (selectedStudents.includes(s.id)) {
         if (rewardType === "xp") return { ...s, xp: s.xp + amount };
+        // if diamond, we can add it later
       }
       return s;
     });
     setStudents(updated);
-    localStorage.setItem("gsa-teacher-students", JSON.stringify(updated));
+
+    // Update Supabase student_stats
+    for (const studentId of selectedStudents) {
+      const { data: currentStats } = await supabase.from('student_stats').select('xp, diamonds').eq('user_id', studentId).single();
+      if (currentStats) {
+        const newXp = rewardType === "xp" ? (currentStats.xp || 0) + amount : currentStats.xp;
+        const newDiamonds = rewardType === "diamond" ? (currentStats.diamonds || 0) + amount : currentStats.diamonds;
+        await supabase.from('student_stats').update({ xp: newXp, diamonds: newDiamonds }).eq('user_id', studentId);
+      } else {
+        const newXp = rewardType === "xp" ? amount : 0;
+        const newDiamonds = rewardType === "diamond" ? amount : 0;
+        await supabase.from('student_stats').insert({ user_id: studentId, xp: newXp, diamonds: newDiamonds });
+      }
+    }
 
     // Update History
     const selectedNames = updated.filter(s => selectedStudents.includes(s.id)).map(s => s.name).join(", ");
