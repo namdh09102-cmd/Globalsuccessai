@@ -54,6 +54,25 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
               diamonds: parsed.diamonds || 20
             };
           });
+          
+          // Sync to Supabase in background
+          const uStr = localStorage.getItem("gsa-current-user");
+          if (uStr) {
+            try {
+              const u = JSON.parse(uStr);
+              if (u.id && u.id !== "GUEST" && u.id !== "ADMIN-000") {
+                import("@/lib/supabase").then(({ supabase }) => {
+                   supabase.from('student_stats').upsert({
+                     user_id: u.id,
+                     xp: parsed.xp || 0,
+                     diamonds: parsed.diamonds || 20,
+                     streak: parsed.streak || 5,
+                     last_active_date: new Date().toISOString().split("T")[0]
+                   }).then();
+                });
+              }
+            } catch(e) {}
+          }
         } catch (e) {}
       }
     };

@@ -77,7 +77,17 @@ export default function AuthPage() {
               grade: profile.grade_level ? `Lớp ${profile.grade_level}` : "",
               avatarUrl: profile.avatar_url
             }));
-            
+            // Fetch stats if available
+            const { data: userStats } = await supabase.from('student_stats').select('*').eq('user_id', data.user.id).single();
+            if (userStats) {
+              localStorage.setItem("gsa-student-stats", JSON.stringify({
+                xp: userStats.xp,
+                diamonds: userStats.diamonds,
+                streak: userStats.streak
+              }));
+              window.dispatchEvent(new Event("stats-updated"));
+            }
+
             window.dispatchEvent(new Event("auth-changed"));
             router.push(profile.role === "teacher" ? "/teacher" : (profile.role === "admin" ? "/admin" : "/learn"));
           } else {
