@@ -20,8 +20,6 @@ export default function AuthPage() {
   const [success, setSuccess] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  // MOCK ADMIN ACCOUNT
-  const ADMIN_CREDS = { email: "admin@globalsuccess.ai", password: "admin123" };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,24 +28,6 @@ export default function AuthPage() {
     setIsLoading(true);
 
     try {
-      // 1. ADMIN LOGIN HARDCODE (Tạo tài khoản qua auth API nếu muốn chuẩn, nhưng ta hardcode bypass ở đây nếu cần test)
-      if (isLogin && email === ADMIN_CREDS.email && password === ADMIN_CREDS.password) {
-        // Cố gắng đăng nhập qua Supabase trước
-        const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({ email, password });
-        if (signInError) {
-          // Nếu admin chưa tồn tại trong Supabase Auth, tự động tạo
-          const { data: signUpData, error: signUpError } = await supabase.auth.signUp({ email, password });
-          if (!signUpError && signUpData.user) {
-            await supabase.from('profiles').upsert({ id: signUpData.user.id, name: "Super Admin", email, role: "admin", tier: "pro", grade_level: "none" });
-          }
-        }
-        
-        const adminUser = { id: "ADMIN-000", name: "Super Admin", email, role: "admin", tier: "pro", gradeLevel: "none" };
-        localStorage.setItem("gsa-current-user", JSON.stringify(adminUser));
-        window.dispatchEvent(new Event("auth-changed"));
-        router.push("/admin");
-        return;
-      }
 
       if (isLogin) {
         // ĐĂNG NHẬP
