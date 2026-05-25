@@ -7,6 +7,8 @@ import { Settings, Key, Building2, ShieldAlert, CheckCircle, Save } from "lucide
 export default function AdminSettings() {
   const [showToast, setShowToast] = useState(false);
   const [isMaintenance, setIsMaintenance] = useState(false);
+  const [showMainConfirm, setShowMainConfirm] = useState(false);
+  const [confirmText, setConfirmText] = useState("");
   
   const [apiKeys, setApiKeys] = useState({
     groq: "",
@@ -170,7 +172,14 @@ export default function AdminSettings() {
           
           {/* Toggle Switch */}
           <div 
-            onClick={() => setIsMaintenance(!isMaintenance)}
+            onClick={() => {
+              if (isMaintenance) {
+                setIsMaintenance(false);
+              } else {
+                setShowMainConfirm(true);
+                setConfirmText("");
+              }
+            }}
             className={`w-16 h-8 rounded-full p-1 cursor-pointer transition-colors duration-300 ease-in-out border ${
               isMaintenance ? "bg-rose-500 border-rose-600" : "bg-slate-800 border-slate-700"
             }`}
@@ -184,6 +193,62 @@ export default function AdminSettings() {
         </div>
 
       </div>
+
+      {/* MAINTENANCE CONFIRM MODAL */}
+      <AnimatePresence>
+        {showMainConfirm && (
+          <div className="fixed inset-0 bg-black/60 z-[100] flex items-center justify-center p-4 backdrop-blur-sm">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="bg-[#111827] border border-rose-500/30 rounded-[var(--radius-card)] p-6 max-w-md w-full shadow-2xl relative"
+            >
+              <div className="w-12 h-12 rounded-full bg-rose-500/10 flex items-center justify-center mx-auto mb-4 border border-rose-500/20">
+                <ShieldAlert className="w-6 h-6 text-rose-500" />
+              </div>
+              <h3 className="text-center text-rose-500 font-black text-lg uppercase tracking-wider mb-2">Cảnh Báo Nguy Hiểm</h3>
+              <p className="text-slate-300 text-xs text-center leading-relaxed mb-6">
+                Hành động này sẽ đóng toàn bộ hệ thống K-12. Học sinh sẽ không thể truy cập. Nhập <strong className="text-white">CONFIRM</strong> để tiếp tục.
+              </p>
+              
+              <input 
+                type="text"
+                autoFocus
+                value={confirmText}
+                onChange={(e) => setConfirmText(e.target.value)}
+                placeholder="Nhập CONFIRM"
+                className="w-full bg-[#090D16] border border-rose-500/30 text-white text-sm rounded-[var(--radius-card)] px-4 py-3 outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 transition-all font-mono text-center mb-6 placeholder-slate-600 uppercase"
+              />
+              
+              <div className="flex gap-3">
+                <button 
+                  onClick={() => setShowMainConfirm(false)}
+                  className="flex-1 px-4 py-2.5 rounded-[var(--radius-card)] bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition-all"
+                >
+                  Hủy
+                </button>
+                <button 
+                  onClick={() => {
+                    if (confirmText === "CONFIRM") {
+                      setIsMaintenance(true);
+                      setShowMainConfirm(false);
+                    }
+                  }}
+                  disabled={confirmText !== "CONFIRM"}
+                  className={`flex-1 px-4 py-2.5 rounded-[var(--radius-card)] text-xs font-bold transition-all ${
+                    confirmText === "CONFIRM" 
+                      ? "bg-rose-600 hover:bg-rose-500 text-white shadow-[0_4px_0_#9f1239] active:translate-y-[2px] active:shadow-none" 
+                      : "bg-slate-800 text-slate-600 cursor-not-allowed"
+                  }`}
+                >
+                  Bật Bảo Trì
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
