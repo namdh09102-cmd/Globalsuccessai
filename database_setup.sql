@@ -1,5 +1,14 @@
 -- Globalsuccess AI - Initial Database Schema
 
+-- Xóa các bảng cũ nếu đã tồn tại để tránh lỗi "relation already exists"
+DROP TABLE IF EXISTS public.admin_settings CASCADE;
+DROP TABLE IF EXISTS public.curriculums CASCADE;
+DROP TABLE IF EXISTS public.class_members CASCADE;
+DROP TABLE IF EXISTS public.classes CASCADE;
+DROP TABLE IF EXISTS public.learning_logs CASCADE;
+DROP TABLE IF EXISTS public.student_stats CASCADE;
+DROP TABLE IF EXISTS public.profiles CASCADE;
+
 -- Bật UUID extension
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
@@ -149,6 +158,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 
+DROP TRIGGER IF EXISTS on_profile_created ON public.profiles;
 CREATE TRIGGER on_profile_created
   AFTER INSERT ON public.profiles
   FOR EACH ROW EXECUTE PROCEDURE public.handle_new_user_stats();
