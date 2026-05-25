@@ -27,6 +27,17 @@ export default function AuthPage() {
     setSuccess("");
     setIsLoading(true);
 
+    if (!email || !email.includes('@')) {
+      setError("Vui lòng nhập địa chỉ email hợp lệ.");
+      setIsLoading(false);
+      return;
+    }
+    if (!password || password.length < 6) {
+      setError("Mật khẩu phải có ít nhất 6 ký tự.");
+      setIsLoading(false);
+      return;
+    }
+
     try {
 
       if (isLogin) {
@@ -150,7 +161,7 @@ export default function AuthPage() {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4" noValidate>
           
           <AnimatePresence mode="wait">
             {!isLogin && (
@@ -260,7 +271,8 @@ export default function AuthPage() {
             )}
           </AnimatePresence>
 
-          <button className="w-full py-4 mt-2 rounded-[var(--radius-btn)] bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-text-head text-sm font-black uppercase tracking-wider shadow-[0_4px_0_#3730a3] hover:shadow-[0_2px_0_#3730a3] active:translate-y-[2px] active:shadow-none transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+          <button type="submit" className="w-full py-4 mt-2 rounded-[var(--radius-btn)] bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-text-head text-sm font-black uppercase tracking-wider shadow-[0_4px_0_#3730a3] hover:shadow-[0_2px_0_#3730a3] active:shadow-none transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+            disabled={isLoading}
           >
             {isLoading ? (
               <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
