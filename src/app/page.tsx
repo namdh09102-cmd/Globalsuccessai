@@ -1121,7 +1121,7 @@ export default function Dashboard() {
       )}
 
       {activeRoom === "dashboard" && (
-        <div className="p-6 md:p-8 space-y-8 max-w-6xl mx-auto pb-16">
+        <div className="p-6 md:p-8 space-y-8 max-w-[1600px] mx-auto pb-16">
           {/* Top Search & Navigation Bar */}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[rgba(0,0,0,0.1)] pb-6">
             <div className="relative w-full max-w-md">
@@ -1258,14 +1258,14 @@ export default function Dashboard() {
                     <BookOpen className="w-6 h-6" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm font-black text-white">Học SGK</h4>
-                    <p className="text-[10px] text-blue-100 leading-relaxed max-w-[200px]">
+                    <h4 className="text-base font-black text-white">Học SGK</h4>
+                    <p className="text-xs text-blue-50 leading-relaxed max-w-[250px]">
                       Học theo chương trình sách giáo khoa từ lớp 6 đến lớp 12
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/20 text-[9px] text-white/90 font-bold">
+                <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/20 text-[10px] text-white font-bold">
                   <span>12.4K học sinh đang học</span>
                   <div className="w-6 h-6 rounded-full bg-card group-hover:bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] flex items-center justify-center text-text-muted border border-[rgba(0,0,0,0.1)] group-hover:border-indigo-600 shadow-sm group-hover:text-white transition-all">
                     <ChevronRight className="w-3.5 h-3.5" />
@@ -1293,14 +1293,14 @@ export default function Dashboard() {
                     <Headphones className="w-6 h-6" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm font-black text-white">Luyện nghe Dictation</h4>
-                    <p className="text-[10px] text-indigo-100 leading-relaxed max-w-[200px]">
+                    <h4 className="text-base font-black text-white">Luyện nghe Dictation</h4>
+                    <p className="text-xs text-indigo-50 leading-relaxed max-w-[250px]">
                       Nghe viết chính tả các câu tiếng Anh theo sách giáo khoa
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/20 text-[9px] text-white/90 font-bold">
+                <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/20 text-[10px] text-white font-bold">
                   <span>8.3K học sinh đang học</span>
                   <div className="w-6 h-6 rounded-full bg-card group-hover:bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] flex items-center justify-center text-text-muted border border-[rgba(0,0,0,0.1)] group-hover:border-indigo-600 shadow-sm group-hover:text-white transition-all">
                     <ChevronRight className="w-3.5 h-3.5" />
@@ -1326,14 +1326,14 @@ export default function Dashboard() {
                     <Mic className="w-6 h-6" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm font-black text-white">Luyện nói AI</h4>
-                    <p className="text-[10px] text-indigo-100 leading-relaxed max-w-[200px]">
+                    <h4 className="text-base font-black text-white">Luyện nói AI</h4>
+                    <p className="text-xs text-indigo-50 leading-relaxed max-w-[250px]">
                       AI chấm phát âm và sửa lỗi chi tiết như giáo viên bản xứ
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/20 text-[9px] text-white/90 font-bold">
+                <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/20 text-[10px] text-white font-bold">
                   <span>15K học sinh đang luyện</span>
                   <div className="w-6 h-6 rounded-full bg-card group-hover:bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] flex items-center justify-center text-text-muted border border-[rgba(0,0,0,0.1)] group-hover:border-indigo-600 shadow-sm group-hover:text-white transition-all">
                     <ChevronRight className="w-3.5 h-3.5" />
