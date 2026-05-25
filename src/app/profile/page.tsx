@@ -60,6 +60,11 @@ export default function ProfilePage() {
 
   // Trạng thái lưu thông báo thành công
   const [isSavedNotification, setIsSavedNotification] = useState(false);
+  
+  // Trạng thái tham gia lớp
+  const [classCode, setClassCode] = useState("");
+  const [classJoinStatus, setClassJoinStatus] = useState<"idle" | "success" | "error">("idle");
+  const [classJoinMessage, setClassJoinMessage] = useState("");
 
   // Load dữ liệu từ localStorage
   useEffect(() => {
@@ -195,6 +200,43 @@ export default function ProfilePage() {
     localStorage.removeItem("gsa-current-user");
     window.dispatchEvent(new Event("auth-changed"));
     router.push("/auth");
+  };
+
+  const handleJoinClass = () => {
+    if (!classCode.trim()) return;
+    
+    // Giả lập tìm kiếm lớp học
+    const storedClasses = localStorage.getItem("gsa-teacher-classes");
+    let found = false;
+    let joinedClass = null;
+
+    if (storedClasses) {
+      try {
+        const classes = JSON.parse(storedClasses);
+        const targetClass = classes.find((c: any) => c.code === classCode.trim());
+        if (targetClass) {
+          found = true;
+          joinedClass = targetClass;
+        }
+      } catch(e) {}
+    }
+
+    if (!found) {
+      // Cho phép học sinh nhập mã bất kỳ nếu không tìm thấy, để trải nghiệm (giả lập)
+      joinedClass = {
+        id: "class_" + Date.now(),
+        name: "Lớp giả lập " + classCode.trim().toUpperCase(),
+        code: classCode.trim().toUpperCase()
+      };
+    }
+
+    localStorage.setItem("gsa-joined-class", JSON.stringify(joinedClass));
+    setClassJoinStatus("success");
+    setClassJoinMessage(`Tham gia thành công ${joinedClass.name}!`);
+    setTimeout(() => {
+      setClassJoinStatus("idle");
+      setClassCode("");
+    }, 3000);
   };
 
   // SVG Radar Chart Math
@@ -732,8 +774,37 @@ export default function ProfilePage() {
                 </select>
               </div>
 
+              {/* Field 4: Tham gia lớp học (Join Class) */}
+              <div className="space-y-1">
+                <label className="text-[10px] text-text-muted font-extrabold uppercase tracking-wide flex items-center gap-1">
+                  <BookOpen className="w-3 h-3 text-text-muted" />
+                  <span>Tham gia lớp học</span>
+                </label>
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={classCode}
+                    onChange={(e) => setClassCode(e.target.value)}
+                    placeholder="Nhập mã lớp..."
+                    className="w-full px-3.5 py-2.5 rounded-[var(--radius-card)] bg-page text-xs font-bold text-text-head border border-[rgba(0,0,0,0.1)] focus:border-indigo-500/85 focus:ring-1 focus:ring-indigo-500/40 outline-none transition-all placeholder-slate-700 uppercase"
+                  />
+                  <button
+                    type="button"
+                    onClick={handleJoinClass}
+                    className="shrink-0 px-4 py-2.5 rounded-[var(--radius-btn)] bg-teal-500 text-white border-[var(--c-border)] border-teal-700 shadow-[0_4px_0_var(--c-teal-dark)] hover:bg-teal-600 font-black text-xs transition-all duration-100 flex items-center justify-center active:translate-y-[4px] active:shadow-none select-none"
+                  >
+                    Vào lớp
+                  </button>
+                </div>
+                {classJoinStatus === "success" && (
+                  <p className="text-xs text-teal-600 font-bold flex items-center gap-1 mt-1">
+                    <CheckCircle2 className="w-3.5 h-3.5" /> {classJoinMessage}
+                  </p>
+                )}
+              </div>
+
               {/* Nút bấm 3D cơ học Nhấn lún sướng tay */}
-              <div className="flex gap-3">
+              <div className="flex gap-3 pt-2">
                 <button 
                   type="submit"
                   className="flex-1 py-2.5 rounded-[var(--radius-btn)] bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] hover:bg-primary-dark text-white font-black text-xs transition-all duration-100 flex items-center justify-center gap-1.5 active:translate-y-[4px] active:shadow-none select-none relative overflow-hidden"

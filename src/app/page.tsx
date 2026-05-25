@@ -338,6 +338,7 @@ export default function Dashboard() {
   // Trạng thái stats để đồng bộ thời gian thực với RightPanel và Welcome Banner
   const [stats, setStats] = useState({ xp: 0, diamonds: 0, streak: 0 });
   const [fullName, setFullName] = useState("Học viên");
+  const [userGradeLevel, setUserGradeLevel] = useState<string | null>(null);
 
   const loadStats = () => {
     if (typeof window !== "undefined") {
@@ -366,9 +367,9 @@ export default function Dashboard() {
       if (currentUserStr) {
         try {
           const parsed = JSON.parse(currentUserStr);
+          if (parsed.gradeLevel) setUserGradeLevel(parsed.gradeLevel);
           if (parsed.name) {
             setFullName(parsed.name);
-            return;
           }
         } catch (e) {}
       } else {
@@ -394,6 +395,11 @@ export default function Dashboard() {
         if (user.class_name) {
           const gradeStr = String(user.class_name);
           return gradeStr.toLowerCase().startsWith("lớp") ? gradeStr : `Lớp ${gradeStr.replace(/[^0-9]/g, '')}`;
+        }
+        if (user.gradeLevel) {
+           if (user.gradeLevel === "primary") return "Lớp 1";
+           if (user.gradeLevel === "middle") return "Lớp 6";
+           if (user.gradeLevel === "high") return "Lớp 10";
         }
       }
     } catch(e) {}
@@ -1132,8 +1138,13 @@ export default function Dashboard() {
             
             <div className="flex flex-wrap items-center gap-3">
               <div className="flex overflow-x-auto hide-scrollbar space-x-2 p-1 rounded-[var(--radius-card)] bg-card border border-[rgba(0,0,0,0.1)] w-full md:w-fit max-w-[calc(100vw-3rem)]">
-                {[...Array(12)].map((_, i) => {
-                  const grade = `Lớp ${i + 1}`;
+                {Array.from({ length: 12 }, (_, i) => i + 1).filter(i => {
+                  if (userGradeLevel === "primary") return i >= 1 && i <= 5;
+                  if (userGradeLevel === "middle") return i >= 6 && i <= 9;
+                  if (userGradeLevel === "high") return i >= 10 && i <= 12;
+                  return true;
+                }).map((i) => {
+                  const grade = `Lớp ${i}`;
                   return (
                     <button
                       key={grade}
