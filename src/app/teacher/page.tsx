@@ -336,6 +336,43 @@ export default function TeacherPortalPort() {
     }
   };
 
+  const handleAssignLesson = async () => {
+    if (!assignClassId) {
+      alert("Vui lòng chọn lớp học");
+      return;
+    }
+    if (!assignDueDate) {
+      alert("Vui lòng chọn hạn nộp bài");
+      return;
+    }
+
+    setIsAssigning(true);
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      const newAssignment = {
+        teacher_id: user?.id || null,
+        class_id: assignClassId,
+        lesson_id: assigningLesson.id,
+        title: assigningLesson.topic,
+        task_type: "practice", // default to practice for now
+        content: assigningLesson.content,
+        due_date: new Date(assignDueDate).toISOString(),
+      };
+
+      const { error } = await supabase.from('assignments').insert([newAssignment]);
+      if (error) throw error;
+
+      setShowToast("Giao bài tập thành công!");
+      setTimeout(() => setShowToast(""), 3000);
+      setAssigningLesson(null);
+    } catch (e: any) {
+      alert("Lỗi giao bài: " + e.message);
+    } finally {
+      setIsAssigning(false);
+    }
+  };
+
   const handleGenerateAI = async () => {
     if (!topic) return;
     setIsGenerating(true);
