@@ -51,8 +51,8 @@ class AudioManager {
     }
 
     gain.gain.setValueAtTime(0, this.ctx.currentTime);
-    gain.gain.linearRampToValueAtTime(vol, this.ctx.currentTime + 0.05);
-    gain.gain.setValueAtTime(vol, this.ctx.currentTime + duration - 0.05);
+    gain.gain.linearRampToValueAtTime(vol, this.ctx.currentTime + 0.01);
+    gain.gain.setValueAtTime(vol, this.ctx.currentTime + Math.max(0.01, duration - 0.01));
     gain.gain.linearRampToValueAtTime(0, this.ctx.currentTime + duration);
 
     osc.connect(gain);
