@@ -69,11 +69,8 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(url)
   }
 
-  // Nếu đã đăng nhập mà cố vào /auth thì đẩy về trang chủ hoặc dashboard
-  if (url.pathname === '/auth' && user) {
-    url.pathname = '/' // Could be refined to check role and redirect to /teacher or /learn
-    return NextResponse.redirect(url)
-  }
+  // Bỏ logic chặn /auth ở đây để tránh lỗi kẹt cookie (zombie cookie)
+  // ClientLayoutWrapper sẽ lo việc redirect nếu user đã đăng nhập.
 
   return response
 }
