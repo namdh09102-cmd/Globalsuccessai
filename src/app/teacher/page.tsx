@@ -7,11 +7,11 @@ import {
   LayoutDashboard, Sparkles, Gamepad2, Users, BarChart3, Award, Calendar, 
   BookOpen, Tv, Clock, ArrowUp, ArrowDown, Send, FileOutput, Settings,
   Rocket, Zap, Crown, Landmark, RotateCcw, Play, Pause, Eye, QrCode, ArrowLeft, PlayCircle, Search, CheckCircle2,
-  Edit3, Save, Upload, X, Image as ImageIcon, Video, Paperclip, Loader2
+  Edit3, Save, Upload, X, Image as ImageIcon, Video, Paperclip, Loader2, Library, Presentation, Plus
 } from "lucide-react";
 import Link from "next/link";
 
-type TabType = "overview" | "lesson" | "game" | "students" | "reports" | "rewards" | "schedule" | "settings";
+type TabType = "overview" | "lesson" | "library" | "game" | "students" | "reports" | "rewards" | "schedule" | "settings";
 type GameType = "race" | "quick" | "king" | "castle" | "team" | "spin";
 
 interface TeacherClass {
@@ -47,6 +47,10 @@ export default function TeacherPortalPort() {
   const [aiOutput, setAiOutput] = useState<any>(null);
   const [isEditingLesson, setIsEditingLesson] = useState(false);
   const [uploadingMedia, setUploadingMedia] = useState(false);
+  const [libraryLessons, setLibraryLessons] = useState<any[]>([]);
+  const [presentationMode, setPresentationMode] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [savingLesson, setSavingLesson] = useState(false);
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files || e.target.files.length === 0) return;
@@ -143,6 +147,14 @@ export default function TeacherPortalPort() {
       if (classesData && classesData.length > 0) {
         setClasses(classesData);
         setSelectedClassId(classesData[0].id);
+      }
+
+      // Fetch teacher lessons
+      if (teacherId) {
+        const { data: lessonsData } = await supabase.from('teacher_lessons').select('*').eq('teacher_id', teacherId).order('created_at', { ascending: false });
+        if (lessonsData) {
+          setLibraryLessons(lessonsData);
+        }
       }
 
       // Teacher profile sync if we want, ignoring for now since it's just static text in UI
@@ -272,6 +284,37 @@ export default function TeacherPortalPort() {
     setActivities(prev => prev.includes(act) ? prev.filter(a => a !== act) : [...prev, act]);
   };
 
+  const handleSaveToLibrary = async () => {
+    if (!aiOutput) return;
+    setSavingLesson(true);
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) throw new Error("Chưa đăng nhập");
+
+      const newLesson = {
+        teacher_id: user.id,
+        topic,
+        grade,
+        duration,
+        content: aiOutput,
+        resources: aiOutput.resources || []
+      };
+
+      const { data, error } = await supabase.from('teacher_lessons').insert([newLesson]).select();
+      if (error) throw error;
+
+      if (data) {
+        setLibraryLessons([data[0], ...libraryLessons]);
+        setShowToast("Lưu vào thư viện thành công!");
+        setTimeout(() => setShowToast(""), 3000);
+      }
+    } catch (e: any) {
+      alert("Lỗi lưu giáo án: " + e.message);
+    } finally {
+      setSavingLesson(false);
+    }
+  };
+
   const handleGenerateAI = async () => {
     if (!topic) return;
     setIsGenerating(true);
@@ -375,6 +418,130 @@ export default function TeacherPortalPort() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isTvMode]);
+
+  if (presentationMode && aiOutput) {
+    const slides = [
+      { title: "Mục tiêu bài học", content: aiOutput.objective, type: "text" },
+      { title: "Từ vựng chính", content: aiOutput.vocab, type: "vocab" },
+      { title: "Khởi động (Warm-up)", content: aiOutput.warmup, type: "text" },
+      { title: "Bài Mới (Presentation)", content: aiOutput.presentation, type: "text" },
+      { title: "Thực hành (Practice)", content: aiOutput.practice, type: "text" },
+      { title: "Vận dụng (Production)", content: aiOutput.production, type: "text" },
+      { title: "Tài nguyên đính kèm", content: aiOutput.resources, type: "media" },
+      { title: "Game củng cố", content: aiOutput.game, type: "game" }
+    ].filter(s => {
+      if (s.type === 'media' && (!s.content || s.content.length === 0)) return false;
+      return true;
+    });
+
+    const nextSlide = () => setCurrentSlide(prev => Math.min(prev + 1, slides.length - 1));
+    const prevSlide = () => setCurrentSlide(prev => Math.max(prev - 1, 0));
+
+    const renderSlideContent = (slide: any) => {
+      if (slide.type === 'vocab') {
+        return (
+          <div className="flex flex-wrap gap-4 justify-center mt-12">
+            {slide.content.map((v: string, i: number) => (
+              <div key={i} className="bg-white text-teal-700 px-8 py-6 rounded-2xl shadow-xl text-4xl font-bold border-4 border-teal-100 transform transition-transform hover:scale-105">
+                {v}
+              </div>
+            ))}
+          </div>
+        );
+      }
+      if (slide.type === 'media') {
+        return (
+          <div className="grid grid-cols-2 gap-8 mt-8">
+            {slide.content.map((res: any, idx: number) => (
+              <div key={idx} className="bg-white p-4 rounded-2xl shadow-lg border-2 border-gray-100 flex flex-col items-center">
+                {res.type === 'image' && <img src={res.url} alt="media" className="w-full h-[300px] object-cover rounded-xl mb-4" />}
+                {res.type === 'video' && <video src={res.url} controls className="w-full h-[300px] object-cover rounded-xl mb-4 bg-black" />}
+                {res.type === 'document' && <div className="w-full h-[300px] bg-blue-50 rounded-xl flex items-center justify-center mb-4"><FileOutput className="w-24 h-24 text-blue-300" /></div>}
+                <div className="text-xl font-bold text-gray-700">{res.name}</div>
+              </div>
+            ))}
+          </div>
+        );
+      }
+      if (slide.type === 'game') {
+        return (
+          <div className="bg-indigo-50 border-4 border-indigo-200 rounded-3xl p-12 mt-12 text-center">
+            <Gamepad2 className="w-24 h-24 text-indigo-400 mx-auto mb-6" />
+            <div className="text-3xl text-indigo-900 font-bold leading-relaxed">{slide.content}</div>
+          </div>
+        );
+      }
+      return <div className="text-3xl text-gray-700 leading-[1.8] mt-12 bg-white/60 p-10 rounded-3xl backdrop-blur-sm shadow-sm">{slide.content}</div>;
+    };
+
+    return (
+      <div className="fixed inset-0 z-[100] bg-slate-50 flex flex-col overflow-hidden text-slate-800 font-sans select-none animate-fade-in-up">
+        {/* Presentation Header */}
+        <div className="flex items-center justify-between p-6 bg-white border-b border-gray-200 shadow-sm shrink-0">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-teal-50 flex items-center justify-center border border-teal-100">
+              <Presentation className="w-6 h-6 text-teal-600" />
+            </div>
+            <div>
+              <h1 className="text-xl font-black text-gray-800 uppercase tracking-wide">
+                {topic}
+              </h1>
+              <p className="text-gray-500 font-medium text-sm mt-0.5">{grade} · Tiết học tương tác</p>
+            </div>
+          </div>
+          <button 
+            onClick={() => { setPresentationMode(false); setCurrentSlide(0); }}
+            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold transition-colors"
+          >
+            Đóng [ESC]
+          </button>
+        </div>
+
+        {/* Slide Content */}
+        <div className="flex-1 overflow-y-auto p-12 relative flex flex-col">
+          <div className="max-w-6xl w-full mx-auto flex-1 flex flex-col relative z-10">
+            <div className="text-teal-600 font-black text-2xl uppercase tracking-widest mb-4 flex items-center gap-3">
+              <span className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center">{currentSlide + 1}</span>
+              {slides[currentSlide].title}
+            </div>
+            {renderSlideContent(slides[currentSlide])}
+          </div>
+          
+          {/* Background decorations */}
+          <div className="fixed bottom-0 right-0 w-[800px] h-[800px] bg-teal-400/5 rounded-full blur-[100px] pointer-events-none" />
+          <div className="fixed top-20 left-10 w-[400px] h-[400px] bg-amber-400/5 rounded-full blur-[80px] pointer-events-none" />
+        </div>
+
+        {/* Presentation Footer Controls */}
+        <div className="bg-white border-t border-gray-200 p-4 shrink-0 flex items-center justify-between px-12 relative z-20 shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
+          <div className="text-gray-500 font-bold">
+            Slide {currentSlide + 1} / {slides.length}
+          </div>
+          <div className="flex items-center gap-4">
+            <button 
+              onClick={prevSlide} 
+              disabled={currentSlide === 0}
+              className="w-12 h-12 rounded-full flex items-center justify-center bg-gray-100 hover:bg-gray-200 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+            >
+              <ArrowLeft className="w-6 h-6 text-gray-700" />
+            </button>
+            <div className="flex gap-1.5">
+              {slides.map((_, i) => (
+                <div key={i} className={`h-2.5 rounded-full transition-all ${currentSlide === i ? 'w-8 bg-teal-500' : 'w-2.5 bg-gray-200'}`} />
+              ))}
+            </div>
+            <button 
+              onClick={nextSlide} 
+              disabled={currentSlide === slides.length - 1}
+              className="w-12 h-12 rounded-full flex items-center justify-center bg-teal-500 hover:bg-teal-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors shadow-md shadow-teal-500/20"
+            >
+              <ArrowLeft className="w-6 h-6 text-white rotate-180" />
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (isTvMode) {
     return (
@@ -529,6 +696,9 @@ export default function TeacherPortalPort() {
             <div onClick={() => setActiveTab('lesson')} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer mb-0.5 transition-colors ${activeTab === 'lesson' ? 'bg-[#FAECE7] text-[#E63946]' : 'text-gray-600 hover:bg-gray-50'}`}>
               <Sparkles className="w-4 h-4" /> Soạn giáo án AI
             </div>
+            <div onClick={() => setActiveTab('library')} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer mb-0.5 transition-colors ${activeTab === 'library' ? 'bg-[#FAECE7] text-[#E63946]' : 'text-gray-600 hover:bg-gray-50'}`}>
+              <Library className="w-4 h-4" /> Thư viện bài giảng
+            </div>
             <div onClick={() => setActiveTab('game')} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer mb-0.5 transition-colors ${activeTab === 'game' ? 'bg-[#FAECE7] text-[#E63946]' : 'text-gray-600 hover:bg-gray-50'}`}>
               <Gamepad2 className="w-4 h-4" /> Tạo game lớp
             </div>
@@ -574,6 +744,7 @@ export default function TeacherPortalPort() {
               <h2 className="text-[16px] font-bold text-gray-800">
                 {activeTab === 'overview' && "Tổng quan lớp"}
                 {activeTab === 'lesson' && "Soạn giáo án AI"}
+                {activeTab === 'library' && "Thư viện bài giảng"}
                 {activeTab === 'game' && "Tạo game cho lớp"}
                 {activeTab === 'students' && "Danh sách học sinh"}
                 {activeTab === 'reports' && "Báo cáo tiến độ Zalo"}
@@ -582,8 +753,9 @@ export default function TeacherPortalPort() {
                 {activeTab === 'settings' && "Thiết lập tài khoản"}
               </h2>
               <p className="text-[12px] text-gray-500 mt-0.5">
-                {activeTab === 'overview' && "Lớp 7A3 hôm nay — 28/32 học sinh online"}
+                {activeTab === 'overview' && "Thông tin chung và tiến độ học tập của lớp"}
                 {activeTab === 'lesson' && "Nhập chủ đề — AI tạo giáo án hoàn chỉnh trong 10 giây"}
+                {activeTab === 'library' && "Lưu trữ và tái sử dụng các giáo án AI đã soạn"}
                 {activeTab === 'game' && "Chọn game, cấu hình và chiếu thẳng lên bảng TV"}
                 {activeTab === 'students' && "Theo dõi tiến độ từng em, giao bài và gửi báo cáo"}
                 {activeTab === 'reports' && "Gửi báo cáo tiến độ học tập hàng tuần tới phụ huynh qua Zalo ZNS"}
@@ -865,8 +1037,12 @@ export default function TeacherPortalPort() {
                       </div>
 
                       <div className="p-3 px-4 bg-gray-50 border-t border-gray-200 flex gap-2 shrink-0">
-                        <button className="flex-1 bg-[#E63946] hover:bg-[#c62b37] text-white py-2 rounded-lg text-[12px] font-bold transition-colors flex items-center justify-center gap-1.5">
-                          <Send className="w-3.5 h-3.5" /> Giao cho lớp
+                        <button onClick={() => setPresentationMode(true)} className="flex-1 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white py-2 rounded-lg text-[12px] font-bold transition-all shadow-md flex items-center justify-center gap-1.5">
+                          <Presentation className="w-3.5 h-3.5" /> Bắt đầu Dạy (Chiếu TV)
+                        </button>
+                        <button onClick={handleSaveToLibrary} disabled={savingLesson} className="flex-1 bg-white border-2 border-[#E63946] text-[#E63946] hover:bg-[#FAECE7] py-2 rounded-lg text-[12px] font-bold transition-colors flex items-center justify-center gap-1.5 disabled:opacity-50">
+                          {savingLesson ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />}
+                          {savingLesson ? 'Đang lưu...' : 'Lưu vào Thư viện'}
                         </button>
                         <button onClick={() => window.print()} className="px-4 bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 py-2 rounded-lg text-[12px] font-bold transition-colors flex items-center justify-center gap-1.5">
                           <FileOutput className="w-3.5 h-3.5" /> Xuất PDF
@@ -880,6 +1056,54 @@ export default function TeacherPortalPort() {
                     </div>
                   )}
                 </div>
+              </div>
+            )}
+
+            {/* LIBRARY TAB */}
+            {activeTab === 'library' && (
+              <div className="animate-fade-in-up">
+                {libraryLessons.length === 0 ? (
+                  <div className="bg-white rounded-xl border border-dashed border-gray-300 p-12 text-center flex flex-col items-center justify-center">
+                    <Library className="w-12 h-12 text-gray-300 mb-3" />
+                    <h3 className="text-[14px] font-bold text-gray-700 mb-1">Thư viện trống</h3>
+                    <p className="text-[12px] text-gray-500 mb-4">Bạn chưa lưu giáo án nào. Hãy sang phần Soạn giáo án AI để tạo và lưu nhé.</p>
+                    <button onClick={() => setActiveTab('lesson')} className="bg-[#E63946] text-white px-4 py-2 rounded-lg text-[12px] font-bold">Soạn giáo án ngay</button>
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-3 gap-4">
+                    {libraryLessons.map((l: any, i: number) => (
+                      <div key={i} className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 flex flex-col relative group hover:border-[#E63946] transition-colors">
+                        <div className="text-[10px] text-gray-400 mb-1">{new Date(l.created_at).toLocaleDateString('vi-VN')}</div>
+                        <h3 className="text-[14px] font-bold text-gray-800 leading-tight mb-2 line-clamp-2">{l.topic}</h3>
+                        <div className="text-[11px] text-gray-500 mb-4 flex gap-2">
+                          <span className="bg-gray-100 px-2 py-0.5 rounded">{l.grade}</span>
+                          <span className="bg-gray-100 px-2 py-0.5 rounded">{l.duration}</span>
+                        </div>
+                        
+                        <div className="mt-auto flex gap-2">
+                          <button onClick={() => {
+                            setTopic(l.topic);
+                            setGrade(l.grade);
+                            setDuration(l.duration);
+                            setAiOutput(l.content);
+                            setActiveTab('lesson');
+                          }} className="flex-1 border border-gray-200 bg-gray-50 hover:bg-gray-100 text-gray-700 text-[11px] py-1.5 rounded font-bold text-center transition-colors">
+                            Xem / Sửa
+                          </button>
+                          <button onClick={() => {
+                            setTopic(l.topic);
+                            setGrade(l.grade);
+                            setDuration(l.duration);
+                            setAiOutput(l.content);
+                            setPresentationMode(true);
+                          }} className="flex-1 bg-teal-500 hover:bg-teal-600 text-white text-[11px] py-1.5 rounded font-bold text-center transition-colors flex justify-center items-center gap-1">
+                            <Presentation className="w-3 h-3" /> Dạy
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
 
