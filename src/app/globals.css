@@ -89,7 +89,7 @@
   --c-pink-text:      #7D0038;
 
   /* Backgrounds */
-  --c-bg-page:        #FFF8F0;   /* warm off-white — NOT pure white */
+  --c-bg-page:        #FFF8F6;   /* warm off-white (cam nhạt) */
   --c-bg-card:        #FFFFFF;
   --c-bg-sidebar:     #FF6B6B;   /* sidebar is PRIMARY color */
   --c-bg-topbar:      #FF6B6B;
@@ -142,7 +142,7 @@
   --c-pink-light:     #FCE7F3;   /* Pink 100 */
   --c-pink-text:      #831843;   /* Pink 900 */
 
-  --c-bg-page:        #F0FDFA;   /* Very light mint/teal */
+  --c-bg-page:        #F0FAF7;   /* Very light mint/teal */
   --c-bg-card:        #FFFFFF;
   --c-bg-sidebar:     #14B8A6;   /* Teal sidebar */
   --c-bg-topbar:      #14B8A6;

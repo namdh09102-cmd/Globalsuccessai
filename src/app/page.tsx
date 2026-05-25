@@ -385,13 +385,30 @@ export default function Dashboard() {
     }
   };
 
+  const getProfileGrade = () => {
+    if (typeof window === "undefined") return "Lớp 10";
+    try {
+      const stored = localStorage.getItem("gsa-current-user");
+      if (stored) {
+        const user = JSON.parse(stored);
+        if (user.class_name) {
+          const gradeStr = String(user.class_name);
+          return gradeStr.toLowerCase().startsWith("lớp") ? gradeStr : `Lớp ${gradeStr.replace(/[^0-9]/g, '')}`;
+        }
+      }
+    } catch(e) {}
+    return "Lớp 10";
+  };
+
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const timerIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   // Đọc danh sách bài học và điểm số từ localStorage
   useEffect(() => {
-    loadCurriculum();
+    const initialGrade = getProfileGrade();
+    setActiveGrade(initialGrade);
+    loadCurriculum(initialGrade);
     loadStats();
     loadUserTier();
     loadProfile();
@@ -411,7 +428,8 @@ export default function Dashboard() {
     };
   }, []);
 
-  const loadCurriculum = async () => {
+  const loadCurriculum = async (targetGrade?: string) => {
+    const gradeToUse = targetGrade || activeGrade;
     let baseUnits = [...defaultUnits];
     
     // Đọc từ localStorage chung
@@ -496,8 +514,8 @@ export default function Dashboard() {
 
     setUnits(allUnits);
     const selectedUnitFromList = 
-      allUnits.find((u: any) => u.grade === activeGrade && u.number === 2) 
-      || allUnits.find((u: any) => u.grade === activeGrade) 
+      allUnits.find((u: any) => u.grade === gradeToUse && u.number === 2) 
+      || allUnits.find((u: any) => u.grade === gradeToUse) 
       || allUnits[0] || null;
     setSelectedUnit(selectedUnitFromList);
   };
