@@ -10,8 +10,14 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-type TabType = "overview" | "lesson" | "game" | "students" | "reports" | "rewards" | "schedule";
+type TabType = "overview" | "lesson" | "game" | "students" | "reports" | "rewards" | "schedule" | "settings";
 type GameType = "race" | "quick" | "king" | "castle" | "team" | "spin";
+
+interface TeacherClass {
+  id: string;
+  name: string;
+  code: string;
+}
 
 const MOCK_STUDENTS: any[] = [];
 
@@ -61,7 +67,35 @@ export default function TeacherPortalPort() {
   const [schedEndTime, setSchedEndTime] = useState("08:45");
   const [schedNotes, setSchedNotes] = useState("");
 
+  const [classes, setClasses] = useState<TeacherClass[]>([]);
+  const [selectedClassId, setSelectedClassId] = useState<string>("");
+  const [showAddClass, setShowAddClass] = useState(false);
+  const [newClassName, setNewClassName] = useState("");
+  
+  const [showAddStudent, setShowAddStudent] = useState(false);
+  const [newStudentName, setNewStudentName] = useState("");
+
+  const [teacherProfile, setTeacherProfile] = useState({
+    name: "Cô Ngọc Thảo",
+    school: "THCS Ngô Sĩ Liên",
+    phone: "0987654321",
+    grades: "Tiếng Anh · Lớp 6–9"
+  });
+
   useEffect(() => {
+    const cls = localStorage.getItem("gsa-teacher-classes");
+    if (cls) {
+      try { 
+        const parsed = JSON.parse(cls);
+        setClasses(parsed);
+        if (parsed.length > 0) setSelectedClassId(parsed[0].id);
+      } catch(e){}
+    }
+    const tProfile = localStorage.getItem("gsa-teacher-profile");
+    if (tProfile) {
+      try { setTeacherProfile(JSON.parse(tProfile)); } catch(e){}
+    }
+
     const saved = localStorage.getItem("gsa-teacher-students");
     if (saved) {
       try { setStudents(JSON.parse(saved)); } catch(e){}
@@ -426,6 +460,9 @@ export default function TeacherPortalPort() {
             <div onClick={() => setActiveTab('schedule')} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer mb-0.5 transition-colors ${activeTab === 'schedule' ? 'bg-[#FAECE7] text-[#E63946]' : 'text-gray-600 hover:bg-gray-50'}`}>
               <Calendar className="w-4 h-4" /> Lịch dạy
             </div>
+            <div onClick={() => setActiveTab('settings')} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer mb-0.5 transition-colors ${activeTab === 'settings' ? 'bg-[#FAECE7] text-[#E63946]' : 'text-gray-600 hover:bg-gray-50'}`}>
+              <Settings className="w-4 h-4" /> Tài khoản
+            </div>
             <Link href="/dashboard" className="flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] cursor-pointer text-blue-600 bg-blue-50 hover:bg-blue-100 font-medium mt-2">
               <PlayCircle className="w-4 h-4" /> Trải nghiệm Học sinh
             </Link>
@@ -434,8 +471,8 @@ export default function TeacherPortalPort() {
           <div className="p-3 border-t border-gray-200 flex items-center gap-2 bg-gray-50">
             <div className="w-8 h-8 rounded-full bg-[#E1F5EE] text-[#0F6E56] flex items-center justify-center text-[12px] font-bold shrink-0">NT</div>
             <div className="min-w-0">
-              <div className="text-[12px] font-bold text-gray-800 truncate">Cô Ngọc Thảo</div>
-              <div className="text-[11px] text-gray-500 truncate">Tiếng Anh · Lớp 6–9</div>
+              <div className="text-[12px] font-bold text-gray-800 truncate">{teacherProfile.name}</div>
+              <div className="text-[11px] text-gray-500 truncate">{teacherProfile.grades}</div>
             </div>
           </div>
         </div>
@@ -451,7 +488,10 @@ export default function TeacherPortalPort() {
                 {activeTab === 'lesson' && "Soạn giáo án AI"}
                 {activeTab === 'game' && "Tạo game cho lớp"}
                 {activeTab === 'students' && "Danh sách học sinh"}
-                {activeTab === 'reports' && "Báo cáo Tự động (Zalo)"}
+                {activeTab === 'reports' && "Báo cáo tiến độ Zalo"}
+                {activeTab === 'rewards' && "Trao thưởng cho học sinh"}
+                {activeTab === 'schedule' && "Quản lý Lịch dạy"}
+                {activeTab === 'settings' && "Thiết lập tài khoản"}
               </h2>
               <p className="text-[12px] text-gray-500 mt-0.5">
                 {activeTab === 'overview' && "Lớp 7A3 hôm nay — 28/32 học sinh online"}
@@ -770,62 +810,154 @@ export default function TeacherPortalPort() {
 
             {/* STUDENTS TAB */}
             {activeTab === 'students' && (
-              <div className="animate-fade-in-up bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
-                <div className="p-4 border-b border-gray-100 flex items-center justify-between bg-gray-50/50">
-                  <div className="text-[14px] font-bold text-gray-800 flex items-center gap-1.5"><Users className="w-4 h-4 text-gray-500" /> Danh sách Lớp 7A3</div>
+              <div className="animate-fade-in-up flex flex-col gap-4">
+                <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 flex items-center justify-between">
+                  <div className="flex gap-4 items-center">
+                    <select 
+                      className="text-[14px] font-bold text-gray-800 bg-gray-50 border border-gray-200 rounded-lg px-3 py-1.5 outline-none focus:border-teal-500"
+                      value={selectedClassId}
+                      onChange={e => setSelectedClassId(e.target.value)}
+                    >
+                      {classes.length === 0 && <option value="">Chưa có lớp nào</option>}
+                      {classes.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
+                    </select>
+                    {classes.length > 0 && (
+                      <div className="text-[12px] bg-teal-50 text-teal-700 px-3 py-1.5 rounded-lg border border-teal-100 font-bold flex items-center gap-2">
+                        Mã tham gia: <span className="text-[15px] tracking-widest">{classes.find(c => c.id === selectedClassId)?.code}</span>
+                      </div>
+                    )}
+                  </div>
                   <div className="flex gap-2">
-                    <input type="text" placeholder="Tìm kiếm..." className="text-[12px] px-3 py-1.5 rounded-lg border border-gray-200 outline-none w-48" />
+                    <button onClick={() => setShowAddClass(true)} className="bg-white border border-[#E63946] text-[#E63946] px-4 py-1.5 rounded-lg text-[12px] font-bold shadow-sm hover:bg-[#FAECE7] transition-colors">
+                      + Tạo lớp học
+                    </button>
+                    <button onClick={() => {
+                        if (!selectedClassId) return alert("Vui lòng tạo lớp học trước");
+                        setShowAddStudent(true);
+                      }} 
+                      className="bg-[#0F6E56] text-white px-4 py-1.5 rounded-lg text-[12px] font-bold shadow-sm hover:bg-[#0c5c48] transition-colors">
+                      + Thêm học sinh
+                    </button>
                   </div>
                 </div>
-                <div className="overflow-x-auto">
-                  <table className="w-full text-left border-collapse">
-                    <thead>
-                      <tr className="border-b border-gray-200 text-[11px] font-bold text-gray-500 uppercase tracking-wider bg-white">
-                        <th className="p-3 pl-4">Học sinh</th>
-                        <th className="p-3 text-center">XP Tích luỹ</th>
-                        <th className="p-3 text-center">Nói</th>
-                        <th className="p-3 text-center">Nghe</th>
-                        <th className="p-3 text-center">Trạng thái</th>
-                        <th className="p-3"></th>
-                      </tr>
-                    </thead>
+
+                <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left border-collapse">
+                      <thead>
+                        <tr className="border-b border-gray-200 text-[11px] font-bold text-gray-500 uppercase tracking-wider bg-white">
+                          <th className="p-3 pl-4">Học sinh</th>
+                          <th className="p-3 text-center">XP Tích luỹ</th>
+                          <th className="p-3 text-center">Nói</th>
+                          <th className="p-3 text-center">Nghe</th>
+                          <th className="p-3 text-center">Trạng thái</th>
+                          <th className="p-3"></th>
+                        </tr>
+                      </thead>
                     <tbody>
-                      {MOCK_STUDENTS.map(s => {
-                        const bg = s.status === 'green' ? '#E1F5EE' : s.status === 'amber' ? '#FAEEDA' : '#FCEBEB';
-                        const text = s.status === 'green' ? '#0F6E56' : s.status === 'amber' ? '#BA7517' : '#A32D2D';
-                        return (
-                          <tr key={s.id} className="border-b border-gray-100 hover:bg-gray-50/50 transition-colors">
-                            <td className="p-3 pl-4">
-                              <div className="flex items-center gap-2.5">
-                                <div className="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold shrink-0" style={{background: bg, color: text}}>{s.init}</div>
-                                <div>
-                                  <div className="text-[13px] font-bold text-gray-800">{s.name}</div>
-                                  <div className="text-[11px] text-gray-500">{s.active}</div>
+                      {students.length === 0 ? (
+                        <tr>
+                          <td colSpan={6} className="text-center p-8 text-gray-500 text-sm">
+                            Chưa có học sinh nào. Bấm <strong>+ Thêm học sinh</strong> hoặc gửi <strong>Mã tham gia</strong> cho học sinh.
+                          </td>
+                        </tr>
+                      ) : (
+                        students.filter(s => s.classId === selectedClassId).map(s => {
+                          const bg = s.status === 'green' ? '#E1F5EE' : s.status === 'amber' ? '#FAEEDA' : '#FCEBEB';
+                          const text = s.status === 'green' ? '#0F6E56' : s.status === 'amber' ? '#BA7517' : '#A32D2D';
+                          return (
+                            <tr key={s.id} className="border-b border-gray-100 hover:bg-gray-50/50 transition-colors">
+                              <td className="p-3 pl-4">
+                                <div className="flex items-center gap-2.5">
+                                  <div className="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold shrink-0" style={{background: bg, color: text}}>{s.init}</div>
+                                  <div>
+                                    <div className="text-[13px] font-bold text-gray-800">{s.name}</div>
+                                    <div className="text-[11px] text-gray-500">{s.active}</div>
+                                  </div>
                                 </div>
-                              </div>
-                            </td>
-                            <td className="p-3 text-center">
-                              <div className="text-[13px] font-bold text-gray-800 mb-1">{s.xp.toLocaleString()}</div>
-                              <div className="w-16 h-1 bg-gray-100 rounded-full mx-auto overflow-hidden"><div className="h-full bg-[#E63946]" style={{width: `${s.xp/4000*100}%`}}></div></div>
-                            </td>
-                            <td className="p-3 text-center text-[12px] font-bold" style={{color: s.speak >= 80 ? '#3B6D11' : s.speak >= 60 ? '#BA7517' : '#A32D2D'}}>{s.speak}%</td>
-                            <td className="p-3 text-center text-[12px] font-bold" style={{color: s.listen >= 80 ? '#3B6D11' : s.listen >= 60 ? '#BA7517' : '#A32D2D'}}>{s.listen}%</td>
-                            <td className="p-3 text-center">
-                              <span className="text-[10px] px-2 py-0.5 rounded-full font-bold" style={{background: bg, color: text}}>
-                                {s.status === 'green' ? 'Tích cực' : s.status === 'amber' ? 'Bình thường' : 'Cần hỗ trợ'}
-                              </span>
-                            </td>
-                            <td className="p-3 pr-4 text-right">
-                              <button className="text-[11px] font-bold text-gray-600 bg-white border border-gray-200 hover:bg-gray-50 px-3 py-1.5 rounded-lg transition-colors shadow-sm">
-                                Giao bài
-                              </button>
-                            </td>
-                          </tr>
-                        );
-                      })}
+                              </td>
+                              <td className="p-3 text-center">
+                                <div className="text-[13px] font-bold text-gray-800 mb-1">{s.xp?.toLocaleString() || 0}</div>
+                                <div className="w-16 h-1 bg-gray-100 rounded-full mx-auto overflow-hidden"><div className="h-full bg-[#E63946]" style={{width: `${(s.xp || 0)/4000*100}%`}}></div></div>
+                              </td>
+                              <td className="p-3 text-center text-[12px] font-bold" style={{color: s.speak >= 80 ? '#3B6D11' : s.speak >= 60 ? '#BA7517' : '#A32D2D'}}>{s.speak || 0}%</td>
+                              <td className="p-3 text-center text-[12px] font-bold" style={{color: s.listen >= 80 ? '#3B6D11' : s.listen >= 60 ? '#BA7517' : '#A32D2D'}}>{s.listen || 0}%</td>
+                              <td className="p-3 text-center">
+                                <span className="text-[10px] px-2 py-0.5 rounded-full font-bold" style={{background: bg, color: text}}>
+                                  {s.status === 'green' ? 'Tích cực' : s.status === 'amber' ? 'Bình thường' : 'Cần hỗ trợ'}
+                                </span>
+                              </td>
+                              <td className="p-3 pr-4 text-right">
+                                <button className="text-[11px] font-bold text-gray-600 bg-white border border-gray-200 hover:bg-gray-50 px-3 py-1.5 rounded-lg transition-colors shadow-sm">
+                                  Giao bài
+                                </button>
+                              </td>
+                            </tr>
+                          );
+                        })
+                      )}
                     </tbody>
                   </table>
                 </div>
+              </div>
+
+                {showAddClass && (
+                  <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+                    <div className="bg-white rounded-2xl w-full max-w-sm p-6 shadow-2xl">
+                       <h3 className="text-[16px] font-bold text-gray-800 mb-4">Tạo lớp học mới</h3>
+                       <div className="mb-6">
+                         <label className="block text-[12px] font-bold text-gray-500 mb-1.5">Tên lớp học</label>
+                         <input autoFocus placeholder="VD: 7A3, IELTS Beginner..." className="w-full px-3 py-2 border border-gray-200 rounded-lg text-[13px] outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500" value={newClassName} onChange={e => setNewClassName(e.target.value)} />
+                       </div>
+                       <div className="flex justify-end gap-2">
+                         <button onClick={() => setShowAddClass(false)} className="px-4 py-2 text-[13px] text-gray-500 font-bold hover:bg-gray-50 rounded-lg transition-colors">Hủy</button>
+                         <button onClick={() => {
+                           if(!newClassName) return;
+                           const newId = Date.now().toString();
+                           const newCode = Math.random().toString(36).substring(2, 8).toUpperCase();
+                           const newList = [...classes, {id: newId, name: newClassName, code: newCode}];
+                           setClasses(newList);
+                           setSelectedClassId(newId);
+                           localStorage.setItem("gsa-teacher-classes", JSON.stringify(newList));
+                           setNewClassName("");
+                           setShowAddClass(false);
+                         }} className="px-4 py-2 text-[13px] bg-[#E63946] text-white rounded-lg font-bold shadow-sm hover:bg-[#c62b37] transition-colors">Khởi tạo</button>
+                       </div>
+                    </div>
+                  </div>
+                )}
+                {showAddStudent && (
+                  <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+                    <div className="bg-white rounded-2xl w-full max-w-sm p-6 shadow-2xl">
+                       <h3 className="text-[16px] font-bold text-gray-800 mb-4">Thêm học sinh thủ công</h3>
+                       <div className="mb-6">
+                         <label className="block text-[12px] font-bold text-gray-500 mb-1.5">Họ và Tên</label>
+                         <input autoFocus placeholder="Nhập tên đầy đủ..." className="w-full px-3 py-2 border border-gray-200 rounded-lg text-[13px] outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500" value={newStudentName} onChange={e => setNewStudentName(e.target.value)} />
+                       </div>
+                       <div className="flex justify-end gap-2">
+                         <button onClick={() => setShowAddStudent(false)} className="px-4 py-2 text-[13px] text-gray-500 font-bold hover:bg-gray-50 rounded-lg transition-colors">Hủy</button>
+                         <button onClick={() => {
+                           if(!newStudentName) return;
+                           const inits = newStudentName.split(" ").map(n => n[0]).join("").substring(0, 2).toUpperCase();
+                           const newS = {
+                             id: Date.now().toString(),
+                             classId: selectedClassId,
+                             name: newStudentName,
+                             init: inits,
+                             xp: 0, speak: 0, listen: 0, read: 0, active: 'Vừa xong', status: 'amber'
+                           };
+                           const newList = [...students, newS];
+                           setStudents(newList);
+                           localStorage.setItem("gsa-teacher-students", JSON.stringify(newList));
+                           setNewStudentName("");
+                           setShowAddStudent(false);
+                           setShowToast(`Đã thêm ${newStudentName}!`);
+                           setTimeout(() => setShowToast(""), 3000);
+                         }} className="px-4 py-2 text-[13px] bg-[#0F6E56] text-white rounded-lg font-bold shadow-sm hover:bg-[#0c5c48] transition-colors">Lưu lại</button>
+                       </div>
+                    </div>
+                  </div>
+                )}
               </div>
             )}
 
@@ -1326,6 +1458,52 @@ export default function TeacherPortalPort() {
                         </span>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            {/* SETTINGS TAB */}
+            {activeTab === 'settings' && (
+              <div className="animate-fade-in-up bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden p-6 max-w-2xl mt-4 ml-6">
+                <h3 className="text-[16px] font-bold text-gray-800 mb-6 flex items-center gap-2 pb-4 border-b border-gray-100">
+                  <Settings className="w-5 h-5 text-[#E63946]" /> Thiết lập tài khoản Giáo viên
+                </h3>
+                
+                {/* Toast Notification for settings */}
+                {showToast && (
+                  <div className="mb-6 bg-[#E1F5EE] text-[#0F6E56] border border-[#9FE1CB] px-4 py-2 rounded-lg text-[13px] font-bold flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4" /> {showToast}
+                  </div>
+                )}
+
+                <div className="space-y-5">
+                  <div>
+                    <label className="block text-[12px] font-bold text-gray-500 mb-1.5">Họ và tên Giáo viên</label>
+                    <input type="text" className="w-full px-4 py-2 border border-gray-200 bg-gray-50 rounded-lg text-[14px] text-gray-800 outline-none focus:border-teal-500 focus:bg-white focus:ring-1 focus:ring-teal-500 transition-all" value={teacherProfile.name} onChange={e => setTeacherProfile({...teacherProfile, name: e.target.value})} />
+                  </div>
+                  <div>
+                    <label className="block text-[12px] font-bold text-gray-500 mb-1.5">Trường công tác</label>
+                    <input type="text" className="w-full px-4 py-2 border border-gray-200 bg-gray-50 rounded-lg text-[14px] text-gray-800 outline-none focus:border-teal-500 focus:bg-white focus:ring-1 focus:ring-teal-500 transition-all" value={teacherProfile.school} onChange={e => setTeacherProfile({...teacherProfile, school: e.target.value})} />
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-[12px] font-bold text-gray-500 mb-1.5">Số điện thoại / Zalo</label>
+                      <input type="text" className="w-full px-4 py-2 border border-gray-200 bg-gray-50 rounded-lg text-[14px] text-gray-800 outline-none focus:border-teal-500 focus:bg-white focus:ring-1 focus:ring-teal-500 transition-all" value={teacherProfile.phone} onChange={e => setTeacherProfile({...teacherProfile, phone: e.target.value})} />
+                    </div>
+                    <div>
+                      <label className="block text-[12px] font-bold text-gray-500 mb-1.5">Phụ trách khối lớp</label>
+                      <input type="text" className="w-full px-4 py-2 border border-gray-200 bg-gray-50 rounded-lg text-[14px] text-gray-800 outline-none focus:border-teal-500 focus:bg-white focus:ring-1 focus:ring-teal-500 transition-all" value={teacherProfile.grades} onChange={e => setTeacherProfile({...teacherProfile, grades: e.target.value})} />
+                    </div>
+                  </div>
+                  
+                  <div className="pt-6 border-t border-gray-100 flex justify-end">
+                    <button onClick={() => {
+                      localStorage.setItem("gsa-teacher-profile", JSON.stringify(teacherProfile));
+                      setShowToast("Đã lưu thông tin tài khoản thành công!");
+                      setTimeout(() => setShowToast(""), 3000);
+                    }} className="bg-[#E63946] text-white px-8 py-2.5 rounded-lg text-[14px] font-bold shadow-md hover:bg-[#c62b37] transition-all">
+                      Lưu thay đổi
+                    </button>
                   </div>
                 </div>
               </div>
