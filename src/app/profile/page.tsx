@@ -16,7 +16,9 @@ import {
   BookOpen, 
   Star,
   Activity,
-  CheckCircle2
+  CheckCircle2,
+  Camera,
+  Upload
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import BadgeGrid from "@/components/BadgeGrid";
@@ -67,6 +69,47 @@ export default function ProfilePage() {
   const [classCode, setClassCode] = useState("");
   const [classJoinStatus, setClassJoinStatus] = useState<"idle" | "success" | "error">("idle");
   const [classJoinMessage, setClassJoinMessage] = useState("");
+
+  const fileInputRef = React.useRef<HTMLInputElement>(null);
+
+  const handleAvatarUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        const MAX_WIDTH = 200;
+        const MAX_HEIGHT = 200;
+        let width = img.width;
+        let height = img.height;
+
+        if (width > height) {
+          if (width > MAX_WIDTH) {
+            height *= MAX_WIDTH / width;
+            width = MAX_WIDTH;
+          }
+        } else {
+          if (height > MAX_HEIGHT) {
+            width *= MAX_HEIGHT / height;
+            height = MAX_HEIGHT;
+          }
+        }
+
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext("2d");
+        ctx?.drawImage(img, 0, 0, width, height);
+
+        const dataUrl = canvas.toDataURL("image/jpeg", 0.8);
+        setProfile({ ...profile, avatarUrl: dataUrl });
+      };
+      img.src = event.target?.result as string;
+    };
+    reader.readAsDataURL(file);
+  };
 
   // Load dữ liệu từ localStorage
   useEffect(() => {
@@ -727,19 +770,39 @@ export default function ProfilePage() {
             {/* Form cập nhật thông tin */}
             <form onSubmit={handleSaveProfile} className="space-y-4 relative z-10">
               
-              {/* Field 0: Link Avatar */}
-              <div className="space-y-1">
+              {/* Field 0: Avatar Upload */}
+              <div className="space-y-2">
                 <label className="text-[10px] text-text-muted font-extrabold uppercase tracking-wide flex items-center gap-1">
-                  <User className="w-3 h-3 text-text-muted" />
-                  <span>Link Avatar (Tùy chọn)</span>
+                  <Camera className="w-3 h-3 text-text-muted" />
+                  <span>Ảnh đại diện</span>
                 </label>
-                <input
-                  type="text"
-                  value={profile.avatarUrl || ""}
-                  onChange={(e) => setProfile({ ...profile, avatarUrl: e.target.value })}
-                  placeholder="https://example.com/avatar.png"
-                  className="w-full px-3.5 py-2.5 rounded-[var(--radius-card)] bg-page text-xs font-bold text-text-head border border-[rgba(0,0,0,0.1)] focus:border-indigo-500/85 focus:ring-1 focus:ring-indigo-500/40 outline-none transition-all placeholder-slate-700"
-                />
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-full border-2 border-slate-200 bg-page flex items-center justify-center overflow-hidden shrink-0 shadow-sm">
+                    {profile.avatarUrl ? (
+                      <img src={profile.avatarUrl} alt="Avatar Preview" className="w-full h-full object-cover" />
+                    ) : (
+                      <User className="w-6 h-6 text-slate-400" />
+                    )}
+                  </div>
+                  <div className="flex-1">
+                    <input 
+                      type="file" 
+                      accept="image/*" 
+                      ref={fileInputRef} 
+                      className="hidden" 
+                      onChange={handleAvatarUpload}
+                    />
+                    <button
+                      type="button"
+                      onClick={() => fileInputRef.current?.click()}
+                      className="px-4 py-2 rounded-[var(--radius-btn)] bg-indigo-50 text-indigo-600 border border-indigo-200 hover:bg-indigo-100 font-bold text-xs transition-all flex items-center gap-1.5 active:scale-95"
+                    >
+                      <Upload className="w-3.5 h-3.5" />
+                      <span>Tải ảnh lên</span>
+                    </button>
+                    <p className="text-[9px] text-text-muted mt-1.5 font-medium">Định dạng JPG, PNG. Dung lượng &lt; 5MB.</p>
+                  </div>
+                </div>
               </div>
               
               {/* Field 1: Họ và tên */}
