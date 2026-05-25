@@ -1426,14 +1426,23 @@ export default function TeacherPortalPort() {
                          <button onClick={() => setShowAddClass(false)} className="px-4 py-2 text-[13px] text-gray-500 font-bold hover:bg-gray-50 rounded-lg transition-colors">Hủy</button>
                          <button onClick={async () => {
                            if(!newClassName) return;
-                           const newCode = Math.random().toString(36).substring(2, 8).toUpperCase();
                            const { data: { user } } = await supabase.auth.getUser();
+                           if (!user) {
+                             alert("Bạn chưa đăng nhập! Vui lòng tạo tài khoản và đăng nhập với vai trò Giáo viên để thực hiện chức năng này.");
+                             return;
+                           }
                            
+                           const newCode = Math.random().toString(36).substring(2, 8).toUpperCase();
                            const { data, error } = await supabase.from('classes').insert({
                              name: newClassName,
                              code: newCode,
-                             teacher_id: user?.id || '00000000-0000-0000-0000-000000000000'
+                             teacher_id: user.id
                            }).select();
+                           
+                           if (error) {
+                             alert("Lỗi tạo lớp: " + error.message);
+                             return;
+                           }
                            
                            if (data && data.length > 0) {
                              const newList = [...classes, data[0]];
