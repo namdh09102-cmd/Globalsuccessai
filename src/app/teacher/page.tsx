@@ -150,11 +150,13 @@ export default function TeacherPortalPort() {
       }
 
       // Fetch teacher lessons
+      let lessonsQuery = supabase.from('teacher_lessons').select('*').order('created_at', { ascending: false });
       if (teacherId) {
-        const { data: lessonsData } = await supabase.from('teacher_lessons').select('*').eq('teacher_id', teacherId).order('created_at', { ascending: false });
-        if (lessonsData) {
-          setLibraryLessons(lessonsData);
-        }
+        lessonsQuery = lessonsQuery.eq('teacher_id', teacherId);
+      }
+      const { data: lessonsData } = await lessonsQuery;
+      if (lessonsData) {
+        setLibraryLessons(lessonsData);
       }
 
       // Teacher profile sync if we want, ignoring for now since it's just static text in UI
@@ -289,10 +291,9 @@ export default function TeacherPortalPort() {
     setSavingLesson(true);
     try {
       const { data: { user } } = await supabase.auth.getUser();
-      if (!user) throw new Error("Chưa đăng nhập");
 
       const newLesson = {
-        teacher_id: user.id,
+        teacher_id: user?.id || null,
         topic,
         grade,
         duration,
