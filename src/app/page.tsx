@@ -1416,10 +1416,10 @@ export default function Dashboard() {
                       )}
                       
                       <div className="absolute top-2 inset-x-2 flex items-center justify-between z-10">
-                        <span className="px-1.5 py-0.5 rounded text-[7px] font-black bg-card/80 text-text-head border border-[rgba(0,0,0,0.1)] uppercase tracking-widest font-mono">
+                        <span className="px-1.5 py-0.5 rounded text-[9px] font-black bg-card/80 text-text-head border border-[rgba(0,0,0,0.1)] uppercase tracking-widest font-mono">
                           UNIT {unit.number}
                         </span>
-                        <span className={`px-1.5 py-0.5 rounded text-[7px] font-black border ${diffTag.style} bg-card/90 uppercase tracking-wider`}>
+                        <span className={`px-1.5 py-0.5 rounded text-[9px] font-black border ${diffTag.style} bg-card/90 uppercase tracking-wider`}>
                           {diffTag.label}
                         </span>
                       </div>
@@ -1428,10 +1428,10 @@ export default function Dashboard() {
                     {/* Card Body */}
                     <div className="p-3 flex-1 flex flex-col justify-between space-y-2">
                       <div>
-                        <h4 className="text-[10px] font-black text-text-head group-hover:text-primary transition-colors leading-tight">
+                        <h4 className="text-sm font-black text-text-head group-hover:text-primary transition-colors leading-tight">
                           {unit.title}
                         </h4>
-                        <p className="text-[8px] text-text-muted mt-0.5 line-clamp-1">{subDesc}</p>
+                        <p className="text-xs text-text-muted mt-0.5 line-clamp-1">{subDesc}</p>
                       </div>
 
                       <div className="flex items-center justify-between">
@@ -1445,7 +1445,7 @@ export default function Dashboard() {
                               }}
                             />
                           </div>
-                          <span className="text-[9px] text-text-muted font-bold mt-1 block">{unit.progress}% • {unit.lessons.length} bài</span>
+                          <span className="text-xs text-text-muted font-bold mt-1 block">{unit.progress}% • {unit.lessons.length} bài</span>
                         </div>
                         {unit.status === "locked" ? (
                           <div className="w-6 h-6 rounded-full bg-gray-200 text-gray-400 flex items-center justify-center shrink-0 border border-gray-300 shadow-sm">
@@ -1486,7 +1486,7 @@ export default function Dashboard() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {/* Left Column: Lesson items */}
                 <div className="rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.1)] bg-card p-5 space-y-4 shadow-xl">
-                  <span className="text-[9px] font-black text-text-muted tracking-widest uppercase block">
+                  <span className="text-xs font-black text-text-muted tracking-widest uppercase block">
                     Các phòng học offline
                   </span>
                   
@@ -1516,12 +1516,12 @@ export default function Dashboard() {
                               )}
                             </div>
                             <div className="min-w-0">
-                              <h4 className={`text-xs font-bold truncate transition-colors ${
+                              <h4 className={`text-sm font-black truncate transition-colors ${
                                 locked ? "text-text-muted" : "text-text-head group-hover/item:text-primary-dark"
                               }`}>
                                 {lesson.title}
                               </h4>
-                              <p className="text-[8px] text-text-muted font-bold uppercase tracking-wider mt-0.5">
+                              <p className="text-xs text-text-muted font-bold uppercase tracking-wider mt-0.5">
                                 {locked ? (
                                   <span className="text-amber-600/70">🔒 Yêu cầu PRO</span>
                                 ) : (
@@ -1533,21 +1533,21 @@ export default function Dashboard() {
 
                           <div className="flex items-center gap-2">
                             {lesson.completed && !locked ? (
-                              <span className="px-2.5 py-1 rounded-[var(--radius-card)] text-[9px] font-bold bg-teal-500/10 text-teal-600 border border-teal-300 flex items-center gap-1">
+                              <span className="px-4 py-2 rounded-[var(--radius-card)] text-xs font-bold bg-teal-500/10 text-teal-600 border border-teal-300 flex items-center gap-1">
                                 <Check className="w-3.5 h-3.5" /> Xong
                               </span>
                             ) : locked ? (
                               <button
                                 onClick={() => setPaywallOpen(true)}
-                                className="px-3 py-1.5 rounded-[var(--radius-card)] text-[9px] font-bold bg-amber-500/10 hover:bg-amber-500/20 text-amber-500 border border-amber-500/25 transition-all flex items-center gap-1"
+                                className="px-4 py-2 rounded-[var(--radius-card)] text-xs font-bold bg-amber-500/10 hover:bg-amber-500/20 text-amber-500 border border-amber-500/25 transition-all flex items-center gap-1"
                               >
-                                <Lock className="w-3 h-3" />
+                                <Lock className="w-3.5 h-3.5" />
                                 <span>Mở khóa</span>
                               </button>
                             ) : (
                               <button
                                 onClick={() => handleStartLesson(lesson)}
-                                className="px-3.5 py-1.5 rounded-[var(--radius-card)] text-[9px] font-bold bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] hover:bg-primary text-white transition-all flex items-center gap-0.5 group/btn"
+                                className="px-4 py-2 rounded-[var(--radius-card)] text-xs font-bold bg-primary text-white border-[var(--c-border)] border-primary-dark shadow-[0_4px_0_var(--c-primary-dark)] hover:bg-primary transition-all flex items-center gap-0.5 group/btn"
                               >
                                 <span>Vào học</span>
                                 <ChevronRight className="w-3 h-3 group-hover/btn:translate-x-0.5 transition-transform" />
@@ -1574,19 +1574,19 @@ export default function Dashboard() {
                     <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl pointer-events-none" />
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
-                        <span className="text-[9px] font-black text-primary uppercase tracking-widest">Ngữ Pháp Trọng Tâm</span>
-                        <Award className="w-4.5 h-4.5 text-primary" />
+                        <span className="text-xs font-black text-primary uppercase tracking-widest">Ngữ Pháp Trọng Tâm</span>
+                        <Award className="w-5 h-5 text-primary" />
                       </div>
                       <div>
-                        <h4 className="text-xs font-bold text-text-head">
+                        <h4 className="text-sm font-black text-text-head">
                           {selectedUnit.number === 1 ? "Past Simple vs. Present Perfect" : selectedUnit.number === 2 ? "Modal Verbs (Must vs. Should)" : "Stative Verbs in Continuous Form"}
                         </h4>
-                        <p className="text-[9px] text-primary-dark font-bold font-mono mt-1 bg-primary-light p-2 rounded-[var(--radius-btn)] border border-primary-dark shadow-inner">
+                        <p className="text-xs text-primary-dark font-bold font-mono mt-1 bg-primary-light p-3 rounded-[var(--radius-btn)] border border-primary-dark shadow-inner">
                           {selectedUnit.number === 1 ? "Formula: S + have/has + V3/V-ed" : selectedUnit.number === 2 ? "Formula: S + must/should + V-bare" : "Active / Stative Verbs"}
                         </p>
                       </div>
                     </div>
-                    <p className="text-[9px] text-text-muted leading-relaxed">
+                    <p className="text-xs text-text-muted leading-relaxed mt-2">
                       {selectedUnit.number === 1 
                         ? "Dùng Present Perfect cho hành động đã diễn ra nhưng không rõ thời gian hoặc kéo dài đến hiện tại."
                         : selectedUnit.number === 2
@@ -1600,28 +1600,28 @@ export default function Dashboard() {
                     <div className="absolute top-0 right-0 w-32 h-32 bg-teal-500/5 rounded-full blur-2xl pointer-events-none" />
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
-                        <span className="text-[9px] font-black text-teal-600 uppercase tracking-widest">Từ Vựng Nổi Bật</span>
-                        <BookMarked className="w-4.5 h-4.5 text-teal-600" />
+                        <span className="text-xs font-black text-teal-600 uppercase tracking-widest">Từ Vựng Nổi Bật</span>
+                        <BookMarked className="w-5 h-5 text-teal-600" />
                       </div>
                       <div className={`p-4 rounded-[var(--radius-card)] border border-[rgba(0,0,0,0.15)] bg-card hover:shadow-md transition-all`}>
-                        <div className="flex justify-between items-center">
-                          <span className="text-xs font-extrabold text-text-head font-mono">
+                        <div className="flex justify-between items-center mb-1">
+                          <span className="text-sm font-black text-text-head font-mono">
                             {selectedUnit.number === 1 ? "Fitness" : selectedUnit.number === 2 ? "Independent" : "Futuristic"}
                           </span>
-                          <span className="text-[9px] text-text-muted font-bold font-mono">
+                          <span className="text-xs text-text-muted font-bold font-mono">
                             {selectedUnit.number === 1 ? "/ˈfɪtnəs/" : selectedUnit.number === 2 ? "/ˌɪndɪˈpendənt/" : "/ˌfjuːtʃəˈrɪstɪk/"}
                           </span>
                         </div>
-                        <p className="text-[9px] text-teal-600 font-bold">
+                        <p className="text-xs text-teal-600 font-bold">
                           {selectedUnit.number === 1 ? "(n) sự sung sức, sự cân đối" : selectedUnit.number === 2 ? "(adj) độc lập, tự chủ" : "(adj) thuộc về tương lai"}
                         </p>
                       </div>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-[8px] text-text-muted font-bold">Từ nổi bật của bài học</span>
-                      <button className="text-[9px] font-bold text-teal-600 hover:text-teal-600 transition-colors flex items-center gap-0.5 group/btn">
+                    <div className="flex justify-between items-center mt-2">
+                      <span className="text-xs text-text-muted font-bold">Từ nổi bật của bài học</span>
+                      <button className="text-xs font-bold text-teal-600 hover:text-teal-700 transition-colors flex items-center gap-0.5 group/btn">
                         <span>Xem từ tiếp theo</span>
-                        <ChevronRight className="w-3 h-3 transition-transform group-hover/btn:translate-x-0.5" />
+                        <ChevronRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5" />
                       </button>
                     </div>
                   </div>
