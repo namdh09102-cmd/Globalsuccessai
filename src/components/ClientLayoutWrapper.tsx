@@ -319,10 +319,22 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
           <span className="font-bold text-[12px] xp-number">{(stats.xp).toLocaleString()} XP</span>
         </div>
 
-        {/* Avatar circle */}
-        <div className="mascot-avatar w-[36px] h-[36px] rounded-full border-[3px] border-xp bg-card flex items-center justify-center shadow-md cursor-pointer hover:scale-105 transition-transform">
-          {getMascot()}
-        </div>
+        {/* Avatar circle or Login button */}
+        {currentUser ? (
+          <div 
+            onClick={() => router.push('/profile')}
+            className="mascot-avatar w-[36px] h-[36px] rounded-full border-[3px] border-xp bg-card flex items-center justify-center shadow-md cursor-pointer hover:scale-105 transition-transform"
+          >
+            {getMascot()}
+          </div>
+        ) : (
+          <Link 
+            href="/auth" 
+            className="px-4 py-1.5 bg-white text-primary font-bold rounded-full text-[13px] hover:bg-gray-100 transition-colors shadow-sm cursor-pointer border border-transparent hover:border-gray-200"
+          >
+            Đăng nhập
+          </Link>
+        )}
       </div>
     </div>
   );
