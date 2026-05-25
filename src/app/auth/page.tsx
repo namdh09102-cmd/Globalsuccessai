@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Lock, User, ShieldCheck, Rocket, ChevronRight, CheckCircle, AlertCircle } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 export default function AuthPage() {
   const router = useRouter();
@@ -22,14 +23,24 @@ export default function AuthPage() {
   // MOCK ADMIN ACCOUNT
   const ADMIN_CREDS = { email: "admin@globalsuccess.ai", password: "admin123" };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
     setIsLoading(true);
 
-    setTimeout(() => {
-      // 1. ADMIN LOGIN HARDCODE
+    try {
+      // 1. ADMIN LOGIN HARDCODE (Tạo tài khoản qua auth API nếu muốn chuẩn, nhưng ta hardcode bypass ở đây nếu cần test)
       if (isLogin && email === ADMIN_CREDS.email && password === ADMIN_CREDS.password) {
+        // Cố gắng đăng nhập qua Supabase trước
+        const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({ email, password });
+        if (signInError) {
+          // Nếu admin chưa tồn tại trong Supabase Auth, tự động tạo
+          const { data: signUpData, error: signUpError } = await supabase.auth.signUp({ email, password });
+          if (!signUpError && signUpData.user) {
+            await supabase.from('profiles').upsert({ id: signUpData.user.id, name: "Super Admin", email, role: "admin", tier: "pro", grade_level: "none" });
+          }
+        }
+        
         const adminUser = { id: "ADMIN-000", name: "Super Admin", email, role: "admin", tier: "pro", gradeLevel: "none" };
         localStorage.setItem("gsa-current-user", JSON.stringify(adminUser));
         window.dispatchEvent(new Event("auth-changed"));
@@ -37,84 +48,85 @@ export default function AuthPage() {
         return;
       }
 
-      const storedUsersStr = localStorage.getItem("gsa-users");
-      let storedUsers = storedUsersStr ? JSON.parse(storedUsersStr) : [
-        { id: "ADMIN-000", name: "Super Admin", email: "admin@globalsuccess.ai", password: "admin123", role: "admin", tier: "pro", joinDate: "2026-01-01", gradeLevel: "none" },
-        { id: "TEACHER-001", name: "Đinh Hoàng Nam", email: "teacher@globalsuccess.ai", password: "teacher123", role: "teacher", tier: "pro", joinDate: "2026-05-01", gradeLevel: "none" },
-        { id: "STUDENT-001", name: "Học sinh (Cấp 1)", email: "student@globalsuccess.ai", password: "student123", role: "student", tier: "free", joinDate: "2026-05-20", gradeLevel: "primary" },
-        { id: "STUDENT-002", name: "Học sinh (Cấp 2)", email: "middle@globalsuccess.ai", password: "student123", role: "student", tier: "free", joinDate: "2026-05-20", gradeLevel: "middle" },
-        { id: "STUDENT-003", name: "Học sinh (Cấp 3)", email: "high@globalsuccess.ai", password: "student123", role: "student", tier: "free", joinDate: "2026-05-20", gradeLevel: "high" }
-      ];
-
-      // Save initial users back if it was empty to ensure they persist
-      if (!storedUsersStr) {
-        localStorage.setItem("gsa-users", JSON.stringify(storedUsers));
-      }
-
       if (isLogin) {
         // ĐĂNG NHẬP
-        const foundUser = storedUsers.find((u: any) => u.email === email && u.password === password);
-        if (foundUser) {
-          localStorage.setItem("gsa-current-user", JSON.stringify({
-            id: foundUser.id,
-            name: foundUser.name,
-            email: foundUser.email,
-            role: foundUser.role,
-            tier: foundUser.tier,
-            gradeLevel: foundUser.gradeLevel || "primary"
-          }));
-          window.dispatchEvent(new Event("auth-changed"));
-          
-          if (foundUser.role === "teacher") {
-            router.push("/teacher");
-          } else {
-            router.push("/learn");
-          }
-        } else {
-          setError("Email hoặc mật khẩu không chính xác!");
-          setIsLoading(false);
-        }
-      } else {
-        // ĐĂNG KÝ
-        const isExist = storedUsers.some((u: any) => u.email === email);
-        if (isExist) {
-          setError("Email này đã được đăng ký!");
+        const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+        
+        if (error) {
+          setError(error.message);
           setIsLoading(false);
           return;
         }
 
-        const newUser = {
-          id: `USR-${Math.floor(1000 + Math.random() * 9000)}`,
-          name,
-          email,
-          password,
-          role,
-          tier: "free",
-          gradeLevel: role === "student" ? gradeLevel : "none",
-          joinDate: new Date().toISOString().split("T")[0]
-        };
-
-        storedUsers.push(newUser);
-        localStorage.setItem("gsa-users", JSON.stringify(storedUsers));
+        if (data.user) {
+          const { data: profile } = await supabase.from('profiles').select('*').eq('id', data.user.id).single();
+          if (profile) {
+            localStorage.setItem("gsa-current-user", JSON.stringify({
+              id: profile.id,
+              name: profile.name,
+              email: profile.email,
+              role: profile.role,
+              tier: profile.tier,
+              gradeLevel: profile.grade_level || "primary",
+              avatarUrl: profile.avatar_url
+            }));
+            // Update profile cache
+            localStorage.setItem("gsa-user-profile", JSON.stringify({
+              fullName: profile.name,
+              school: profile.school || "",
+              grade: profile.grade_level ? `Lớp ${profile.grade_level}` : "",
+              avatarUrl: profile.avatar_url
+            }));
+            
+            window.dispatchEvent(new Event("auth-changed"));
+            router.push(profile.role === "teacher" ? "/teacher" : (profile.role === "admin" ? "/admin" : "/learn"));
+          } else {
+             setError("Không tìm thấy hồ sơ người dùng trong Database.");
+          }
+        }
+      } else {
+        // ĐĂNG KÝ
+        const { data, error } = await supabase.auth.signUp({ email, password });
         
-        // Auto login
-        localStorage.setItem("gsa-current-user", JSON.stringify({
-          id: newUser.id,
-          name: newUser.name,
-          email: newUser.email,
-          role: newUser.role,
-          tier: newUser.tier,
-          gradeLevel: newUser.gradeLevel
-        }));
-        window.dispatchEvent(new Event("auth-changed"));
+        if (error) {
+          setError(error.message);
+          setIsLoading(false);
+          return;
+        }
 
-        if (newUser.role === "teacher") {
-          router.push("/teacher");
-        } else {
-          router.push("/learn");
+        if (data.user) {
+          const { error: profileError } = await supabase.from('profiles').insert({
+            id: data.user.id,
+            name,
+            email,
+            role,
+            tier: "free",
+            grade_level: role === "student" ? gradeLevel : "none",
+          });
+
+          if (profileError) {
+            setError("Lỗi tạo hồ sơ: " + profileError.message);
+            setIsLoading(false);
+            return;
+          }
+
+          localStorage.setItem("gsa-current-user", JSON.stringify({
+            id: data.user.id,
+            name,
+            email,
+            role,
+            tier: "free",
+            gradeLevel: role === "student" ? gradeLevel : "none"
+          }));
+          window.dispatchEvent(new Event("auth-changed"));
+          router.push(role === "teacher" ? "/teacher" : "/learn");
         }
       }
-    }, 800);
+    } catch (err: any) {
+      setError(err.message || "Đã xảy ra lỗi kết nối");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

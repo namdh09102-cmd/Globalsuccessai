@@ -217,7 +217,7 @@ export default function ProfilePage() {
   }, []);
 
   // Xử lý lưu hồ sơ
-  const handleSaveProfile = (e: React.FormEvent) => {
+  const handleSaveProfile = async (e: React.FormEvent) => {
     e.preventDefault();
     localStorage.setItem("gsa-user-profile", JSON.stringify(profile));
     
@@ -228,11 +228,25 @@ export default function ProfilePage() {
     if (gradeNum >= 10 && gradeNum <= 12) newGradeLevel = "high";
 
     const storedUserStr = localStorage.getItem("gsa-current-user");
-    let u = storedUserStr ? JSON.parse(storedUserStr) : { id: "GUEST", role: "student", tier: "free" };
-    u.gradeLevel = newGradeLevel;
-    if (profile.fullName) u.name = profile.fullName;
-    if (profile.avatarUrl) u.avatarUrl = profile.avatarUrl;
-    localStorage.setItem("gsa-current-user", JSON.stringify(u));
+    let u = storedUserStr ? JSON.parse(storedUserStr) : null;
+    
+    if (u && u.id && u.id !== "GUEST") {
+      u.gradeLevel = newGradeLevel;
+      if (profile.fullName) u.name = profile.fullName;
+      if (profile.avatarUrl) u.avatarUrl = profile.avatarUrl;
+      localStorage.setItem("gsa-current-user", JSON.stringify(u));
+      
+      // Save to Supabase
+      import("@/lib/supabase").then(({ supabase }) => {
+         supabase.from('profiles').update({
+           name: profile.fullName || u.name,
+           school: profile.school,
+           grade_level: newGradeLevel,
+           avatar_url: profile.avatarUrl
+         }).eq('id', u.id).then();
+      });
+    }
+
     window.dispatchEvent(new Event("auth-changed")); // triggers theme update
 
     // Phát sự kiện cập nhật để RightPanel / Sidebar nhận biết thay đổi nếu cần
@@ -242,9 +256,11 @@ export default function ProfilePage() {
     setTimeout(() => setIsSavedNotification(false), 3000);
   };
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     localStorage.removeItem("gsa-current-user");
     window.dispatchEvent(new Event("auth-changed"));
+    const { supabase } = await import("@/lib/supabase");
+    await supabase.auth.signOut();
     router.push("/auth");
   };
 

@@ -49,19 +49,15 @@ export default function AdminUsers() {
 
   const fetchUsers = async () => {
     setLoading(true);
-    // Lấy dữ liệu từ localStorage (thay vì Supabase để đồng bộ với mock đăng ký)
-    const storedUsersStr = localStorage.getItem("gsa-users");
-    if (storedUsersStr) {
-      setUsers(JSON.parse(storedUsersStr));
+    // Lấy dữ liệu từ bảng profiles của Supabase
+    const { data, error } = await supabase.from('profiles').select('*').order('created_at', { ascending: false });
+    if (data) {
+      setUsers(data as UserAccount[]);
     } else {
+      console.error(error);
       setUsers([]);
     }
     setLoading(false);
-  };
-
-  const updateUsersList = (newUsers: UserAccount[]) => {
-    setUsers(newUsers);
-    localStorage.setItem("gsa-users", JSON.stringify(newUsers));
   };
 
   useEffect(() => {
@@ -88,33 +84,42 @@ export default function AdminUsers() {
   // Handlers
   const handleUpdateRole = async () => {
     if (!editRoleUser) return;
-    const newUsers = users.map(u => u.id === editRoleUser.id ? { ...u, role: newRole } : u);
-    updateUsersList(newUsers as UserAccount[]);
-    triggerToast(`Đã đổi Role của ${editRoleUser.name} thành ${newRole.toUpperCase()}`);
+    const { error } = await supabase.from('profiles').update({ role: newRole }).eq('id', editRoleUser.id);
+    if (!error) {
+      setUsers(users.map(u => u.id === editRoleUser.id ? { ...u, role: newRole } : u));
+      triggerToast(`Đã đổi Role của ${editRoleUser.name} thành ${newRole.toUpperCase()}`);
+    }
     setEditRoleUser(null);
   };
 
   const handleExtendPro = async () => {
     if (!extendProUser || !proExpDate) return;
-    const newUsers = users.map(u => u.id === extendProUser.id ? { ...u, tier: 'pro', pro_expires_at: proExpDate } : u);
-    updateUsersList(newUsers as UserAccount[]);
-    triggerToast(`Đã gia hạn PRO cho ${extendProUser.name}`);
+    const { error } = await supabase.from('profiles').update({ tier: 'pro', pro_expires_at: proExpDate }).eq('id', extendProUser.id);
+    if (!error) {
+      setUsers(users.map(u => u.id === extendProUser.id ? { ...u, tier: 'pro', pro_expires_at: proExpDate } : u));
+      triggerToast(`Đã gia hạn PRO cho ${extendProUser.name}`);
+    }
     setExtendProUser(null);
   };
 
   const handleRevokePro = async () => {
     if (!revokeProUser) return;
-    const newUsers = users.map(u => u.id === revokeProUser.id ? { ...u, tier: 'free', pro_expires_at: undefined } : u);
-    updateUsersList(newUsers as UserAccount[]);
-    triggerToast(`Đã thu hồi PRO của ${revokeProUser.name}`);
+    const { error } = await supabase.from('profiles').update({ tier: 'free', pro_expires_at: null }).eq('id', revokeProUser.id);
+    if (!error) {
+      setUsers(users.map(u => u.id === revokeProUser.id ? { ...u, tier: 'free', pro_expires_at: undefined } : u));
+      triggerToast(`Đã thu hồi PRO của ${revokeProUser.name}`);
+    }
     setRevokeProUser(null);
   };
 
   const handleDeleteUser = async () => {
     if (!deleteUser) return;
-    const newUsers = users.filter(u => u.id !== deleteUser.id);
-    updateUsersList(newUsers as UserAccount[]);
-    triggerToast(`Đã xóa vĩnh viễn user ${deleteUser.name}`);
+    // Chú ý: Việc xóa tài khoản triệt để cần Admin API của Supabase Auth, ở đây ta gọi xóa profile.
+    const { error } = await supabase.from('profiles').delete().eq('id', deleteUser.id);
+    if (!error) {
+      setUsers(users.filter(u => u.id !== deleteUser.id));
+      triggerToast(`Đã xóa vĩnh viễn user ${deleteUser.name}`);
+    }
     setDeleteUser(null);
     setDeleteConfirmText("");
   };
