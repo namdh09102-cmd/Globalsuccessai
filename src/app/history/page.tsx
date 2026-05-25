@@ -138,7 +138,7 @@ export default function HistoryPage() {
       ];
 
       const currentUser: LeaderboardUser = {
-        name: "Khánh Tân",
+        name: "Học viên",
         class: "11A3",
         xp: currentStats.xp,
         streak: currentStats.streak,
@@ -226,7 +226,7 @@ export default function HistoryPage() {
       }
       setLearningLogs(currentLogs);
 
-      // 4. Tính toán số lượng huy hiệu mở khóa của Khánh Tân
+      // 4. Tính toán số lượng huy hiệu mở khóa của người dùng
       let unlockedCount = 0;
       if (currentStats.streak >= 5) unlockedCount++; // Chiến binh chuyên cần
       if (currentAvgScore >= 90) unlockedCount++; // Thần sấm phát âm
@@ -249,7 +249,7 @@ export default function HistoryPage() {
       ];
 
       const currentUser: LeaderboardUser = {
-        name: "Khánh Tân",
+        name: "Học viên",
         class: "11A3",
         xp: currentStats.xp,
         streak: currentStats.streak,
@@ -428,7 +428,7 @@ export default function HistoryPage() {
                   heightClass = "h-28";
                 }
 
-                // Check highlight Khánh Tân trên bục vinh quang (nếu lọt Top 3)
+                // Check highlight người dùng trên bục vinh quang (nếu lọt Top 3)
                 const isUserHighlight = student.isCurrentUser;
 
                 return (
@@ -488,7 +488,7 @@ export default function HistoryPage() {
           >
             {remainingRanks.map((student, index) => {
               const rank = index + 4;
-              // Check highlight Khánh Tân
+              // Check highlight người dùng
               const isUserHighlight = student.isCurrentUser;
 
               return (

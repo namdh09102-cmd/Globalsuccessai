@@ -348,7 +348,7 @@ export default function ProfilePage() {
               <div className="space-y-1.5 flex flex-col items-center sm:items-start">
                 <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
                   <h2 className="text-xl font-black text-text-head tracking-wide">
-                    {profile.fullName || "Khánh Tân"}
+                    {profile.fullName || "Học viên"}
                   </h2>
                   <span className="px-2 py-0.5 rounded-md text-[9px] font-black uppercase tracking-wider bg-primary-light text-primary border border-primary-dark shadow-sm">
                     Lớp {profile.grade ? profile.grade.replace("Lớp ", "") : "11"}
@@ -689,7 +689,7 @@ export default function ProfilePage() {
                   required
                   value={profile.fullName}
                   onChange={(e) => setProfile({ ...profile, fullName: e.target.value })}
-                  placeholder="Ví dụ: Nguyễn Khánh Tân"
+                  placeholder="Ví dụ: Nguyễn Văn A"
                   className="w-full px-3.5 py-2.5 rounded-[var(--radius-card)] bg-page text-xs font-bold text-text-head border border-[rgba(0,0,0,0.1)] focus:border-indigo-500/85 focus:ring-1 focus:ring-indigo-500/40 outline-none transition-all placeholder-slate-700"
                 />
               </div>

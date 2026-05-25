@@ -41,9 +41,9 @@ export default function AuthPage() {
       let storedUsers = storedUsersStr ? JSON.parse(storedUsersStr) : [
         { id: "ADMIN-000", name: "Super Admin", email: "admin@globalsuccess.ai", password: "admin123", role: "admin", tier: "pro", joinDate: "2026-01-01", gradeLevel: "none" },
         { id: "TEACHER-001", name: "Đinh Hoàng Nam", email: "teacher@globalsuccess.ai", password: "teacher123", role: "teacher", tier: "pro", joinDate: "2026-05-01", gradeLevel: "none" },
-        { id: "STUDENT-001", name: "Khánh Tân (Cấp 1)", email: "student@globalsuccess.ai", password: "student123", role: "student", tier: "free", joinDate: "2026-05-20", gradeLevel: "primary" },
-        { id: "STUDENT-002", name: "Khánh Tân (Cấp 2)", email: "middle@globalsuccess.ai", password: "student123", role: "student", tier: "free", joinDate: "2026-05-20", gradeLevel: "middle" },
-        { id: "STUDENT-003", name: "Khánh Tân (Cấp 3)", email: "high@globalsuccess.ai", password: "student123", role: "student", tier: "free", joinDate: "2026-05-20", gradeLevel: "high" }
+        { id: "STUDENT-001", name: "Học sinh (Cấp 1)", email: "student@globalsuccess.ai", password: "student123", role: "student", tier: "free", joinDate: "2026-05-20", gradeLevel: "primary" },
+        { id: "STUDENT-002", name: "Học sinh (Cấp 2)", email: "middle@globalsuccess.ai", password: "student123", role: "student", tier: "free", joinDate: "2026-05-20", gradeLevel: "middle" },
+        { id: "STUDENT-003", name: "Học sinh (Cấp 3)", email: "high@globalsuccess.ai", password: "student123", role: "student", tier: "free", joinDate: "2026-05-20", gradeLevel: "high" }
       ];
 
       // Save initial users back if it was empty to ensure they persist
