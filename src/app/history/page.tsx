@@ -23,6 +23,7 @@ import {
   AlertCircle
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { supabase } from "@/lib/supabase";
 
 // Định nghĩa kiểu dữ liệu
 interface StudentStats {
@@ -112,112 +113,56 @@ export default function HistoryPage() {
   const [stats, setStats] = useState<StudentStats>({ xp: 0, diamonds: 0, streak: 0 });
   const [leaderboard, setLeaderboard] = useState<LeaderboardUser[]>([]);
   const [learningLogs, setLearningLogs] = useState<LearningLogItem[]>([]);
-
-  // Đọc stats & sinh dữ liệu bảng xếp hạng động
-  useEffect(() => {
-    // 1. Đọc stats từ localStorage
-    const loadStats = () => {
-      const storedStats = localStorage.getItem("gsa-student-stats");
-      let currentStats = { xp: 0, diamonds: 0, streak: 0 };
-      if (storedStats) {
-        try {
-          currentStats = JSON.parse(storedStats);
-          setStats(currentStats);
-        } catch (e) {
-          console.error(e);
-        }
-      }
-
-      // 2. Dựng bảng xếp hạng động
-      const otherStudents: LeaderboardUser[] = [];
-
-      const currentUser: LeaderboardUser = {
-        name: "Học viên",
-        class: "11A3",
-        xp: currentStats.xp,
-        streak: currentStats.streak,
-        badgesCount: currentStats.streak >= 5 ? 2 : 1, // Dynamic badges count
-        isCurrentUser: true
-      };
-
-      // Ghép và sắp xếp theo XP giảm dần
-      const merged = [...otherStudents, currentUser].sort((a, b) => b.xp - a.xp);
-      setLeaderboard(merged);
-    };
-
-    loadStats();
-    window.addEventListener("stats-updated", loadStats);
-
-    // 3. Dựng Nhật ký luyện tập chuyên sâu giả lập
-    const defaultLogs: LearningLogItem[] = [];
-    setLearningLogs(defaultLogs);
-
-    return () => {
-      window.removeEventListener("stats-updated", loadStats);
-    };
-  }, []);
-
-  // Danh sách 6 Huy hiệu danh giá dưới dạng các icon Neon 3D phát sáng
   const [avgSpeakingScore, setAvgSpeakingScore] = useState<number>(92);
   const [unlockedBadgesCount, setUnlockedBadgesCount] = useState<number>(2);
 
-  // Đọc stats & sinh dữ liệu bảng xếp hạng động
+  // Đọc stats & sinh dữ liệu bảng xếp hạng động từ Supabase
   useEffect(() => {
-    // 1. Đọc stats từ localStorage
-    const loadStats = () => {
-      const storedStats = localStorage.getItem("gsa-student-stats");
+    const fetchHistoryData = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      // 1. Đọc stats từ bảng student_stats
       let currentStats = { xp: 0, diamonds: 0, streak: 0 };
-      if (storedStats) {
-        try {
-          currentStats = JSON.parse(storedStats);
-          setStats(currentStats);
-        } catch (e) {
-          console.error(e);
+      if (user) {
+        const { data: statsData } = await supabase.from('student_stats').select('*').eq('user_id', user.id).single();
+        if (statsData) {
+          currentStats = {
+            xp: statsData.total_xp || 0,
+            diamonds: statsData.total_diamonds || 0,
+            streak: statsData.current_streak || 0
+          };
+        }
+      } else {
+        const storedStats = localStorage.getItem("gsa-student-stats");
+        if (storedStats) {
+          try { currentStats = JSON.parse(storedStats); } catch (e) {}
         }
       }
+      setStats(currentStats);
 
-      // 2. Tính điểm nói trung bình thực tế
-      const storedAccuracy = localStorage.getItem("gsa-pronunciation-accuracy");
+      // 2. Tính điểm nói trung bình từ learning_logs
       let currentAvgScore = 92;
-      if (storedAccuracy) {
-        currentAvgScore = parseInt(storedAccuracy, 10) || 92;
-      } else {
-        const storedSpeakingScores = localStorage.getItem("gsa-speaking-scores");
-        if (storedSpeakingScores) {
-          try {
-            const scores = JSON.parse(storedSpeakingScores) as number[];
-            if (scores.length > 0) {
-              currentAvgScore = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
-            }
-          } catch (e) {}
+      let currentLogs: LearningLogItem[] = [];
+
+      if (user) {
+        const { data: logsData } = await supabase.from('learning_logs').select('*').eq('user_id', user.id).order('created_at', { ascending: false });
+        if (logsData && logsData.length > 0) {
+          currentLogs = logsData.map((log: any) => ({
+            type: log.activity_type as any,
+            lessonTitle: log.activity_name,
+            score: log.score || 0,
+            xpEarned: log.xp_earned || 0,
+            timeAgo: new Date(log.created_at).toLocaleDateString(),
+            passed: (log.score || 0) >= 50
+          }));
+          
+          const speakingLogs = logsData.filter((log: any) => log.activity_type === 'speaking' && log.score);
+          if (speakingLogs.length > 0) {
+            currentAvgScore = Math.round(speakingLogs.reduce((a: number, b: any) => a + (b.score || 0), 0) / speakingLogs.length);
+          }
         }
       }
       setAvgSpeakingScore(currentAvgScore);
-
-      // 3. Đọc logs từ localStorage để tính toán các huy hiệu mở khóa động
-      const defaultLogs: LearningLogItem[] = [];
-
-      const storedLogs = localStorage.getItem("gsa-learning-logs");
-      let currentLogs = defaultLogs;
-      if (storedLogs) {
-        try {
-          const parsedLogs = JSON.parse(storedLogs) as LearningLogItem[];
-          if (parsedLogs.length > 0) {
-            // Chuẩn hóa định dạng thời gian của các log cũ
-            const formattedParsed = parsedLogs.map(log => ({
-              ...log,
-              timeAgo: log.timeAgo || "Vừa xong"
-            }));
-            const combined = [...formattedParsed, ...defaultLogs];
-            const unique = combined.filter((item, index, self) => 
-              index === self.findIndex((t) => t.lessonTitle === item.lessonTitle)
-            );
-            currentLogs = unique.slice(0, 7);
-          }
-        } catch (e) {
-          console.error(e);
-        }
-      }
       setLearningLogs(currentLogs);
 
       // 4. Tính toán số lượng huy hiệu mở khóa của người dùng
@@ -229,15 +174,13 @@ export default function HistoryPage() {
       if (currentLogs.some(log => log.type === "quiz" && log.score >= 90)) unlockedCount++; // Nhà thông thái
       if (currentStats.xp >= 5000) unlockedCount++; // Nhà vô địch học thuật
       
-      // Đảm bảo tối thiểu 1 (Thần Sấm Phát Âm mặc định)
       const finalCount = Math.max(1, unlockedCount);
       setUnlockedBadgesCount(finalCount);
 
-      // 5. Dựng bảng xếp hạng động
+      // 5. Dựng bảng xếp hạng
       const otherStudents: LeaderboardUser[] = [];
-
       const currentUser: LeaderboardUser = {
-        name: "Học viên",
+        name: "Bạn",
         class: "11A3",
         xp: currentStats.xp,
         streak: currentStats.streak,
@@ -245,16 +188,18 @@ export default function HistoryPage() {
         isCurrentUser: true
       };
 
-      // Ghép và sắp xếp theo XP giảm dần
       const merged = [...otherStudents, currentUser].sort((a, b) => b.xp - a.xp);
       setLeaderboard(merged);
     };
 
-    loadStats();
-    window.addEventListener("stats-updated", loadStats);
+    fetchHistoryData();
 
+    const handleStatsUpdate = () => {
+      fetchHistoryData();
+    };
+    window.addEventListener("stats-updated", handleStatsUpdate);
     return () => {
-      window.removeEventListener("stats-updated", loadStats);
+      window.removeEventListener("stats-updated", handleStatsUpdate);
     };
   }, []);
 

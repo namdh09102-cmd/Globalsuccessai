@@ -83,31 +83,64 @@ export default function TeacherPortalPort() {
   });
 
   useEffect(() => {
-    const cls = localStorage.getItem("gsa-teacher-classes");
-    if (cls) {
-      try { 
-        const parsed = JSON.parse(cls);
-        setClasses(parsed);
-        if (parsed.length > 0) setSelectedClassId(parsed[0].id);
-      } catch(e){}
-    }
-    const tProfile = localStorage.getItem("gsa-teacher-profile");
-    if (tProfile) {
-      try { setTeacherProfile(JSON.parse(tProfile)); } catch(e){}
-    }
+    const fetchData = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      let teacherId = user?.id;
+      
+      let classesQuery = supabase.from('classes').select('*');
+      if (teacherId) {
+        classesQuery = classesQuery.eq('teacher_id', teacherId);
+      }
+      
+      const { data: classesData } = await classesQuery;
+      
+      if (classesData && classesData.length > 0) {
+        setClasses(classesData);
+        setSelectedClassId(classesData[0].id);
+      }
 
-    const saved = localStorage.getItem("gsa-teacher-students");
-    if (saved) {
-      try { setStudents(JSON.parse(saved)); } catch(e){}
-    }
-    const hist = localStorage.getItem("gsa-rewards-history");
-    if (hist) {
-      try { setRewardHistory(JSON.parse(hist)); } catch(e){}
-    }
-    const sched = localStorage.getItem("gsa-teaching-sessions");
-    if (sched) {
-      try { setScheduleSessions(JSON.parse(sched)); } catch(e){}
-    }
+      // Teacher profile sync if we want, ignoring for now since it's just static text in UI
+      const tProfile = localStorage.getItem("gsa-teacher-profile");
+      if (tProfile) {
+        try { setTeacherProfile(JSON.parse(tProfile)); } catch(e){}
+      }
+
+      // Fetch students for the first class, or all class members
+      // Wait, class_members join profiles is complex, we will just fetch profiles
+      // Actually let's fetch all student_stats and profiles to mock students for the class
+      const { data: profilesData } = await supabase.from('profiles').select('*').eq('role', 'student');
+      const { data: statsData } = await supabase.from('student_stats').select('*');
+      
+      if (profilesData) {
+        const studentList = profilesData.map(p => {
+          const stat = statsData?.find(s => s.user_id === p.id) || {};
+          return {
+            id: p.id,
+            classId: classesData?.[0]?.id || '1',
+            name: p.full_name || p.email?.split('@')[0] || "Student",
+            init: (p.full_name || p.email || "S").substring(0, 2).toUpperCase(),
+            xp: stat.total_xp || 0,
+            speak: 85,
+            listen: 80,
+            read: 90,
+            active: 'Vừa xong',
+            status: 'teal'
+          };
+        });
+        setStudents(studentList);
+      }
+
+      const hist = localStorage.getItem("gsa-rewards-history");
+      if (hist) {
+        try { setRewardHistory(JSON.parse(hist)); } catch(e){}
+      }
+      const sched = localStorage.getItem("gsa-teaching-sessions");
+      if (sched) {
+        try { setScheduleSessions(JSON.parse(sched)); } catch(e){}
+      }
+    };
+    
+    fetchData();
   }, []);
 
   const handleGiveReward = () => {
@@ -911,14 +944,22 @@ export default function TeacherPortalPort() {
                        </div>
                        <div className="flex justify-end gap-2">
                          <button onClick={() => setShowAddClass(false)} className="px-4 py-2 text-[13px] text-gray-500 font-bold hover:bg-gray-50 rounded-lg transition-colors">Hủy</button>
-                         <button onClick={() => {
+                         <button onClick={async () => {
                            if(!newClassName) return;
-                           const newId = Date.now().toString();
                            const newCode = Math.random().toString(36).substring(2, 8).toUpperCase();
-                           const newList = [...classes, {id: newId, name: newClassName, code: newCode}];
-                           setClasses(newList);
-                           setSelectedClassId(newId);
-                           localStorage.setItem("gsa-teacher-classes", JSON.stringify(newList));
+                           const { data: { user } } = await supabase.auth.getUser();
+                           
+                           const { data, error } = await supabase.from('classes').insert({
+                             name: newClassName,
+                             code: newCode,
+                             teacher_id: user?.id || '00000000-0000-0000-0000-000000000000'
+                           }).select();
+                           
+                           if (data && data.length > 0) {
+                             const newList = [...classes, data[0]];
+                             setClasses(newList);
+                             setSelectedClassId(data[0].id);
+                           }
                            setNewClassName("");
                            setShowAddClass(false);
                          }} className="px-4 py-2 text-[13px] bg-[#E63946] text-white rounded-lg font-bold shadow-sm hover:bg-[#c62b37] transition-colors">Khởi tạo</button>
@@ -936,23 +977,29 @@ export default function TeacherPortalPort() {
                        </div>
                        <div className="flex justify-end gap-2">
                          <button onClick={() => setShowAddStudent(false)} className="px-4 py-2 text-[13px] text-gray-500 font-bold hover:bg-gray-50 rounded-lg transition-colors">Hủy</button>
-                         <button onClick={() => {
+                         <button onClick={async () => {
                            if(!newStudentName) return;
                            const inits = newStudentName.split(" ").map(n => n[0]).join("").substring(0, 2).toUpperCase();
-                           const newS = {
-                             id: Date.now().toString(),
-                             classId: selectedClassId,
+                           
+                           const { data, error } = await supabase.from('students').insert({
+                             class_id: selectedClassId,
                              name: newStudentName,
                              init: inits,
-                             xp: 0, speak: 0, listen: 0, read: 0, active: 'Vừa xong', status: 'amber'
-                           };
-                           const newList = [...students, newS];
-                           setStudents(newList);
-                           localStorage.setItem("gsa-teacher-students", JSON.stringify(newList));
-                           setNewStudentName("");
-                           setShowAddStudent(false);
-                           setShowToast(`Đã thêm ${newStudentName}!`);
-                           setTimeout(() => setShowToast(""), 3000);
+                             xp: 0,
+                             speak: 0,
+                             listen: 0,
+                             status: 'amber'
+                           }).select();
+
+                           if (data) {
+                             const newS = { ...data[0], classId: data[0].class_id, active: 'Vừa xong' };
+                             const newList = [...students, newS];
+                             setStudents(newList);
+                             setNewStudentName("");
+                             setShowAddStudent(false);
+                             setShowToast(`Đã thêm ${newStudentName}!`);
+                             setTimeout(() => setShowToast(""), 3000);
+                           }
                          }} className="px-4 py-2 text-[13px] bg-[#0F6E56] text-white rounded-lg font-bold shadow-sm hover:bg-[#0c5c48] transition-colors">Lưu lại</button>
                        </div>
                     </div>

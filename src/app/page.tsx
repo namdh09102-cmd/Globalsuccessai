@@ -34,6 +34,8 @@ import QuizRoom from "@/components/QuizRoom";
 import VisualRoom from "@/components/VisualRoom";
 import ExamRoom from "@/components/ExamRoom";
 import WorksheetRoom from "@/components/WorksheetRoom";
+import { motion, AnimatePresence } from "framer-motion";
+import { supabase } from "@/lib/supabase";
 import CelebrationArena from "@/components/CelebrationArena";
 import PaywallModal from "@/components/PaywallModal";
 
@@ -437,71 +439,65 @@ export default function Dashboard() {
   const loadCurriculum = async (targetGrade?: string) => {
     const gradeToUse = targetGrade || activeGrade;
     let baseUnits = [...defaultUnits];
-    
-    // Đọc từ localStorage chung
-    const stored = localStorage.getItem("gsa-curriculum");
-    if (stored) {
-      try {
-        const parsed = JSON.parse(stored);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          baseUnits = parsed;
-        }
-      } catch (e) {}
-    }
-
-    // Khóa tất cả các bài mặc định (trừ Unit 11-2)
-    baseUnits = baseUnits.map((u: any) => {
-      if (u.id !== "unit-11-2") {
-        return {
-          ...u,
-          status: "locked",
-          progress: 0,
-          lessons: u.lessons.map((l: any) => ({ ...l, completed: false }))
-        };
-      }
-      return u;
-    });
-
-    // Gom dữ liệu từ 12 khối lớp
     const allUnits = [...baseUnits];
     
-    for (let grade = 1; grade <= 12; grade++) {
-      const gradeStr = `Lớp ${grade}`;
-      let storedData = localStorage.getItem(`gsa-curriculum-l${grade}`);
+    try {
+      const { data, error } = await supabase.from('curriculums').select('*');
+      if (error) throw error;
       
-      // Tự động tải dữ liệu ngầm cho Lớp 1, 2, 3 nếu chưa có trong máy
-      if (!storedData && (grade === 1 || grade === 2 || grade === 3 || grade === 10)) {
-        try {
-          const res = await fetch(`/seeds/grade${grade}.json`);
-          if (res.ok) {
-            const data = await res.json();
-            storedData = JSON.stringify(data);
-            localStorage.setItem(`gsa-curriculum-l${grade}`, storedData);
-          }
-        } catch (e) {
-          console.error(`Lỗi tải ngầm dữ liệu Lớp ${grade}:`, e);
-        }
-      }
-      
-      let hasRealData = false;
-      
-      if (storedData) {
-        try {
-          const parsedData = JSON.parse(storedData);
-          if (Array.isArray(parsedData) && parsedData.length > 0) {
-            hasRealData = true;
-            // Gộp tất cả các Unit của lớp này
-            for (const uNew of parsedData) {
+      let hasSupabaseData = false;
+      if (data && data.length > 0) {
+        data.forEach(item => {
+          const gradeNum = parseInt(item.grade_level);
+          const gradeStr = `Lớp ${gradeNum}`;
+          if (Array.isArray(item.content)) {
+            hasSupabaseData = true;
+            for (const uNew of item.content) {
               const idx = allUnits.findIndex((u: any) => u.id === uNew.id || (u.grade === gradeStr && u.number === uNew.number));
               if (idx >= 0) allUnits[idx] = uNew;
               else allUnits.push(uNew);
             }
           }
-        } catch (e) {}
+        });
       }
+      
+      // Auto seed nếu chưa có data trên db
+      if (!hasSupabaseData) {
+        for (let grade = 1; grade <= 3; grade++) {
+          try {
+            const res = await fetch(`/seeds/grade${grade}.json`);
+            if (res.ok) {
+              const seedData = await res.json();
+              await supabase.from('curriculums').upsert({ grade_level: grade.toString(), content: seedData });
+              const gradeStr = `Lớp ${grade}`;
+              for (const uNew of seedData) {
+                const idx = allUnits.findIndex((u: any) => u.id === uNew.id || (u.grade === gradeStr && u.number === uNew.number));
+                if (idx >= 0) allUnits[idx] = uNew;
+                else allUnits.push(uNew);
+              }
+            }
+          } catch (e) {
+            console.error(`Lỗi tải ngầm dữ liệu Lớp ${grade}:`, e);
+          }
+        }
+      }
+    } catch (e) {
+      console.error("Error fetching curriculums", e);
+    }
+    
+    // Khóa tất cả các bài mặc định (trừ Unit 11-2) nếu nó là bài mặc định
+    allUnits.forEach((u: any) => {
+      if (u.id !== "unit-11-2" && defaultUnits.some(du => du.id === u.id)) {
+        u.status = "locked";
+        u.progress = 0;
+        if (u.lessons) u.lessons = u.lessons.map((l: any) => ({ ...l, completed: false }));
+      }
+    });
 
-      // Nếu không có dữ liệu thật và cũng chưa có Unit mặc định nào cho khối này, thêm một Unit "Sắp ra mắt"
-      if (!hasRealData && !allUnits.some(u => u.grade === gradeStr)) {
+    // Thêm unit sắp ra mắt cho các khối chưa có
+    for (let grade = 1; grade <= 12; grade++) {
+      const gradeStr = `Lớp ${grade}`;
+      if (!allUnits.some(u => u.grade === gradeStr)) {
         allUnits.push({
           id: `unit-${grade}-coming-soon`,
           number: 1,
@@ -647,7 +643,7 @@ export default function Dashboard() {
   };
 
   // Xử lý khi hoàn thành bất kỳ bài tập nào
-  const handleLessonCompletion = (lessonId: string, finalScore: number = 100) => {
+  const handleLessonCompletion = async (lessonId: string, finalScore: number = 100) => {
     // 1. Cập nhật bài học thành Hoàn thành trong localStorage
     const updatedUnits = units.map((unit) => {
       const hasLesson = unit.lessons.some((l) => l.id === lessonId);
@@ -713,32 +709,11 @@ export default function Dashboard() {
     localStorage.setItem("gsa-student-stats", JSON.stringify(newStats));
 
     // 3. Nếu là bài luyện nói (speaking), đồng bộ điểm phát âm trung bình cộng
-    if (completedLesson && completedLesson.type === "speaking") {
-      try {
-        const storedSpeakingScores = localStorage.getItem("gsa-speaking-scores");
-        let speakingScores: number[] = [];
-        if (storedSpeakingScores) {
-          speakingScores = JSON.parse(storedSpeakingScores);
-        }
-        speakingScores.push(finalScore);
-        localStorage.setItem("gsa-speaking-scores", JSON.stringify(speakingScores));
+    // Ta không cần lưu local mảng speaking scores nữa, vì history/page.tsx đã tự filter supabase.
 
-        const avgScore = Math.round(speakingScores.reduce((a: number, b: number) => a + b, 0) / speakingScores.length);
-        localStorage.setItem("gsa-pronunciation-accuracy", String(avgScore));
-      } catch (err) {
-        console.error("Error saving speaking scores from curriculum:", err);
-      }
-    }
-
-    // 4. Lưu nhật ký luyện tập chuyên sâu vào gsa-learning-logs
+    // 4. Lưu nhật ký luyện tập chuyên sâu vào Supabase
     if (completedLesson) {
       try {
-        const storedLogs = localStorage.getItem("gsa-learning-logs");
-        let learningLogs: any[] = [];
-        if (storedLogs) {
-          learningLogs = JSON.parse(storedLogs);
-        }
-        
         const displayTypeMap: { [key: string]: string } = {
           vocabulary: "Từ vựng",
           speaking: "Speaking",
@@ -751,17 +726,32 @@ export default function Dashboard() {
         const displayType = displayTypeMap[completedLesson.type] || completedLesson.type;
         const lessonTitleFormatted = `Unit ${unitNumber}: ${displayType} - ${completedLesson.title}`;
         
-        const newLog = {
-          lessonTitle: lessonTitleFormatted,
-          type: completedLesson.type,
-          score: finalScore,
-          xpEarned: 100,
-          timeAgo: "Vừa xong",
-          passed: finalScore >= 70
-        };
-        
-        // Đẩy vào đầu danh sách, chỉ giữ tối đa 10 bản ghi gần nhất
-        localStorage.setItem("gsa-learning-logs", JSON.stringify([newLog, ...learningLogs].slice(0, 10)));
+        const { data: { user } } = await supabase.auth.getUser();
+        if (user) {
+          await supabase.from('learning_logs').insert({
+            user_id: user.id,
+            activity_type: completedLesson.type,
+            activity_name: lessonTitleFormatted,
+            score: finalScore,
+            xp_earned: 100
+          });
+        } else {
+          // Lưu tạm nếu test ko đăng nhập
+          const storedLogs = localStorage.getItem("gsa-learning-logs");
+          let learningLogs: any[] = [];
+          if (storedLogs) {
+            learningLogs = JSON.parse(storedLogs);
+          }
+          const newLog = {
+            lessonTitle: lessonTitleFormatted,
+            type: completedLesson.type,
+            score: finalScore,
+            xpEarned: 100,
+            timeAgo: "Vừa xong",
+            passed: finalScore >= 70
+          };
+          localStorage.setItem("gsa-learning-logs", JSON.stringify([newLog, ...learningLogs].slice(0, 10)));
+        }
       } catch (err) {
         console.error("Error saving learning logs from curriculum:", err);
       }

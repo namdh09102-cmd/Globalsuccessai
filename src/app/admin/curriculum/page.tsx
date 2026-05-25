@@ -11,6 +11,7 @@ import {
   AlertCircle,
   Trash2
 } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 export default function AdminCurriculum() {
   const [showToast, setShowToast] = useState(false);
@@ -25,54 +26,61 @@ export default function AdminCurriculum() {
 
   // Kiểm tra trạng thái nạp dữ liệu ban đầu
   React.useEffect(() => {
-    let loadedGrades = [];
-    const allData: Record<string, any> = {};
-    for (let i = 1; i <= 12; i++) {
-      const stored = localStorage.getItem(`gsa-curriculum-l${i}`);
-      if (stored) {
-        loadedGrades.push(i);
-        try {
-          allData[`l${i}`] = JSON.parse(stored);
-        } catch (e) {}
-      }
-    }
-    // Check old Lớp 11
-    const storedOld = localStorage.getItem("gsa-curriculum");
-    if (storedOld) {
+    const fetchCurriculums = async () => {
       try {
-        const parsed = JSON.parse(storedOld);
-        if (parsed.some((u: any) => u.id === "unit-2")) {
-          loadedGrades.push(11);
-          allData["l11"] = parsed;
+        const { data, error } = await supabase.from('curriculums').select('*');
+        if (error) throw error;
+        
+        let loadedGrades: number[] = [];
+        const allData: Record<string, any> = {};
+        
+        if (data && data.length > 0) {
+          data.forEach(item => {
+            const gradeNum = parseInt(item.grade_level);
+            if (!isNaN(gradeNum)) {
+              loadedGrades.push(gradeNum);
+              allData[`l${gradeNum}`] = item.content;
+            }
+          });
         }
-      } catch (e) {}
-    }
-    setSyncedGrades(Array.from(new Set(loadedGrades)));
-    setCurriculumData(allData);
+        
+        setSyncedGrades(Array.from(new Set(loadedGrades)));
+        setCurriculumData(allData);
+      } catch (err) {
+        console.error("Error fetching curriculums", err);
+      }
+    };
+    
+    fetchCurriculums();
   }, []);
 
-  const handleResetGrade = (grade: number, e: React.MouseEvent) => {
+  const handleResetGrade = async (grade: number, e: React.MouseEvent) => {
     e.stopPropagation();
     if (window.confirm(`XÁC NHẬN XÓA: Bạn có chắc chắn muốn xóa toàn bộ dữ liệu của Lớp ${grade}?`)) {
-      localStorage.removeItem(`gsa-curriculum-l${grade}`);
-      setSyncedGrades(prev => prev.filter(g => g !== grade));
-      setCurriculumData(prev => {
-        const newData = { ...prev };
-        delete newData[`l${grade}`];
-        return newData;
-      });
-      setToastMessage(`Đã xóa sạch dữ liệu Lớp ${grade}!`);
-      setToastType("success");
+      try {
+        await supabase.from('curriculums').delete().eq('grade_level', grade.toString());
+        setSyncedGrades(prev => prev.filter(g => g !== grade));
+        setCurriculumData(prev => {
+          const newData = { ...prev };
+          delete newData[`l${grade}`];
+          return newData;
+        });
+        setToastMessage(`Đã xóa sạch dữ liệu Lớp ${grade}!`);
+        setToastType("success");
+      } catch (err) {
+        setToastMessage("Lỗi khi xóa dữ liệu!");
+        setToastType("error");
+      }
       setShowToast(true);
       setTimeout(() => setShowToast(false), 4000);
     }
   };
 
-  const handleDeleteLesson = (grade: number, lessonId: string, e: React.MouseEvent) => {
+  const handleDeleteLesson = async (grade: number, lessonId: string, e: React.MouseEvent) => {
     e.stopPropagation();
     if (window.confirm("Xác nhận xóa bài học này khỏi giáo trình?")) {
-      setCurriculumData(prev => {
-        const newData = { ...prev };
+      try {
+        const newData = { ...curriculumData };
         const gradeData = [...(newData[`l${grade}`] || [])];
         gradeData.forEach(unit => {
           if (unit.lessons) {
@@ -80,125 +88,122 @@ export default function AdminCurriculum() {
           }
         });
         newData[`l${grade}`] = gradeData;
-        localStorage.setItem(`gsa-curriculum-l${grade}`, JSON.stringify(gradeData));
-        return newData;
-      });
-      setToastMessage("Đã xóa bài học!");
-      setToastType("success");
+        
+        await supabase.from('curriculums').upsert({
+          grade_level: grade.toString(),
+          content: gradeData
+        });
+        
+        setCurriculumData(newData);
+        setToastMessage("Đã xóa bài học!");
+        setToastType("success");
+      } catch (err) {
+        setToastMessage("Lỗi khi xóa bài học!");
+        setToastType("error");
+      }
       setShowToast(true);
       setTimeout(() => setShowToast(false), 4000);
     }
   };
 
-  const handleBulkIngestion = () => {
+  const handleBulkIngestion = async () => {
     if (!ingestData.trim()) return;
     setIsIngesting(true);
     
-    setTimeout(() => {
-      try {
-        let lessonDataToMerge: any = {};
+    try {
+      let lessonDataToMerge: any = {};
 
-        if (ingestType === "dictation") {
-          // Bỏ qua JSON parse, kiểm tra cặp ngoặc vuông
-          if (!ingestData.includes("[") || !ingestData.includes("]")) {
-            throw new Error("DICTATION_INVALID");
-          }
-          lessonDataToMerge = { expectedText: ingestData.trim() };
-        } else {
-          // Validate JSON cho Speaking, Quiz
-          // AI thường sinh rác (ví dụ: dấu xuống dòng thực tế nằm lọt thỏm trong dấu nháy kép) làm vỡ JSON.parse
-          const cleanedData = ingestData.replace(/\n/g, " ").replace(/\r/g, "");
-          const parsed = JSON.parse(cleanedData);
-          
-          if (ingestType === "quiz") {
-            let questions = Array.isArray(parsed) ? parsed : (parsed.quizQuestions ? parsed.quizQuestions : [parsed]);
-            
-            // Magical Normalizer cho Quiz
-            questions = questions.map((q: any) => {
-              let options = q.options;
-              if (!Array.isArray(options) && typeof options === "object" && options !== null) {
-                // Biến đổi { A: "book", B: "apple" } thành ["A. book", "B. apple", "C. cat", "D. duck"]
-                options = Object.entries(options).map(([k, v]) => `${k}. ${v}`);
-              }
-              return {
-                ...q,
-                question: q.question || "",
-                options: options || [],
-                correctAnswer: q.correctAnswer || q.correct || "A"
-              };
-            });
-
-            lessonDataToMerge = { quizQuestions: questions };
-          } else if (ingestType === "speaking") {
-            if (Array.isArray(parsed)) {
-              lessonDataToMerge = parsed[0]?.expectedText ? parsed[0] : { expectedText: JSON.stringify(parsed) };
-            } else if (typeof parsed === "object" && parsed !== null) {
-              lessonDataToMerge = parsed.expectedText 
-                ? parsed 
-                : { expectedText: parsed.text || parsed.content || Object.values(parsed)[0] || JSON.stringify(parsed) };
-            } else {
-              lessonDataToMerge = { expectedText: String(parsed) };
+      if (ingestType === "dictation") {
+        if (!ingestData.includes("[") || !ingestData.includes("]")) {
+          throw new Error("DICTATION_INVALID");
+        }
+        lessonDataToMerge = { expectedText: ingestData.trim() };
+      } else {
+        const cleanedData = ingestData.replace(/\n/g, " ").replace(/\r/g, "");
+        const parsed = JSON.parse(cleanedData);
+        
+        if (ingestType === "quiz") {
+          let questions = Array.isArray(parsed) ? parsed : (parsed.quizQuestions ? parsed.quizQuestions : [parsed]);
+          questions = questions.map((q: any) => {
+            let options = q.options;
+            if (!Array.isArray(options) && typeof options === "object" && options !== null) {
+              options = Object.entries(options).map(([k, v]) => `${k}. ${v}`);
             }
+            return {
+              ...q,
+              question: q.question || "",
+              options: options || [],
+              correctAnswer: q.correctAnswer || q.correct || "A"
+            };
+          });
+          lessonDataToMerge = { quizQuestions: questions };
+        } else if (ingestType === "speaking") {
+          if (Array.isArray(parsed)) {
+            lessonDataToMerge = parsed[0]?.expectedText ? parsed[0] : { expectedText: JSON.stringify(parsed) };
+          } else if (typeof parsed === "object" && parsed !== null) {
+            lessonDataToMerge = parsed.expectedText 
+              ? parsed 
+              : { expectedText: parsed.text || parsed.content || Object.values(parsed)[0] || JSON.stringify(parsed) };
           } else {
-            lessonDataToMerge = parsed;
+            lessonDataToMerge = { expectedText: String(parsed) };
           }
-        }
-        
-        const storageKey = `gsa-curriculum-l${ingestGrade}`;
-        let existingData: any[] = [];
-        
-        try {
-          const stored = localStorage.getItem(storageKey);
-          if (stored) existingData = JSON.parse(stored);
-        } catch(e) {}
-
-        if (!Array.isArray(existingData) || existingData.length === 0) {
-          existingData = [{
-            id: `unit-${ingestGrade}-1`,
-            number: 1,
-            title: `Chương trình học Lớp ${ingestGrade}`,
-            status: "in_progress",
-            progress: 0,
-            grade: `Lớp ${ingestGrade}`,
-            lessons: []
-          }];
-        }
-
-        // Tạo bài học mới từ dữ liệu
-        const newLesson = {
-          id: `u${ingestGrade}-l${Date.now()}`,
-          title: `Bài tập ${ingestType.toUpperCase()}`,
-          type: ingestType,
-          completed: false,
-          ...lessonDataToMerge
-        };
-
-        existingData[0].lessons.push(newLesson);
-
-        localStorage.setItem(storageKey, JSON.stringify(existingData));
-        
-        setSyncedGrades(prev => Array.from(new Set([...prev, parseInt(ingestGrade)])));
-        setCurriculumData(prev => ({
-          ...prev,
-          [`l${ingestGrade}`]: existingData
-        }));
-        
-        setToastMessage(`Đã nạp thành công dữ liệu thật Lớp ${ingestGrade}!`);
-        setToastType("success");
-      } catch (e: any) {
-        if (e.message === "DICTATION_INVALID") {
-          setToastMessage("Văn bản Dictation phải chứa từ khóa bọc trong ngoặc vuông [ ]!");
         } else {
-          setToastMessage("Lỗi định dạng dữ liệu JSON!");
+          lessonDataToMerge = parsed;
         }
-        setToastType("error");
+      }
+      
+      let existingData: any[] = curriculumData[`l${ingestGrade}`] || [];
+      
+      if (!Array.isArray(existingData) || existingData.length === 0) {
+        existingData = [{
+          id: `unit-${ingestGrade}-1`,
+          number: 1,
+          title: `Chương trình học Lớp ${ingestGrade}`,
+          status: "in_progress",
+          progress: 0,
+          grade: `Lớp ${ingestGrade}`,
+          lessons: []
+        }];
       }
 
-      setIsIngesting(false);
-      setIngestData("");
-      setShowToast(true);
-      setTimeout(() => setShowToast(false), 4000);
-    }, 1200);
+      const newLesson = {
+        id: `u${ingestGrade}-l${Date.now()}`,
+        title: `Bài tập ${ingestType.toUpperCase()}`,
+        type: ingestType,
+        completed: false,
+        ...lessonDataToMerge
+      };
+
+      existingData[0].lessons.push(newLesson);
+
+      const { error } = await supabase.from('curriculums').upsert({
+        grade_level: ingestGrade.toString(),
+        content: existingData
+      }, { onConflict: 'grade_level' });
+      
+      if (error) throw error;
+      
+      setSyncedGrades(prev => Array.from(new Set([...prev, parseInt(ingestGrade)])));
+      setCurriculumData(prev => ({
+        ...prev,
+        [`l${ingestGrade}`]: existingData
+      }));
+      
+      setToastMessage(`Đã nạp thành công dữ liệu thật Lớp ${ingestGrade}!`);
+      setToastType("success");
+    } catch (e: any) {
+      if (e.message === "DICTATION_INVALID") {
+        setToastMessage("Văn bản Dictation phải chứa từ khóa bọc trong ngoặc vuông [ ]!");
+      } else {
+        setToastMessage("Lỗi định dạng dữ liệu JSON!");
+      }
+      setToastType("error");
+    }
+
+    setIsIngesting(false);
+    setIngestData("");
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 4000);
   };
 
   const handleAutoSeedL1 = async () => {
@@ -209,13 +214,14 @@ export default function AdminCurriculum() {
       if (!res.ok) throw new Error("Không tìm thấy file seed");
       const gradeData = await res.json();
       
-      localStorage.setItem("gsa-curriculum-l1", JSON.stringify(gradeData));
+      const { error } = await supabase.from('curriculums').upsert({
+        grade_level: "1",
+        content: gradeData
+      }, { onConflict: 'grade_level' });
+      if (error) throw error;
       
       setSyncedGrades(prev => Array.from(new Set([...prev, 1])));
-      setCurriculumData(prev => ({
-        ...prev,
-        l1: gradeData
-      }));
+      setCurriculumData(prev => ({ ...prev, l1: gradeData }));
       
       setToastMessage("Đã Auto-Seed toàn bộ 16 Units Lớp 1!");
       setShowToast(true);
@@ -236,13 +242,14 @@ export default function AdminCurriculum() {
       if (!res.ok) throw new Error("Không tìm thấy file seed");
       const gradeData = await res.json();
       
-      localStorage.setItem("gsa-curriculum-l2", JSON.stringify(gradeData));
+      const { error } = await supabase.from('curriculums').upsert({
+        grade_level: "2",
+        content: gradeData
+      }, { onConflict: 'grade_level' });
+      if (error) throw error;
       
       setSyncedGrades(prev => Array.from(new Set([...prev, 2])));
-      setCurriculumData(prev => ({
-        ...prev,
-        l2: gradeData
-      }));
+      setCurriculumData(prev => ({ ...prev, l2: gradeData }));
       
       setToastMessage("Đã Auto-Seed toàn bộ 16 Units Lớp 2!");
       setToastType("success");
@@ -264,13 +271,14 @@ export default function AdminCurriculum() {
       if (!res.ok) throw new Error("Không tìm thấy file seed");
       const gradeData = await res.json();
       
-      localStorage.setItem("gsa-curriculum-l3", JSON.stringify(gradeData));
+      const { error } = await supabase.from('curriculums').upsert({
+        grade_level: "3",
+        content: gradeData
+      }, { onConflict: 'grade_level' });
+      if (error) throw error;
       
       setSyncedGrades(prev => Array.from(new Set([...prev, 3])));
-      setCurriculumData(prev => ({
-        ...prev,
-        l3: gradeData
-      }));
+      setCurriculumData(prev => ({ ...prev, l3: gradeData }));
       
       setToastMessage("Đã Auto-Seed toàn bộ 20 Units Lớp 3!");
       setToastType("success");
