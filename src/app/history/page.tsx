@@ -129,13 +129,7 @@ export default function HistoryPage() {
       }
 
       // 2. Dựng bảng xếp hạng động
-      const otherStudents: LeaderboardUser[] = [
-        { name: "Minh Tuấn", class: "11A3", xp: 4500, streak: 12, badgesCount: 4 },
-        { name: "Hải Đăng", class: "11A1", xp: 3800, streak: 8, badgesCount: 3 },
-        { name: "Thu Trang", class: "11A2", xp: 3200, streak: 5, badgesCount: 2 },
-        { name: "Hoàng Bách", class: "11A4", xp: 2100, streak: 3, badgesCount: 1 },
-        { name: "Diệu Linh", class: "11A1", xp: 1500, streak: 2, badgesCount: 1 }
-      ];
+      const otherStudents: LeaderboardUser[] = [];
 
       const currentUser: LeaderboardUser = {
         name: "Học viên",
@@ -240,13 +234,7 @@ export default function HistoryPage() {
       setUnlockedBadgesCount(finalCount);
 
       // 5. Dựng bảng xếp hạng động
-      const otherStudents: LeaderboardUser[] = [
-        { name: "Minh Tuấn", class: "11A3", xp: 4500, streak: 12, badgesCount: 4 },
-        { name: "Hải Đăng", class: "11A1", xp: 3800, streak: 8, badgesCount: 3 },
-        { name: "Thu Trang", class: "11A2", xp: 3200, streak: 5, badgesCount: 2 },
-        { name: "Hoàng Bách", class: "11A4", xp: 2100, streak: 3, badgesCount: 1 },
-        { name: "Diệu Linh", class: "11A1", xp: 1500, streak: 2, badgesCount: 1 }
-      ];
+      const otherStudents: LeaderboardUser[] = [];
 
       const currentUser: LeaderboardUser = {
         name: "Học viên",

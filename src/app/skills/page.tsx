@@ -17,10 +17,10 @@ import {
 import { motion } from "framer-motion";
 
 const skillsData = [
-  { id: "speaking", name: "Nói (Speaking)", icon: Mic, score: 83, color: "text-blue-600", bg: "bg-blue-500", lightBg: "bg-blue-50", border: "border-blue-200" },
-  { id: "listening", name: "Nghe (Listening)", icon: Headphones, score: 71, color: "text-indigo-600", bg: "bg-indigo-500", lightBg: "bg-indigo-50", border: "border-indigo-200" },
-  { id: "reading", name: "Đọc (Reading)", icon: BookOpen, score: 58, color: "text-teal-600", bg: "bg-teal-500", lightBg: "bg-teal-50", border: "border-teal-200" },
-  { id: "writing", name: "Viết (Writing)", icon: Edit3, score: 42, color: "text-pink-600", bg: "bg-pink-500", lightBg: "bg-pink-50", border: "border-pink-200" },
+  { id: "speaking", name: "Nói (Speaking)", icon: Mic, score: 0, color: "text-blue-600", bg: "bg-blue-500", lightBg: "bg-blue-50", border: "border-blue-200" },
+  { id: "listening", name: "Nghe (Listening)", icon: Headphones, score: 0, color: "text-indigo-600", bg: "bg-indigo-500", lightBg: "bg-indigo-50", border: "border-indigo-200" },
+  { id: "reading", name: "Đọc (Reading)", icon: BookOpen, score: 0, color: "text-teal-600", bg: "bg-teal-500", lightBg: "bg-teal-50", border: "border-teal-200" },
+  { id: "writing", name: "Viết (Writing)", icon: Edit3, score: 0, color: "text-pink-600", bg: "bg-pink-500", lightBg: "bg-pink-50", border: "border-pink-200" },
 ];
 
 export default function SkillsPage() {
@@ -50,7 +50,7 @@ export default function SkillsPage() {
   };
 
   // Mock scores for 5 skills in Radar
-  const radarScores = [83, 71, 65, 42, 58]; // Nói, Nghe, Ngữ pháp, Viết, Đọc
+  const radarScores = [0, 0, 0, 0, 0]; // Nói, Nghe, Ngữ pháp, Viết, Đọc
   const radarLabels = ["Nói", "Nghe", "Ngữ pháp", "Viết", "Đọc"];
   
   const getStudentPath = () => {
@@ -109,7 +109,7 @@ export default function SkillsPage() {
                 </div>
               </div>
               <span className="px-2 py-0.5 rounded text-[10px] font-black bg-indigo-50 text-indigo-600 border border-indigo-200">
-                LEVEL: B1 INTERMEDIATE
+                LEVEL: CHƯA XÁC ĐỊNH
               </span>
             </div>
 
@@ -210,13 +210,13 @@ export default function SkillsPage() {
                 <h3 className="text-sm font-bold text-text-head">AI Coach Nhận Xét</h3>
               </div>
               <p className="text-xs text-text-body leading-relaxed flex-1">
-                "Bạn có kỹ năng <strong className="text-blue-600">Nói (83%)</strong> cực kỳ ấn tượng, phát âm chuẩn xác. Tuy nhiên, kỹ năng <strong className="text-pink-600">Viết (42%)</strong> đang là điểm yếu lớn nhất cản trở bạn đạt cấp độ cao hơn. Cần tập trung cải thiện kỹ năng này ngay trong tuần!"
+                "Hệ thống hiện chưa có đủ dữ liệu để đánh giá năng lực của bạn. Hãy hoàn thành thêm các bài kiểm tra và bài học để AI có thể đưa ra nhận xét chính xác nhất nhé!"
               </p>
               <div className="mt-4 pt-4 border-t border-[rgba(0,0,0,0.05)]">
                 <div className="flex justify-between items-center text-xs">
                   <span className="text-text-muted font-medium">Xu hướng tuần:</span>
-                  <span className="flex items-center gap-1 text-teal-600 font-black">
-                    <TrendingUp className="w-3 h-3" /> +5%
+                  <span className="flex items-center gap-1 text-slate-400 font-bold">
+                    --
                   </span>
                 </div>
               </div>
@@ -232,9 +232,9 @@ export default function SkillsPage() {
                 <Award className="w-32 h-32" />
               </div>
               <h3 className="text-xs font-bold text-indigo-200 uppercase tracking-wider mb-1">Mục tiêu tiếp theo</h3>
-              <div className="text-2xl font-black mb-1">B2 Upper</div>
+              <div className="text-2xl font-black mb-1">Chưa rõ</div>
               <p className="text-[10px] text-indigo-200 opacity-90 max-w-[80%]">
-                Đạt trung bình 75% các kỹ năng để thăng cấp. Bạn cần 12% nữa!
+                Hoàn thành bài Test đầu vào để thiết lập mục tiêu học tập.
               </p>
             </motion.div>
           </div>
@@ -271,7 +271,7 @@ export default function SkillsPage() {
                     <div className="text-right">
                       <div className={`text-xl font-black ${skill.color}`}>{skill.score}%</div>
                       <div className="text-[9px] font-bold text-teal-600 flex items-center justify-end gap-0.5 mt-1">
-                        <TrendingUp className="w-2.5 h-2.5" /> +2%
+                        <TrendingUp className="w-2.5 h-2.5" /> --
                       </div>
                     </div>
                   </div>
@@ -305,41 +305,14 @@ export default function SkillsPage() {
         >
           <div className="absolute top-0 right-0 w-32 h-32 bg-pink-400/5 rounded-full blur-3xl pointer-events-none" />
           
-          <div className="flex items-center justify-between mb-5">
-            <div className="flex items-center gap-2">
-              <Zap className="w-5 h-5 text-pink-500" />
-              <div>
-                <h2 className="text-sm font-bold text-text-head">Khắc phục điểm yếu: Kỹ năng Viết (42%)</h2>
-                <p className="text-[10px] text-text-muted">Lộ trình 3 bước do AI đề xuất để cải thiện nhanh chóng</p>
-              </div>
+          <div className="flex flex-col items-center justify-center p-8 text-center bg-slate-50 rounded-xl border border-dashed border-slate-200">
+            <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mb-3">
+              <Zap className="w-5 h-5 text-slate-400" />
             </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[
-              { title: "Ôn tập Cấu trúc Câu", desc: "Học cách viết câu đơn, câu ghép chính xác.", time: "15 phút", xp: "+50" },
-              { title: "Luyện Viết Đoạn Văn", desc: "Thực hành viết đoạn văn 50-70 từ có AI chấm.", time: "25 phút", xp: "+120" },
-              { title: "Chữa Lỗi Ngữ Pháp", desc: "Trò chơi tìm và sửa lỗi sai trong câu.", time: "10 phút", xp: "+40" }
-            ].map((task, i) => (
-              <div key={i} className="border border-slate-200 hover:border-pink-300 rounded-xl p-4 bg-white transition-all cursor-pointer group">
-                <div className="flex justify-between items-start mb-2">
-                  <div className="w-6 h-6 rounded-md bg-pink-50 text-pink-600 flex items-center justify-center text-[10px] font-black border border-pink-100">
-                    {i + 1}
-                  </div>
-                  <span className="text-[10px] font-bold text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded">
-                    {task.xp} XP
-                  </span>
-                </div>
-                <h4 className="text-[12px] font-bold text-slate-800 mb-1 group-hover:text-pink-600 transition-colors">{task.title}</h4>
-                <p className="text-[10px] text-slate-500 mb-3 line-clamp-2">{task.desc}</p>
-                <div className="flex justify-between items-center text-[10px]">
-                  <span className="font-medium text-slate-400">{task.time}</span>
-                  <button className="text-pink-600 font-bold flex items-center gap-1 hover:gap-1.5 transition-all">
-                    Học ngay <ArrowUpRight className="w-3 h-3" />
-                  </button>
-                </div>
-              </div>
-            ))}
+            <h3 className="text-sm font-bold text-text-head mb-1">Chưa có đề xuất nào</h3>
+            <p className="text-xs text-text-muted max-w-sm">
+              Hệ thống cần thu thập thêm dữ liệu học tập của bạn để đưa ra các bài tập khắc phục điểm yếu phù hợp.
+            </p>
           </div>
         </motion.div>
 

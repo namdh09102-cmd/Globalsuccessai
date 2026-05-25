@@ -13,14 +13,7 @@ import Link from "next/link";
 type TabType = "overview" | "lesson" | "game" | "students" | "reports" | "rewards" | "schedule";
 type GameType = "race" | "quick" | "king" | "castle" | "team" | "spin";
 
-const MOCK_STUDENTS = [
-  {id: '1', name: 'Minh Anh', init: 'MA', xp: 3660, speak: 92, listen: 88, read: 85, active: '2 giờ trước', status: 'green'},
-  {id: '2', name: 'Bảo Trâm', init: 'BT', xp: 2460, speak: 78, listen: 82, read: 76, active: '3 giờ trước', status: 'green'},
-  {id: '3', name: 'Tuấn Kiệt', init: 'TK', xp: 1710, speak: 65, listen: 60, read: 70, active: '1 ngày trước', status: 'amber'},
-  {id: '4', name: 'Khánh Tân', init: 'KT', xp: 1260, speak: 58, listen: 55, read: 62, active: '5 giờ trước', status: 'amber'},
-  {id: '5', name: 'Diệu Linh', init: 'DL', xp: 980, speak: 45, listen: 48, read: 50, active: '2 ngày trước', status: 'red'},
-  {id: '6', name: 'Hoàng Bách', init: 'HB', xp: 750, speak: 40, listen: 42, read: 44, active: '3 ngày trước', status: 'red'},
-];
+const MOCK_STUDENTS: any[] = [];
 
 const COLORS = {
   primary: '#E63946', primaryLight: '#FAECE7', primaryBorder: '#F5C4B3',
@@ -181,15 +174,8 @@ export default function TeacherPortalPort() {
       setAiOutput(data);
     } catch (e) {
       // Fallback if API fails
-      setAiOutput({
-        objective: `Học sinh ghi nhớ và sử dụng được từ vựng/cấu trúc liên quan đến chủ đề ${topic}.`,
-        vocab: ["doctor", "engineer", "teacher", "artist", "pilot"],
-        warmup: "Giáo viên mở bài hát chủ đề nghề nghiệp. Học sinh nhẩm theo. Sau đó chơi game Đấu Quick khởi động.",
-        presentation: "Giới thiệu từ mới qua Flashcard trên màn hình. Cho HS nghe audio mẫu và lặp lại. Giới thiệu cấu trúc: What do you want to be in the future?",
-        practice: "Học sinh luyện tập theo cặp (Pair work). Hỏi đáp sử dụng mẫu câu. Giáo viên đi vòng quanh sửa lỗi phát âm trực tiếp.",
-        production: "Cho học sinh vẽ ước mơ của mình lên giấy và thuyết trình trước lớp trong 1 phút.",
-        game: "Đua Tên Lửa — Củng cố từ vựng trên TV Mode."
-      });
+      alert("Hệ thống hiện tại chưa kết nối đến AI hoặc API Key không hợp lệ. Vui lòng kiểm tra lại cấu hình Groq trong thư mục backend.");
+      setAiOutput(null);
     } finally {
       setIsGenerating(false);
     }
