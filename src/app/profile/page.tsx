@@ -15,7 +15,8 @@ import {
   Trophy, 
   BookOpen, 
   Star,
-  Activity
+  Activity,
+  CheckCircle2
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import BadgeGrid from "@/components/BadgeGrid";
