@@ -23,7 +23,8 @@ import {
   Play,
   Headphones,
   Compass,
-  Zap
+  Zap,
+  Clock
 } from "lucide-react";
 import Link from "next/link";
 import { evaluateSpeaking, saveLessonProgress, SpeakingEvaluationResult } from "@/app/actions/eduActions";
@@ -70,6 +71,16 @@ interface UnitData {
   progress: number;
   grade: string;
   lessons: Lesson[];
+}
+
+interface PendingAssignment {
+  id: string;
+  title: string;
+  task_type: string;
+  due_date: string;
+  teacher_id: string;
+  lesson_id: string;
+  content: any;
 }
 
 const defaultUnits: UnitData[] = [
@@ -413,6 +424,8 @@ export default function Dashboard() {
   const timerIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   // Đọc danh sách bài học và điểm số từ localStorage
+  const [pendingAssignments, setPendingAssignments] = useState<PendingAssignment[]>([]);
+
   useEffect(() => {
     const initialGrade = getProfileGrade();
     setActiveGrade(initialGrade);
@@ -420,6 +433,7 @@ export default function Dashboard() {
     loadStats();
     loadUserTier();
     loadProfile();
+    loadAssignments();
     if (typeof window !== "undefined") {
       window.addEventListener("stats-updated", loadStats);
       window.addEventListener("tier-updated", loadUserTier);
@@ -435,6 +449,39 @@ export default function Dashboard() {
       }
     };
   }, []);
+
+  const loadAssignments = async () => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+      
+      // Get student's class
+      const { data: classMembers } = await supabase.from('class_members').select('class_id').eq('student_id', user.id);
+      if (!classMembers || classMembers.length === 0) return;
+      const classIds = classMembers.map((cm: any) => cm.class_id);
+
+      // Get pending assignments
+      const { data: assignments } = await supabase
+        .from('assignments')
+        .select('*')
+        .in('class_id', classIds)
+        .order('created_at', { ascending: false });
+
+      if (assignments) {
+        // filter out completed ones
+        const { data: submissions } = await supabase
+          .from('student_submissions')
+          .select('assignment_id')
+          .eq('student_id', user.id);
+        
+        const submittedIds = submissions?.map((s: any) => s.assignment_id) || [];
+        const pending = assignments.filter((a: any) => !submittedIds.includes(a.id));
+        setPendingAssignments(pending);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   const loadCurriculum = async (targetGrade?: string) => {
     const gradeToUse = targetGrade || activeGrade;
@@ -1226,6 +1273,38 @@ export default function Dashboard() {
               </div>
             );
           })()}
+
+          {/* Pending Assignments Section */}
+          {pendingAssignments.length > 0 && (
+            <div className="space-y-4">
+              <h3 className="text-xs font-black text-[#E63946] uppercase tracking-widest flex items-center gap-1.5">
+                <Flame className="w-4 h-4" /> Nhiệm vụ cần hoàn thành
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {pendingAssignments.map((assignment, idx) => (
+                  <div key={assignment.id} className="bg-white rounded-xl border-2 border-amber-400 p-4 shadow-sm flex flex-col gap-3 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-amber-100 rounded-full blur-xl pointer-events-none" />
+                    <div className="flex items-start justify-between relative z-10">
+                      <div>
+                        <span className="text-[10px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded uppercase">{assignment.task_type}</span>
+                        <h4 className="text-sm font-bold text-gray-800 mt-1 line-clamp-2">{assignment.title}</h4>
+                      </div>
+                      <div className="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
+                        <Clock className="w-3 h-3" />
+                        {new Date(assignment.due_date).toLocaleDateString('vi-VN')}
+                      </div>
+                    </div>
+                    <button 
+                      onClick={() => alert('Đang mở bài tập... (Tính năng đang code)')}
+                      className="w-full mt-auto bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs py-2 rounded-lg transition-colors flex items-center justify-center gap-1"
+                    >
+                      <Play className="w-3 h-3" /> Bắt đầu làm bài
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Learning Methods Bento Grid */}
           {!["Lớp 10", "Lớp 11", "Lớp 12"].includes(activeGrade) && (

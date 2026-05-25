@@ -52,6 +52,12 @@ export default function TeacherPortalPort() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [savingLesson, setSavingLesson] = useState(false);
 
+  // Assign Lesson State
+  const [assigningLesson, setAssigningLesson] = useState<any>(null);
+  const [assignDueDate, setAssignDueDate] = useState<string>("");
+  const [assignClassId, setAssignClassId] = useState<string>("");
+  const [isAssigning, setIsAssigning] = useState(false);
+
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files || e.target.files.length === 0) return;
     const file = e.target.files[0];
@@ -1114,9 +1120,61 @@ export default function TeacherPortalPort() {
                           }} className="flex-1 bg-teal-500 hover:bg-teal-600 text-white text-[11px] py-1.5 rounded font-bold text-center transition-colors flex justify-center items-center gap-1">
                             <Presentation className="w-3 h-3" /> Dạy
                           </button>
+                          <button onClick={() => {
+                            setAssigningLesson(l);
+                            if (classes.length > 0) setAssignClassId(classes[0].id);
+                          }} className="flex-1 bg-amber-500 hover:bg-amber-600 text-white text-[11px] py-1.5 rounded font-bold text-center transition-colors flex justify-center items-center gap-1">
+                            <Send className="w-3 h-3" /> Giao Bài
+                          </button>
                         </div>
                       </div>
                     ))}
+                  </div>
+                )}
+
+                {/* Assign Modal */}
+                {assigningLesson && (
+                  <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center animate-fade-in">
+                    <div className="bg-white rounded-2xl shadow-2xl p-6 w-[400px]">
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="text-lg font-bold text-gray-800">Giao bài tập</h3>
+                        <button onClick={() => setAssigningLesson(null)} className="text-gray-400 hover:text-gray-600"><X className="w-5 h-5"/></button>
+                      </div>
+                      <div className="mb-4">
+                        <div className="text-sm font-bold text-gray-700 mb-1">Giáo án:</div>
+                        <div className="text-sm text-gray-600 p-2 bg-gray-50 rounded border border-gray-200 line-clamp-2">{assigningLesson.topic}</div>
+                      </div>
+                      <div className="space-y-4">
+                        <div>
+                          <label className="block text-[13px] font-bold text-gray-700 mb-1">Chọn lớp học</label>
+                          <select 
+                            value={assignClassId} 
+                            onChange={e => setAssignClassId(e.target.value)}
+                            className="w-full text-sm p-2 border border-gray-300 rounded outline-none focus:border-amber-500"
+                          >
+                            <option value="">-- Chọn lớp --</option>
+                            {classes.map(c => (
+                              <option key={c.id} value={c.id}>{c.name} ({c.code})</option>
+                            ))}
+                          </select>
+                        </div>
+                        <div>
+                          <label className="block text-[13px] font-bold text-gray-700 mb-1">Hạn nộp bài</label>
+                          <input 
+                            type="datetime-local" 
+                            value={assignDueDate}
+                            onChange={e => setAssignDueDate(e.target.value)}
+                            className="w-full text-sm p-2 border border-gray-300 rounded outline-none focus:border-amber-500"
+                          />
+                        </div>
+                      </div>
+                      <div className="mt-6 flex justify-end gap-2">
+                        <button onClick={() => setAssigningLesson(null)} className="px-4 py-2 text-sm font-bold text-gray-600 hover:bg-gray-100 rounded transition-colors">Hủy</button>
+                        <button onClick={handleAssignLesson} disabled={isAssigning} className="px-4 py-2 text-sm font-bold text-white bg-amber-500 hover:bg-amber-600 rounded transition-colors flex items-center gap-1 disabled:opacity-50">
+                          {isAssigning ? <Loader2 className="w-4 h-4 animate-spin"/> : <Send className="w-4 h-4"/>} Giao ngay
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>
