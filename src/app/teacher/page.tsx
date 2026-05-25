@@ -6,7 +6,8 @@ import { RealtimeChannel } from "@supabase/supabase-js";
 import { 
   LayoutDashboard, Sparkles, Gamepad2, Users, BarChart3, Award, Calendar, 
   BookOpen, Tv, Clock, ArrowUp, ArrowDown, Send, FileOutput, Settings,
-  Rocket, Zap, Crown, Landmark, RotateCcw, Play, Pause, Eye, QrCode, ArrowLeft, PlayCircle, Search, CheckCircle2
+  Rocket, Zap, Crown, Landmark, RotateCcw, Play, Pause, Eye, QrCode, ArrowLeft, PlayCircle, Search, CheckCircle2,
+  Edit3, Save, Upload, X, Image as ImageIcon, Video, Paperclip, Loader2
 } from "lucide-react";
 import Link from "next/link";
 
@@ -44,6 +45,51 @@ export default function TeacherPortalPort() {
   const [activities, setActivities] = useState<string[]>(["Từ vựng", "Nói", "Mini-game"]);
   const [isGenerating, setIsGenerating] = useState(false);
   const [aiOutput, setAiOutput] = useState<any>(null);
+  const [isEditingLesson, setIsEditingLesson] = useState(false);
+  const [uploadingMedia, setUploadingMedia] = useState(false);
+
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files || e.target.files.length === 0) return;
+    const file = e.target.files[0];
+    setUploadingMedia(true);
+    
+    try {
+      const fileExt = file.name.split('.').pop();
+      const fileName = `${Math.random()}.${fileExt}`;
+      const filePath = `${fileName}`;
+
+      const { error: uploadError } = await supabase.storage
+        .from('lesson_resources')
+        .upload(filePath, file);
+
+      if (uploadError) {
+        throw uploadError;
+      }
+
+      const { data } = supabase.storage.from('lesson_resources').getPublicUrl(filePath);
+      
+      if (data?.publicUrl) {
+        const newResource = {
+          name: file.name,
+          url: data.publicUrl,
+          type: file.type.startsWith('image/') ? 'image' : 
+                file.type.startsWith('video/') ? 'video' : 'document'
+        };
+        
+        setAiOutput((prev: any) => ({
+          ...prev,
+          resources: [...(prev?.resources || []), newResource]
+        }));
+        setShowToast("Tải lên thành công!");
+        setTimeout(() => setShowToast(""), 3000);
+      }
+    } catch (error: any) {
+      alert("Lỗi tải lên: " + error.message + " (Vui lòng đảm bảo bạn đã tạo bucket public tên 'lesson_resources' trên Supabase)");
+    } finally {
+      setUploadingMedia(false);
+      e.target.value = ''; // reset input
+    }
+  };
 
   // Rewards State
   const [students, setStudents] = useState(MOCK_STUDENTS);
@@ -691,39 +737,118 @@ export default function TeacherPortalPort() {
                     <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col h-full animate-fade-in-up">
                       <div className="p-3.5 px-4 border-b border-gray-200 flex items-center justify-between bg-gray-50/50 shrink-0">
                         <div className="text-[13px] font-bold text-gray-800 flex items-center gap-1.5"><FileOutput className="w-4 h-4 text-[#0F6E56]" /> Giáo án: {topic}</div>
-                        <span className="text-[11px] text-gray-500 bg-white px-2 py-0.5 rounded border border-gray-200">{grade} · {duration}</span>
+                        <div className="flex items-center gap-2">
+                          {isEditingLesson ? (
+                            <button onClick={() => setIsEditingLesson(false)} className="text-[11px] text-white bg-green-600 px-3 py-1 rounded flex items-center gap-1 hover:bg-green-700 transition-colors">
+                              <Save className="w-3.5 h-3.5" /> Lưu
+                            </button>
+                          ) : (
+                            <button onClick={() => setIsEditingLesson(true)} className="text-[11px] text-gray-600 bg-gray-200 px-3 py-1 rounded flex items-center gap-1 hover:bg-gray-300 transition-colors">
+                              <Edit3 className="w-3.5 h-3.5" /> Chỉnh sửa
+                            </button>
+                          )}
+                          <span className="text-[11px] text-gray-500 bg-white px-2 py-0.5 rounded border border-gray-200">{grade} · {duration}</span>
+                        </div>
                       </div>
                       
-                      <div className="flex-1 overflow-y-auto">
+                      <div className="flex-1 overflow-y-auto relative">
                         <div className="p-4 border-b border-gray-100">
                           <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Mục tiêu bài học</div>
-                          <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.objective}</div>
+                          {isEditingLesson ? (
+                            <textarea className="w-full text-[13px] text-gray-800 p-2 border rounded outline-none focus:border-[#0F6E56] min-h-[60px]" value={aiOutput.objective} onChange={e => setAiOutput({...aiOutput, objective: e.target.value})} />
+                          ) : (
+                            <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.objective}</div>
+                          )}
                         </div>
                         <div className="p-4 border-b border-gray-100">
                           <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Từ vựng chính</div>
                           <div className="flex flex-wrap gap-1.5">
-                            {aiOutput.vocab.map((v:string) => <span key={v} className="text-[11px] px-2 py-0.5 rounded bg-[#E1F5EE] text-[#0F6E56] font-medium">{v}</span>)}
+                            {aiOutput.vocab.map((v:string, i:number) => (
+                              isEditingLesson ? 
+                                <input key={i} value={v} onChange={e => {
+                                  const newVocab = [...aiOutput.vocab];
+                                  newVocab[i] = e.target.value;
+                                  setAiOutput({...aiOutput, vocab: newVocab});
+                                }} className="text-[11px] px-2 py-0.5 rounded border border-gray-300 w-20 outline-none" />
+                                : <span key={v} className="text-[11px] px-2 py-0.5 rounded bg-[#E1F5EE] text-[#0F6E56] font-medium">{v}</span>
+                            ))}
                           </div>
                         </div>
                         <div className="p-4 border-b border-gray-100">
                           <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">1. Khởi động (Warm-up)</div>
-                          <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.warmup}</div>
+                          {isEditingLesson ? (
+                            <textarea className="w-full text-[13px] text-gray-800 p-2 border rounded outline-none focus:border-[#0F6E56] min-h-[80px]" value={aiOutput.warmup} onChange={e => setAiOutput({...aiOutput, warmup: e.target.value})} />
+                          ) : (
+                            <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.warmup}</div>
+                          )}
                         </div>
                         <div className="p-4 border-b border-gray-100">
                           <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">2. Bài Mới (Presentation)</div>
-                          <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.presentation}</div>
+                          {isEditingLesson ? (
+                            <textarea className="w-full text-[13px] text-gray-800 p-2 border rounded outline-none focus:border-[#0F6E56] min-h-[100px]" value={aiOutput.presentation} onChange={e => setAiOutput({...aiOutput, presentation: e.target.value})} />
+                          ) : (
+                            <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.presentation}</div>
+                          )}
                         </div>
                         <div className="p-4 border-b border-gray-100">
                           <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">3. Thực hành (Practice)</div>
-                          <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.practice}</div>
+                          {isEditingLesson ? (
+                            <textarea className="w-full text-[13px] text-gray-800 p-2 border rounded outline-none focus:border-[#0F6E56] min-h-[80px]" value={aiOutput.practice} onChange={e => setAiOutput({...aiOutput, practice: e.target.value})} />
+                          ) : (
+                            <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.practice}</div>
+                          )}
                         </div>
                         <div className="p-4 border-b border-gray-100">
                           <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">4. Vận dụng (Production)</div>
-                          <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.production}</div>
+                          {isEditingLesson ? (
+                            <textarea className="w-full text-[13px] text-gray-800 p-2 border rounded outline-none focus:border-[#0F6E56] min-h-[80px]" value={aiOutput.production} onChange={e => setAiOutput({...aiOutput, production: e.target.value})} />
+                          ) : (
+                            <div className="text-[13px] text-gray-800 leading-relaxed">{aiOutput.production}</div>
+                          )}
                         </div>
-                        <div className="p-4">
+                        <div className="p-4 border-b border-gray-100">
                           <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Game củng cố</div>
-                          <div className="text-[13px] text-gray-800 leading-relaxed bg-[#EEEDFE] text-[#534AB7] p-2 rounded-lg inline-block font-medium">🎮 {aiOutput.game}</div>
+                          {isEditingLesson ? (
+                            <textarea className="w-full text-[13px] text-gray-800 p-2 border rounded outline-none focus:border-[#0F6E56] min-h-[60px]" value={aiOutput.game} onChange={e => setAiOutput({...aiOutput, game: e.target.value})} />
+                          ) : (
+                            <div className="text-[13px] text-gray-800 leading-relaxed bg-[#EEEDFE] text-[#534AB7] p-2 rounded-lg inline-block font-medium">🎮 {aiOutput.game}</div>
+                          )}
+                        </div>
+
+                        {/* File Upload Section */}
+                        <div className="p-4 bg-gray-50/50">
+                           <div className="flex items-center justify-between mb-3">
+                             <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Tài nguyên đính kèm</div>
+                             <label className="cursor-pointer text-[11px] text-teal-600 bg-teal-50 px-3 py-1 rounded flex items-center gap-1.5 hover:bg-teal-100 transition-colors">
+                               {uploadingMedia ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Paperclip className="w-3.5 h-3.5" />}
+                               {uploadingMedia ? 'Đang tải lên...' : 'Tải lên File/Media'}
+                               <input type="file" className="hidden" onChange={handleFileUpload} accept="image/*,video/*,.pdf,.doc,.docx" disabled={uploadingMedia} />
+                             </label>
+                           </div>
+                           
+                           {aiOutput.resources && aiOutput.resources.length > 0 ? (
+                             <div className="grid grid-cols-2 gap-3 mt-3">
+                               {aiOutput.resources.map((res: any, idx: number) => (
+                                 <div key={idx} className="border border-gray-200 rounded-lg p-2 bg-white flex flex-col gap-2 relative group">
+                                   {isEditingLesson && (
+                                     <button onClick={() => {
+                                       const newResources = [...aiOutput.resources];
+                                       newResources.splice(idx, 1);
+                                       setAiOutput({...aiOutput, resources: newResources});
+                                     }} className="absolute -top-2 -right-2 bg-red-500 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10"><X className="w-3 h-3"/></button>
+                                   )}
+                                   {res.type === 'image' && <img src={res.url} alt="resource" className="w-full h-24 object-cover rounded-md" />}
+                                   {res.type === 'video' && <video src={res.url} controls className="w-full h-24 object-cover rounded-md bg-black" />}
+                                   {res.type === 'document' && <div className="w-full h-24 bg-gray-100 rounded-md flex items-center justify-center text-gray-400"><FileOutput className="w-8 h-8" /></div>}
+                                   <div className="text-[10px] text-gray-600 truncate px-1" title={res.name}>{res.name}</div>
+                                 </div>
+                               ))}
+                             </div>
+                           ) : (
+                             <div className="text-center py-4 text-[11px] text-gray-400 border-2 border-dashed border-gray-200 rounded-xl">
+                               Chưa có tài nguyên nào được đính kèm.
+                             </div>
+                           )}
                         </div>
                       </div>
 
