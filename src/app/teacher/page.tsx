@@ -45,6 +45,10 @@ export default function TeacherPortalPort() {
   const [activities, setActivities] = useState<string[]>(["Từ vựng", "Nói", "Mini-game"]);
   const [isGenerating, setIsGenerating] = useState(false);
   const [aiOutput, setAiOutput] = useState<any>(null);
+  const [lessonType, setLessonType] = useState<"plan" | "activity">("plan");
+  const [activityType, setActivityType] = useState<"quiz" | "speaking" | "dictation">("quiz");
+  const [activityOutput, setActivityOutput] = useState<any>(null);
+  const [isGeneratingActivity, setIsGeneratingActivity] = useState(false);
   const [isEditingLesson, setIsEditingLesson] = useState(false);
   const [uploadingMedia, setUploadingMedia] = useState(false);
   const [libraryLessons, setLibraryLessons] = useState<any[]>([]);
@@ -401,6 +405,75 @@ export default function TeacherPortalPort() {
       setAiOutput(null);
     } finally {
       setIsGenerating(false);
+    }
+  };
+
+  const handleGenerateActivity = async () => {
+    if (!topic) return;
+    setIsGeneratingActivity(true);
+    setActivityOutput(null);
+    try {
+      let customKey = "";
+      const storedKeys = localStorage.getItem("gsa-admin-api-keys");
+      if (storedKeys) {
+        try { customKey = JSON.parse(storedKeys).groq || ""; } catch (e) {}
+      }
+
+      const res = await fetch("/api/teacher/generate-activity", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ topic, grade: grade.replace('Lớp ', ''), type: activityType, customKey })
+      });
+      if (!res.ok) throw new Error("API fail");
+      const data = await res.json();
+      setActivityOutput(data);
+    } catch (e) {
+      alert("Lỗi khi tạo bài tập, vui lòng kiểm tra kết nối API.");
+    } finally {
+      setIsGeneratingActivity(false);
+    }
+  };
+
+  const handleContributeSystem = async () => {
+    if (!activityOutput) return;
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      const newLesson = {
+        id: `tcont_${Date.now()}`,
+        title: topic,
+        type: activityType,
+        completed: false,
+        teacher_id: user?.id || null,
+        status: "pending",
+        ...activityOutput
+      };
+
+      // Tải mảng contributions hiện có
+      const { data: currData } = await supabase.from('curriculums').select('content').eq('grade_level', 'contributions').single();
+      let existingContent = [];
+      if (currData && currData.content) {
+        existingContent = currData.content;
+      } else {
+        existingContent = [{
+          id: 'teacher_contributions',
+          title: 'Kho đóng góp của Giáo viên',
+          lessons: []
+        }];
+      }
+
+      existingContent[0].lessons.push(newLesson);
+
+      const { error } = await supabase.from('curriculums').upsert({
+        grade_level: 'contributions',
+        content: existingContent
+      });
+
+      if (error) throw error;
+      setShowToast("Đóng góp hệ thống thành công! Chờ Admin duyệt.");
+      setTimeout(() => setShowToast(""), 3000);
+      setActivityOutput(null);
+    } catch (e: any) {
+      alert("Lỗi khi đóng góp: " + e.message);
     }
   };
 
@@ -903,13 +976,29 @@ export default function TeacherPortalPort() {
             {activeTab === 'lesson' && (
               <div className="grid grid-cols-2 gap-6 animate-fade-in-up">
                 <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm h-fit">
+                  
+                  <div className="flex bg-gray-100 p-1 rounded-lg mb-5">
+                    <button 
+                      onClick={() => setLessonType("plan")}
+                      className={`flex-1 py-1.5 text-[13px] font-bold rounded-md transition-colors ${lessonType === "plan" ? "bg-white text-gray-800 shadow-sm" : "text-gray-500 hover:text-gray-700"}`}
+                    >
+                      Giáo án văn bản
+                    </button>
+                    <button 
+                      onClick={() => setLessonType("activity")}
+                      className={`flex-1 py-1.5 text-[13px] font-bold rounded-md transition-colors ${lessonType === "activity" ? "bg-white text-indigo-700 shadow-sm" : "text-gray-500 hover:text-gray-700"}`}
+                    >
+                      Bài tập tương tác
+                    </button>
+                  </div>
+
                   <div className="text-[14px] font-bold text-gray-800 flex items-center gap-1.5 mb-5 border-b border-gray-100 pb-3">
-                    <Sparkles className="w-4 h-4 text-gray-500" /> Thông tin bài học
+                    <Sparkles className="w-4 h-4 text-gray-500" /> Thông tin {lessonType === 'plan' ? 'bài học' : 'bài tập'}
                   </div>
                   
                   <div className="space-y-4">
                     <div className="space-y-1.5">
-                      <label className="text-[12px] font-bold text-gray-500">Chủ đề bài học</label>
+                      <label className="text-[12px] font-bold text-gray-500">Chủ đề {lessonType === 'plan' ? 'bài học' : 'bài tập'}</label>
                       <input 
                         type="text" value={topic} onChange={(e) => setTopic(e.target.value)}
                         className="w-full text-[13px] px-3 py-2 rounded-lg border border-gray-200 focus:border-[#E63946] outline-none"
@@ -920,50 +1009,74 @@ export default function TeacherPortalPort() {
                       <div className="space-y-1.5">
                         <label className="text-[12px] font-bold text-gray-500">Khối lớp</label>
                         <select value={grade} onChange={e => setGrade(e.target.value)} className="w-full text-[13px] px-3 py-2 rounded-lg border border-gray-200 focus:border-[#E63946] outline-none bg-white">
-                          <option>Lớp 7</option><option>Lớp 8</option><option>Lớp 9</option>
+                          <option>Lớp 1</option><option>Lớp 2</option><option>Lớp 3</option><option>Lớp 4</option><option>Lớp 5</option>
+                          <option>Lớp 6</option><option>Lớp 7</option><option>Lớp 8</option><option>Lớp 9</option>
                         </select>
                       </div>
-                      <div className="space-y-1.5">
-                        <label className="text-[12px] font-bold text-gray-500">Thời lượng</label>
-                        <select value={duration} onChange={e => setDuration(e.target.value)} className="w-full text-[13px] px-3 py-2 rounded-lg border border-gray-200 focus:border-[#E63946] outline-none bg-white">
-                          <option>45 phút</option><option>30 phút</option><option>15 phút</option>
-                        </select>
-                      </div>
+                      {lessonType === 'plan' ? (
+                        <div className="space-y-1.5">
+                          <label className="text-[12px] font-bold text-gray-500">Thời lượng</label>
+                          <select value={duration} onChange={e => setDuration(e.target.value)} className="w-full text-[13px] px-3 py-2 rounded-lg border border-gray-200 focus:border-[#E63946] outline-none bg-white">
+                            <option>45 phút</option><option>30 phút</option><option>15 phút</option>
+                          </select>
+                        </div>
+                      ) : (
+                        <div className="space-y-1.5">
+                          <label className="text-[12px] font-bold text-gray-500">Dạng bài tập</label>
+                          <select value={activityType} onChange={e => setActivityType(e.target.value as any)} className="w-full text-[13px] px-3 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 outline-none bg-white">
+                            <option value="quiz">Trắc nghiệm (Từ vựng/Ngữ pháp)</option>
+                            <option value="dictation">Nghe điền từ (Dictation)</option>
+                            <option value="speaking">Hội thoại (Speaking)</option>
+                          </select>
+                        </div>
+                      )}
                     </div>
 
-                    <div className="space-y-1.5">
-                      <label className="text-[12px] font-bold text-gray-500">Loại hoạt động</label>
-                      <div className="flex flex-wrap gap-2">
-                        {["Từ vựng", "Nói", "Nghe", "Mini-game", "Viết", "Ngữ pháp"].map(act => (
-                          <div 
-                            key={act} onClick={() => toggleActivity(act)}
-                            className={`px-3 py-1.5 rounded-full text-[12px] font-medium cursor-pointer transition-colors border ${
-                              activities.includes(act) ? 'bg-[#FAECE7] text-[#E63946] border-[#F5C4B3]' : 'bg-white text-gray-500 border-gray-200 hover:bg-gray-50'
-                            }`}
-                          >
-                            {act}
-                          </div>
-                        ))}
+                    {lessonType === 'plan' && (
+                      <div className="space-y-1.5">
+                        <label className="text-[12px] font-bold text-gray-500">Loại hoạt động</label>
+                        <div className="flex flex-wrap gap-2">
+                          {["Từ vựng", "Nói", "Nghe", "Mini-game", "Viết", "Ngữ pháp"].map(act => (
+                            <div 
+                              key={act} onClick={() => toggleActivity(act)}
+                              className={`px-3 py-1.5 rounded-full text-[12px] font-medium cursor-pointer transition-colors border ${
+                                activities.includes(act) ? 'bg-[#FAECE7] text-[#E63946] border-[#F5C4B3]' : 'bg-white text-gray-500 border-gray-200 hover:bg-gray-50'
+                              }`}
+                            >
+                              {act}
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
 
                     <div className="space-y-1.5">
                       <label className="text-[12px] font-bold text-gray-500">Ghi chú thêm</label>
-                      <textarea rows={2} placeholder="VD: Tập trung pronunciation..." className="w-full text-[13px] px-3 py-2 rounded-lg border border-gray-200 focus:border-[#E63946] outline-none resize-none"></textarea>
+                      <textarea rows={2} placeholder="VD: Tập trung pronunciation..." className="w-full text-[13px] px-3 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 outline-none resize-none"></textarea>
                     </div>
 
-                    <button 
-                      onClick={handleGenerateAI} disabled={isGenerating}
-                      className="w-full bg-[#E63946] hover:bg-[#c62b37] disabled:opacity-70 text-white py-2.5 rounded-lg text-[13px] font-bold transition-colors flex items-center justify-center gap-2 shadow-sm mt-2"
-                    >
-                      {isGenerating ? <Sparkles className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4" />}
-                      {isGenerating ? "AI đang soạn..." : "Tạo giáo án với AI"}
-                    </button>
+                    {lessonType === 'plan' ? (
+                      <button 
+                        onClick={handleGenerateAI} disabled={isGenerating}
+                        className="w-full bg-[#E63946] hover:bg-[#c62b37] disabled:opacity-70 text-white py-2.5 rounded-lg text-[13px] font-bold transition-colors flex items-center justify-center gap-2 shadow-sm mt-2"
+                      >
+                        {isGenerating ? <Sparkles className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4" />}
+                        {isGenerating ? "AI đang soạn..." : "Tạo giáo án với AI"}
+                      </button>
+                    ) : (
+                      <button 
+                        onClick={handleGenerateActivity} disabled={isGeneratingActivity}
+                        className="w-full bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-700 hover:to-indigo-600 disabled:opacity-70 text-white py-2.5 rounded-lg text-[13px] font-bold transition-colors flex items-center justify-center gap-2 shadow-sm mt-2"
+                      >
+                        {isGeneratingActivity ? <Sparkles className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4" />}
+                        {isGeneratingActivity ? "AI đang tạo bài tập..." : "Tạo bài tập tương tác"}
+                      </button>
+                    )}
                   </div>
                 </div>
 
                 <div>
-                  {aiOutput ? (
+                  {lessonType === 'plan' && aiOutput && (
                     <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col h-full animate-fade-in-up">
                       <div className="p-3.5 px-4 border-b border-gray-200 flex items-center justify-between bg-gray-50/50 shrink-0">
                         <div className="text-[13px] font-bold text-gray-800 flex items-center gap-1.5"><FileOutput className="w-4 h-4 text-[#0F6E56]" /> Giáo án: {topic}</div>
@@ -1098,16 +1211,10 @@ export default function TeacherPortalPort() {
                         <button onClick={() => setPresentationMode(true)} className="flex-1 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white py-2 rounded-lg text-[12px] font-bold transition-all shadow-md flex items-center justify-center gap-1.5">
                           <Presentation className="w-3.5 h-3.5" /> Bắt đầu Dạy (Chiếu TV)
                         </button>
-                        <button onClick={handleSaveToLibrary} disabled={savingLesson} className="flex-1 bg-white border-2 border-[#E63946] text-[#E63946] hover:bg-[#FAECE7] py-2 rounded-lg text-[12px] font-bold transition-colors flex items-center justify-center gap-1.5 disabled:opacity-50">
-                          {savingLesson ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />}
-                          {savingLesson ? 'Đang lưu...' : 'Lưu vào Thư viện'}
-                        </button>
-                        <button onClick={() => window.print()} className="px-4 bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 py-2 rounded-lg text-[12px] font-bold transition-colors flex items-center justify-center gap-1.5">
-                          <FileOutput className="w-3.5 h-3.5" /> Xuất PDF
-                        </button>
                       </div>
                     </div>
-                  ) : (
+                  )}
+                  {lessonType === 'plan' && !aiOutput && (
                     <div className="bg-gray-50 rounded-xl border border-dashed border-gray-300 h-full flex flex-col items-center justify-center text-gray-400">
                       <Sparkles className="w-8 h-8 mb-2 opacity-50" />
                       <div className="text-[13px] font-medium">Nhập thông tin bên trái để AI tạo giáo án</div>

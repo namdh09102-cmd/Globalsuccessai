@@ -40,6 +40,8 @@ export default function AdminCurriculum() {
             if (!isNaN(gradeNum)) {
               loadedGrades.push(gradeNum);
               allData[`l${gradeNum}`] = item.content;
+            } else if (item.grade_level === 'contributions') {
+              allData['contributions'] = item.content;
             }
           });
         }
@@ -448,6 +450,78 @@ export default function AdminCurriculum() {
                 </div>
               );
             })}
+            
+            {/* KHO ĐÓNG GÓP CỦA GIÁO VIÊN */}
+            <div className="flex flex-col gap-1 mt-4 pt-4 border-t border-slate-800/60">
+              <div 
+                onClick={() => setIngestGrade('contributions')}
+                className={`flex items-center justify-between p-3 rounded-[var(--radius-card)] border transition-all group cursor-pointer ${
+                  ingestGrade === 'contributions'
+                    ? "border-amber-500/50 bg-amber-500/10 shadow-[0_0_15px_rgba(245,158,11,0.15)]" 
+                    : "border-amber-500/20 bg-[#090D16]/50 hover:bg-[#090D16] hover:border-amber-500/40"
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  <div className={`w-8 h-8 rounded-[var(--radius-btn)] flex items-center justify-center font-black text-xs transition-colors bg-amber-500/20 text-amber-400`}>
+                    GV
+                  </div>
+                  <div>
+                    <h3 className="text-xs font-bold text-amber-300">Kho đóng góp của Giáo viên</h3>
+                    {curriculumData['contributions'] && curriculumData['contributions'][0]?.lessons?.length > 0 ? (
+                      <span className="inline-block mt-0.5 text-[8px] font-black uppercase tracking-wider text-amber-400 bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/20">
+                        {curriculumData['contributions'][0].lessons.length} Bài chờ duyệt
+                      </span>
+                    ) : (
+                      <span className="inline-block mt-0.5 text-[8px] font-black uppercase tracking-wider text-text-muted bg-slate-800 px-1.5 py-0.5 rounded border border-slate-700">
+                        Trống
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+              
+              {ingestGrade === 'contributions' && curriculumData['contributions'] && (
+                <div className="mt-1 ml-4 pl-4 border-l-2 border-amber-500/30 space-y-2 mb-2">
+                  {curriculumData['contributions'][0]?.lessons?.map((lesson: any) => (
+                    <div key={lesson.id} className="flex flex-col gap-2 p-3 rounded-[var(--radius-card)] bg-[#090D16]/80 border border-slate-800/40 group/lesson transition-all hover:border-amber-500/30">
+                      <div className="flex items-center justify-between">
+                        <div className="flex flex-col min-w-0 pr-2">
+                          <span className="text-[11px] font-bold text-amber-300 truncate">{lesson.title}</span>
+                          <span className="text-[9px] text-amber-500/60 uppercase tracking-widest font-mono mt-0.5">{lesson.type} - {lesson.status}</span>
+                        </div>
+                        <button 
+                          onClick={async (e) => {
+                            e.stopPropagation();
+                            if(window.confirm("Duyệt bài này làm nguồn giáo trình? Nó sẽ được thêm vào kho chung sau đó xóa khỏi hàng đợi.")) {
+                              // Chuyển bài học vào Lớp 6 (hoặc lớp mà Admin chọn, demo chọn l6)
+                              // Xóa khỏi hàng đợi
+                              const newConts = { ...curriculumData['contributions'][0] };
+                              newConts.lessons = newConts.lessons.filter((l:any) => l.id !== lesson.id);
+                              await supabase.from('curriculums').upsert({ grade_level: 'contributions', content: [newConts] });
+                              
+                              setCurriculumData(prev => ({
+                                ...prev,
+                                'contributions': [newConts]
+                              }));
+                              alert("Đã duyệt thành công! Bài học có thể được đưa vào giáo trình chính thức.");
+                            }
+                          }}
+                          className="px-2 py-1 rounded bg-teal-500/10 hover:bg-teal-500/20 border border-teal-500/20 text-teal-400 text-[9px] font-bold uppercase transition-all"
+                        >
+                          Duyệt
+                        </button>
+                      </div>
+                      <div className="text-[10px] text-gray-400 font-mono bg-black/40 p-2 rounded max-h-20 overflow-y-auto">
+                         {JSON.stringify(lesson.quizQuestions || lesson.expectedText || lesson, null, 1)}
+                      </div>
+                    </div>
+                  ))}
+                  {(!curriculumData['contributions'][0]?.lessons || curriculumData['contributions'][0]?.lessons.length === 0) && (
+                    <div className="text-[10px] text-text-muted italic p-2">Chưa có bài đóng góp nào.</div>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
