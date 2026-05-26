@@ -1327,7 +1327,7 @@ export default function TeacherPortalPort() {
 
                       <div className="p-3 px-4 bg-gray-50 border-t border-gray-200 flex shrink-0">
                         <button onClick={handleContributeSystem} className="w-full bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-700 hover:to-indigo-600 text-white py-2.5 rounded-lg text-[13px] font-bold transition-all shadow-md flex items-center justify-center gap-2">
-                          <CheckCircle className="w-4 h-4" /> Lưu & Đóng góp vào Hệ thống
+                          <CheckCircle2 className="w-4 h-4" /> Lưu & Đóng góp vào Hệ thống
                         </button>
                       </div>
                     </div>
