@@ -46,7 +46,7 @@ export default function TeacherPortalPort() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [aiOutput, setAiOutput] = useState<any>(null);
   const [lessonType, setLessonType] = useState<"plan" | "activity">("plan");
-  const [activityType, setActivityType] = useState<"quiz" | "speaking" | "dictation">("quiz");
+  const [activityType, setActivityType] = useState<"quiz" | "speaking" | "dictation" | "writing">("quiz");
   const [activityOutput, setActivityOutput] = useState<any>(null);
   const [isGeneratingActivity, setIsGeneratingActivity] = useState(false);
   const [isEditingLesson, setIsEditingLesson] = useState(false);
@@ -1027,6 +1027,7 @@ export default function TeacherPortalPort() {
                             <option value="quiz">Trắc nghiệm (Từ vựng/Ngữ pháp)</option>
                             <option value="dictation">Nghe điền từ (Dictation)</option>
                             <option value="speaking">Hội thoại (Speaking)</option>
+                            <option value="writing">Viết câu (Writing)</option>
                           </select>
                         </div>
                       )}
@@ -1064,13 +1065,28 @@ export default function TeacherPortalPort() {
                         {isGenerating ? "AI đang soạn..." : "Tạo giáo án với AI"}
                       </button>
                     ) : (
-                      <button 
-                        onClick={handleGenerateActivity} disabled={isGeneratingActivity}
-                        className="w-full bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-700 hover:to-indigo-600 disabled:opacity-70 text-white py-2.5 rounded-lg text-[13px] font-bold transition-colors flex items-center justify-center gap-2 shadow-sm mt-2"
-                      >
-                        {isGeneratingActivity ? <Sparkles className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4" />}
-                        {isGeneratingActivity ? "AI đang tạo bài tập..." : "Tạo bài tập tương tác"}
-                      </button>
+                      <div className="flex gap-2 mt-2">
+                        <button 
+                          onClick={handleGenerateActivity} disabled={isGeneratingActivity}
+                          className="flex-[3] bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-700 hover:to-indigo-600 disabled:opacity-70 text-white py-2.5 rounded-lg text-[13px] font-bold transition-colors flex items-center justify-center gap-2 shadow-sm"
+                        >
+                          {isGeneratingActivity ? <Sparkles className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4" />}
+                          {isGeneratingActivity ? "Đang tạo..." : "AI soạn nhanh"}
+                        </button>
+                        <button 
+                          onClick={() => {
+                            if (activityType === 'quiz') {
+                              setActivityOutput({ quizQuestions: [{ question: "Câu hỏi 1", options: ["A. ", "B. ", "C. ", "D. "], correctAnswer: "A" }] });
+                            } else {
+                              setActivityOutput({ expectedText: "" });
+                            }
+                          }}
+                          disabled={isGeneratingActivity}
+                          className="flex-[2] bg-white border border-indigo-200 hover:bg-indigo-50 text-indigo-600 py-2.5 rounded-lg text-[13px] font-bold transition-colors flex items-center justify-center gap-2 shadow-sm"
+                        >
+                          <Edit3 className="w-4 h-4" /> Tự soạn
+                        </button>
+                      </div>
                     )}
                   </div>
                 </div>
@@ -1212,6 +1228,132 @@ export default function TeacherPortalPort() {
                           <Presentation className="w-3.5 h-3.5" /> Bắt đầu Dạy (Chiếu TV)
                         </button>
                       </div>
+                    </div>
+                  )}
+
+                  {lessonType === 'activity' && activityOutput && (
+                    <div className="bg-white rounded-xl border border-indigo-200 shadow-sm overflow-hidden flex flex-col h-full animate-fade-in-up">
+                      <div className="p-3.5 px-4 border-b border-indigo-100 flex items-center justify-between bg-indigo-50/50 shrink-0">
+                        <div className="text-[13px] font-bold text-indigo-900 flex items-center gap-1.5"><Rocket className="w-4 h-4 text-indigo-500" /> Cấu trúc Bài Tập: {topic}</div>
+                        <span className="text-[11px] text-indigo-600 font-bold uppercase tracking-widest">{activityType}</span>
+                      </div>
+                      
+                      <div className="flex-1 overflow-y-auto p-5 text-[13px]">
+                        {activityType === 'quiz' && activityOutput.quizQuestions && (
+                          <div className="space-y-4">
+                            {activityOutput.quizQuestions.map((q: any, i: number) => (
+                              <div key={i} className="bg-white border border-indigo-100 rounded-lg p-4 relative group shadow-sm">
+                                <div className="mb-2">
+                                  <label className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Câu hỏi {i + 1}</label>
+                                  <input 
+                                    className="w-full border-b border-gray-200 py-1 outline-none focus:border-indigo-500 text-gray-800 font-medium" 
+                                    value={q.question}
+                                    onChange={e => {
+                                      const newOut = {...activityOutput};
+                                      newOut.quizQuestions[i].question = e.target.value;
+                                      setActivityOutput(newOut);
+                                    }}
+                                  />
+                                </div>
+                                <div className="grid grid-cols-2 gap-2 mb-3">
+                                  {q.options.map((opt: string, optIdx: number) => (
+                                    <div key={optIdx} className="flex items-center gap-2">
+                                      <span className="text-gray-400 font-mono text-[10px]">{['A','B','C','D'][optIdx]}</span>
+                                      <input 
+                                        className="w-full bg-gray-50 border border-gray-200 rounded px-2 py-1 outline-none focus:border-indigo-500 text-gray-700 text-[12px]" 
+                                        value={opt.replace(/^[A-D]\.\s*/, '')}
+                                        onChange={e => {
+                                          const newOut = {...activityOutput};
+                                          newOut.quizQuestions[i].options[optIdx] = `${['A','B','C','D'][optIdx]}. ${e.target.value}`;
+                                          setActivityOutput(newOut);
+                                        }}
+                                      />
+                                    </div>
+                                  ))}
+                                </div>
+                                <div className="flex items-center gap-2">
+                                  <label className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Đáp án đúng:</label>
+                                  <select 
+                                    className="border border-gray-200 rounded px-2 py-1 outline-none text-[12px] font-bold text-indigo-600 bg-indigo-50"
+                                    value={q.correctAnswer}
+                                    onChange={e => {
+                                      const newOut = {...activityOutput};
+                                      newOut.quizQuestions[i].correctAnswer = e.target.value;
+                                      setActivityOutput(newOut);
+                                    }}
+                                  >
+                                    {['A','B','C','D'].map(val => <option key={val} value={val}>{val}</option>)}
+                                  </select>
+                                </div>
+                                <button 
+                                  onClick={() => {
+                                    const newOut = {...activityOutput};
+                                    newOut.quizQuestions.splice(i, 1);
+                                    setActivityOutput(newOut);
+                                  }}
+                                  className="absolute top-2 right-2 text-red-400 hover:text-red-600 opacity-0 group-hover:opacity-100 transition-opacity p-1 bg-red-50 rounded"
+                                >
+                                  <X className="w-4 h-4" />
+                                </button>
+                              </div>
+                            ))}
+                            <button 
+                              onClick={() => {
+                                const newOut = {...activityOutput};
+                                newOut.quizQuestions.push({ question: "Câu hỏi mới", options: ["A. Lựa chọn", "B. Lựa chọn", "C. Lựa chọn", "D. Lựa chọn"], correctAnswer: "A" });
+                                setActivityOutput(newOut);
+                              }}
+                              className="w-full border-2 border-dashed border-indigo-200 text-indigo-500 font-bold py-2 rounded-lg hover:bg-indigo-50 transition-colors flex justify-center items-center gap-2"
+                            >
+                              <Plus className="w-4 h-4" /> Thêm câu hỏi
+                            </button>
+                          </div>
+                        )}
+
+                        {(activityType === 'dictation' || activityType === 'speaking' || activityType === 'writing') && (
+                          <div className="bg-white border border-indigo-100 rounded-lg p-4 shadow-sm">
+                            <label className="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2 block">
+                              Nội dung ({activityType === 'dictation' ? 'Bọc từ cần điền trong ngoặc vuông []' : 'Đoạn văn/Câu'})
+                            </label>
+                            <textarea 
+                              className="w-full text-[14px] text-gray-800 p-3 border border-gray-200 rounded-lg outline-none focus:border-indigo-500 min-h-[200px] resize-y leading-relaxed font-mono" 
+                              value={activityOutput.expectedText || ''} 
+                              onChange={e => setActivityOutput({...activityOutput, expectedText: e.target.value})} 
+                              placeholder={activityType === 'dictation' ? "Ví dụ: Hello [world], this is a [test]." : "Nhập nội dung vào đây..."}
+                            />
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="p-3 px-4 bg-gray-50 border-t border-gray-200 flex shrink-0">
+                        <button onClick={handleContributeSystem} className="w-full bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-700 hover:to-indigo-600 text-white py-2.5 rounded-lg text-[13px] font-bold transition-all shadow-md flex items-center justify-center gap-2">
+                          <CheckCircle className="w-4 h-4" /> Lưu & Đóng góp vào Hệ thống
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  {lessonType === 'activity' && !activityOutput && (
+                    <div className="h-full flex flex-col items-center justify-center text-center p-8 border-2 border-dashed border-indigo-200 rounded-xl bg-indigo-50/30">
+                      <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm mb-4">
+                        <Rocket className="w-8 h-8 text-indigo-300" />
+                      </div>
+                      <h3 className="text-gray-800 font-bold mb-2">Chưa có dữ liệu bài tập</h3>
+                      <p className="text-[13px] text-gray-500 max-w-sm">
+                        Hãy nhập chủ đề, chọn dạng bài tập và bấm "AI soạn nhanh" để AI thiết kế, hoặc bạn có thể "Tự soạn" toàn bộ nội dung.
+                      </p>
+                      <button 
+                        onClick={() => {
+                          if (activityType === 'quiz') {
+                            setActivityOutput({ quizQuestions: [{ question: "Câu hỏi 1", options: ["A. ", "B. ", "C. ", "D. "], correctAnswer: "A" }] });
+                          } else {
+                            setActivityOutput({ expectedText: "" });
+                          }
+                        }}
+                        className="mt-5 bg-indigo-100 hover:bg-indigo-200 text-indigo-700 px-5 py-2.5 rounded-lg text-[13px] font-bold transition-colors flex items-center gap-2"
+                      >
+                        <Edit3 className="w-4 h-4" /> Bắt đầu tự soạn
+                      </button>
                     </div>
                   )}
                   {lessonType === 'plan' && !aiOutput && (
